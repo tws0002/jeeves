@@ -5,15 +5,23 @@ import maya.cmds as cmds
 
 cmds.loadPlugin( 'AbcExport' )
 
-dev = False
+dev = True
+home = True
 
 if dev:
     if sys.platform == 'win32':
         sys.path.append('//resources/resources/vfx/pipeline/jeeves_dev')
+    
     elif sys.platform == 'linux2':
         sys.path.append('/mnt/resources/vfx/pipeline/jeeves_dev')
+    
     elif sys.platform == 'darwin':
-        sys.path.append('/Volumes/resources/vfx/pipeline/jeeves_dev')
+        
+        if not home:
+            sys.path.append('/Volumes/resources/vfx/pipeline/jeeves_dev')
+        
+        else:
+            sys.path.append('/Users/elliott/Google Drive/pipeline/jeeves_dev')
 else:
     if sys.platform == 'win32':
         sys.path.append('//resources/resources/vfx/pipeline/jeeves')
