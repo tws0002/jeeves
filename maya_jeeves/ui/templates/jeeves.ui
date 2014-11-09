@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Jeeves</class>
+ <widget class="QMainWindow" name="Jeeves">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>721</width>
+    <height>752</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="layout_tabs">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>700</width>
+      <height>570</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>700</width>
+      <height>570</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>500</width>
+      <height>580</height>
+     </size>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="assets_tab">
+     <attribute name="title">
+      <string>Assets</string>
+     </attribute>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>670</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="layout_assets_horizontal">
+       <item>
+        <layout class="QVBoxLayout" name="layout_assets_left_vertical">
+         <item>
+          <widget class="QComboBox" name="asset_combo_category"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="asset_combo_asset">
+           <property name="maximumSize">
+            <size>
+             <width>260</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="asset_reveal">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Reveal Folder</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="asset_thumbnail">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>256</width>
+             <height>144</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>144</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>default.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="asset_save_thumbnail">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Save Thumbnail</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="asset_save_note">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Save Note</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="asset_note">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>256</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>260</width>
+             <height>160</height>
+            </size>
+           </property>
+           <property name="html">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="assets_vertical_line">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="layout_assets_right_vertical">
+         <item>
+          <widget class="QLineEdit" name="asset_filter"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="asset_versions_label">
+           <property name="text">
+            <string>versions</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="asset_versions">
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="asset_masters_label">
+           <property name="text">
+            <string>masters</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="asset_masters">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="layout_assets_buttons_horizontal">
+           <item>
+            <widget class="QPushButton" name="btn_asset_sortdate">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Sort by Date</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_asset_sortalpha">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Sort Alphabetically</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_asset_refresh">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="shots_tab">
+     <attribute name="title">
+      <string>Shots</string>
+     </attribute>
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>670</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="layout_shots_horizontal">
+       <item>
+        <layout class="QVBoxLayout" name="layout_shots_left_vertical">
+         <item>
+          <widget class="QComboBox" name="shot_combo"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="shot_reveal">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Reveal Folder</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="shot_thumbnail">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>256</width>
+             <height>144</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>144</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>default.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="shot_save_thumbnail">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Save Thumbnail</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="shot_save_note">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Save Note</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="shot_note">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>256</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>260</width>
+             <height>160</height>
+            </size>
+           </property>
+           <property name="html">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="shots_vertical_line">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="layout_shots_right_vertical">
+         <item>
+          <widget class="QLineEdit" name="shot_filter"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="shot_versions_label">
+           <property name="text">
+            <string>versions</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="shot_versions">
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="shot_publishes_label">
+           <property name="text">
+            <string>publishes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="shot_publishes">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="layout_shots_buttons_horizontal">
+           <item>
+            <widget class="QPushButton" name="btn_shot_sortdate">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Sort by Date</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_shot_sortalpha">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Sort Alphabetically</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_shot_refresh">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tools_tab">
+     <attribute name="title">
+      <string>Tools</string>
+     </attribute>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>192</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Columbus Tools</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_shader_export">
+         <property name="text">
+          <string>Shader Export</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_shader_assign">
+         <property name="text">
+          <string>Shader Import and Assign</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Export Selection Sets</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>701</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="layout_search_horizontal">
+     <item>
+      <spacer name="search_spacer_left">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QToolButton" name="recent">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+       <property name="popupMode">
+        <enum>QToolButton::InstantPopup</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="job_search"/>
+     </item>
+     <item>
+      <spacer name="search_spacer_right">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>701</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="layout_buttons_horizontal_2">
+       <item>
+        <widget class="QPushButton" name="btn_open">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(164, 208, 255);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Open</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_import">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(164, 208, 255);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Import</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="layout_buttons_horizontal">
+       <item>
+        <widget class="QPushButton" name="btn_save">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Button">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Button">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Button">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>139</red>
+               <green>212</green>
+               <blue>178</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(139, 212, 178);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_saveas">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(139, 212, 178);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Save As</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_version">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(139, 212, 178);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Version</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_master">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(139, 212, 178);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Master</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_publish">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(139, 212, 178);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Publish</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>721</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>job_search</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>job_search_func()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>286</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_combo_category</sender>
+   <signal>activated(QString)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_category()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_combo_asset</sender>
+   <signal>activated(QString)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_asset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_combo</sender>
+   <signal>activated(QString)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_shot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>94</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_filter</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_filter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>473</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_versions</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_asset_version()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>371</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>39</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_asset_refresh</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>refresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>683</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_asset_sortalpha</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>sortalpha()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>572</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>427</x>
+     <y>686</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_asset_sortdate</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>sortdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>425</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>273</x>
+     <y>682</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_save_note</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>savenote()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>179</x>
+     <y>456</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>682</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_save</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>695</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>37</x>
+     <y>680</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_version</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>version()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>695</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>672</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_master</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>master()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>695</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>517</x>
+     <y>672</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_publish</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>publish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>708</x>
+     <y>695</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>676</x>
+     <y>677</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>layout_tabs</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>tab_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>685</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_save_note</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>savenote()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>456</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>674</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_shot_sortdate</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>sortdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>414</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>343</x>
+     <y>677</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_shot_refresh</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>refresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>678</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>673</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_shot_sortalpha</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>sortalpha()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>531</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>464</x>
+     <y>679</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_filter</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_filter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>413</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>611</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_versions</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_shot_version()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>413</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_open</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>file_open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>721</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_import</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>file_import()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>487</x>
+     <y>721</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_save_thumbnail</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>savethumb()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>720</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_save_thumbnail</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>savethumb()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>713</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_saveas</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>save_as()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>286</x>
+     <y>713</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>147</x>
+     <y>721</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_masters</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_asset_master()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>518</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>721</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_publishes</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>change_shot_publish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>413</x>
+     <y>542</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>674</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asset_reveal</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>reveal_folder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>216</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>86</x>
+     <y>44</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shot_reveal</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>reveal_folder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>98</x>
+     <y>24</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_shader_export</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>shader_export()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>751</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_shader_assign</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>shader_assign()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>751</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recent</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>Jeeves</receiver>
+   <slot>recent_selected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>652</x>
+     <y>33</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Jeeves</receiver>
+   <slot>export_selection_sets()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>267</x>
+     <y>730</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>job_search_func()</slot>
+  <slot>change_category()</slot>
+  <slot>change_asset()</slot>
+  <slot>change_shot()</slot>
+  <slot>change_filter()</slot>
+  <slot>change_asset_version()</slot>
+  <slot>double_click()</slot>
+  <slot>refresh()</slot>
+  <slot>sortalpha()</slot>
+  <slot>sortdate()</slot>
+  <slot>savenote()</slot>
+  <slot>save()</slot>
+  <slot>version()</slot>
+  <slot>master()</slot>
+  <slot>publish()</slot>
+  <slot>tab_changed()</slot>
+  <slot>file_open()</slot>
+  <slot>file_reference()</slot>
+  <slot>file_import()</slot>
+  <slot>savethumb()</slot>
+  <slot>save_as()</slot>
+  <slot>change_shot_version()</slot>
+  <slot>change_asset_master()</slot>
+  <slot>change_shot_publish()</slot>
+  <slot>reveal_folder()</slot>
+  <slot>shader_export()</slot>
+  <slot>shader_assign()</slot>
+  <slot>shader_export_selected()</slot>
+  <slot>recent_selected()</slot>
+  <slot>export_selection_sets()</slot>
+ </slots>
+</ui>

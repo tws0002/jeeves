@@ -1,0 +1,5 @@
+source "DeadlineMayaClient.mel";
+source "DeadlineMayaVRayDBRClient.mel";
+
+python("import maya_jeeves.ui.jeeves_ui");
+python("maya_jeeves.ui.jeeves_ui.runMaya()");
