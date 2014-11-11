@@ -1,0 +1,147 @@
+#! created 03/29/08 by michael@yawpitchroll.com
+version 4.7000
+Gizmo {
+ help "This node does a telecine operation, converting 24 frame progressive footage to 30 frame / 60 field interlaced video.  It does this by adding a traditional 2:3 cadence pullup, resulting in two interlaced frames per 5 frame group.  The stepping method used is mathematically more correct than in the standard add32p node, and is more directly compatible with Shake and other interfaces that use an AA|BB|BC|CD|DD telecine-style terminology."
+ addUserKnob {20 Pullup}
+ addUserKnob {4 firstframe l phase t "Select first frame / phase for the 2:3 pullup operation." M {"    AA  " "    BB  " "    BC  " "    CD  " "    DD  "}}
+ firstframe "    AA  "
+ addUserKnob {4 fielddom l fields t "Select field dominance of the video being operated on.\n\nNote: some programs describe dominance by height instead of number.  By convention \"odd\" = \"upper field first\" and \"even\" = \"lower field first.\"" M {odd even}}
+ fielddom odd
+ addUserKnob {3 phase l INVISIBLE}
+ phase {{firstframe i}}
+ addUserKnob {20 burbtab l "Burn In" t "Create a burn in of your telecine settings.  Mainly for pipeline testing purposes."}
+ addUserKnob {4 burn_pos l position t "Choose to place the burn in near the top or bottom of the frame." M {top "bottom  "}}
+ burn_pos "bottom  "
+ addUserKnob {1 custstring l "" t "Custom text to add to the end of the burn in.  Simple TCL commands can be run as well, so the syntax \[value root.NODENAME.KNOBNAME] will return the value of any given knob.\n\nExample:\n\[value root.name] will return the name of your script as defined in your script settings.\n"}
+ custstring "\[value root.name]"
+ addUserKnob {6 overlay_23 l "burn in" t "Burn conversion information into your render.  This will appear over your image, so only use this if you need to communicate this information during testing of your pullup / pulldown pipeline."}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 603
+  ypos -67
+ }
+ NoOp {
+  name pacemaker
+  xpos 603
+  ypos -42
+  addUserKnob {20 User}
+  addUserKnob {3 start_compensated l INVISIBLE}
+  start_compensated {{rint(input.first_frame*1.25) i}}
+  addUserKnob {3 stop_compensated l INVISIBLE}
+  stop_compensated {{rint(input.last_frame*1.25) i}}
+ }
+ TimeOffset {
+  time_offset {{phase i x4 4}}
+  name PhaseCompensate
+  xpos 603
+  ypos -17
+ }
+set N51719ea0 [stack 0]
+ TimeWarp {
+  lookup {{floor((frame+phase-1.4)*0.8)+2 i}}
+  name fieldB
+  xpos 713
+  ypos 15
+ }
+push $N51719ea0
+ TimeWarp {
+  lookup {{floor((frame+phase+.6)*0.8) i}}
+  filter none
+  name fieldA
+  xpos 603
+  ypos 16
+ }
+set N5171d760 [stack 0]
+ MergeExpression {
+  inputs 2
+  temp_name0 which
+  temp_expr0 (fielddom==0)?!fmod(y,2):fmod(y,2)
+  expr0 which?Ar:Br
+  expr1 which?Ag:Bg
+  expr2 which?Ab:Bb
+  name field_merge
+  xpos 713
+  ypos 60
+ }
+push $N5171d760
+ Switch {
+  inputs 2
+  which {{fieldA.lookup!=fieldB.lookup i}}
+  name cadence_switch
+  xpos 603
+  ypos 87
+ }
+set N51721f00 [stack 0]
+push $N51719ea0
+ Remove {
+  name Remove1
+  xpos 493
+  ypos 7
+ }
+set N517236f0 [stack 0]
+ Text {
+  message "PHASE \[set x \[value fieldAconv]; set a \{\"A\"\}; set b \{\"B\"\}; set c \{\"C\"\}; set d \{\"D\"\}; if \{\$x==0\} \{expr \$a\} elseif \{\$x==1\} \{expr \$b\} elseif \{\$x==2\} \{expr \$c\} else \{expr \$d\}]\[set x \[value fieldBconv]; set a \{\"A\"\}; set b \{\"B\"\}; set c \{\"C\"\}; set d \{\"D\"\}; if \{\$x==0\} \{expr \$a\} elseif \{\$x==1\} \{expr \$b\} elseif \{\$x==2\} \{expr \$c\} else \{expr \$d\}]  FIELD \[string toupper \[value fielddom]]   \[set blank \{\"\"\}; set cust \{\[string toupper \[value custstring]]\}; if \{\[string length \[value custstring]]==0\} \{expr \$blank\} else \{expr \$cust\}]\n"
+  font /Library/Fonts/Arial.ttf
+  size {{(floor(height*.02)-fmod(floor(height*.02),10))<10?10:(floor(height*.02)-fmod(floor(height*.02),10)) i}}
+  xjustify {{overlay_xjustify i}}
+  translate {{(floor(height*.02)-fmod(floor(height*.02),10))<10?10:(floor(height*.02)-fmod(floor(height*.02),10)) i} {(burn_pos==0)?(height-(size+((floor(height*.02)-fmod(floor(height*.02),10))<10?10:(floor(height*.02)-fmod(floor(height*.02),10))))):(floor(height*.02)-fmod(floor(height*.02),10))<10?10:(floor(height*.02)-fmod(floor(height*.02),10)) i}}
+  scale {1 1}
+  name overlay
+  xpos 400
+  ypos 157
+  addUserKnob {20 User}
+  addUserKnob {3 fieldAval l INVISIBLE t "Used for text overlay of the field values only."}
+  fieldAval {{fmod(fieldA.lookup,4) i}}
+  addUserKnob {3 fieldAconv l INVISIBLE t "Used for text overlay of the field values only."}
+  fieldAconv {{((fmod(fieldA.lookup,4))==-3?0:((fmod(fieldA.lookup,4))==-2?1:((fmod(fieldA.lookup,4))==-1?2:((fmod(fieldA.lookup,4))==0?3:((fmod(fieldA.lookup,4))==1?0:((fmod(fieldA.lookup,4))==2?1:2)))))) i}}
+  addUserKnob {3 fieldBval l INVISIBLE t "Used for text overlay of the field values only."}
+  fieldBval {{fmod(fieldB.lookup,4) i}}
+  addUserKnob {3 fieldBconv l INVISIBLE t "Used for text overlay of the field values only."}
+  fieldBconv {{((fmod(fieldB.lookup,4))==-3?0:((fmod(fieldB.lookup,4))==-2?1:((fmod(fieldB.lookup,4))==-1?2:((fmod(fieldB.lookup,4))==0?3:((fmod(fieldB.lookup,4))==1?0:((fmod(fieldB.lookup,4))==2?1:2)))))) i}}
+ }
+push $N517236f0
+ Rectangle {
+  invert true
+  area {{0 i} {overlay.translate.y-overlay.size*.4 i} {width i} {area.y+overlay.size*1.8 i}}
+  name underlay
+  xpos 401
+  ypos 84
+ }
+push $N51721f00
+ Merge2 {
+  inputs 2
+  operation multiply
+  mix 0.5
+  name mult_underlay
+  xpos 510
+  ypos 132
+ }
+ Merge2 {
+  inputs 2
+  operation exclusion
+  name exclude_overlay
+  xpos 510
+  ypos 157
+ }
+ Switch {
+  inputs 2
+  which {{!overlay_23 i}}
+  name burnSwitch
+  xpos 603
+  ypos 157
+ }
+ FrameRange {
+  first_frame {{pacemaker.start_compensated i x17 1}}
+  last_frame {{pacemaker.stop_compensated i x17 50}}
+  name pullup_frameRange
+  xpos 603
+  ypos 222
+ }
+ Output {
+  name Output1
+  xpos 603
+  ypos 255
+ }
+end_group

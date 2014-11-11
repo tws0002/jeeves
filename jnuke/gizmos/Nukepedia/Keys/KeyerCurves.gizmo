@@ -1,0 +1,49 @@
+#! /Applications/Nuke5.1v3b6/Nuke5.1v3b6.app/Contents/MacOS/Nuke5.1v3b6 -nx
+version 5.1300
+Gizmo {
+ addUserKnob {20 Key}
+ addUserKnob {41 lut l "" -STARTLINE T ColorLookup2.lut}
+ addUserKnob {41 operation T Keyer2.operation}
+ addUserKnob {6 Mypremultiply l premult -STARTLINE}
+ addUserKnob {41 invert -STARTLINE T Premult1.invert}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -567
+  ypos -480
+ }
+set N2da2de70 [stack 0]
+ ColorLookup {
+  name ColorLookup2
+  xpos -428
+  ypos -370
+ }
+ Keyer {
+  operation "luminance key"
+  name Keyer2
+  xpos -428
+  ypos -319
+ }
+push $N2da2de70
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -567
+  ypos -275
+ }
+ Premult {
+  name Premult1
+  selected true
+  xpos -567
+  ypos -218
+  disable {{!parent.Mypremultiply i}}
+ }
+ Output {
+  name Output1
+  xpos -567
+  ypos -136
+ }
+end_group

@@ -1,0 +1,92 @@
+#! /Applications/Nuke5.0v1/Nuke5.0v1.app/Contents/MacOS/Nuke5.0 -nx
+version 5.0100
+Gizmo {
+ inputs 2
+ addUserKnob {20 FineGrade l "Fine Grade"}
+ addUserKnob {41 blackpoint l INVISIBLE T Grade1.blackpoint}
+ addUserKnob {26 "" l "Blackpoint Fine Control"}
+ addUserKnob {7 BPR l "Blackpoint Red" R -1 1}
+ addUserKnob {7 BPG l "Blackpoint Green" R -1 1}
+ addUserKnob {7 BPB l "Blackpoint Blue" R -1 1}
+ addUserKnob {7 BlackPoint l "Blackpoint Scale" R -1 1}
+ BlackPoint 0
+ addUserKnob {26 "" l "Whitepoint Fine Control"}
+ addUserKnob {41 whitepoint l INVISIBLE T Grade1.whitepoint}
+ addUserKnob {7 WPR l "Whitepoint Red" R -1 4}
+ addUserKnob {7 WPG l "Whitepoint Green" R -1 4}
+ addUserKnob {7 WPB l "Whitepoint Blue" R -1 4}
+ addUserKnob {7 WhitePoint l "White Point Scale" R 0 4}
+ addUserKnob {26 "" l "Lift Fine Control"}
+ addUserKnob {7 LR l "Lift Red" t "\t" R -1 1}
+ addUserKnob {7 LG l "Lift Green" R -1 1}
+ addUserKnob {7 LB l "Lift Blue" R -1 1}
+ addUserKnob {7 LiftScale l "Lift Scale" R -1 1}
+ LiftScale 0
+ addUserKnob {41 black l INVISIBLE T Grade1.black}
+ addUserKnob {26 "" l "Gain Fine Control"}
+ addUserKnob {7 GR l "Gain Red" R 0 4}
+ addUserKnob {7 GG l "Gain Green" R 0 4}
+ addUserKnob {7 GB l "Gain Blue" R 0 4}
+ addUserKnob {7 GainScale l "Gain Scale" R 0 4}
+ addUserKnob {41 white l INVISIBLE T Grade1.white}
+ addUserKnob {26 "" l "Multiply Fine Control"}
+ addUserKnob {7 MR l "Multiply Red" R 0 4}
+ addUserKnob {7 MG l "Multiply Green" R 0 4}
+ addUserKnob {7 MB l "Multiply Blue" R 0 4}
+ addUserKnob {7 MultiplyScale l "Multiply Scale" R 0 4}
+ addUserKnob {26 "" l "Offset Fine Control"}
+ addUserKnob {7 OR l "Offset Red" R -1 1}
+ addUserKnob {7 OG l "Offset Green" R -1 1}
+ addUserKnob {7 OB l "Offset Blue" R -1 1}
+ addUserKnob {7 OffsetScale l "Offset Scale" R -1 1}
+ OffsetScale 0
+ addUserKnob {26 "" l "Gamma Fine Controls"}
+ addUserKnob {7 GAR l "Gamma Red" R 0.2 5}
+ addUserKnob {7 GAG l "Gamma Green" R 0.2 5}
+ addUserKnob {7 GAB l "Gamma Blue" R 0.2 5}
+ addUserKnob {7 GammaScale l "Gamma Scale" R 0.2 5}
+ addUserKnob {41 multiply l INVISIBLE T Grade1.multiply}
+ addUserKnob {41 add l INVISIBLE T Grade1.add}
+ addUserKnob {41 gamma l INVISIBLE T Grade1.gamma}
+ addUserKnob {41 Mask T Grade1.Mask}
+ addUserKnob {41 maskChannel l mask T Grade1.maskChannel}
+ addUserKnob {41 maskFrom l from T Grade1.maskFrom}
+ addUserKnob {41 invert_mask l invert T Grade1.invert_mask}
+ addUserKnob {41 fringe T Grade1.fringe}
+ addUserKnob {41 mask l "knob maskChannel \$value; knob maskFrom 1" T Grade1.mask}
+ addUserKnob {41 process_mask l "if \[value maskFrom] \{knob maskFrom 2\}" T Grade1.process_mask}
+}
+ Input {
+  inputs 0
+  name Mask
+  selected true
+  xpos 469
+  ypos 172
+  number 1
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 360
+  ypos 172
+ }
+ Grade {
+  inputs 1+1
+  blackpoint {{BlackPoint*BPR x5 0} {BlackPoint*BPG x5 0} {BlackPoint*BPB x5 0.10606061} 0}
+  whitepoint {{WhitePoint*WPR x5 0} {WhitePoint*WPG x5 0} {WhitePoint*WPB x5 0} 1}
+  black {{LiftScale*LR} {LiftScale*LG} {LiftScale*LB} 0}
+  white {{GainScale*GR} {GainScale*GG} {GainScale*GB} 1}
+  multiply {{MultiplyScale*MR} {MultiplyScale*MG} {MultiplyScale*MB} 1}
+  add {{OffsetScale*OR} {OffsetScale*OG} {OffsetScale*OB} 0}
+  gamma {{GammaScale*GAR} {GammaScale*GAG} {GammaScale*GAB} 1}
+  maskChannel -rgba.alpha
+  name Grade1
+  xpos 360
+  ypos 240
+ }
+ Output {
+  name Output1
+  xpos 360
+  ypos 293
+ }
+end_group

@@ -1,0 +1,202 @@
+#! //corfou/appserv/Nuke/Nuke4.5.14/nuke4.5.exe -nx
+version 4.5014
+Gizmo {
+ inputs 1
+ addUserKnob { 20 "" User }
+ addUserKnob { 26 "" "Action and Title Safe Settings" }
+ addUserKnob { 7 action "Action Size : " R 0 1 t "0=0% 1=100%" }
+ addUserKnob { 7 title "Title Size : " R 0 1 t "0=0% 1=100%" }
+ addUserKnob { 7 opacity "Lines Opacity : " R 0 1 t 0-1 }
+ addUserKnob { 7 thick "Lines Thickness : " R 0 10 }
+ addUserKnob { 7 cross "Center Cross Size : " R 0 100}
+ addUserKnob { 18 colorlines "Color : " R 0 1 }
+ 
+ name SafeTitle_v4
+ 
+ title 0.1
+ action 0.05
+ thick 1
+ opacity 0.5
+ colorlines 0.5
+ cross 20
+ 
+ 
+ 
+ 
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -687
+  ypos -520
+ }
+ Dot {
+  name Dot1
+  xpos -566
+  ypos -468
+ }
+set N889f008 [stack 0]
+ ColorCorrect {
+  gain 0
+  lookup {shadow {curve 1 s0 x0.09 0 s0}
+    midtone {1-shadow-highlight}
+    highlight {curve x0.5 0 s0 x1 1 s0}}
+  name ColorCorrect1
+  xpos -600
+  ypos -426
+ }
+add_layer {alpha rgba.alpha}
+ Remove {
+  channels alpha
+  name Remove1
+  xpos -600
+  ypos -400
+ }
+ Dot {
+  name Dot2
+  xpos -567
+  ypos -338
+ }
+set N9de8008 [stack 0]
+ Dot {
+  name Dot3
+  xpos -377
+  ypos -338
+ }
+set Na06a008 [stack 0]
+ Rectangle {
+  area {{"input.format.r*action + thick" i} {"input.format.t*action + thick" i} {"input.format.r - input.format.r*action -thick" i} {"input.format.t - input.format.t*action -thick"}}
+  p1 {100 400}
+  p0 {100 100}
+  name Rect_Action_Int
+  xpos -486
+  ypos -216
+ }
+push $Na06a008
+ Rectangle {
+  area {{input.format.r*action i} {input.format.t*action i} {"input.format.r - input.format.r*action" i} {"input.format.t - input.format.t*action"}}
+  p1 {100 400}
+  p0 {100 100}
+  name Rect_Action_Ext
+  xpos -363
+  ypos -306
+ }
+ ChannelMerge {
+  inputs 2
+  operation stencil
+  name ChannelMerge1
+  xpos -363
+  ypos -230
+ }
+push $N9de8008
+ Dot {
+  name Dot4
+  xpos -566
+  ypos -127
+ }
+set Na38f008 [stack 0]
+ Rectangle {
+  area {{"input.format.r/2 -cross" i} {"input.format.t/2 -thick/2" i} {"input.format.r/2 +cross" i} {"input.format.t/2 +thick/2"}}
+  p1 {100 400}
+  p0 {100 100}
+  name Rect_Center_h
+  xpos -600
+  ypos -43
+ }
+push $Na38f008
+ Rectangle {
+  area {{"input.format.r/2 -thick/2" i} {"input.format.t/2 -cross" i} {"input.format.r/2 +thick/2" i} {"input.format.t/2 +cross"}}
+  p1 {100 400}
+  p0 {100 100}
+  name Rect_Center_v
+  xpos -507
+  ypos -79
+ }
+push $Na06a008
+ Dot {
+  name Dot5
+  xpos -90
+  ypos -338
+ }
+set Na52ce38 [stack 0]
+ Rectangle {
+  area {{"input.format.r*title +thick" i} {"input.format.t*title +thick" i} {"input.format.r - input.format.r*title -thick" i} {"input.format.t - input.format.t*title -thick"}}
+  p1 {100 400}
+  p0 {100 100}
+  name Rect_Title_Int
+  xpos -246
+  ypos -206
+ }
+push $Na52ce38
+ Rectangle {
+  area {{input.format.r*title i} {input.format.t*title i} {"input.format.r - input.format.r*title" i} {"input.format.t - input.format.t*title"}}
+  p1 {100 400}
+  p0 {100 100}
+  name Rect_Title_Ext
+  xpos -124
+  ypos -279
+ }
+ ChannelMerge {
+  inputs 2
+  operation stencil
+  name ChannelMerge2
+  xpos -124
+  ypos -220
+ }
+ Merge2 {
+  inputs 4
+  name Over_all_Lines
+  xpos -124
+  ypos -26
+ }
+push $N889f008
+ Dot {
+  name Dot6
+  xpos 126
+  ypos -468
+ }
+set N73d45c0 [stack 0]
+ Dot {
+  name Dot7
+  xpos 46
+  ypos -349
+ }
+ Rectangle {
+  area {{input.format.x i} {input.format.y i} {input.format.r i} {input.format.t}}
+  color {colorlines}
+  p1 {100 400}
+  p0 {100 100}
+  name Color
+  selected true
+  xpos 12
+  ypos -98
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 12
+  ypos 31
+ }
+ Premult {
+  name Premult1
+  xpos 12
+  ypos 100
+  disable true
+ }
+push $N73d45c0
+ Merge2 {
+  inputs 2
+  operation matte
+  mix opacity
+  name Over_Output
+  xpos 92
+  ypos 189
+ }
+ Output {
+  name Output1
+  xpos 92
+  ypos 282
+ }
+end_group

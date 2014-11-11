@@ -1,0 +1,13 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+VectorBlur {
+ uv motion
+ constant {-0.4995117188 -0.49951172}
+ scale 40
+ method forward
+ name VectorBlur1
+ selected true
+ xpos -119
+ ypos 68
+}

@@ -1,0 +1,147 @@
+#! /Applications/Nuke5.1v2/Nuke5.1v2.app/Contents/MacOS/Nuke5.1v2 -nx
+version 5.1200
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {4 show M {output "soften matte" "sharpen matte"}}
+ addUserKnob {41 threshold l "edge threshold" T EdgeDetectWrapper1.threshold}
+ addUserKnob {41 size_2 l "edge matte blur" T Blur1.size}
+ addUserKnob {26 "" l soften}
+ addUserKnob {41 size T Blur2.size}
+ addUserKnob {41 mix l amount T Blur2.mix}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l sharpen}
+ addUserKnob {41 size_1 l size T Sharpen1.size}
+ addUserKnob {41 amount T Sharpen1.amount}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 158
+  ypos 45
+ }
+ Dot {
+  name Dot1
+  tile_color 0xc0c0c000
+  xpos 158
+  ypos 85
+ }
+set N1a8b4d10 [stack 0]
+ EdgeDetectWrapper {
+  threshold 1.05
+  name EdgeDetectWrapper1
+  xpos 122
+  ypos 140
+ }
+ Blur {
+  channels alpha
+  size 2
+  name Blur1
+  xpos 122
+  ypos 185
+ }
+set N1969e6c0 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name FloodAlpha
+  tile_color 0xffff00
+  xpos -108
+  ypos 233
+ }
+set N19667b20 [stack 0]
+ Group {
+  name invertLinear1
+  xpos 21
+  ypos 285
+  addUserKnob {20 User}
+  addUserKnob {41 channels T Invert1.channels}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos 130
+   ypos 19
+  }
+  Expression {
+   expr0 to_sRGB(r)/255
+   expr1 to_sRGB(g)/255
+   expr2 to_sRGB(b)/255
+   expr3 to_sRGB(a)/255
+   name to_sRGB
+   xpos 130
+   ypos 59
+  }
+  Invert {
+   channels rgba
+   maskChannelInput -rgba.alpha
+   unpremult -rgba.alpha
+   name Invert1
+   xpos 130
+   ypos 84
+  }
+  Expression {
+   expr0 from_sRGB(r*255)
+   expr1 from_sRGB(g*255)
+   expr2 from_sRGB(b*255)
+   expr3 from_sRGB(a*255)
+   name from_sRGB
+   xpos 130
+   ypos 110
+  }
+  Output {
+   name Output1
+   xpos 130
+   ypos 210
+  }
+ end_group
+push $N19667b20
+ Input {
+  inputs 0
+  name Input2
+  xpos 461
+  ypos 114
+  number 1
+ }
+push $N1a8b4d10
+push $N1969e6c0
+ Sharpen {
+  channels rgb
+  size 1.5
+  maskChannelInput rgba.alpha
+  invert_mask true
+  name Sharpen1
+  xpos 125
+  ypos 246
+ }
+ Blur {
+  channels rgb
+  size 1.5
+  maskChannelInput rgba.alpha
+  mix 0.5
+  name Blur2
+  xpos 125
+  ypos 290
+ }
+ Copy {
+  inputs 2+1
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 297
+  ypos 218
+ }
+ Switch {
+  inputs 3
+  which {{parent.show}}
+  name Switch1
+  xpos 101
+  ypos 429
+ }
+ Output {
+  name Output1
+  xpos 140
+  ypos 468
+ }
+end_group

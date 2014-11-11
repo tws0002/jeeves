@@ -1,0 +1,28 @@
+#! /Applications/Nuke5.1v3/Nuke5.1v3.app/Contents/MacOS/Nuke5.1v3 -nx
+version 5.1300
+Gizmo {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -267
+  ypos -286
+ }
+ Matrix {
+  channels rgb
+  matrix {
+      {1 2 1}
+      {2 4 2}
+      {1 2 1}
+    }
+  normalize true
+  name AA3
+  xpos -267
+  ypos -246
+ }
+ Output {
+  name Output1
+  xpos -267
+  ypos -146
+ }
+end_group

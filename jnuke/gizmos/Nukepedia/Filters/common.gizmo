@@ -1,0 +1,73 @@
+#! /home/fkmaster/Nuke5.0v1/Nuke5.0 -nx
+version 5.0100
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {41 gamma T ColorCorrect2.gamma}
+ addUserKnob {41 gain T ColorCorrect2.gain}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -254
+  ypos -235
+ }
+ NoOp {
+  name NoOp1
+  xpos -254
+  ypos -195
+ }
+set N9a30b48 [stack 0]
+ Input {
+  inputs 0
+  name Input2
+  selected true
+  xpos -345
+  ypos -179
+  number 1
+ }
+push $N9a30b48
+ Difference {
+  inputs 2
+  gain 2
+  name Difference1
+  xpos -345
+  ypos -139
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos -345
+  ypos -76
+ }
+ ColorCorrect {
+  channels {rgba.red rgba.green rgba.blue rgba.alpha}
+  saturation 0
+  gamma 10
+  gain 20
+  name ColorCorrect2
+  xpos -345
+  ypos -35
+ }
+ Merge2 {
+  inputs 2
+  Achannels {rgba.red rgba.green rgba.blue rgba.alpha}
+  operation minus
+  Bchannels rgb
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  maskChannel -rgba.blue
+  maskFrom input
+  invert_mask true
+  fringe true
+  name Merge3
+  xpos -285
+  ypos 41
+ }
+ Output {
+  name Output1
+  xpos -285
+  ypos 141
+ }
+end_group

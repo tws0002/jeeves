@@ -1,0 +1,739 @@
+#! /Applications/Nuke4.7v5/Nuke4.7v5.app/Contents/MacOS/../../Nuke4.7_ -nx
+version 4.7500
+Gizmo {
+ inputs 1
+ tile_color 0xff000000
+ label v.0.5
+ note_font Verdana
+ help "H_Random_scale v0.5:\n\nAllows you to make a random scale effect.\nIt is divided in 4 sections:\n\nRandomizer controls: allows you to control the amount of random, it's speed and origin of scale random.\n\nImage border: Allows to select between mirror, tile, streaks or none for the outside of the image whenever the scale uses values lower then 1. if you are not scaling down to values below 1, then it should be set to none for more speed in render.\n\nScale control: Allows you to give an min and max to limit the scale value.\n\nMotion Blur: Allows to apply motion blur to the scale effect.\n\nH_Random_scale by Hugo Guerra\n\nAny comments or bugs please send an email to: guerra@hugo-guerra.com\n\nPlease visit my website for more Nuke gizmos and to see my latest works as a VFX Artist: www.hugo-guerra.com\n"
+ addUserKnob {20 H_Randomizer_scale l H_Random_scale}
+ addUserKnob {26 "" l "Randomizer controls"}
+ addUserKnob {7 amount l "Random Multiplier " R 0.1 100}
+ amount 1
+ addUserKnob {7 Speed R 0 100}
+ Speed 0.1
+ addUserKnob {6 Randomize}
+ addUserKnob {6 randomize_origin l "Random Origin"}
+ addUserKnob {26 "" l ""}
+ addUserKnob {4 Border l "Image Border" M {Mirror Tile Streaks None ""}}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "Scale Controls"}
+ addUserKnob {7 scale_min l "Scale Min" R 0 5}
+ scale_min 0.9
+ addUserKnob {7 scale_max l "Scale Max" R 0 5}
+ scale_max 1.1
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "Motion Blur"}
+ addUserKnob {6 disable_motion_blur l "Disable Motion Blur"}
+ disable_motion_blur true
+ addUserKnob {41 shutter T MotionBlur2D1.shutter}
+ addUserKnob {41 shutter_offset l "shutter offset" T MotionBlur2D1.shutter_offset}
+ addUserKnob {41 scale l "Motion blur amount" T VectorBlur1.scale}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "H_Random_scale v0.5"}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  label Behavior
+  xpos -343
+  ypos -896
+  bdwidth 898
+  bdheight 246
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  label Scale
+  xpos -369
+  ypos -520
+  bdwidth 470
+  bdheight 319
+ }
+ Group {
+  inputs 0
+  name Random_transform2
+  xpos -344
+  ypos -360
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  miny {{format.h}}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{format.w}}
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result:}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount+Random.result x66 0}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Input {
+  inputs 0
+  name Input1
+  note_font Verdana
+  xpos 64
+  ypos -1109
+ }
+ Reformat {
+  box_width {{Input1.width}}
+  box_height {{Input1.height}}
+  box_fixed true
+  resize none
+  name Reformat1
+  selected true
+  xpos 64
+  ypos -1047
+ }
+ Dot {
+  name Dot4
+  xpos 98
+  ypos -883
+ }
+set N5aee910 [stack 0]
+ Dot {
+  name Dot3
+  xpos 267
+  ypos -822
+ }
+ Crop {
+  box {{width-width} {width-width} {width} {height}}
+  name Crop2
+  xpos 233
+  ypos -804
+ }
+push $N5aee910
+ Transform {
+  center {320 180}
+  name Streaks
+  xpos 64
+  ypos -813
+ }
+push $N5aee910
+ Group {
+  inputs 1
+  name H_Tile
+  label v.0.1
+  note_font Verdana
+  xpos -106
+  ypos -825
+  addUserKnob {20 User}
+  addUserKnob {7 TileAmount R 0.33 1}
+  TileAmount 1
+  addUserKnob {6 Mirror}
+ }
+  Input {
+   inputs 0
+   name Input1
+   note_font Verdana
+   xpos 193
+   ypos -167
+  }
+set N5af1d80 [stack 0]
+  Transform {
+   center {320 180}
+   name Transform_center
+   note_font Verdana
+   xpos -203
+   ypos -31
+  }
+push $N5af1d80
+  Mirror {
+   Horizontal {{Mirror i}}
+   name Mirror_right
+   note_font Verdana
+   xpos -107
+   ypos -34
+  }
+  Transform {
+   translate {{Input1.width i} {0 i}}
+   center {320 180}
+   name Transform_right
+   note_font Verdana
+   xpos -107
+   ypos 1
+  }
+  Merge2 {
+   inputs 2
+   name Merge1
+   note_font Verdana
+   xpos -203
+   ypos 93
+  }
+push $N5af1d80
+  Mirror {
+   Horizontal {{Mirror i}}
+   name Mirror_left
+   note_font Verdana
+   xpos -11
+   ypos -36
+  }
+  Transform {
+   translate {{-Input1.width i} {0 i}}
+   center {320 180}
+   name Transform_left
+   note_font Verdana
+   xpos -11
+   ypos -1
+  }
+  Merge2 {
+   inputs 2
+   name Merge2
+   note_font Verdana
+   xpos -149
+   ypos 135
+  }
+push $N5af1d80
+  Mirror {
+   Vertical {{Mirror i}}
+   name Mirror_Top
+   note_font Verdana
+   xpos 89
+   ypos -39
+  }
+  Transform {
+   translate {{0 i} {Input1.height i}}
+   center {320 180}
+   name Transform_Top
+   note_font Verdana
+   xpos 89
+   ypos 3
+  }
+  Merge2 {
+   inputs 2
+   name Merge3
+   note_font Verdana
+   xpos -74
+   ypos 175
+  }
+push $N5af1d80
+  Mirror {
+   Vertical {{Mirror i}}
+   name MirrorBottom
+   note_font Verdana
+   xpos 202
+   ypos -44
+  }
+  Transform {
+   translate {{0 i} {-Input1.height i}}
+   center {320 180}
+   name Transform_Bottom
+   note_font Verdana
+   xpos 202
+   ypos 1
+  }
+  Merge2 {
+   inputs 2
+   name Merge4
+   note_font Verdana
+   xpos -1
+   ypos 214
+  }
+push $N5af1d80
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_top_right
+   note_font Verdana
+   xpos 305
+   ypos -40
+  }
+  Transform {
+   translate {{Input1.width i} {Input1.height i}}
+   center {320 180}
+   name Transform_top_right
+   note_font Verdana
+   xpos 305
+   ypos 8
+  }
+  Merge2 {
+   inputs 2
+   name Merge5
+   note_font Verdana
+   xpos 72
+   ypos 257
+  }
+push $N5af1d80
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_bottom_right
+   note_font Verdana
+   xpos 415
+   ypos -43
+  }
+  Transform {
+   translate {{Input1.width i} {-Input1.height i}}
+   center {320 180}
+   name Transform_bottom_right
+   note_font Verdana
+   xpos 415
+   ypos 8
+  }
+  Merge2 {
+   inputs 2
+   name Merge6
+   note_font Verdana
+   xpos 163
+   ypos 298
+  }
+push $N5af1d80
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_top_left
+   note_font Verdana
+   xpos 527
+   ypos -44
+  }
+  Transform {
+   translate {{-Input1.width i} {Input1.height i}}
+   center {320 180}
+   name Transform_top_left
+   note_font Verdana
+   xpos 527
+   ypos -2
+  }
+  Merge2 {
+   inputs 2
+   name Merge7
+   note_font Verdana
+   xpos 275
+   ypos 344
+  }
+push $N5af1d80
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_bottom_left
+   note_font Verdana
+   xpos 643
+   ypos -40
+  }
+  Transform {
+   translate {{-Input1.width i} {-Input1.height i}}
+   center {320 180}
+   name Transform_bottom_left
+   note_font Verdana
+   xpos 643
+   ypos -1
+  }
+  Merge2 {
+   inputs 2
+   name Merge8
+   note_font Verdana
+   xpos 366
+   ypos 401
+  }
+  Transform {
+   scale {{TileAmount i}}
+   center {320 180}
+   name Transform1
+   note_font Verdana
+   selected true
+   xpos 366
+   ypos 506
+  }
+  Output {
+   name Output1
+   note_font Verdana
+   xpos 366
+   ypos 657
+  }
+ end_group
+push $N5aee910
+ Group {
+  inputs 1
+  name H_Mirror
+  label v.0.1
+  note_font Verdana
+  xpos -264
+  ypos -828
+  addUserKnob {20 User}
+  addUserKnob {7 TileAmount R 0.33 1}
+  TileAmount 1
+  addUserKnob {6 Mirror}
+  Mirror true
+ }
+  Input {
+   inputs 0
+   name Input1
+   note_font Verdana
+   xpos 193
+   ypos -167
+  }
+set N6008a30 [stack 0]
+  Transform {
+   center {320 180}
+   name Transform_center
+   note_font Verdana
+   xpos -203
+   ypos -31
+  }
+push $N6008a30
+  Mirror {
+   Horizontal {{Mirror i}}
+   name Mirror_right
+   note_font Verdana
+   xpos -107
+   ypos -34
+  }
+  Transform {
+   translate {{Input1.width i} {0 i}}
+   center {320 180}
+   name Transform_right
+   note_font Verdana
+   xpos -107
+   ypos 1
+  }
+  Merge2 {
+   inputs 2
+   name Merge1
+   note_font Verdana
+   xpos -203
+   ypos 93
+  }
+push $N6008a30
+  Mirror {
+   Horizontal {{Mirror i}}
+   name Mirror_left
+   note_font Verdana
+   xpos -11
+   ypos -36
+  }
+  Transform {
+   translate {{-Input1.width i} {0 i}}
+   center {320 180}
+   name Transform_left
+   note_font Verdana
+   xpos -11
+   ypos -1
+  }
+  Merge2 {
+   inputs 2
+   name Merge2
+   note_font Verdana
+   xpos -149
+   ypos 135
+  }
+push $N6008a30
+  Mirror {
+   Vertical {{Mirror i}}
+   name Mirror_Top
+   note_font Verdana
+   xpos 89
+   ypos -39
+  }
+  Transform {
+   translate {{0 i} {Input1.height i}}
+   center {320 180}
+   name Transform_Top
+   note_font Verdana
+   xpos 89
+   ypos 3
+  }
+  Merge2 {
+   inputs 2
+   name Merge3
+   note_font Verdana
+   xpos -74
+   ypos 175
+  }
+push $N6008a30
+  Mirror {
+   Vertical {{Mirror i}}
+   name MirrorBottom
+   note_font Verdana
+   xpos 202
+   ypos -44
+  }
+  Transform {
+   translate {{0 i} {-Input1.height i}}
+   center {320 180}
+   name Transform_Bottom
+   note_font Verdana
+   xpos 202
+   ypos 1
+  }
+  Merge2 {
+   inputs 2
+   name Merge4
+   note_font Verdana
+   xpos -1
+   ypos 214
+  }
+push $N6008a30
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_top_right
+   note_font Verdana
+   xpos 305
+   ypos -40
+  }
+  Transform {
+   translate {{Input1.width i} {Input1.height i}}
+   center {320 180}
+   name Transform_top_right
+   note_font Verdana
+   xpos 305
+   ypos 8
+  }
+  Merge2 {
+   inputs 2
+   name Merge5
+   note_font Verdana
+   xpos 72
+   ypos 257
+  }
+push $N6008a30
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_bottom_right
+   note_font Verdana
+   xpos 415
+   ypos -43
+  }
+  Transform {
+   translate {{Input1.width i} {-Input1.height i}}
+   center {320 180}
+   name Transform_bottom_right
+   note_font Verdana
+   xpos 415
+   ypos 8
+  }
+  Merge2 {
+   inputs 2
+   name Merge6
+   note_font Verdana
+   xpos 163
+   ypos 298
+  }
+push $N6008a30
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_top_left
+   note_font Verdana
+   xpos 527
+   ypos -44
+  }
+  Transform {
+   translate {{-Input1.width i} {Input1.height i}}
+   center {320 180}
+   name Transform_top_left
+   note_font Verdana
+   xpos 527
+   ypos -2
+  }
+  Merge2 {
+   inputs 2
+   name Merge7
+   note_font Verdana
+   xpos 275
+   ypos 344
+  }
+push $N6008a30
+  Mirror {
+   Horizontal {{Mirror i}}
+   Vertical {{Mirror i}}
+   name Mirror_bottom_left
+   note_font Verdana
+   xpos 643
+   ypos -40
+  }
+  Transform {
+   translate {{-Input1.width i} {-Input1.height i}}
+   center {320 180}
+   name Transform_bottom_left
+   note_font Verdana
+   xpos 643
+   ypos -1
+  }
+  Merge2 {
+   inputs 2
+   name Merge8
+   note_font Verdana
+   xpos 366
+   ypos 401
+  }
+  Transform {
+   scale {{TileAmount i}}
+   center {320 180}
+   name Transform1
+   note_font Verdana
+   selected true
+   xpos 366
+   ypos 506
+  }
+  Output {
+   name Output1
+   note_font Verdana
+   xpos 366
+   ypos 657
+  }
+ end_group
+ Switch {
+  inputs 4
+  which {{Border}}
+  name Switch4
+  xpos 64
+  ypos -703
+ }
+set N601ec60 [stack 0]
+ Transform {
+  scale {{Random_transform.result*1.1}}
+  center {{random()*height} {random()*width}}
+  name Transform2
+  xpos -77
+  ypos -469
+  disable {{disable_scale}}
+ }
+push $N601ec60
+ Transform {
+  scale {{Random_transform.result}}
+  center {{Input1.width/2} {Input1.height/2}}
+  name Transform1
+  xpos -189
+  ypos -468
+  disable {{disable_scale}}
+ }
+ Switch {
+  inputs 2
+  which {{randomize_origin}}
+  name Switch3
+  xpos -168
+  ypos -397
+  disable {{disable_scale}}
+ }
+set N60210c0 [stack 0]
+push $N60210c0
+ MotionBlur2D {
+  inputs 2
+  name MotionBlur2D1
+  xpos -168
+  ypos -334
+  disable {{disable_motion_blur}}
+ }
+ VectorBlur {
+  channels rgba
+  uv motion
+  name VectorBlur1
+  xpos -168
+  ypos -274
+  disable {{disable_motion_blur}}
+ }
+ Crop {
+  box {0 0 {Input1.width} {Input1.height}}
+  reformat true
+  intersect true
+  crop false
+  name Crop1
+  xpos -168
+  ypos -180
+ }
+ Output {
+  name Output1
+  note_font Verdana
+  xpos -168
+  ypos -128
+ }
+ Group {
+  inputs 0
+  name Random_transform
+  xpos -346
+  ypos -468
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  miny {{scale_min+amount-1}}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{scale_max+amount-1}}
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result:}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount+Random.result x66 0}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Group {
+  inputs 0
+  name Random_transform1
+  xpos -333
+  ypos -407
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  miny {{format.w}}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{format.h}}
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result:}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount+Random.result x66 0}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Group {
+  inputs 0
+  name Random
+  xpos -543
+  ypos -415
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{Randomize}}
+  addUserKnob {7 speed R 0 10}
+  speed {{random(10)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result: R 0 100}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+end_group

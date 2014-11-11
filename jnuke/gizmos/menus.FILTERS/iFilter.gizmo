@@ -1,0 +1,110 @@
+Group {
+ inputs 2
+ name iFilter1
+ selected true
+ xpos 665
+ ypos 385
+ help "gizmo done by Pau Rocher Castellano\n--> bikura@gmail.com\nAny comments, suggestions, ... welcome!!\nThanks!!\n\n1. Plug an image\n2. Plug a Control channel in 'Mask'\n3. Choose your filter\n4. Set number of steps\n5. Click 'Regenerate'"
+ addUserKnob {20 iFilter}
+ addUserKnob {26 ""}
+ addUserKnob {7 Amount t Amount R -100 100}
+ Amount 0
+ addUserKnob {7 Soften t "Softens the merge between steps" R 0 100}
+ Soften 0
+ addUserKnob {26 ""}
+ addUserKnob {4 Filter t "Choose the filter to use" M {dilerFast dilerFilter dilerBlur blur defocus "" ""}}
+ Filter defocus
+ addUserKnob {7 Steps t "Number of steps" R 1 100}
+ Steps 0
+ addUserKnob {22 regenerate t "Sets up the amount of steps in the filter" T "filter = nuke.Enumeration_Knob.value(nuke.thisNode().knob (\"Filter\"))\nsteps = nuke.Array_Knob.value(nuke.thisNode().knob('Steps'))\npreviousAmount = nuke.Array_Knob.value(nuke.thisNode().knob('previousAmount'))\n\niFilter03.iFilter03 (filter, steps, previousAmount)\n\nnuke.thisNode().knob('previousAmount').setValue(steps)" +STARTLINE}
+ addUserKnob {41 from0 l "control channel" t "This channel controlls the amount of the effect." T Copyyy.from0}
+ addUserKnob {1 info t "information about the filter"}
+ info ".:  Current filter: defocus with 12 steps  (Click button to update ...) :."
+ addUserKnob {7 previousAmount l INVISIBLE}
+ previousAmount 1
+ addUserKnob {20 filterSettings t "Specific filter settings"}
+ addUserKnob {4 iFilterFilter l filter M {box triangle quadratic gaussian ""}}
+ iFilterFilter gaussian
+ addUserKnob {7 iFilterBlur l blur}
+ addUserKnob {3 iFilterQuality l quality}
+ iFilterQuality 15
+ addUserKnob {4 iFilterBlurFilter M {box triangle quadratic gaussian}}
+ addUserKnob {3 iFilterBlurQuality}
+ iFilterBlurQuality 15
+ addUserKnob {7 iFilterDefAspect l "aspect ratio" R 0 5}
+ iFilterDefAspect 1
+ addUserKnob {7 iFilterDefScaling l scaling R 1 10}
+ iFilterDefScaling 1
+ addUserKnob {3 iFilterDefQuality l quality}
+ iFilterDefQuality 20
+ addUserKnob {4 iFilterDefMethod l method M {accelerated "full precision"}}
+}
+ Input {
+  inputs 0
+  name mask
+  xpos 100
+  ypos -545
+  number 1
+ }
+set Nad4d520 [stack 0]
+push $Nad4d520
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.red
+  name Copyyy
+  xpos 100
+  ypos -493
+ }
+ Dot {
+  name puntazoMask
+  xpos 134
+  ypos -328
+ }
+ Input {
+  inputs 0
+  name Image
+  xpos -100
+  ypos -543
+ }
+ Shuffle {
+  name Shuffle1
+  xpos -100
+  ypos -510
+ }
+set Nade80f0 [stack 0]
+ Crop {
+  box {{puntazoMask.bbox.x i} {puntazoMask.bbox.y i} {puntazoMask.bbox.r i} {puntazoMask.bbox.t i}}
+  name iFilterCrop
+  xpos -100
+  ypos -465
+ }
+ Dot {
+  name puntazo
+  xpos -66
+  ypos -326
+ }
+push $Nade80f0
+ Dot {
+  name Dot1
+  xpos -130
+  ypos -467
+ }
+ Rectangle {
+  area {{puntazoMask.bbox.x i} {puntazoMask.bbox.y i} {puntazoMask.bbox.r i} {puntazoMask.bbox.t i}}
+  color 0
+  name Rectangle1
+  xpos -164
+  ypos -420
+ }
+ Merge2 {
+  name iFilterFinalMerge
+  xpos -164
+  ypos 863
+ }
+ Output {
+  name Out
+  xpos -164
+  ypos 936
+ }
+end_group

@@ -1,1 +1,0 @@
-print '> importing maya_jeeves.publisher'

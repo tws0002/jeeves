@@ -1,0 +1,79 @@
+#! /Applications/Nuke5.0v2/Nuke5.0v2.app/Contents/MacOS/Nuke5.0 -nx
+version 5.0200
+Gizmo {
+ help "==========================================\nShake Reorder for Nuke\n==========================================\n\nFUNCTION\n\nThe Reorder gizmo lets you shuffle channels. The argument to this command specifies the new order. A channel can be copied to several different channels. The letter \"l\" refers to the luminance pseudo-channel which can be substituted in place of the RGBA. If an expression is on a channel that does not exist, Nuke creates the channel. You can use the Z channel as well. For example:\n\n\"zzzz\" -> would place the z channel into the rgba channels for viewing.\n\nChannels\t\nThis indicates the new channel assignment. You can use any of\n\nr    -> set this channel's pixels to red channel's values\ng    -> set this channel's pixels to green channel's values\nb    -> set this channel's pixels to blue channel's values\na    -> set this channel's pixels to alpha channel's values\nz    -> set this channel's pixels to Z channel's values\nl    -> set this channel's pixels to luminance of rgb\n0    -> set this channel's pixels to 0\n1    -> set this channel's pixels to 1\nn    -> remove this channel from the active channels\n\n\nEXAMPLES:\n\nTo copy the luminance into the matte channel:\n\nType \"rgbl\"\n\nTo copy the red channel to all 3 color channels, leaving the alpha:\n\nType \"rrra\"\n\nTo remove the alpha channel:\n\nType \"rgbn\"\n\n\n==========================================\nCuco Burés - 2008   ||   cucobures@gmail.com\n=========================================="
+ lock_connections true
+ addUserKnob {20 Controls}
+ addUserKnob {1 Canales l Channels}
+ addUserKnob {3 CanalesEH l INVISIBLE}
+ CanalesEH {{"\[knob this.ReorderEH 1; return 1]"}}
+ addUserKnob {0 ReorderEH l "\[\nset Canales \[value this.Canales];\nset nCanales \[string length \$Canales];\n\nset RemoveCanales \"\";\nknob this.Remove1.channels \$RemoveCanales;\nknob this.Remove1.channels2 \$RemoveCanales;\n\n\nset CanalR \"r\";\nset CanalG \"g\";\nset CanalB \"b\";\nset CanalA \"a\";\nset CanalZ \"z\";\n\nset LumaR \"none\";\nset LumaG \"none\";\nset LumaB \"none\";\nset LumaA \"none\";\nset LumaZ \"none\";\n\nknob this.Copy1.to0 \$LumaR;\nknob this.Copy1.to1 \$LumaG;\nknob this.Copy1.to2 \$LumaB;\nknob this.Copy1.to3 \$LumaA;\nknob this.Copy2.to0 \$LumaZ;\n\nif \{\$nCanales > 0\} \{\nset CanalR \[string range \$Canales 0 0];\n\}\nif \{\$nCanales > 1\} \{\nset CanalG \[string range \$Canales 1 1];\n\}\nif \{\$nCanales > 2\} \{\nset CanalB \[string range \$Canales 2 2];\n\}\nif \{\$nCanales > 3\} \{\nset CanalRGB \[string range \$Canales 0 2];\nset CanalA \[string range \$Canales 3 3];\n\}\nif \{\$nCanales > 4\} \{\nset CanalZ \[string range \$Canales 4 4];\n\}\n\nswitch \$CanalR \{\nz \{\nknob this.Shuffle1.red \"red2\";\n\}\nn \{\nappend RemoveCanales  \"red\";\nknob this.Shuffle1.red \"black\";\nknob this.Remove1.channels \$RemoveCanales;\n\}\nl \{\nset LumaR \"red\";\nknob this.Copy1.to0 \$LumaR;\n\}\n0 \{\nknob this.Shuffle1.red \"black\";\n\}\n1 \{\nknob this.Shuffle1.red \"white\";\n\}\ndefault \{\nknob this.Shuffle1.red \"r\";\nknob this.Shuffle1.red \$CanalR;\n\}\n\}\n\nswitch \$CanalG \{\nz \{\nknob this.Shuffle1.green \"red2\";\n\}\nn \{\nset RemoveCanales  \[value this.Remove1.channels];\nappend RemoveCanales \" green\";\nknob this.Shuffle1.green \"black\";\nknob this.Remove1.channels \$RemoveCanales;\n\}\nl \{\nset LumaG \"green\";\nknob this.Copy1.to1 \$LumaG;\n\}\n0 \{\nknob this.Shuffle1.green \"black\";\n\}\n1 \{\nknob this.Shuffle1.green \"white\";\n\}\ndefault \{\nknob this.Shuffle1.green \$CanalG;\n\}\n\}\n\nswitch \$CanalB \{\nz \{\nknob this.Shuffle1.blue \"red2\";\n\}\nn \{\nset RemoveCanales  \[value this.Remove1.channels];\nappend RemoveCanales \" blue\";\nknob this.Shuffle1.blue \"black\";\nknob this.Remove1.channels \$RemoveCanales;\n\}\nl \{\nset LumaB \"blue\";\nknob this.Copy1.to2 \$LumaB;\n\}\n0 \{\nknob this.Shuffle1.blue \"black\";\n\}\n1 \{\nknob this.Shuffle1.blue \"white\";\n\}\ndefault \{\nknob this.Shuffle1.blue \$CanalB;\n\}\n\}\n\n\nswitch \$CanalA \{\nz \{\nknob this.Shuffle1.alpha \"red2\";\n\}\nn \{\n  set RemoveCanales  \[value this.Remove1.channels];\n  append RemoveCanales \" alpha\";\n\n  if \{\$CanalRGB == \"nnn\"\} \{ \n  set RemoveCanales \"rgba\";\n  \}\n  knob this.Shuffle1.alpha \"black\";\n  knob this.Remove1.channels \$RemoveCanales;\n\n\}\nl \{\nset LumaA \"alpha\";\nknob this.Copy1.to3 \$LumaA;\n\}\n0 \{\nknob this.Shuffle1.alpha \"black\";\n\}\n1 \{\nknob this.Shuffle1.alpha \"white\";\n\}\ndefault \{\nknob this.Shuffle1.alpha \"a\";\nknob this.Shuffle1.alpha \$CanalA;\n\}\n\}\n\nswitch \$CanalZ \{\nz \{\nknob this.Shuffle2.red \"red2\";\n\}\nn \{\nknob this.Shuffle2.red \"black\";\nknob this.Remove1.channels2 \"depth\";\n\}\nl \{\nset LumaZ \"depth.Z\";\nknob this.Copy2.to0 \$LumaZ;\n\}\n0 \{\nknob this.Shuffle2.red \"black\";\n\}\n1 \{\nknob this.Shuffle2.red \"white\";\n\}\ndefault \{\nknob this.Shuffle2.red \"red2\";\nknob this.Shuffle2.red \$CanalZ;\n\}\n\}\n\n\nreturn 1]" t "\[\nset Canales \[value this.Canales];\nset nCanales \[string length \$Canales];\n\nset RemoveCanales \"\";\nknob this.Remove1.channels \$RemoveCanales;\nknob this.Remove1.channels2 \$RemoveCanales;\n\n\nset CanalR \"r\";\nset CanalG \"g\";\nset CanalB \"b\";\nset CanalA \"a\";\nset CanalZ \"z\";\n\nset LumaR \"none\";\nset LumaG \"none\";\nset LumaB \"none\";\nset LumaA \"none\";\nset LumaZ \"none\";\n\nknob this.Copy1.to0 \$LumaR;\nknob this.Copy1.to1 \$LumaG;\nknob this.Copy1.to2 \$LumaB;\nknob this.Copy1.to3 \$LumaA;\nknob this.Copy2.to0 \$LumaZ;\n\nif \{\$nCanales > 0\} \{\nset CanalR \[string range \$Canales 0 0];\n\}\nif \{\$nCanales > 1\} \{\nset CanalG \[string range \$Canales 1 1];\n\}\nif \{\$nCanales > 2\} \{\nset CanalB \[string range \$Canales 2 2];\n\}\nif \{\$nCanales > 3\} \{\nset CanalRGB \[string range \$Canales 0 2];\nset CanalA \[string range \$Canales 3 3];\n\}\nif \{\$nCanales > 4\} \{\nset CanalZ \[string range \$Canales 4 4];\n\}\n\nswitch \$CanalR \{\nz \{\nknob this.Shuffle1.red \"red2\";\n\}\nn \{\nappend RemoveCanales  \"red\";\nknob this.Shuffle1.red \"black\";\nknob this.Remove1.channels \$RemoveCanales;\n\}\nl \{\nset LumaR \"red\";\nknob this.Copy1.to0 \$LumaR;\n\}\n0 \{\nknob this.Shuffle1.red \"black\";\n\}\n1 \{\nknob this.Shuffle1.red \"white\";\n\}\ndefault \{\nknob this.Shuffle1.red \"r\";\nknob this.Shuffle1.red \$CanalR;\n\}\n\}\n\nswitch \$CanalG \{\nz \{\nknob this.Shuffle1.green \"red2\";\n\}\nn \{\nset RemoveCanales  \[value this.Remove1.channels];\nappend RemoveCanales \" green\";\nknob this.Shuffle1.green \"black\";\nknob this.Remove1.channels \$RemoveCanales;\n\}\nl \{\nset LumaG \"green\";\nknob this.Copy1.to1 \$LumaG;\n\}\n0 \{\nknob this.Shuffle1.green \"black\";\n\}\n1 \{\nknob this.Shuffle1.green \"white\";\n\}\ndefault \{\nknob this.Shuffle1.green \$CanalG;\n\}\n\}\n\nswitch \$CanalB \{\nz \{\nknob this.Shuffle1.blue \"red2\";\n\}\nn \{\nset RemoveCanales  \[value this.Remove1.channels];\nappend RemoveCanales \" blue\";\nknob this.Shuffle1.blue \"black\";\nknob this.Remove1.channels \$RemoveCanales;\n\}\nl \{\nset LumaB \"blue\";\nknob this.Copy1.to2 \$LumaB;\n\}\n0 \{\nknob this.Shuffle1.blue \"black\";\n\}\n1 \{\nknob this.Shuffle1.blue \"white\";\n\}\ndefault \{\nknob this.Shuffle1.blue \$CanalB;\n\}\n\}\n\n\nswitch \$CanalA \{\nz \{\nknob this.Shuffle1.alpha \"red2\";\n\}\nn \{\n  set RemoveCanales  \[value this.Remove1.channels];\n  append RemoveCanales \" alpha\";\n\n  if \{\$CanalRGB == \"nnn\"\} \{ \n  set RemoveCanales \"rgba\";\n  \}\n  knob this.Shuffle1.alpha \"black\";\n  knob this.Remove1.channels \$RemoveCanales;\n\n\}\nl \{\nset LumaA \"alpha\";\nknob this.Copy1.to3 \$LumaA;\n\}\n0 \{\nknob this.Shuffle1.alpha \"black\";\n\}\n1 \{\nknob this.Shuffle1.alpha \"white\";\n\}\ndefault \{\nknob this.Shuffle1.alpha \"a\";\nknob this.Shuffle1.alpha \$CanalA;\n\}\n\}\n\nswitch \$CanalZ \{\nz \{\nknob this.Shuffle2.red \"red2\";\n\}\nn \{\nknob this.Shuffle2.red \"black\";\nknob this.Remove1.channels2 \"depth\";\n\}\nl \{\nset LumaZ \"depth.Z\";\nknob this.Copy2.to0 \$LumaZ;\n\}\n0 \{\nknob this.Shuffle2.red \"black\";\n\}\n1 \{\nknob this.Shuffle2.red \"white\";\n\}\ndefault \{\nknob this.Shuffle2.red \"red2\";\nknob this.Shuffle2.red \$CanalZ;\n\}\n\}\n\n\nreturn 1]"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 41
+  ypos -141
+ }
+set N16ab7700 [stack 0]
+ Colorspace {
+  colorspace_in CIE-Lab
+  name Colorspace1
+  xpos -83
+  ypos -102
+ }
+set N198e4b00 [stack 0]
+push $N198e4b00
+push $N16ab7700
+ Shuffle {
+  in2 depth
+  black alpha
+  red2 red2
+  green2 blue
+  name Shuffle1
+  xpos 41
+  ypos -101
+ }
+ Shuffle {
+  in2 depth
+  red red2
+  green red
+  blue red
+  alpha red
+  black alpha
+  red2 red2
+  green2 blue
+  out depth
+  name Shuffle2
+  xpos 41
+  ypos -61
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  from1 rgba.red
+  from2 rgba.red
+  from3 rgba.red
+  name Copy1
+  xpos 41
+  ypos 21
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  name Copy2
+  xpos 41
+  ypos 90
+ }
+ Remove {
+  channels none
+  name Remove1
+  xpos 41
+  ypos 182
+ }
+ Output {
+  name Output1
+  xpos 41
+  ypos 278
+ }
+end_group

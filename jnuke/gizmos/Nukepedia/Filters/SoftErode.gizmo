@@ -1,0 +1,73 @@
+#! /Applications/Nuke5.1v5/Nuke5.1v5.app/Contents/MacOS/Nuke5.1v5 -nx
+version 5.1500
+Gizmo {
+ addUserKnob {20 BetterErode l "Better Erode"}
+ addUserKnob {7 size l "erode size" t "\t\t" R 0 10}
+ size 1
+ addUserKnob {41 mix T Mix.mix}
+}
+ Input {
+  inputs 0
+  name Input
+  xpos -424
+  ypos -248
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -424
+  ypos -218
+ }
+ Dot {
+  name Dot1
+  xpos -390
+  ypos -188
+ }
+set N16eb63b0 [stack 0]
+push $N16eb63b0
+ FilterErode {
+  channels alpha
+  size {{parent.size i}}
+  name FilterErode
+  xpos -314
+  ypos -200
+ }
+ Blur {
+  channels alpha
+  size {{parent.FilterErode.size*2 i}}
+  filter box
+  name Blur
+  xpos -314
+  ypos -160
+ }
+ ChannelMerge {
+  inputs 2
+  operation min
+  name ChannelMerge1
+  xpos -424
+  ypos -168
+ }
+push $N16eb63b0
+ Merge2 {
+  inputs 2
+  operation copy
+  name Mix
+  xpos -534
+  ypos -153
+ }
+ Premult {
+  name Premult
+  xpos -534
+  ypos -123
+ }
+ Output {
+  name Output
+  xpos -534
+  ypos -93
+ }
+ Viewer {
+  frame 2137075
+  name Viewer1
+  xpos -534
+  ypos -63
+ }
+end_group

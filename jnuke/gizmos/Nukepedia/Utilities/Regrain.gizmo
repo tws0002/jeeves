@@ -1,0 +1,161 @@
+#! /Applications/Nuke5.1v3/Nuke5.1v3.app/Contents/MacOS/Nuke5.1v3 -nx
+version 5.1300
+Gizmo {
+ inputs 2
+ help "This is to add real grain to an element aquired either through Furnace F_Degrain/grain pass, or with a grain sample.  Remember, when using Furnace F_Degrain to output uncompressed 32-bit exr frame sequences for grain output or else you won't get everything.\n\nTo use, simply start by sliding the overall intensity until the grain is where you want it overall, then you can adjust the individual grain channels as needed.\n\nThe Black Grain slider is for adjusting how much grain apears in the dark areas of your image."
+ addUserKnob {20 ReGrain_v01}
+ addUserKnob {26 "" l "Overall Controls"}
+ addUserKnob {41 gamma l "Overall Intensity" T Grade4.gamma}
+ addUserKnob {41 add l "Black Grain" T Grade4.add}
+ addUserKnob {20 Fine l "Fine Tune" n 1}
+ Fine 0
+ addUserKnob {41 Red l "Red Intensity" T RedMult.value}
+ addUserKnob {41 Green l "Green Intensity" T GreenMult.value}
+ addUserKnob {41 Blue l "Blue Intensity" T BlueMult.value}
+ addUserKnob {20 endGroup n -1}
+}
+ Input {
+  inputs 0
+  name Grain
+  xpos -428
+  ypos -269
+ }
+ Dot {
+  name Dot15
+  xpos -292
+  ypos -265
+ }
+set N23d2ae10 [stack 0]
+ Multiply {
+  channels {-rgba.red -rgba.green rgba.blue}
+  name BlueMult
+  xpos -326
+  ypos -243
+ }
+ Shuffle {
+  red black
+  green black
+  alpha black
+  name Shuffle1
+  xpos -326
+  ypos -204
+ }
+ Input {
+  inputs 0
+  name Plate
+  xpos 145
+  ypos -254
+  number 1
+ }
+set N23d32b10 [stack 0]
+ Grade {
+  white 1.01
+  multiply {{gamma*2}}
+  black_clamp false
+  name Grade4
+  xpos 145
+  ypos -193
+ }
+ Dot {
+  name Dot1
+  xpos 179
+  ypos -26
+ }
+ Dot {
+  name Dot2
+  xpos -234
+  ypos -26
+ }
+ Dot {
+  name Dot17
+  xpos -234
+  ypos -299
+ }
+set N23d3a690 [stack 0]
+ Merge2 {
+  inputs 2
+  operation in
+  Bchannels {-rgba.red -rgba.green -rgba.blue rgba.blue}
+  name Merge12
+  xpos -161
+  ypos -204
+ }
+ Dot {
+  name Dot3
+  xpos -24
+  ypos -200
+ }
+push 0
+push $N23d2ae10
+ Multiply {
+  channels {rgba.red -rgba.green -rgba.blue}
+  name RedMult
+  xpos -326
+  ypos -304
+ }
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name Shuffle3
+  xpos -326
+  ypos -352
+ }
+push $N23d3a690
+ Merge2 {
+  inputs 2
+  operation in
+  Bchannels {-rgba.red -rgba.green -rgba.blue rgba.red}
+  name Merge10
+  xpos -225
+  ypos -352
+ }
+push $N23d2ae10
+ Multiply {
+  channels {-rgba.red rgba.green -rgba.blue}
+  name GreenMult
+  xpos -203
+  ypos -275
+ }
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name Shuffle2
+  xpos -114
+  ypos -269
+ }
+push $N23d3a690
+ Merge2 {
+  inputs 2
+  operation in
+  Bchannels {-rgba.red -rgba.green -rgba.blue rgba.green}
+  name Merge11
+  xpos -114
+  ypos -324
+ }
+ Merge2 {
+  inputs 3+1
+  name Merge13
+  xpos 9
+  ypos -398
+ }
+push $N23d32b10
+ Merge2 {
+  inputs 2
+  name Merge14
+  xpos 9
+  ypos -254
+ }
+ Output {
+  name Output1
+  xpos 9
+  ypos -115
+ }
+ Viewer {
+  name Viewer1
+  selected true
+  xpos -326
+  ypos -177
+ }
+end_group

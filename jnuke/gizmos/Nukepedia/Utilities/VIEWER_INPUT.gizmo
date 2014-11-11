@@ -1,0 +1,31 @@
+#! /Applications/Nuke5.2v1/Nuke5.2v1.app/Contents/MacOS/Nuke5.2v1 -nx
+version 5.2100
+Gizmo {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 180
+  ypos -28
+ }
+ Truelight3 {
+  commands {greyValue{445,445,445}}
+  output_raw true
+  display monitor
+  display_file /Applications/Nuke5.2v1/Nuke5.2v1.app/Contents/MacOS/plugins/truelight3/displays/monitor
+  lamp internal-Xenon
+  printer_points {0 0 0}
+  brightness 1
+  white_u 0.1978
+  white_v 0.4683
+  name Truelight1
+  label "Truelight v3.0"
+  xpos 180
+  ypos 12
+ }
+ Output {
+  name Output1
+  xpos 180
+  ypos 112
+ }
+end_group

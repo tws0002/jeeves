@@ -1,0 +1,57 @@
+#! /Applications/Nuke5.1v2/Nuke5.1v2.app/Contents/MacOS/Nuke5.1v2 -nx
+version 5.1200
+Gizmo {
+ help "The settings are set pretty high when first opened. I suggest trying 'Overlay\" mode for more subtle results. \n\nThe HighPass_Intensity is based off a defocus - This is the overall sharpen. Higher amount will yield more sharpening.\n\nUse the HighPass_Radius to effect the amount of pixels you wish effect that radiate from an edge detail like hair or rock faces etc. \n\nNB: A lower Radius will have less effect on the overall image contrast - This is a more desireable approach\n\nQuality is the amount of defocus iterations, which in turn will increase the quality of sharping\n\nIf used correctly you can get some stunning results without \"tearing\" your image. This is a good method to sharpen without effecting the overall grain of your image in less detailed areas...\n\nThis is a first version: I'd like to hear any requests to shaneholloman@gmail.com - Cheers"
+ addUserKnob {20 HighPass}
+ addUserKnob {41 HighPass_Intensity l "HighPass Intensity" T Defocus1.defocus}
+ addUserKnob {41 HighPass_Radius l "HighPass Radius" T Defocus1.scale}
+ addUserKnob {41 Quality T Defocus1.quality}
+ addUserKnob {41 Method T Defocus1.method}
+ addUserKnob {26 ""}
+ addUserKnob {41 Mix_Amount l "Mix Amount" T Merge1.mix}
+ addUserKnob {41 Operation t "For a softer sharpen use overlay mode" T Merge1.operation}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" T "By Shane Holloman shaneholloman@gmail.com v.01 03/14/09"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -331
+  ypos -235
+ }
+set N274a6a00 [stack 0]
+push $N274a6a00
+ Invert {
+  name Invert1
+  xpos -462
+  ypos -129
+ }
+ Defocus {
+  defocus 300
+  scale 0.05
+  quality 100
+  fringe true
+  name Defocus1
+  xpos -462
+  ypos -74
+ }
+ Blend {
+  inputs 2
+  name Blend1
+  xpos -331
+  ypos -74
+ }
+push $N274a6a00
+ Merge2 {
+  inputs 2
+  operation hard-light
+  name Merge1
+  xpos -196
+  ypos -68
+ }
+ Output {
+  name Output1
+  xpos -196
+  ypos -2
+ }
+end_group

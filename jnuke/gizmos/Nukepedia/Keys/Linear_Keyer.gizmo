@@ -1,0 +1,297 @@
+#! /Applications/Nuke5.1v5/Nuke5.1v5.app/Contents/MacOS/Nuke5.1v5 -nx
+version 5.1500
+Gizmo {
+ addUserKnob {20 controls l User}
+ addUserKnob {41 channel l "R | G | B | L" T Switch1.which}
+ addUserKnob {7 redMix}
+ addUserKnob {7 greenMix}
+ addUserKnob {7 blueMix}
+ addUserKnob {7 loClip R -1 1}
+ addUserKnob {7 hiClip R 0 10}
+ hiClip 1
+ addUserKnob {7 bias R 0 5}
+ bias 1
+ addUserKnob {7 softness R 0 10}
+ addUserKnob {7 eatOut}
+ eatOut 1
+ addUserKnob {7 eatIn}
+ addUserKnob {41 invert T Invert1.disable}
+ addUserKnob {41 disable_1 l disable T Premult1.disable}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -380
+  ypos 254
+ }
+ NoOp {
+  name NoOp2
+  xpos -362
+  ypos 334
+ }
+set N1d69f240 [stack 0]
+ Saturation {
+  name Saturation1
+  xpos 71
+  ypos 498
+ }
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha red
+  name Shuffle1_nnnr1
+  xpos 89
+  ypos 615
+ }
+push $N1d69f240
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha blue
+  name Shuffle1_nnnb
+  xpos -8
+  ypos 407
+ }
+set N1d6972b0 [stack 0]
+push $N1d69f240
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha red
+  name Shuffle1_nnnr
+  xpos -538
+  ypos 455
+ }
+set N1d69a750 [stack 0]
+ Multiply {
+  value {{parent.redMix i} {parent.redMix i} {parent.redMix i} {parent.redMix i}}
+  name Multiply3
+  xpos -103
+  ypos 489
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge4
+  xpos -86
+  ypos 606
+ }
+push $N1d69f240
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha green
+  name Shuffle1_nnng
+  xpos -305
+  ypos 414
+ }
+set N1d68c9f0 [stack 0]
+ Multiply {
+  value {{parent.greenMix i} {parent.greenMix i} {parent.greenMix i} {parent.greenMix i}}
+  name Multiply5
+  xpos 16
+  ypos 701
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge7
+  xpos -99
+  ypos 747
+ }
+push $N1d68c9f0
+push $N1d69a750
+ Multiply {
+  value {{parent.redMix i}}
+  name Multiply2
+  xpos -275
+  ypos 490
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge3
+  xpos -285
+  ypos 624
+ }
+push $N1d6972b0
+ Multiply {
+  value {{parent.blueMix i} {parent.blueMix i} {parent.blueMix i} {parent.blueMix i}}
+  name Multiply6
+  xpos -168
+  ypos 639
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge6
+  xpos -268
+  ypos 720
+ }
+push $N1d69a750
+push $N1d68c9f0
+ Multiply {
+  value {{parent.greenMix i} {parent.greenMix i} {parent.greenMix i} {parent.greenMix i}}
+  name Multiply1
+  xpos -464
+  ypos 510
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  sRGB true
+  name Merge2
+  xpos -498
+  ypos 596
+ }
+push $N1d6972b0
+ Multiply {
+  value {{parent.blueMix i} {parent.blueMix i} {parent.blueMix i} {parent.blueMix i}}
+  name Multiply4
+  xpos -436
+  ypos 654
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge5
+  xpos -506
+  ypos 737
+ }
+ Switch {
+  inputs 4
+  which 1.95
+  name Switch1
+  xpos -332
+  ypos 780
+ }
+ Dot {
+  name Dot1
+  xpos -299
+  ypos 846
+ }
+ Colorspace {
+  colorspace_out HSV
+  bradford_matrix true
+  name Colorspace1
+  xpos -115
+  ypos 844
+ }
+ ColorLookup {
+  name ColorLookup3
+  xpos -115
+  ypos 869
+  addUserKnob {20 User}
+  addUserKnob {7 moveSTART}
+  moveSTART {{parent.loClip i}}
+  addUserKnob {3 controller}
+  controller {{"\[animation this.lut.alpha y 0 \[value this.moveSTART]]" i}}
+  addUserKnob {7 moveEND}
+  moveEND {{parent.hiClip i}}
+  addUserKnob {3 controller_1 l controller}
+  controller_1 {{"\[animation this.lut.alpha y 1 \[value this.moveEND]]" i}}
+ }
+ Gamma {
+  value {1 1 1 {parent.bias i}}
+  name Gamma1
+  xpos -115
+  ypos 894
+ }
+ Blur {
+  size {{parent.softness} {parent.softness}}
+  name Blur1
+  xpos -115
+  ypos 929
+ }
+ ColorLookup {
+  lut {master {}
+    red {}
+    green {}
+    blue {}
+    alpha {curve R 0 x0 0 x0.668 1 x1 1}}
+  name ColorLookup5
+  xpos -95
+  ypos 1004
+  addUserKnob {20 User}
+  addUserKnob {7 moveSTARTX}
+  moveSTARTX {{parent.eatIn i}}
+  addUserKnob {3 controller}
+  controller {{"\[animation this.lut.alpha x 1 \[value this.moveSTARTX]]" i}}
+  addUserKnob {7 moveENDX}
+  moveENDX {{parent.eatOut i}}
+  addUserKnob {3 controller_1 l controller}
+  controller_1 {{"\[animation this.lut.alpha y 2 \[value this.moveENDX]]" i}}
+ }
+ Clamp {
+  name Clamp1
+  xpos -95
+  ypos 1029
+ }
+push $N1d69f240
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy2
+  xpos -375
+  ypos 971
+ }
+ Invert {
+  channels alpha
+  name Invert1
+  xpos -393
+  ypos 1033
+ }
+ Premult {
+  channels rgba
+  name Premult1
+  xpos -356
+  ypos 1142
+  disable true
+ }
+set N23a4bbd0 [stack 0]
+ Output {
+  name Output1
+  xpos -255
+  ypos 1232
+ }
+ ColorLookup {
+  inputs 0
+  lut {master {}
+    red {}
+    green {curve R 0 x0.266848 0.234577179 x0.748098 0.7106964588 x1 1}
+    blue {}
+    alpha {}}
+  name ColorLookup4
+  xpos 154
+  ypos 785
+ }
+ ColorLookup {
+  inputs 0
+  lut {master {}
+    red {}
+    green {}
+    blue {}
+    alpha {curve 0 x0 0 x0.668 1 x1 1}}
+  name ColorLookup1
+  xpos -608
+  ypos 962
+  addUserKnob {20 User}
+  addUserKnob {7 moveSTARTX}
+  moveSTARTX {{parent.eatIn i}}
+  addUserKnob {3 controller}
+  controller {{"\[animation this.lut.alpha x 1 \[value this.moveSTARTX]]" i}}
+  addUserKnob {7 moveENDX}
+  moveENDX {{parent.eatOut i}}
+  addUserKnob {3 controller_1 l controller}
+  controller_1 {{"\[animation this.lut.alpha y 2 \[value this.moveENDX]]" i}}
+ }
+push $N23a4bbd0
+ Viewer {
+  name Viewer1
+  xpos -362
+  ypos 359
+ }
+end_group

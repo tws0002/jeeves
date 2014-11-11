@@ -1,0 +1,65 @@
+#! c:/Program Files/Nuke4.7v5/nuke4.7.exe -nx
+version 4.7500
+Gizmo {
+ inputs 1
+ addUserKnob {20 User}
+ addUserKnob {3 tileSize l "tile size"}
+ tileSize 100
+ addUserKnob {6 keepAspect l "keep aspect"}
+ addUserKnob {3 spacing}
+ addUserKnob {41 filter T STMap1.filter}
+ addUserKnob {41 full_format l format T Constant1.full_format}
+ addUserKnob {41 proxy_format l "proxy format" T Constant1.proxy_format}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos -257
+  ypos -254
+ }
+ Expression {
+  temp_name0 pa
+  temp_expr0 input.pixel_aspect
+  temp_name1 ia
+  temp_expr1 parent.keepAspect?pattern.width/pattern.height:1
+  channel0 {rgba.red -rgba.green -rgba.blue}
+  expr0 "x%(parent.tileSize+1+parent.spacing) /width*width/parent.tileSize"
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 "y%(parent.tileSize*pa+1+parent.spacing) / height/pa*height/parent.tileSize*ia"
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  name Expression2
+  selected true
+  xpos -257
+  ypos -173
+ }
+ Input {
+  inputs 0
+  name pattern
+  xpos -398
+  ypos -152
+ }
+ Transform {
+  center {25 25}
+  name Transform1
+  xpos -398
+  ypos -92
+ }
+ Dot {
+  name Dot1
+  xpos -364
+  ypos -44
+ }
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap1
+  xpos -257
+  ypos -55
+ }
+ Output {
+  name Output1
+  xpos -257
+  ypos 42
+ }
+end_group

@@ -1,0 +1,31 @@
+type cube
+resolution 4
+obj_type ""
+emitter_obj /job/FLAGS/DEVL/MODEL/char/man1/pr/obj/massive_parts/shirt_1.obj
+use_emitter false
+start 5
+stop 6
+emission_rate 80
+life_span 50
+size 3
+size_var 1
+size_seed 99998
+grow_for 2
+shrink_for 10
+fade_in_for 0
+fade_out_for 0
+speed 0.6
+speed_var 0.2
+speed_seed 99999
+inherit_velocity 0
+orientation 0 0 0
+local_rot 5 5 5
+rotation_var 1
+rotation_seed 99999
+spread_xz 180
+spread_yz 0
+spread_seed 99999
+gravity 0
+wind 0 0 0
+drag 0
+drag_falloff 2

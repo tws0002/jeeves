@@ -1,0 +1,184 @@
+#! /opt/D2Software/Nuke4/nuke4.5 -nx
+version 4.5003
+Gizmo {
+ inputs 2
+ addUserKnob { 20 "" "Lens Settings" } 
+ addUserKnob { 26 "" "@b;moggaLens" } 
+ addUserKnob { 6 alphaboolean "use alpha" } 
+ addUserKnob { 7 amount "lens amount" R 0 50 t "change the amount of distortion" } 
+ addUserKnob { 7 blur "lens blur" R 0 100 t "amount of lens blurring" } 
+ addUserKnob { 7 blursrc "blur input" R 0 50 t "blur the lens input to reduce noise" } 
+ addUserKnob { 7 tweak "uv tweak" R 0.1 20 t "problems? adjust this one..." } 
+ name moggaLens
+ tile_color 0x6d002e00
+ label "lens refraction"
+ note_font "Helvetica italics"
+ note_font_color 0xffcd0000
+ amount 1
+ blur 1
+ blursrc 1
+ tweak 2
+}
+ Input {
+  inputs 0
+  name Lens
+  xpos -104
+  ypos 96
+  number 1
+ }
+ Saturation {
+  saturation 0
+  name Saturation1
+  xpos -104
+  ypos 120
+ }
+ Blur {
+  channels rgb
+  size {{parent.blursrc}}
+  quality 25
+  mask -rgba.alpha
+  name Blur4
+  tile_color 0xc0cc0000
+  xpos -104
+  ypos 165
+ }
+set Na82671c0 [stack 0]
+ Dot {
+  name Dot29
+  tile_color 0x9597bf00
+  selected true
+  xpos -71
+  ypos 301
+ }
+push $Na82671c0
+ Dot {
+  name Dot23
+  tile_color 0x9597bf00
+  xpos -174
+  ypos 167
+ }
+set Na8272a98 [stack 0]
+ Matrix {
+  channels {rgba.red -rgba.green -rgba.blue}
+  matrix {
+      {0 1 0}
+      {0 -1 0}
+      {0 0 0}
+    }
+  name Matrix4
+  tile_color 0xcc804e00
+  label v
+  xpos -207
+  ypos 199
+ }
+push $Na8272a98
+ Matrix {
+  channels {rgba.red -rgba.green -rgba.blue}
+  matrix {
+      {0 0 0}
+      {0 -1 1}
+      {0 0 0}
+    }
+  name Matrix3
+  tile_color 0xcc804e00
+  label u
+  xpos -261
+  ypos 155
+ }
+ Input {
+  inputs 0
+  name Source
+  xpos -357
+  ypos 36
+ }
+set Na8274778 [stack 0]
+ Constant {
+  inputs 0
+  color 1
+  format "720 486 0 0 720 486 0.9 NTSC"
+  name Constant1
+  xpos -486
+  ypos -14
+ }
+ Reformat {
+  to_format false
+  to "720 486 0 0 720 486 0.9 NTSC"
+  to_box true
+  box_width {{parent.actual_format.width i}}
+  box_height {{parent.actual_format.height}}
+  name Reformat1
+  xpos -486
+  ypos 53
+ }
+ Switch {
+  inputs 2
+  which {{parent.alphaboolean}}
+  name Switch1
+  xpos -486
+  ypos 100
+ }
+push $Na8274778
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -357
+  ypos 95
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 uv.u
+  channels uv
+  name Copy12
+  tile_color 0x9e3c6300
+  xpos -357
+  ypos 155
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 uv.v
+  channels uv
+  name Copy11
+  tile_color 0x9e3c6300
+  xpos -357
+  ypos 199
+ }
+ Grade {
+  channels uv
+  whitepoint {{clamp(parent.tweak*.01,.001,1) i}}
+  name Grade15
+  tile_color 0x70001e00
+  xpos -357
+  ypos 243
+ }
+add_channel uv.blur
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 uv.blur
+  name Copy19
+  tile_color 0x68686800
+  xpos -357
+  ypos 294
+ }
+ IDistort {
+  channels rgb
+  uv uv
+  uv_scale {{parent.amount i}}
+  blur uv.blur
+  blur_scale {{parent.blur i}}
+  mask rgba.alpha
+  name IDistort4
+  tile_color 0x1c9c00
+  xpos -357
+  ypos 328
+ }
+ Output {
+  name Output
+  xpos -357
+  ypos 368
+ }
+end_group

@@ -1,0 +1,146 @@
+#! /Applications/Nuke5.1v3/Nuke5.1v3.app/Contents/MacOS/Nuke5.1v3 -nx
+version 5.1300
+Gizmo {
+ help "Allows a matte to be created by selecting a colour, with tolerance and softness. Similar to Photoshop's Channel Range tool when using min or mult as the tolerance mode.  Thanks to Roy Stelzer for making his Perlin Gain function available."
+ addUserKnob {20 User}
+ addUserKnob {41 in l channels T Shuffle1.in}
+ addUserKnob {18 Expression1_colour l colour}
+ Expression1_colour {0 0 0}
+ addUserKnob {41 tolerance T Expression1.falloff}
+ addUserKnob {4 tolerancemode l "tolerance mode" t "Controls how the channels are combined into a matte." M {Mult Min Max Rec709 Average "" "" ""}}
+ tolerancemode Min
+ addUserKnob {7 softness}
+ softness 1
+ addUserKnob {41 to0 l output T Copy1.to0}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -31
+  ypos -180
+ }
+set Ne5ca4f0 [stack 0]
+push $Ne5ca4f0
+ Shuffle {
+  in rgb
+  out rgb
+  name Shuffle1
+  xpos -141
+  ypos -130
+ }
+set Ne5cb9d0 [stack 0]
+ Expression {
+  temp_name0 whitepoint
+  temp_expr0 "max(colour.r, colour.g, colour.b)<=1?1:max(colour.r, colour.g, colour.b)"
+  expr0 "min(smoothstep(colour.r-tolerance, colour.r, r), whitepoint-smoothstep(colour.r, colour.r+tolerance, r))"
+  expr1 "min(smoothstep(colour.g-tolerance, colour.g, g), whitepoint-smoothstep(colour.g, colour.g+tolerance, g))"
+  expr2 "min(smoothstep(colour.b-tolerance, colour.b, b), whitepoint-smoothstep(colour.b, colour.b+tolerance, b))"
+  name Expression1
+  xpos -260
+  ypos -130
+  addUserKnob {20 User}
+  addUserKnob {7 falloff R 0 5}
+  falloff 0.1
+  addUserKnob {18 colour}
+  colour {{parent.Expression1_colour.r i} {parent.Expression1_colour.g i} {parent.Expression1_colour.b i}}
+ }
+set Ne5cef40 [stack 0]
+ Saturation {
+  saturation 0
+  mode Average
+  name Saturation2
+  label Average
+  xpos -199
+  ypos 150
+ }
+push $Ne5cef40
+ Saturation {
+  saturation 0
+  name Saturation1
+  label Rec709
+  xpos -260
+  ypos 104
+ }
+push $Ne5cef40
+ Expression {
+  expr0 max(r,g,b)
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  name Expression4
+  label "max\n"
+  xpos -319
+  ypos 64
+ }
+push $Ne5cef40
+ Expression {
+  expr0 min(r,g,b)
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  channel3 {none none none -rgba.alpha}
+  name Expression2
+  label min
+  xpos -382
+  ypos 17
+ }
+push $Ne5cef40
+ Expression {
+  expr0 r*g*b
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  channel3 {none none none -rgba.alpha}
+  name Expression3
+  label mult
+  xpos -454
+  ypos -21
+ }
+ Switch {
+  inputs 5
+  which {{tolerancemode i}}
+  name Switch1
+  xpos -406
+  ypos 302
+ }
+push $Ne5cb9d0
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.alpha
+  name Copy1
+  xpos -151
+  ypos 296
+ }
+ ShuffleCopy {
+  inputs 2
+  in rgb
+  red red
+  green green
+  blue blue
+  out rgb
+  name ShuffleCopy1
+  xpos -40
+  ypos 398
+ }
+ Expression {
+  temp_name1 lum
+  temp_expr1 a
+  temp_name2 val
+  temp_expr2 .5*((lum<.5)?((1-gain)>0?pow(2*lum,log(1-gain)/log(0.5)):0):2-((1-gain)>0?pow(2-2*lum,log(1-gain)/log(0.5)):0))
+  channel0 none
+  channel1 none
+  channel2 none
+  expr3 a>1?a:a*(val/(lum+0.00001))
+  name KPGain
+  tile_color 0xd47f3b00
+  label "TRUE GAIN\nFUNCTION"
+  xpos -40
+  ypos 445
+  addUserKnob {20 "" l User}
+  addUserKnob {7 gain}
+  gain {{1-(softness/2) i}}
+ }
+ Output {
+  name Output1
+  xpos -40
+  ypos 530
+ }
+end_group

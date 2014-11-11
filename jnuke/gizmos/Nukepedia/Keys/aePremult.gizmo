@@ -1,0 +1,87 @@
+###
+### dekekincaid@gmail.com
+### aePremult v1.0
+### Nuke 5.1v2
+### tested with 4.8 and it works fine
+###
+
+Gizmo {
+ name aePremult
+ help "This fixes the issue when your background color is anything other then black.\n\nJust pick whatever color the guys in 3d or matte painters gave you and Walla! the funky color fringe is now gone."
+ addUserKnob {20 aePremult}
+ addUserKnob {41 color T BG_COLOR.color}
+ addUserKnob {41 format T BG_COLOR.format}
+}
+ Input {
+  inputs 0
+  name Input1
+  selected true
+  xpos 388
+  ypos -21
+ }
+ Dot {
+  name Dot1
+  xpos 422
+  ypos 28
+ }
+set N18491b90 [stack 0]
+ Dot {
+  name Dot2
+  xpos 556
+  ypos 28
+ }
+push $N18491b90
+push $N18491b90
+ Invert {
+  channels rgba
+  name Invert1
+  xpos 304
+  ypos 24
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 0 0 0}
+  name BG_COLOR
+  xpos 245
+  ypos -69
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 245
+  ypos 61
+ }
+ Premult {
+  name Premult2
+  xpos 245
+  ypos 100
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos 388
+  ypos 100
+ }
+ Dot {
+  name Dot3
+  xpos 422
+  ypos 163
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 522
+  ypos 153
+ }
+ Output {
+  name Output1
+  xpos 522
+  ypos 248
+ }
+end_group

@@ -1,0 +1,274 @@
+#! /Applications/Nuke4.7v5/Nuke4.7v5.app/Contents/MacOS/../../Nuke4.7_ -nx
+version 4.7500
+Gizmo {
+ inputs 1
+ tile_color 0xff000000
+ label v.0.5
+ note_font Verdana
+ help "H_Random_blur v0.5:\n\nAllows you to make a random blur effect.\nIt is divided in 4 sections:\n\nRandomizer controls: allows you to control the amount of random, \nit's speed and origin of scale random.\n\nOperator controls: allows you to select type of blur and it's transform mode.\n\nBlur control: Allows you to give an min and max to limit the blur value.\n\nDefocus controls: allows you to control th eratio and scaling of defocus,\nit only works if you select defocus from the type of blur\n\nH_Random_blur by Hugo Guerra\n\nAny comments or bugs please send an email to: guerra@hugo-guerra.com\n\nPlease visit my website for more Nuke gizmos and to see my \nlatest works as a VFX Artist: \nwww.hugo-guerra.com\n"
+ addUserKnob {20 H_Random_blur}
+ addUserKnob {26 "" l "Randomizer controls"}
+ addUserKnob {7 amount l "Random Multiplier " R 0.1 100}
+ amount 1
+ addUserKnob {7 Speed R 0 100}
+ Speed 0.1
+ addUserKnob {6 Randomize}
+ addUserKnob {26 "" l "Operator Controls"}
+ addUserKnob {4 Type_blur l "Type of Blur" M {Blur Defocus}}
+ addUserKnob {4 blur_transfer_mode l "Blur Transfer Mode" M {None Screen "Plus (Add)" Multiply Overlay ""}}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "Blur controls"}
+ addUserKnob {7 blur_min l "Blur Min" R 0 100}
+ addUserKnob {7 blur_max l "Blur Max" R 0 100}
+ blur_max 5
+ addUserKnob {7 blur_opacity l "Blur Opacity"}
+ blur_opacity 1
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 ratio l "Defocus aspect ratio" T Defocus1.ratio}
+ addUserKnob {41 scale l "Defocus scaling blur" T Defocus1.scale}
+ addUserKnob {26 "" l ""}
+ addUserKnob {7 blur_boost l "Blur Boost" R 1 5}
+ blur_boost 1
+ addUserKnob {6 blur_boost_disable l "Blur Boost Disable"}
+ blur_boost_disable true
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "H_Random_blur v0.5"}
+}
+ BackdropNode {
+  inputs 0
+  name Blurs
+  label Blurs
+  note_font Verdana
+  xpos -443
+  ypos -655
+  bdwidth 986
+  bdheight 663
+ }
+ BackdropNode {
+  inputs 0
+  name Random_creators
+  tile_color 0xc66c2eff
+  label RandomCreation
+  note_font Verdana
+  xpos -658
+  ypos -650
+  bdwidth 208
+  bdheight 649
+ }
+ Group {
+  inputs 0
+  name RandomBlur
+  xpos -599
+  ypos -507
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  miny {{blur_min+Random.result}}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{blur_max+Random.result}}
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed+Random.result}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result: R 0 100}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount+Random.result}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Input {
+  inputs 0
+  name Input1
+  note_font Verdana
+  selected true
+  xpos -4
+  ypos -861
+ }
+ Dot {
+  name Dot2
+  xpos 30
+  ypos -609
+ }
+set N602fc60 [stack 0]
+ Dot {
+  name Dot1
+  note_font Verdana
+  xpos 466
+  ypos -163
+ }
+push $N602fc60
+ Defocus {
+  channels rgba
+  defocus {{RandomBlur.result}}
+  invert_mask {{disable_holdout}}
+  mix {{blur_opacity}}
+  name Defocus1
+  note_font Verdana
+  xpos -228
+  ypos -436
+ }
+push $N602fc60
+ Blur {
+  channels rgba
+  size {{RandomBlur.result}}
+  mix {{blur_opacity}}
+  name Blur
+  xpos -405
+  ypos -437
+ }
+ Switch {
+  inputs 2
+  which {{Type_blur}}
+  name type_of_blur
+  note_font Verdana
+  xpos -228
+  ypos -338
+  disable {{Disable_blurs}}
+ }
+ Grade {
+  channels rgba
+  multiply {{RandomBlurBoost.result*blur_boost}}
+  invert_mask {{disable_holdout}}
+  name blur_boost
+  note_font Verdana
+  xpos -228
+  ypos -226
+  disable {{blur_boost_disable}}
+ }
+set N60336c0 [stack 0]
+push $N602fc60
+ Merge2 {
+  inputs 2
+  operation overlay
+  also_merge all
+  name none4
+  note_font Verdana
+  xpos 331
+  ypos -166
+  disable {{Disable_blurs}}
+ }
+push $N60336c0
+push $N602fc60
+ Merge2 {
+  inputs 2
+  operation multiply
+  also_merge all
+  name none3
+  note_font Verdana
+  xpos 229
+  ypos -167
+  disable {{Disable_blurs}}
+ }
+push $N60336c0
+push $N602fc60
+ Merge2 {
+  inputs 2
+  operation plus
+  also_merge all
+  name none2
+  note_font Verdana
+  xpos 114
+  ypos -165
+  disable {{Disable_blurs}}
+ }
+push $N60336c0
+push $N602fc60
+ Merge2 {
+  inputs 2
+  operation screen
+  also_merge all
+  name none1
+  note_font Verdana
+  xpos -4
+  ypos -163
+  disable {{Disable_blurs}}
+ }
+push $N60336c0
+ Switch {
+  inputs 5
+  which {{blur_transfer_mode i}}
+  name transfer_mode_switch
+  note_font Verdana
+  xpos 78
+  ypos -88
+ }
+ Switch {
+  inputs 2
+  which {{Disable_blurs i}}
+  name disable_blurs
+  note_font Verdana
+  xpos 310
+  ypos -30
+ }
+ Output {
+  name Output1
+  note_font Verdana
+  xpos 310
+  ypos 117
+ }
+ Group {
+  inputs 0
+  name Random
+  xpos -807
+  ypos -385
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{Randomize}}
+  addUserKnob {7 speed R 0 10}
+  speed {{random(10)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result: R 0 100}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Group {
+  inputs 0
+  name RandomBlurBoost
+  xpos -593
+  ypos -195
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  miny 1
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy 2
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result:}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount+Random.result}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+end_group

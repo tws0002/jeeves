@@ -1,0 +1,2478 @@
+#! C:/Program Files/Nuke5.1v2/Nuke5.1.exe -nx
+version 5.1200
+add_layer {VRay_Lighting VRay_Lighting.red VRay_Lighting.green VRay_Lighting.blue}
+add_layer {VRay_GlobalIllumination VRay_GlobalIllumination.red VRay_GlobalIllumination.green VRay_GlobalIllumination.blue}
+add_layer {VRay_Refraction VRay_Refraction.red VRay_Refraction.green VRay_Refraction.blue}
+add_layer {VRay_Reflection VRay_Reflection.red VRay_Reflection.green VRay_Reflection.blue}
+add_layer {VRay_SelfIllumination VRay_SelfIllumination.red VRay_SelfIllumination.green VRay_SelfIllumination.blue}
+add_layer {VRay_Caustics VRay_Caustics.red VRay_Caustics.green VRay_Caustics.blue}
+add_layer {VRay_Specular VRay_Specular.red VRay_Specular.green VRay_Specular.blue}
+add_layer {VRay_Atmosphere VRay_Atmosphere.red VRay_Atmosphere.green VRay_Atmosphere.blue}
+add_layer {VRay_Background VRay_Background.red VRay_Background.green VRay_Background.blue}
+add_layer {VRay_Shadows VRay_Shadows.red VRay_Shadows.green VRay_Shadows.blue}
+Gizmo {
+ tile_color 0xff000000
+ label "10 pass\nv0.5"
+ help "These node allows you to reconstruct a VRay render out of 10 passes, with the option of CC, Glowing, Glare, Chroma Aberations  and mixing all individual 10 passes.\n\nThese gizmo was created for VRay 1.5 SP2, since the elements now have a diferent naming system.\n\nThese Gizmo wil only work with Nuke 4.7 and above. It works in Nuke 5.0v1 or Nuke 5.0v2.\n \nYou will need to make the render from the Frame Buffer of MAX with the \"Vrimg\" file option, these is the only way of having the file with all passes in a single file with all the channels. If you render the passes from Render Elements as seperate files, then use the \"H_3dsVRay10_Regroup\" Gizmo to regroup all the passes to one single stream.\n\nThe passes needed are:\n\n- GI\n- Light\n- Refraction (If you have any background seen tru a glass or translucide material)\n- Reflection\n- SelfIllumination (if you have any self lid or glowing material in the scene)\n- Caustics (If you have Caustics on in the render options)\n- Specular\n- Background (If any at all)\n- Atmosphere (If any at all)\n- Final Render\n\nPlease don't apply any tone/color mapping to the elements or you may have strange results in the composite, always try tone mapping in the end of compositing the passes.\n\nInfo:\n\nVRay Mixer Tab: Use it to change the amount or mix of all the passes, you can also multiply them here.\n\nVRay CC and FX Tab: Use it to CC and make FX's to any pass you want, also use the \"Output Preview\" pulldown menu to preview a specific pass to CC.\n\nAt any moment you can press \"Show\" (next to disable) in the node to open the original composite, these is used if you want to add, lets say for ex. a Glint to the specular before it is merged in. Beware that certan nodes in the comp have expressions to the main gizmo, so you may losse some conections if you change it too much.\n\n\"ChromaAbb\" gizmo created by Fredrik Averpil.\n\n\"Glare\" was not created by me, and since the FXShare post does not exist anymore, I don't know the original creator name, if you know these, please send me an email asp.\n\n\nAny coments: guerra@hugo-guerra.com"
+ addUserKnob {20 VRayMixer l "VRay Mixer"}
+ addUserKnob {26 "" l "Final RGB"}
+ addUserKnob {20 FinalRGBColorspace l "Final RGB Colorspace" n 1}
+ FinalRGBColorspace 0
+ addUserKnob {41 colorspace_in l in T Final_Colorspace.colorspace_in}
+ addUserKnob {41 illuminant_in l "" -STARTLINE T Final_Colorspace.illuminant_in}
+ addUserKnob {41 primary_in l "" -STARTLINE T Final_Colorspace.primary_in}
+ addUserKnob {41 colorspace_out l out T Final_Colorspace.colorspace_out}
+ addUserKnob {41 illuminant_out l "" -STARTLINE T Final_Colorspace.illuminant_out}
+ addUserKnob {41 primary_out l "" -STARTLINE T Final_Colorspace.primary_out}
+ addUserKnob {20 endGroup_29 l endGroup n -1}
+ addUserKnob {26 "" l "  "}
+ addUserKnob {20 ColorMatrix l "Color Matrix" n 1}
+ ColorMatrix 0
+ addUserKnob {41 bradford_matrix l "Bradford matrix" T Final_Colorspace.bradford_matrix}
+ addUserKnob {26 "" l "color matrix output"}
+ addUserKnob {41 colormatrix l "" -STARTLINE T Final_Colorspace.colormatrix}
+ addUserKnob {41 primary l "knob primary_in \$value; knob primary_out \$value" T Final_Colorspace.primary}
+ addUserKnob {41 illuminant l "knob illuminant_in \$value; knob illuminant_out \$value" T Final_Colorspace.illuminant}
+ addUserKnob {41 colorspace l "switch \$value RGB->YUV \{knob colorspace_in RGB; knob colorspace_out YUV\} YUV->RGB \{knob colorspace_in Yuv; knob colorspace_out RGB\} RGB->CIEXYZ \{knob colorspace_in RGB; knob colorspace_out CIE-XYZ\} CIEXYZ->RGB \{knob colorspace_in CIE-XYZ; knob colorspace_out RGB\} CIEXYZ->CIELab \{knob colorspace_in CIE-XYZ; knob colorspace_out CIE-Lab\} CIELab->CIEXYZ \{knob colorspace_in CIE-Lab; knob colorspace_out CIE-XYZ\} CIELab->CIELCH \{knob colorspace_in CIE-Lab; knob colorspace_out CIE-LCH\} CIELCH->CIELab \{knob colorspace_in CIE-LCH; knob colorspace_out CIE-Lab\} CIEYxy->CIEXYZ \{knob colorspace_in CIE-Yxy; knob colorspace_out CIE-XYZ\} CIEXYZ->CIEYxy \{knob colorspace_in CIE-XYZ; knob colorspace_out CIE-Yxy\} " T Final_Colorspace.colorspace}
+ addUserKnob {20 endGroup_30 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Light Pass"}
+ addUserKnob {6 Disable_Light l "Disable Light" -STARTLINE}
+ addUserKnob {20 LightOperation l "Light Operation" n 1}
+ LightOperation 0
+ addUserKnob {41 LigthPass l "Light Pass" T Shuffle_Light.in}
+ addUserKnob {41 Lightcolorspace l "Light colorspace" T Colorspace_Light.colorspace_in}
+ addUserKnob {41 Light_Blending_mode l "Blending mode" T Light_GI_Merge.operation}
+ addUserKnob {41 sRGB T Light_GI_Merge.sRGB}
+ addUserKnob {41 screen_alpha l "alpha masking" T Light_GI_Merge.screen_alpha}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {41 Light_Amount l "Light Amount" T Multiply_Light.value}
+ addUserKnob {26 "" l "GI Pass"}
+ addUserKnob {6 Disable_GI l "Disable GI" -STARTLINE}
+ addUserKnob {20 GI_op l "GI Operation" n 1}
+ GI_op 0
+ addUserKnob {41 GIPass l "GI Pass" T GI_Shuffle.in}
+ addUserKnob {41 GIcolorspace l "GI colorspace" T Colorspace_GI.colorspace_in}
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {41 GI_Amount l "GI Amount" T Multiply_GI.value}
+ addUserKnob {26 "" l "Refraction Pass"}
+ addUserKnob {6 Disable_Refractions l "Disable Refractions" -STARTLINE}
+ addUserKnob {20 RefractionOp l "Refraction operation" n 1}
+ RefractionOp 0
+ addUserKnob {41 RefractionPass l "Refraction Pass" T Shuffle_Refraction.in}
+ addUserKnob {41 Refractioncolorspace l "Refraction colorspace" T Colorspace_Refraction.colorspace_in}
+ addUserKnob {41 refraction_Blending_mode l "Blending mode" T Refraction_Merge.operation}
+ addUserKnob {41 sRGB_1 l sRGB T Refraction_Merge.sRGB}
+ addUserKnob {41 screen_alpha_1 l "alpha masking" T Refraction_Merge.screen_alpha}
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {41 Refraction_Amount l "Refraction Amount" T Multiply_Refraction.value}
+ addUserKnob {26 "" l "Reflection Pass"}
+ addUserKnob {6 Disable_Reflections l "Disable Reflections" -STARTLINE}
+ addUserKnob {20 ReflectionOp l "Reflection Operation" n 1}
+ ReflectionOp 0
+ addUserKnob {41 ReflectionPass l "Reflection Pass" T ShuffleReflection.in}
+ addUserKnob {41 Reflectioncolorspace l "Reflection colorspace" T Colorspace_Reflection.colorspace_in}
+ addUserKnob {41 Reflection_Blendingmode l "Blending mode" T Reflection_Merge.operation}
+ addUserKnob {41 sRGB_2 l sRGB T Reflection_Merge.sRGB}
+ addUserKnob {41 screen_alpha_2 l "alpha masking" T Reflection_Merge.screen_alpha}
+ addUserKnob {20 endGroup_7 l endGroup n -1}
+ addUserKnob {41 Reflections_Amount l "Reflections Amount" T Multiply_Reflection.value}
+ addUserKnob {26 "" l "SelfIlum Pass"}
+ addUserKnob {6 Disable_SelfIllumination l "Disable SelfIllumination" -STARTLINE}
+ addUserKnob {20 SelfIlumOp l "SelfIlum Operation" n 1}
+ SelfIlumOp 0
+ addUserKnob {41 SelfIlumPass l "SelfIlum Pass" T Shuffle_SelfIllumination.in}
+ addUserKnob {41 SelfIlumcolorspace l "SelfIlum colorspace" T Colorspace_SelfIlum.colorspace_in}
+ addUserKnob {41 SelIlum_Blending l "Blending mode" T SelfIllumination_Merge.operation}
+ addUserKnob {41 sRGB_3 l sRGB T SelfIllumination_Merge.sRGB}
+ addUserKnob {41 screen_alpha_3 l "alpha masking" T SelfIllumination_Merge.screen_alpha}
+ addUserKnob {20 endGroup_8 l endGroup n -1}
+ addUserKnob {41 SelfIllumination_Amount l "SelfIllum Amount" T Multiply_SelfIllumination.value}
+ addUserKnob {26 "" l "Caustic Pass"}
+ addUserKnob {6 Disable_Caustics l "Disable Caustics" -STARTLINE}
+ addUserKnob {20 CausticOp l "Caustic Operation" n 1}
+ CausticOp 0
+ addUserKnob {41 CausticPass l "Caustic Pass" T ShuffleCaustics.in}
+ addUserKnob {41 Causticcolorspace l "Caustic colorspace" T Colorspace_Caustics.colorspace_in}
+ addUserKnob {41 Caustic_Blending l "Blending mode" T Caustics_Merge.operation}
+ addUserKnob {41 sRGB_4 l sRGB T Caustics_Merge.sRGB}
+ addUserKnob {41 screen_alpha_4 l "alpha masking" T Caustics_Merge.screen_alpha}
+ addUserKnob {20 endGroup_9 l endGroup n -1}
+ addUserKnob {41 Caustics_Amount l "Caustics Amount" T Multiply_Caustics.value}
+ addUserKnob {26 "" l "Specular Pass"}
+ addUserKnob {6 Disable_Specular l "Disable Specular" -STARTLINE}
+ addUserKnob {20 SpecularOp l "Specular Operation" n 1}
+ SpecularOp 0
+ addUserKnob {41 SpecularPass l "Specular Pass" T ShuffleSpecular.in}
+ addUserKnob {41 Specularcolorspace l "Specular colorspace" T Colorspace_specular.colorspace_in}
+ addUserKnob {41 Specul_Blending l "Blending mode" T Specular_Merge.operation}
+ addUserKnob {41 sRGB_5 l sRGB T Specular_Merge.sRGB}
+ addUserKnob {41 screen_alpha_5 l "alpha masking" T Specular_Merge.screen_alpha}
+ addUserKnob {20 endGroup_10 l endGroup n -1}
+ addUserKnob {41 Specular_Amount l "Specular Amount" T Multiply_Specular.value}
+ addUserKnob {26 "" l "Atmosphere Pass"}
+ addUserKnob {6 Disable_Atmosphere l "Disable Atmosphere" -STARTLINE}
+ addUserKnob {20 AtmosphereOp l "Atmosphere Operation" n 1}
+ AtmosphereOp 0
+ addUserKnob {41 AtmospherePass l "Atmosphere Pass" T ShuffleAtmosphere.in}
+ addUserKnob {41 Atmospherecolorspace l "Atmosphere colorspace" T Colorspace_atmosphere.colorspace_in}
+ addUserKnob {41 Atmosphere_Blending l "Blending mode" T Merge_Atmosphere.operation}
+ addUserKnob {41 sRGB_6 l sRGB T Merge_Atmosphere.sRGB}
+ addUserKnob {41 screen_alpha_6 l "alpha masking" T Merge_Atmosphere.screen_alpha}
+ addUserKnob {20 endGroup_11 l endGroup n -1}
+ addUserKnob {41 Atmosphere_Amount l "Atmosphere Amount" T Multiply_Atmosphere.value}
+ addUserKnob {26 "" l "Background Pass"}
+ addUserKnob {6 Disable_Background l "Disable Background" -STARTLINE}
+ addUserKnob {20 BackgoundOp l "Background Operation" n 1}
+ BackgoundOp 0
+ addUserKnob {41 BackgroundPass l "Background Pass" T ShuffleBackground.in}
+ addUserKnob {41 Backcolorspace l "Back colorspace" T Colorspace_background.colorspace_in}
+ addUserKnob {41 Background_Blending l "Blending mode" T Background_Merge.operation}
+ addUserKnob {41 sRGB_8 l sRGB T Background_Merge.sRGB}
+ addUserKnob {20 endGroup_12 l endGroup n -1}
+ addUserKnob {41 Background_Amount l "Background Amount" T Multiply_Background.value}
+ addUserKnob {26 "" l "Shadow Pass"}
+ addUserKnob {6 DisableShadow l "Disable Shadow" -STARTLINE}
+ addUserKnob {20 ShadowOP l "Shadow Operations" n 1}
+ ShadowOP 0
+ addUserKnob {41 ShadowPass l "Shadow Pass" T Shuffle_shadow.in}
+ addUserKnob {41 shadowcolorspace l "Shadows Colorspace" T Colorspace_shadows.colorspace_in}
+ addUserKnob {41 Shadow_Blending l "Blending mode" T Merge_Shadows.operation}
+ addUserKnob {41 sRGB_7 l sRGB T Merge_Shadows.sRGB}
+ addUserKnob {41 screen_alpha_7 l "alpha masking" T Merge_Shadows.screen_alpha}
+ addUserKnob {20 endGroup_13 l endGroup n -1}
+ addUserKnob {7 ShadowAmount l "Shadow Amount" R 0 4}
+ ShadowAmount 1
+ addUserKnob {20 VRayCC l "VRay CC and FX"}
+ addUserKnob {4 Output l "Output Preview" M {FullRender GI Light Refraction Reflection SelfIllumination Caustics Specular Shadows Background Atmosphere}}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Global Ilumination"}
+ addUserKnob {20 GICC l "GI Color Correction" n 1}
+ GICC 0
+ addUserKnob {26 "" l "GI CC Master"}
+ addUserKnob {6 Disable_GICC l "Disable GI CC" -STARTLINE}
+ Disable_GICC true
+ addUserKnob {41 saturation T CC_GI.saturation}
+ addUserKnob {41 contrast_GI l contrast T CC_GI.contrast}
+ addUserKnob {41 gamma_GI l gamma T CC_GI.gamma}
+ addUserKnob {41 gain_GI l gain T CC_GI.gain}
+ addUserKnob {41 offset_GI l offset T CC_GI.offset}
+ addUserKnob {26 "" l "GI Shadows"}
+ addUserKnob {41 shadows.saturation_GI l saturation T CC_GI.shadows.saturation}
+ addUserKnob {41 shadows.contrast_GI l contrast T CC_GI.shadows.contrast}
+ addUserKnob {41 shadows.gamma_GI l gamma T CC_GI.shadows.gamma}
+ addUserKnob {41 shadows.gain_GI l gain T CC_GI.shadows.gain}
+ addUserKnob {41 shadows.offset_GI l offset T CC_GI.shadows.offset}
+ addUserKnob {26 "" l "GI Midtones"}
+ addUserKnob {41 midtones.saturation_GI l saturation T CC_GI.midtones.saturation}
+ addUserKnob {41 midtones.contrast_GI l contrast T CC_GI.midtones.contrast}
+ addUserKnob {41 midtones.gamma_GI l gamma T CC_GI.midtones.gamma}
+ addUserKnob {41 midtones.gain_GI l gain T CC_GI.midtones.gain}
+ addUserKnob {41 midtones.offset_GI l offset T CC_GI.midtones.offset}
+ addUserKnob {26 "" l "GI Highligths"}
+ addUserKnob {41 highlights.saturation_GI l saturation T CC_GI.highlights.saturation}
+ addUserKnob {41 highlights.contrast_GI l contrast T CC_GI.highlights.contrast}
+ addUserKnob {41 highlights.gamma_GI l gamma T CC_GI.highlights.gamma}
+ addUserKnob {41 highlights.gain_GI l gain T CC_GI.highlights.gain}
+ addUserKnob {41 highlights.offset_GI l offset T CC_GI.highlights.offset}
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+ addUserKnob {20 GIGlow l "GI Glow" n 1}
+ GIGlow 0
+ addUserKnob {6 Disable_GIGlow l "Disable GI Glow" -STARTLINE}
+ Disable_GIGlow true
+ addUserKnob {41 tint_GI l tint T Glow_GI.tint}
+ addUserKnob {41 tolerance_GI l tolerance T Glow_GI.tolerance}
+ addUserKnob {41 brightness_GI l brightness T Glow_GI.brightness}
+ addUserKnob {41 saturation_GI l saturation T Glow_GI.saturation}
+ addUserKnob {41 nonlinear_GI l "non linear" T Glow_GI.nonlinear}
+ addUserKnob {41 effect_only_GI l "effect only" T Glow_GI.effect_only}
+ addUserKnob {41 size_GI l size T Glow_GI.size}
+ addUserKnob {41 filter_GI l filter T Glow_GI.filter}
+ addUserKnob {41 quality_GI l "" -STARTLINE T Glow_GI.quality}
+ addUserKnob {41 crop_GI l "crop to format" T Glow_GI.crop}
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l Light}
+ addUserKnob {20 LightCC l "Light Color Correction" n 1}
+ LightCC 0
+ addUserKnob {26 "" l "Light CC Master"}
+ addUserKnob {6 Disable_LightCC l "Disable Light CC" -STARTLINE}
+ Disable_LightCC true
+ addUserKnob {41 saturation_Light l saturation T CC_Light.saturation}
+ addUserKnob {41 contrast_Light l contrast T CC_Light.contrast}
+ addUserKnob {41 gamma_Light l gamma T CC_Light.gamma}
+ addUserKnob {41 gain_Light l gain T CC_Light.gain}
+ addUserKnob {41 offset_Light l offset T CC_Light.offset}
+ addUserKnob {26 "" l "Light Shadows"}
+ addUserKnob {41 shadows.saturation_Light l saturation T CC_Light.shadows.saturation}
+ addUserKnob {41 shadows.contrast_Light l contrast T CC_Light.shadows.contrast}
+ addUserKnob {41 shadows.gamma_Light l gamma T CC_Light.shadows.gamma}
+ addUserKnob {41 shadows.gain_Light l gain T CC_Light.shadows.gain}
+ addUserKnob {41 shadows.offset_Light l offset T CC_Light.shadows.offset}
+ addUserKnob {26 "" l "Light Midtones"}
+ addUserKnob {41 midtones.saturation_Light l saturation T CC_Light.midtones.saturation}
+ addUserKnob {41 midtones.contrast_Light l contrast T CC_Light.midtones.contrast}
+ addUserKnob {41 midtones.gamma_Light l gamma T CC_Light.midtones.gamma}
+ addUserKnob {41 midtones.gain_Light l gain T CC_Light.midtones.gain}
+ addUserKnob {41 midtones.offset_Light l offset T CC_Light.midtones.offset}
+ addUserKnob {26 "" l "Light Highligths"}
+ addUserKnob {41 highlights.saturation_Light l saturation T CC_Light.highlights.saturation}
+ addUserKnob {41 highlights.contrast_Light l contrast T CC_Light.highlights.contrast}
+ addUserKnob {41 highlights.gamma_Light l gamma T CC_Light.highlights.gamma}
+ addUserKnob {41 highlights.gain_Light l gain T CC_Light.highlights.gain}
+ addUserKnob {41 highlights.offset_Light l offset T CC_Light.highlights.offset}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {20 LightGlow l "Light Glow" n 1}
+ LightGlow 0
+ addUserKnob {6 Disable_LightGlow l "Disable Light Glow" -STARTLINE}
+ Disable_LightGlow true
+ addUserKnob {41 tint_Light l tint T Glow_Light.tint}
+ addUserKnob {41 tolerance_Light l tolerance T Glow_Light.tolerance}
+ addUserKnob {41 brightness_Light l brightness T Glow_Light.brightness}
+ addUserKnob {41 saturation_Light_1 l saturation T Glow_Light.saturation}
+ addUserKnob {41 nonlinear_Light l "non linear" T Glow_Light.nonlinear}
+ addUserKnob {41 effect_only_Light l "effect only" T Glow_Light.effect_only}
+ addUserKnob {41 size_Light l size T Glow_Light.size}
+ addUserKnob {41 filter_Light l filter T Glow_Light.filter}
+ addUserKnob {41 quality_Light l "" -STARTLINE T Glow_Light.quality}
+ addUserKnob {41 crop_Light l "crop to format" T Glow_Light.crop}
+ addUserKnob {20 endGroup_14 l endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l Refraction}
+ addUserKnob {20 Refraction l "Refraction Color Correction" n 1}
+ Refraction 0
+ addUserKnob {26 "" l "Refraction CC Master"}
+ addUserKnob {6 Disable_RefractionCC l "Disable Refraction CC" -STARTLINE}
+ Disable_RefractionCC true
+ addUserKnob {41 saturation_Refraction l saturation T CC_Refraction.saturation}
+ addUserKnob {41 contrast_Refraction l contrast T CC_Refraction.contrast}
+ addUserKnob {41 gamma_Refraction l gamma T CC_Refraction.gamma}
+ addUserKnob {41 gain_Refraction l gain T CC_Refraction.gain}
+ addUserKnob {41 offset_Refraction l offset T CC_Refraction.offset}
+ addUserKnob {26 "" l "Refraction Shadows"}
+ addUserKnob {41 shadows.saturation_Refraction l saturation T CC_Refraction.shadows.saturation}
+ addUserKnob {41 shadows.contrast_Refraction l contrast T CC_Refraction.shadows.contrast}
+ addUserKnob {41 shadows.gamma_Refraction l gamma T CC_Refraction.shadows.gamma}
+ addUserKnob {41 shadows.gain_Refraction l gain T CC_Refraction.shadows.gain}
+ addUserKnob {41 shadows.offset_Refraction l offset T CC_Refraction.shadows.offset}
+ addUserKnob {26 "" l "Refraction Midtones"}
+ addUserKnob {41 midtones.saturation_Refraction l saturation T CC_Refraction.midtones.saturation}
+ addUserKnob {41 midtones.contrast_Refraction l contrast T CC_Refraction.midtones.contrast}
+ addUserKnob {41 midtones.gamma_Refraction l gamma T CC_Refraction.midtones.gamma}
+ addUserKnob {41 midtones.gain_Refraction l gain T CC_Refraction.midtones.gain}
+ addUserKnob {41 midtones.offset_Refraction l offset T CC_Refraction.midtones.offset}
+ addUserKnob {26 "" l "Refraction HighLights"}
+ addUserKnob {41 highlights.saturation_Refraction l saturation T CC_Refraction.highlights.saturation}
+ addUserKnob {41 highlights.contrast_Refraction l contrast T CC_Refraction.highlights.contrast}
+ addUserKnob {41 highlights.gamma_Refraction l gamma T CC_Refraction.highlights.gamma}
+ addUserKnob {41 highlights.gain_Refraction l gain T CC_Refraction.highlights.gain}
+ addUserKnob {41 highlights.offset_Refraction l offset T CC_Refraction.highlights.offset}
+ addUserKnob {20 endGroup_1_1 l endGroup n -1}
+ addUserKnob {20 RefractionGlow l "Refraction Glow" n 1}
+ RefractionGlow 0
+ addUserKnob {6 Disable_RefractionGlow l "Disable Refraction Glow" -STARTLINE}
+ Disable_RefractionGlow true
+ addUserKnob {41 tint_Refraction l tint T Glow_Refraction.tint}
+ addUserKnob {41 tolerance_Refraction l tolerance T Glow_Refraction.tolerance}
+ addUserKnob {41 brightness_Refraction l brightness T Glow_Refraction.brightness}
+ addUserKnob {41 saturation_Refraction_1 l saturation T Glow_Refraction.saturation}
+ addUserKnob {41 nonlinear_Refraction l "non linear" T Glow_Refraction.nonlinear}
+ addUserKnob {41 effect_only_Refraction l "effect only" T Glow_Refraction.effect_only}
+ addUserKnob {41 size_Refraction l size T Glow_Refraction.size}
+ addUserKnob {41 filter_Refraction l filter T Glow_Refraction.filter}
+ addUserKnob {41 quality_Refraction l "" -STARTLINE T Glow_Refraction.quality}
+ addUserKnob {41 crop_Refraction l "crop to format" T Glow_Refraction.crop}
+ addUserKnob {20 endGroup_15 l endGroup n -1}
+ addUserKnob {20 RefractionGlare l "Refraction Glare" n 1}
+ RefractionGlare 0
+ addUserKnob {6 disable_refraction_glare l "Disable Glare" -STARTLINE}
+ disable_refraction_glare true
+ addUserKnob {26 "" l "Glare Creation Options"}
+ addUserKnob {41 glaretol_1 l Tolerance T Glare_Refractions.glaretol}
+ addUserKnob {41 glaresize_1 l "Glare Size" T Glare_Refractions.glaresize}
+ addUserKnob {41 glareaspect_1 l Aspect T Glare_Refractions.glareaspect}
+ addUserKnob {41 nonlinear_2 l "Linear Glare" T Glare_Refractions.nonlinear}
+ addUserKnob {26 "" l "Chromatic Abberation Options"}
+ addUserKnob {41 glarespread_1 l "Chroma Spread" T Glare_Refractions.glarespread}
+ addUserKnob {41 Flare1_chroma_shift_1 l "Chroma Shift" T Glare_Refractions.Flare1_chroma_shift}
+ addUserKnob {41 Flare1_chroma_shift_angle_1 l "Chroma Shift Angle" T Glare_Refractions.Flare1_chroma_shift_angle}
+ addUserKnob {26 "" l "Multipoint Options"}
+ addUserKnob {41 Flare1_asym_repeat_1 l "Glare Points" T Glare_Refractions.Flare1_asym_repeat}
+ addUserKnob {41 Flare1_asym_falloff_1 l "Glare Point Falloff" T Glare_Refractions.Flare1_asym_falloff}
+ addUserKnob {41 Flare1_asym_angle_1 l "Glare Point Rotation" T Glare_Refractions.Flare1_asym_angle}
+ addUserKnob {26 "" l "Shape Options"}
+ addUserKnob {41 Flare1_corners_1 l "Shape Corners" T Glare_Refractions.Flare1_corners}
+ addUserKnob {41 Flare1_flattening_1 l "Shape Adherance" T Glare_Refractions.Flare1_flattening}
+ addUserKnob {41 Flare1_corners_angle_1 l "Shape Angle" T Glare_Refractions.Flare1_corners_angle}
+ addUserKnob {26 "" l "Color Options"}
+ addUserKnob {41 Grade1_multiply_1 l Mult T Glare_Refractions.Grade1_multiply}
+ addUserKnob {41 Grade1_gamma_1 l Gamma T Glare_Refractions.Grade1_gamma}
+ addUserKnob {41 Saturation1_saturation_1 l Saturation T Glare_Refractions.Saturation1_saturation}
+ addUserKnob {41 effect_only_2 l "Output Effect Only" T Glare_Refractions.effect_only}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Reflection Pass"}
+ addUserKnob {20 ReflectionCC l "Reflection Color Correction" n 1}
+ ReflectionCC 0
+ addUserKnob {26 "" l "Reflection CC Master"}
+ addUserKnob {6 Disable_ReflectionCC l "Disable Reflection CC" -STARTLINE}
+ Disable_ReflectionCC true
+ addUserKnob {41 saturation_Reflection l saturation T CC_Reflection.saturation}
+ addUserKnob {41 contrast_Reflection l contrast T CC_Reflection.contrast}
+ addUserKnob {41 gamma_Reflection l gamma T CC_Reflection.gamma}
+ addUserKnob {41 gain_Reflection l gain T CC_Reflection.gain}
+ addUserKnob {41 offset_Reflection l offset T CC_Reflection.offset}
+ addUserKnob {26 "" l "Reflection Shadows"}
+ addUserKnob {41 shadows.saturation_Reflection l saturation T CC_Reflection.shadows.saturation}
+ addUserKnob {41 shadows.contrast_Reflection l contrast T CC_Reflection.shadows.contrast}
+ addUserKnob {41 shadows.gamma_Reflection l gamma T CC_Reflection.shadows.gamma}
+ addUserKnob {41 shadows.gain_Reflection l gain T CC_Reflection.shadows.gain}
+ addUserKnob {41 shadows.offset_Reflection l offset T CC_Reflection.shadows.offset}
+ addUserKnob {26 "" l "Reflection Midtones"}
+ addUserKnob {41 midtones.saturation_Reflection l saturation T CC_Reflection.midtones.saturation}
+ addUserKnob {41 midtones.contrast_Reflection l contrast T CC_Reflection.midtones.contrast}
+ addUserKnob {41 midtones.gamma_Reflection l gamma T CC_Reflection.midtones.gamma}
+ addUserKnob {41 midtones.gain_Reflection l gain T CC_Reflection.midtones.gain}
+ addUserKnob {41 midtones.offset_Reflection l offset T CC_Reflection.midtones.offset}
+ addUserKnob {26 "" l "Reflection HighLights"}
+ addUserKnob {41 highlights.saturation_Reflection l saturation T CC_Reflection.highlights.saturation}
+ addUserKnob {41 highlights.contrast_Reflection l contrast T CC_Reflection.highlights.contrast}
+ addUserKnob {41 highlights.gamma_Reflection l gamma T CC_Reflection.highlights.gamma}
+ addUserKnob {41 highlights.gain_Reflection l gain T CC_Reflection.highlights.gain}
+ addUserKnob {41 highlights.offset_Reflection l offset T CC_Reflection.highlights.offset}
+ addUserKnob {20 endGroup_1_1_1 l endGroup n -1}
+ addUserKnob {20 ReflectionGlow l "Reflection Glow" n 1}
+ ReflectionGlow 0
+ addUserKnob {6 Disable_ReflectionGlow l "Disable Reflection Glow" -STARTLINE}
+ Disable_ReflectionGlow true
+ addUserKnob {41 tint_Reflection l tint T Glow_Reflection.tint}
+ addUserKnob {41 tolerance_Reflection l tolerance T Glow_Reflection.tolerance}
+ addUserKnob {41 brightness_Reflection l brightness T Glow_Reflection.brightness}
+ addUserKnob {41 saturation_Reflection_1 l saturation T Glow_Reflection.saturation}
+ addUserKnob {41 nonlinear_Reflection l "non linear" T Glow_Reflection.nonlinear}
+ addUserKnob {41 effect_only_Reflection l "effect only" T Glow_Reflection.effect_only}
+ addUserKnob {41 size_Reflection l size T Glow_Reflection.size}
+ addUserKnob {41 filter_Reflection l filter T Glow_Reflection.filter}
+ addUserKnob {41 quality_Reflection l "" -STARTLINE T Glow_Reflection.quality}
+ addUserKnob {41 crop_Reflection l "crop to format" T Glow_Reflection.crop}
+ addUserKnob {20 endGroup_16 l endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "SelfIlumination Pass"}
+ addUserKnob {20 SelfIlluminationCC l "SelfIllumination Color Correction" n 1}
+ SelfIlluminationCC 0
+ addUserKnob {26 "" l "SelfIllumination CC Master"}
+ addUserKnob {6 Disable_SelfIlluminationCC l "Disable SelfIllumination CC" -STARTLINE}
+ Disable_SelfIlluminationCC true
+ addUserKnob {41 saturation_SelfIllumination l saturation T CC_SelfIllumination.saturation}
+ addUserKnob {41 contrast_SelfIllumination l contrast T CC_SelfIllumination.contrast}
+ addUserKnob {41 gamma_SelfIllumination l gamma T CC_SelfIllumination.gamma}
+ addUserKnob {41 gain_SelfIllumination l gain T CC_SelfIllumination.gain}
+ addUserKnob {41 offset_SelfIllumination l offset T CC_SelfIllumination.offset}
+ addUserKnob {26 "" l "SelfIllumination Shadows"}
+ addUserKnob {41 shadows.saturation_SelfIllumination l saturation T CC_SelfIllumination.shadows.saturation}
+ addUserKnob {41 shadows.contrast_SelfIllumination l contrast T CC_SelfIllumination.shadows.contrast}
+ addUserKnob {41 shadows.gamma_SelfIllumination l gamma T CC_SelfIllumination.shadows.gamma}
+ addUserKnob {41 shadows.gain_SelfIllumination l gain T CC_SelfIllumination.shadows.gain}
+ addUserKnob {41 shadows.offset_SelfIllumination l offset T CC_SelfIllumination.shadows.offset}
+ addUserKnob {26 "" l "SelfIllumination Midtones"}
+ addUserKnob {41 midtones.saturation_SelfIllumination l saturation T CC_SelfIllumination.midtones.saturation}
+ addUserKnob {41 midtones.contrast_SelfIllumination l contrast T CC_SelfIllumination.midtones.contrast}
+ addUserKnob {41 midtones.gamma_SelfIllumination l gamma T CC_SelfIllumination.midtones.gamma}
+ addUserKnob {41 midtones.gain_SelfIllumination l gain T CC_SelfIllumination.midtones.gain}
+ addUserKnob {41 midtones.offset_SelfIllumination l offset T CC_SelfIllumination.midtones.offset}
+ addUserKnob {26 "" l "SelfIllumination HighLights"}
+ addUserKnob {41 highlights.saturation_SelfIllumination l saturation T CC_SelfIllumination.highlights.saturation}
+ addUserKnob {41 highlights.contrast_SelfIllumination l contrast T CC_SelfIllumination.highlights.contrast}
+ addUserKnob {41 highlights.gamma_SelfIllumination l gamma T CC_SelfIllumination.highlights.gamma}
+ addUserKnob {41 highlights.gain_SelfIllumination l gain T CC_SelfIllumination.highlights.gain}
+ addUserKnob {41 highlights.offset_SelfIllumination l offset T CC_SelfIllumination.highlights.offset}
+ addUserKnob {20 endGroup_1_1_1_1 l endGroup n -1}
+ addUserKnob {20 SelfIlluminationGlow l "SelfIllumination Glow" n 1}
+ SelfIlluminationGlow 0
+ addUserKnob {6 Disable_SelfIlluminationGlow l "Disable SelfIllumination Glow" -STARTLINE}
+ Disable_SelfIlluminationGlow true
+ addUserKnob {41 tint_SelfIllumination l tint T Glow_SelfIllumination.tint}
+ addUserKnob {41 tolerance_SelfIllumination l tolerance T Glow_SelfIllumination.tolerance}
+ addUserKnob {41 brightness_SelfIllumination l brightness T Glow_SelfIllumination.brightness}
+ addUserKnob {41 saturation_SelfIllumination_1 l saturation T Glow_SelfIllumination.saturation}
+ addUserKnob {41 nonlinear_SelfIllumination l "non linear" T Glow_SelfIllumination.nonlinear}
+ addUserKnob {41 effect_only_SelfIllumination l "effect only" T Glow_SelfIllumination.effect_only}
+ addUserKnob {41 size_SelfIllumination l size T Glow_SelfIllumination.size}
+ addUserKnob {41 filter_SelfIllumination l filter T Glow_SelfIllumination.filter}
+ addUserKnob {41 quality_SelfIllumination l "" -STARTLINE T Glow_SelfIllumination.quality}
+ addUserKnob {41 crop_SelfIllumination l "crop to format" T Glow_SelfIllumination.crop}
+ addUserKnob {20 endGroup_17 l endGroup n -1}
+ addUserKnob {20 SelfIluminationGlare l "SelfIlumination Glare" n 1}
+ SelfIluminationGlare 0
+ addUserKnob {6 DisableGlare l "Disable Glare" -STARTLINE}
+ DisableGlare true
+ addUserKnob {26 "" l "Glare Creation Options"}
+ addUserKnob {41 glaretol l Tolerance T Glare.glaretol}
+ addUserKnob {41 glaresize l "Glare Size" T Glare.glaresize}
+ addUserKnob {41 glareaspect l Aspect T Glare.glareaspect}
+ addUserKnob {41 nonlinear l "Linear Glare" T Glare.nonlinear}
+ addUserKnob {26 "" l "Chromatic Abberation Options"}
+ addUserKnob {41 glarespread l "Chroma Spread" T Glare.glarespread}
+ addUserKnob {41 Flare1_chroma_shift l "Chroma Shift" T Glare.Flare1_chroma_shift}
+ addUserKnob {41 Flare1_chroma_shift_angle l "Chroma Shift Angle" T Glare.Flare1_chroma_shift_angle}
+ addUserKnob {26 "" l "Multipoint Options"}
+ addUserKnob {41 Flare1_asym_repeat l "Glare Points" T Glare.Flare1_asym_repeat}
+ addUserKnob {41 Flare1_asym_falloff l "Glare Point Falloff" T Glare.Flare1_asym_falloff}
+ addUserKnob {41 Flare1_asym_angle l "Glare Point Rotation" T Glare.Flare1_asym_angle}
+ addUserKnob {26 "" l "Shape Options"}
+ addUserKnob {41 Flare1_corners l "Shape Corners" T Glare.Flare1_corners}
+ addUserKnob {41 Flare1_flattening l "Shape Adherance" T Glare.Flare1_flattening}
+ addUserKnob {41 Flare1_corners_angle l "Shape Angle" T Glare.Flare1_corners_angle}
+ addUserKnob {26 "" l "Color Options"}
+ addUserKnob {41 Grade1_multiply l Mult T Glare.Grade1_multiply}
+ addUserKnob {41 Grade1_gamma l Gamma T Glare.Grade1_gamma}
+ addUserKnob {41 Saturation1_saturation l Saturation T Glare.Saturation1_saturation}
+ addUserKnob {41 effect_only l "Output Effect Only" T Glare.effect_only}
+ addUserKnob {20 endGroup_22 l endGroup n -1}
+ addUserKnob {20 selfilumination_chromabb l "SelfIlumination Chroma Abberation" n 1}
+ selfilumination_chromabb 0
+ addUserKnob {6 disable_selfilumination_chromabb l "Disable ChromAbb" -STARTLINE}
+ disable_selfilumination_chromabb true
+ addUserKnob {26 "" l "Abberation settings"}
+ addUserKnob {41 red_abberation_2 l "red abberation" T ChromAbb_SelfIlum.red_abberation}
+ addUserKnob {41 green_abberation_2 l "green abberation" T ChromAbb_SelfIlum.green_abberation}
+ addUserKnob {41 blue_abberation_2 l "blue abberation" T ChromAbb_SelfIlum.blue_abberation}
+ addUserKnob {41 abberation_multiplier_2 l INVISIBLE T ChromAbb_SelfIlum.abberation_multiplier}
+ addUserKnob {41 red_blur_2 l "red blur" T ChromAbb_SelfIlum.red_blur}
+ addUserKnob {41 green_blur_2 l "green blur" T ChromAbb_SelfIlum.green_blur}
+ addUserKnob {41 blue_blur_2 l "blue blur" T ChromAbb_SelfIlum.blue_blur}
+ addUserKnob {20 endGroup_26 l endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Caustics Pass"}
+ addUserKnob {20 CausticsCC l "Caustics Color Correction" n 1}
+ CausticsCC 0
+ addUserKnob {26 "" l "Caustics CC"}
+ addUserKnob {6 Disable_CausticsCC l "Disable Caustics CC" -STARTLINE}
+ Disable_CausticsCC true
+ addUserKnob {41 saturation_Caustics l saturation T CC_Caustics.saturation}
+ addUserKnob {41 contrast_Caustics l contrast T CC_Caustics.contrast}
+ addUserKnob {41 gamma_Caustics l gamma T CC_Caustics.gamma}
+ addUserKnob {41 gain_Caustics l gain T CC_Caustics.gain}
+ addUserKnob {41 offset_Caustics l offset T CC_Caustics.offset}
+ addUserKnob {20 endGroup_Caustics l endGroup n -1}
+ addUserKnob {20 CausticsGlow l "Caustics Glow" n 1}
+ CausticsGlow 0
+ addUserKnob {6 Disable_CausticsGlow l "Disable Caustics Glow" -STARTLINE}
+ Disable_CausticsGlow true
+ addUserKnob {41 tint_Caustics l tint T Glow_Caustics.tint}
+ addUserKnob {41 tolerance_Caustics l tolerance T Glow_Caustics.tolerance}
+ addUserKnob {41 brightness_Caustics l brightness T Glow_Caustics.brightness}
+ addUserKnob {41 saturation_Caustics_1 l saturation T Glow_Caustics.saturation}
+ addUserKnob {41 nonlinear_Caustics l "non linear" T Glow_Caustics.nonlinear}
+ addUserKnob {41 effect_only_Caustics l "effect only" T Glow_Caustics.effect_only}
+ addUserKnob {41 size_Caustics l size T Glow_Caustics.size}
+ addUserKnob {41 filter_Caustics l filter T Glow_Caustics.filter}
+ addUserKnob {41 quality_Caustics l "" -STARTLINE T Glow_Caustics.quality}
+ addUserKnob {41 crop_Caustics l "crop to format" T Glow_Caustics.crop}
+ addUserKnob {20 endGroup_18 l endGroup n -1}
+ addUserKnob {20 CausticsAbb l "Caustics Chroma Aberration" n 1}
+ CausticsAbb 0
+ addUserKnob {6 disable_caustic_chroma_aberration l "Disable ChromAbb" -STARTLINE}
+ disable_caustic_chroma_aberration true
+ addUserKnob {26 "" l "Abberation settings"}
+ addUserKnob {41 red_abberation_3 l "red abberation" T ChromAbb.red_abberation}
+ addUserKnob {41 green_abberation_3 l "green abberation" T ChromAbb.green_abberation}
+ addUserKnob {41 blue_abberation_3 l "blue abberation" T ChromAbb.blue_abberation}
+ addUserKnob {41 abberation_multiplier_3 l INVISIBLE T ChromAbb.abberation_multiplier}
+ addUserKnob {41 red_blur_3 l "red blur" T ChromAbb.red_blur}
+ addUserKnob {41 green_blur_3 l "green blur" T ChromAbb.green_blur}
+ addUserKnob {41 blue_blur_3 l "blue blur" T ChromAbb.blue_blur}
+ addUserKnob {20 endGroup_27 l endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Specular Pass"}
+ addUserKnob {20 SpecularCC l "Specular Color Correction" n 1}
+ SpecularCC 0
+ addUserKnob {26 "" l "Specular CC Master"}
+ addUserKnob {6 Disable_SpecularCC l "Disable Specular CC" -STARTLINE}
+ Disable_SpecularCC true
+ addUserKnob {41 saturation_Specular l saturation T CC_Specular.saturation}
+ addUserKnob {41 contrast_Specular l contrast T CC_Specular.contrast}
+ addUserKnob {41 gamma_Specular l gamma T CC_Specular.gamma}
+ addUserKnob {41 gain_Specular l gain T CC_Specular.gain}
+ addUserKnob {41 offset_Specular l offset T CC_Specular.offset}
+ addUserKnob {20 endGroup_Specular l endGroup n -1}
+ addUserKnob {20 SpecularGlow l "Specular Glow" n 1}
+ SpecularGlow 0
+ addUserKnob {6 Disable_SpecularGlow l "Disable Specular Glow" -STARTLINE}
+ Disable_SpecularGlow true
+ addUserKnob {41 tint_Specular l tint T Glow_Specular.tint}
+ addUserKnob {41 tolerance_Specular l tolerance T Glow_Specular.tolerance}
+ addUserKnob {41 brightness_Specular l brightness T Glow_Specular.brightness}
+ addUserKnob {41 saturation_Specular_1 l saturation T Glow_Specular.saturation}
+ addUserKnob {41 nonlinear_Specular l "non linear" T Glow_Specular.nonlinear}
+ addUserKnob {41 effect_only_Specular l "effect only" T Glow_Specular.effect_only}
+ addUserKnob {41 size_Specular l size T Glow_Specular.size}
+ addUserKnob {41 filter_Specular l filter T Glow_Specular.filter}
+ addUserKnob {41 quality_Specular l "" -STARTLINE T Glow_Specular.quality}
+ addUserKnob {41 crop_Specular l "crop to format" T Glow_Specular.crop}
+ addUserKnob {20 endGroup_19 l endGroup n -1}
+ addUserKnob {20 SpecularGlare l "Specular Glare" n 1}
+ SpecularGlare 0
+ addUserKnob {6 disable_specular_glare l "Disable Glare" -STARTLINE}
+ disable_specular_glare true
+ addUserKnob {26 "" l "Glare Creation Options"}
+ addUserKnob {41 glaretol_2 l Tolerance T Glare_Specular.glaretol}
+ addUserKnob {41 glaresize_2 l "Glare Size" T Glare_Specular.glaresize}
+ addUserKnob {41 glareaspect_2 l Aspect T Glare_Specular.glareaspect}
+ addUserKnob {41 nonlinear_3 l "Linear Glare" T Glare_Specular.nonlinear}
+ addUserKnob {26 "" l "Chromatic Abberation Options"}
+ addUserKnob {41 glarespread_2 l "Chroma Spread" T Glare_Specular.glarespread}
+ addUserKnob {41 Flare1_chroma_shift_2 l "Chroma Shift" T Glare_Specular.Flare1_chroma_shift}
+ addUserKnob {41 Flare1_chroma_shift_angle_2 l "Chroma Shift Angle" T Glare_Specular.Flare1_chroma_shift_angle}
+ addUserKnob {26 "" l "Multipoint Options"}
+ addUserKnob {41 Flare1_asym_repeat_2 l "Glare Points" T Glare_Specular.Flare1_asym_repeat}
+ addUserKnob {41 Flare1_asym_falloff_2 l "Glare Point Falloff" T Glare_Specular.Flare1_asym_falloff}
+ addUserKnob {41 Flare1_asym_angle_2 l "Glare Point Rotation" T Glare_Specular.Flare1_asym_angle}
+ addUserKnob {26 "" l "Shape Options"}
+ addUserKnob {41 Flare1_corners_2 l "Shape Corners" T Glare_Specular.Flare1_corners}
+ addUserKnob {41 Flare1_flattening_2 l "Shape Adherance" T Glare_Specular.Flare1_flattening}
+ addUserKnob {41 Flare1_corners_angle_2 l "Shape Angle" T Glare_Specular.Flare1_corners_angle}
+ addUserKnob {26 "" l "Color Options"}
+ addUserKnob {41 Grade1_multiply_2 l Mult T Glare_Specular.Grade1_multiply}
+ addUserKnob {41 Grade1_gamma_2 l Gamma T Glare_Specular.Grade1_gamma}
+ addUserKnob {41 Saturation1_saturation_2 l Saturation T Glare_Specular.Saturation1_saturation}
+ addUserKnob {41 effect_only_3 l "Output Effect Only" T Glare_Specular.effect_only}
+ addUserKnob {20 endGroup_28 l endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Atmosphere Pass"}
+ addUserKnob {20 AtmosphereCC l "Atmosphere Color Correction" n 1}
+ AtmosphereCC 0
+ addUserKnob {26 "" l "Atmosphere CC Master"}
+ addUserKnob {6 Disable_AtmosphereCC l "Disable Atmosphere CC" -STARTLINE}
+ Disable_AtmosphereCC true
+ addUserKnob {41 saturation_Atmosphere l saturation T CC_Atmosphere.saturation}
+ addUserKnob {41 contrast_Atmosphere l contrast T CC_Atmosphere.contrast}
+ addUserKnob {41 gamma_Atmosphere l gamma T CC_Atmosphere.gamma}
+ addUserKnob {41 gain_Atmosphere l gain T CC_Atmosphere.gain}
+ addUserKnob {41 offset_Atmosphere l offset T CC_Atmosphere.offset}
+ addUserKnob {20 endGroup_1_1_1_2 l endGroup n -1}
+ addUserKnob {20 AtmosphereGlow l "Atmosphere Glow" n 1}
+ AtmosphereGlow 0
+ addUserKnob {6 Disable_AtmosphereGlow l "Disable Atmosphere Glow" -STARTLINE}
+ Disable_AtmosphereGlow true
+ addUserKnob {41 tint_Atmosphere l tint T Glow_Atmosphere.tint}
+ addUserKnob {41 tolerance_Atmosphere l tolerance T Glow_Atmosphere.tolerance}
+ addUserKnob {41 brightness_Atmosphere l brightness T Glow_Atmosphere.brightness}
+ addUserKnob {41 saturation_Atmosphere_1 l saturation T Glow_Atmosphere.saturation}
+ addUserKnob {41 nonlinear_Atmosphere l "non linear" T Glow_Atmosphere.nonlinear}
+ addUserKnob {41 effect_only_Atmosphere l "effect only" T Glow_Atmosphere.effect_only}
+ addUserKnob {41 size_Atmosphere l size T Glow_Atmosphere.size}
+ addUserKnob {41 filter_Atmosphere l filter T Glow_Atmosphere.filter}
+ addUserKnob {41 quality_Atmosphere l "" -STARTLINE T Glow_Atmosphere.quality}
+ addUserKnob {41 crop_Atmosphere l "crop to format" T Glow_Atmosphere.crop}
+ addUserKnob {20 endGroup_20 l endGroup n -1}
+ addUserKnob {20 "" n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l "Background Pass"}
+ addUserKnob {20 BackgroundCC l "Background Color Correction" n 1}
+ BackgroundCC 0
+ addUserKnob {26 "" l "Background CC Master"}
+ addUserKnob {6 Disable_BackgroundCC l "Disable Background CC" -STARTLINE}
+ Disable_BackgroundCC true
+ addUserKnob {41 saturation_Background l saturation T Background_CC.saturation}
+ addUserKnob {41 contrast_Background l contrast T Background_CC.contrast}
+ addUserKnob {41 gamma_Background l gamma T Background_CC.gamma}
+ addUserKnob {41 gain_Background l gain T Background_CC.gain}
+ addUserKnob {41 offset_Background l offset T Background_CC.offset}
+ addUserKnob {26 "" l "Background CC Shadows"}
+ addUserKnob {41 shadows.saturation_Background l saturation T Background_CC.shadows.saturation}
+ addUserKnob {41 shadows.contrast_Background l contrast T Background_CC.shadows.contrast}
+ addUserKnob {41 shadows.gamma_Background l gamma T Background_CC.shadows.gamma}
+ addUserKnob {41 shadows.gain_Background l gain T Background_CC.shadows.gain}
+ addUserKnob {41 shadows.offset_Background l offset T Background_CC.shadows.offset}
+ addUserKnob {26 "" l "Background CC Midtones"}
+ addUserKnob {41 midtones.saturation_Background l saturation T Background_CC.midtones.saturation}
+ addUserKnob {41 midtones.contrast_Background l contrast T Background_CC.midtones.contrast}
+ addUserKnob {41 midtones.gamma_Background l gamma T Background_CC.midtones.gamma}
+ addUserKnob {41 midtones.gain_Background l gain T Background_CC.midtones.gain}
+ addUserKnob {41 midtones.offset_Background l offset T Background_CC.midtones.offset}
+ addUserKnob {26 "" l "Background CC HighLights"}
+ addUserKnob {41 highlights.saturation_Background l saturation T Background_CC.highlights.saturation}
+ addUserKnob {41 highlights.contrast_Background l contrast T Background_CC.highlights.contrast}
+ addUserKnob {41 highlights.gamma_Background l gamma T Background_CC.highlights.gamma}
+ addUserKnob {41 highlights.gain_Background l gain T Background_CC.highlights.gain}
+ addUserKnob {41 highlights.offset_Background l offset T Background_CC.highlights.offset}
+ addUserKnob {20 endGroup_3_1 l endGroup n -1}
+ addUserKnob {20 BackgroundGlow l "Background Glow" n 1}
+ BackgroundGlow 0
+ addUserKnob {6 Disable_BackgroundGlow l "Disable Background Glow" -STARTLINE}
+ Disable_BackgroundGlow true
+ addUserKnob {41 tint_1 l tint T Background_Glow.tint}
+ addUserKnob {41 tolerance_1 l tolerance T Background_Glow.tolerance}
+ addUserKnob {41 brightness_1 l brightness T Background_Glow.brightness}
+ addUserKnob {41 saturation_2 l saturation T Background_Glow.saturation}
+ addUserKnob {41 nonlinear_1 l "non linear" T Background_Glow.nonlinear}
+ addUserKnob {41 effect_only_1 l "effect only" T Background_Glow.effect_only}
+ addUserKnob {41 size_1 l size T Background_Glow.size}
+ addUserKnob {41 filter_1 l filter T Background_Glow.filter}
+ addUserKnob {41 quality_1 l "" -STARTLINE T Background_Glow.quality}
+ addUserKnob {41 crop_1 l "crop to format" T Background_Glow.crop}
+ addUserKnob {20 endGroup_21 l endGroup n -1}
+}
+ BackdropNode {
+  inputs 0
+  name GI_backdrop
+  selected true
+  xpos 82
+  ypos -3207
+  bdwidth 385
+  bdheight 554
+ }
+ BackdropNode {
+  inputs 0
+  name LightBackdrop
+  selected true
+  xpos 513
+  ypos -3203
+  bdwidth 389
+  bdheight 542
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  label Shadow
+  selected true
+  xpos 957
+  ypos -3205
+  bdwidth 336
+  bdheight 614
+ }
+ BackdropNode {
+  inputs 0
+  name BackgroundBackdrop
+  label Background
+  selected true
+  xpos 3905
+  ypos -3209
+  bdwidth 344
+  bdheight 635
+ }
+ BackdropNode {
+  inputs 0
+  name Atmosphere_back
+  selected true
+  xpos 3469
+  ypos -3201
+  bdwidth 333
+  bdheight 637
+ }
+ BackdropNode {
+  inputs 0
+  name Specular_back
+  selected true
+  xpos 2989
+  ypos -3195
+  bdwidth 297
+  bdheight 615
+ }
+ BackdropNode {
+  inputs 0
+  name Caustics_back
+  selected true
+  xpos 2613
+  ypos -3197
+  bdwidth 301
+  bdheight 617
+ }
+ BackdropNode {
+  inputs 0
+  name SelfIllumination_back
+  selected true
+  xpos 2174
+  ypos -3192
+  bdwidth 301
+  bdheight 614
+ }
+ BackdropNode {
+  inputs 0
+  name Reflection_back
+  selected true
+  xpos 1777
+  ypos -3191
+  bdwidth 298
+  bdheight 612
+ }
+ BackdropNode {
+  inputs 0
+  name Refraction_back
+  selected true
+  xpos 1358
+  ypos -3198
+  bdwidth 324
+  bdheight 610
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  label Shadow_Switch
+  selected true
+  xpos 908
+  ypos -2507
+  bdwidth 334
+  bdheight 303
+ }
+ Input {
+  inputs 0
+  name Input1
+  selected true
+  xpos 2492
+  ypos -3556
+ }
+set Nbf49010 [stack 0]
+ Shuffle {
+  in VRay_Atmosphere
+  alpha black
+  name ShuffleAtmosphere
+  selected true
+  xpos 3542
+  ypos -3153
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove9
+  selected true
+  xpos 3542
+  ypos -3107
+ }
+ Colorspace {
+  name Colorspace_atmosphere
+  selected true
+  xpos 3541
+  ypos -3024
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Atmosphere
+  selected true
+  xpos 3541
+  ypos -2956
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_Atmosphere
+  selected true
+  xpos 3541
+  ypos -2878
+  disable {{Disable_AtmosphereCC}}
+ }
+ Glow {
+  channels rgba
+  name Glow_Atmosphere
+  selected true
+  xpos 3541
+  ypos -2809
+  disable {{Disable_AtmosphereGlow}}
+ }
+ Dot {
+  name Dot28
+  selected true
+  xpos 3576
+  ypos -2593
+ }
+set Nbf4ae20 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Background
+  alpha black
+  name ShuffleBackground
+  selected true
+  xpos 3988
+  ypos -3168
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove2
+  selected true
+  xpos 3988
+  ypos -3127
+ }
+ Remove {
+  channels rgba
+  name Remove13
+  selected true
+  xpos 3988
+  ypos -3078
+  disable {{Disable_Background-1}}
+ }
+ Colorspace {
+  name Colorspace_background
+  selected true
+  xpos 3988
+  ypos -3039
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Background
+  selected true
+  xpos 3988
+  ypos -2968
+ }
+ ColorCorrect {
+  channels rgba
+  name Background_CC
+  selected true
+  xpos 3988
+  ypos -2911
+  disable {{Disable_BackgroundCC}}
+ }
+ Glow {
+  channels rgba
+  brightness 0.5
+  name Background_Glow
+  selected true
+  xpos 3988
+  ypos -2839
+  disable {{Disable_BackgroundGlow}}
+ }
+ Dot {
+  name Dot18
+  selected true
+  xpos 4022
+  ypos -2616
+ }
+set N1425c0b0 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Shadows
+  alpha black
+  name Shuffle_shadow
+  selected true
+  xpos 1116
+  ypos -3158
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove10
+  selected true
+  xpos 1116
+  ypos -3111
+ }
+ Colorspace {
+  name Colorspace_shadows
+  selected true
+  xpos 1116
+  ypos -2992
+ }
+set N1425c7a0 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Specular
+  alpha black
+  name ShuffleSpecular
+  selected true
+  xpos 3062
+  ypos -3145
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove8
+  selected true
+  xpos 3062
+  ypos -3092
+ }
+ Colorspace {
+  name Colorspace_specular
+  selected true
+  xpos 3061
+  ypos -3002
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Specular
+  selected true
+  xpos 3061
+  ypos -2945
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_Specular
+  selected true
+  xpos 3061
+  ypos -2882
+  disable {{Disable_SpecularCC}}
+ }
+ Glow {
+  channels rgba
+  name Glow_Specular
+  selected true
+  xpos 3061
+  ypos -2834
+  disable {{Disable_SpecularGlow}}
+ }
+ Group {
+  name Glare_Specular
+  label v2.0
+  selected true
+  xpos 3061
+  ypos -2790
+  disable {{disable_specular_glare}}
+  addUserKnob {20 "" l User}
+  addUserKnob {26 "" l "Glare Creation Options"}
+  addUserKnob {7 glaretol l Tolerance}
+  addUserKnob {7 glaresize l "Glare Size" R 0 3}
+  glaresize 1
+  addUserKnob {7 glareaspect l Aspect R 0 2}
+  glareaspect 1
+  addUserKnob {6 nonlinear l "Linear Glare" -STARTLINE}
+  addUserKnob {26 "" l "Chromatic Abberation Options"}
+  addUserKnob {7 glarespread l "Chroma Spread" R 0 2}
+  glarespread 1
+  addUserKnob {7 Flare1_chroma_shift l "Chroma Shift" R -20 20}
+  addUserKnob {7 Flare1_chroma_shift_angle l "Chroma Shift Angle" R -180 180}
+  addUserKnob {26 "" l "Multipoint Options"}
+  addUserKnob {3 Flare1_asym_repeat l "Glare Points"}
+  addUserKnob {7 Flare1_asym_falloff l "Glare Point Falloff" R 0.1 10}
+  addUserKnob {7 Flare1_asym_angle l "Glare Point Rotation" R -180 180}
+  addUserKnob {26 "" l "Shape Options"}
+  addUserKnob {3 Flare1_corners l "Shape Corners"}
+  addUserKnob {7 Flare1_flattening l "Shape Adherance" R 0 5}
+  addUserKnob {7 Flare1_corners_angle l "Shape Angle" R -180 180}
+  addUserKnob {26 "" l "Color Options"}
+  addUserKnob {19 Grade1_multiply l Mult R 0 4}
+  Grade1_multiply 1
+  addUserKnob {19 Grade1_gamma l Gamma R 0.2 5}
+  Grade1_gamma 1
+  addUserKnob {7 Saturation1_saturation l Saturation R 0 4}
+  Saturation1_saturation 1
+  addUserKnob {6 effect_only l "Output Effect Only" -STARTLINE}
+ }
+  Constant {
+   inputs 0
+   format "100 100 0 0 100 100 1 Glare"
+   name Constant1
+   xpos 20
+   ypos 372
+  }
+  Flare {
+   position {50 50}
+   radius {8.26 28.26 48.26}
+   size_mult {{glaresize i}}
+   anamorph {{glareaspect i}}
+   inner_color 0.22
+   chroma_spread {{glarespread i}}
+   chroma_shift {{Flare1_chroma_shift i}}
+   chroma_shift_angle {{Flare1_chroma_shift_angle i}}
+   corners {{Flare1_corners==1?2:Flare1_corners i}}
+   flattening {{Flare1_flattening*5 i}}
+   sharpness 1
+   corners_angle {{Flare1_corners_angle i}}
+   asym_repeat {{Flare1_asym_repeat i}}
+   asym_multiplier {{asym_repeat==0?1:0 i}}
+   asym_falloff {{Flare1_asym_falloff i}}
+   asym_angle {{Flare1_asym_angle i}}
+   name Flare1
+   xpos 20
+   ypos 468
+   disable {{disable_specular_glare}}
+  }
+  Keyer {
+   operation "luminance key"
+   name Keyer2
+   tile_color 0xff0000
+   xpos 20
+   ypos 508
+  }
+  Transform {
+   scale {{glaresize/5 i} {w/glareaspect i}}
+   center {50 50}
+   name Transform1
+   xpos 20
+   ypos 561
+   disable {{disable_specular_glare}}
+  }
+  Input {
+   inputs 0
+   name img
+   xpos 560
+   ypos 215
+  }
+  Grade {
+   gamma 2.2
+   unpremult -rgba.alpha
+   name Grade2
+   tile_color 0x7aa9ff00
+   xpos 560
+   ypos 321
+   disable {{nonlinear}}
+  }
+  Dot {
+   name Dot1
+   xpos 594
+   ypos 394
+  }
+set N1425fcd0 [stack 0]
+  Transform {
+   scale 0.2
+   center {{input.width/2 i} {input.height/2 i}}
+   filter Parzen
+   name Transform2
+   xpos 383
+   ypos 390
+   disable {{disable_specular_glare}}
+  }
+  Keyer {
+   operation "luminance key"
+   range {{parent.glaretol i} 1 1 1}
+   name Keyer1
+   tile_color 0xff0000
+   xpos 200
+   ypos 377
+  }
+  Shuffle {
+   red alpha
+   green alpha
+   blue alpha
+   name Shuffle1
+   tile_color 0x9e3c6300
+   xpos 200
+   ypos 441
+  }
+  Convolve {
+   inputs 2
+   channels rgba
+   name Convolve1
+   xpos 200
+   ypos 561
+   disable {{disable_specular_glare}}
+  }
+  Grade {
+   multiply {{parent.Grade1_multiply.r i} {parent.Grade1_multiply.g i} {parent.Grade1_multiply.b i} {parent.Grade1_multiply.a i}}
+   add 0.035
+   gamma {{parent.Grade1_gamma.r i} {parent.Grade1_gamma.g i} {parent.Grade1_gamma.b i} {parent.Grade1_gamma.a i}}
+   unpremult rgba.alpha
+   name Grade1
+   tile_color 0x7aa9ff00
+   xpos 200
+   ypos 614
+  }
+  Saturation {
+   saturation {{parent.Saturation1_saturation}}
+   name Saturation1
+   tile_color 0x7aa9ff00
+   xpos 200
+   ypos 691
+  }
+  Transform {
+   scale 5
+   center {{input.width/2 i} {input.height/2 i}}
+   filter Parzen
+   name Transform3
+   xpos 380
+   ypos 691
+   disable {{disable_specular_glare}}
+  }
+  Crop {
+   box {{height-height} {height-height} {input.width} {input.height}}
+   name Crop1
+   selected true
+   xpos 380
+   ypos 718
+   disable {{disable_specular_glare}}
+  }
+set N1304ef70 [stack 0]
+push $N1304ef70
+push $N1425fcd0
+  Merge {
+   inputs 2
+   A {rgba.red rgba.green rgba.blue -rgba.alpha}
+   operation plus
+   name Merge1
+   tile_color 0x4b5ec600
+   xpos 560
+   ypos 691
+  }
+  Switch {
+   inputs 2
+   which {{effect_only i}}
+   name Switch1
+   xpos 560
+   ypos 751
+  }
+  Grade {
+   gamma 2.2
+   reverse true
+   unpremult -rgba.alpha
+   name Grade3
+   tile_color 0x7aa9ff00
+   xpos 560
+   ypos 797
+   disable {{nonlinear}}
+  }
+  Output {
+   name Output1
+   xpos 560
+   ypos 848
+  }
+ end_group
+ Dot {
+  name Dot27
+  selected true
+  xpos 3096
+  ypos -2614
+ }
+set N1304f8b0 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Caustics
+  alpha black
+  name ShuffleCaustics
+  selected true
+  xpos 2686
+  ypos -3158
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove7
+  selected true
+  xpos 2686
+  ypos -3109
+ }
+ Colorspace {
+  name Colorspace_Caustics
+  selected true
+  xpos 2685
+  ypos -3019
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Caustics
+  selected true
+  xpos 2685
+  ypos -2962
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_Caustics
+  selected true
+  xpos 2685
+  ypos -2890
+  disable {{Disable_CausticsCC}}
+ }
+ Glow {
+  channels rgba
+  name Glow_Caustics
+  selected true
+  xpos 2685
+  ypos -2836
+  disable {{Disable_CausticsGlow}}
+ }
+ Group {
+  name ChromAbb
+  label v2.0
+  selected true
+  xpos 2687
+  ypos -2758
+  help "Start by setting the red, green and blue abberation sliders to slightly different values. Then edit the coverage settings to set the area of the image to be affected."
+  disable {{disable_caustic_chroma_aberration}}
+  addUserKnob {20 "" l ChromAbb}
+  addUserKnob {26 "" l "Abberation settings"}
+  addUserKnob {7 red_abberation l "red abberation" t "Controls the abberation of the red channel" R 1 2}
+  red_abberation 1.04
+  addUserKnob {7 green_abberation l "green abberation" t "Controls the abberation of the green channel" R 1 2}
+  green_abberation 1.02
+  addUserKnob {7 blue_abberation l "blue abberation" t "Controls the abberation of the blue channel" R 1 2}
+  blue_abberation 1
+  addUserKnob {7 abberation_multiplier l INVISIBLE t "Increase r, g and b abberation proportionally" R 1 1.1}
+  addUserKnob {41 red_blur l "red blur" T Blur4.size}
+  addUserKnob {41 green_blur l "green blur" T Blur2.size}
+  addUserKnob {41 blue_blur l "blue blur" T Blur1.size}
+  addUserKnob {26 "" l "Coverage settings"}
+  addUserKnob {41 coverage_scale T TransformMasked1.scale}
+  addUserKnob {41 coverage_edge_blur l "coverage edge blur" T Blur3.size}
+  addUserKnob {41 coverage_softness l "coverage softness" T Radial1.softness}
+  addUserKnob {26 ""}
+  addUserKnob {41 from0 l mask T Copy1.from0}
+  addUserKnob {41 disable_1 l invert T Invert1.disable}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos 130
+   ypos -314
+  }
+set N130516c0 [stack 0]
+add_layer {abberation abberation.temp}
+  Radial {
+   output {-rgba.red -rgba.green -rgba.blue abberation.temp}
+   area {{height-height} {height-height} {width} {height}}
+   softness 0.5
+   name Radial1
+   xpos 130
+   ypos -190
+   disable {{disable_caustic_chroma_aberration}}
+  }
+  Blur {
+   channels abberation
+   size 100
+   name Blur3
+   xpos 130
+   ypos -150
+  }
+  TransformMasked {
+   channels abberation
+   translate {676 -2}
+   scale {{width-width+1}}
+   center {{width/2} {height/2}}
+   name TransformMasked1
+   xpos 130
+   ypos -70
+   disable {{disable_caustic_chroma_aberration}}
+  }
+  Crop {
+   box {{height-height} {height-height} {width} {height}}
+   name Crop2
+   xpos 130
+   ypos -19
+   disable {{disable_caustic_chroma_aberration}}
+  }
+set N13052000 [stack 0]
+  GodRays {
+   channels rgba
+   scale {{blue_abberation*coverage_scale}}
+   center {{width/2} {height/2}}
+   invert_mask true
+   name GodRays3
+   label blue
+   xpos 220
+   ypos 51
+   disable {{disable_caustic_chroma_aberration}}
+  }
+  Blur {
+   channels rgba
+   size 1
+   invert_mask true
+   name Blur1
+   label blue
+   xpos 220
+   ypos 105
+  }
+push $N13052000
+  GodRays {
+   channels rgba
+   scale {{red_abberation*coverage_scale}}
+   center {{width/2} {height/2}}
+   invert_mask true
+   name GodRays1
+   label red
+   xpos 38
+   ypos 55
+   disable {{disable_caustic_chroma_aberration}}
+  }
+  Blur {
+   channels rgba
+   size 1
+   invert_mask true
+   name Blur4
+   label red
+   xpos 38
+   ypos 109
+  }
+push $N13052000
+  GodRays {
+   channels rgba
+   scale {{green_abberation*coverage_scale}}
+   center {{width/2} {height/2}}
+   invert_mask true
+   name GodRays2
+   label green
+   xpos 130
+   ypos 53
+   disable {{disable_caustic_chroma_aberration}}
+  }
+  Blur {
+   channels rgba
+   size 1
+   invert_mask true
+   name Blur2
+   label green
+   xpos 130
+   ypos 107
+  }
+  ShuffleCopy {
+   inputs 2
+   red red
+   name ShuffleCopy1
+   xpos 79
+   ypos 176
+  }
+  ShuffleCopy {
+   inputs 2
+   blue blue
+   name ShuffleCopy2
+   xpos 178
+   ypos 217
+  }
+  Crop {
+   box {{height-height} {height-height} {width} {height}}
+   name Crop1
+   selected true
+   xpos 133
+   ypos 368
+   disable {{disable_caustic_chroma_aberration}}
+  }
+  Remove {
+   channels abberation
+   name Remove1
+   xpos 133
+   ypos 394
+  }
+set N13053e10 [stack 0]
+  Dot {
+   name Dot2
+   xpos 55
+   ypos 506
+  }
+push $N13053e10
+  Invert {
+   name Invert1
+   xpos 297
+   ypos 394
+  }
+push $N130516c0
+  Dot {
+   name Dot1
+   xpos 489
+   ypos 246
+  }
+  Copy {
+   inputs 2
+   to0 rgba.alpha
+   name Copy1
+   xpos 455
+   ypos 394
+  }
+push $N13053e10
+  Merge2 {
+   inputs 2
+   operation matte
+   name Merge1
+   xpos 133
+   ypos 545
+  }
+  Copy {
+   inputs 2
+   from0 rgba.alpha
+   to0 rgba.alpha
+   name Copy2
+   xpos 133
+   ypos 645
+  }
+  Output {
+   name Output1
+   xpos 133
+   ypos 818
+  }
+ end_group
+ Dot {
+  name Dot26
+  selected true
+  xpos 2720
+  ypos -2612
+ }
+set N13055090 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_SelfIllumination
+  alpha black
+  name Shuffle_SelfIllumination
+  selected true
+  xpos 2282
+  ypos -3157
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove6
+  selected true
+  xpos 2282
+  ypos -3114
+ }
+ Colorspace {
+  name Colorspace_SelfIlum
+  selected true
+  xpos 2281
+  ypos -3024
+ }
+ Multiply {
+  channels rgba
+  name Multiply_SelfIllumination
+  selected true
+  xpos 2281
+  ypos -2967
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_SelfIllumination
+  selected true
+  xpos 2281
+  ypos -2928
+  disable {{Disable_SelfIlluminationCC}}
+ }
+ Glow {
+  channels rgba
+  name Glow_SelfIllumination
+  selected true
+  xpos 2281
+  ypos -2863
+  disable {{Disable_SelfIlluminationGlow}}
+ }
+ Group {
+  name Glare
+  label v2.0
+  selected true
+  xpos 2281
+  ypos -2813
+  disable {{DisableGlare}}
+  addUserKnob {20 "" l User}
+  addUserKnob {26 "" l "Glare Creation Options"}
+  addUserKnob {7 glaretol l Tolerance}
+  glaretol 0.5
+  addUserKnob {7 glaresize l "Glare Size" R 0 3}
+  glaresize 1
+  addUserKnob {7 glareaspect l Aspect R 0 2}
+  glareaspect 1
+  addUserKnob {6 nonlinear l "Linear Glare" -STARTLINE}
+  addUserKnob {26 "" l "Chromatic Abberation Options"}
+  addUserKnob {7 glarespread l "Chroma Spread" R 0 2}
+  glarespread 1
+  addUserKnob {7 Flare1_chroma_shift l "Chroma Shift" R -20 20}
+  addUserKnob {7 Flare1_chroma_shift_angle l "Chroma Shift Angle" R -180 180}
+  addUserKnob {26 "" l "Multipoint Options"}
+  addUserKnob {3 Flare1_asym_repeat l "Glare Points"}
+  addUserKnob {7 Flare1_asym_falloff l "Glare Point Falloff" R 0.1 10}
+  addUserKnob {7 Flare1_asym_angle l "Glare Point Rotation" R -180 180}
+  addUserKnob {26 "" l "Shape Options"}
+  addUserKnob {3 Flare1_corners l "Shape Corners"}
+  addUserKnob {7 Flare1_flattening l "Shape Adherance" R 0 5}
+  addUserKnob {7 Flare1_corners_angle l "Shape Angle" R -180 180}
+  addUserKnob {26 "" l "Color Options"}
+  addUserKnob {19 Grade1_multiply l Mult R 0 4}
+  Grade1_multiply 1
+  addUserKnob {19 Grade1_gamma l Gamma R 0.2 5}
+  Grade1_gamma 1
+  addUserKnob {7 Saturation1_saturation l Saturation R 0 4}
+  Saturation1_saturation 1
+  addUserKnob {6 effect_only l "Output Effect Only" -STARTLINE}
+ }
+  Constant {
+   inputs 0
+   format "100 100 0 0 100 100 1 Glare"
+   name Constant1
+   xpos 20
+   ypos 372
+  }
+  Flare {
+   position {50 50}
+   radius {8.26 28.26 48.26}
+   size_mult {{glaresize i}}
+   anamorph {{glareaspect i}}
+   inner_color 0.22
+   chroma_spread {{glarespread i}}
+   chroma_shift {{Flare1_chroma_shift i}}
+   chroma_shift_angle {{Flare1_chroma_shift_angle i}}
+   corners {{Flare1_corners==1?2:Flare1_corners i}}
+   flattening {{Flare1_flattening*5 i}}
+   sharpness 1
+   corners_angle {{Flare1_corners_angle i}}
+   asym_repeat {{Flare1_asym_repeat i}}
+   asym_multiplier {{asym_repeat==0?1:0 i}}
+   asym_falloff {{Flare1_asym_falloff i}}
+   asym_angle {{Flare1_asym_angle i}}
+   name Flare1
+   xpos 20
+   ypos 468
+   disable {{DisableGlare}}
+  }
+  Keyer {
+   operation "luminance key"
+   name Keyer2
+   tile_color 0xff0000
+   xpos 20
+   ypos 508
+  }
+  Transform {
+   scale {{glaresize/5 i} {w/glareaspect i}}
+   center {50 50}
+   name Transform1
+   xpos 20
+   ypos 561
+   disable {{DisableGlare}}
+  }
+  Input {
+   inputs 0
+   name img
+   xpos 560
+   ypos 215
+  }
+  Grade {
+   gamma 2.2
+   unpremult -rgba.alpha
+   name Grade2
+   tile_color 0x7aa9ff00
+   xpos 560
+   ypos 321
+   disable {{nonlinear}}
+  }
+  Dot {
+   name Dot1
+   xpos 594
+   ypos 394
+  }
+set N12fe5d50 [stack 0]
+  Transform {
+   scale 0.2
+   center {{input.width/2} {input.height/2}}
+   filter Parzen
+   name Transform2
+   xpos 383
+   ypos 390
+   disable {{DisableGlare}}
+  }
+  Keyer {
+   operation "luminance key"
+   range {{parent.glaretol i} 1 1 1}
+   name Keyer1
+   tile_color 0xff0000
+   xpos 200
+   ypos 377
+  }
+  Shuffle {
+   red alpha
+   green alpha
+   blue alpha
+   name Shuffle1
+   tile_color 0x9e3c6300
+   xpos 200
+   ypos 441
+  }
+  Convolve {
+   inputs 2
+   channels rgba
+   name Convolve1
+   xpos 200
+   ypos 561
+   disable {{DisableGlare}}
+  }
+  Grade {
+   multiply {{parent.Grade1_multiply.r i} {parent.Grade1_multiply.g i} {parent.Grade1_multiply.b i} {parent.Grade1_multiply.a i}}
+   add 0.035
+   gamma {{parent.Grade1_gamma.r i} {parent.Grade1_gamma.g i} {parent.Grade1_gamma.b i} {parent.Grade1_gamma.a i}}
+   unpremult rgba.alpha
+   name Grade1
+   tile_color 0x7aa9ff00
+   xpos 200
+   ypos 614
+  }
+  Saturation {
+   saturation {{parent.Saturation1_saturation}}
+   name Saturation1
+   tile_color 0x7aa9ff00
+   xpos 200
+   ypos 691
+  }
+  Transform {
+   scale 5
+   center {{input.width/2 i} {input.height/2 i}}
+   filter Parzen
+   name Transform3
+   xpos 380
+   ypos 691
+   disable {{DisableGlare}}
+  }
+  Crop {
+   box {{height-height} {height-height} {input.width} {input.height}}
+   name Crop1
+   selected true
+   xpos 380
+   ypos 718
+   disable {{DisableGlare}}
+  }
+set N12fe6fd0 [stack 0]
+push $N12fe6fd0
+push $N12fe5d50
+  Merge {
+   inputs 2
+   A {rgba.red rgba.green rgba.blue -rgba.alpha}
+   operation plus
+   name Merge1
+   tile_color 0x4b5ec600
+   xpos 560
+   ypos 691
+  }
+  Switch {
+   inputs 2
+   which {{effect_only i}}
+   name Switch1
+   xpos 560
+   ypos 751
+  }
+  Grade {
+   gamma 2.2
+   reverse true
+   unpremult -rgba.alpha
+   name Grade3
+   tile_color 0x7aa9ff00
+   xpos 560
+   ypos 797
+   disable {{nonlinear}}
+  }
+  Output {
+   name Output1
+   xpos 560
+   ypos 848
+  }
+ end_group
+ Group {
+  name ChromAbb_SelfIlum
+  label v2.0
+  selected true
+  xpos 2281
+  ypos -2731
+  help "Start by setting the red, green and blue abberation sliders to slightly different values. Then edit the coverage settings to set the area of the image to be affected."
+  disable {{disable_selfilumination_chromabb}}
+  addUserKnob {20 "" l ChromAbb}
+  addUserKnob {26 "" l "Abberation settings"}
+  addUserKnob {7 red_abberation l "red abberation" t "Controls the abberation of the red channel" R 1 2}
+  red_abberation 1.04
+  addUserKnob {7 green_abberation l "green abberation" t "Controls the abberation of the green channel" R 1 2}
+  green_abberation 1.02
+  addUserKnob {7 blue_abberation l "blue abberation" t "Controls the abberation of the blue channel" R 1 2}
+  blue_abberation 1
+  addUserKnob {7 abberation_multiplier l INVISIBLE t "Increase r, g and b abberation proportionally" R 1 1.1}
+  addUserKnob {41 red_blur l "red blur" T Blur4.size}
+  addUserKnob {41 green_blur l "green blur" T Blur2.size}
+  addUserKnob {41 blue_blur l "blue blur" T Blur1.size}
+  addUserKnob {26 "" l "Coverage settings"}
+  addUserKnob {41 coverage_scale T TransformMasked1.scale}
+  addUserKnob {41 coverage_edge_blur l "coverage edge blur" T Blur3.size}
+  addUserKnob {41 coverage_softness l "coverage softness" T Radial1.softness}
+  addUserKnob {26 ""}
+  addUserKnob {41 from0 l mask T Copy1.from0}
+  addUserKnob {41 disable_1 l invert T Invert1.disable}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos 130
+   ypos -314
+  }
+set N12fe7910 [stack 0]
+  Radial {
+   output {-rgba.red -rgba.green -rgba.blue abberation.temp}
+   area {{height-height} {height-height} {width} {height}}
+   softness 0.5
+   name Radial1
+   xpos 130
+   ypos -190
+   disable {{disable_selfilumination_chromabb}}
+  }
+  Blur {
+   channels abberation
+   size 100
+   name Blur3
+   xpos 130
+   ypos -150
+  }
+  TransformMasked {
+   channels abberation
+   translate {0.5 0}
+   scale {{width-width+1}}
+   center {{width/2} {height/2}}
+   name TransformMasked1
+   xpos 130
+   ypos -70
+   disable {{disable_selfilumination_chromabb}}
+  }
+  Crop {
+   box {{height-height} {height-height} {width} {height}}
+   name Crop2
+   xpos 130
+   ypos -19
+   disable {{disable_selfilumination_chromabb}}
+  }
+set N12fe8250 [stack 0]
+  GodRays {
+   channels rgba
+   scale {{blue_abberation*coverage_scale}}
+   center {{width/2} {height/2}}
+   invert_mask true
+   name GodRays3
+   label blue
+   xpos 220
+   ypos 51
+   disable {{disable_selfilumination_chromabb}}
+  }
+  Blur {
+   channels rgba
+   size 1
+   invert_mask true
+   name Blur1
+   label blue
+   xpos 220
+   ypos 105
+  }
+push $N12fe8250
+  GodRays {
+   channels rgba
+   scale {{red_abberation*coverage_scale}}
+   center {{width/2} {height/2}}
+   invert_mask true
+   name GodRays1
+   label red
+   xpos 38
+   ypos 55
+   disable {{disable_selfilumination_chromabb}}
+  }
+  Blur {
+   channels rgba
+   size 1
+   invert_mask true
+   name Blur4
+   label red
+   xpos 38
+   ypos 109
+  }
+push $N12fe8250
+  GodRays {
+   channels rgba
+   scale {{green_abberation*coverage_scale}}
+   center {{width/2} {height/2}}
+   invert_mask true
+   name GodRays2
+   label green
+   xpos 130
+   ypos 53
+   disable {{disable_selfilumination_chromabb}}
+  }
+  Blur {
+   channels rgba
+   size 1
+   invert_mask true
+   name Blur2
+   label green
+   xpos 130
+   ypos 107
+  }
+  ShuffleCopy {
+   inputs 2
+   red red
+   name ShuffleCopy1
+   xpos 79
+   ypos 176
+  }
+  ShuffleCopy {
+   inputs 2
+   blue blue
+   name ShuffleCopy2
+   xpos 178
+   ypos 217
+  }
+  Crop {
+   box {{height-height} {height-height} {width} {height}}
+   name Crop1
+   selected true
+   xpos 133
+   ypos 368
+   disable {{disable_selfilumination_chromabb}}
+  }
+  Remove {
+   channels abberation
+   name Remove1
+   xpos 133
+   ypos 394
+  }
+set N12fea060 [stack 0]
+  Dot {
+   name Dot2
+   xpos 55
+   ypos 506
+  }
+push $N12fea060
+  Invert {
+   name Invert1
+   xpos 297
+   ypos 394
+  }
+push $N12fe7910
+  Dot {
+   name Dot1
+   xpos 489
+   ypos 246
+  }
+  Copy {
+   inputs 2
+   to0 rgba.alpha
+   name Copy1
+   xpos 455
+   ypos 394
+  }
+push $N12fea060
+  Merge2 {
+   inputs 2
+   operation matte
+   name Merge1
+   xpos 133
+   ypos 545
+  }
+  Copy {
+   inputs 2
+   from0 rgba.alpha
+   to0 rgba.alpha
+   name Copy2
+   xpos 133
+   ypos 645
+  }
+  Output {
+   name Output1
+   xpos 133
+   ypos 818
+  }
+ end_group
+ Dot {
+  name Dot25
+  selected true
+  xpos 2316
+  ypos -2605
+ }
+set N12feb2e0 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Reflection
+  alpha black
+  name ShuffleReflection
+  selected true
+  xpos 1867
+  ypos -3161
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove5
+  selected true
+  xpos 1867
+  ypos -3120
+ }
+ Colorspace {
+  name Colorspace_Reflection
+  selected true
+  xpos 1866
+  ypos -3043
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Reflection
+  selected true
+  xpos 1866
+  ypos -2977
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_Reflection
+  selected true
+  xpos 1866
+  ypos -2929
+  disable {{Disable_ReflectionCC}}
+ }
+ Glow {
+  channels rgba
+  brightness 0.5
+  name Glow_Reflection
+  selected true
+  xpos 1866
+  ypos -2867
+  disable {{Disable_ReflectionGlow}}
+ }
+ Dot {
+  name Dot24
+  selected true
+  xpos 1901
+  ypos -2603
+ }
+set N12e9c2a0 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Refraction
+  name Shuffle_Refraction
+  selected true
+  xpos 1437
+  ypos -3178
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove1
+  selected true
+  xpos 1437
+  ypos -3127
+ }
+ Colorspace {
+  name Colorspace_Refraction
+  selected true
+  xpos 1437
+  ypos -3077
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Refraction
+  selected true
+  xpos 1437
+  ypos -3027
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_Refraction
+  selected true
+  xpos 1437
+  ypos -2978
+  disable {{Disable_RefractionCC}}
+ }
+ Glow {
+  name Glow_Refraction
+  selected true
+  xpos 1437
+  ypos -2921
+  disable {{Disable_RefractionGlow}}
+ }
+ Group {
+  name Glare_Refractions
+  label v2.0
+  selected true
+  xpos 1437
+  ypos -2878
+  disable {{disable_refraction_glare}}
+  addUserKnob {20 "" l User}
+  addUserKnob {26 "" l "Glare Creation Options"}
+  addUserKnob {7 glaretol l Tolerance}
+  addUserKnob {7 glaresize l "Glare Size" R 0 3}
+  glaresize 1
+  addUserKnob {7 glareaspect l Aspect R 0 2}
+  glareaspect 1
+  addUserKnob {6 nonlinear l "Linear Glare" -STARTLINE}
+  addUserKnob {26 "" l "Chromatic Abberation Options"}
+  addUserKnob {7 glarespread l "Chroma Spread" R 0 2}
+  glarespread 1
+  addUserKnob {7 Flare1_chroma_shift l "Chroma Shift" R -20 20}
+  addUserKnob {7 Flare1_chroma_shift_angle l "Chroma Shift Angle" R -180 180}
+  addUserKnob {26 "" l "Multipoint Options"}
+  addUserKnob {3 Flare1_asym_repeat l "Glare Points"}
+  addUserKnob {7 Flare1_asym_falloff l "Glare Point Falloff" R 0.1 10}
+  addUserKnob {7 Flare1_asym_angle l "Glare Point Rotation" R -180 180}
+  addUserKnob {26 "" l "Shape Options"}
+  addUserKnob {3 Flare1_corners l "Shape Corners"}
+  addUserKnob {7 Flare1_flattening l "Shape Adherance" R 0 5}
+  addUserKnob {7 Flare1_corners_angle l "Shape Angle" R -180 180}
+  addUserKnob {26 "" l "Color Options"}
+  addUserKnob {19 Grade1_multiply l Mult R 0 4}
+  Grade1_multiply 1
+  addUserKnob {19 Grade1_gamma l Gamma R 0.2 5}
+  Grade1_gamma 1
+  addUserKnob {7 Saturation1_saturation l Saturation R 0 4}
+  Saturation1_saturation 1
+  addUserKnob {6 effect_only l "Output Effect Only" -STARTLINE}
+ }
+  Constant {
+   inputs 0
+   format "100 100 0 0 100 100 1 Glare"
+   name Constant1
+   xpos 20
+   ypos 372
+  }
+  Flare {
+   position {50 50}
+   radius {8.26 28.26 48.26}
+   size_mult {{glaresize}}
+   anamorph {{glareaspect}}
+   inner_color 0.22
+   chroma_spread {{glarespread}}
+   chroma_shift {{Flare1_chroma_shift}}
+   chroma_shift_angle {{Flare1_chroma_shift_angle}}
+   corners {{Flare1_corners==1?2:Flare1_corners}}
+   flattening {{Flare1_flattening*5}}
+   sharpness 1
+   corners_angle {{Flare1_corners_angle}}
+   asym_repeat {{Flare1_asym_repeat}}
+   asym_multiplier {{asym_repeat==0?1:0}}
+   asym_falloff {{Flare1_asym_falloff}}
+   asym_angle {{Flare1_asym_angle}}
+   name Flare1
+   selected true
+   xpos 20
+   ypos 468
+   disable {{disable_refraction_glare}}
+  }
+  Keyer {
+   operation "luminance key"
+   name Keyer2
+   tile_color 0xff0000
+   xpos 20
+   ypos 508
+  }
+  Transform {
+   scale {{glaresize/5} {w/glareaspect}}
+   center {50 50}
+   name Transform1
+   xpos 20
+   ypos 561
+   disable {{disable_refraction_glare}}
+  }
+  Input {
+   inputs 0
+   name img
+   xpos 560
+   ypos 215
+  }
+  Grade {
+   gamma 2.2
+   unpremult -rgba.alpha
+   name Grade2
+   tile_color 0x7aa9ff00
+   xpos 560
+   ypos 321
+   disable {{nonlinear}}
+  }
+  Dot {
+   name Dot1
+   xpos 594
+   ypos 394
+  }
+set N12e9ee90 [stack 0]
+  Transform {
+   scale 0.2
+   center {{input.width/2} {input.height/2}}
+   filter Parzen
+   name Transform2
+   xpos 383
+   ypos 390
+   disable {{disable_refraction_glare}}
+  }
+  Keyer {
+   operation "luminance key"
+   range {{parent.glaretol i} 1 1 1}
+   name Keyer1
+   tile_color 0xff0000
+   xpos 200
+   ypos 377
+  }
+  Shuffle {
+   red alpha
+   green alpha
+   blue alpha
+   name Shuffle1
+   tile_color 0x9e3c6300
+   xpos 200
+   ypos 441
+  }
+  Convolve {
+   inputs 2
+   channels rgba
+   name Convolve1
+   xpos 200
+   ypos 561
+   disable {{disable_refraction_glare}}
+  }
+  Grade {
+   multiply {{parent.Grade1_multiply.r i} {parent.Grade1_multiply.g i} {parent.Grade1_multiply.b i} {parent.Grade1_multiply.a i}}
+   add 0.035
+   gamma {{parent.Grade1_gamma.r i} {parent.Grade1_gamma.g i} {parent.Grade1_gamma.b i} {parent.Grade1_gamma.a i}}
+   unpremult rgba.alpha
+   name Grade1
+   tile_color 0x7aa9ff00
+   xpos 200
+   ypos 614
+  }
+  Saturation {
+   saturation {{parent.Saturation1_saturation}}
+   name Saturation1
+   tile_color 0x7aa9ff00
+   xpos 200
+   ypos 691
+  }
+  Transform {
+   scale 5
+   center {{input.width/2 i} {input.height/2 i}}
+   filter Parzen
+   name Transform3
+   xpos 380
+   ypos 691
+   disable {{disable_refraction_glare}}
+  }
+  Crop {
+   box {{width-width} {height-height} {width} {height}}
+   name Crop1
+   xpos 380
+   ypos 718
+   disable {{disable_refraction_glare}}
+  }
+set N12ea0110 [stack 0]
+push $N12ea0110
+push $N12e9ee90
+  Merge {
+   inputs 2
+   A {rgba.red rgba.green rgba.blue -rgba.alpha}
+   operation plus
+   name Merge1
+   tile_color 0x4b5ec600
+   xpos 560
+   ypos 691
+  }
+  Switch {
+   inputs 2
+   which {{effect_only i}}
+   name Switch1
+   xpos 560
+   ypos 751
+  }
+  Grade {
+   gamma 2.2
+   reverse true
+   unpremult -rgba.alpha
+   name Grade3
+   tile_color 0x7aa9ff00
+   xpos 560
+   ypos 797
+   disable {{nonlinear}}
+  }
+  Output {
+   name Output1
+   xpos 560
+   ypos 848
+  }
+ end_group
+ Dot {
+  name Dot23
+  selected true
+  xpos 1470
+  ypos -2611
+ }
+set N12ea0a50 [stack 0]
+push $Nbf49010
+ Shuffle {
+  in VRay_Lighting
+  alpha black
+  name Shuffle_Light
+  selected true
+  xpos 699
+  ypos -3172
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove3
+  selected true
+  xpos 699
+  ypos -3146
+ }
+ Remove {
+  channels rgba
+  name Remove12
+  selected true
+  xpos 699
+  ypos -3105
+  disable {{Disable_Light-1}}
+ }
+ Colorspace {
+  name Colorspace_Light
+  selected true
+  xpos 699
+  ypos -3059
+  disable {{Disable_Light}}
+ }
+ Multiply {
+  channels rgba
+  name Multiply_Light
+  selected true
+  xpos 698
+  ypos -3013
+  disable {{Disable_Light}}
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_Light
+  selected true
+  xpos 698
+  ypos -2942
+  disable {{Disable_LightCC}}
+ }
+ Glow {
+  brightness 0.5
+  size 25
+  name Glow_Light
+  selected true
+  xpos 698
+  ypos -2899
+  disable {{Disable_LightGlow}}
+ }
+ Dot {
+  name Dot22
+  selected true
+  xpos 732
+  ypos -2709
+ }
+set N12ea2ab0 [stack 0]
+push $Nbf49010
+ Dot {
+  name Dot2
+  selected true
+  xpos 367
+  ypos -3246
+ }
+set N12ea2d00 [stack 0]
+push $N12ea2d00
+ Shuffle {
+  in VRay_GlobalIllumination
+  alpha black
+  name GI_Shuffle
+  selected true
+  xpos 193
+  ypos -3176
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  selected true
+  xpos 193
+  ypos -3127
+ }
+ Remove {
+  operation keep
+  name Remove4
+  selected true
+  xpos 193
+  ypos -3071
+ }
+ Remove {
+  channels rgba
+  name Remove11
+  selected true
+  xpos 193
+  ypos -3013
+  disable {{Disable_GI-1}}
+ }
+ Colorspace {
+  name Colorspace_GI
+  selected true
+  xpos 192
+  ypos -2961
+ }
+ Multiply {
+  channels rgba
+  name Multiply_GI
+  selected true
+  xpos 192
+  ypos -2915
+ }
+ ColorCorrect {
+  channels rgba
+  lookup {shadow {curve}
+    midtone {curve}
+    highlight {curve x0.5 0 s0 x1 0.7089999914 s0.295}}
+  name CC_GI
+  selected true
+  xpos 192
+  ypos -2854
+  disable {{Disable_GICC}}
+ }
+ Glow {
+  channels rgba
+  brightness 0.5
+  name Glow_GI
+  selected true
+  xpos 192
+  ypos -2797
+  disable {{Disable_GIGlow}}
+ }
+ Dot {
+  name Dot16
+  selected true
+  xpos 226
+  ypos -2720
+ }
+set N142f4120 [stack 0]
+push $Nbf4ae20
+push $N1304f8b0
+push $N13055090
+push $N12feb2e0
+push $N12e9c2a0
+push $N12ea0a50
+push $N1425c7a0
+push $N12ea2ab0
+push $N142f4120
+ Merge2 {
+  inputs 2
+  operation plus
+  name Light_GI_Merge
+  label Light_GI_Merge
+  selected true
+  xpos 431
+  ypos -2534
+  disable {{Disable_Light}}
+ }
+set N142f4370 [stack 0]
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge_Shadows1
+  selected true
+  xpos 1116
+  ypos -2393
+ }
+push $N1425c7a0
+ Multiply {
+  channels rgba
+  value {{ShadowAmount-1 i}}
+  name Multiply_Shadow
+  selected true
+  xpos 1009
+  ypos -2905
+ }
+push $N142f4370
+ Merge2 {
+  inputs 2
+  operation from
+  name Merge_Shadows
+  selected true
+  xpos 972
+  ypos -2390
+ }
+ Switch {
+  inputs 2
+  which {{DisableShadow i}}
+  name Switch2
+  selected true
+  xpos 1036
+  ypos -2281
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Refraction_Merge
+  label Refraction
+  selected true
+  xpos 1420
+  ypos -2249
+  disable {{Disable_Refractions}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Reflection_Merge
+  label Reflection
+  selected true
+  xpos 1867
+  ypos -2069
+  disable {{Disable_Reflections}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name SelfIllumination_Merge
+  label SelfIllumination
+  selected true
+  xpos 2282
+  ypos -1928
+  disable {{Disable_SelfIllumination}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Caustics_Merge
+  label Caustics
+  selected true
+  xpos 2686
+  ypos -1772
+  disable {{Disable_Caustics}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Specular_Merge
+  label Specular
+  selected true
+  xpos 3017
+  ypos -1648
+  disable {{Disable_Specular}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge_Atmosphere
+  label Atmosphere
+  selected true
+  xpos 3416
+  ypos -1540
+  disable {{Disable_Atmosphere}}
+ }
+push $N1425c0b0
+ Merge2 {
+  inputs 2
+  operation plus
+  also_merge all
+  name Background_Merge
+  label Background
+  selected true
+  xpos 3724
+  ypos -1455
+ }
+ Switch {
+  inputs 11
+  which {{Output x1 10}}
+  name Switch1
+  selected true
+  xpos 4173
+  ypos -1436
+  addUserKnob {20 "" l Weta}
+  addUserKnob {32 "update input order" t "changes the input order according to the input nodes' horizontal order (left most node becomes input 0)" -STARTLINE T " reconnectInputs"}
+ }
+ Colorspace {
+  name Final_Colorspace
+  selected true
+  xpos 4173
+  ypos -1349
+ }
+ Output {
+  name Output1
+  selected true
+  xpos 4173
+  ypos -1231
+ }
+end_group

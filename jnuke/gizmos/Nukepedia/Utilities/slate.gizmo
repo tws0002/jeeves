@@ -1,0 +1,571 @@
+#! /Applications/Nuke5.1v2/Nuke5.1v2.app/Contents/MacOS/Nuke5.1v2 -nx
+version 5.1200
+Gizmo {
+ tile_color 0xffff0000
+ label "SLATE & OVERLAYS"
+ note_font Arial
+ addUserKnob {20 SlateOverlays l "Slate Controls"}
+ addUserKnob {1 shot l Shot: t "Enter shot name."}
+ shot CL003
+ addUserKnob {1 ver l Version: t "Enter comp script version."}
+ ver v02
+ addUserKnob {26 ""}
+ addUserKnob {1 artist_input l Artist:}
+ artist_input soupkid
+ addUserKnob {1 notes l Notes:}
+ notes "Lorem ipsum dolor sit amet, conesectetur adipiscing elit,"
+ addUserKnob {1 notes2 l " "}
+ notes2 "set eiusmod tempor incidunt et labore et dolore magna"
+ addUserKnob {1 frames l Frames: t "Nuber of frames in your shot. You should not need to change this."}
+ frames "\[knob root.last_frame]"
+ addUserKnob {26 "" l "2.35 Overlay Mask"}
+ addUserKnob {41 color l "Mask Color" T Rectangle5.color}
+ addUserKnob {41 mix T Rectangle5.mix}
+ addUserKnob {41 disable_1 l "Disable 2.35 Mask" T Rectangle5.disable}
+ addUserKnob {26 ""}
+ addUserKnob {1 SLATEFRAME l "Slate frame:" t "Choose a frame your slate will appear on. Frame 0 is default."}
+ SLATEFRAME 0
+ addUserKnob {26 "" -STARTLINE T "Production state:"}
+ addUserKnob {6 wip l WIP t "Uncheck box once shot is final." -STARTLINE}
+ addUserKnob {6 sound l "With Sound." t "Check for audio." -STARTLINE}
+}
+ StickyNote {
+  inputs 0
+  name StickyNote2
+  tile_color 0xffff0000
+  label OVERLAYS
+  note_font "Helvetica bold Bold Bold"
+  xpos -707
+  ypos 1034
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote1
+  tile_color 0xffff0000
+  label SLATE
+  note_font "Helvetica bold Bold Bold"
+  xpos -349
+  ypos 904
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos -209
+  ypos -310
+ }
+ Ramp {
+  p0 {90 448}
+  p1 {1836 448}
+  name Ramp1
+  xpos -209
+  ypos -241
+ }
+ Posterize {
+  Colors 25.5
+  name Posterize1
+  xpos -209
+  ypos -215
+ }
+ Rectangle {
+  output alpha
+  replace true
+  area {-178 530 1998 578}
+  name Rectangle2
+  xpos -209
+  ypos -175
+ }
+ Premult {
+  name Premult3
+  xpos -209
+  ypos -135
+ }
+ Clamp {
+  channels rgba
+  maskChannelInput -rgba.alpha
+  unpremult -rgba.alpha
+  name Clamp1
+  xpos -209
+  ypos -109
+ }
+ Transform {
+  translate {0 -518}
+  scale 0.98
+  center {960 540}
+  name Transform3
+  xpos -213
+  ypos -83
+ }
+ ColorBars {
+  inputs 0
+  name ColorBars1
+  xpos -642
+  ypos -336
+ }
+ Rectangle {
+  output alpha
+  area {-178 530 1998 578}
+  name Rectangle1
+  xpos -642
+  ypos -267
+ }
+ Premult {
+  name Premult2
+  xpos -642
+  ypos -227
+ }
+ Transform {
+  translate {0 -464}
+  scale 0.98
+  center {960 540}
+  name Transform2
+  xpos -642
+  ypos -201
+ }
+ Read {
+  inputs 0
+  file /Users/patrickwong/.nuke/icons/fxphdlogo.tiff
+  format "1168 828 0 0 1168 828 1 "
+  on_error black
+  version 2
+  name Read1
+  selected true
+  xpos -328
+  ypos -652
+ }
+ Sharpen {
+  name Sharpen1
+  xpos -328
+  ypos -535
+ }
+ Reformat {
+  name Reformat1
+  xpos -328
+  ypos -479
+ }
+ Bezier {
+  output alpha
+  cliptype bbox
+  replace true
+  extra_blur 2
+  points {{
+{673 665 10.4 -1.71 5}
+{674.5 515 10.8 -1.44 10.8}
+{703.5 483 10.8 -0.04 10.8}
+{1231 483 8.3 0.12 47.3}
+{1247 503.5 16 1.22 11}
+{1247 666 7.5 1.6 4.2}
+{1225 693 7.5 3.09 7.5}
+{697 694.5 5.4 -3.09 10.4}
+{680 684.5 8.1 -2.23 8.7}
+}}
+  shape {{curve L x1 0}}
+  center {960 540}
+  name Bezier1
+  xpos -328
+  ypos -453
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Premult {
+  name Premult1
+  xpos -328
+  ypos -400
+ }
+ Transform {
+  translate {-688 398}
+  scale 0.78
+  center {960 540}
+  name Transform1
+  xpos -328
+  ypos -374
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 0 0 0}
+  name Constant2
+  xpos -478
+  ypos -652
+ }
+ Bezier {
+  cliptype bbox
+  points {{
+{480 270}
+{1440 270}
+{1440 810}
+{480 810}
+}}
+  shape {}
+  scale 1.98
+  center {{width/2} {height/2}}
+  color 0
+  name Bezier2
+  tile_color 0x6d3f00
+  label "red line"
+  xpos -478
+  ypos -514
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type rectangle
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop1
+  label "To maintain red line @ proxy"
+  xpos -478
+  ypos -474
+ }
+ Merge {
+  inputs 2
+  name Merge1
+  tile_color 0x7171c600
+  label logo
+  note_font "Helvetica bold Bold Bold"
+  note_font_size 16
+  xpos -478
+  ypos -385
+ }
+ Merge {
+  inputs 2
+  name Merge2
+  tile_color 0x7171c600
+  note_font "Helvetica bold Bold Bold"
+  note_font_size 16
+  xpos -478
+  ypos -203
+ }
+ Merge {
+  inputs 2
+  name Merge3
+  tile_color 0x7171c600
+  note_font "Helvetica bold Bold Bold"
+  note_font_size 16
+  xpos -478
+  ypos -83
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop2
+  xpos -478
+  ypos -52
+ }
+ Rectangle {
+  area {34.6667 860 1888 855.852}
+  name Rectangle3
+  label "Top Line"
+  xpos -478
+  ypos -16
+ }
+ Text {
+  message nuk201
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 100
+  translate {1494 894}
+  color 0.5
+  name Text1
+  label nuk201
+  xpos -478
+  ypos 24
+ }
+ Text {
+  message "\[knob shot]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 200
+  translate {200 650}
+  color 0.5
+  name Text2
+  tile_color 0xffff00
+  label "shot\n"
+  xpos -478
+  ypos 90
+ }
+ Text {
+  message "\[knob ver]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 200
+  translate {1360 650}
+  color 0.5
+  name Text6
+  tile_color 0xffff00
+  label "version\n"
+  xpos -478
+  ypos 144
+ }
+ Text {
+  message Script:
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 45
+  translate {200 570}
+  color 0.5
+  name Text3
+  label "script\n"
+  xpos -478
+  ypos 183
+ }
+ Text {
+  message Artist:
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 45
+  translate {200 490}
+  color 0.5
+  name Text4
+  label "artist\n"
+  xpos -478
+  ypos 223
+ }
+ Text {
+  message Frames:
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 45
+  translate {200 410}
+  color 0.5
+  name Text7
+  label "frames\n"
+  xpos -479
+  ypos 259
+ }
+ Text {
+  message Notes:
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 45
+  translate {200 330}
+  color 0.5
+  name Text5
+  label "notes\n"
+  xpos -478
+  ypos 300
+ }
+ Text {
+  message "\[clock format \[clock seconds] -format \{%a %D, %r\}]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 40
+  xjustify center
+  translate {960 130}
+  name DATE_TXT
+  tile_color 0xffff00
+  label DATE
+  xpos -478
+  ypos 349
+ }
+ Text {
+  message "\[knob notes]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  translate {390 330}
+  name Text10
+  tile_color 0xffff00
+  label "notes\n"
+  xpos -478
+  ypos 394
+ }
+ Text {
+  message "\[knob notes2]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  translate {390 250}
+  name Text11
+  tile_color 0xffff00
+  label "notes\n"
+  xpos -478
+  ypos 434
+ }
+ Text {
+  message "\[knob artist_input]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  translate {390 490}
+  name ARTIST
+  tile_color 0xffff00
+  label "artist\n"
+  xpos -478
+  ypos 474
+ }
+ Text {
+  message "\[file tail \[knob root.name]]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  translate {390 570}
+  name Text8
+  tile_color 0xffff00
+  label "script name\n"
+  xpos -478
+  ypos 514
+ }
+set N1b331ac0 [stack 0]
+ Rectangle {
+  area {1757.33 137.037 1888 255.926}
+  color {0 1 0 1}
+  name Rectangle4
+  tile_color 0xffff00
+  label "GO NO GO"
+  xpos -552
+  ypos 629
+ }
+push $N1b331ac0
+ Rectangle {
+  area {1757.33 137.037 1888 255.926}
+  color {1 0 0 1}
+  name Rectangle6
+  tile_color 0xffff00
+  label "GO NO GO"
+  xpos -400
+  ypos 633
+ }
+ Switch {
+  inputs 2
+  which {{"\[knob wip]"}}
+  name Switch1
+  tile_color 0xffff00
+  label "Production State"
+  xpos -477
+  ypos 710
+ }
+ Text {
+  message "\[expr \[knob frames]] + slate"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  translate {390 410}
+  name frames
+  tile_color 0xffff00
+  label frames
+  xpos -477
+  ypos 789
+ }
+ Text {
+  message MOS
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 75
+  translate {54 142}
+  color {1 0 0 0}
+  name MosText
+  xpos -477
+  ypos 849
+  disable {{"\[knob sound]" i}}
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -742
+  ypos 666
+ }
+ Reformat {
+  black_outside true
+  name Reformat2
+  xpos -742
+  ypos 692
+ }
+ Rectangle {
+  invert true
+  opacity 0.75
+  area {0 130 1920 950}
+  color {0 0 0.71 0}
+  name Rectangle5
+  tile_color 0xffff00
+  label "2.35 mask"
+  xpos -742
+  ypos 764
+ }
+set N1b34df10 [stack 0]
+ Text {
+  message "\[format %04d \[frame]]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 45
+  translate {1584 396}
+  scale {1 -3.24}
+  color 0.5
+  name Text9
+  tile_color 0xffff00
+  label "frames\n"
+  xpos -742
+  ypos 851
+ }
+ Text {
+  message "\[knob shot]"
+  allow_unicode true
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 100
+  translate {110 1120}
+  color 0.5
+  name Text12
+  tile_color 0xffff00
+  label "shot\n"
+  xpos -742
+  ypos 892
+ }
+set N1b356230 [stack 0]
+ Text {
+  message "\[file tail \[knob root.name]]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  translate {110 -72}
+  color 0.5
+  name Text13
+  tile_color 0xffff00
+  label "script name\n"
+  xpos -742
+  ypos 932
+ }
+ Text {
+  message "\[knob ver]"
+  Font 1
+  font "/Library/Fonts/Arial Black.ttf"
+  size 100
+  xjustify right
+  translate {1804 1120}
+  color 0.5
+  name Text14
+  tile_color 0xffff00
+  label "version\n"
+  xpos -741
+  ypos 971
+ }
+push $N1b34df10
+ Dot {
+  name Dot1
+  label "dsaad\n"
+  xpos -604
+  ypos 807
+ }
+ Switch {
+  inputs 2
+  which {{root.proxy i}}
+  name proxy_switch
+  tile_color 0xffff00
+  xpos -613
+  ypos 981
+ }
+ Switch {
+  inputs 2
+  which {{"frame == \[subst \[knob SLATEFRAME]]"}}
+  name slateframe
+  tile_color 0xffff00
+  xpos -477
+  ypos 981
+ }
+ Output {
+  name Output1
+  xpos -462
+  ypos 1085
+ }
+push $N1b356230
+ Viewer {
+  gamma 1.1
+  name Viewer1
+  xpos -478
+  ypos -341
+ }
+end_group

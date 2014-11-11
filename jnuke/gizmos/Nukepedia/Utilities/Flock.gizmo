@@ -1,0 +1,117 @@
+### (c) 2008 Created by Alexander Antoshuk (Ali)
+### www.2d3d.by
+### GenerateFlock.tcl is required 
+
+Group {
+ name Flock
+ addUserKnob {20 Flock}
+ addUserKnob {3 num l "        number of copies"}
+ num 10
+ addUserKnob {32 generate l "   generate   " T GenerateFlock}
+ addUserKnob {7 seed l "random seed" R 0 100}
+ addUserKnob {7 grid_rand l "random distribution"}
+ grid_rand 1
+ addUserKnob {20 initGroup l "Initial randoms" n 1}
+ addUserKnob {15 bounds l "translate bounds"}
+ bounds {0 0 100 100}
+ addUserKnob {30 rotate l "rotate bounds"}
+ addUserKnob {30 scale l "scale bounds"}
+ scale {0.1 1}
+ addUserKnob {30 offset l "time offset bounds"}
+ offset {-20 20}
+ addUserKnob {26 "" l " " T " "}
+ addUserKnob {6 vertmirror l "random vert mirror"}
+ addUserKnob {6 horizmirror l "random horiz mirror"}
+ addUserKnob {20 end_initGroup n -1}
+ addUserKnob {20 animation l Animation}
+ addUserKnob {20 translateGroup l Translate n 1}
+ translateGroup 0
+ addUserKnob {7 noise_t l "translate noise"}
+ addUserKnob {30 ax l "translate x amp bounds"}
+ ax {-20 20}
+ addUserKnob {30 fx l "translate x freq bounds"}
+ fx {0.01 0.1}
+ addUserKnob {30 ay l "translate y amp bounds"}
+ ay {-50 50}
+ addUserKnob {30 fy l "translate y freq bounds"}
+ fy {0.01 0.05}
+ addUserKnob {20 end_translateGroup n -1}
+ addUserKnob {20 rotateGroup l Rotate n 1}
+ rotateGroup 0
+ addUserKnob {7 noise_r l "rotate noise"}
+ addUserKnob {30 ar l "       rotate amp bounds"}
+ ar {-45 45}
+ addUserKnob {30 fr l "rotate freq bounds"}
+ fr {0.001 0.01}
+ addUserKnob {20 end_rotateGroup n -1}
+ addUserKnob {20 scaleGroup l Scale n 1}
+ scaleGroup 0
+ addUserKnob {7 noise_s l "scale noise"}
+ addUserKnob {30 as l "       scale amp bounds"}
+ as {0 0.01}
+ addUserKnob {30 fs l "scale freq bounds"}
+ fs {0 0.01}
+ addUserKnob {20 end_scaleGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {7 motionblur R 0 4}
+ addUserKnob {41 shutter T TimeBlur1.shutter}
+ addUserKnob {41 shutteroffset T TimeBlur1.shutteroffset}
+ addUserKnob {41 shuttercustomoffset l "" T TimeBlur1.shuttercustomoffset}
+}
+ Constant {
+  inputs 0
+  name Constant1
+  xpos 118
+  ypos 206
+ }
+ Input {
+  inputs 0
+  name bg
+  xpos -40
+  ypos 302
+  number 1
+ }
+ Merge2 {
+  inputs 2
+  also_merge all
+  name Merge1
+  xpos 118
+  ypos 302
+ }
+ NoTimeBlur {
+  name NoTimeBlur1
+  xpos 118
+  ypos 329
+ }
+ Merge2 {
+  also_merge all
+  name MAIN_MERGE
+  xpos 400
+  ypos 398
+ }
+ TimeBlur {
+  divisions {{parent.motionblur}}
+  shutteroffset start
+  shuttercustomoffset 0
+  disable {{!divisions i}}
+  name TimeBlur1
+  xpos 400
+  ypos 446
+ }
+ Output {
+  name Output1
+  xpos 400
+  ypos 566
+ }
+ Input {
+  inputs 0
+  name Input
+  xpos 400
+  ypos -10
+ }
+ Dot {
+  name IN
+  xpos 434
+  ypos 66
+ }
+end_group

@@ -1,0 +1,93 @@
+#! C:/Program Files/Nuke5.0v1/Nuke5.0.exe -nx
+version 5.0100
+Gizmo {
+ help "\nBandPass\nTwo blurs are performed with different widths, and the result is the  difference scaled and offset by a gray value.  Frequencies above and  below the cutoffs are attenuated, leaving only the middle band of  frequencies.\n        \n\n\n\n"
+ addUserKnob {20 User}
+ addUserKnob {41 BlurAmount1 l "Blur Amount 1" T Amount_1.size}
+ addUserKnob {41 BlurAmount2 l "Blur Amount 2" T Amount_2.size}
+ addUserKnob {14 BlurRelative l "Blur Relative  " R 0 100}
+ BlurRelative {0 0}
+ addUserKnob {26 "" l ""}
+ addUserKnob {7 Contrast R -28 30}
+ Contrast 5
+ addUserKnob {7 Offset R -2 2}
+ Offset 0.124731
+ addUserKnob {7 Saturation R 0 2}
+ Saturation 1
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l " "}
+ addUserKnob {26 "" l "by Luc Julien" T "synthesimage@hotmail.com v0.0.2"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -4
+  ypos -224
+ }
+set N408fe10 [stack 0]
+ Blur {
+  name Amount_2
+  xpos -4
+  ypos -69
+ }
+push $N408fe10
+ Invert {
+  name Invert
+  xpos 119
+  ypos -230
+ }
+ Blur {
+  size 5
+  name Amount_1
+  xpos 119
+  ypos -191
+ }
+ Blur {
+  size {{BlurRelative.w i x1 0} {BlurRelative.h i}}
+  name Blur1
+  xpos 119
+  ypos -152
+ }
+ Merge2 {
+  inputs 2
+  operation out
+  mix 0.5
+  name Merge3
+  xpos 119
+  ypos -63
+ }
+ RolloffContrast {
+  contrast {{Contrast i x1 1.372093023}}
+  slope_mag_low1 0.8
+  black_low 1
+  slope_mag_high2 0.8
+  white_high 1
+  name RolloffContrast1
+  xpos 119
+  ypos -36
+ }
+ ColorCorrect {
+  saturation {{Saturation x1 1.00215054}}
+  offset {{Offset x1 -1.31666667}}
+  shadows 0
+  midtones 0
+  midtones.gain 1.00818
+  highlights 0
+  name ColorCorrect1
+  xpos 119
+  ypos -9
+ }
+set N80a0620 [stack 0]
+ Output {
+  name Output1
+  xpos 119
+  ypos 136
+ }
+push $N80a0620
+ Viewer {
+  frame 1
+  name Viewer1
+  xpos -239
+  ypos 56
+ }
+end_group

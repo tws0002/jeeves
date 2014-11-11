@@ -1,0 +1,29 @@
+high priority
+
+- nuke - save - jmaya.pipeline.save
+- nuke - save as - jmaya.pipeline.save_as
+- nuke - version - jmaya.pipeline.version
+- nuke - unsaved changes dialog thing, when open is pressed - jnuke.pipeline.open
+- nuke - callbacks in init.py - inc favourites dirs, after file is open?
+- nuke - output write button
+
+low priority
+
+- standalone - write the subprocess code to open or import nuke and maya files from the standalone jeeves
+- standalone - maya or nuke choice dialog
+- nuke - nuke tools tab
+- maya - maya tools tab
+- maya - convert publish.ui to pyside code and keep in one publish module
+- maya - publish - selection sets
+- maya - import maya type dialog options - jmaya.pipeline.importer
+- maya - import alembic options dialog - jmaya.pipeline.importer
+- nuke - add python plugins to drop down
+
+
+
+import sys
+sys.path.append('/Users/elliott/Google Drive/pipeline/jeeves_dev')
+
+import core;reload(core)
+import core.ui;reload(core.ui)
+import core.ui.jeeves_ui;reload(core.ui.jeeves_ui)

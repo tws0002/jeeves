@@ -1,0 +1,200 @@
+#! /Applications/Nuke5.1v5/Nuke5.1v5.app/Contents/MacOS/Nuke5.1v5 -nx
+version 5.1500
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 which l "Edge|Erode|Grow" T choose_matte.which}
+ addUserKnob {26 ""}
+ addUserKnob {41 outerblurriness T outerBlur2.outerblurriness}
+ addUserKnob {41 aspect_1 l aspect T outerBlur2.aspect_1}
+ addUserKnob {26 ""}
+ addUserKnob {41 inner_blurriness T inner_blur.inner_blurriness}
+ addUserKnob {41 aspect T inner_blur.aspect}
+ addUserKnob {26 ""}
+ addUserKnob {41 multiply_1 l post_multiply T POST_Gain1.multiply}
+ addUserKnob {41 postblur T POSTBlur1.postblur}
+ addUserKnob {41 aspect_2 l aspect T POSTBlur1.aspect}
+ addUserKnob {26 ""}
+ addUserKnob {41 which_1 l "Matte | RGBA | Premult" T choose_output.which_1}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 423
+  ypos -600
+ }
+set N22522960 [stack 0]
+push $N22522960
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name alpha_ins
+  xpos 390
+  ypos -524
+ }
+set N19973410 [stack 0]
+ Blur {
+  size {{outerblurriness i} {outerblurriness*aspect i}}
+  name outerBlur2
+  xpos 155
+  ypos -404
+  addUserKnob {20 User}
+  addUserKnob {7 outerblurriness t outerblurriness R 0 300}
+  outerblurriness 8
+  addUserKnob {7 aspect}
+  aspect 1
+  addUserKnob {41 aspect_1 l aspect T outerBlur2.aspect}
+ }
+ Grade {
+  channels rgba
+  multiply 4
+  name outerEDEGE_Gain2
+  xpos 142
+  ypos -321
+ }
+ Clamp {
+  name Clamp1
+  xpos 121
+  ypos -256
+ }
+push $N19973410
+ Blur {
+  size {{inner_blurriness i} {inner_blurriness*aspect i}}
+  name inner_blur
+  selected true
+  xpos 348
+  ypos -396
+  addUserKnob {20 User}
+  addUserKnob {7 aspect R 0 2}
+  aspect 1
+  addUserKnob {7 inner_blurriness R 0 200}
+  inner_blurriness 2
+ }
+ Merge2 {
+  inputs 2
+  operation out
+  name Outside
+  xpos 353
+  ypos -224
+ }
+ Grade {
+  channels rgba
+  multiply 4
+  name EDGEerodeGROW_MULT
+  xpos 379
+  ypos -153
+ }
+set N19983e10 [stack 0]
+push $N19973410
+ Merge2 {
+  inputs 2
+  operation plus
+  name GrowNode_IADD
+  xpos 706
+  ypos -67
+ }
+push $N19973410
+push $N19983e10
+ Merge2 {
+  inputs 2
+  operation out
+  name ERODEBODE_OUTSSIDE
+  xpos 522
+  ypos -62
+ }
+push $N19983e10
+ Switch {
+  inputs 3
+  which 1.15
+  name choose_matte
+  xpos 409
+  ypos 75
+  addUserKnob {20 User}
+  addUserKnob {41 which_1 l edge/erode/grow T choose_matte.which}
+ }
+ Blur {
+  size {{postblur i} {postblur*aspect i}}
+  name POSTBlur1
+  xpos 409
+  ypos 102
+  addUserKnob {20 User}
+  addUserKnob {7 postblur R 0 200}
+  addUserKnob {7 aspect}
+  aspect 1
+ }
+ Grade {
+  channels rgba
+  name POST_Gain1
+  xpos 409
+  ypos 141
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name matteedge_out_shufflessr1
+  xpos 409
+  ypos 168
+ }
+set N19998aa0 [stack 0]
+push $N19998aa0
+ Clamp {
+  name Clamp2
+  xpos 441
+  ypos 315
+ }
+ Switch {
+  inputs 2
+  name Switch1
+  xpos 343
+  ypos 357
+  addUserKnob {20 User}
+  addUserKnob {41 which_1 l clamp/noclamp T Switch1.which}
+ }
+set N1999f9f0 [stack 0]
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy1
+  xpos 495
+  ypos 403
+ }
+set N199a1780 [stack 0]
+ Premult {
+  name Premult1
+  xpos 596
+  ypos 515
+ }
+push $N199a1780
+push $N1999f9f0
+ Switch {
+  inputs 3
+  which 2
+  name choose_output
+  xpos 458
+  ypos 628
+  addUserKnob {20 User}
+  addUserKnob {41 which_1 l matte/rgba/premult T choose_output.which}
+ }
+set N199a6af0 [stack 0]
+ Output {
+  name Output1
+  xpos 369
+  ypos 1071
+ }
+ Clamp {
+  inputs 0
+  name ClampALPHA
+  xpos 603
+  ypos 338
+ }
+push $N199a6af0
+ Viewer {
+  name Viewer1
+  xpos 291
+  ypos -97
+ }
+end_group

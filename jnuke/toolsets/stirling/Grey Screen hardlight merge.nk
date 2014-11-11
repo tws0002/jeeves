@@ -1,0 +1,3658 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x8e8e3800
+ label "Grey Screen hardlight merge\n"
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 50
+ selected true
+ xpos -3178
+ ypos -1405
+ bdwidth 1172
+ bdheight 1185
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ label "Clean green screen. Ideally source cleanplate of shot to match exactly or reproduce cleanplate as near to"
+ note_font "Bitstream Vera Sans Bold"
+ selected true
+ xpos -3168
+ ypos -776
+}
+Input {
+ inputs 0
+ name Input1
+ label "GREENSCREEN PLATE"
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 25
+ selected true
+ xpos -2433
+ ypos -1189
+}
+Read {
+ inputs 0
+ file /mnt/bertie/Jobs/013069_THE_Ibibio_Sound_Machine/vfx/nuke/sh_010_L10/plates/input/L10_sh01.######.dpx
+ format "1920 1080 0 0 1920 1080 1 HD"
+ last 746
+ origlast 746
+ origset true
+ raw true
+ timecode 01:03:25:07
+ name Read3
+ selected true
+ xpos -2329
+ ypos -1325
+}
+Colorspace {
+ colorspace_out sRGB
+ name Colorspace1
+ selected true
+ xpos -2329
+ ypos -1048
+ disable true
+}
+Dot {
+ name Dot6
+ selected true
+ xpos -2295
+ ypos -852
+}
+set N74ad2420 [stack 0]
+Dot {
+ name Dot7
+ selected true
+ xpos -2545
+ ypos -852
+}
+RotoPaint {
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x44700000 x44070000}
+    {a}
+    {cubiccurve Clone46 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44f4c000 xc3700000 x3eea1d44}}}
+     {tx x4411c000 0}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone45 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44828000 x440e0000 x3ef05e0c}
+       {x44824000 x440f0000 x3ef11e24}
+       {x447b0000 x44200000 x3ef09e14}
+       {x44750000 x44410000 x3efedfdc}
+       {x447a0000 x44538000 x3f0650ca}
+       {x447b8000 x44550000 x3ec99933}}}
+     {tx x4411c000 x447d2aab x44311555}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone44 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447b8000 x44248000 x3ee61cc4}
+       {x447b0000 x44248000 x3ede9bd3}
+       {x446e8000 x44270000 x3edf9bf3}
+       {x445b8000 x44278000 x3ee5dcbc}
+       {x445b0000 x44278000 x3ef59eb4}
+       {x445e8000 x44170000 x3ef81f04}
+       {x445c8000 x440e0000 x3efadf5c}
+       {x445b8000 x440f0000 x3efbdf7c}
+       {x445f8000 x441b0000 x3efb9f74}
+       {x44688000 x44260000 x3efb9f74}
+       {x44738000 x440c8000 x3f01702e}
+       {x447d8000 x43da0000 x3f01f03e}
+       {x447e8000 x43cf0000 x3e9b536a}}}
+     {tx x4411c000 x446a93b1 x44154ec5}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone43 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44af0000 x44180000 x3ed0da1b}
+       {x44ae4000 x44180000 x3eda5b4b}
+       {x44a2c000 x44180000 x3eda9b53}
+       {x44934000 x441c8000 x3eee5dcc}
+       {x44880000 x44218000 x3ef9df3c}
+       {x44868000 x44228000 x3e561ac3}}}
+     {tx x4411c000 x449af555 x441c1555}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone42 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44b7c000 x42e40000 x3f0650ca}
+       {x44b54000 x42e40000 x3f0ad15a}
+       {x44a30000 x42d80000 x3f0b716e}
+       {x44688000 x42cc0000 x3f1552aa}
+       {x44360000 x42d80000 x3f08d11a}
+       {x44310000 x42d80000 x3ebcd79b}
+       {x44268000 x42dc0000 x3eaf55eb}}}
+     {tx x4411c000 x44819249 x42da4925}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone41 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44200000 x42c40000 x3ed15a2b}
+       {x44228000 x42c40000 x3ec91923}
+       {x44568000 x429c0000 x3eca1943}
+       {x448f4000 x42a40000 x3f07b0f6}
+       {x44a44000 x42a40000 x3f013026}
+       {x44aa4000 x42a80000 x3ea1542b}}}
+     {tx x4411c000 x4478c000 x42ae0000}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone40 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448c0000 x42b00000 x3ea29453}
+       {x448b8000 x42a80000 x3ec39873}
+       {x447d0000 x42b00000 x3ec41883}
+       {x44438000 x42e80000 x3ee71ce4}
+       {x44290000 x42f40000 x3ef51ea4}
+       {x441c0000 x42d80000 x3ecf99f3}}}
+     {tx x4411c000 x445e1555 x42ca0000}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone39 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44a5c000 x43280000 x3ec0580b}
+       {x44a54000 x43280000 x3ec9592b}
+       {x44a04000 x432c0000 x3ec8d91b}
+       {x4495c000 x432c0000 x3f03f07e}
+       {x44838000 x432e0000 x3f0cd19a}
+       {x44530000 x432c0000 x3f05f0be}
+       {x44438000 x43160000 x3ebd97b3}}}
+     {tx x4411c000 x448b6492 x43280000}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone38 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x449d0000 x44278000 x3e8a9152}
+       {x449c8000 x44278000 x3ec89913}
+       {x44904000 x44258000 x3ec81903}
+       {x44680000 x441d8000 x3ee79cf4}
+       {x44468000 x44198000 x3eea1d44}
+       {x44438000 x44198000 x3e7e9fd4}
+       {x44410000 x44180000 x3e1692d2}}}
+     {tx x4411c000 x4477c925 x441f9249}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone37 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44a44000 x44218000 x3ee49c94}
+       {x44a38000 x44228000 x3ee5dcbc}
+       {x4499c000 x44218000 x3ee61cc4}
+       {x44844000 x44218000 x3efe1fc4}
+       {x445d0000 x44210000 x3f01d03a}
+       {x44380000 x44240000 x3efd1fa4}
+       {x443a8000 x44248000 x3e8f51ea}}}
+     {tx x4411c000 x4481edb7 x44225b6e}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone36 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44b2c000 x43f60000 x3f0df1be}
+       {x44b18000 x43f60000 x3f0db1b6}
+       {x44a10000 x43e90000 x3f0e31c6}
+       {x44880000 x43e70000 x3f181302}
+       {x44850000 x43e70000 x3f16f2de}
+       {x44708000 x43e80000 x3f14b296}
+       {x44708000 x43e40000 x3f003006}}}
+     {tx x4411c000 x4492adb7 x43eb4925}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3888000 sty xc1600000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone35 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445a0000 x43f80000 x3f08b116}
+       {x44700000 x43f40000 x3f0610c2}
+       {x44954000 x43f80000 x3f1e13c2}
+       {x44a54000 x43f60000 x3f32764f}
+       {x44b38000 x43e90000 x3f2b756f}
+       {x44b60000 x43e40000 x3e9d93b2}}}
+     {tx x4411c000 x4496d555 x43f12aab}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx x43998000 sty x41200000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone34 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44838000 x44380000 x3ea2544b}
+       {x4482c000 x44378000 x3efadf5c}
+       {x44800000 x44260000 x3efadf5c}
+       {x4485c000 x440e0000 x3f0ff1fe}
+       {x448b4000 x440c0000 x3f1c738e}
+       {x44914000 x441e0000 x3f1c738e}
+       {x44954000 x44290000 x3f1ef3de}
+       {x44994000 x44248000 x3f27b4f7}
+       {x4499c000 x44190000 x3f2fd5fb}
+       {x449c4000 x44160000 x3f3736e7}
+       {x449f4000 x44210000 x3f37b6f7}
+       {x44a50000 x44210000 x3f36b6d7}
+       {x44a9c000 x44190000 x3f38770f}
+       {x44af0000 x440e0000 x3f35f6bf}
+       {x44af0000 x440c8000 x3d421843}}}
+     {tx x4411c000 x44970000 x441dd555}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx x43998000 sty x41200000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone33 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44a08000 x43f50000 x3f03506a}
+       {x449fc000 x43f60000 x3f023046}
+       {x449bc000 x44040000 x3f02d05a}
+       {x44988000 x441c8000 x3f1632c6}
+       {x44984000 x44248000 x3f1712e2}
+       {x4495c000 x441c0000 x3f18530a}
+       {x44914000 x440d8000 x3f1ab356}
+       {x448e8000 x440b0000 x3f2654cb}
+       {x448e8000 x44148000 x3f28750f}
+       {x448cc000 x44240000 x3f28d51b}
+       {x4488c000 x441f0000 x3f29552b}
+       {x447d0000 x44160000 x3f299533}
+       {x44770000 x44198000 x3f2754eb}
+       {x446e8000 x442a8000 x3f1a9352}
+       {x44688000 x442a8000 x3f1792f2}
+       {x44618000 x44130000 x3f1752ea}
+       {x445d0000 x44020000 x3f11722e}}}
+     {tx x4411c000 x448a0f0f x4414b4b5}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3828000 sty x40c00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone32 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44a08000 x44328000 x3e9792f2}
+       {x449ec000 x44310000 x3ed7dafb}
+       {x449c4000 x44268000 x3ed85b0b}
+       {x449c8000 x440a8000 x3f011022}
+       {x449bc000 x43e80000 x3f041082}
+       {x449d0000 x43e20000 x3ef19e34}}}
+     {tx x4411c000 x449d7555 x44144000}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x43bc0000 src 1 stx xc3828000 sty x40c00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone31 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {xc42a8000 x44030000 x3ec1582b}
+       {xc4298000 x44020000 x3ed81b03}
+       {xc42b0000 x44010000 x3ef01e04}
+       {xc42b0000 x44008000 x3ec91923}}}
+     {tx x4411c000 xc42a8000 x4401a000}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bs x434c0000 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone30 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44988000 x44260000 x3e89512a}
+       {x4496c000 x44260000 x3ea554ab}
+       {x44904000 x44260000 x3eba1743}
+       {x44840000 x44280000 x3ef51ea4}
+       {x446f0000 x442b0000 x3f01d03a}
+       {x44418000 x44280000 x3f02504a}
+       {x44340000 x44268000 x3ec2584b}}}
+     {tx x4411c000 x447d1249 x44275b6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone29 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44a14000 x44060000 x3e89512a}
+       {x44a10000 x44060000 x3e8c9192}
+       {x449f8000 x44090000 x3e93526a}
+       {x449d0000 x44128000 x3ed09a13}
+       {x449a0000 x441d8000 x3ed71ae3}
+       {x44960000 x442e8000 x3ec9d93b}
+       {x44934000 x44328000 x3eb3566b}
+       {x4492c000 x44328000 x3dcf19e3}}}
+     {tx x4411c000 x449a9800 x441b1000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone28 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44840000 x43800000 x3e9fd3fa}
+       {x446e0000 x43840000 x3ea514a3}
+       {x44360000 x438a0000 x3ea5d4bb}}}
+     {tx x4411c000 x44640000 x4384aaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone27 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44974000 x43980000 x3ea754eb}
+       {x44940000 x43980000 x3ec3586b}
+       {x44860000 x43940000 x3ec31863}
+       {x44608000 x43900000 x3ec1d83b}
+       {x44518000 x43900000 x3e6c1d84}}}
+     {tx x4411c000 x44820ccd x43940000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone26 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44538000 x44170000 x3e641c84}
+       {x44550000 x44178000 x3e6d9db4}
+       {x446f0000 x441a8000 x3e799f34}
+       {x44988000 x44160000 x3ec09813}
+       {x449d4000 x44140000 x3e6e9dd4}}}
+     {tx x4411c000 x44804ccd x44170000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone25 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44190000 x43c20000 x3ea1d43b}
+       {x44490000 x43c50000 x3ea3546b}
+       {x4481c000 x43c50000 x3eba1743}}}
+     {tx x4411c000 x444c8000 x43c40000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone24 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44230000 x440c8000 x3e709e14}
+       {x44280000 x440f0000 x3e711e24}
+       {x44450000 x44140000 x3e8790f2}
+       {x4485c000 x44128000 x3e9b9372}
+       {x4490c000 x440f8000 x3ea09413}}}
+     {tx x4411c000 x44590000 x44104ccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone23 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44240000 x43cb0000 x3e999332}
+       {x44248000 x43cb0000 x3ea694d3}
+       {x443b0000 x43ca0000 x3eb656cb}
+       {x44630000 x43ca0000 x3f0610c2}
+       {x4480c000 x43c70000 x3f0ef1de}
+       {x44858000 x43c40000 x3eaa9553}}}
+     {tx x4411c000 x44532aab x43c8d555}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone22 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443a8000 x439a0000 x3eb7d6fb}
+       {x44568000 x43970000 x3eb616c3}
+       {x4484c000 x438d0000 x3ed0da1b}}}
+     {tx x4411c000 x445e2aab x4394aaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone21 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44768000 x43970000 x3e4f19e3}
+       {x44768000 x43980000 x3e7e9fd4}
+       {x446c8000 x439b0000 x3e8590b2}
+       {x44578000 x439d0000 x3eea1d44}
+       {x44450000 x439a0000 x3eee5dcc}
+       {x44438000 x439a0000 0}}}
+     {tx x4411c000 x445eeaab x4399d555}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone20 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44360000 x43bb0000 x3ec41883}
+       {x44378000 x43bc0000 x3ec2584b}
+       {x44510000 x43bc0000 x3eca9953}
+       {x44748000 x43be0000 x3f01f03e}
+       {x44798000 x43bc0000 x3e7c1f84}}}
+     {tx x4411c000 x4455b333 x43bc3333}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone19 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442d8000 x44078000 x3eb2564b}
+       {x442e0000 x44078000 x3eb49693}
+       {x44450000 x44070000 x3eb516a3}
+       {x44680000 x44030000 x3ef61ec4}
+       {x447a0000 x43ff0000 x3ee55cac}}}
+     {tx x4411c000 x444d4ccd x4404e666}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone18 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442f8000 x44010000 x3eb556ab}
+       {x44430000 x43fc0000 x3ed59ab3}
+       {x44618000 x43f90000 x3ee99d34}
+       {x446c8000 x43f80000 x3eb696d3}}}
+     {tx x4411c000 x44502000 x43fbc000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone17 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44680000 x43e40000 x3e8610c2}
+       {x44678000 x43e40000 x3ebb1763}
+       {x445d0000 x43e10000 x3ebd17a3}
+       {x44550000 x43e20000 x3eef5dec}
+       {x444e0000 x43e40000 x3ef85f0c}
+       {x444d0000 x43e40000 x3ead15a3}
+       {x444b0000 x43e40000 x3e6f1de4}}}
+     {tx x4411c000 x4457edb7 x43e34925}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc34d0000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Smear206 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44228000 x43d10000 x3f18530a}
+       {x44268000 x43cf0000 x3f0f91f2}
+       {x443e8000 x43cb0000 x3f133266}
+       {x44520000 x43cb0000 x3f30560b}}}
+     {tx x4411c000 x44366000 x43cd8000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear205 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44770000 x43d50000 x3f33f67f}
+       {x44770000 x43d40000 x3f343687}
+       {x446c8000 x43cc0000 x3f343687}
+       {x446b0000 x43cc0000 x3f44b897}
+       {x445e8000 x43c80000 x3f45b8b7}
+       {x44520000 x43bf0000 x3f3fb7f7}
+       {x44518000 x43bf0000 0}}}
+     {tx x4411c000 x4465a492 x43ca2492}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear204 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44844000 x43cb0000 x3f0c1182}
+       {x44828000 x43ca0000 x3f14d29a}
+       {x44750000 x43bf0000 x3f17d2fa}
+       {x44608000 x43bc0000 x3f39b737}
+       {x44568000 x43c10000 x3f46f8df}
+       {x445b8000 x43be0000 x3f46f8df}
+       {x445f8000 x43bc0000 x3e6f1de4}}}
+     {tx x4411c000 x446c1249 x43c19249}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear203 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442c0000 x439a0000 x3f12524a}
+       {x44380000 x43980000 x3f0f51ea}
+       {x44510000 x439e0000 x3f30760f}
+       {x445c8000 x43980000 x3f3cb797}
+       {x445f8000 x43940000 x3edb1b63}}}
+     {tx x4411c000 x4449cccd x4398cccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear202 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44468000 x43740000 x3ed99b33}
+       {x44450000 x43760000 x3f14728e}
+       {x44428000 x43840000 x3f12b256}
+       {x44460000 x43910000 x3f37b6f7}
+       {x44480000 x438b0000 x3f0530a6}}}
+     {tx x4411c000 x4445999a x43843333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear201 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44530000 x436e0000 x3f191322}
+       {x44520000 x43740000 x3f1a534a}
+       {x44518000 x43850000 x3f189312}
+       {x44548000 x43910000 x3f30b617}
+       {x44548000 x43900000 0}}}
+     {tx x4411c000 x4453199a x4384999a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear200 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44780000 x438b0000 x3f13726e}
+       {x44770000 x438a0000 x3f1552aa}
+       {x446b0000 x43870000 x3f15d2ba}
+       {x445b8000 x43910000 x3f321643}
+       {x44568000 x439b0000 x3f2f55eb}
+       {x44598000 x43980000 x3ee91d24}}}
+     {tx x4411c000 x44664000 x43900000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear199 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442b0000 x43840000 x3ef59eb4}
+       {x442c0000 x43840000 x3ef91f24}
+       {x443c8000 x438a0000 x3efcdf9c}
+       {x44530000 x438d0000 x3f33b677}
+       {x44560000 x438d0000 x3f431863}
+       {x44620000 x43850000 x3f431863}
+       {x44650000 x43820000 x3f1ff3fe}}}
+     {tx x4411c000 x4449a492 x43874925}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear198 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443e8000 x435a0000 x3eb7d6fb}
+       {x443e0000 x436a0000 x3ed71ae3}
+       {x44430000 x438a0000 x3f1a1342}
+       {x44480000 x438e0000 x3f24b497}
+       {x44498000 x438e0000 x3f15f2be}}}
+     {tx x4411c000 x44436666 x4381999a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear197 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44618000 x437a0000 x3ee91d24}
+       {x44600000 x437a0000 x3f001002}
+       {x44578000 x437a0000 x3f013026}
+       {x444b0000 x43850000 x3f2d55ab}
+       {x44490000 x43870000 x3f30560b}
+       {x44490000 x43850000 x3ec39873}}}
+     {tx x4411c000 x4453aaab x43815555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear196 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44770000 x43840000 x3ed4da9b}
+       {x44768000 x43840000 x3ee51ca4}
+       {x44700000 x43840000 x3ee75cec}
+       {x446f0000 x43840000 x3f249493}
+       {x44650000 x43850000 x3f281503}
+       {x44590000 x43870000 x3f39772f}
+       {x44460000 x438d0000 x3f3c578b}
+       {x44490000 x438a0000 x3f2d15a3}
+       {x444c8000 x43870000 x3e331663}}}
+     {tx x4411c000 x4460aaab x438671c7}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear195 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442f8000 x43870000 x3ecf99f3}
+       {x442e8000 x43880000 x3eee5dcc}
+       {x44410000 x438e0000 x3f2e75cf}
+       {x44438000 x43900000 x3f39572b}
+       {x44518000 x43900000 x3f391723}
+       {x44590000 x438b0000 x3f239473}}}
+     {tx x4411c000 x44422aab x438c0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear194 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44170000 x43900000 x3ef71ee4}
+       {x44170000 x43910000 x3ef65ecc}
+       {x44268000 x43940000 x3f011022}
+       {x443e0000 x43940000 x3f3a574b}
+       {x44478000 x43910000 x3f4738e7}
+       {x44448000 x438d0000 x3f40580b}
+       {x44438000 x438d0000 0}}}
+     {tx x4411c000 x44329249 x43909249}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear193 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x440d8000 x44040000 x3f03506a}
+       {x440e0000 x44030000 x3f043086}
+       {x44218000 x43ff0000 x3f08f11e}
+       {x44478000 x43f90000 x3f443887}
+       {x44518000 x43e90000 x3f4bf97f}
+       {x44510000 x43e40000 x3e3b9773}}}
+     {tx x4411c000 x44312aab x43f88000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear192 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44578000 x44128000 x3f12724e}
+       {x44560000 x44128000 x3f0e91d2}
+       {x444c8000 x44108000 x3f10d21a}
+       {x44430000 x440e0000 x3f423847}
+       {x44410000 x440c8000 x3f2bb577}}}
+     {tx x4411c000 x444c6666 x44100000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear191 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44720000 x44128000 x3f1e73ce}
+       {x446f0000 x44118000 x3f1e33c6}
+       {x445d0000 x440f8000 x3f1f53ea}
+       {x444f8000 x44108000 x3f40b817}
+       {x44550000 x440f8000 x3f289513}}}
+     {tx x4411c000 x44608000 x4410b333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear190 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44840000 x44198000 x3eb31663}
+       {x44838000 x44198000 x3f23d47b}
+       {x44834000 x44190000 x3f24d49b}
+       {x447a0000 x44140000 x3f24b497}
+       {x446c8000 x44110000 x3f3d57ab}
+       {x44650000 x44108000 x3f43f87f}
+       {x44638000 x44108000 x3f41782f}
+       {x445f8000 x44108000 x3f3fb7f7}
+       {x44600000 x440f8000 x3ecc598b}}}
+     {tx x4411c000 x447238e4 x4413c71c}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear189 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x441f8000 x44048000 x3ee41c84}
+       {x442b0000 x44060000 x3ee55cac}
+       {x44480000 x44070000 x3f29b537}
+       {x44520000 x44040000 x3f3676cf}
+       {x44538000 x44010000 x3ed41a83}}}
+     {tx x4411c000 x443e6666 x44048000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear188 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44398000 x43ff0000 x3efadf5c}
+       {x443a8000 x43fe0000 x3f0a514a}
+       {x444e0000 x43fb0000 x3f2bb577}
+       {x44560000 x43f80000 x3f34568b}
+       {x44538000 x43ef0000 x3f2714e3}}}
+     {tx x4411c000 x4448b333 x43f96666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear187 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44248000 x43fe0000 x3ee5dcbc}
+       {x44230000 x43ff0000 x3efadf5c}
+       {x442c0000 x44008000 x3efe5fcc}
+       {x44428000 x44020000 x3f2e55cb}
+       {x44490000 x44020000 x3f42d85b}
+       {x44480000 x43fe0000 x3f41b837}
+       {x44478000 x43fc0000 x3e9c538a}}}
+     {tx x4411c000 x4438edb7 x44000000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear186 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44198000 x43d80000 x3eac1583}
+       {x441a8000 x43d80000 x3ed35a6b}
+       {x44210000 x43d70000 x3ed41a83}
+       {x442a8000 x43d50000 x3f23d47b}
+       {x44330000 x43d70000 x3f34f69f}
+       {x44378000 x43d90000 x3f391723}
+       {x44368000 x43d90000 x3f009012}}}
+     {tx x4411c000 x442936db x43d79249}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear185 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44108000 x43e70000 x3e239473}
+       {x44170000 x43e40000 x3eec9d94}
+       {x44260000 x43e40000 x3f1b536a}
+       {x44340000 x43e40000 x3f3b3767}
+       {x44398000 x43e20000 x3f42584b}
+       {x44390000 x43e10000 x3f40f81f}
+       {x44360000 x43de0000 x3f0a714e}}}
+     {tx x4411c000 x442a9249 x43e2db6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear184 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447b8000 x43f60000 x3ef81f04}
+       {x44788000 x43f50000 x3efa9f54}
+       {x44720000 x43f20000 x3f09d13a}
+       {x446e8000 x43f20000 x3f2c9593}
+       {x446e0000 x43f20000 x3eb99733}}}
+     {tx x4411c000 x4473b333 x43f36666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear183 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447d0000 x44060000 x3ed65acb}
+       {x447c8000 x44060000 x3ee01c04}
+       {x44700000 x44010000 x3ee11c24}
+       {x445e8000 x43fe0000 x3f09f13e}
+       {x445f8000 x43fe0000 0}}}
+     {tx x4411c000 x446e4ccd x44023333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear182 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44a1c000 x440f8000 x3ecb596b}
+       {x449c8000 x440d8000 x3ef09e14}
+       {x448f8000 x44070000 x3f019032}
+       {x448b4000 x44058000 x3f021042}
+       {x448ac000 x44058000 0}}}
+     {tx x4411c000 x4493f333 x44096666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear181 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4480c000 x43db0000 x3f04708e}
+       {x44800000 x43db0000 x3f05f0be}
+       {x44780000 x43d80000 x3f0790f2}
+       {x44700000 x43d50000 x3f2f55eb}
+       {x446e0000 x43d50000 x3f331663}
+       {x446e8000 x43d50000 x3ed69ad3}}}
+     {tx x4411c000 x44765555 x43d78000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear180 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4488c000 x43d20000 x3f31b637}
+       {x44880000 x43d10000 x3f31b637}
+       {x44810000 x43ca0000 x3f30560b}
+       {x44788000 x43c80000 x3f3f77ef}
+       {x44748000 x43cc0000 x3f483907}
+       {x44760000 x43cb0000 x3f48590b}
+       {x44768000 x43ca0000 x3f143286}
+       {x44788000 x43c70000 x3f01f03e}}}
+     {tx x4411c000 x447eb000 x43cba000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear179 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446c8000 x43660000 x3f03b076}
+       {x446b0000 x43680000 x3f031062}
+       {x44648000 x43760000 x3f09512a}
+       {x44678000 x43800000 x3f34768f}
+       {x446e0000 x43820000 x3f0e51ca}}}
+     {tx x4411c000 x4469e666 x4374cccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear178 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447e8000 x437a0000 x3f2634c7}
+       {x447d8000 x437a0000 x3f289513}
+       {x44738000 x43760000 x3f283507}
+       {x446a0000 x43810000 x3f44d89b}
+       {x44618000 x438b0000 x3f4dd9bb}
+       {x445a0000 x438a0000 x3f4bb977}
+       {x445b8000 x43850000 x3f05b0b6}}}
+     {tx x4411c000 x446b8000 x43824925}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear177 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448cc000 x43950000 x3f221443}
+       {x448c4000 x43950000 x3f23546b}
+       {x44860000 x43900000 x3f24748f}
+       {x4481c000 x43900000 x3f3eb7d7}
+       {x447d8000 x43910000 x3f4b596b}
+       {x44780000 x43910000 x3f4c1983}}}
+     {tx x4411c000 x44849555 x43920000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear176 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446b0000 x434a0000 x3f17d2fa}
+       {x446a0000 x434a0000 x3f18b316}
+       {x44698000 x434e0000 x3f18530a}
+       {x44718000 x43600000 x3f2f75ef}
+       {x44760000 x435c0000 x3f04708e}}}
+     {tx x4411c000 x446e0000 x4352cccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear175 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443a8000 x43400000 x3f0730e6}
+       {x44390000 x43400000 x3f133266}
+       {x44428000 x43560000 x3f3bd77b}
+       {x444e0000 x43620000 x3f4518a3}
+       {x444f8000 x435c0000 x3f3db7b7}
+       {x44500000 x435a0000 x3eca9953}}}
+     {tx x4411c000 x4445eaab x43525555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear174 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44258000 x43540000 x3eae55cb}
+       {x44260000 x43560000 x3ef05e0c}
+       {x442c8000 x43500000 x3ef21e44}
+       {x443b0000 x43500000 x3f29b537}
+       {x44410000 x43540000 x3f399733}
+       {x44478000 x43660000 x3f3c9793}
+       {x44460000 x43560000 x3f1f13e2}}}
+     {tx x4411c000 x44371249 x43560000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear173 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447f0000 x43680000 x3f19f33e}
+       {x447d0000 x43660000 x3f19b336}
+       {x44738000 x43600000 x3f19d33a}
+       {x446a0000 x436a0000 x3f42584b}
+       {x44650000 x436a0000 x3f4c1983}
+       {x44660000 x43660000 x3f48590b}
+       {x44678000 x43660000 x3df81f04}}}
+     {tx x4411c000 x446f6db7 x43669249}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear172 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44898000 x43870000 x3f2634c7}
+       {x44874000 x43840000 x3f2574af}
+       {x4481c000 x437c0000 x3f23746f}
+       {x447b8000 x43810000 x3f38f71f}
+       {x44770000 x43820000 x3f449893}
+       {x44768000 x43820000 x3f4a594b}
+       {x446f0000 x43840000 x3f4ab957}
+       {x446e0000 x43850000 x3f4bd97b}
+       {x44748000 x43820000 x3f40f81f}}}
+     {tx x4411c000 x447c638e x4382c71c}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear171 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44798000 x43540000 x3f15f2be}
+       {x44798000 x43500000 x3f14f29e}
+       {x44750000 x43540000 x3f1552aa}
+       {x44798000 x43660000 x3f2f75ef}
+       {x447b0000 x43620000 x3ef19e34}}}
+     {tx x4411c000 x4478e666 x4359999a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear170 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446f0000 x430e0000 x3eb616c3}
+       {x446f0000 x43100000 x3ee5dcbc}
+       {x446d0000 x432c0000 x3eee5dcc}
+       {x446c8000 x43460000 x3f29552b}
+       {x446d0000 x434e0000 x3f3536a7}
+       {x446e0000 x43500000 x3f3576af}
+       {x446e0000 x434a0000 x3ec91923}}}
+     {tx x4411c000 x446dc925 x4335b6db}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear169 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44798000 x43540000 x3ec698d3}
+       {x44788000 x43540000 x3ec8590b}
+       {x44738000 x43620000 x3ecad95b}
+       {x44718000 x43900000 x3f14b296}
+       {x44738000 x43980000 x3f2c758f}
+       {x44750000 x438e0000 x3f21b437}}}
+     {tx x4411c000 x44754000 x437e5555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear168 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44844000 x43de0000 x3e759eb4}
+       {x44840000 x43db0000 x3e7f9ff4}
+       {x44838000 x43d10000 x3e8690d2}
+       {x44828000 x43d10000 x3f2654cb}
+       {x44818000 x43cf0000 x3f33f67f}
+       {x44810000 x43cf0000 x3f39572b}
+       {x447d0000 x43d10000 x3f3a1743}
+       {x44788000 x43d20000 x3f3f17e3}
+       {x44760000 x43d70000 x3f40f81f}
+       {x44750000 x43d70000 x3f419833}
+       {x44788000 x43d80000 x3f411823}
+       {x447a0000 x43d80000 x3eacd59b}}}
+     {tx x4411c000 x447f0aab x43d4d555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear167 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44660000 x42a60000 x3ecd99b3}
+       {x44660000 x42a00000 x3edf5beb}
+       {x44608000 x427c0000 x3ee8dd1c}
+       {x44600000 x42740000 x3f0d11a2}
+       {x445f0000 x42680000 x3f0d31a6}}}
+     {tx x4411c000 x44624ccd x428a0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear166 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44664000 x43170000 x3f201403}
+       {x44660000 x43160000 x3f18530a}
+       {x44658000 x43140000 x3f13b276}
+       {x44644000 x42de0000 x3f10d21a}
+       {x44644000 x42580000 x3f1bb376}
+       {x44650000 x421c0000 x3e9b1362}}}
+     {tx x4411c000 x44653555 x42d9aaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear165 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444d4000 x431e0000 x3f299533}
+       {x44578000 x43190000 x3f1f93f2}
+       {x44690000 x43190000 x3f311623}
+       {x446e8000 x43140000 x3f189312}}}
+     {tx x4411c000 x445f1000 x43190000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear164 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44444000 x430b0000 x3f12f25e}
+       {x4442c000 x43120000 x3f101202}
+       {x4449c000 x43140000 x3f12f25e}
+       {x44578000 x431e0000 x3f24b497}
+       {x445a8000 x431c0000 x3ef61ec4}}}
+     {tx x4411c000 x444d599a x43156666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear163 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444f0000 x42d60000 x3ee91d24}
+       {x444dc000 x42de0000 x3f0730e6}
+       {x444ac000 x43170000 x3f091122}
+       {x44504000 x434f0000 x3f281503}
+       {x4452c000 x434e0000 x3ef59eb4}}}
+     {tx x4411c000 x444ee666 x431c6666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear162 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44650000 x41b00000 x3f0630c6}
+       {x44644000 x41b00000 x3f209413}
+       {x445c4000 x42100000 x3f231463}
+       {x4453c000 x42e80000 x3f283507}
+       {x44548000 x43340000 x3f3636c7}
+       {x44570000 x43390000 x3f2694d3}}}
+     {tx x4411c000 x445b7555 x42bb0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear161 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44524000 x43230000 x3ea754eb}
+       {x44520000 x43200000 x3ec01803}
+       {x44510000 x43200000 x3f27f4ff}
+       {x44550000 x430d0000 x3f1692d2}}}
+     {tx x4411c000 x44529000 x431c0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear160 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444dc000 x43170000 x3f0c9192}
+       {x444b8000 x43220000 x3f089112}
+       {x4452c000 x431e0000 x3f1f93f2}
+       {x44540000 x431e0000 x3ec718e3}}}
+     {tx x4411c000 x44500000 x431d4000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear159 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44598000 x431c0000 x3f2754eb}
+       {x445a8000 x431b0000 x3f23f47f}
+       {x44680000 x43190000 x3f23f47f}
+       {x44768000 x431c0000 x3f411823}
+       {x44774000 x431c0000 x3e7d9fb4}}}
+     {tx x4411c000 x4468599a x431b3333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear158 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44724000 x43190000 x3f24748f}
+       {x44724000 x43170000 x3f233467}
+       {x446e0000 x430f0000 x3f231463}
+       {x445f0000 x430d0000 x3f2a754f}
+       {x445c8000 x430f0000 x3e4c9993}}}
+     {tx x4411c000 x44693333 x43123333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear157 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4460c000 x42de0000 x3f2f75ef}
+       {x44694000 x42ee0000 x3f2a554b}
+       {x446d4000 x430d0000 x3f4618c3}
+       {x446e0000 x43140000 x3f34d69b}}}
+     {tx x4411c000 x44695000 x4301c000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear156 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44490000 x42f40000 x3f33b677}
+       {x44474000 x42fc0000 x3f3536a7}
+       {x44484000 x432d0000 x3f3576af}
+       {x444c0000 x433d0000 x3f535a6b}
+       {x444e0000 x43330000 x3f02d05a}}}
+     {tx x4411c000 x444a199a x431dcccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear155 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444f8000 x42c20000 x3f28550b}
+       {x444c0000 x430f0000 x3f24d49b}
+       {x4447c000 x43230000 x3f4b596b}
+       {x4447c000 x43160000 x3f2a1543}
+       {x4447c000 x43140000 0}}}
+     {tx x4411c000 x444a2666 x430c3333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear154 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4463c000 x42e80000 x3f329653}
+       {x44620000 x42ee0000 x3f33f67f}
+       {x445d8000 x431b0000 x3f333667}
+       {x445d0000 x43440000 x3f531a63}
+       {x445c8000 x43390000 x3f15f2be}}}
+     {tx x4411c000 x445f599a x431a3333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear153 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446cc000 x42cc0000 x3f2c9593}
+       {x446bc000 x42d20000 x3f2ed5db}
+       {x4466c000 x430f0000 x3f2fd5fb}
+       {x44644000 x432f0000 x3f525a4b}
+       {x44634000 x43250000 x3f1772ee}}}
+     {tx x4411c000 x4467c000 x430a0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear152 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446fc000 x42c80000 x3f3d57ab}
+       {x446d4000 x42de0000 x3f323647}
+       {x446a8000 x43110000 x3f3c3787}
+       {x446b0000 x43280000 x3f5adb5b}
+       {x446a8000 x43190000 x3f13526a}}}
+     {tx x4411c000 x446c3333 x43076666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear151 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446a8000 x42240000 x3f1c9392}
+       {x44690000 x424c0000 x3f199332}
+       {x44678000 x42e00000 x3f3596b3}
+       {x44678000 x43120000 x3f601c04}
+       {x4466c000 x42f40000 x3f4538a7}}}
+     {tx x4411c000 x44684000 x42bccccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear150 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44570000 x41d80000 x3f1b736e}
+       {x4455c000 x42240000 x3f1b536a}
+       {x44564000 x42b00000 x3f4778ef}
+       {x445bc000 x43000000 x3f5f1be3}
+       {x445ec000 x42fc0000 x3f1ff3fe}}}
+     {tx x4411c000 x4459199a x42a40000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear149 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4452c000 x41a00000 x3f1bb376}
+       {x4450c000 x424c0000 x3f1bb376}
+       {x44510000 x42c60000 x3f573ae7}
+       {x44520000 x42ee0000 x3f603c08}
+       {x44524000 x42d60000 x3f33566b}}}
+     {tx x4411c000 x4451c000 x429e6666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear148 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444f8000 x42140000 x3f20740f}
+       {x444e8000 x421c0000 x3f2bb577}
+       {x444d4000 x42820000 x3f32b657}
+       {x444e8000 x42da0000 x3f6dddbc}
+       {x44504000 x42f80000 x3f6fbdf8}
+       {x44504000 x42ee0000 x3e849092}}}
+     {tx x4411c000 x444f0aab x42a45555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear147 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44524000 x42100000 x3f1ef3de}
+       {x44520000 x42100000 x3f1df3be}
+       {x4450c000 x42440000 x3f1cf39e}
+       {x444f0000 x42d00000 x3f4d79af}
+       {x444f0000 x42ea0000 x3f5ffbff}
+       {x44504000 x42c80000 x3f4e99d3}}}
+     {tx x4411c000 x44508aab x42935555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear146 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445d8000 x41100000 x3ed1da3b}
+       {x4458c000 x421c0000 x3ed99b33}
+       {x44554000 x42ae0000 x3f4ef9df}
+       {x44564000 x42f20000 x3f639c74}
+       {x44578000 x42e80000 x3f4a594b}}}
+     {tx x4411c000 x44584000 x4294cccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear145 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44760000 x437a0000 x3f289513}
+       {x44718000 x43660000 x3f289513}
+       {x446b0000 x43220000 x3f38f71f}
+       {x44674000 x42e80000 x3f3a574b}
+       {x4466c000 x42e00000 x3ebb9773}}}
+     {tx x4411c000 x446ce666 x432e0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear144 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4480c000 x435a0000 x3f32b657}
+       {x447fc000 x43580000 x3f33566b}
+       {x4477c000 x43450000 x3f2fd5fb}
+       {x446e8000 x43200000 x3f499933}
+       {x446b0000 x42ee0000 x3f4ab957}
+       {x446b8000 x42e40000 x3f2f35e7}
+       {x446e0000 x42da0000 x3f1f13e2}}}
+     {tx x4411c000 x44740000 x4321db6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear143 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44768000 x428e0000 x3f211423}
+       {x44730000 x42880000 x3f1c738e}
+       {x44680000 x42bc0000 x3f14d29a}
+       {x44660000 x430f0000 x3f2734e7}
+       {x446b8000 x43310000 x3f28d51b}}}
+     {tx x4411c000 x446d6666 x42dd3333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear142 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44644000 x41e80000 x3f0e31c6}
+       {x4463c000 x42000000 x3f0e71ce}
+       {x445d8000 x42880000 x3f0c718e}
+       {x445c4000 x42960000 x3f20f41f}
+       {x44534000 x42e00000 x3f229453}
+       {x44540000 x42d20000 x3ee79cf4}}}
+     {tx x4411c000 x445c2aab x428c5555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear141 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44840000 x42880000 x3f219433}
+       {x44832000 x42880000 x3f20740f}
+       {x44694000 x42680000 x3f1e93d2}
+       {x445a8000 x42840000 x3f0c718e}
+       {x445bc000 x42840000 0}}}
+     {tx x4411c000 x446f8ccd x42826666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear140 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44912000 x41e80000 x3e9a534a}
+       {x44908000 x41e80000 x3f09512a}
+       {x44854000 x42080000 x3f0bf17e}
+       {x44680000 x42080000 x3f1732e6}
+       {x44474000 x42100000 x3f119232}
+       {x44444000 x42100000 0}}}
+     {tx x4411c000 x44758aab x42040000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear139 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4420c000 x42960000 x3ea81503}
+       {x44234000 x42960000 x3ed59ab3}
+       {x44414000 x42540000 x3ee85d0c}
+       {x446b0000 x41b00000 x3f0b716e}
+       {x44738000 x41a00000 x3eacd59b}}}
+     {tx x4411c000 x44472666 x42440000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear138 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44218000 x42380000 x3f10720e}
+       {x44444000 x41d00000 x3f03f07e}
+       {x44660000 x41600000 x3f09712e}
+       {x44694000 x41200000 x3e731e64}}}
+     {tx x4411c000 x444d4000 x41c00000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear137 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44858000 x421c0000 x3e8590b2}
+       {x44850000 x42140000 x3f1d93b2}
+       {x447f0000 x41d00000 x3f1cb396}
+       {x44620000 x41b00000 x3f2c3587}
+       {x44490000 x41d00000 x3f1cf39e}
+       {x44470000 x41d00000 x3e921242}}}
+     {tx x4411c000 x446baaab x41eaaaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear136 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44300000 x42540000 x3f21542b}
+       {x44388000 x42380000 x3f18f31e}
+       {x44598000 x42000000 x3f3f77ef}
+       {x446bc000 x41b00000 x3f523a47}
+       {x44738000 x41700000 x3f28550b}}}
+     {tx x4411c000 x44537333 x42066666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear135 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447f8000 x421c0000 x3f29552b}
+       {x447e8000 x421c0000 x3f2d75af}
+       {x44740000 x41d80000 x3f2c758f}
+       {x4463c000 x41d00000 x3f4618c3}
+       {x445a8000 x41d80000 x3f553aa7}
+       {x44534000 x42080000 x3f551aa3}
+       {x44554000 x42080000 x3ed59ab3}}}
+     {tx x4411c000 x44681b6e x42012492}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear134 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44862000 x40e00000 x3f18b316}
+       {x4485a000 x40a00000 x3f1fb3f6}
+       {x44816000 x40400000 x3f1a9352}
+       {x44724000 x40e00000 x3f3cd79b}
+       {x44688000 xc0000000 x3f549a93}
+       {x44674000 xc0400000 x3f593b27}
+       {x4461c000 xc0400000 x3f591b23}
+       {x44644000 x40e00000 x3f40d81b}
+       {x44664000 x41100000 x3e189312}}}
+     {tx x4411c000 x4472b8e4 x40555555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear133 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445d0000 x430a0000 x3f1e33c6}
+       {x445bc000 x430a0000 x3f1e93d2}
+       {x445d0000 x42d00000 x3f1f93f2}
+       {x4464c000 x424c0000 x3f4ab957}
+       {x4466c000 x421c0000 x3f4af95f}
+       {x44664000 x421c0000 x3e8b9172}}}
+     {tx x4411c000 x44614000 x42a9aaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear132 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44374000 x434a0000 x3f39b737}
+       {x4436c000 x434c0000 x3f331663}
+       {x443cc000 x434a0000 x3f33766f}
+       {x444b4000 x433e0000 x3f587b0f}
+       {x4452c000 x43380000 x3f61dc3c}
+       {x44534000 x43340000 x3f4cf99f}}}
+     {tx x4411c000 x4444aaab x4341aaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear131 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44374000 x43220000 x3f299533}
+       {x44378000 x43220000 x3f1bd37a}
+       {x44380000 x43200000 x3f1bf37e}
+       {x44410000 x43110000 x3f1c538a}
+       {x444f8000 x430a0000 x3f507a0f}
+       {x4452c000 x430b0000 x3f5c1b83}
+       {x444f8000 x43110000 x3f3b776f}}}
+     {tx x4411c000 x4443a492 x43162492}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear130 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442f8000 x432d0000 x3f1a3346}
+       {x442f8000 x432c0000 x3f17b2f6}
+       {x4433c000 x43200000 x3f17f2fe}
+       {x44424000 x43110000 x3f4a594b}
+       {x44474000 x430d0000 x3f58db1b}
+       {x4444c000 x430b0000 x3f4f99f3}}}
+     {tx x4411c000 x443ad555 x431b0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear129 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442d8000 x434f0000 x3ede1bc3}
+       {x4433c000 x43490000 x3f021042}
+       {x44348000 x43470000 x3f3a1743}
+       {x443e0000 x433b0000 x3f3f37e7}
+       {x44458000 x43360000 x3f55fabf}
+       {x44498000 x43330000 x3f575aeb}
+       {x44470000 x43310000 x3ee9dd3c}}}
+     {tx x4411c000 x443cd249 x433e4925}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear128 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44240000 x440a0000 x3f1f33e6}
+       {x442bc000 x440a0000 x3f189312}
+       {x44454000 x440a0000 x3f4cf99f}
+       {x44524000 x4409c000 x3f5d9bb3}
+       {x44550000 x44078000 x3f44588b}}}
+     {tx x4411c000 x443f4000 x44097333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear127 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444ac000 x44158000 x3f1bd37a}
+       {x444a4000 x44158000 x3f19f33e}
+       {x44414000 x44114000 x3f193326}
+       {x442ac000 x44078000 x3f45b8b7}
+       {x44268000 x44064000 x3f311623}
+       {x44270000 x44064000 x3e9752ea}}}
+     {tx x4411c000 x4437c000 x440d6000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear126 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4481a000 x441c0000 x3f423847}
+       {x44808000 x441b0000 x3f3db7b7}
+       {x44700000 x44138000 x3f3d77af}
+       {x44540000 x44088000 x3f5c1b83}
+       {x44510000 x44078000 x3f643c88}
+       {x44430000 x44058000 x3f649c94}
+       {x44440000 x44078000 x3f2f55eb}}}
+     {tx x4411c000 x44600925 x440ec925}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear125 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44240000 x44144000 x3f0a3146}
+       {x44240000 x44138000 x3f09d13a}
+       {x44330000 x44114000 x3f12724e}
+       {x444c8000 x44108000 x3f543a87}
+       {x445d8000 x440ec000 x3f6c1d84}
+       {x44620000 x440d8000 x3f601c04}}}
+     {tx x4411c000 x44412aab x4410f555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear124 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44744000 x44130000 x3f1652ca}
+       {x44730000 x44124000 x3f1732e6}
+       {x4469c000 x440f4000 x3f203407}
+       {x44554000 x440a8000 x3f5b5b6b}
+       {x4444c000 x44078000 x3f54da9b}
+       {x4444c000 x44080000 x3e4b1963}}}
+     {tx x4411c000 x445d4aab x440d1555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear123 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44858000 x44128000 x3f0cf19e}
+       {x44854000 x44124000 x3f10720e}
+       {x4481a000 x44110000 x3f13b276}
+       {x4463c000 x440cc000 x3f47d8fb}
+       {x44594000 x440bc000 x3f5e5bcb}
+       {x4455c000 x440bc000 x3f5edbdb}
+       {x445d8000 x440c4000 x3f4b596b}}}
+     {tx x4411c000 x446f0000 x440e9b6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear122 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4428c000 x440e0000 x3f1a1342}
+       {x44360000 x440d8000 x3f19532a}
+       {x444fc000 x440bc000 x3f543a87}
+       {x4460c000 x440a0000 x3f69fd40}
+       {x445e4000 x44080000 x3f6c3d88}
+       {x445bc000 x44078000 x3eba1743}}}
+     {tx x4411c000 x444c3555 x440acaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear121 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44220000 x44058000 x3f1ef3de}
+       {x44218000 x44058000 x3f1eb3d6}
+       {x44268000 x44064000 x3f1d93b2}
+       {x443cc000 x44060000 x3f3f57eb}
+       {x44488000 x4403c000 x3f5a1b43}
+       {x444f0000 x44034000 x3f5cdb9b}
+       {x444b8000 x44034000 x3f423847}
+       {x44490000 x44034000 x3e7c1f84}}}
+     {tx x4411c000 x443a5800 x44049800}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear120 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44158000 x44058000 x3f06d0da}
+       {x44158000 x44060000 x3f0690d2}
+       {x441b0000 x4403c000 x3f07d0fa}
+       {x442ac000 x44004000 x3f3d77af}
+       {x4436c000 x43fc8000 x3f54ba97}
+       {x443e0000 x43f90000 x3f58db1b}
+       {x443d0000 x43f90000 x3f51da3b}
+       {x443a4000 x43fa0000 x3f12f25e}}}
+     {tx x4411c000 x442b9800 x44007800}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear119 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44144000 x43e30000 x3e9e13c2}
+       {x4414c000 x43e30000 x3ef35e6c}
+       {x44184000 x43e08000 x3ef4de9c}
+       {x44234000 x43dc0000 x3f2ff5ff}
+       {x442e4000 x43d98000 x3f49592b}
+       {x443a8000 x43d60000 x3f529a53}
+       {x443ec000 x43d48000 x3f557aaf}
+       {x443bc000 x43d48000 x3f1ef3de}}}
+     {tx x4411c000 x4428f800 x43db6000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear118 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x440cc000 x43e68000 x3eed1da4}
+       {x440d0000 x43e68000 x3ef55eac}
+       {x44100000 x43e58000 x3ef5debc}
+       {x44138000 x43e40000 x3f281503}
+       {x4419c000 x43e30000 x3f3d77af}
+       {x44224000 x43e20000 x3f4578af}
+       {x44278000 x43e10000 x3f4ab957}
+       {x442d0000 x43e08000 x3f4b596b}
+       {x4431c000 x43df8000 x3f4b796f}
+       {x4430c000 x43df8000 x3f3bb777}
+       {x44304000 x43df8000 0}}}
+     {tx x4411c000 x44200ba3 x43e28000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear117 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44842000 x44144000 x3ededbdb}
+       {x44838000 x44138000 x3ee55cac}
+       {x447ac000 x440d8000 x3f189312}
+       {x44718000 x4409c000 x3f3e17c3}
+       {x446fc000 x44088000 x3f19732e}}}
+     {tx x4411c000 x447bd99a x440e4ccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear116 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4483c000 x4417c000 x3eb89713}
+       {x4480c000 x44160000 x3eef9df4}
+       {x44738000 x440d8000 x3f2ab557}
+       {x446c4000 x44060000 x3f41d83b}
+       {x44694000 x44004000 x3f43786f}
+       {x446f4000 x44034000 x3f0f11e2}}}
+     {tx x4411c000 x44758aab x440b7555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear115 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44814000 x440fc000 x3ecfd9fb}
+       {x44810000 x440fc000 x3ef15e2c}
+       {x447f0000 x44100000 x3ef35e6c}
+       {x447e8000 x44100000 x3f2b756f}
+       {x44790000 x44094000 x3f2eb5d7}
+       {x446fc000 x43ff0000 x3f41f83f}
+       {x446b8000 x43f20000 x3f45b8b7}
+       {x44710000 x43fb8000 x3f101202}}}
+     {tx x4411c000 x4478e800 x4407e000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear114 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44864000 x4400c000 x3e0a1142}
+       {x44862000 x44004000 x3f00500a}
+       {x44824000 x43fa0000 x3f01502a}
+       {x44798000 x43e98000 x3f33f67f}
+       {x44718000 x43d90000 x3f4678cf}
+       {x4471c000 x43d58000 x3f4738e7}
+       {x4475c000 x43de0000 x3edcdb9b}}}
+     {tx x4411c000 x447dadb7 x43ebb6db}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear113 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4488e000 x43e90000 x3eaf55eb}
+       {x44886000 x43e70000 x3f01d03a}
+       {x44850000 x43dc0000 x3f09512a}
+       {x447fc000 x43d00000 x3f3e57cb}
+       {x4472c000 x43bc0000 x3f4ab957}
+       {x44718000 x43b40000 x3f4b1963}
+       {x44768000 x43be8000 x3f0ff1fe}}}
+     {tx x4411c000 x44808000 x43cf36db}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear112 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4485e000 x43b60000 x3f001002}
+       {x4485e000 x43b40000 x3effdffc}
+       {x44858000 x43b50000 x3f00b016}
+       {x4482e000 x43b60000 x3f29f53f}
+       {x447f8000 x43b18000 x3f3e97d3}
+       {x44718000 x43aa0000 x3f409813}
+       {x446d8000 x43a60000 x3f441883}
+       {x446ec000 x43a78000 x3f44b897}
+       {x44730000 x43ab0000 x3f1c738e}}}
+     {tx x4411c000 x447d638e x43af38e4}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Clone16 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44470000 x44378000 x3e579af3}
+       {x44470000 x44370000 x3e651ca4}
+       {x44468000 x44370000 x3e1612c2}}}
+     {tx x4411c000 x4446d555 x44372aab}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3330000 sty xc1b00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone15 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443d0000 x44638000 x3ea514a3}
+       {x443c8000 x44648000 x3ea1d43b}
+       {x444b8000 x44660000 x3ea41483}
+       {x44770000 x44638000 x3ee2dc5c}
+       {x44818000 x44630000 x3eb6d6db}}}
+     {tx x4411c000 x44596666 x4464199a}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3330000 sty xc1b00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone14 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44440000 x44618000 x3e751ea4}
+       {x44448000 x44618000 x3e8c518a}
+       {x44538000 x44618000 x3e931262}
+       {x446a0000 x445e0000 x3ea2d45b}}}
+     {tx x4411c000 x44518000 x4460a000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3330000 sty xc1b00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone13 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44870000 x43480000 x3e92d25a}
+       {x4486c000 x434a0000 x3e96d2da}
+       {x4486c000 x434b0000 x3eaf15e3}
+       {x4486e000 x43420000 x3ef2de5c}
+       {x44866000 x43170000 x3f03d07a}
+       {x44862000 x43020000 x3f121242}
+       {x44864000 x42e80000 x3f1572ae}
+       {x4486c000 x43010000 x3effdffc}
+       {x44876000 x431b0000 x3ed5dabb}
+       {x44876000 x43280000 x3ec31863}
+       {x44874000 x43470000 x3ec7d8fb}
+       {x44874000 x434b0000 x3ee4dc9c}
+       {x44878000 x43540000 x3ee7dcfc}
+       {x44876000 x43530000 x3eed1da4}
+       {x4486e000 x43470000 x3f02b056}
+       {x4484e000 x430e0000 x3f0a9152}
+       {x44840000 x42c40000 x3f10f21e}
+       {x4483c000 x41d00000 x3f11722e}
+       {x44840000 1 x3f11522a}
+       {x4484a000 xc0800000 x3f11d23a}
+       {x4484a000 1 x3ebfd7fb}
+       {x44840000 x41a00000 x3eb11623}
+       {x4482e000 x42940000 x3e8650ca}
+       {x4482a000 x42d60000 x3e86d0da}
+       {x44834000 x43250000 x3ea01403}
+       {x44838000 x43310000 x3ee61cc4}
+       {x44832000 x431f0000 x3eff5fec}
+       {x4482e000 x43060000 x3f13f27e}
+       {x44822000 x424c0000 x3f1752ea}
+       {x44822000 xc0400000 x3f1cf39e}
+       {x44822000 xc2500000 x3f25b4b7}
+       {x44820000 xc25c0000 x3f2a1543}
+       {x447fc000 xc1800000 x3f2a554b}
+       {x447c4000 x41c80000 x3f2a9553}
+       {x447a8000 x42d00000 x3f2ad55b}
+       {x447c4000 x430f0000 x3f2a9553}
+       {x44808000 x43460000 x3f2a3547}
+       {x447c4000 x43210000 x3f2ab557}
+       {x44794000 x42fe0000 x3f2df5bf}
+       {x44790000 x41d00000 x3f2fb5f7}
+       {x447b0000 xc1e80000 x3f30b617}
+       {x44800000 xc29c0000 x3f31762f}
+       {x44816000 xc2ae0000 x3f27f4ff}
+       {x4482a000 xc2bc0000 x3f0ab156}}}
+     {tx x4411c000 x44835746 x42be9746}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3330000 sty xc1b00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone12 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44888000 x43370000 x3e9dd3ba}
+       {x4487e000 x43330000 x3ed31a63}
+       {x44876000 x43190000 x3ef81f04}
+       {x44878000 x43060000 x3f12b256}
+       {x44888000 x428c0000 x3f12f25e}
+       {x44892000 x42200000 x3f139272}
+       {x448aa000 x41200000 x3f1692d2}
+       {x448aa000 x41800000 x3f131262}
+       {x4489a000 x42380000 x3f121242}
+       {x4488e000 x42840000 x3f0e71ce}
+       {x4487e000 x42fa0000 x3f0d91b2}
+       {x44886000 x43130000 x3f0d31a6}
+       {x4488e000 x43280000 x3f0ab156}
+       {x44886000 x43260000 x3eff5fec}
+       {x44878000 x43210000 x3efc1f84}
+       {x44878000 x43280000 x3ed1da3b}
+       {x4487c000 x432c0000 x3ebb1763}
+       {x4487e000 x43330000 x3eba1743}
+       {x44880000 x43360000 x3eba574b}
+       {x44882000 x43370000 x3eba574b}
+       {x44886000 x43360000 x3ec4588b}
+       {x4488a000 x43230000 x3ed65acb}
+       {x44890000 x430f0000 x3ef61ec4}
+       {x44890000 x43070000 x3efa5f4c}
+       {x44892000 x429a0000 x3efbdf7c}
+       {x44898000 x423c0000 x3f011022}
+       {x448a8000 x41b00000 x3f00500a}}}
+     {tx x4411c000 x4488a12f x42f5b426}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3330000 sty xc1b00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone11 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448c4000 x429c0000 x3f11d23a}
+       {x448be000 x42a20000 x3f11522a}
+       {x448c2000 x42920000 x3f12f25e}
+       {x448c4000 x42600000 x3f2a9553}
+       {x448c4000 x41900000 x3f303607}
+       {x448c4000 0 x3f36f6df}
+       {x448c2000 xc1900000 x3f3cb797}
+       {x448c2000 xc1800000 x3f419833}
+       {x448b4000 x41400000 x3f41782f}
+       {x448aa000 x41f80000 x3f41782f}
+       {x448a2000 x42a60000 x3f41b837}
+       {x448a8000 x42e00000 x3f41782f}
+       {x448ac000 x42f40000 x3f41d83b}
+       {x448aa000 x42e40000 x3f421843}
+       {x448a2000 x42940000 x3f42584b}
+       {x448a8000 x421c0000 x3f441883}
+       {x448c2000 xc1a80000 x3f439873}
+       {x448c8000 xc2080000 x3f45f8bf}
+       {x448d0000 xc1e80000 x3f45d8bb}
+       {x448cc000 xc1600000 x3f4518a3}
+       {x448c8000 xc1100000 x3f44588b}
+       {x448aa000 x42500000 x3f443887}
+       {x448a2000 x42a40000 x3f44d89b}
+       {x448a0000 x43070000 x3f42b857}
+       {x448a8000 x431c0000 x3f3e37c7}
+       {x448ac000 x43210000 x3f3d77af}
+       {x448b0000 x43230000 x3f3d57ab}
+       {x448a2000 x43160000 x3f3d17a3}
+       {x4488a000 x42d60000 x3f3d17a3}
+       {x44886000 x428c0000 x3f3c9793}
+       {x4488e000 1 x3f3d37a7}
+       {x44896000 xc1d00000 x3f3f17e3}
+       {x448b2000 xc2740000 x3f3df7bf}
+       {x448c2000 xc28e0000 x3f29d53b}
+       {x448c4000 xc28c0000 x3ea714e3}}}
+     {tx x4411c000 x448b199a x4236f8b0}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3330000 sty xc1b00000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone10 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4421c000 x429c0000 x3ef85f0c}
+       {x4421c000 x429a0000 x3ef61ec4}
+       {x44228000 x42920000 x3ef75eec}
+       {x44250000 x428c0000 x3efb1f64}
+       {x44260000 x428c0000 x3f03506a}
+       {x44278000 x429c0000 x3f04508a}
+       {x44270000 x42b60000 x3f05f0be}
+       {x4426c000 x42ca0000 x3f08510a}
+       {x44278000 x42c80000 x3f13b276}
+       {x442a0000 x42b40000 x3f1772ee}
+       {x442b8000 x42aa0000 x3f183306}
+       {x442e0000 x42940000 x3f19732e}
+       {x442ec000 x42940000 x3f19532a}
+       {x442f4000 x42b00000 x3f193326}
+       {x442f8000 x42c80000 x3f19b336}
+       {x4430c000 x42d20000 x3f1d33a6}
+       {x44318000 x42ce0000 x3f231463}
+       {x44318000 x42ca0000 x3f24d49b}
+       {x4432c000 x42b80000 x3f2514a3}
+       {x44330000 x42b00000 x3f27d4fb}
+       {x4432c000 x42b80000 x3f27d4fb}
+       {x44320000 x42c60000 x3f283507}
+       {x4430c000 x42e40000 x3f283507}
+       {x44314000 x42e40000 x3f29b537}
+       {x44338000 x42c40000 x3f2e55cb}
+       {x4434c000 x42b00000 x3f2f55eb}
+       {x44374000 x42940000 x3f2f75ef}
+       {x4437c000 x42940000 x3f2fb5f7}
+       {x44364000 x42b60000 x3f2f35e7}
+       {x44354000 x42ce0000 x3f2f55eb}
+       {x44354000 x42d60000 x3f32d65b}
+       {x4436c000 x42de0000 x3f33566b}
+       {x44394000 x42c60000 x3f38770f}
+       {x443f0000 x42940000 x3f39b737}
+       {x4441c000 x42800000 x3f3b776f}
+       {x4442c000 x42740000 x3f3b776f}
+       {x44464000 x42400000 x3f3b9773}
+       {x44478000 x42440000 x3f3db7b7}
+       {x44488000 x42820000 x3f3d77af}
+       {x44488000 x429e0000 x3f3db7b7}
+       {x444ac000 x42a40000 x3f3d57ab}
+       {x444e8000 x42800000 x3f40580b}
+       {x44548000 x41f80000 x3f44d89b}
+       {x44578000 x41880000 x3f47f8ff}
+       {x44598000 x41100000 x3f49b937}
+       {x44588000 x41900000 x3f4a3947}
+       {x44540000 x422c0000 x3f491923}
+       {x44528000 x424c0000 x3f491923}
+       {x44544000 x42280000 x3f4a594b}
+       {x4456c000 x41d80000 x3f4af95f}
+       {x445a0000 x41400000 x3f4c798f}
+       {x445b8000 x40e00000 x3f4cb997}
+       {x445ac000 x40e00000 x3f4bd97b}
+       {x4459c000 x41000000 x3f28b517}
+       {x4458c000 x40e00000 x3f05f0be}}}
+     {tx x4411c000 x443c4df7 x428c9e41}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx x43090000 sty xc1d80000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone9 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44620000 x44770000 x3e83d07a}
+       {x44618000 x44780000 x3e9dd3ba}
+       {x44608000 x44748000 x3ec658cb}
+       {x44618000 x44720000 x3ec8d91b}
+       {x44620000 x44718000 x3e651ca4}}}
+     {tx x4411c000 x44618000 x4474999a}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx x43090000 sty xc1d80000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone8 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44278000 x42c00000 x3ebbd77b}
+       {x442c0000 x42680000 x3ec658cb}
+       {x44330000 x41600000 x3f0a514a}
+       {x44350000 x40000000 x3f1652ca}
+       {x44318000 x42480000 x3f17d2fa}
+       {x442e0000 x42a80000 x3f1e33c6}
+       {x44318000 x42600000 x3f25f4bf}
+       {x44360000 x41600000 x3f31562b}
+       {x443e0000 xc2000000 x3f313627}
+       {x443d0000 xc1000000 x3f32d65b}
+       {x44368000 x42600000 x3f33d67b}
+       {x44368000 x42680000 x3f341683}
+       {x44368000 x42600000 x3f34f69f}
+       {x443d0000 xc0c00000 x3f3a1743}
+       {x44400000 xc1e00000 x3f3a1743}
+       {x443e0000 0 x3f39572b}
+       {x44390000 x42380000 x3f3a1743}
+       {x443a8000 x42080000 x3f39b737}
+       {x443e8000 xc0000000 x3f3af75f}
+       {x44448000 xc1d00000 x3f3a774f}
+       {x44430000 x40000000 x3f399733}
+       {x44400000 x42480000 x3f3a774f}
+       {x44440000 x42000000 x3f3cb797}
+       {x444b8000 xc1a00000 x3f3dd7bb}
+       {x444e8000 xc1a00000 x3f3d37a7}
+       {x444c8000 x41c00000 x3f3cb797}
+       {x44500000 x41400000 x3f3ed7db}
+       {x44560000 xc1d00000 x3f42b857}
+       {x445a0000 xc2480000 x3f431863}
+       {x445e8000 xc29c0000 x3f42584b}
+       {x445e8000 xc2a40000 0}}}
+     {tx x4411c000 x443fe73a x413ce73a}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx x43090000 sty xc1d80000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone7 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4486c000 x438a0000 x3e901202}
+       {x4485c000 x439a0000 x3e949292}
+       {x4485c000 x43b58000 x3edf5beb}
+       {x44852000 x43b20000 x3f011022}
+       {x44850000 x43af8000 x3f01f03e}
+       {x4483a000 x438f0000 x3f023046}
+       {x4482e000 x436f0000 x3f02704e}
+       {x44824000 x438f8000 x3f0db1b6}
+       {x4481e000 x43ac0000 x3f143286}
+       {x44828000 x43bc8000 x3f1a1342}
+       {x4481e000 x43b68000 x3f1b536a}
+       {x4480a000 x43930000 x3f19b336}
+       {x44818000 x436e0000 x3f123246}
+       {x44826000 x43740000 x3f0c518a}
+       {x44818000 x438e0000 x3ef21e44}
+       {x44826000 x43b40000 x3ef5debc}
+       {x44836000 x43bb8000 x3efcdf9c}
+       {x44818000 x43a80000 x3ee31c64}
+       {x4480a000 x439d8000 x3ee01c04}
+       {x44810000 x43950000 x3ee3dc7c}
+       {x44810000 x43890000 x3eb556ab}
+       {x44804000 x438a8000 x3eab1563}
+       {x447fc000 x439d8000 x3e8b1162}
+       {x447fc000 x43a08000 x3eaf15e3}
+       {x44808000 x43ba0000 x3eb5d6bb}
+       {x447ec000 x43b40000 x3ec6d8db}}}
+     {tx x4411c000 x44824627 x439dfb14}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone6 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448be000 x43bc8000 x3e1612c2}
+       {x448b8000 x43ba0000 x3ea794f3}
+       {x44894000 x43a30000 x3eaf55eb}
+       {x44882000 x43870000 x3efa5f4c}
+       {x44886000 x43848000 x3f001002}
+       {x44882000 x43938000 x3ef39e74}
+       {x4487a000 x43a68000 x3eed5dac}
+       {x44890000 x43c20000 x3eef1de4}
+       {x44896000 x43c70000 x3ebe97d3}}}
+     {tx x4411c000 x44894000 x43a80000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone5 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4487a000 x441c0000 x3e211423}
+       {x4487a000 x441c8000 x3ea7d4fb}
+       {x4485e000 x4414c000 x3eaa1543}
+       {x44848000 x43fc0000 x3f0730e6}
+       {x4484a000 x43e90000 x3f10720e}
+       {x44858000 x43f58000 x3f10b216}
+       {x44856000 x4406c000 x3f0c718e}
+       {x4486a000 x44164000 x3f0d91b2}
+       {x4485e000 x44104000 x3f111222}
+       {x4485c000 x43f18000 x3f12d25a}
+       {x44864000 x43dc8000 x3f093126}
+       {x4486a000 x43de8000 x3e8b516a}}}
+     {tx x4411c000 x44860555 x44052aab}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone4 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448be000 x4420c000 x3eb1562b}
+       {x4489e000 x441f8000 x3eb0d61b}
+       {x44890000 x440a4000 x3ef5debc}
+       {x4489e000 x43e38000 x3f03f07e}
+       {x448b8000 x43c28000 x3f0530a6}
+       {x448b8000 x43c38000 x3e709e14}}}
+     {tx x4411c000 x448a9aab x43ffc000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone3 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448ec000 x441c8000 x3ed89b13}
+       {x448de000 x441cc000 x3ed69ad3}
+       {x448d6000 x4419c000 x3ed89b13}
+       {x448f6000 x44024000 x3f01702e}
+       {x44908000 x43de8000 x3f0550aa}
+       {x44912000 x43ce8000 x3f0570ae}
+       {x448f8000 x43e08000 x3ec49893}
+       {x448d4000 x4404c000 x3eb696d3}
+       {x448e2000 x4416c000 x3ee8dd1c}
+       {x448ea000 x44230000 x3eec5d8c}
+       {x448e4000 x44228000 x3ee81d04}
+       {x448d0000 x440f8000 x3ee8dd1c}
+       {x448ce000 x43fa0000 x3ef65ecc}
+       {x448f2000 x43c10000 x3efd1fa4}
+       {x448fe000 x43c20000 x3effdffc}
+       {x448f8000 x43c60000 x3e559ab3}}}
+     {tx x4411c000 x448eb200 x4402e000}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone2 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4495a000 x44164000 x3ed3da7b}
+       {x4494a000 x44164000 x3ed3da7b}
+       {x4494c000 x44148000 x3ef85f0c}
+       {x4494e000 x4413c000 x3f0a3146}
+       {x44976000 x44018000 x3f0ab156}
+       {x4498c000 x43e40000 x3f0ff1fe}
+       {x449a2000 x43d78000 x3f13b276}
+       {x4498c000 x43e58000 x3f04508a}
+       {x4494e000 x440a8000 x3efb1f64}
+       {x4494a000 x44188000 x3f039072}
+       {x4492a000 x44238000 x3f00d01a}
+       {x44928000 x4421c000 x3eaa554b}
+       {x44928000 x440d8000 x3ea2544b}
+       {x4492a000 x440a8000 x3edddbbb}
+       {x44930000 x43f18000 x3ee45c8c}
+       {x44940000 x43c38000 x3ef39e74}
+       {x44944000 x43c78000 x3ef29e54}}}
+     {tx x4411c000 x44950d2d x4405f4b5}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone1 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44990000 x44118000 x3e92524a}
+       {x4498c000 x44110000 x3e931262}
+       {x44986000 x4405c000 x3e991322}
+       {x44986000 x43ee0000 x3eb796f3}
+       {x44986000 x43ea8000 x3edd9bb3}
+       {x4498c000 x43dd0000 x3edf9bf3}
+       {x44994000 x43dd0000 x3ed65acb}}}
+     {tx x4411c000 x4498b249 x43fbdb6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x434c0000 bu 1 src 1 stx xc3380000 sty xc0000000 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 tt x41980000}}
+    {cubiccurve Smear111 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443d0000 x44298000 x3f03506a}
+       {x444a8000 x44270000 x3f033066}
+       {x446d8000 x44250000 x3f2bb577}
+       {x447e0000 x44230000 x3f1a3346}}}
+     {tx x4411c000 x445cc000 x44262000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear110 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44878000 x44350000 x3f11f23e}
+       {x44854000 x44338000 x3f10f21e}
+       {x447d8000 x442b0000 x3f11d23a}
+       {x446e8000 x44210000 x3f3776ef}
+       {x44680000 x441c0000 x3f3c9793}
+       {x44678000 x441d0000 x3f229453}}}
+     {tx x4411c000 x4478d555 x44279555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear109 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448c8000 x44460000 x3f0b516a}
+       {x448bc000 x44450000 x3f0c3186}
+       {x44850000 x443a8000 x3f0cd19a}
+       {x447c0000 x442f8000 x3f3576af}
+       {x44730000 x44260000 x3f3f17e3}
+       {x44698000 x441e0000 x3f3eb7d7}
+       {x44690000 x441d8000 x3f05f0be}
+       {x44678000 x441b0000 x3eed1da4}}}
+     {tx x4411c000 x447c7000 x442e3000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear108 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44278000 x44478000 x3ed2da5b}
+       {x44288000 x44470000 x3ef55eac}
+       {x44300000 x44400000 x3ef51ea4}
+       {x44460000 x44360000 x3f2694d3}
+       {x44560000 x44318000 x3f419833}
+       {x44698000 x442b0000 x3f4af95f}
+       {x44718000 x442a0000 x3f4f99f3}
+       {x44708000 x442b0000 x3f3736e7}}}
+     {tx x4411c000 x444cf000 x4436c000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear107 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4487c000 x44608000 x3f08d11a}
+       {x44878000 x44600000 x3f08b116}
+       {x44828000 x445c0000 x3f08710e}
+       {x44780000 x44548000 x3f2674cf}
+       {x446e8000 x444d0000 x3f381703}
+       {x44608000 x44428000 x3f3f57eb}
+       {x44548000 x443c0000 x3f4778ef}
+       {x444f0000 x44360000 x3f47d8fb}
+       {x44510000 x44328000 x3f38b717}}}
+     {tx x4411c000 x446e1c72 x444b38e4}
+     {a ro 0 go 0 bo 0 ao 0 bs x43cd4000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear106 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44714000 x44304000 x3f19b336}
+       {x44708000 x442fc000 x3f1a3346}
+       {x446b0000 x442b0000 x3f1732e6}
+       {x44624000 x44250000 x3f28750f}
+       {x445b0000 x44218000 x3f29f53f}
+       {x44574000 x44200000 x3ed71ae3}}}
+     {tx x4411c000 x44658aab x44284000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear105 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443d8000 x4429c000 x3f13f27e}
+       {x443f0000 x4429c000 x3f13726e}
+       {x44504000 x4427c000 x3f14d29a}
+       {x44658000 x44270000 x3f40f81f}
+       {x446c4000 x4425c000 x3f32f65f}
+       {x446d4000 x44250000 x3e93526a}}}
+     {tx x4411c000 x44574aab x44278000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear104 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447d4000 x44348000 x3f26b4d7}
+       {x44724000 x44308000 x3f29b537}
+       {x445e0000 x442d0000 x3f40780f}
+       {x44524000 x4429c000 x3f4ad95b}
+       {x444a8000 x44268000 x3f399733}
+       {x4449c000 x44260000 0}}}
+     {tx x4411c000 x445e0000 x442c0aab}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear103 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442b8000 x44320000 x3effdffc}
+       {x443b0000 x442e0000 x3f00700e}
+       {x44524000 x442d8000 x3f2cf59f}
+       {x44610000 x442ec000 x3f4ab957}
+       {x446e8000 x442f4000 x3f49592b}
+       {x446f4000 x442ec000 x3e5b1b63}}}
+     {tx x4411c000 x4453eaab x442f0aab}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear102 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44800000 x44424000 x3f2f95f3}
+       {x447c8000 x44420000 x3f309613}
+       {x446c0000 x443f0000 x3f31762f}
+       {x4450c000 x443c4000 x3f38570b}
+       {x44470000 x443c4000 x3f209413}
+       {x44468000 x443c4000 0}}}
+     {tx x4411c000 x44612000 x443eaaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear101 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442e4000 x44448000 x3f15d2ba}
+       {x442ec000 x44444000 x3f0b1162}
+       {x44398000 x44430000 x3f0bf17e}
+       {x44574000 x44408000 x3f3636c7}
+       {x4465c000 x443f0000 x3f4df9bf}
+       {x44708000 x443cc000 x3f45b8b7}}}
+     {tx x4411c000 x444b5555 x44415555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear100 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4481e000 x443cc000 x3f2ed5db}
+       {x4480e000 x443c4000 x3f313627}
+       {x44704000 x44374000 x3f33566b}
+       {x445ac000 x4433c000 x3f3ff7ff}
+       {x44510000 x4432c000 x3f4f79ef}
+       {x44420000 x4432c000 x3f4ed9db}
+       {x4442c000 x44330000 x3f07b0f6}}}
+     {tx x4411c000 x4460e492 x44365b6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear99 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44434000 x44364000 x3ed85b0b}
+       {x44444000 x4436c000 x3eda5b4b}
+       {x444e0000 x44374000 x3ee0dc1c}
+       {x4463c000 x44350000 x3f1f53ea}
+       {x446fc000 x44350000 x3f1572ae}
+       {x44714000 x44354000 0}}}
+     {tx x4411c000 x4459b555 x4435eaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear98 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44390000 x44390000 x3edb5b6b}
+       {x44390000 x44394000 x3ef15e2c}
+       {x443fc000 x44394000 x3ee7dcfc}
+       {x445a0000 x44384000 x3f21f43f}
+       {x446e0000 x44384000 x3f301603}
+       {x447b0000 x44390000 x3f1f53ea}}}
+     {tx x4411c000 x44537555 x4438d555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear97 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4425c000 x44500000 x3eb7d6fb}
+       {x44268000 x44500000 x3ec9d93b}
+       {x442c8000 x4450c000 x3ecbd97b}
+       {x444e8000 x44504000 x3f0df1be}
+       {x446a4000 x444ec000 x3f1d33a6}
+       {x447a8000 x444c0000 x3f0670ce}}}
+     {tx x4411c000 x44475555 x444f4aab}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear96 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442b0000 x445f8000 x3eb01603}
+       {x442f4000 x445f8000 x3eb616c3}
+       {x4449c000 x44608000 x3efd1fa4}
+       {x4468c000 x44600000 x3f241483}
+       {x4483c000 x445e4000 x3f2574af}
+       {x4485e000 x445e4000 x3e619c34}}}
+     {tx x4411c000 x445aaaab x445f5555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear95 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4485a000 x44648000 x3f0e11c2}
+       {x44856000 x44648000 x3f0cf19e}
+       {x44808000 x4463c000 x3f0cb196}
+       {x4463c000 x44608000 x3f2e55cb}
+       {x44504000 x445e0000 x3f3b9773}
+       {x443f8000 x445c0000 x3f3696d3}}}
+     {tx x4411c000 x446c6aab x44613555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear94 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448c4000 x4469c000 x3f36f6df}
+       {x448b2000 x446a0000 x3f32764f}
+       {x44852000 x44694000 x3f30760f}
+       {x44758000 x44668000 x3f49792f}
+       {x446b4000 x4465c000 x3f57baf7}
+       {x4456c000 x44648000 x3f591b23}
+       {x44468000 x44618000 x3f505a0b}
+       {x44418000 x445f4000 x3f28d51b}}}
+     {tx x4411c000 x446f1000 x4465d000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear93 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44450000 x445f8000 x3f19732e}
+       {x44500000 x44614000 x3f12724e}
+       {x4467c000 x44628000 x3f34f69f}
+       {x4476c000 x4462c000 x3f4b1963}
+       {x447f8000 x44624000 x3f389713}}}
+     {tx x4411c000 x4463cccd x4461a666}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear92 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443c8000 x445f0000 x3f149292}
+       {x44468000 x445cc000 x3f10b216}
+       {x44628000 x445c0000 x3f2714e3}
+       {x44760000 x445c4000 x3f2f15e3}
+       {x447dc000 x445c4000 x3ef25e4c}}}
+     {tx x4411c000 x445ea666 x445cd99a}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear91 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4473c000 x4450c000 x3f1f73ee}
+       {x44678000 x444e8000 x3f1f13e2}
+       {x44518000 x444a4000 x3f343687}
+       {x44460000 x44480000 x3f3e37c7}
+       {x44480000 x44470000 x3f29552b}}}
+     {tx x4411c000 x44588ccd x444b4ccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear90 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447b8000 x44498000 x3f189312}
+       {x447a4000 x44494000 x3f1512a2}
+       {x446c4000 x44458000 x3f1512a2}
+       {x44598000 x44448000 x3f4758eb}
+       {x4449c000 x44448000 x3f50da1b}
+       {x44434000 x44450000 x3f4df9bf}
+       {x44470000 x44444000 x3f093126}}}
+     {tx x4411c000 x445da492 x44461249}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear89 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44816000 x44528000 x3f2b1563}
+       {x44808000 x44518000 x3f25d4bb}
+       {x447a8000 x444f0000 x3f1c9392}
+       {x446f4000 x444b8000 x3f3736e7}
+       {x4462c000 x44494000 x3f481903}
+       {x44608000 x4448c000 x3f4b796f}
+       {x44524000 x44474000 x3f4c598b}
+       {x44528000 x44474000 x3f4778ef}
+       {x44580000 x44470000 x3ef91f24}}}
+     {tx x4411c000 x44689c72 x444b5555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear88 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4485e000 x445f0000 x3f1d93b2}
+       {x4485e000 x445e8000 x3f19d33a}
+       {x4482a000 x445d0000 x3f1a734e}
+       {x44724000 x4459c000 x3f41f83f}
+       {x44610000 x4456c000 x3f4b1963}
+       {x444e0000 x44540000 x3f49792f}
+       {x444c0000 x44554000 x3f0dd1ba}}}
+     {tx x4411c000 x446f2492 x4459c000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear87 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44458000 x4455c000 x3f083106}
+       {x44458000 x44558000 x3f05d0ba}
+       {x4448c000 x44540000 x3f06d0da}
+       {x44598000 x4450c000 x3f3696d3}
+       {x44644000 x444e8000 x3f4ff9ff}
+       {x4465c000 x444e0000 x3f547a8f}
+       {x44740000 x444d8000 x3f545a8b}
+       {x44780000 x444e0000 x3f1b9372}}}
+     {tx x4411c000 x445c6800 x44510000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear86 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447b8000 x44410000 x3f133266}
+       {x447b0000 x4440c000 x3f0db1b6}
+       {x44740000 x443e8000 x3f09f13e}
+       {x4463c000 x443b4000 x3f2fb5f7}
+       {x445a0000 x44388000 x3f49d93b}
+       {x44564000 x44378000 x3f4ab957}
+       {x44568000 x44378000 x3ead15a3}}}
+     {tx x4411c000 x44679249 x443bdb6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear85 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44856000 x44474000 x3f1a9352}
+       {x44830000 x44444000 x3f19b336}
+       {x447a4000 x4441c000 x3f481903}
+       {x446a0000 x443dc000 x3f595b2b}
+       {x44574000 x443a0000 x3f5dfbbf}
+       {x44548000 x44394000 x3f507a0f}
+       {x44568000 x44390000 x3f02f05e}}}
+     {tx x4411c000 x446c76db x443ec000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear84 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44494000 x44488000 x3f11722e}
+       {x44494000 x44484000 x3f0570ae}
+       {x44500000 x44484000 x3f09712e}
+       {x44634000 x44474000 x3f439873}
+       {x446d4000 x44474000 x3f583b07}
+       {x44738000 x44464000 x3f53da7b}}}
+     {tx x4411c000 x445bc000 x4447a000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear83 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443bc000 x445ac000 x3f24548b}
+       {x443bc000 x445a8000 x3f1ed3da}
+       {x44420000 x44568000 x3f20b417}
+       {x4455c000 x44518000 x3f46f8df}
+       {x44634000 x444f0000 x3f5cfb9f}
+       {x446f8000 x44504000 x3f61bc38}
+       {x44708000 x44500000 x3f50fa1f}
+       {x446f0000 x444f0000 x3ef99f34}}}
+     {tx x4411c000 x44583000 x44537000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear82 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44654000 x446d8000 x3e921242}
+       {x4464c000 x446e0000 x3edb5b6b}
+       {x445f4000 x446b8000 x3ede9bd3}
+       {x44518000 x44638000 x3f213427}
+       {x44480000 x445bc000 x3f3b576b}
+       {x44468000 x445ac000 x3f3d77af}
+       {x44424000 x44544000 x3f3a574b}
+       {x4441c000 x44534000 x3e749e94}}}
+     {tx x4411c000 x4451a800 x44611000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear81 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447dc000 x446d4000 x3f009012}
+       {x447d4000 x446d4000 x3effdffc}
+       {x44784000 x4466c000 x3f0530a6}
+       {x446c8000 x445b4000 x3f431863}
+       {x445d0000 x444e8000 x3f55bab7}
+       {x4450c000 x44434000 x3f5f5beb}
+       {x444ec000 x44410000 x3f541a83}
+       {x444f0000 x44418000 x3f03706e}}}
+     {tx x4411c000 x44656800 x44561800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear80 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44400000 x44514000 x3eb31663}
+       {x443fc000 x44510000 x3f0e51ca}
+       {x4442c000 x444ec000 x3f0e91d2}
+       {x44524000 x4449c000 x3f3616c3}
+       {x445d0000 x44454000 x3f5d5bab}
+       {x446bc000 x443dc000 x3f659cb4}
+       {x44714000 x443a0000 x3f6cdd9c}
+       {x4472c000 x44388000 x3f62fc60}
+       {x4472c000 x44390000 0}}}
+     {tx x4411c000 x445b238e x44449555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear79 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44804000 x444ac000 x3f1b536a}
+       {x447f8000 x444a4000 x3f1c3386}
+       {x4476c000 x44440000 x3f201403}
+       {x4468c000 x443a0000 x3f57baf7}
+       {x445f8000 x4432c000 x3f6c9d94}
+       {x44590000 x442d4000 x3f6fbdf8}
+       {x4459c000 x442e4000 x3f611c24}
+       {x445b8000 x44304000 x3f091122}}}
+     {tx x4411c000 x4469a800 x443a3000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear78 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443fc000 x442b8000 x3f1fd3fa}
+       {x44408000 x442b4000 x3f193326}
+       {x44474000 x44280000 x3f18730e}
+       {x44590000 x4423c000 x3f4698d3}
+       {x44638000 x44218000 x3f5e7bcf}
+       {x44668000 x44210000 x3f5afb5f}
+       {x44660000 x44214000 x3dc518a3}}}
+     {tx x4411c000 x4454a492 x442576db}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear77 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4483a000 x44484000 x3f23d47b}
+       {x44834000 x44478000 x3f1ff3fe}
+       {x447fc000 x4442c000 x3f213427}
+       {x446fc000 x44378000 x3f51ba37}
+       {x4464c000 x442ec000 x3f62dc5c}
+       {x445bc000 x44260000 x3f65fcc0}
+       {x44590000 x4425c000 x3f521a43}
+       {x44590000 x44268000 x3e7d1fa4}}}
+     {tx x4411c000 x446df800 x44356000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear76 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443a0000 x44588000 x3f30d61b}
+       {x443a4000 x4457c000 x3f2694d3}
+       {x44400000 x44530000 x3f26d4db}
+       {x444d8000 x444ac000 x3f517a2f}
+       {x445bc000 x44420000 x3f6b3d68}
+       {x446c4000 x443a4000 x3f713e28}
+       {x4473c000 x44378000 x3f6e1dc4}
+       {x4473c000 x44370000 x3f3bd77b}}}
+     {tx x4411c000 x44562800 x44471800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear75 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4474c000 x44730000 x3f0e31c6}
+       {x44728000 x44728000 x3f0f51ea}
+       {x4467c000 x446b8000 x3f1d33a6}
+       {x4455c000 x445d0000 x3f5cbb97}
+       {x444f0000 x44558000 x3f71be38}
+       {x44540000 x4456c000 x3f619c34}
+       {x44554000 x44578000 x3e6d9db4}}}
+     {tx x4411c000 x445f9249 x44628925}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear74 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447d8000 x4468c000 x3f2af55f}
+       {x447d4000 x4468c000 x3f2b9573}
+       {x44764000 x4465c000 x3f2c758f}
+       {x4467c000 x445d0000 x3f5a3b47}
+       {x445c4000 x44550000 x3f6e7dd0}
+       {x445a0000 x4450c000 x3f777ef0}
+       {x445d4000 x44530000 x3f5d9bb3}
+       {x445f8000 x44554000 x3f05b0b6}}}
+     {tx x4411c000 x44697800 x445c4800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear73 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4485c000 x44658000 x3f15b2b6}
+       {x4484c000 x44650000 x3f12d25a}
+       {x447e8000 x44604000 x3f149292}
+       {x446d8000 x44564000 x3f57baf7}
+       {x446b4000 x44548000 x3f6dfdc0}
+       {x445e8000 x444c0000 x3f707e10}
+       {x4455c000 x44464000 x3f7aff60}
+       {x44568000 x44480000 x3f68bd18}
+       {x44590000 x44498000 x3eff9ff4}}}
+     {tx x4411c000 x446c71c7 x44549555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear72 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444b0000 x44690000 x3f0c718e}
+       {x444a4000 x44690000 x3f09f13e}
+       {x444f4000 x44670000 x3f111222}
+       {x445c4000 x44644000 x3f527a4f}
+       {x446a0000 x44604000 x3f6e3dc8}
+       {x447a0000 x445ac000 1}
+       {x44816000 x44568000 1}
+       {x4481e000 x44558000 x3f5cdb9b}}}
+     {tx x4411c000 x44656800 x44608800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear71 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44750000 x446c4000 x3f1f53ea}
+       {x44748000 x446c0000 x3f203407}
+       {x446d4000 x4467c000 x3f21b437}
+       {x445f4000 x445c4000 x3f5edbdb}
+       {x445d0000 x4458c000 x3f6ebdd8}
+       {x44604000 x4459c000 x3f55fabf}}}
+     {tx x4411c000 x44688aab x44627555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear70 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447f8000 x44720000 x3f21d43b}
+       {x447a0000 x446f0000 x3f20540b}
+       {x4470c000 x4468c000 x3f4a1943}
+       {x446bc000 x44644000 x3f69bd38}
+       {x445cc000 x44590000 x3f727e50}
+       {x4459c000 x44564000 x3f773ee8}
+       {x445c0000 x44574000 x3f739e74}
+       {x445f0000 x4458c000 x3f039072}}}
+     {tx x4411c000 x4468f000 x4461a800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear69 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44530000 x4466c000 x3f13726e}
+       {x44588000 x44650000 x3f0c718e}
+       {x4462c000 x4462c000 x3f4a594b}
+       {x44678000 x44624000 x3f64fca0}
+       {x44680000 x44614000 x3f66bcd8}
+       {x4467c000 x44614000 x3f16b2d6}}}
+     {tx x4411c000 x4460eaab x44633555}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear68 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447fc000 x44704000 x3f083106}
+       {x447ec000 x44704000 x3f06f0de}
+       {x44790000 x446d4000 x3f0790f2}
+       {x44728000 x44660000 x3f4b1963}
+       {x446c0000 x445f0000 x3f675cec}
+       {x44604000 x4456c000 x3f703e08}
+       {x445e0000 x44558000 x3f711e24}
+       {x44634000 x44590000 x3f58fb1f}}}
+     {tx x4411c000 x446ef000 x44630000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear67 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4441c000 x4463c000 x3f1c9392}
+       {x44464000 x44614000 x3f183306}
+       {x4457c000 x445e4000 x3f3b1763}
+       {x445e8000 x445c4000 x3f5edbdb}
+       {x4463c000 x445a0000 x3f665ccc}
+       {x44644000 x44590000 x3f67bcf8}
+       {x44634000 x44598000 x3f3d57ab}}}
+     {tx x4411c000 x445836db x445d2492}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear66 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44810000 x446e4000 x3ec9d93b}
+       {x4480e000 x446e4000 x3ef51ea4}
+       {x447dc000 x44694000 x3ef7defc}
+       {x4470c000 x445b0000 x3f401803}
+       {x44690000 x44514000 x3f5f7bef}
+       {x4467c000 x444f4000 x3f635c6c}
+       {x4468c000 x44518000 x3f25b4b7}}}
+     {tx x4411c000 x4473f6db x445e1b6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear65 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4478c000 x44530000 x3f1db3b6}
+       {x4472c000 x444d0000 x3f223447}
+       {x44694000 x4440c000 x3f4fd9fb}
+       {x44638000 x44374000 x3f699d34}
+       {x44620000 x44310000 x3f6d9db4}
+       {x4463c000 x4433c000 x3f4598b3}
+       {x4464c000 x4435c000 x3e83d07a}}}
+     {tx x4411c000 x44698925 x443e1249}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear64 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447ec000 x444bc000 x3f1af35e}
+       {x447e8000 x444bc000 x3f19532a}
+       {x44758000 x44460000 x3f19f33e}
+       {x446b4000 x443b0000 x3f4af95f}
+       {x44654000 x44328000 x3f641c84}
+       {x44648000 x442d0000 x3f6a9d54}
+       {x4465c000 x442f8000 x3f521a43}
+       {x44670000 x44330000 x3efc5f8c}}}
+     {tx x4411c000 x446e9000 x443b5000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear63 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44886000 x444ec000 x3f391723}
+       {x4485c000 x44498000 x3f32764f}
+       {x4481e000 x44418000 x3f4738e7}
+       {x447d4000 x443b4000 x3f5bbb77}
+       {x44730000 x44304000 x3f60bc18}
+       {x44718000 x442d4000 x3f677cf0}
+       {x44708000 x442c4000 x3f665ccc}
+       {x44708000 x442d8000 x3eefddfc}}}
+     {tx x4411c000 x447c5800 x44398800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear62 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44524000 x44410000 x3f0670ce}
+       {x44544000 x443f0000 x3f039072}
+       {x44608000 x44388000 x3f3736e7}
+       {x4466c000 x44364000 x3f503a07}
+       {x44680000 x44370000 x3f4738e7}}}
+     {tx x4411c000 x445df333 x443ac000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear61 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44484000 x44550000 x3ea514a3}
+       {x4448c000 x44554000 x3e9692d2}
+       {x444ec000 x44548000 x3ee55cac}
+       {x44574000 x444e8000 x3f341683}
+       {x44600000 x44488000 x3f4ed9db}
+       {x446e0000 x4441c000 x3f517a2f}
+       {x446fc000 x44410000 x3f533a67}
+       {x446bc000 x44420000 x3f38d71b}}}
+     {tx x4411c000 x445c1000 x444b5000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear60 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4484a000 x445c0000 x3ec0d81b}
+       {x4483a000 x4459c000 x3ee71ce4}
+       {x447f8000 x44534000 x3f36b6d7}
+       {x44760000 x444c0000 x3f4df9bf}
+       {x446d0000 x44430000 x3f59bb37}
+       {x446ac000 x443ec000 x3f661cc4}
+       {x446ac000 x443dc000 x3f66dcdc}
+       {x446b0000 x443e8000 x3f06d0da}}}
+     {tx x4411c000 x44767000 x444a6000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear59 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44200000 x441b4000 x3f119232}
+       {x4422c000 x4419c000 x3f0f31e6}
+       {x44338000 x44170000 x3f4518a3}
+       {x443bc000 x44168000 x3f675cec}
+       {x44418000 x4416c000 x3f6b3d68}
+       {x443ec000 x4416c000 x3f5f7bef}
+       {x443b4000 x44170000 x3f21b437}}}
+     {tx x4411c000 x443436db x4417db6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear58 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x441f0000 x441d8000 x3f093126}
+       {x4422c000 x441c0000 x3f0770ee}
+       {x44328000 x44198000 x3f4578af}
+       {x443c8000 x44170000 x3f641c84}
+       {x4442c000 x44154000 x3f691d24}
+       {x44430000 x44154000 x3f695d2c}
+       {x443e8000 x4415c000 x3f44d89b}}}
+     {tx x4411c000 x44354925 x44185249}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear57 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4421c000 x44238000 x3f09d13a}
+       {x4429c000 x44228000 x3f0fd1fa}
+       {x44370000 x441e8000 x3f51fa3f}
+       {x443ec000 x441c4000 x3f68dd1c}
+       {x44484000 x44198000 x3f6d5dac}
+       {x444a4000 x44190000 x3f6f7df0}
+       {x44454000 x4419c000 x3f641c84}
+       {x44420000 x441a8000 x3ea4d49b}}}
+     {tx x4411c000 x443b6000 x441cf000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear56 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44250000 x442b4000 x3f131262}
+       {x4429c000 x44290000 x3f10b216}
+       {x44360000 x44250000 x3f43786f}
+       {x443e8000 x44224000 x3f631c64}
+       {x44460000 x44200000 x3f6c7d90}
+       {x44494000 x441e8000 x3f70de1c}
+       {x444a8000 x441e8000 x3f70fe20}
+       {x444a4000 x441e8000 x3f4b796f}
+       {x44464000 x441f4000 x3f423847}
+       {x44430000 x44204000 x3ec518a3}}}
+     {tx x4411c000 x443e7333 x44224000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear55 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442b8000 x44304000 x3f0650ca}
+       {x442ac000 x442f8000 x3f0b1162}
+       {x442d4000 x442d0000 x3f0ff1fe}
+       {x442e0000 x442c8000 x3f44d89b}
+       {x443b0000 x4428c000 x3f4a1943}
+       {x44410000 x44268000 x3f621c44}
+       {x44480000 x44234000 x3f693d28}
+       {x44498000 x44228000 x3f6b5d6c}
+       {x44468000 x44238000 x3f607c10}
+       {x44448000 x44240000 x3ec2584b}}}
+     {tx x4411c000 x443a999a x44289333}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear54 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x442b8000 x44350000 x3f0dd1ba}
+       {x442c0000 x4434c000 x3f0e91d2}
+       {x4433c000 x4431c000 x3f10f21e}
+       {x44410000 x442e0000 x3f4ad95b}
+       {x44474000 x442b4000 x3f5f9bf3}
+       {x444c0000 x44290000 x3f687d10}
+       {x444e0000 x44284000 x3f6a7d50}
+       {x444b0000 x44290000 x3f5f3be7}
+       {x444a8000 x44294000 0}}}
+     {tx x4411c000 x44405555 x442d5c72}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear53 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44418000 x443dc000 x3f0a9152}
+       {x4440c000 x443dc000 x3f09f13e}
+       {x44458000 x443c4000 x3f0a9152}
+       {x444fc000 x44384000 x3f4738e7}
+       {x44574000 x4433c000 x3f5f1be3}
+       {x445bc000 x44318000 x3f64bc98}
+       {x445d0000 x44308000 x3f65bcb8}
+       {x445ac000 x44318000 x3f51da3b}}}
+     {tx x4411c000 x44504800 x4436e800}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear52 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4431c000 x4436c000 x3ee99d34}
+       {x44374000 x44348000 x3eeedddc}
+       {x44480000 x442f8000 x3f2f35e7}
+       {x4450c000 x442d0000 x3f4c1983}
+       {x4456c000 x4429c000 x3f537a6f}
+       {x44574000 x44290000 x3f53fa7f}
+       {x44554000 x442a0000 x3f33f67f}}}
+     {tx x4411c000 x4449db6e x442e5b6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear51 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44922000 x4434c000 x3f1f53ea}
+       {x448fa000 x4431c000 x3f1a534a}
+       {x448b4000 x442b0000 x3f419833}
+       {x44866000 x4422c000 x3f589b13}
+       {x44840000 x441d4000 x3f5e1bc3}
+       {x44840000 x441d8000 x3f5adb5b}
+       {x44840000 x441f8000 x3f323647}}}
+     {tx x4411c000 x44890db7 x4426a492}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear50 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44972000 x443b8000 x3f1f93f2}
+       {x44970000 x443b4000 x3f1cb396}
+       {x44946000 x44374000 x3f1c738e}
+       {x448d8000 x442d4000 x3f31b637}
+       {x448a8000 x44290000 x3f4ed9db}
+       {x4484c000 x44204000 x3f52ba57}
+       {x44834000 x441e0000 x3f573ae7}
+       {x44854000 x44214000 x3f4ff9ff}
+       {x4485c000 x4421c000 x3d241483}}}
+     {tx x4411c000 x448c2aab x442b471c}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear49 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44842000 x44580000 x3f0f11e2}
+       {x4483c000 x4457c000 x3f0c718e}
+       {x447dc000 x44534000 x3f0c518a}
+       {x44718000 x444b8000 x3f309613}
+       {x4468c000 x44454000 x3f3f57eb}
+       {x44684000 x4443c000 x3f3ed7db}
+       {x446b0000 x44444000 x3ea3546b}}}
+     {tx x4411c000 x44762492 x444d1b6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear48 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44870000 x444f0000 x3f07f0fe}
+       {x4486c000 x444ec000 x3f04d09a}
+       {x44818000 x444b8000 x3f04f09e}
+       {x44750000 x44444000 x3f3556ab}
+       {x446ac000 x443c4000 x3f45f8bf}
+       {x4469c000 x443a0000 x3f48d91b}
+       {x446d4000 x443b8000 x3f139272}}}
+     {tx x4411c000 x4479e492 x444476db}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear47 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448ac000 x44464000 x3f14b296}
+       {x448aa000 x44460000 x3f149292}
+       {x4487e000 x44440000 x3f149292}
+       {x44826000 x443d8000 x3f31762f}
+       {x447b0000 x44374000 x3f48b917}
+       {x446f0000 x442fc000 x3f509a13}
+       {x44684000 x442b4000 x3f575aeb}
+       {x4469c000 x442b8000 x3f58bb17}
+       {x446f4000 x442ec000 x3f0d91b2}}}
+     {tx x4411c000 x447d9c72 x44384000}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear46 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44904000 x443fc000 x3f1552aa}
+       {x448fa000 x443f8000 x3f13d27a}
+       {x448ba000 x443bc000 x3f12b256}
+       {x44854000 x44354000 x3f3596b3}
+       {x4484a000 x4434c000 x3f4a594b}
+       {x44808000 x44308000 x3f4b596b}
+       {x4477c000 x442a8000 x3f539a73}
+       {x44728000 x4427c000 x3f5a5b4b}
+       {x44714000 x44278000 x3f5abb57}
+       {x44758000 x442a4000 x3f1a9352}}}
+     {tx x4411c000 x4483099a x44328ccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x436e8000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear45 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x448ca000 x4442c000 x3f119232}
+       {x448c0000 x44414000 x3f12724e}
+       {x4486a000 x443a8000 x3f4618c3}
+       {x4481c000 x44358000 x3f613c28}
+       {x447ac000 x44300000 x3f657cb0}
+       {x448ee000 x44410000 x3f25d4bb}
+       {x448b6000 x443b4000 x3f28b517}
+       {x44894000 x44364000 x3f39572b}
+       {x4487c000 x44338000 x3f4ab957}
+       {x44860000 x44304000 x3f4ff9ff}
+       {x4484a000 x442d8000 x3f56bad7}
+       {x44816000 x4429c000 x3f5a7b4f}
+       {x447e8000 x4426c000 x3f5e1bc3}
+       {x447a0000 x4423c000 x3f603c08}
+       {x447b4000 x4424c000 x3f5ddbbb}
+       {x447f8000 x44278000 x3f243487}}}
+     {tx x4411c000 x4484f400 x44328400}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear44 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44688000 x44748000 x3ed2da5b}
+       {x44688000 x44742000 x3eda1b43}
+       {x4467c000 x44712000 x3f00500a}
+       {x44666000 x446de000 x3f4df9bf}
+       {x44662000 x446ca000 x3f59fb3f}
+       {x44662000 x446be000 x3f5adb5b}
+       {x44666000 x446be000 x3f1672ce}
+       {x44672000 x446ca000 x3f00f01e}}}
+     {tx x4411c000 x44671c00 x446f1400}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear43 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44652000 x44744000 x3efe9fd4}
+       {x44646000 x44736000 x3f019032}
+       {x4463a000 x44702000 x3f3d57ab}
+       {x4463a000 x446ea000 x3f4fd9fb}
+       {x4463e000 x446e0000 x3f0c518a}}}
+     {tx x4411c000 x44642000 x4470e000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear42 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4460a000 x4471a000 x3e9712e2}
+       {x44604000 x44716000 x3f0d91b2}
+       {x445fe000 x446fe000 x3f0f51ea}
+       {x445fe000 x446f8000 x3f48d91b}
+       {x44604000 x446b8000 x3f4bd97b}}}
+     {tx x4411c000 x44602ccd x446f9333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear41 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4459e000 x446e4000 x3f1cf39e}
+       {x4459e000 x446e0000 x3f19732e}
+       {x445a0000 x446c2000 x3f1a1342}
+       {x445d6000 x446a4000 x3f4bd97b}
+       {x445e6000 x44694000 x3f581b03}
+       {x445dc000 x44688000 x3f56fadf}}}
+     {tx x4411c000 x445be000 x446b6555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear40 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44506000 x4469e000 x3edbdb7b}
+       {x4450a000 x4469c000 x3f009012}
+       {x44520000 x4469a000 x3f021042}
+       {x4455a000 x44690000 x3f3e57cb}
+       {x4457c000 x44682000 x3f587b0f}
+       {x445ae000 x44662000 x3f637c70}
+       {x445ba000 x44658000 x3f695d2c}
+       {x445b2000 x44658000 x3f66fce0}
+       {x445ae000 x4465a000 x3e1e93d2}}}
+     {tx x4411c000 x4456c38e x4467ae39}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear39 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446c2000 x4475c000 x3f113226}
+       {x4468a000 x44734000 x3f12b256}
+       {x4467a000 x44712000 x3f489913}
+       {x4467c000 x44708000 x3f537a6f}
+       {x44680000 x44708000 x3f4798f3}}}
+     {tx x4411c000 x4468d333 x4472399a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear38 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4466c000 x44750000 x3f13526a}
+       {x4466c000 x4474a000 x3f14b296}
+       {x44668000 x4472e000 x3f149292}
+       {x44680000 x4471a000 x3f4518a3}
+       {x4468a000 x44712000 x3f4dd9bb}
+       {x44688000 x4470c000 x3f2614c3}}}
+     {tx x4411c000 x44678555 x4472aaab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear37 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4462a000 x44750000 x3ef51ea4}
+       {x4462a000 x4473a000 x3efbdf7c}
+       {x4464a000 x44716000 x3f3b9773}
+       {x44654000 x4470c000 x3f4ab957}
+       {x4465a000 x4470e000 x3f2654cb}}}
+     {tx x4411c000 x44642666 x44725333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear36 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44730000 x44716000 x3f10b216}
+       {x44728000 x44714000 x3f11b236}
+       {x446de000 x446f2000 x3f1612c2}
+       {x4469a000 x446c4000 x3f579af3}
+       {x4468e000 x446b6000 x3f629c54}
+       {x446aa000 x446c2000 x3f583b07}
+       {x446b0000 x446c6000 0}}}
+     {tx x4411c000 x446d1249 x446dfb6e}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear35 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4476c000 x446d0000 x3f189312}
+       {x4475e000 x446d0000 x3f191322}
+       {x44734000 x446be000 x3f1c3386}
+       {x446ec000 x4469a000 x3f56bad7}
+       {x446aa000 x4466e000 x3f641c84}
+       {x4468e000 x4464e000 x3f6a1d44}
+       {x446ae000 x44660000 x3f5b1b63}
+       {x446c4000 x4466e000 x3ecc9993}}}
+     {tx x4411c000 x446f2800 x44690400}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear34 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447a0000 x4467a000 x3ef15e2c}
+       {x4479a000 x44676000 x3ef71ee4}
+       {x44766000 x44660000 x3f0510a2}
+       {x44726000 x44646000 x3f515a2b}
+       {x44700000 x44632000 x3f693d28}
+       {x446cc000 x44616000 x3f717e30}
+       {x446aa000 x44602000 x3f76bed8}
+       {x446a4000 x445fc000 x3f775eec}
+       {x446b8000 x44602000 x3f63bc78}
+       {x446c6000 x4460a000 x3eea9d54}}}
+     {tx x4411c000 x44709666 x44630ccd}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear33 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44794000 x445c2000 x3f0cf19e}
+       {x44770000 x445b2000 x3f0e91d2}
+       {x44758000 x445aa000 x3f3fd7fb}
+       {x44742000 x445a4000 x3f5b1b63}
+       {x44712000 x44598000 x3f627c50}
+       {x446f4000 x44592000 x3f683d08}
+       {x446c2000 x44584000 x3f6b1d64}
+       {x446a4000 x4457e000 x3f6f3de8}
+       {x44688000 x44576000 x3f72de5c}
+       {x44682000 x44576000 x3f73fe80}
+       {x44694000 x44578000 x3f727e50}
+       {x4469e000 x4457c000 x3f309613}}}
+     {tx x4411c000 x446f0800 x445912ab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear32 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445e6000 x4478e000 x3f0df1be}
+       {x445f0000 x44770000 x3f12524a}
+       {x44606000 x44744000 x3f4bd97b}
+       {x4460e000 x44738000 x3f4e79cf}
+       {x44610000 x44732000 x3edb1b63}}}
+     {tx x4411c000 x445feccd x4475599a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear31 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445ea000 x447b2000 x3f043086}
+       {x445e4000 x447b0000 x3f03d07a}
+       {x445f2000 x4479c000 x3f0610c2}
+       {x4462a000 x4477c000 x3f3bf77f}
+       {x44646000 x44774000 x3f4a1943}
+       {x44642000 x44774000 x3e7a9f54}}}
+     {tx x4411c000 x44613000 x44790555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear30 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446e0000 x447d0000 x3ef15e2c}
+       {x446d8000 x447cc000 x3ef41e84}
+       {x446c6000 x447ac000 x3f19f33e}
+       {x446b8000 x44778000 x3f505a0b}
+       {x446b8000 x4476e000 x3f597b2f}
+       {x446b0000 x4477a000 x3f3df7bf}}}
+     {tx x4411c000 x446c5000 x4479c000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear29 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446f0000 x447de000 x3f07d0fa}
+       {x446ee000 x447da000 x3f099132}
+       {x446e2000 x447c4000 x3f0a514a}
+       {x446cc000 x4478e000 x3f481903}
+       {x446c6000 x4476e000 x3f5cfb9f}
+       {x446c0000 x44766000 x3f5f9bf3}
+       {x446c0000 x44774000 x3f3f37e7}
+       {x446c2000 x44786000 x3eee9dd4}}}
+     {tx x4411c000 x446d2800 x4479b000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear28 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446ea000 x447e6000 x3ebf97f3}
+       {x446e2000 x447d4000 x3eee5dcc}
+       {x446d0000 x447a8000 x3f3a774f}
+       {x446c8000 x44782000 x3f52da5b}
+       {x446c0000 x44770000 x3f55fabf}
+       {x446c0000 x44778000 x3f40f81f}
+       {x446c6000 x44788000 x3efb1f64}}}
+     {tx x4411c000 x446cf249 x4479e492}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear27 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446ea000 x447f4000 x3f00d01a}
+       {x446e6000 x447f2000 x3f01d03a}
+       {x446d0000 x447de000 x3f0590b2}
+       {x446bc000 x447a8000 x3f3e77cf}
+       {x446b8000 x44788000 x3f511a23}
+       {x446b4000 x4477c000 x3f52fa5f}
+       {x446b8000 x4478a000 x3f1b3366}
+       {x446b8000 x4478e000 0}}}
+     {tx x4411c000 x446c7000 x447b1000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear26 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x446c0000 x447fe000 x3eff9ff4}
+       {x446b8000 x447e8000 x3f01502a}
+       {x446c8000 x447c0000 x3f3ef7df}
+       {x446ca000 x447a8000 x3f4d39a7}
+       {x446c8000 x4479e000 x3f4c3987}
+       {x446c6000 x447a2000 x3e9a534a}}}
+     {tx x4411c000 x446c4000 x447c2555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear25 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4465c000 x447e4000 x3f09f13e}
+       {x44656000 x447e2000 x3f09d13a}
+       {x4465c000 x447cc000 x3f0b516a}
+       {x4468c000 x447a2000 x3f3db7b7}
+       {x4469a000 x44792000 x3f50da1b}
+       {x446a0000 x44792000 x3f4f79ef}
+       {x446a0000 x44798000 x3ebcd79b}}}
+     {tx x4411c000 x4467e492 x447b4925}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear24 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44664000 x447e2000 x3ef4de9c}
+       {x44664000 x447de000 x3ef69ed4}
+       {x44660000 x447c4000 x3efe1fc4}
+       {x44670000 x44794000 x3f37d6fb}
+       {x4467c000 x44782000 x3f4e39c7}
+       {x44680000 x4477c000 x3f4e99d3}
+       {x4467c000 x44782000 x3eec9d94}}}
+     {tx x4411c000 x44670000 x447a8000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear23 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445de000 x447c0000 x3ef8df1c}
+       {x445da000 x447ae000 x3efc9f94}
+       {x445e6000 x4477c000 x3f2cf59f}
+       {x445ea000 x44760000 x3f49d93b}
+       {x445f6000 x44742000 x3f4ff9ff}
+       {x445f8000 x4473e000 x3f523a47}
+       {x445f2000 x44742000 x3f4c3987}
+       {x445f2000 x44746000 x3e639c74}}}
+     {tx x4411c000 x445eb400 x4476a400}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear22 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x445e4000 x447c8000 x3ed91b23}
+       {x445f6000 x447b8000 x3ee45c8c}
+       {x44612000 x447a0000 x3f22544b}
+       {x4461e000 x44790000 x3f3ef7df}
+       {x44622000 x4478a000 x3f41f83f}
+       {x4461e000 x4478e000 x3f24f49f}}}
+     {tx x4411c000 x4460c555 x447a1555}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear21 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44538000 x44730000 x3f0690d2}
+       {x4453a000 x4471e000 x3f0590b2}
+       {x44554000 x446fe000 x3f203407}
+       {x4456c000 x446e8000 x3f3796f3}
+       {x4457e000 x446d6000 x3f3cd79b}
+       {x44582000 x446d4000 x3f3ef7df}
+       {x44582000 x446d8000 x3f1ff3fe}}}
+     {tx x4411c000 x44562db7 x446f56db}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear20 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44508000 x44782000 x3e88d11a}
+       {x44512000 x44776000 x3e9a1342}
+       {x44530000 x44766000 x3f0af15e}
+       {x44552000 x4475a000 x3f2694d3}
+       {x4457a000 x4474c000 x3f2d75af}
+       {x4458e000 x44740000 x3f309613}
+       {x4459a000 x44738000 x3f31562b}
+       {x4458e000 x4473a000 x3f1af35e}}}
+     {tx x4411c000 x44559800 x44756c00}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear19 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44730000 x447e6000 x3e80d01a}
+       {x446f2000 x447c4000 x3efa9f54}
+       {x446a4000 x4478a000 x3f2f35e7}
+       {x4469e000 x44780000 x3f43d87b}
+       {x446bc000 x44788000 x3f39d73b}
+       {x446c0000 x4478a000 x3d9f13e2}}}
+     {tx x4411c000 x446d0000 x447a1000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear18 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44768000 x447e2000 x3eeb1d64}
+       {x44732000 x447c8000 x3f00500a}
+       {x446f0000 x447a2000 x3f30f61f}
+       {x446c2000 x44784000 x3f42b857}
+       {x446b4000 x44774000 x3f43786f}
+       {x446ce000 x4477c000 x3f0ed1da}}}
+     {tx x4411c000 x446f7aab x447a0000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear17 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44798000 x447d6000 x3efb1f64}
+       {x44768000 x447be000 x3efcdf9c}
+       {x44716000 x44794000 x3f313627}
+       {x446e0000 x4476e000 x3f3fd7fb}
+       {x446e0000 x44768000 x3f431863}
+       {x446f8000 x44774000 x3f0790f2}}}
+     {tx x4411c000 x44722555 x44793000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear16 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447b6000 x447aa000 x3e1a9352}
+       {x447b0000 x447a8000 x3ef6dedc}
+       {x4476e000 x4478e000 x3efadf5c}
+       {x4472a000 x4476a000 x3f2bd57b}
+       {x44710000 x44754000 x3f419833}
+       {x44718000 x44752000 x3f429853}
+       {x4472c000 x44760000 x3efe1fc4}}}
+     {tx x4411c000 x44754db7 x44779249}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear15 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447f8000 x44784000 x3f00500a}
+       {x447e6000 x44784000 x3f01702e}
+       {x447aa000 x44770000 x3f02704e}
+       {x4476a000 x44758000 x3f31762f}
+       {x44734000 x4473e000 x3f47b8f7}
+       {x4470c000 x44720000 x3f4c9993}
+       {x44712000 x44724000 x3f40780f}
+       {x44716000 x44726000 x3f0ad15a}
+       {x44736000 x44738000 x3ef85f0c}}}
+     {tx x4411c000 x44765555 x4474c71c}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear14 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x447f8000 x44752000 x3f033066}
+       {x447f0000 x44752000 x3f0610c2}
+       {x447be000 x44740000 x3f06b0d6}
+       {x44780000 x4471c000 x3f319633}
+       {x44742000 x446fc000 x3f3f17e3}
+       {x4472c000 x446ee000 x3f4638c7}
+       {x44744000 x446fc000 x3f2ad55b}
+       {x4474c000 x446fe000 x3e8b1162}
+       {x4475a000 x44708000 x3dff1fe4}}}
+     {tx x4411c000 x4477fc72 x4471a38e}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear13 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4480a000 x446f8000 x3f0e31c6}
+       {x447ec000 x446e0000 x3f0f31e6}
+       {x447a2000 x446bc000 x3f2fd5fb}
+       {x44770000 x446a2000 x3f43b877}
+       {x4475a000 x44690000 x3f4c9993}
+       {x44752000 x44690000 x3f4a794f}
+       {x44760000 x446a0000 x3f143286}}}
+     {tx x4411c000 x44796925 x446b56db}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear12 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4481c000 x4471a000 x3ec29853}
+       {x44818000 x44716000 x3edf9bf3}
+       {x44801000 x446fe000 x3f32d65b}
+       {x447d4000 x446ee000 x3f4f59eb}
+       {x44786000 x446d6000 x3f541a83}
+       {x4476e000 x446ce000 x3f55fabf}
+       {x44778000 x446d0000 x3f53da7b}
+       {x4478e000 x446d6000 x3f339673}}}
+     {tx x4411c000 x447c7000 x446ecc00}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear11 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x443f8000 x443a0000 x3f29752f}
+       {x4443c000 x4438c000 x3f211423}
+       {x4448e000 x44380000 x3f2d75af}
+       {x4449a000 x44380000 x3f1ef3de}}}
+     {tx x4411c000 x44457000 x4438b000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear10 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44406000 x443c6000 x3f1bf37e}
+       {x44434000 x443b0000 x3f1b3366}
+       {x4449e000 x4439c000 x3f3616c3}
+       {x444b2000 x4439a000 x3f3e17c3}
+       {x44482000 x4439a000 x3f1eb3d6}}}
+     {tx x4411c000 x44468ccd x443a799a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear9 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44446000 x443f6000 x3f1a734e}
+       {x44474000 x443e2000 x3f1512a2}
+       {x444da000 x443d0000 x3f2f55eb}
+       {x444f0000 x443d0000 x3f34d69b}
+       {x444c8000 x443d2000 x3f22f45f}}}
+     {tx x4411c000 x444a8ccd x443db99a}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear8 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x4440c000 x443ee000 x3f0bb176}
+       {x44428000 x443e8000 x3f0a714e}
+       {x444b0000 x443d4000 x3f24548b}
+       {x444e2000 x443d2000 x3f3ab757}
+       {x444ea000 x443ce000 x3f3a774f}
+       {x444d0000 x443ca000 x3f04b096}}}
+     {tx x4411c000 x44495555 x443d8aab}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear7 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44458000 x44430000 x3ec2584b}
+       {x444ac000 x4442c000 x3f0d31a6}
+       {x44520000 x44424000 x3f433867}
+       {x44556000 x4442c000 x3f521a43}
+       {x4452e000 x44432000 x3f1572ae}}}
+     {tx x4411c000 x444ee666 x4442c666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear6 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44488000 x44462000 x3f1f53ea}
+       {x444aa000 x44454000 x3f18f31e}
+       {x4450e000 x44442000 x3f3d17a3}
+       {x4453e000 x44442000 x3f513a27}
+       {x4453c000 x44448000 x3f523a47}
+       {x4451e000 x4444c000 x3f013026}}}
+     {tx x4411c000 x444f9555 x4444d000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear5 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444e6000 x444be000 x3f19732e}
+       {x444e6000 x444b8000 x3f1a534a}
+       {x444fc000 x444b0000 x3f1bb376}
+       {x44540000 x444b4000 x3f4718e3}
+       {x44564000 x444b4000 x3f541a83}
+       {x44560000 x444b0000 x3f4fd9fb}
+       {x44554000 x444aa000 x3ecb9973}}}
+     {tx x4411c000 x44529249 x444b36db}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear4 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444ba000 x444f4000 x3f0f31e6}
+       {x444d2000 x444ec000 x3f113226}
+       {x44522000 x444ee000 x3f3f97f3}
+       {x4454c000 x444ec000 x3f531a63}
+       {x44558000 x444ec000 x3f53da7b}
+       {x44546000 x444ee000 x3f193326}}}
+     {tx x4411c000 x44519555 x444ee000}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear3 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x444ac000 x44586000 x3f0f11e2}
+       {x444b4000 x4457a000 x3f0eb1d6}
+       {x444f4000 x44572000 x3f3776ef}
+       {x4451e000 x44572000 x3f50da1b}
+       {x44530000 x44570000 x3f55fabf}
+       {x44522000 x4456e000 x3f43f87f}
+       {x44518000 x4456c000 x3e7e9fd4}}}
+     {tx x4411c000 x444fadb7 x44574492}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear2 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44470000 x445e0000 x3e9a1342}
+       {x44478000 x445d8000 x3ec658cb}
+       {x444aa000 x445da000 x3f22b457}
+       {x444b2000 x445da000 x3f3f37e7}
+       {x444dc000 x445de000 x3f411823}
+       {x4451e000 x445e0000 x3f499933}
+       {x4453c000 x445e4000 x3f501a03}
+       {x44546000 x445e4000 x3f50fa1f}
+       {x44540000 x445e4000 x3f4ed9db}
+       {x44532000 x445e4000 x3f139272}}}
+     {tx x4411c000 x444eb666 x445df666}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}
+    {cubiccurve Smear1 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4411c000
+       {x44480000 x44672000 x3e1b1362}
+       {x44488000 x44670000 x3ec518a3}
+       {x44496000 x4466e000 x3eea1d44}
+       {x4449a000 x4466e000 x3f019032}
+       {x4449e000 x4466e000 x3f08710e}
+       {x444a6000 x4466e000 x3f0f31e6}
+       {x444ae000 x4466e000 x3f10d21a}
+       {x444b6000 x4466e000 x3f119232}
+       {x444ba000 x44670000 x3f12d25a}
+       {x444be000 x4466e000 x3f143286}
+       {x444c2000 x4466e000 x3f16b2d6}
+       {x444ca000 x4466e000 x3f193326}
+       {x444d6000 x4466e000 x3f1c1382}
+       {x444e6000 x4466e000 x3f22544b}
+       {x444f8000 x4466a000 x3f26f4df}
+       {x44508000 x4466a000 x3f2bd57b}
+       {x4451a000 x4466a000 x3f2ed5db}
+       {x44530000 x4466a000 x3f30f61f}
+       {x44540000 x4466a000 x3f32564b}
+       {x44548000 x4466a000 x3f33566b}}}
+     {tx x4411c000 x444d2800 x4466d333}
+     {a ro 0 go 0 bo 0 ao 0 bs x43198000 bt 1 bu 1 src 1 str 1 spx x44700000 spy x44070000 sb 1 ltn x4411c000 ltm x4411c000 ltt x40000000 ep1 1 tt x41c80000}}}}}}
+ toolbox {clone {
+  { selectAll opc 0.5 bs 376 bu 0 src 1 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone opc 0.5 bs 376 bu 0 src 1 stx -273 sty -14 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 583 ltm 583 tt 19 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear bs 410.5 src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 583 ltm 583 tt 25 }
+} }
+ toolbar_opacity 0.5
+ toolbar_brush_size 376
+ toolbar_brush_hardness 0.200000003
+ toolbar_buildup false
+ toolbar_lifetime_type single
+ toolbar_lifetime_start 583
+ toolbar_lifetime_end 583
+ toolbar_paint_source fg
+ toolbar_source_transform_translate {-273 -14}
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ opacity 0.5
+ paint_source foreground
+ lifetime_start 583
+ lifetime_end 583
+ brush_size 376
+ brush_spacing 0.05000000075
+ brush_hardness 0.200000003
+ buildup false
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint2_cleanplate
+ selected true
+ xpos -2579
+ ypos -709
+}
+FrameHold {
+ first_frame 583
+ name FrameHold1
+ selected true
+ xpos -2579
+ ypos -596
+}
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+ show "Final Result"
+ unPreMultiply false
+ screenColour {-1.600000024 1 0}
+ screenGain 1
+ screenBalance 0.5
+ alphaBias {0.5 0.5 0.5}
+ despillBias {0.5 0.5 0.5}
+ gangBiases true
+ preBlur 0
+ "Screen Matte" 0
+ screenClipMin 0
+ screenClipMax 1
+ screenClipRollback 0
+ screenGrowShrink 0
+ screenSoftness 0
+ screenDespotBlack 0
+ screenDespotWhite 0
+ screenReplaceMethod "Soft Colour"
+ screenReplaceColour {0.5 0.5 0.5}
+ Tuning 0
+ midPoint 0.5
+ lowGain 1
+ midGain 1
+ highGain 1
+ "Inside Mask" 0
+ sourceAlphaHandling Ignore
+ insideReplaceMethod "Soft Colour"
+ insideReplaceColour {0.5 0.5 0.5}
+ Crops 0
+ SourceXMethod Colour
+ SourceYMethod Colour
+ SourceEdgeColour 0
+ SourceCropL 0
+ SourceCropR 1
+ SourceCropB 0
+ SourceCropT 1
+ balanceSet false
+ insideComponent None
+ outsideComponent None
+ cacheBreaker true
+ name Keylight8
+ selected true
+ xpos -2579
+ ypos -491
+}
+Invert {
+ name Invert1
+ selected true
+ xpos -2579
+ ypos -415
+}
+push $N74ad2420
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+ show "Final Result"
+ unPreMultiply false
+ screenColour {-1.600000024 1 0}
+ screenGain 1
+ screenBalance 0.5
+ alphaBias {0.5 0.5 0.5}
+ despillBias {0.5 0.5 0.5}
+ gangBiases true
+ preBlur 0
+ "Screen Matte" 0
+ screenClipMin 0
+ screenClipMax 1
+ screenClipRollback 0
+ screenGrowShrink 0
+ screenSoftness 0
+ screenDespotBlack 0
+ screenDespotWhite 0
+ screenReplaceMethod "Soft Colour"
+ screenReplaceColour {0.5 0.5 0.5}
+ Tuning 0
+ midPoint 0.5
+ lowGain 1
+ midGain 1
+ highGain 1
+ "Inside Mask" 0
+ sourceAlphaHandling Ignore
+ insideReplaceMethod "Soft Colour"
+ insideReplaceColour {0.5 0.5 0.5}
+ Crops 0
+ SourceXMethod Colour
+ SourceYMethod Colour
+ SourceEdgeColour 0
+ SourceCropL 0
+ SourceCropR 1
+ SourceCropB 0
+ SourceCropT 1
+ balanceSet false
+ insideComponent None
+ outsideComponent None
+ cacheBreaker true
+ name Keylight7
+ selected true
+ xpos -2334
+ ypos -502
+}
+Dissolve {
+ inputs 2
+ which 0.5
+ name Dissolve1
+ selected true
+ xpos -2334
+ ypos -407
+}
+Colorspace {
+ colorspace_in sRGB
+ name Colorspace2
+ selected true
+ xpos -2334
+ ypos -331
+ disable true
+}
+RolloffContrast {
+ contrast 4
+ slope_mag_low1 0.8000000119
+ black_low 1
+ slope_mag_high2 0.8000000119
+ white_high 1
+ name RolloffContrast1
+ selected true
+ xpos -2334
+ ypos -250
+}
+push 0
+Merge2 {
+ inputs 2
+ operation hard-light
+ name Merge4
+ selected true
+ xpos -2096
+ ypos -250
+}

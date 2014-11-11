@@ -1,0 +1,151 @@
+#! /Applications/Nuke5.0v2/Nuke5.0v2.app/Contents/MacOS/Nuke5.0 -nx
+version 5.0200
+Gizmo {
+}
+ Constant {
+  inputs 0
+  channels rgb
+  format "802 538 0 0 802 538 1 black2"
+  name Constant7
+  xpos -267
+  ypos -160
+ }
+ BlackOutside {
+  name BlackOutside5
+  xpos -267
+  ypos -66
+ }
+ Transform {
+  translate {106 18}
+  center {423.5 288}
+  name Transform6
+  xpos -267
+  ypos -16
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color 1
+  format "804 541 0 0 804 541 1 white2"
+  name Constant4
+  xpos -597
+  ypos -290
+ }
+ BlackOutside {
+  name BlackOutside3
+  xpos -597
+  ypos -196
+ }
+ Transform {
+  translate {105 17}
+  center {423.5 288}
+  name Transform3
+  xpos -597
+  ypos -156
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "872 573 0 0 872 573 1 black"
+  name Constant3
+  xpos -267
+  ypos -440
+ }
+ BlackOutside {
+  name BlackOutside2
+  xpos -267
+  ypos -346
+ }
+ Transform {
+  translate {76 1}
+  center {423.5 288}
+  name Transform2
+  xpos -267
+  ypos -296
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color 1
+  format "874 576 0 0 874 576 1 white"
+  name Constant2
+  xpos -607
+  ypos -577
+ }
+ BlackOutside {
+  name BlackOutside1
+  xpos -607
+  ypos -483
+ }
+ Transform {
+  translate {75 0}
+  center {423.5 288}
+  name Transform1
+  xpos -607
+  ypos -443
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "1024 576 0 0 1024 576 1 16:9 PAL"
+  name Constant1
+  xpos -407
+  ypos -590
+ }
+ Merge2 {
+  inputs 2
+  Achannels rgb
+  Bchannels rgb
+  also_merge rgb
+  bbox B
+  maskChannel -rgba.red
+  maskFrom input
+  invert_mask true
+  name Merge2
+  xpos -407
+  ypos -443
+ }
+ Merge2 {
+  inputs 2
+  name Merge3
+  xpos -407
+  ypos -296
+ }
+ Merge2 {
+  inputs 2
+  Achannels rgb
+  Bchannels rgb
+  also_merge rgb
+  bbox B
+  maskChannel -rgba.red
+  maskFrom input
+  invert_mask true
+  name Merge6
+  xpos -407
+  ypos -156
+ }
+ Merge2 {
+  inputs 2
+  name Merge4
+  xpos -407
+  ypos -16
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -250
+  ypos 64
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Merge1
+  xpos -407
+  ypos 64
+ }
+ Output {
+  name Output1
+  xpos -407
+  ypos 164
+ }
+end_group

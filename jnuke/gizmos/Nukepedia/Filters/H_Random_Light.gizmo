@@ -1,0 +1,163 @@
+#! /Applications/Nuke4.7v5/Nuke4.7v5.app/Contents/MacOS/../../Nuke4.7_ -nx
+version 4.7500
+Gizmo {
+ inputs 1
+ tile_color 0xff000000
+ label v.0.5
+ note_font Verdana
+ help "H_Random_light v0.5:\n\nAllows you to make a random light effect.\nIt is divided in 2 sections:\n\nRandomizer controls: allows you to control the amount of random, \n\nLight control: Allows you to gibe a light value.\n\nH_Random_light by Hugo Guerra\n\nAny comments or bugs please send an email to: guerra@hugo-guerra.com\n\nPlease visit my website for more Nuke gizmos and to see my \nlatest works as a VFX Artist: \nwww.hugo-guerra.com\n"
+ addUserKnob {20 H_Random_Light l "H_Random Light"}
+ addUserKnob {26 "" l "Randomizer controls"}
+ addUserKnob {7 amount l "Random Multiplier " R 0.1 100}
+ amount 1
+ addUserKnob {7 Speed R 0 100}
+ Speed 0.1
+ addUserKnob {6 Randomize}
+ addUserKnob {26 "" l "Light controls"}
+ addUserKnob {7 light_intensity l "Light Intensity" R 0 5}
+ light_intensity 1
+ addUserKnob {4 LightType l "Light Type" M {Lighter Darker Both}}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "H_Random_Light v0.5"}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  label Light
+  xpos -203
+  ypos -575
+  bdwidth 481
+  bdheight 244
+ }
+ Input {
+  inputs 0
+  name Input1
+  note_font Verdana
+  selected true
+  xpos -4
+  ypos -744
+ }
+set N603f460 [stack 0]
+ Grade {
+  multiply {{RandomLight1.result*light_intensity}}
+  name Grade_both_light
+  xpos 146
+  ypos -530
+  disable {{disable_light}}
+ }
+push $N603f460
+ Grade {
+  multiply {{RandomLight.result/light_intensity/2}}
+  name Grade_dark_light
+  xpos 29
+  ypos -528
+  disable {{disable_light}}
+ }
+push $N603f460
+ Grade {
+  multiply {{RandomLight.result*light_intensity}}
+  name Grade_light
+  xpos -90
+  ypos -529
+  disable {{disable_light}}
+ }
+ Switch {
+  inputs 3
+  which {{LightType}}
+  name Switch2
+  xpos -19
+  ypos -452
+  disable {{disable_light}}
+ }
+ Output {
+  name Output1
+  note_font Verdana
+  xpos -19
+  ypos -277
+ }
+ Group {
+  inputs 0
+  name RandomLight1
+  xpos -420
+  ypos -686
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy 3
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result:}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount x66 0}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Group {
+  inputs 0
+  name Random
+  xpos -459
+  ypos -591
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy {{Randomize}}
+  addUserKnob {7 speed R 0 10}
+  speed {{random(10)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result: R 0 100}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+ Group {
+  inputs 0
+  name RandomLight
+  xpos -360
+  ypos -433
+  addUserKnob {20 "" l Settings}
+  addUserKnob {26 "" l "@b;Random"}
+  addUserKnob {7 miny l "Min Y:" R -100 100}
+  miny 1
+  addUserKnob {7 maxy l "Max Y:" R -100 100}
+  maxy 2
+  addUserKnob {7 speed R 0 10}
+  speed {{Speed}}
+  addUserKnob {26 ""}
+  addUserKnob {7 result l Result:}
+  result {{(random(frame/(speed))*(maxy-miny)+miny)*amount+Random.result x66 0}}
+ }
+push 0
+  NoOp {
+   name NoOp1
+   xpos 19
+   ypos 13
+  }
+  Output {
+   name Output1
+   xpos 19
+   ypos 39
+  }
+ end_group
+end_group

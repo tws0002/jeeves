@@ -1,0 +1,123 @@
+#! /Applications/Nuke5.2v1/Nuke5.2v1.app/Contents/MacOS/Nuke5.2v1 -nx
+version 5.2100
+Gizmo {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -462
+  ypos -211
+ }
+ NoOp {
+  name NoOp1
+  xpos -462
+  ypos -171
+ }
+set N1d33f890 [stack 0]
+ Dot {
+  name Dot4
+  xpos -61
+  ypos 65
+ }
+push $N1d33f890
+ Sharpen {
+  name Sharpen1
+  xpos -594
+  ypos -61
+ }
+ Dot {
+  name Dot1
+  xpos -561
+  ypos 62
+ }
+set N19850ea0 [stack 0]
+ ColorCorrect {
+  offset 0.15
+  name ColorCorrect1
+  xpos -484
+  ypos 82
+ }
+ Saturation {
+  saturation 0
+  name Saturation1
+  xpos -484
+  ypos 106
+ }
+push $N19850ea0
+ Dot {
+  name Dot2
+  xpos -561
+  ypos 132
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Multiply
+  xpos -484
+  ypos 130
+ }
+set N1989ebb0 [stack 0]
+ Blur {
+  size 16.5
+  name Blur1
+  xpos -484
+  ypos 154
+ }
+push $N1989ebb0
+ Dissolve {
+  inputs 2
+  which 0.23
+  name Dissolve1
+  xpos -374
+  ypos 154
+ }
+set N1987b620 [stack 0]
+push $N1987b620
+ Grain2 {
+  name Grain2_1
+  label "Kodak 5248"
+  xpos -374
+  ypos 188
+  seed 156164
+  red_size {{parent.MrJBleachGrainIntensity*3.3}}
+  green_size {{parent.MrJBleachGrainIntensity*2.9}}
+  blue_size {{parent.MrJBleachGrainIntensity*2.5}}
+  red_m {{parent.MrJBleachGrainSize*0.416}}
+  green_m {{parent.MrJBleachGrainSize*0.46}}
+  blue_m {{parent.MrJBleachGrainSize*0.85}}
+  black {0 0 0}
+  minimum {0 0 0}
+  maskgrain false
+ }
+push $N1987b620
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -264
+  ypos 193
+ }
+ Saturation {
+  name Saturation2
+  xpos -264
+  ypos 217
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus
+  xpos -264
+  ypos 241
+ }
+ Dissolve {
+  inputs 2
+  name Dissolve2
+  xpos -179
+  ypos 285
+ }
+ Output {
+  name Output1
+  xpos -179
+  ypos 385
+ }
+end_group

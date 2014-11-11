@@ -1,0 +1,167 @@
+#! /Applications/Nuke5.1v5/Nuke5.1v5.app/Contents/MacOS/Nuke5.1v5 -nx
+version 5.1500
+Gizmo {
+ inputs 3
+ addUserKnob {20 User}
+ addUserKnob {41 choose_constant l "Piped Source | Alt_color_source" T Switch1.which}
+ addUserKnob {41 color l Alt_colour_source T new_colour.color}
+ addUserKnob {26 ""}
+ addUserKnob {7 saturation -STARTLINE}
+ saturation 0.3
+ addUserKnob {7 contrast}
+ contrast 1
+ addUserKnob {7 balance}
+ addUserKnob {26 ""}
+ addUserKnob {18 tint}
+ tint 1
+ addUserKnob {26 ""}
+}
+ Clamp {
+  inputs 0
+  name Clamp1
+  xpos 452
+  ypos 205
+ }
+ Input {
+  inputs 0
+  name fg
+  xpos -30
+  ypos 136
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {0 0.7 0 0}
+  name new_colour
+  xpos 162
+  ypos 202
+ }
+ Input {
+  inputs 0
+  name colour
+  xpos 301
+  ypos 94
+  number 1
+ }
+set N1e99b8e0 [stack 0]
+ Switch {
+  inputs 2
+  name Switch1
+  xpos 196
+  ypos 282
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge5
+  xpos 131
+  ypos 375
+ }
+set N1e997490 [stack 0]
+push $N1e99b8e0
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha black
+  name Shuffle2
+  xpos 372
+  ypos 392
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge3
+  xpos 330
+  ypos 460
+ }
+ Expression {
+  expr0 "abs(r) "
+  expr1 "abs(g) "
+  expr2 "abs(b) "
+  name Expression1
+  xpos 522
+  ypos 615
+ }
+ Grade {
+  name Grade1_to_monochrome
+  xpos 522
+  ypos 640
+ }
+ Saturation {
+  saturation 0
+  name Saturation2
+  xpos 522
+  ypos 665
+ }
+ Shuffle {
+  in rgb
+  red black
+  green black
+  blue black
+  alpha red
+  name Shuffle1
+  xpos 531
+  ypos 696
+ }
+push $N1e997490
+ Saturation {
+  saturation {{parent.saturation i}}
+  name Saturation1
+  xpos 152
+  ypos 441
+ }
+ Multiply {
+  value {{parent.contrast i} {parent.contrast i} {parent.contrast i} 0}
+  name Multiply1
+  xpos 147
+  ypos 525
+ }
+ Multiply {
+  value {{parent.tint i} {parent.tint i} {parent.tint i} {parent.tint i}}
+  name Multiply2
+  selected true
+  xpos 159
+  ypos 597
+ }
+set N22068800 [stack 0]
+ Add {
+  inputs 1+1
+  value {{parent.balance i} {parent.balance i} {parent.balance i} {parent.balance i}}
+  inject true
+  name Add1
+  xpos 238
+  ypos 691
+ }
+ Input {
+  inputs 0
+  name bg
+  xpos 561
+  ypos 99
+  number 2
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge2
+  xpos 364
+  ypos 769
+ }
+ Clamp {
+  channels alpha
+  name Clamp2
+  xpos 354
+  ypos 815
+ }
+ Output {
+  name Output1
+  xpos 364
+  ypos 960
+ }
+push $N22068800
+ Viewer {
+  name Viewer1
+  xpos -2
+  ypos 880
+ }
+end_group

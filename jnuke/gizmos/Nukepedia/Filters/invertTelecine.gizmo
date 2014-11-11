@@ -1,0 +1,96 @@
+#! created 03/29/08 by michael@yawpitchroll.com
+version 4.7000
+Gizmo {
+ help "This node does an inverse telecine operation, converting 30 frame / 60 field interlaced video to 24 frame progressive.  It does this by performing the traditional 2:3 cadence pulldown, resulting in 4 progressive frames per 5 interlaced frames (10 field pairs).  The stepping method used is mathematically more correct than in the standard remov32 node, and is more directly compatible with Shake and other interfaces that use an AA|BB|BC|CD|DD telecine-style terminology.\n\nNote that the conversion is 30:24 as a ratio, so although Nuke does not internally handle 29.976/23.98 the ratio of conversion remains the same and the 1% speed change should be automatically compensated for as part of your editorial conform, although testing should always be conducted within your specific video->film pipeline.n/nFor obvious reasons this node should come immediately after your Read node, and for optimum speed should be used to render your interlaced master files to progressive masters and proxies./n/nSequential image renders (rather than direct movie files in a quicktime or other wrapper) are highly recommended due to the 1% speed changes noted above."
+ addUserKnob {20 Pulldown}
+ addUserKnob {4 firstframe l phase t "Select first frame / phase for the 2:3 pulldown operation.  In any video that has had a 2:3 pullup spplied there will be a cadence of AA|BB|BC|CD|DD, resulting in two interlaced frames (the BC|CD pair).\n\nThe method this node uses is to assemble 4 progressive frames A|B|C|D from the split fields pairs (bC+Cb->CC with bb discarded).  The solid field pairs are passed through (ie AA->A)." M {"    AA  " "    BB  " "    BC  " "    CD  " "    DD  "}}
+ firstframe "    AA  "
+ addUserKnob {4 fielddom l fields t "Select field dominance of the video being operated on.  The dominance describes which field will be taken from the split fields: proper dominance setting will result in BC:CD->CC and when the phase is also set correctly no interlacing will be visible.  If dominance is incorrect interlacing will always be apparent even if the phase is set correctly.\n\nNote: some programs describe dominance by height instead of number.  By convention \"odd\" = \"upper field first\" and \"even\" = \"lower field first.\"" M {odd even}}
+ fielddom odd
+ addUserKnob {3 phase l INVISIBLE}
+ phase {{firstframe}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -480
+  ypos 231
+ }
+ TimeOffset {
+  time_offset {{phase i x2 1}}
+  name TimeOffset1
+  xpos -480
+  ypos 256
+ }
+set N1edd7570 [stack 0]
+ Dot {
+  name Dot3
+  xpos -556
+  ypos 318
+ }
+ TimeWarp {
+  lookup {{floor((frame+phase)*1.25) i}}
+  filter none
+  name invA
+  selected true
+  xpos -590
+  ypos 339
+ }
+set N1d808cb0 [stack 0]
+push $N1edd7570
+ Dot {
+  name Dot1
+  xpos -336
+  ypos 318
+ }
+ TimeWarp {
+  lookup {{ceil((frame+phase)*1.25) i}}
+  filter none
+  name invB
+  xpos -370
+  ypos 336
+ }
+ MergeExpression {
+  inputs 2
+  temp_name0 which
+  temp_expr0 (fielddom==0)?!fmod(y,2):fmod(y,2)
+  expr0 which?Ar:Br
+  expr1 which?Ag:Bg
+  expr2 which?Ab:Bb
+  name fieldmerge
+  xpos -370
+  ypos 387
+ }
+push $N1d808cb0
+ NoOp {
+  name pacemaker
+  xpos -590
+  ypos 387
+  addUserKnob {20 User}
+  addUserKnob {3 iA}
+  iA {{((fmod(invA.lookup,5))==-3?0:((fmod(invA.lookup,5))==-2?1:((fmod(invA.lookup,5))==-1?2:((fmod(invA.lookup,5))==0?3:((fmod(invA.lookup,5))==1?0:((fmod(invA.lookup,5))==2?1:2)))))) i}}
+  addUserKnob {3 iB}
+  iB {{((fmod(invB.lookup,5))==-3?0:((fmod(invB.lookup,5))==-2?1:((fmod(invB.lookup,5))==-1?2:((fmod(invB.lookup,5))==0?3:((fmod(invB.lookup,5))==1?0:((fmod(invB.lookup,5))==2?1:2)))))) i}}
+  addUserKnob {3 fr}
+  fr {{frame i}}
+ }
+ Switch {
+  inputs 2
+  which {{pacemaker.iA==2 i}}
+  name cadence_switch
+  xpos -480
+  ypos 435
+ }
+ FrameRange {
+  first_frame {{rint(input.first_frame/1.25) i}}
+  last_frame {{rint(input.last_frame/1.25) i}}
+  name FrameRange1
+  xpos -480
+  ypos 460
+ }
+ Output {
+  name Output1
+  xpos -480
+  ypos 483
+ }
+end_group

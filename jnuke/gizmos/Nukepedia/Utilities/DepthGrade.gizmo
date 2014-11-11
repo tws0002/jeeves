@@ -1,0 +1,160 @@
+#! /Applications/Nuke6.1v2/NukeX6.1v2.app/../Nuke6.1v2.app/Contents/MacOS/Nuke6.1v2 -nx
+version 6.1 v2
+Gizmo {
+ tile_color 0x7a0000ff
+ note_font "Verdana Bold Bold Bold Bold"
+ note_font_color 0xff
+ addUserKnob {20 User}
+ addUserKnob {4 AnaglyphMethod l Anaglyph t "This drop down will help you choose which method you want to see your anaglyph." M {PassThrough Magenta/Green Amber/Blue Red/Cyan Optimized "" "" "" "" ""}}
+ AnaglyphMethod Red/Cyan
+ addUserKnob {4 SatSelect l Saturation t "Choose the amount of saturation" M {Monochrome "Partial Color" "Half Color" "Full Color" "" ""}}
+ addUserKnob {26 ""}
+ addUserKnob {3 DepthSet l Depth t "This value will equally slide a layer in opposite directions the number of pixels setting that layers depth"}
+ addUserKnob {41 scale l Size t "You may have to scale the element if there are empty pixels on the sides" T SizeXF.scale}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -273
+  ypos -175
+ }
+ Transform {
+  translate {(default {{DepthSet} 0} right {{(Transform1.translate.left.x)*-1 i} 0})}
+  center {640 360}
+  name Transform1
+  xpos -273
+  ypos -149
+ }
+ Transform {
+  center {640 360}
+  name SizeXF
+  xpos -273
+  ypos -123
+ }
+set N1590b220 [stack 0]
+push $N1590b220
+ Saturation {
+  saturation 0.5
+  name Saturation5
+  xpos -167
+  ypos -89
+ }
+push $N1590b220
+ Saturation {
+  saturation 0.25
+  name Saturation_25
+  xpos -273
+  ypos -90
+ }
+push $N1590b220
+ Saturation {
+  saturation 0
+  name Saturation
+  xpos -371
+  ypos -90
+ }
+ Switch {
+  inputs 4
+  which {{SatSelect i}}
+  name Switch2
+  xpos -273
+  ypos -45
+ }
+set N10ccf360 [stack 0]
+ OneView {
+  name OneView3
+  label left
+  xpos -364
+  ypos -50
+ }
+set N10cd2d80 [stack 0]
+ ColorMatrix {
+  matrix {
+      {0 0.7 0.3}
+      {0 0 0}
+      {0 0 0}
+    }
+  name ColorMatrix_Left
+  xpos -71
+  ypos 46
+ }
+push $N10ccf360
+ OneView {
+  view right
+  name OneView4
+  label right
+  xpos -160
+  ypos -51
+ }
+set N10ced8f0 [stack 0]
+ ColorMatrix {
+  matrix {
+      {0 0 0}
+      {0 1 0}
+      {0 0 1}
+    }
+  name ColorMatrix_Right
+  xpos 20
+  ypos 46
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus
+  xpos -28
+  ypos 84
+ }
+ Grade {
+  channels {rgba.red -rgba.green -rgba.blue}
+  gamma 1.5
+  name Grade1
+  xpos -28
+  ypos 132
+ }
+push $N10cd2d80
+push $N10ced8f0
+ ShuffleCopy {
+  inputs 2
+  red red
+  name Make3D2
+  label Red/Cyan
+  xpos -160
+  ypos 44
+ }
+push $N10cd2d80
+push $N10ced8f0
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue red2
+  name Make3D1
+  label Amber/Blue
+  xpos -264
+  ypos 45
+ }
+push $N10cd2d80
+push $N10ced8f0
+ ShuffleCopy {
+  inputs 2
+  green green
+  name Make3D
+  label Magenta/Green
+  xpos -364
+  ypos 47
+ }
+push $N1590b220
+ Switch {
+  inputs 5
+  which {{AnaglyphMethod i}}
+  name Switch1
+  label "\n"
+  xpos -273
+  ypos 138
+ }
+ Output {
+  name Output1
+  xpos -273
+  ypos 187
+ }
+end_group

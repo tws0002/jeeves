@@ -1,0 +1,112 @@
+#! /Applications/Nuke5.1v5/Nuke5.1v5.app/Contents/MacOS/Nuke5.1v5 -nx
+version 5.1500
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {7 Percent R 0 200}
+ Percent 49
+ addUserKnob {7 Aspect_Ratio R 0 2}
+ Aspect_Ratio 1
+ addUserKnob {7 Weight R 0 100}
+ Weight 50
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -529
+  ypos -253
+ }
+set N1a214e20 [stack 0]
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos -515
+  ypos -196
+ }
+set N1a2187b0 [stack 0]
+push $N1a2187b0
+push $N1a2187b0
+ Blur {
+  size {{parent.Percent i} {w/parent.Aspect_Ratio/width*height i}}
+  crop false
+  name Blur1
+  xpos -211
+  ypos -130
+ }
+set N1a21bce0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge1
+  xpos -227
+  ypos 10
+ }
+push $N1a21bce0
+push 0
+push $N1a2187b0
+push $N1a2187b0
+ Merge2 {
+  inputs 3+1
+  operation max
+  name Merge2
+  xpos -502
+  ypos 8
+ }
+set N1a222bb0 [stack 0]
+ Keymix {
+  inputs 3
+  mix {{parent.Weight/100}}
+  name Keymix1
+  xpos -402
+  ypos 85
+ }
+set N1a2267d0 [stack 0]
+ Shuffle {
+  alpha white
+  name Shuffle2
+  xpos -394
+  ypos 154
+ }
+ Output {
+  name Output1
+  xpos -394
+  ypos 254
+ }
+ ColorBars {
+  inputs 0
+  name ColorBars1
+  xpos -780
+  ypos -211
+ }
+ Position {
+  translate {2048 2048}
+  name Position1
+  xpos -780
+  ypos -32
+ }
+push $N1a214e20
+ Transform {
+  scale 1.12
+  center {433.5 360}
+  name Transform1
+  xpos -314
+  ypos -206
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop1
+  xpos -314
+  ypos -186
+ }
+push $N1a21bce0
+push 0
+push 0
+push $N1a222bb0
+push $N1a2267d0
+ Viewer {
+  inputs 5
+  name Viewer1
+  selected true
+  xpos -211
+  ypos -30
+ }
+end_group

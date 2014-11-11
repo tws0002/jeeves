@@ -1,0 +1,777 @@
+#! C:/Program Files/Nuke5.0v1/nuke5.0.exe -nx
+version 5.0100
+Gizmo {
+ addUserKnob {20 SupressionControls l "Supression Controls"}
+ addUserKnob {6 RedSup l "Supress Red"}
+ addUserKnob {20 RedGroup l "Fine Tune Red" n 1}
+ RedGroup 0
+ addUserKnob {41 RedDis l INVISIBLE T RedDissolve.which}
+ addUserKnob {7 RedSupSlide l "Red Supression"}
+ RedSupSlide 1
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 "" l ""}
+ addUserKnob {6 GreenSup l "Supress Green"}
+ addUserKnob {41 GreenDis l INVISIBLE T GreenDissolve.which}
+ addUserKnob {20 GreenGroup l "Fine Tune Green" n 1}
+ GreenGroup 0
+ addUserKnob {7 GreenSupSlide l "Green Supression"}
+ GreenSupSlide 1
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {26 "" l ""}
+ addUserKnob {6 BlueSup l "Supress Blue"}
+ addUserKnob {41 BlueDis l INVISIBLE T BlueDissolve.which}
+ addUserKnob {20 BlueGroup l "Fine Tune Blue" n 1}
+ BlueGroup 0
+ addUserKnob {7 BlueSupSlide l "Blue Supression"}
+ BlueSupSlide 1
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {26 "" l ""}
+ addUserKnob {6 CyanSup l "Supress Cyan"}
+ addUserKnob {41 CyanDis l INVISIBLE T CyanDissolve.which}
+ addUserKnob {20 CyanGroup l "Fine Tune Cyan" n 1}
+ CyanGroup 0
+ addUserKnob {7 CyanSupSlide l "Cyan Supression"}
+ CyanSupSlide 1
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {26 "" l ""}
+ addUserKnob {6 MagSup l "Supress Magenta"}
+ addUserKnob {41 MagDis l INVISIBLE T MagentaDissolve.which}
+ addUserKnob {20 MagGroup l "Fine Tune Magenta" n 1}
+ MagGroup 0
+ addUserKnob {7 MagSupSlide l "Magenta Supression"}
+ MagSupSlide 1
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {26 "" l ""}
+ addUserKnob {6 YellowSup l "Supress Yellow"}
+ addUserKnob {41 YellowDis l INVISIBLE T YellowDissolve.which}
+ addUserKnob {20 YellowGroup l "Fine Tune Yellow" n 1}
+ YellowGroup 0
+ addUserKnob {7 YellowSupSlide l "Yellow Supression"}
+ YellowSupSlide 1
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+}
+ Input {
+  inputs 0
+  name Input1
+  selected true
+  xpos -436
+  ypos -295
+ }
+set N42bb958 [stack 0]
+ Dot {
+  name Dot1
+  xpos -402
+  ypos -259
+ }
+set N42bcfd8 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle3
+  xpos -342
+  ypos -263
+ }
+set N42bfe10 [stack 0]
+ Dot {
+  name Dot2
+  xpos -245
+  ypos -259
+ }
+ Dot {
+  name Dot3
+  xpos -245
+  ypos -119
+ }
+push $N42bcfd8
+ Shuffle {
+  red green
+  blue green
+  name Shuffle2
+  xpos -436
+  ypos -241
+ }
+set N42c6408 [stack 0]
+ Dot {
+  name Dot4
+  xpos -542
+  ypos -237
+ }
+push $N42bcfd8
+ Shuffle {
+  green red
+  blue red
+  name Shuffle1
+  xpos -529
+  ypos -263
+ }
+ Dot {
+  name Dot5
+  xpos -495
+  ypos -183
+ }
+push $N42bfe10
+ Dot {
+  name Dot6
+  xpos -308
+  ypos -210
+ }
+push $N42c6408
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge1
+  xpos -436
+  ypos -214
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge2
+  xpos -436
+  ypos -187
+ }
+ Dot {
+  name Dot7
+  xpos -402
+  ypos -160
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  name Copy1
+  xpos -576
+  ypos -171
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  name Copy2
+  xpos -576
+  ypos -130
+ }
+ Dot {
+  name Dot8
+  xpos -542
+  ypos -80
+ }
+push $N42bb958
+ Dot {
+  name Dot10
+  xpos -220
+  ypos -291
+ }
+ Dot {
+  name Dot11
+  xpos -220
+  ypos -80
+ }
+ Dissolve {
+  inputs 2
+  which {{RedSup*RedSupSlide x4 0}}
+  name RedDissolve
+  xpos -432
+  ypos -91
+ }
+set N42e5cb8 [stack 0]
+ Dot {
+  name Dot12
+  xpos -398
+  ypos -47
+ }
+set N42e8630 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle6
+  xpos -354
+  ypos -51
+ }
+set N42e9cf8 [stack 0]
+ Dot {
+  name Dot13
+  xpos -187
+  ypos -47
+ }
+ Dot {
+  name Dot14
+  xpos -187
+  ypos 79
+ }
+push $N42e8630
+ Shuffle {
+  green red
+  blue red
+  name Shuffle4
+  xpos -508
+  ypos -51
+ }
+set N42f0250 [stack 0]
+ Dot {
+  name Dot15
+  xpos -526
+  ypos -47
+ }
+push $N42f0250
+ Dot {
+  name Dot16
+  xpos -474
+  ypos 3
+ }
+push $N42e9cf8
+ Dot {
+  name Dot17
+  xpos -320
+  ypos 3
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge3
+  xpos -430
+  ypos -1
+ }
+push $N42e8630
+ Shuffle {
+  red green
+  blue green
+  name Shuffle5
+  xpos -432
+  ypos -29
+ }
+ Dot {
+  name Dot18
+  xpos -212
+  ypos -25
+ }
+ Dot {
+  name Dot19
+  xpos -212
+  ypos 38
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge4
+  xpos -430
+  ypos 34
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  name Copy3
+  xpos -560
+  ypos 27
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  name Copy4
+  xpos -560
+  ypos 68
+ }
+ Dot {
+  name Dot20
+  xpos -526
+  ypos 126
+ }
+push $N42e5cb8
+ Dot {
+  name Dot21
+  xpos -149
+  ypos -80
+ }
+ Dot {
+  name Dot22
+  xpos -149
+  ypos 126
+ }
+ Dissolve {
+  inputs 2
+  which {{GreenSup*GreenSupSlide x4 0}}
+  name GreenDissolve
+  xpos -430
+  ypos 115
+ }
+set N4311148 [stack 0]
+ Dot {
+  name Dot23
+  xpos -396
+  ypos 159
+ }
+set N4313a48 [stack 0]
+ Shuffle {
+  red green
+  blue green
+  name Shuffle8
+  xpos -430
+  ypos 184
+ }
+set N4315160 [stack 0]
+ Dot {
+  name Dot24
+  xpos -292
+  ypos 188
+ }
+ Dot {
+  name Dot25
+  xpos -292
+  ypos 332
+ }
+push $N4313a48
+ Shuffle {
+  green red
+  blue red
+  name Shuffle7
+  xpos -506
+  ypos 155
+ }
+ Dot {
+  name Dot26
+  xpos -472
+  ypos 215
+ }
+set N431ef58 [stack 0]
+push $N431ef58
+push $N4315160
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge5
+  xpos -430
+  ypos 211
+ }
+push $N4313a48
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle9
+  xpos -353
+  ypos 155
+ }
+ Dot {
+  name Dot27
+  xpos -320
+  ypos 242
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge6
+  xpos -430
+  ypos 238
+ }
+ Dot {
+  name Dot28
+  xpos -396
+  ypos 291
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  name Copy5
+  xpos -506
+  ypos 280
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  name Copy6
+  xpos -506
+  ypos 321
+ }
+ Dot {
+  name Dot29
+  xpos -472
+  ypos 362
+ }
+push $N4311148
+ Dot {
+  name Dot30
+  xpos -256
+  ypos 126
+ }
+ Dot {
+  name Dot31
+  xpos -256
+  ypos 362
+ }
+ Dissolve {
+  inputs 2
+  which {{BlueSup*BlueSupSlide x4 0}}
+  name BlueDissolve
+  xpos -401
+  ypos 351
+ }
+set N43396b8 [stack 0]
+ Invert {
+  name Invert2
+  xpos -401
+  ypos 392
+ }
+ Dot {
+  name Dot32
+  xpos -367
+  ypos 446
+ }
+set N433ec70 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle12
+  xpos -325
+  ypos 442
+ }
+set N4340398 [stack 0]
+ Dot {
+  name Dot33
+  xpos -182
+  ypos 446
+ }
+ Dot {
+  name Dot34
+  xpos -182
+  ypos 586
+ }
+push $N433ec70
+ Shuffle {
+  red green
+  blue green
+  name Shuffle11
+  xpos -401
+  ypos 464
+ }
+set N4346968 [stack 0]
+ Dot {
+  name Dot35
+  xpos -233
+  ypos 468
+ }
+push $N433ec70
+ Shuffle {
+  green red
+  blue red
+  name Shuffle10
+  xpos -477
+  ypos 442
+ }
+ Dot {
+  name Dot36
+  xpos -443
+  ypos 545
+ }
+push $N4346968
+push $N4340398
+ Dot {
+  name Dot37
+  xpos -291
+  ypos 518
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge7
+  xpos -401
+  ypos 514
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge8
+  xpos -401
+  ypos 541
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  name Copy7
+  xpos -267
+  ypos 534
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  name Copy8
+  xpos -267
+  ypos 575
+ }
+ Invert {
+  name Invert1
+  xpos -267
+  ypos 616
+ }
+push $N43396b8
+ Dot {
+  name Dot38
+  xpos -529
+  ypos 362
+ }
+ Dot {
+  name Dot39
+  xpos -529
+  ypos 627
+ }
+ Dissolve {
+  inputs 2
+  which {{CyanSup*CyanSupSlide x4 0}}
+  name CyanDissolve
+  xpos -401
+  ypos 616
+ }
+set N4366120 [stack 0]
+ Invert {
+  name Invert3
+  xpos -401
+  ypos 657
+ }
+ Dot {
+  name Dot40
+  xpos -367
+  ypos 701
+ }
+set N436b6b0 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle15
+  xpos -322
+  ypos 697
+ }
+ Dot {
+  name Dot41
+  xpos -288
+  ypos 748
+ }
+set N4370588 [stack 0]
+ Dot {
+  name Dot42
+  xpos -288
+  ypos 859
+ }
+push $N436b6b0
+ Shuffle {
+  green red
+  blue red
+  name Shuffle13
+  xpos -477
+  ypos 697
+ }
+ Dot {
+  name Dot43
+  xpos -443
+  ypos 748
+ }
+set N4376ce0 [stack 0]
+push $N436b6b0
+ Shuffle {
+  red green
+  blue green
+  name Shuffle14
+  xpos -401
+  ypos 719
+ }
+ Dot {
+  name Dot44
+  xpos -255
+  ypos 723
+ }
+ Dot {
+  name Dot45
+  xpos -255
+  ypos 775
+ }
+push $N4376ce0
+push $N4370588
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge9
+  xpos -404
+  ypos 744
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge10
+  xpos -404
+  ypos 771
+ }
+ Dot {
+  name Dot46
+  xpos -370
+  ypos 818
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  name Copy9
+  xpos -477
+  ypos 807
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  name Copy10
+  xpos -477
+  ypos 848
+ }
+ Invert {
+  name Invert4
+  xpos -477
+  ypos 889
+ }
+push $N4366120
+ Dot {
+  name Dot47
+  xpos -170
+  ypos 627
+ }
+ Dot {
+  name Dot48
+  xpos -170
+  ypos 900
+ }
+ Dissolve {
+  inputs 2
+  which {{MagSup*MagSupSlide x4 0}}
+  name MagentaDissolve
+  xpos -384
+  ypos 889
+ }
+set N43941f0 [stack 0]
+ Invert {
+  name Invert5
+  xpos -384
+  ypos 930
+ }
+ Dot {
+  name Dot49
+  xpos -350
+  ypos 977
+ }
+set N4399800 [stack 0]
+ Shuffle {
+  red green
+  blue green
+  name Shuffle17
+  xpos -384
+  ypos 995
+ }
+set N439b168 [stack 0]
+ Dot {
+  name Dot50
+  xpos -218
+  ypos 999
+ }
+ Dot {
+  name Dot51
+  xpos -218
+  ypos 1117
+ }
+push $N4399800
+ Shuffle {
+  green red
+  blue red
+  name Shuffle16
+  xpos -460
+  ypos 973
+ }
+ Dot {
+  name Dot52
+  xpos -426
+  ypos 1026
+ }
+set N43a5078 [stack 0]
+push $N43a5078
+push $N439b168
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge11
+  xpos -384
+  ypos 1022
+ }
+push $N4399800
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle18
+  xpos -312
+  ypos 973
+ }
+ Dot {
+  name Dot53
+  xpos -278
+  ypos 1053
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge12
+  xpos -384
+  ypos 1049
+ }
+ Dot {
+  name Dot54
+  xpos -350
+  ypos 1076
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  name Copy11
+  xpos -460
+  ypos 1065
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  name Copy12
+  xpos -460
+  ypos 1106
+ }
+ Invert {
+  name Invert6
+  xpos -460
+  ypos 1147
+ }
+ Dot {
+  name Dot55
+  xpos -426
+  ypos 1183
+ }
+push $N43941f0
+ Dot {
+  name Dot56
+  xpos -193
+  ypos 900
+ }
+ Dot {
+  name Dot57
+  xpos -193
+  ypos 1183
+ }
+ Dissolve {
+  inputs 2
+  which {{YellowSup*YellowSupSlide x4 0}}
+  name YellowDissolve
+  xpos -353
+  ypos 1172
+ }
+ Output {
+  name Output1
+  xpos -353
+  ypos 1272
+ }
+end_group

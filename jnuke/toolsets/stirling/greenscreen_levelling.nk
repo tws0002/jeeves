@@ -1,0 +1,400 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+BackdropNode {
+inputs 0
+name BackdropNode4
+tile_color 0x434343ff
+label "Fine Edge Key"
+note_font_size 22
+selected true
+xpos -11692
+ypos -1543
+bdwidth 753
+bdheight 332
+}
+BackdropNode {
+inputs 0
+name BackdropNode2
+tile_color 0x434343ff
+label "Garbage Matte\n\nPull hard edged key, invert \nthen erode to create garbage \nmatte. Shuffle alpha back\ninto plate"
+note_font_size 22
+selected true
+xpos -11701
+ypos -2386
+bdwidth 751
+bdheight 208
+}
+BackdropNode {
+inputs 0
+name BackdropNode3
+tile_color 0x434343ff
+label "Dialated green screen\n\nPremult rgb by alpha (created above), \nblur to desired amount then \nunpremult to create the dialate"
+note_font_size 22
+selected true
+xpos -11704
+ypos -2094
+bdwidth 753
+bdheight 204
+}
+BackdropNode {
+inputs 0
+name BackdropNode1
+tile_color 0x434343ff
+label "Compression Fix / Denoise\n\nSet output of colourspace node\nto YCbCr, Blur the Green and Blue \nchannels only to a value of 2,\nSet input of new colourspace \nnode to YCbCr and the output to\nLinear\n\nDenoise if desired"
+note_font_size 22
+selected true
+xpos -11694
+ypos -2774
+bdwidth 467
+bdheight 264
+}
+Read {
+inputs 0
+file /mnt/bertie/Jobs/011713_RED_Abu_Dhabi/vfx/nuke/sh_ident1_010/plates/input/Shot_1_Ident_1/Shot_1_Ident_1.####.dpx
+format "1920 1080 0 0 1920 1080 1 HD"
+last 102
+origlast 102
+origset true
+timecode 00:00:00:00
+name Read6
+selected true
+xpos -11062
+ypos -3102
+cached true
+}
+NoOp {
+name Greenscreen_Plate
+note_font "Bitstream Vera Sans Bold"
+note_font_size 20
+selected true
+xpos -11062
+ypos -2910
+}
+Dot {
+name Dot14
+selected true
+xpos -11028
+ypos -2746
+}
+set Nec3c6cb0 [stack 0]
+Colorspace {
+colorspace_out YCbCr
+name Colorspace1
+selected true
+xpos -11338
+ypos -2750
+}
+Blur {
+channels {-rgba.red rgba.green rgba.blue}
+size 2
+name Blur3
+selected true
+xpos -11338
+ypos -2724
+}
+Colorspace {
+colorspace_in YCbCr
+name Colorspace2
+selected true
+xpos -11338
+ypos -2686
+}
+Denoise2 {
+serializeKnob "0.0945116 0.471299 0.484522
+0.000283964 0.000465217 0.000289584
+0.000283964 0.000465217 0.000289584
+0.000271142 0.000338502 0.000214655
+0 0 0
+0.000106075 0.000196043 0.00014298
+0.000106075 0.000196043 0.00014298
+8.11496e-05 0.000155493 0.000108548
+0 0 0
+6.04715e-05 9.81712e-05 7.57062e-05
+6.04715e-05 9.81712e-05 7.57062e-05
+3.27234e-05 6.50911e-05 4.53441e-05
+0 0 0
+6.0886e-05 5.47886e-05 4.66559e-05
+6.0886e-05 5.47886e-05 4.66559e-05
+1.72431e-05 2.85067e-05 1.91219e-05
+0 0 0 0 0 0 0 0 0 
+10036447614154129479
+"
+type Digital
+analysisRegion {245 886 345 986}
+analysisFrame 24
+needsAnalyzing false
+needsProfile true
+userMessage ""
+name Denoise1
+selected true
+xpos -11338
+ypos -2632
+}
+Dot {
+name Dot15
+selected true
+xpos -11304
+ypos -2425
+}
+set Nb89b1ee0 [stack 0]
+Dot {
+name Dot16
+selected true
+xpos -11387
+ypos -2425
+}
+clone node7f1ce8e83d10|OFXuk.co.thefoundry.keylight.keylight_v201|4339 OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Intermediate Result"
+unPreMultiply false
+screenColour {0.07368745655 0.1175690517 0.04088259116}
+screenGain 1
+screenBalance 0.5
+alphaBias {0.5 0.5 0.5}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 0
+screenClipMin 0
+screenClipMax 1
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 0
+midPoint 0.5
+lowGain 1
+midGain 1
+highGain 1
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet false
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight2
+selected true
+xpos -11421
+ypos -1445
+}
+set Ce8e83d10 [stack 0]
+Invert {
+name Invert5
+selected true
+xpos -11421
+ypos -1419
+}
+push $Nb89b1ee0
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Final Result"
+unPreMultiply false
+screenColour {0.07713113725 0.1225627363 0.04493524507}
+screenGain 1
+screenBalance 0.5
+alphaBias {0.5 0.5 0.5}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 1
+screenClipMin 0.3
+screenClipMax 0.92
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 0
+midPoint 0.5
+lowGain 1
+midGain 1
+highGain 1
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet false
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight3
+selected true
+xpos -11338
+ypos -2301
+}
+Invert {
+name Invert6
+selected true
+xpos -11338
+ypos -2275
+}
+Erode {
+size 15
+name Erode1
+selected true
+xpos -11338
+ypos -2237
+}
+set Ne40900d0 [stack 0]
+Dot {
+name Dot21
+selected true
+xpos -11304
+ypos -1773
+}
+push $Nec3c6cb0
+Dot {
+name Dot17
+selected true
+xpos -10741
+ypos -2746
+}
+set N7e5e1340 [stack 0]
+Dot {
+name Dot18
+selected true
+xpos -10741
+ypos -2038
+}
+push $Ne40900d0
+push $Nec3c6cb0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy6
+selected true
+xpos -11062
+ypos -2237
+}
+Premult {
+name Premult2
+selected true
+xpos -11062
+ypos -2010
+}
+Blur {
+size 32
+name Blur4
+selected true
+xpos -11062
+ypos -1984
+}
+Unpremult {
+name Unpremult2
+selected true
+xpos -11062
+ypos -1946
+}
+Keymix {
+inputs 3
+name Keymix2
+selected true
+xpos -11062
+ypos -1783
+}
+set N7e60f360 [stack 0]
+clone $Ce8e83d10 {
+xpos -11062
+ypos -1452
+selected true
+}
+Invert {
+name Invert7
+selected true
+xpos -11062
+ypos -1426
+}
+Merge2 {
+inputs 2
+operation divide
+name Merge8
+selected true
+xpos -11258
+ypos -1280
+}
+Constant {
+inputs 0
+channels rgb
+color {0.07942600548 0.1255482584 0.04519287124 1.951187369e-05}
+name Sampled_Greenscreen
+note_font "Bitstream Vera Sans Bold"
+note_font_size 20
+selected true
+xpos -10772
+ypos -1822
+}
+push $N7e60f360
+Merge2 {
+inputs 2
+operation minus
+name Merge9
+selected true
+xpos -10772
+ypos -1451
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy5
+selected true
+xpos -10772
+ypos -1286
+}
+Premult {
+name Premult3
+selected true
+xpos -10772
+ypos -1206
+}
+push $N7e5e1340
+Dot {
+name Dot19
+selected true
+xpos -10448
+ypos -2746
+}
+Dot {
+name Dot20
+selected true
+xpos -10448
+ypos -1140
+}
+Merge2 {
+inputs 2
+operation plus
+name Merge10
+selected true
+xpos -10772
+ypos -1144
+}
+Output {
+name Output_Level_Screen
+note_font "Bitstream Vera Sans Bold"
+note_font_size 20
+selected true
+xpos -10772
+ypos -1008
+}

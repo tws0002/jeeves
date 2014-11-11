@@ -81,7 +81,7 @@ class taskslookup(object):
 
     def tasks_3d(self):
         taskdict = {}
-        self.exts = ('ma','mb','nk')
+        self.exts = ('ma','mb','nk', 'nkple')
 
         self.tasks = []
         self.loose = []
@@ -128,7 +128,7 @@ class versionslookup(object):
         self.dept = dept
         self.shot = shot
         self.task = task
-        self.exts = ('ma','mb','nk')
+        self.exts = ('ma','mb','nk', 'nkple')
 
         if dept == 'nuke':
             self.taskroot = os.path.join(core.jobsRoot, self.job, 'vfx', dept, shot, 'scripts', task)

@@ -1,0 +1,63 @@
+#! /Applications/Nuke5.1v3/Nuke5.1v3.app/Contents/MacOS/Nuke5.1v3 -nx
+version 5.1300
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 channels T Saturation5.channels}
+ addUserKnob {7 vibrancy R 0 2}
+ vibrancy 1
+ addUserKnob {41 mode l "luminance math" T Saturation5.mode}
+ addUserKnob {41 mix T Saturation5.mix}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -373
+  ypos 183
+ }
+set N1d41cd30 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  name bbb1
+  xpos -135
+  ypos 338
+ }
+push 0
+push $N1d41cd30
+ Shuffle {
+  green red
+  blue red
+  name rrr1
+  xpos -327
+  ypos 343
+ }
+push $N1d41cd30
+ Shuffle {
+  red green
+  blue green
+  name ggg1
+  xpos -217
+  ypos 341
+ }
+ Merge2 {
+  inputs 3+1
+  operation max
+  name Whites1
+  xpos -217
+  ypos 390
+ }
+push $N1d41cd30
+ Saturation {
+  inputs 1+1
+  saturation {{vibrancy i}}
+  maskChannelMask rgba.green
+  name Saturation5
+  xpos -373
+  ypos 508
+ }
+ Output {
+  name Output1
+  xpos -373
+  ypos 608
+ }
+end_group

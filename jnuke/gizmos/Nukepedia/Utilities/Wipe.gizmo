@@ -1,0 +1,391 @@
+#! /lot/s62/SYSTEMS/3PS/foundry/linux_intel/nuke4.8/1b8/Nuke4.8 -nx
+version 4.8100
+Gizmo {
+ inputs 0
+ addUserKnob {20 User}
+ addUserKnob {41 full_format l format T Constant1.full_format}
+ addUserKnob {41 proxy_format l "proxy format" T Constant1.proxy_format}
+ addUserKnob {26 "" l ""}
+ addUserKnob {7 wipe R 0 2}
+ wipe 0.25
+ addUserKnob {6 flip}
+ addUserKnob {6 flop}
+ addUserKnob {7 feather}
+ addUserKnob {7 falloff R 0 2}
+ falloff 1
+ addUserKnob {26 "" l ""}
+ addUserKnob {4 output l "" M {Linear Concentric Clock Angle Spiral Curtains Blinds Streaks "Bulls Eye" Random}}
+ addUserKnob {20 Linear n 1}
+ Linear 0
+ addUserKnob {7 angle R 0 360}
+ angle 45
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {20 Concentric n 1}
+ Concentric 0
+ addUserKnob {7 aspect R 0.5 2}
+ aspect 1
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {20 Clock n 1}
+ Clock 0
+ addUserKnob {3 fields}
+ fields 2
+ addUserKnob {7 start}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 Angle n 1}
+ Angle 0
+ addUserKnob {3 fields2 l fields}
+ fields2 4
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {20 Spiral n 1}
+ Spiral 0
+ addUserKnob {7 slices l pitch R 0 10}
+ slices 5
+ addUserKnob {7 rotation}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 Blinds n 1}
+ Blinds 0
+ addUserKnob {4 align l "" M {vertical horizontal}}
+ align horizontal
+ addUserKnob {3 fields3 l fileds}
+ fields3 4
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+ addUserKnob {20 Streaks n 1}
+ Streaks 0
+ addUserKnob {4 align2 l align M {vertical horizontal}}
+ align2 horizontal
+ addUserKnob {3 fields_streaks l fields}
+ fields_streaks 7
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {20 BullsEye l "Bulls Eye" n 1}
+ BullsEye 0
+ addUserKnob {3 fields_bull l fields}
+ fields_bull 7
+ addUserKnob {20 endGroup_7 l endGroup n -1}
+ addUserKnob {20 Random n 1}
+ Random 0
+ addUserKnob {3 fields_rnd l fields}
+ fields_rnd 10
+ addUserKnob {3 seed}
+ seed 999999
+ addUserKnob {20 endGroup_8 l endGroup n -1}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 93
+  ypos -505
+ }
+set N8a94528 [stack 0]
+ Expression {
+  temp_name0 xStripes
+  temp_expr0 " random(floor(x/width*parent.fields_rnd)/(parent.fields_rnd-1)*77,parent.seed)"
+  temp_name1 yStripes
+  temp_expr1 " random(floor(y/width*parent.fields_rnd)/(parent.fields_rnd-1)*77,parent.seed)"
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 (xStripes*yStripes)
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 (xStripes*yStripes)
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 (xStripes*yStripes)
+  expr3 (xStripes*yStripes)
+  name Random
+  xpos 859
+  ypos -309
+ }
+set N8a95b70 [stack 0]
+push $N8a95b70
+push $N8a95b70
+ Dilate {
+  size {{width}}
+  name Dilate1
+  xpos 992
+  ypos -316
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 992
+  ypos -238
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge1
+  xpos 859
+  ypos -238
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade10
+  xpos 859
+  ypos -200
+ }
+push $N8a94528
+ Expression {
+  temp_name1 D
+  temp_expr1 sqrt(pow(2*(x-width/2)/width,2)+pow(2*(y-height/2)/width,2))
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 "D%(1/(parent.fields_bull-1)) * (parent.fields_bull-1)"
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 "D%(1/(parent.fields_bull-1)) * (parent.fields_bull-1)"
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 "D%(1/(parent.fields_bull-1)) * (parent.fields_bull-1)"
+  expr3 "D%(1/(parent.fields_bull-1)) * (parent.fields_bull-1)"
+  name BullsEye
+  xpos 732
+  ypos -272
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade9
+  xpos 732
+  ypos -234
+ }
+push $N8a94528
+ Expression {
+  temp_name0 fieldH
+  temp_expr0 rint((cos(pi/2+x*pi*parent.fields_streaks/width)+1)/2)
+  temp_name1 fieldW
+  temp_expr1 rint((cos(pi/2+y*pi*parent.fields_streaks/height)+1)/2)
+  temp_name2 field
+  temp_expr2 parent.align2?fieldW:fieldH
+  temp_name3 grad
+  temp_expr3 parent.align2?x/width:y/height
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 abs(grad-field)
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 abs(grad-field)
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 abs(grad-field)
+  expr3 abs(grad-field)
+  name Streaks
+  xpos 599
+  ypos -277
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade8
+  xpos 599
+  ypos -239
+ }
+push $N8a94528
+ Expression {
+  temp_name0 fieldW
+  temp_expr0 width/parent.fields3
+  temp_name1 fieldH
+  temp_expr1 height/parent.fields3
+  temp_name2 fieldsX
+  temp_expr2 (x%fieldW)/(fieldW-1)
+  temp_name3 fieldsY
+  temp_expr3 (y%fieldH)/(fieldH-1)
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 parent.align?fieldsY:fieldsX
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 parent.align?fieldsY:fieldsX
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 parent.align?fieldsY:fieldsX
+  expr3 parent.align?fieldsY:fieldsX
+  name Blinds
+  xpos 405
+  ypos -284
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade7
+  xpos 405
+  ypos -246
+ }
+push $N8a94528
+ Expression {
+  temp_name1 Dx
+  temp_expr1 "(x-width/2) / (height/2) "
+  temp_name2 Dy
+  temp_expr2 "(y-height/2) / (height/2) * aspect"
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 parent.wipe==1?1:(abs(Dx)*abs(Dy))
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 parent.wipe==1?1:(abs(Dx)*abs(Dy))
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 parent.wipe==1?1:(abs(Dx)*abs(Dy))
+  expr3 parent.wipe==1?1:(abs(Dx)*abs(Dy))
+  name Curtains
+  label "\n"
+  selected true
+  xpos 256
+  ypos -288
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe*1.8}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade6
+  xpos 256
+  ypos -250
+ }
+push $N8a94528
+ Expression {
+  temp_name0 dist
+  temp_expr0 sqrt(pow(x-width/2,2)+pow(y-height/2,2))
+  temp_name2 pos
+  temp_expr2 "(((((degrees(atan2((x-width/2),(y-height/2)))+180)/360) + ( dist / width * parent.slices )   )%1) + parent.rotation+1) % 1"
+  temp_name3 neg
+  temp_expr3 "((1-(((degrees(-atan2((x-width/2),(y-height/2)))+180)/360) + ( dist / width * -parent.slices )  )%1) + parent.rotation + 1) %1"
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 parent.slices<0?neg:pos
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 parent.slices<0?neg:pos
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 parent.slices<0?neg:pos
+  expr3 parent.slices<0?neg:pos
+  name Spiral
+  xpos 136
+  ypos -281
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade5
+  xpos 136
+  ypos -243
+ }
+push $N8a94528
+ Expression {
+  temp_name0 angle
+  temp_expr0 (abs((atan2(x-width/2,y-height/2))))
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 parent.fields2==1?angle/pi:abs(sin(angle*(parent.fields2-1)))
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 parent.fields2==1?angle/pi:abs(sin(angle*(parent.fields2-1)))
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 parent.fields2==1?angle/pi:abs(sin(angle*(parent.fields2-1)))
+  expr3 parent.fields2==1?angle/pi:abs(sin(angle*(parent.fields2-1)))
+  name Angle
+  xpos -5
+  ypos -291
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade4
+  xpos -5
+  ypos -242
+ }
+push $N8a94528
+ Expression {
+  temp_name0 fields
+  temp_expr0 360/parent.fields
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 "(((degrees(atan2(x-width/2,y-height/2))+180)%fields + parent.start*fields)%fields)"
+  expr1 "(((degrees(atan2(x-width/2,y-height/2))+180)%fields + parent.start*fields)%fields)"
+  expr2 "(((degrees(atan2(x-width/2,y-height/2))+180)%fields + parent.start*fields)%fields)"
+  expr3 "(((degrees(atan2(x-width/2,y-height/2))+180)%fields + parent.start*fields)%fields)"
+  name Clock
+  xpos -153
+  ypos -292
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe*360/parent.fields}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather*70}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade3
+  xpos -153
+  ypos -247
+ }
+push $N8a94528
+ Expression {
+  temp_name1 Dx
+  temp_expr1 "(x-width/2) / (height/2)"
+  temp_name2 Dy
+  temp_expr2 "(y-height/2) / (height/2) * aspect"
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 1-sqrt(pow2(Dx)+pow2(Dy))
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 1-sqrt(pow2(Dx)+pow2(Dy))
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 1-sqrt(pow2(Dx)+pow2(Dy))
+  expr3 1-sqrt(pow2(Dx)+pow2(Dy))
+  name Concentric
+  label "\n"
+  xpos -295
+  ypos -294
+ }
+ Grade {
+  channels rgba
+  blackpoint {{1-parent.wipe*2.2*aspect}}
+  whitepoint {{this.blackpoint.r+parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade2
+  xpos -295
+  ypos -235
+ }
+push $N8a94528
+ Expression {
+  channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  expr0 "(((x-(width/2))/width) * cos(radians(parent.angle)) + ((y-height/2)/width) * -sin(radians(parent.angle)))  / ((abs(cos(radians(parent.angle)) * width) + abs(sin(radians(parent.angle)) * height))/width)"
+  channel1 {-rgba.red rgba.green -rgba.blue}
+  expr1 "(((x-(width/2))/width) * cos(radians(parent.angle)) + ((y-height/2)/width) * -sin(radians(parent.angle)))  / ((abs(cos(radians(parent.angle)) * width) + abs(sin(radians(parent.angle)) * height))/width)"
+  channel2 {-rgba.red -rgba.green rgba.blue}
+  expr2 "(((x-(width/2))/width) * cos(radians(parent.angle)) + ((y-height/2)/width) * -sin(radians(parent.angle)))  / ((abs(cos(radians(parent.angle)) * width) + abs(sin(radians(parent.angle)) * height))/width)"
+  expr3 "(((x-(width/2))/width) * cos(radians(parent.angle)) + ((y-height/2)/width) * -sin(radians(parent.angle)))  / ((abs(cos(radians(parent.angle)) * width) + abs(sin(radians(parent.angle)) * height))/width)"
+  name Linear
+  xpos -461
+  ypos -297
+ }
+ Grade {
+  channels rgba
+  blackpoint {{parent.wipe-.5}}
+  whitepoint {{this.blackpoint.r-.00001-parent.feather}}
+  gamma {{parent.falloff}}
+  white_clamp true
+  name Grade1
+  xpos -461
+  ypos -242
+ }
+ Switch {
+  inputs 10
+  which {{parent.output}}
+  name Switch1
+  xpos 91
+  ypos -3
+ }
+ Mirror {
+  Horizontal {{parent.flop}}
+  Vertical {{parent.flip}}
+  name Mirror1
+  xpos 91
+  ypos 54
+ }
+ Output {
+  name Output1
+  xpos 91
+  ypos 92
+ }
+end_group

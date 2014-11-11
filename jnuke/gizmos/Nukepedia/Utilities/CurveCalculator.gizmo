@@ -1,0 +1,174 @@
+#! /Applications/Nuke5.1v4/Nuke5.1v4.app/Contents/MacOS/Nuke5.1v4 -nx
+version 5.1400
+Gizmo {
+ help "This node has a few common maths tools:\n1) Jitter - calculates the jitter value from 2 curves after you have filtered the 'smoothed curve'. This also includes the curveTools average intensity node so you can use the inverted result in a maths node to remove colour flicker\n2) Average - calculates the average from up to 16 curves, good for multitrack points used around one point to ignore grain\n\nUse the results in other relevent nodes.\n\nmore may be added at some point"
+ addUserKnob {20 JitterCurve l Jitter}
+ addUserKnob {32 analyse t "use this to analyse an average intensity curve" T "execute_panel this.MyCurveTool\nknob this.sourceCurve \[knob this.MyCurveTool.intensitydata]\nknob this.smoothedCurve \[knob this.MyCurveTool.intensitydata]" +STARTLINE}
+ addUserKnob {19 sourceCurve l "source curve" t "Copy your curve here and into 'smoothed curve' below or use the analyse button above"}
+ sourceCurve {0 0 0 0}
+ addUserKnob {19 smoothedCurve l "smoothed curve" t "Copy your curve here and into 'source curve' above or use the analyse button above. Then edit this curve and apply a filter to smooth it."}
+ smoothedCurve {0 0 0 0}
+ addUserKnob {19 HiddenJitterCurve l INVISIBLE}
+ HiddenJitterCurve {{sourceCurve-smoothedCurve i} {sourceCurve-smoothedCurve i} {sourceCurve-smoothedCurve i} {sourceCurve-smoothedCurve i}}
+ addUserKnob {19 jitterCurve l "@b;Jitter result" t "This is the difference between the two above curves. Use 'set to this frame' to zero it at this frame"}
+ jitterCurve {{invertJitter==0?multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0):-multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0)} {invertJitter==0?multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0):-multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0)} {invertJitter==0?multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0):-multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0)} {invertJitter==0?multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0):-multiplier*((sourceCurve-smoothedCurve)-(HiddenJitterCurve(this.myFrame)))+(useCentre==1?centrePoint:0)}}
+ addUserKnob {19 JitterAbsoluteOffset l "@b;Jitter result (absolute)" t "returns source curve - ref frame"}
+ JitterAbsoluteOffset {{"invertJitter==0?multiplier*(sourceCurve-sourceCurve (myFrame))+(useCentre==1?centrePoint:0):multiplier*-(sourceCurve-sourceCurve (myFrame))+(useCentre==1?centrePoint:0)"} {"invertJitter==0?multiplier*(sourceCurve-sourceCurve (myFrame))+(useCentre==1?centrePoint:0):multiplier*-(sourceCurve-sourceCurve (myFrame))+(useCentre==1?centrePoint:0)"} {"invertJitter==0?multiplier*(sourceCurve-sourceCurve (myFrame))+(useCentre==1?centrePoint:0):multiplier*-(sourceCurve-sourceCurve (myFrame))+(useCentre==1?centrePoint:0)"} {"sourceCurve-sourceCurve (myFrame)"}}
+ addUserKnob {3 myFrame l "ref frame"}
+ myFrame 1
+ addUserKnob {32 setOffset l "set to this frame" -STARTLINE T "knob this.myFrame \[value frame]"}
+ addUserKnob {6 invertJitter l "invert result" t "inverts the jitter curve" +STARTLINE}
+ addUserKnob {6 useCentre l use t "Centres around 0 unless this is checked in which case it centres around centrePoint" +STARTLINE}
+ addUserKnob {7 centrePoint l "centre point" -STARTLINE}
+ centrePoint 1
+ addUserKnob {19 multiplier l "multiply results" R 0 5}
+ multiplier 1
+ addUserKnob {26 ""}
+ addUserKnob {7 IntensityBaseAverage l "frames for base average" R 0 10}
+ IntensityBaseAverage 10
+ addUserKnob {15 analyseROI l "analyse ROI"}
+ analyseROI {0 0 500 500}
+ addUserKnob {26 ""}
+ addUserKnob {19 scratchJ l "@b;ScratchPad" t "scratch pad to use how you want"}
+ scratchJ {0 0 0 0}
+ addUserKnob {20 Averages l Average}
+ addUserKnob {41 Value01 l "Value 01" T averagesTool.Value01}
+ addUserKnob {41 Use01a l A -STARTLINE T averagesTool.Use01a}
+ addUserKnob {41 Use01b l B -STARTLINE T averagesTool.Use01b}
+ addUserKnob {41 Value09 l "\tValue 09" -STARTLINE T averagesTool.Value09}
+ addUserKnob {41 Use09a l A -STARTLINE T averagesTool.Use09a}
+ addUserKnob {41 Use09b l B -STARTLINE T averagesTool.Use09b}
+ addUserKnob {41 Value02 l "Value 02" T averagesTool.Value02}
+ addUserKnob {41 Use02a l A -STARTLINE T averagesTool.Use02a}
+ addUserKnob {41 Use02b l B -STARTLINE T averagesTool.Use02b}
+ addUserKnob {41 Value10 l "\tValue 10" -STARTLINE T averagesTool.Value10}
+ addUserKnob {41 Use10a l A -STARTLINE T averagesTool.Use10a}
+ addUserKnob {41 Use10b l B -STARTLINE T averagesTool.Use10b}
+ addUserKnob {41 Value03 l "Value 03" T averagesTool.Value03}
+ addUserKnob {41 Use03a l A -STARTLINE T averagesTool.Use03a}
+ addUserKnob {41 Use03b l B -STARTLINE T averagesTool.Use03b}
+ addUserKnob {41 Value11 l "\tValue 11" -STARTLINE T averagesTool.Value11}
+ addUserKnob {41 Use11a l A -STARTLINE T averagesTool.Use11a}
+ addUserKnob {41 Use11b l B -STARTLINE T averagesTool.Use11b}
+ addUserKnob {41 Value04 l "Value 04" T averagesTool.Value04}
+ addUserKnob {41 Use04a l A -STARTLINE T averagesTool.Use04a}
+ addUserKnob {41 Use04b l B -STARTLINE T averagesTool.Use04b}
+ addUserKnob {41 Value12 l "\tValue 12" -STARTLINE T averagesTool.Value12}
+ addUserKnob {41 Use12a l A -STARTLINE T averagesTool.Use12a}
+ addUserKnob {41 Use12b l B -STARTLINE T averagesTool.Use12b}
+ addUserKnob {41 Value05 l "Value 05" T averagesTool.Value05}
+ addUserKnob {41 Use05a l A -STARTLINE T averagesTool.Use05a}
+ addUserKnob {41 Use05b l B -STARTLINE T averagesTool.Use05b}
+ addUserKnob {41 Value13 l "\tValue 13" -STARTLINE T averagesTool.Value13}
+ addUserKnob {41 Use13a l A -STARTLINE T averagesTool.Use13a}
+ addUserKnob {41 Use13b l B -STARTLINE T averagesTool.Use13b}
+ addUserKnob {41 Value06 l "Value 06" T averagesTool.Value06}
+ addUserKnob {41 Use06a l A -STARTLINE T averagesTool.Use06a}
+ addUserKnob {41 Use06b l B -STARTLINE T averagesTool.Use06b}
+ addUserKnob {41 Value14 l "\tValue 14" -STARTLINE T averagesTool.Value14}
+ addUserKnob {41 Use14a l A -STARTLINE T averagesTool.Use14a}
+ addUserKnob {41 Use14b l B -STARTLINE T averagesTool.Use14b}
+ addUserKnob {41 Value07 l "Value 07" T averagesTool.Value07}
+ addUserKnob {41 Use07a l A -STARTLINE T averagesTool.Use07a}
+ addUserKnob {41 Use07b l B -STARTLINE T averagesTool.Use07b}
+ addUserKnob {41 Value15 l "\tValue 15" -STARTLINE T averagesTool.Value15}
+ addUserKnob {41 Use15a l A -STARTLINE T averagesTool.Use15a}
+ addUserKnob {41 Use15b l B -STARTLINE T averagesTool.Use15b}
+ addUserKnob {41 Value08 l "Value 08" T averagesTool.Value08}
+ addUserKnob {41 Use08a l A -STARTLINE T averagesTool.Use08a}
+ addUserKnob {41 Use08b l B -STARTLINE T averagesTool.Use08b}
+ addUserKnob {41 Value16 l "\tValue 16" -STARTLINE T averagesTool.Value16}
+ addUserKnob {41 Use16a l A -STARTLINE T averagesTool.Use16a}
+ addUserKnob {41 Use16b l B -STARTLINE T averagesTool.Use16b}
+ addUserKnob {26 "" l "@b; Average Results"}
+ addUserKnob {41 Result01 l "Average A" T averagesTool.Result01}
+ addUserKnob {41 Result02 l "\tAverage B" -STARTLINE T averagesTool.Result02}
+ addUserKnob {41 Scratcha l "Scratch A" T averagesTool.Scratcha}
+ addUserKnob {41 Scratchb l "\tScratch B" -STARTLINE T averagesTool.Scratchb}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -428
+  ypos -56
+ }
+set N171a7590 [stack 0]
+ CurveTool {
+  avgframes {{IntensityBaseAverage i}}
+  ROI {{analyseROI i x1 0 0 x6 0 x12 0 x14 0 x15 0 x19 0 x82 0} {analyseROI i x1 0 0 x6 0 x12 0 x14 0 x15 0 x19 0 x82 0} {analyseROI i x1 2048 2048 x6 2048 x12 2048 x14 2048 x15 2048 x19 2048 x82 2048} {analyseROI i x1 872 872 x6 872 x12 872 x14 872 x15 872 x19 872 x82 872}}
+  autocropdata {512 218 1590 654}
+  intensitydata {0 0 0 0}
+  name MyCurveTool
+  xpos -428
+  ypos 41
+ }
+ Output {
+  name Output1
+  xpos -428
+  ypos 160
+ }
+push $N171a7590
+ NoOp {
+  name averagesTool
+  xpos -326
+  ypos 44
+  addUserKnob {20 User}
+  addUserKnob {12 Value01 l "Value 01"}
+  addUserKnob {6 Use01a l A -STARTLINE}
+  Use01a true
+  addUserKnob {6 Use01b l B -STARTLINE}
+  Use01b true
+  addUserKnob {12 Value02 l "Value 02"}
+  addUserKnob {6 Use02a l A -STARTLINE}
+  addUserKnob {6 Use02b l B -STARTLINE}
+  addUserKnob {12 Value03 l "Value 03"}
+  addUserKnob {6 Use03a l A -STARTLINE}
+  addUserKnob {6 Use03b l B -STARTLINE}
+  addUserKnob {12 Value04 l "Value 04"}
+  addUserKnob {6 Use04a l A -STARTLINE}
+  addUserKnob {6 Use04b l B -STARTLINE}
+  addUserKnob {12 Value05 l "Value 05"}
+  addUserKnob {6 Use05a l A -STARTLINE}
+  addUserKnob {6 Use05b l B -STARTLINE}
+  addUserKnob {12 Value06 l "Value 06"}
+  addUserKnob {6 Use06a l A -STARTLINE}
+  addUserKnob {6 Use06b l B -STARTLINE}
+  addUserKnob {12 Value07 l "Value 07"}
+  addUserKnob {6 Use07a l A -STARTLINE}
+  addUserKnob {6 Use07b l B -STARTLINE}
+  addUserKnob {12 Value08 l "Value 08"}
+  addUserKnob {6 Use08a l A -STARTLINE}
+  addUserKnob {6 Use08b l B -STARTLINE}
+  addUserKnob {12 Value09 l "Value 09"}
+  addUserKnob {6 Use09a l A -STARTLINE}
+  addUserKnob {6 Use09b l B -STARTLINE}
+  addUserKnob {12 Value10 l "Value 10"}
+  addUserKnob {6 Use10a l A -STARTLINE}
+  addUserKnob {6 Use10b l B -STARTLINE}
+  addUserKnob {12 Value11 l "Value 11"}
+  addUserKnob {6 Use11a l A -STARTLINE}
+  addUserKnob {6 Use11b l B -STARTLINE}
+  addUserKnob {12 Value12 l "Value 12"}
+  addUserKnob {6 Use12a l A -STARTLINE}
+  addUserKnob {6 Use12b l B -STARTLINE}
+  addUserKnob {12 Value13 l "Value 13"}
+  addUserKnob {6 Use13a l A -STARTLINE}
+  addUserKnob {6 Use13b l B -STARTLINE}
+  addUserKnob {12 Value14 l "Value 14"}
+  addUserKnob {6 Use14a l A -STARTLINE}
+  addUserKnob {6 Use14b l B -STARTLINE}
+  addUserKnob {12 Value15 l "Value 15"}
+  addUserKnob {6 Use15a l A -STARTLINE}
+  addUserKnob {6 Use15b l B -STARTLINE}
+  addUserKnob {12 Value16 l "Value 16"}
+  addUserKnob {6 Use16a l A -STARTLINE}
+  addUserKnob {6 Use16b l B -STARTLINE}
+  addUserKnob {26 ""}
+  addUserKnob {12 Result01 l "Average A"}
+  Result01 {{((Use01a==1?Value01:0)+(Use02a==1?Value02:0)+(Use03a==1?Value03:0)+(Use04a==1?Value04:0)+(Use05a==1?Value05:0)+(Use06a==1?Value06:0)+(Use07a==1?Value07:0)+(Use08a==1?Value08:0)+(Use09a==1?Value09:0)+(Use10a==1?Value10:0)+(Use11a==1?Value11:0)+(Use12a==1?Value12:0)+(Use13a==1?Value13:0)+(Use14a==1?Value14:0)+(Use15a==1?Value15:0)+(Use16a==1?Value16:0))/(Use01a+Use02a+Use03a+Use04a+Use05a+Use06a+Use07a+Use08a+Use09a+Use10a+Use11a+Use12a+Use13a+Use14a+Use15a+Use16a) i} {((Use01a==1?Value01:0)+(Use02a==1?Value02:0)+(Use03a==1?Value03:0)+(Use04a==1?Value04:0)+(Use05a==1?Value05:0)+(Use06a==1?Value06:0)+(Use07a==1?Value07:0)+(Use08a==1?Value08:0)+(Use09a==1?Value09:0)+(Use10a==1?Value10:0)+(Use11a==1?Value11:0)+(Use12a==1?Value12:0)+(Use13a==1?Value13:0)+(Use14a==1?Value14:0)+(Use15a==1?Value15:0)+(Use16a==1?Value16:0))/(Use01a+Use02a+Use03a+Use04a+Use05a+Use06a+Use07a+Use08a+Use09a+Use10a+Use11a+Use12a+Use13a+Use14a+Use15a+Use16a) i}}
+  addUserKnob {12 Result02 l "Average B" -STARTLINE}
+  Result02 {{((Use01b==1?Value01:0)+(Use02b==1?Value02:0)+(Use03b==1?Value03:0)+(Use04b==1?Value04:0)+(Use05b==1?Value05:0)+(Use06b==1?Value06:0)+(Use07b==1?Value07:0)+(Use08b==1?Value08:0)+(Use09b==1?Value09:0)+(Use10b==1?Value10:0)+(Use11b==1?Value11:0)+(Use12b==1?Value12:0)+(Use13b==1?Value13:0)+(Use14b==1?Value14:0)+(Use15b==1?Value15:0)+(Use16b==1?Value16:0))/(Use01b+Use02b+Use03b+Use04b+Use05b+Use06b+Use07b+Use08b+Use09b+Use10b+Use11b+Use12b+Use13b+Use14b+Use15b+Use16b) i} {((Use01b==1?Value01:0)+(Use02b==1?Value02:0)+(Use03b==1?Value03:0)+(Use04b==1?Value04:0)+(Use05b==1?Value05:0)+(Use06b==1?Value06:0)+(Use07b==1?Value07:0)+(Use08b==1?Value08:0)+(Use09b==1?Value09:0)+(Use10b==1?Value10:0)+(Use11b==1?Value11:0)+(Use12b==1?Value12:0)+(Use13b==1?Value13:0)+(Use14b==1?Value14:0)+(Use15b==1?Value15:0)+(Use16b==1?Value16:0))/(Use01b+Use02b+Use03b+Use04b+Use05b+Use06b+Use07b+Use08b+Use09b+Use10b+Use11b+Use12b+Use13b+Use14b+Use15b+Use16b) i}}
+  addUserKnob {12 Scratcha l "Scratch A" t "add result here and use curves-> generate to create the final curve"}
+  addUserKnob {12 Scratchb l "Scratch B" t "add result here and use curves-> generate to create the final curve" -STARTLINE}
+ }
+end_group

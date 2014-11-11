@@ -1,0 +1,98 @@
+Gizmo {
+  inputs 1
+  addUserKnob { 20 "" User } 
+  addUserKnob { 3 phase phase R 0 1 t "Adjust between 0 and 4 until a sequence of 5 frames no longer have flicker" } 
+  addUserKnob { 6 field_dom "invert field dominance" t "Indicates odd fields are first in time" } 
+}
+  Input {
+    inputs 0
+    name Input1
+    xpos 193
+    ypos 36
+  }
+set N4b64b808 [stack 0]
+  TimeWarp {
+    lookup {{ceil(floor(frame*1.25)/5)*5+phase-1}}
+    filter none
+    name TimeWarp2
+    xpos 193
+    ypos 112
+  }
+set N4b64ddf8 [stack 0]
+push $N4b64b808
+  TimeWarp {
+    lookup {{ceil(floor(frame*1.25)/5)*5+phase}}
+    filter none
+    name TimeWarp3
+    xpos 308
+    ypos 112
+  }
+  MergeExpression {
+    inputs 2
+    temp_name0 which
+    temp_expr0 field_dom?!fmod(y,2):fmod(y,2)
+    expr0 which?Ar:Br
+    expr1 which?Ag:Bg
+    expr2 which?Ab:Bb
+    name MergeExpression2
+    xpos 317
+    ypos 208
+  }
+push $N4b64b808
+  TimeWarp {
+    lookup {{floor(frame*1.25)+phase}}
+    filter none
+    name TimeWarp1
+    xpos 64
+    ypos 113
+  }
+set N4b650040 [stack 0]
+push $N4b64ddf8
+  MergeExpression {
+    inputs 2
+    temp_name0 which
+    temp_expr0 field_dom?!fmod(y,2):fmod(y,2)
+    expr0 which?Ar:Br
+    expr1 which?Ag:Bg
+    expr2 which?Ab:Bb
+    name MergeExpression1
+    xpos 193
+    ypos 210
+  }
+  Switch {
+    inputs 2
+    which {{fmod(frame+1,4)}}
+    name Switch1
+    xpos 256
+    ypos 265
+  }
+push $N4b650040
+  Switch {
+    inputs 2
+    which {{fmod(frame+2,4)}}
+    name Switch2
+    xpos 175
+    ypos 316
+  }
+push $N4b650040
+  Switch {
+    inputs 2
+    which {{fmod(frame+3,4)}}
+    name Switch3
+    xpos 73
+    ypos 379
+  }
+  FrameRange {
+    first_frame {{rint(input.first_frame/1.25)}}
+    last_frame {{rint(input.last_frame/1.25)}}
+    name FrameRange1
+    selected true
+    xpos 73
+    ypos 403
+  }
+  Output {
+    name Output1
+    xpos 73
+    ypos 510
+  }
+end_group
