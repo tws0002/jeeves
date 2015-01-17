@@ -1,0 +1,463 @@
+//	bt_uvTools
+//		by: Brent Tyler
+//			Verson .1a
+
+global proc bt_uvTools()
+{
+	if(`window -exists uvUI`)
+		deleteUI uvUI;
+	if(`windowPref -exists uvUI`)
+		windowPref -r uvUI;
+
+	string $uvUI = `window -title "UV Tools" -w 258 -h 295 -s 1 -titleBar 1 -mnb 1 -mxb 1 -mb 1 -mbv 1 uvUI`;
+	formLayout mainLayout;
+
+// Button Square
+
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(0,1)") topLeftScale;
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(.5,1)") topCenterScale;
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(1,1)") topRightScale;
+
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(" + 0 + "," + .5 +")") midLeftScale;
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(" + .5 + "," + .5 +")") midCenterScale;
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(" + 1 + "," + .5 +")") midRightScale;
+
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(" + 0 + "," + 0 +")") lowerLeftScale;
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(" + .5 + "," + 0 +")") lowerCenterScale;
+	button -l "" -w 25 -h 25 -c ("uv_scaleUVs(" + 1 + "," + 0 +")") lowerRightScale;
+
+	button -l "^" -w 75 -h 25 -c "uv_moveSwitch(0,1)" topTranslate;
+	button -l "v" -w 75 -h 25 -c "uv_moveSwitch(0,-1)" bottomTranslate;
+	button -l "<" -w 25 -h 75 -c "uv_moveSwitch(-1,0)" leftTranslate;
+	button -l ">" -w 25 -h 75 -c "uv_moveSwitch(1,0)" rightTranslate;
+
+	button -l "Pivot" -w 75 -h 18 -c uv_scaleUVsPivot pivotBtn;
+
+// Left Side UI
+
+	text -l "Retain Spacing" -w 75 -al "right" rcsText;
+	checkBox -align "left" -l "" -onc ("texMoveContext -e -snapComponentsRelative 1 texMoveContext") -ofc ("texMoveContext -e -snapComponentsRelative 0 texMoveContext") rcsBox;
+
+	text -l "Pixel Move" -w 75 -al "right" pixelText;
+	checkBox -label ""	-align "left" pixelBox;
+
+	text -l "U" -w 30 -al "right" uText;
+	floatField -v 1 -pre 2 -w 60 UField;
+
+	text -l "V" -w 30 -al "right" vText;
+	floatField -v 1 -pre 2 -w 60 VField;
+
+	text -l "o" -w 30 -al "right" oText;
+	floatField -v 0 -pre 1 -w 60 oField;
+
+	text -l "Map" -w 30 -al "right" mapText;
+	intField -v 1024 -w 60 mapField;
+
+// Buttons UI
+
+	button -l "UV Texture" -w 125 -h 25 -c uv_attachUVTexture uvTextureBtn;
+	button -l "Reload Textures" -w 125 -h 25 -c uv_reloadTextures reloadTexturesBtn;
+		popupMenu -b 3;
+			menuItem -l "Reload Selected Only" -cb 1 -c uv_reloadTextures rsoBox;
+
+	button -l "Square Off" -w 75 -h 25  uv_align;
+	button -l "<" -w 25 -h 25 -c ("uv_align(0)") uv_alignLeft;
+	button -l ">" -w 25 -h 25 -c ("uv_align(-90)") uv_alignRight;
+	button -l "UV Snapshot" -w 125 -h 25 -c uv_snapshot uv_snapshotBtn;
+
+	button -l "UV Editor" -w 125 -h 25 -c "TextureViewWindow" uvEditorBtn;
+	button -l "Bake Occlusion" -w 125 -h 25 -c uv_bakeOcclusion bakeOcclusionBtn;
+
+	button -l "Normalize" -w 125 -h 25 -c uv_normalize normalizeBtn;
+	button -l "Bake Lights" -w 125 -h 25 -c uv_bakeLights bakeLightsBtn;
+
+	formLayout -edit
+
+//Button Square
+		-attachForm     topTranslate       "top"     5
+		-attachForm     topTranslate       "left"   150
+		-attachForm     bottomTranslate    "top"   105
+		-attachForm     bottomTranslate    "left"   150
+		-attachForm     leftTranslate      "top"    30
+		-attachForm     leftTranslate      "left"   125
+		-attachForm     rightTranslate     "top"    30
+		-attachForm     rightTranslate     "left"  225
+
+		-attachForm     topLeftScale      "top"    30
+		-attachForm     topLeftScale      "left"   150
+		-attachForm     topCenterScale    "top"    30
+		-attachForm     topCenterScale    "left"   175
+		-attachForm     topRightScale     "top"    30
+		-attachForm     topRightScale     "left"   200
+
+		-attachForm     midLeftScale      "top"    55
+		-attachForm     midLeftScale      "left"   150
+		-attachForm     midCenterScale    "top"    55
+		-attachForm     midCenterScale    "left"   175
+		-attachForm     midRightScale     "top"    55
+		-attachForm     midRightScale     "left"   200
+
+		-attachForm     lowerLeftScale      "top"    80
+		-attachForm     lowerLeftScale      "left"   150
+		-attachForm     lowerCenterScale    "top"    80
+		-attachForm     lowerCenterScale    "left"   175
+		-attachForm     lowerRightScale     "top"    80
+		-attachForm     lowerRightScale     "left"   200
+
+		-attachForm     pivotBtn     "top"    130
+		-attachForm     pivotBtn     "left"   150
+
+// Left Side UI
+
+		-attachForm     rcsText     "top"    3
+		-attachForm     rcsText     "left"   5
+		-attachForm     rcsBox     "top"    3
+		-attachForm     rcsBox     "left"   85
+
+		-attachForm     pixelText     "top"    23
+		-attachForm     pixelText     "left"   5
+		-attachForm     pixelBox     "top"    23
+		-attachForm     pixelBox     "left"   85
+
+		-attachForm     uText     "top"    45
+		-attachForm     uText     "left"   5
+		-attachForm     UField     "top"    43
+		-attachForm     UField     "left"   40
+
+		-attachForm     vText     "top"    70
+		-attachForm     vText     "left"   5
+		-attachForm     VField     "top"    68
+		-attachForm     VField     "left"   40
+
+		-attachForm     oText     "top"    95
+		-attachForm     oText     "left"   5
+		-attachForm     oField     "top"    92
+		-attachForm     oField     "left"   40
+
+		-attachForm     mapText     "top"    120
+		-attachForm     mapText     "left"   5
+		-attachForm     mapField     "top"    118
+		-attachForm     mapField     "left"   40
+
+// Buttons UI
+
+		-attachForm     uvEditorBtn     "top"    160
+		-attachForm     uvEditorBtn     "left"   0
+		-attachForm     reloadTexturesBtn     "top"    160
+		-attachForm     reloadTexturesBtn     "left"   125
+
+		-attachForm     uv_align     "top"    185
+		-attachForm     uv_align     "left"   0
+		-attachForm     uv_alignLeft     "top"    185
+		-attachForm     uv_alignLeft     "left"   75
+		-attachForm     uv_alignRight     "top"    185
+		-attachForm     uv_alignRight     "left"   100
+		-attachForm     uv_snapshotBtn     "top"    185
+		-attachForm     uv_snapshotBtn     "left"   125
+
+		-attachForm     uvTextureBtn     "top"    210
+		-attachForm     uvTextureBtn     "left"   0
+		-attachForm     bakeOcclusionBtn     "top"    210
+		-attachForm     bakeOcclusionBtn     "left"   125
+
+		-attachForm     normalizeBtn     "top"    235
+		-attachForm     normalizeBtn     "left"   0
+		-attachForm     bakeLightsBtn     "top"    235
+		-attachForm     bakeLightsBtn     "left"   125
+		mainLayout;
+
+
+	columnLayout -rs 2 -columnAlign "center";
+
+     if (getApplicationVersionAsFloat() >= 2011)
+       {
+            dockControl -allowedArea "all" -area "right" -l "UV Tools" -content $uvUI ;
+       }
+	
+
+	//showWindow "uvUI";
+}
+
+global proc uv_moveSwitch(float $u, float $v)
+{
+
+	if(`checkBox -q -v pixelBox` == 0)
+	{
+		uv_translateUVs($u,$v);
+	}
+
+	if(`checkBox -q -v pixelBox` == 1)
+	{
+		uv_moveByPixels($u,$v);
+	}
+;
+}
+
+global proc uv_scaleUVs(float $pivotU, float $pivotV)
+{
+	float $scaleU = `floatField -q -v UField`;
+	float $scaleV = `floatField -q -v VField`;
+	float $degree = `floatField -q -v oField`;
+	polyEditUV -r 0 -pu $pivotU -pv $pivotV -su $scaleU -sv $scaleV -a $degree;
+}
+
+global proc uv_scaleUVsPivot()
+{
+	string $selected[] = `ls -sl`;
+	string $shapes[] = `listRelatives -ap`;
+	float $pos[] = `getAttr ($shapes[0] + ".uvPivot")`;
+
+	float $scaleU = `floatField -q -v UField`;
+	float $scaleV = `floatField -q -v VField`;
+	float $degree = `floatField -q -v oField`;
+
+	polyEditUV -a $degree -pu $pos[0] -pv $pos[1] -su $scaleU -sv $scaleV ;
+}
+
+global proc uv_translateUVs(float $u, float $v)
+{
+	float $tU = (`floatField -q -v UField`) * $u;
+	float $tV = (`floatField -q -v VField`) * $v;
+
+	polyEditUV -r 1 -pu 0 -pv 0 -u $tU -v $tV ;
+}
+
+global proc uv_reloadTextures()
+{
+	$files = `ls -et "file"`;
+	for ($file in $files)
+		AEfileTextureReloadCmd ($file + ".fileTextureName");
+}
+
+global proc uv_attachUVTexture()
+{
+	string $selected[] = `ls -sl`;
+
+	if (`objExists "UVs"` != 1)
+	{
+		shadingNode -n "UVs" -asShader lambert;
+		sets -renderable true -noSurfaceShader true -empty -name UVs_SG;
+		connectAttr -f UVs.outColor UVs_SG.surfaceShader;
+
+		shadingNode -n "UVs_File" -asTexture file;
+		shadingNode -n "UVs_UV" -asUtility place2dTexture;
+
+		connectAttr -f UVs_UV.coverage UVs_File.coverage;
+		connectAttr -f UVs_UV.translateFrame UVs_File.translateFrame;
+		connectAttr -f UVs_UV.rotateFrame UVs_File.rotateFrame;
+		connectAttr -f UVs_UV.mirrorU UVs_File.mirrorU;
+		connectAttr -f UVs_UV.mirrorV UVs_File.mirrorV;
+		connectAttr -f UVs_UV.stagger UVs_File.stagger;
+		connectAttr -f UVs_UV.wrapU UVs_File.wrapU;
+		connectAttr -f UVs_UV.wrapV UVs_File.wrapV;
+		connectAttr -f UVs_UV.repeatUV UVs_File.repeatUV;
+		connectAttr -f UVs_UV.offset UVs_File.offset;
+		connectAttr -f UVs_UV.rotateUV UVs_File.rotateUV;
+		connectAttr -f UVs_UV.noiseUV UVs_File.noiseUV;
+		connectAttr -f UVs_UV.vertexUvOne UVs_File.vertexUvOne;
+		connectAttr -f UVs_UV.vertexUvTwo UVs_File.vertexUvTwo;
+		connectAttr -f UVs_UV.vertexUvThree UVs_File.vertexUvThree;
+		connectAttr -f UVs_UV.vertexCameraOne UVs_File.vertexCameraOne;
+		connectAttr -f UVs_UV.outUV UVs_File.uv;
+		connectAttr -f UVs_UV.outUvFilterSize UVs_File.uvFilterSize;
+		connectAttr -f UVs_File.outColor UVs.color;
+		connectAttr -f UVs_File.outColor UVs.incandescence;
+
+		setAttr UVs_File.fileTextureName -type "string" "D:/Library/Textures/Texture Placement.jpg";
+
+		setAttr "UVs_UV.repeatU" 4;
+		setAttr "UVs_UV.repeatV" 4;
+
+		select -r $selected;
+		sets -e -forceElement UVs_SG;
+		select -cl;
+	}
+	else
+	{
+		select -r $selected;
+		sets -e -forceElement UVs_SG;
+		select -r $selected;
+	}
+}
+
+global proc uv_snapshot()
+{
+	string $selected[] = `ls -sl`;
+	int $res = `intField -q -v mapField`;
+    string $fileLocation = `workspace -q -rd`;
+    string $fileName = $fileLocation + "images/UVs.tga";
+	uvSnapshot -ff "tga" -aa -o -n $fileName -xr $res -yr $res;
+	system("load \"" + $fileName + "\"");
+}
+
+global proc uv_align(int $direction)
+{
+	string $undo = `undoInfo -q -un`;
+	eval $undo;
+	string $point1[] = `ls -sl`;
+	eval $undo;
+	select -tgl $point1;
+	string $point2[] = `ls -sl`;
+
+	float $posX[];
+	float $posY[];
+	int $i=0;
+	float $pos[];
+	select -r $point1;
+	float $posPt1[] = `polyEditUV -q`;
+	select -r $point2;
+	float $posPt2[] = `polyEditUV -q`;
+
+	float $rad = sqrt(pow(($posPt1[0] - $posPt2[0]), 2) + pow(($posPt1[1] - $posPt2[1]), 2));
+	float $v = $posPt1[1] - $posPt2[1];
+	float $o = (rad_to_deg(asin($v/$rad)));
+	polySelectBorderShell 0;
+
+	polyEditUV -pu $posPt1[0] -pv $posPt1[1] -a ($o + $direction);
+}
+
+global proc uv_moveByPixels(float $u, float $v)
+{
+	string $selected[] = `ls -sl`;
+	string $shapes[] = `listRelatives -ap`;
+	float $pivot[] = `getAttr ($shapes[0] + ".uvPivot")`;
+	float $mapSize = `intField -q -v mapField`;
+	float $direction[];
+	$u *= (`floatField -q -v UField`);
+	$v *= (`floatField -q -v VField`);
+	polyEditUV -pu $pivot[0] -pv $pivot[1] -u ($u/$mapSize) -v($v/$mapSize);
+}
+
+global proc uv_bakeOcclusion()
+{
+	string $selected[] = `ls -sl`;
+	if(`objExists autoOcclusionBake`)
+	    delete autoOcclusionBake;
+	createNode -n "autoOcclusionBake" textureBakeSet;
+	setAttr autoOcclusionBake.fileFormat 6;
+	setAttr autoOcclusionBake.bakeToOneMap 1;
+	setAttr autoOcclusionBake.samples 1;
+	setAttr autoOcclusionBake.colorMode 4;
+	setAttr autoOcclusionBake.backgroundMode 1;
+	setAttr autoOcclusionBake.backgroundColor -type double3 1 1 1 ;
+	setAttr autoOcclusionBake.xResolution  (`intField -q -v mapField`);
+	setAttr autoOcclusionBake.yResolution  (`intField -q -v mapField`);
+	setAttr autoOcclusionBake.fillTextureSeams 2;
+	setAttr -type "string" autoOcclusionBake.prefix "tempOcclusion";
+
+	if (`objExists occlusion_m` == 0)
+	{
+		shadingNode -n "occlusion_m"-asShader surfaceShader;
+		sets -n "occlusion_SG" -renderable true -noSurfaceShader true -empty ;
+		connectAttr -f occlusion_m.outColor occlusion_SG.surfaceShader;
+		string $occ = `mrCreateCustomNode -asTexture "" mib_amb_occlusion`;
+		connectAttr -force ($occ + ".outValue") occlusion_m.outColor;
+		setAttr ($occ + ".samples") 96;
+	}
+    if(`isConnected occlusion_m.outColor autoOcclusionBake.customShader` == 0)	
+	    connectAttr -f occlusion_m.outColor autoOcclusionBake.customShader;
+
+	for ($select in $selected)
+	{
+		assignBakeSet autoOcclusionBake $select;
+	}
+	select (`listRelatives -s $selected`);
+	//convertLightmapSetup  -camera persp -sh  -ignoreDefaultBakeSet -keepOrgSG -showcpv;
+	mrBake 0;
+	string $temp = `workspace -fullName`;
+	$temp += "/renderData/mentalray/lightMap/tempOcclusion.tga";
+	select -r -ne "initialVertexBakeSet" "initialTextureBakeSet" "autoOcclusionBake";
+	doDelete;
+	system("load \"" + $temp + "\"");
+}
+
+global proc uv_bakeLights()
+{
+	string $selected[] = `ls -sl`;
+	string $dup[];
+	string $objs[];
+	int $i=0;
+	for($select in $selected)
+	{
+		select -r $select;
+		$dup = `duplicate`;
+		$objs[$i] = $dup[0];
+		$i++;
+	}
+
+	string $newMesh[] = `polyUnite -ch 1 $objs`;
+	DeleteHistory;
+	polyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 1 -l 2 -sc 1 -o 1 -p 6 -uvSetName lightBakeSet -ps 0.2 -ws 0 $newMesh[0];
+
+	createNode -n "autoLightBake" textureBakeSet;
+	setAttr autoLightBake.fileFormat 6;
+	setAttr autoLightBake.bakeToOneMap 1;
+	setAttr autoLightBake.samples 2;
+	setAttr autoLightBake.colorMode 0;
+	setAttr autoLightBake.backgroundMode 1;
+	setAttr autoLightBake.backgroundColor -type double3 1 1 1 ;
+	setAttr autoLightBake.xResolution  (`intField -q -v mapField`);
+	setAttr autoLightBake.yResolution  (`intField -q -v mapField`);
+	setAttr autoLightBake.fillTextureSeams 2;
+	setAttr -type "string" autoLightBake.prefix "tempLightBake";
+	setAttr autoLightBake.overrideUvSet 1;
+	setAttr -type "string" autoLightBake.uvSetName "lightBakeSet";
+
+	assignBakeSet autoLightBake $newMesh[0];
+	select (`listRelatives -s $newMesh[0]`);
+	hide $selected;
+	mrBake 0;
+	string $temp = `workspace -fullName`;
+	$temp += "/renderData/mentalray/lightMap/tempLightBake.tga";
+	select -r -ne "initialVertexBakeSet" "initialTextureBakeSet" "autoLightBake";
+	doDelete;
+	system("load \"" + $temp + "\"");
+
+	polyUVSet -currentUVSet -uvSet "lightBakeSet" $newMesh[0];
+	polyCopyUV -uvSetNameInput "lightBakeSet" -uvSetName "map1"  -ch 1 $newMesh[0];
+	polyUVSet -delete -uvSet "lightBakeSet";
+	select -r $newMesh[0];
+}
+
+global proc uv_normalize()
+{
+	polyNormalizeUV -normalizeType 1 -preserveAspectRatio on ;
+}
+
+
+global proc bt_passSelection()
+{
+    polySelectBorderShell 1;
+	string $selected[] = `ls -fl -sl`;
+	float $u[];
+	float $v[];
+	int $i=0;
+	int $mapSize = `intField -q -v mapField`;
+	for ($uv in $selected)
+	{
+	    select -r $uv;
+	    float $uvPositions[] = `polyEditUV -q -u $uv`;
+	    $u[$i] = $uvPositions[0] * $mapSize;
+	    $v[$i] = abs(($uvPositions[1] * $mapSize) - $mapSize);
+	    $i++;
+	}
+
+	int $feather = 0;
+    string $newArray = "";
+
+	for ($i=0; $i<`size($selected)`; $i++)
+    {
+        $newArray += ("new Array(" + $u[$i] + "," + $v[$i] + ")");
+        if ($i != (`size($selected)`) -1)
+            $newArray += ",";
+    }
+
+    string $javaScript = "var docRef = app.activeDocument;\n docRef.selection.select(new Array(" + $newArray + "),\n SelectionType.REPLACE," + $feather + ",false);\n docRef = null;";
+
+	string $filename = "C:/selectionData.jsx";
+	int $file = `fopen $filename "w"`;
+	fprint $file $javaScript;
+	fclose $file;
+}
+
+bt_uvTools;

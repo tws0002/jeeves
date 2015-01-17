@@ -1,13 +1,28 @@
+'''
+this is really the module that wraps the job, shots, assets and renders modules together in one, so that you can
+pass it various combinations of arguements and receive back a dictionary. if you give lots of arguements, you'll
+recieve back a dict with very specific data in. if you only give it the job number, you'll receive back a dict
+with loads of data in.
+
+there are three main classes: get_scenes, get_renders and get_assets. fairly self explanatory.
+
+this module is used by the jeeves gui to populate drop downs and list boxes of the shots, scripts etc.
+'''
 print '> importing core.wrappers'
 import core.shots as shots
 import core.renders as renders
 import core.assets as assets
 
 #***************************************************************************************************************
-# SCENES
+# SCENES / SHOTS / SCRIPTS
 #***************************************************************************************************************
 
 class get_scenes(object):
+    '''
+    this should perhaps be called get_shots, but it's not.
+    at the very least you need to give a jobdict, additional args such as dept, shot and task can also be given.
+    the __init__ method determines what args are given and calls the relevant classes in the shots module
+    '''
     def __init__(self, jobdict, dept = '', shot = '', task = ''):
         self.jobdict = jobdict
         self.job = self.jobdict.keys()[0]
@@ -98,6 +113,12 @@ class get_scenes(object):
 #***************************************************************************************************************
 
 class get_renders(object):
+    '''
+    at the very least you need to give a jobdict, additional args such as dept and shot can also be given.
+    the __init__ method determines what args are given and calls a subsequent class in this module, one for
+    3d and other for nuke. the __init__ methods in those classes then fire off calls to the renders module for
+    the lookup
+    '''
     def __init__(self, jobdict, dept = '', shot = ''):
         #lets set up some vars
         self.jobdict = jobdict
@@ -261,6 +282,10 @@ class get_renders_3d(object):
 #***************************************************************************************************************
 
 class get_assets(object):
+    '''
+    at the very least you need to give a jobdict, additional args such as category, asset and task can also be given.
+    the __init__ method determines what args are given and calls the relevant classes in the assets module
+    '''
     def __init__(self, jobdict, category = '', asset = '', task = ''):
         #lets set up some vars
         self.jobdict = jobdict

@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shader &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="../index.html"/>
+        <link rel="up" title="Node Reference" href="../noderef.html"/>
+        <link rel="next" title="Texture" href="texture.html"/>
+        <link rel="prev" title="Merge" href="merge.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home">
+				<img class="logo" src="../_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../referenceguide.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Shader</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <img alt="../_images/pgYeti_shader.png" class="align-left" id="index-0" src="../_images/pgYeti_shader.png" />
+<div class="section" id="shader">
+<h1>Shader<a class="headerlink" href="#shader" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Shader node is used to create/set attributes in the flow that will be passed to the Renderer to control various shading parameters.  The parameters match the Renderman shader that ships with Yeti thus is very specific to that shader and the Renderman renderer although the attributes may be accessed by the other renderers using custom UserScalar/Float/Color/Vector nodes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At this time this node is very specific to the provided reference Renderman shader, in the future this will likely change.</p>
+</div>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0 Data Flow</td>
+<td>Fibres</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h2>Shader<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Color</td>
+<td>The amount of bend.</td>
+</tr>
+<tr class="row-odd"><td>Bend Multiplier</td>
+<td>Can be used to multiply the overall bend value.</td>
+</tr>
+<tr class="row-even"><td>Bend Random</td>
+<td>Used to randomize the amount of bend on a per fibre basis.</td>
+</tr>
+<tr class="row-odd"><td>Bend Direction</td>
+<td>A means of rotating the bend direction on a per fibre basis.</td>
+</tr>
+<tr class="row-even"><td>Normal</td>
+<td>The attribute used to define the surface normal, this along with Up Vector is used to define the direction of the bend.</td>
+</tr>
+<tr class="row-odd"><td>Up Vector</td>
+<td>The value for the up vector, by default this is the Y axis but this can be a varying attribute to randomize the bend direction.</td>
+</tr>
+<tr class="row-even"><td>Color</td>
+<td>Toggle whether to set/override the color attribute</td>
+</tr>
+<tr class="row-odd"><td>Diffuse Color</td>
+<td>The desired diffuse color</td>
+</tr>
+<tr class="row-even"><td>Adjust HSV</td>
+<td>Toggle whether to set/override the HSV value</td>
+</tr>
+<tr class="row-odd"><td>HSV Adjustment</td>
+<td>The desired HSV offset</td>
+</tr>
+<tr class="row-even"><td>Color Shift</td>
+<td>Toggle whether to set/override the Color Shift values</td>
+</tr>
+<tr class="row-odd"><td>Max Hue Shift</td>
+<td>The maximum amount the hue may shift if Color Shift is toggled on</td>
+</tr>
+<tr class="row-even"><td>Max Saturation Shift</td>
+<td>The maximum amount the saturation may shift if Color Shift is toggled on</td>
+</tr>
+<tr class="row-odd"><td>Max Value Shift</td>
+<td>The maximum amount the value may shift if Color Shift is toggled on</td>
+</tr>
+<tr class="row-even"><td>Occlusion</td>
+<td>Toggle whether to set/override Occlusion</td>
+</tr>
+<tr class="row-odd"><td>Occlusion Color</td>
+<td>The desired occlusion color</td>
+</tr>
+<tr class="row-even"><td>Opacity</td>
+<td>Toggle whether to set/override Opacity</td>
+</tr>
+<tr class="row-odd"><td>Base Opacity</td>
+<td>The desired base opacity</td>
+</tr>
+<tr class="row-even"><td>Tip Opacity</td>
+<td>The desired tip opacity</td>
+</tr>
+<tr class="row-odd"><td>Specular</td>
+<td>Toggle whether to set/override Specular</td>
+</tr>
+<tr class="row-even"><td>Ks</td>
+<td>The desired Ks value</td>
+</tr>
+<tr class="row-odd"><td>Specular Color</td>
+<td>The desired Specular Color</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="texture.html" class="btn btn-neutral float-right" title="Texture"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="merge.html" class="btn btn-neutral" title="Merge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

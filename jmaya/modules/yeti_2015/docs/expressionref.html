@@ -1,0 +1,728 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Expression Reference &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Reference Guide" href="referenceguide.html"/>
+        <link rel="next" title="Command Line Tools and Rendering DSO" href="commandlineandrendering.html"/>
+        <link rel="prev" title="Scripting Reference" href="scriptingref.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Expression Reference</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="expression-reference">
+<span id="id1"></span><h1>Expression Reference<a class="headerlink" href="#expression-reference" title="Permalink to this headline">¶</a></h1>
+<p>All of the input parameters in the attribute inspector window accept expressions as well as scalar inputs, the expression language is based on SeExpr which is useful to add a higher level of control to your graphs.</p>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Yeti maps a local variable of each expression to attributes in the flow, any attribute is available in an expression and can be referenced via a $ proceeding the attribute name.</p>
+<div class="section" id="common-variables">
+<h3>Common Variables<a class="headerlink" href="#common-variables" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>$P, $PRef</strong></td>
+<td>surface point and the surface point at the rest position (vector).</td>
+</tr>
+<tr class="row-even"><td><strong>$N, $NRef</strong></td>
+<td>surface normal and the surface normal at the rest position</td>
+</tr>
+<tr class="row-odd"><td><strong>$strandu</strong></td>
+<td>the current position along the fibre ( 0 is base and 1 is tip )</td>
+</tr>
+<tr class="row-even"><td><strong>$s, $t</strong></td>
+<td>texture coords (scalars)</td>
+</tr>
+<tr class="row-odd"><td><strong>$id</strong></td>
+<td>per-surface unique object Id, typically a small integer</td>
+</tr>
+<tr class="row-even"><td><strong>$frame/$F</strong></td>
+<td>current frame number ( round numbers, 1,4,10,etc.)</td>
+</tr>
+<tr class="row-odd"><td><strong>$time</strong></td>
+<td>the current sample time ( subframe, 0.8,1.0,1.2 etc. )</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="local-variables">
+<h3>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h3>
+<p>Local variables can be defined at the start of the expression::</p>
+<div class="highlight-python"><div class="highlight"><pre>$a = noise($P);
+$b = noise($a * 1);
+pow($a, 0.5) + $b
+</pre></div>
+</div>
+<p>External variables can also be overridden by local assignment.  This can be useful to scale the noise frequency for instance::</p>
+<div class="highlight-python"><div class="highlight"><pre>$P = $P * 10; # increase noise frequency
+fbm(vnoise($P) + $P/4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="color-masking-and-remapping">
+<h3>Color, Masking,and Remapping<a class="headerlink" href="#color-masking-and-remapping" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>float clamp ( float x, float lo, float hi )</td>
+<td>constrain x to range [lo, hi]</td>
+</tr>
+<tr class="row-even"><td>float compress ( float x, float lo, float hi )</td>
+<td>Compress the dynamic range from [0..1] to [lo..hi]</td>
+</tr>
+<tr class="row-odd"><td>float expand ( float x, float lo, float hi )</td>
+<td>Expand the dynamic range from [lo..hi] to [0..1]</td>
+</tr>
+<tr class="row-even"><td>float contrast ( float x, float c )</td>
+<td>Adjust the contrast.  For c from 0 to 0.5, the contrast is decreased.
+For c &gt; 0.5, the contrast is increased.</td>
+</tr>
+<tr class="row-odd"><td>float invert ( float x )</td>
+<td>Invert the value.  Defined as 1-x.</td>
+</tr>
+<tr class="row-even"><td>float remap ( float x, float source, float range, float falloff, int interp )</td>
+<td>General remapping function.
+When x is within +/- range of source, the result is one.
+The result falls to zero beyond that range over falloff distance.
+The falloff shape is controlled by interp. Numeric values or named constants may be used:
+int linear = 0
+int smooth = 1
+int gaussian = 2</td>
+</tr>
+<tr class="row-odd"><td>color hsi ( color x, float h, float s, float i, float map=1 )</td>
+<td>The hsi function shifts the hue by h (in degrees) and scales
+the saturation and intensity by s and i respectively.</td>
+</tr>
+<tr class="row-even"><td>color midhsi ( color x, float h, float s, float i, float map, float falloff=1
+, int interp=0 )</td>
+<td>The midhsi function is just like the hsi function except that the control map is centered
+around the mid point (value of 0.5) and can scale the shift in both directions.</td>
+</tr>
+<tr class="row-odd"><td>color rgbtohsl ( color rgb )</td>
+<td>RGB to HSL color space conversion.</td>
+</tr>
+<tr class="row-even"><td>color hsltorgb ( color hsl )</td>
+<td>HSL is Hue, Saturation, Lightness (all in range [0..1] )</td>
+</tr>
+<tr class="row-odd"><td>float bias ( float x, float b)</td>
+<td>Variation of gamma where control parameter goes from 0 to 1 with
+values &gt; 0.5 pulling the curve up and values &lt; 0.5 pulling the curve down.</td>
+</tr>
+<tr class="row-even"><td>float gamma ( float x, float g)</td>
+<td>pow(x, 1/g)</td>
+</tr>
+<tr class="row-odd"><td>float fit ( float x, float a1, float b1, float a2, float b2 )</td>
+<td>Linear remapping of [a1..x..b1] to [a2..x..b2]</td>
+</tr>
+<tr class="row-even"><td>float mix ( float a, float b, float alpha )</td>
+<td>Blend of a and b according to alpha.  Defined as a*(1-alpha) + b*alpha.</td>
+</tr>
+<tr class="row-odd"><td>float boxstep ( float x, float a )
+float gaussstep ( float x, float a, float b )
+float linearstep ( float x, float a, float b )
+float smoothstep ( float x, float a, float b )</td>
+<td>The step functions are zero for x &lt; a and one for x &gt; b (or x &gt; a in the case of boxstep).
+Between a and b, the value changes continuously between zero and one.
+The gausstep function uses the standard gaussian &#8220;bell&#8221; curve which is based on an
+exponential curve.  The smoothstep function uses a cubic curve.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="noise">
+<h3>Noise<a class="headerlink" href="#noise" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>float hash ( float seed1, [float seed2, ...] )</td>
+<td>Like rand, but with no internal seeds.
+Any number of seeds may be given and the result will be a random function based on all the seeds.</td>
+</tr>
+<tr class="row-even"><td>float cellnoise ( vector v ) float cellnoise1 ( float x )</td>
+<td>cellnoise generates a field of constant colored cubes based on the integer location.
+This is the same as the prman cellnoise function.</td>
+</tr>
+<tr class="row-odd"><td>float cellnoise2 ( float x, float y )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>float cellnoise3 ( float x, float y, float z )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>float noise ( vector v )</td>
+<td>noise is a random function that smoothly blends between samples at integer locations.</td>
+</tr>
+<tr class="row-even"><td>float noise ( float x, float y )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>float noise ( float x, float y, float z )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>float noise ( float x, float y, float z, float w )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>color cnoise ( vector v)</td>
+<td>color noise</td>
+</tr>
+<tr class="row-even"><td>float snoise ( vector v)</td>
+<td>signed noise w/ range -1 to 1.</td>
+</tr>
+<tr class="row-odd"><td>vector vnoise (vector v )</td>
+<td>signed vector noise</td>
+</tr>
+<tr class="row-even"><td>color cnoise4 ( vector v, float t)</td>
+<td>color noise</td>
+</tr>
+<tr class="row-odd"><td>float snoise4 ( vector v, float t)</td>
+<td>signed noise w/ range -1 to 1.</td>
+</tr>
+<tr class="row-even"><td>vector vnoise4 (vector v, float t )</td>
+<td>signed vector noise</td>
+</tr>
+<tr class="row-odd"><td>float pnoise ( vector v, vector period ) - periodic noise</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>float perlin ( vector v )</td>
+<td>&#8220;Improved Perlin Noise&#8221;, based on Ken Perlin&#8217;s 2002 Java reference code.</td>
+</tr>
+<tr class="row-odd"><td>float perlin ( vector v )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>color cperlin ( vector v)</td>
+<td>color noise</td>
+</tr>
+<tr class="row-odd"><td>float sperlin ( vector v)</td>
+<td>signed noise w/ range -1 to 1.</td>
+</tr>
+<tr class="row-even"><td>vector vperlin (vector v )</td>
+<td>signed vector noise</td>
+</tr>
+<tr class="row-odd"><td>float fbm ( vector v, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>fbm (Fractal Brownian Motion) is a multi-frequency noise function.
+The base frequency is the same as the &#8220;noise&#8221; function.
+The total number of frequencies is controlled by octaves.
+The lacunarity is the spacing between the frequencies - a
+value of 2 means each octave is twice the previous frequency.
+The gain controls how much each frequency is scaled relative
+to the previous frequency.</td>
+</tr>
+<tr class="row-even"><td>color cfbm ( vector v, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>vector vfbm ( vector v, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>float fbm4 ( vector v, float time, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>color cfbm4 ( vector v, float time, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>vector vfbm4 ( vector v, float time, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>float turbulence ( vector v, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>turbulence is a variant of fbm where the absolute value of each noise
+term is taken.
+This gives a more billowy appearance.</td>
+</tr>
+<tr class="row-even"><td>color cturbulence ( vector v, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>vector vturbulence ( vector v, int octaves = 6, float lacunarity = 2, float gain = 0.5 )</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>float voronoi ( vector v, int type = 1, float jitter = 0.5, float fbmScale = 0, int fbmOctaves = 4, float fbmLacunarity = 2, float fbmGain = 0.5)</td>
+<td>voronoi is a cellular noise pattern.
+It is a jittered variant of cellnoise. cvoronoi returns a random color
+for each cell and pvoronoi returns the point location of the center
+of the cell. The type parameter describes different variants of the
+noise function.  The jitter param controls how irregular the pattern
+is (jitter = 0 is like ordinary cellnoise).  The fbm* params can be
+used to distort the noise field.  When fbmScale is zero (the default),
+there is no distortion.
+The remaining params are the same as for the fbm function.</td>
+</tr>
+<tr class="row-odd"><td>color cvoronoi ( vector v, int type = 1, float jitter = 0.5, float fbmScale = 0, int fbmOctaves = 4, float fbmLacunarity = 2, float fbmGain = 0.5)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>vector pvoronoi ( vector v, float jitter = 0.5, float fbmScale = 0, int fbmOctaves = 4, float fbmLacunarity = 2, float fbmGain = 0.5)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="selection">
+<h3>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>int cycle ( int index, int loRange, int hiRange )
+Cycles through values between loRange and hiRange based on supplied index.  This is an offset &quot;mod&quot; function.  The result is computed as (loRange + value % (hiRange-loRange+1)).
+
+int pick ( float index, int loRange, int hiRange, [float weights, ...] )
+Picks values randomly between loRange and hiRange based on supplied index (which is automatically hashed).  The values will be distributed according to the supplied weights.  Any weights not supplied are assumed to be 1.0.
+
+float choose ( float index, float choice1, float choice2, [...] )
+Chooses one of the supplied choices based on the index (assumed to be in range [0..1]).
+
+float wchoose ( float index, float choice1, float weight1, float choice2, float weight2, [...] )
+Chooses one of the supplied choices based on the index (assumed to be in range[0..1]). The values will be distributed according to the supplied weights.
+</pre></div>
+</div>
+</div>
+<div class="section" id="general-math-and-constants">
+<h3>General Math and Constants<a class="headerlink" href="#general-math-and-constants" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>float PI= 3.14159...</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>float E = 2.71828...</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>float abs ( float x)</td>
+<td>absolute value of x</td>
+</tr>
+<tr class="row-even"><td>float max ( float a, float b )</td>
+<td>greater of a and b</td>
+</tr>
+<tr class="row-odd"><td>float min ( float a, float b )</td>
+<td>lesser of a and b</td>
+</tr>
+<tr class="row-even"><td>float fmod ( float x, float y)</td>
+<td>remainder of x / y (also available as &#8216;%&#8217; operator)</td>
+</tr>
+<tr class="row-odd"><td>float cbrt ( float x )</td>
+<td>cube root</td>
+</tr>
+<tr class="row-even"><td>float sqrt ( float x )</td>
+<td>square root</td>
+</tr>
+<tr class="row-odd"><td>float ceil ( float x )</td>
+<td>next higher integer</td>
+</tr>
+<tr class="row-even"><td>float floor ( float x )</td>
+<td>next lower integer</td>
+</tr>
+<tr class="row-odd"><td>float round ( float x )</td>
+<td>nearest integer</td>
+</tr>
+<tr class="row-even"><td>float trunc ( float x )</td>
+<td>nearest integer towards zero</td>
+</tr>
+<tr class="row-odd"><td>float exp ( float x )</td>
+<td>E raised to the x power</td>
+</tr>
+<tr class="row-even"><td>float log ( float x )</td>
+<td>natural logarithm</td>
+</tr>
+<tr class="row-odd"><td>float log10 ( float x )</td>
+<td>base 10 logarithm</td>
+</tr>
+<tr class="row-even"><td>float pow ( float x, float y )</td>
+<td>x to the y power (also available as &#8216;^&#8217; operator)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="trigonometry">
+<h3>Trigonometry<a class="headerlink" href="#trigonometry" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>float acos ( float x )</td>
+<td>arc cosine</td>
+</tr>
+<tr class="row-even"><td>float asin ( float x )</td>
+<td>arc sine</td>
+</tr>
+<tr class="row-odd"><td>float atan ( float x )</td>
+<td>arc tangent</td>
+</tr>
+<tr class="row-even"><td>float atan2 ( float y, float x)</td>
+<td>arc tangent of y/x between -PI and PI</td>
+</tr>
+<tr class="row-odd"><td>float cos ( float x )</td>
+<td>cosine</td>
+</tr>
+<tr class="row-even"><td>float sin ( float x )</td>
+<td>sine</td>
+</tr>
+<tr class="row-odd"><td>float tan ( float x )</td>
+<td>tangent</td>
+</tr>
+<tr class="row-even"><td>float acosd ( float x )</td>
+<td>arc cosine in degrees</td>
+</tr>
+<tr class="row-odd"><td>float asind ( float x )</td>
+<td>arc sine in degrees</td>
+</tr>
+<tr class="row-even"><td>float atand ( float x )</td>
+<td>arc tangent in degrees</td>
+</tr>
+<tr class="row-odd"><td>float atan2d ( float y, float x )</td>
+<td>arc tangent in degrees of y/x between -180 and 180</td>
+</tr>
+<tr class="row-even"><td>float cosd ( float x )</td>
+<td>cosine in degrees</td>
+</tr>
+<tr class="row-odd"><td>float sind ( float x )</td>
+<td>sine in degrees</td>
+</tr>
+<tr class="row-even"><td>float tand ( float x )</td>
+<td>tangent in degrees</td>
+</tr>
+<tr class="row-odd"><td>float acosh ( float x )</td>
+<td>hyperbolic arc cosine</td>
+</tr>
+<tr class="row-even"><td>float asinh ( float x )</td>
+<td>hyperbolic arc sine</td>
+</tr>
+<tr class="row-odd"><td>float atanh ( float x )</td>
+<td>hyperbolic arc tangent</td>
+</tr>
+<tr class="row-even"><td>float cosh ( float x )</td>
+<td>hyperbolic cosine</td>
+</tr>
+<tr class="row-odd"><td>float sinh ( float x )</td>
+<td>hyperbolic sine</td>
+</tr>
+<tr class="row-even"><td>float tanh ( float x )</td>
+<td>hyperbolic tangent</td>
+</tr>
+<tr class="row-odd"><td>float deg ( float x )</td>
+<td>radians to degrees</td>
+</tr>
+<tr class="row-even"><td>float rad ( float x )</td>
+<td>degrees to radians</td>
+</tr>
+<tr class="row-odd"><td>float hypot ( float x, float y )</td>
+<td>length of 2d vector (x,y)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vector-functions">
+<h3>Vector Functions<a class="headerlink" href="#vector-functions" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>float angle( vector a, vector b )</td>
+<td>angle between two vectors (in radians)</td>
+</tr>
+<tr class="row-even"><td>vector cross ( vector a, vector b )</td>
+<td>vector cross product</td>
+</tr>
+<tr class="row-odd"><td>float dist ( vector a, vector b )</td>
+<td>distance between two points</td>
+</tr>
+<tr class="row-even"><td>float dot ( vector a, vector b)</td>
+<td>vector dot product</td>
+</tr>
+<tr class="row-odd"><td>float length ( vector v )</td>
+<td>length of vector</td>
+</tr>
+<tr class="row-even"><td>vector norm ( vector v )</td>
+<td>vector scaled to unit length</td>
+</tr>
+<tr class="row-odd"><td>vector ortho ( vector a, vector b )</td>
+<td>vector orthographic to two vectors</td>
+</tr>
+<tr class="row-even"><td>vector up ( vector v, vector up )</td>
+<td>rotates v such that the Y axis points in the given up direction</td>
+</tr>
+<tr class="row-odd"><td>vector rotate ( vector v, vector axis, float angle )</td>
+<td>rotates v around axis by given angle (in radians)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vector-support">
+<h3>Vector Support<a class="headerlink" href="#vector-support" title="Permalink to this headline">¶</a></h3>
+<p>Vectors (points, colors, or 3d vectors) may be intermixed with scalars (simple float values).  If a scalar is used in a vector context, it is replicated into the three components (e.g. 0.5 becomes [0.5, 0.5, 0.5] ).  If a vector is used in a scalar context, only the first component is used.</p>
+<p>One of the benefits of this is that all the functions that are defined to work with scalars automatically extend to vectors.  For instance, pick, choose, cycle, spline, etc., will work just fine with vectors.</p>
+<p>Arithmetic operators such as +, <a href="#id2"><span class="problematic" id="id3">*</span></a>, etc., and scalar functions are applied component-wise to vectors.  For example, applying the gamma function to a map adjusts the gamma of all three color channels.</p>
+</div>
+<div class="section" id="curves">
+<h3>Curves<a class="headerlink" href="#curves" title="Permalink to this headline">¶</a></h3>
+<p>Interpolation of parameter values to a set of control points is governed by the following functions.:</p>
+<div class="highlight-python"><div class="highlight"><pre>color curve(float param,float pos0,color val0,int interp0,float pos1,color val1,int interp1,[...])
+Interpolates color ramp given by control points at &#39;param&#39;. Control points are specified by triples of parameters pos_i, val_i, and interp_i. Interpolation codes are 0 - none, 1 - linear, 2 - smooth, 3 - spline, 4 - monotone (non-oscillating) spline
+
+float curve(float param,float pos0,float val0,int interp0,float pos1,float val1,int interp1,[...])
+Interpolates a 1D ramp defined by control points at &#39;param&#39;. Control points are specified by triples of parameters pos_i, val_i, and interp_i. Interpolation codes are 0 - none, 1 - linear, 2 - smooth, 3 - spline, 4 - monotone (non-oscillating) spline
+
+float spline(float param,float y1,float y2,float y3,float y4,[...])
+Interpolates a set of values to the parameter specified where y1, ..., yn are distributed evenly from [0...1]
+</pre></div>
+</div>
+</div>
+<div class="section" id="misc">
+<h3>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>void printf(string format,[param0,param1,...])
+Prints a string to stdout that is formatted as given. Formatting parameters possible are %f for float (takes first component of vector argument) or %v for vector. For example if you wrote printf(&quot;test %f %v&quot;,[1,2,3],[4,5,6]); you would get &quot;test 1 [4,5,6]&quot;.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<p>(listed in decreasing precedence)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>[ a, b, c ]</strong></td>
+<td>vector creation</td>
+</tr>
+<tr class="row-even"><td><strong>[  n  ]</strong></td>
+<td>vector component access - n must be 0, 1, or 2  (e.g. $P[0])</td>
+</tr>
+<tr class="row-odd"><td><strong>^</strong></td>
+<td>exponentiation (same as pow function)</td>
+</tr>
+<tr class="row-even"><td><strong>!</strong></td>
+<td>logical NOT</td>
+</tr>
+<tr class="row-odd"><td><strong>~</strong></td>
+<td>inversion (i.e. ~$A gives the same result as 1-$A)</td>
+</tr>
+<tr class="row-even"><td><strong>* /  %</strong></td>
+<td>multiply, divide, modulus (same as fmod function)</td>
+</tr>
+<tr class="row-odd"><td><strong>+ -</strong></td>
+<td>add, subtract</td>
+</tr>
+<tr class="row-even"><td><strong>&lt; &gt;  &lt;=  &gt;=</strong></td>
+<td>comparison (only uses [0] component of vectors)</td>
+</tr>
+<tr class="row-odd"><td><strong>==  !=</strong></td>
+<td>equality, inequality</td>
+</tr>
+<tr class="row-even"><td><strong>&amp;&amp;</strong></td>
+<td>logical AND and OR</td>
+</tr>
+<tr class="row-odd"><td><strong>? :</strong></td>
+<td>conditional (like if-then-else, e.g.  $u &lt; .5 ? 0 : 1)</td>
+</tr>
+<tr class="row-even"><td><strong>-&gt; apply</strong></td>
+<td>The function on the right of the arrow is applied to the expression on the left.
+Examples:
+$Cs -&gt; contrast(.7) -&gt; clamp(0.2, 0.8)
+$u -&gt; hsi(20, 1.2, 1, $Cs -&gt; gamma(1.2))</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="assignment-operators">
+<h3>Assignment Operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">¶</a></h3>
+<p>Besides the basic assignment statement &#8220;$foo=$bar;&#8221; you can also do operator assignments such as &#8220;$foo+=$bar;&#8221; which is equivalent to &#8220;$foo=$foo+$bar;&#8221;. Additionally there are, +=, -=, /=, %=, <a href="#id4"><span class="problematic" id="id5">*</span></a>=, ^=.</p>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Any characters following a &#8216;#&#8217; to the end of the line are ignored and may be used as a comment, or for &#8220;commenting out&#8221; part of the expression.  For a multi-line expression, each line may have its own comment.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>pick ( value, 1, 10 )</td>
+<td>integer values between 1 and 10 will be returned</td>
+</tr>
+<tr class="row-even"><td>pick ( value, 1, 10, 2, 2.5 )</td>
+<td>the values 1 and 2 will be returned twice and 2.5 times as often respectively as compared to the other values (3-10)</td>
+</tr>
+<tr class="row-odd"><td>pick ( value, 10, 20, 1, 1, 0 )</td>
+<td>values 10, 11, and 13 through 20 will be returned (12 is skipped due to zero weight)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="seexpr">
+<h2>SeExpr<a class="headerlink" href="#seexpr" title="Permalink to this headline">¶</a></h2>
+<p>Yeti&#8217;s expression language is based on SeExpr which is an open source project, more information is available at the <a class="reference external" href="http://www.disneyanimation.com/technology/seexpr.html">SeExpr Homepage</a>.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="commandlineandrendering.html" class="btn btn-neutral float-right" title="Command Line Tools and Rendering DSO"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="scriptingref.html" class="btn btn-neutral" title="Scripting Reference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

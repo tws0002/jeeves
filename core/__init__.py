@@ -1,68 +1,76 @@
+'''
+
+- when the jeeves.core package is imported, this file runs. it sets the sys paths and creates some other required varibales
+that differ from os to os.
+
+- it also makes the local ~/.jeeves folder, used to store details of previously searched for jobs
+
+- also contains a dictionary of users, their initials and the department they are in. when new people join, they need
+to be added here. the name that is used to match against this dictionary is the name of the currently logged in user
+
+'''
+
 print '> importing core'
 import sys, os
 import pyseq as pyseq
 sys.dont_write_bytecode = True
 
-jeeves_version = 'v2.6'
+dev = False
 
-#only edit the dev at home
-dev = True
-home = True
+#jeeves version
+jeeves_version = 'v2.6'
 
 #DEVELOPMENT
 if dev:
-    if home:
-        if sys.platform == 'darwin':
-            sys.path.append('/Users/elliott/Google Drive/pipeline/jeeves_dev')
-            jeeves_ui = '/Users/elliott/Google Drive/pipeline/jeeves_dev/core/ui'
-            jobsRoot = '/Users/elliott/Documents/Jobs'
-            jeevesRoot = '/Users/elliott/Google Drive/pipeline/jeeves_dev'
-            user = os.getenv('USER')
-            home = os.getenv('HOME')
-    else:
-        if sys.platform == 'win32':
-            sys.path.append('//resources/resources/vfx/pipeline/jeeves_dev')
-            jeeves_ui = '//resources/resources/vfx/pipeline/jeeves_dev/core/ui'
-            jobsRoot = r'\\bertie\bertie\Jobs'
-            user = os.getenv('USERNAME')
-            home = os.path.expanduser('~')
-            
-        elif sys.platform == 'linux2':
-            sys.path.append('/mnt/resources/vfx/pipeline/jeeves_dev')
-            jeeves_ui = '/mnt/resources/vfx/pipeline/jeeves_dev/core/ui'
-            jobsRoot = '/mnt/bertie/Jobs'
-            user = os.getenv('USER')
-            home = os.getenv('HOME')
-            
-        elif sys.platform == 'darwin':
-            sys.path.append('/Volumes/resources/vfx/pipeline/jeeves_dev')
-            jeeves_ui = '/Volumes/resources/vfx/pipeline/jeeves_dev/core/ui'
-            jobsRoot = '/Volumes/Bertie/Jobs'
-            user = os.getenv('USER')
-            home = os.getenv('HOME')
+    if sys.platform == 'win32':
+        sys.path.append('//resources/resources/vfx/pipeline/jeeves_dev')
+        user = os.getenv('USERNAME')
+        home = os.path.expanduser('~')
+        jobsRoot = r'\\bertie\bertie\Jobs'
+        jeevesRoot = r'\\resources\resources\vfx\pipeline\jeeves_dev'
+        jeeves_ui = r'\\resources\resources\vfx\pipeline\jeeves_dev\core\ui'
+
+    elif sys.platform == 'linux2':
+        sys.path.append('/mnt/resources/vfx/pipeline/jeeves_dev')
+        user = os.getenv('USER')
+        home = os.getenv('HOME')
+        jobsRoot = '/mnt/bertie/Jobs'
+        jeevesRoot = '/mnt/resources/vfx/pipeline/jeeves_dev'
+        jeeves_ui = '/mnt/resources/vfx/pipeline/jeeves_dev/core/ui'
+
+    elif sys.platform == 'darwin':
+        sys.path.append('/Volumes/resources/vfx/pipeline/jeeves_dev')
+        user = os.getenv('USER')
+        home = os.getenv('HOME')
+        jobsRoot = '/Volumes/Bertie/Jobs'
+        jeevesRoot = '/Volumes/Resources/vfx/pipeline/jeeves_dev'
+        jeeves_ui = '/Volumes/Resources/vfx/pipeline/jeeves_dev/core/ui'
 
 #STABLE
 else:
     if sys.platform == 'win32':
         sys.path.append('//resources/resources/vfx/pipeline/jeeves')
-        jeeves_ui = '//resources/resources/vfx/pipeline/jeeves/core/ui'
-        jobsRoot = r'\\bertie\bertie\Jobs'
         user = os.getenv('USERNAME')
         home = os.path.expanduser('~')
+        jobsRoot = r'\\bertie\bertie\Jobs'
+        jeevesRoot = r'\\resources\resources\vfx\pipeline\jeeves'
+        jeeves_ui = r'\\resources\resources\vfx\pipeline\jeeves\core\ui'
         
     elif sys.platform == 'linux2':
         sys.path.append('/mnt/resources/vfx/pipeline/jeeves')
-        jeeves_ui = '/mnt/resources/vfx/pipeline/jeeves/core/ui'
-        jobsRoot = '/mnt/bertie/Jobs'
         user = os.getenv('USER')
         home = os.getenv('HOME')
-        
+        jobsRoot = '/mnt/bertie/Jobs'
+        jeevesRoot = '/mnt/resources/vfx/pipeline/jeeves'
+        jeeves_ui = '/mnt/resources/vfx/pipeline/jeeves/core/ui'
+
     elif sys.platform == 'darwin':
         sys.path.append('/Volumes/resources/vfx/pipeline/jeeves')
-        jeeves_ui = '/Volumes/resources/vfx/pipeline/jeeves/core/ui'
-        jobsRoot = '/Volumes/Bertie/Jobs'
         user = os.getenv('USER')
         home = os.getenv('HOME')
+        jobsRoot = '/Volumes/Bertie/Jobs'
+        jeevesRoot = '/Volumes/Resources/vfx/pipeline/jeeves'
+        jeeves_ui = '/Volumes/Resources/vfx/pipeline/jeeves/core/ui'
 
 #local user jeeves
 if not os.path.isdir(os.path.join(home, '.jeeves')):
@@ -93,5 +101,3 @@ userlist = {'martin' : {'int' : 'ma',
             'freelance' : {'int' : 'fr',
                       'dept' : '3d'},
             }
-
-sys.dont_write_bytecode = True

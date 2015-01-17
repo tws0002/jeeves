@@ -1,5 +1,12 @@
-source "DeadlineMayaClient.mel";
-source "DeadlineMayaVRayDBRClient.mel";
+// copy or symlink this file to either ~/maya/scripts/userSetup.py or ~/maya/2015-x64/scripts/userSetup.py
+// use this file to source the deadline scripts, which can be local to the machine or in a location that the Maya.env
+// file points to.
+// also use it to automatically import and launch the jeeves ui, might be quite annoying for staff but a good idea
+// for freelancers etc etc
 
-python("import maya_jeeves.ui.jeeves_ui");
-python("maya_jeeves.ui.jeeves_ui.runMaya()");
+
+//source "DeadlineMayaClient.mel";
+//source "DeadlineMayaVRayDBRClient.mel";
+
+python("import core.ui.jeeves_ui");
+python("core.ui.jeeves_ui.runMaya()");

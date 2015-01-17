@@ -1,9 +1,19 @@
+'''
+
+- this is called from nuke on startup, after the init.py
+
+- the init.py adds all relevant paths to the the nuke.pluginPath(), from the menu.py, we loop through them and add
+all gizmos to a dictionary and then add them to the custom gizmos menu
+
+- we also add the three main tools, deadline, write node and the jeeves ui
+
+'''
+
 import nuke, os, re, nukescripts
-import jnuke.pipeline.deadline
-nuke.tprint('> importing core.setup.menupy')
+nuke.tprint('> importing core.setup.menu.py')
 
 ############################################################################################################
-# Jeeves menu dictionary                                                                                          
+# Jeeves menu dictionary
 ############################################################################################################
 
 nukeDict = {}
@@ -21,38 +31,23 @@ for filepath in nuke.pluginPath():
                     if not scripts.startswith('.'):
                         if scripts.endswith(suffix):
                             nukeDict[menuName].append((os.path.splitext(scripts)[0], scripts))
-            
+
 ############################################################################################################
-# Add Menus                                                                                             
+# Add Menus
 ############################################################################################################
 
 nukeMenu = nuke.menu('Nuke')
-jeevesMenu = nukeMenu.addMenu('JEEVES')
-jeevesMenu.addCommand('Launch Jeeves', "import core.ui.jeeves_ui", "+R", icon='Yellow.png' )
-
-jeevesMenu.addCommand("Deadline", jnuke.pipeline.deadline.main, "", icon='deadline.png')
-#jeevesMenu.addSeparator()
-#jeevesMenu.addCommand( 'Output_Write', jeevesNukeModules.outputWrite, icon='Blue.png')
-#jeevesMenu.addCommand('Find Node', 'jeevesNukeModules.findnode()', icon='Purple.png')
-#jeevesMenu.addSeparator()
-pluginsMenu = jeevesMenu.addMenu('Gizmos', icon='unit.png')
-#pyMenu = pluginsMenu.addMenu('PYTHON', icon='unit.png')
-#pyMenu.addCommand('reloadReads', 'jeevesNukeModules.refreshReads()')
-#pyMenu.addCommand('printReads', 'jeevesNukeModules.printReads()')
-#pyMenu.addCommand('swapoutz', 'jeevesNukeModules.swapoutz()')
-#pyMenu.addCommand('findMissingReads', 'jeevesNukeModules.missingFrames()')
-#pyMenu.addCommand('multiNodeTweak', 'jeevesNukeModules.multiNodeTweaker()')
-#pyMenu.addCommand('shuffleRGB', 'jeevesNukeModules.shuffleRGB()')
-#pyMenu.addCommand('c4d_autocomp', 'import C4dAutoComp')
-#jeevesMenu.addSeparator()
-#import kiss
-#pyMenu.addCommand('toggle kiss', 'kiss.toggleKiss()', 'u', icon='kiss.png')
-
+jeevesMenu = nukeMenu.addMenu('Jeeves')
+jeevesMenu.addCommand('Launch Jeeves', "import core.ui.jeeves_ui", "+R" )
+jeevesMenu.addSeparator()
+jeevesMenu.addCommand("Deadline", jnuke.pipeline.tools.deadline.run, "")
+jeevesMenu.addCommand( 'Output_Write', jnuke.pipeline.tools.write.run)
+pluginsMenu = jeevesMenu.addMenu('Gizmos')
 
 #Add menus and scripts from nukeDict
 
 for every in nukeDict:
-    subMenus = pluginsMenu.addMenu(every, icon="unit.png")
+    subMenus = pluginsMenu.addMenu(every)
     for each in nukeDict[every]:
         cmd = each[0]
         subMenus.addCommand(cmd, 'nuke.createNode' + '("' + cmd + '")')

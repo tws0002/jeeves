@@ -1,0 +1,186 @@
+//
+// pgYetiPrman - script to support Pixars Renderman For Maya & RMS
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+global	int		$g_pgYetiPrmanPluginIsLoaded = false;
+global	int		$g_pgYetiPrmanWaitingForPlugin = false;
+global int 		$g_pgYetiPrmanUpdateGlobalsScriptJobNewScene = -1;
+global int 		$g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene = -1;
+
+// Check and see if RMS is loaded and whether or not its the Pro version
+global proc int pgYetiCheckPrmanStatus()
+{
+	if (`pluginInfo -q -loaded RenderMan_for_Maya`)
+	{
+  		string $isProVersion = eval("exists(\"RiAttribute\")");
+  		return $isProVersion;
+	}
+
+	return false;
+}
+
+// There is a chance that Yeti is loaded prior to RMS, so we need to keep track of if/when it's loaded and make sure we source our scripts appropriately
+global proc pgYetiWaitForPrmanPlugin()
+{
+	if (`pluginInfo -q -loaded pgYetiMaya`)
+	{
+		global	int	$g_pgYetiPrmanPluginIsLoaded;
+
+		if (pgYetiCheckPrmanStatus())
+		{
+			if (!$g_pgYetiPrmanPluginIsLoaded)
+			{
+				$g_pgYetiPrmanPluginIsLoaded = true;
+				pgYetiPrmanInit();
+			}
+		}
+		else
+		{
+			$g_pgYetiPrmanPluginIsLoaded = false;
+		}
+	}
+}
+
+// Initialize our Prman commands and make sure the globals are set up correctly
+global proc pgYetiPrmanInit()
+{
+	global int $g_pgYetiPrmanWaitingForPlugin;
+	global int $g_pgYetiPrmanUpdateGlobalsScriptJobNewScene;
+	global int $g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene;
+	
+	//	Check and see if the rendering plugin is loaded
+	if (!pgYetiCheckPrmanStatus())
+	{
+		if (!$g_pgYetiPrmanWaitingForPlugin)
+		{
+			pluginInfo -cc pgYetiWaitForPrmanPlugin;
+			$g_pgYetiPrmanWaitingForPlugin = true;
+		}
+		
+		return;
+	}
+
+	if (!objExists("renderManGlobals"))
+	{
+		if (exists("rmanGetGlobals"))
+			eval("rmanGetGlobals");
+		else
+		{
+			warning("Yeti is unable to find the Renderman Globals for initialization.");
+			return;
+		}
+	}
+
+	if ( ($g_pgYetiPrmanUpdateGlobalsScriptJobNewScene == -1) || !(`scriptJob -exists $g_pgYetiPrmanUpdateGlobalsScriptJobNewScene`) )
+	{	
+		$g_pgYetiPrmanUpdateGlobalsScriptJobNewScene = `scriptJob -event "NewSceneOpened" pgYetiPrmanInit`;
+	}
+
+	if ( ($g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene == -1) || !(`scriptJob -exists $g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene`) )
+	{	
+		$g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene = `scriptJob -event "SceneOpened" pgYetiPrmanInit`;
+	}
+
+	pgYetiAppendToString( "renderManGlobals", "rman__torattr___preShapeScript", "pgYetiPrmanOutput" );
+	pgYetiAppendToString( "renderManGlobals", "rman__torattr___cacheShapeScript", "pgYetiPrmanCache" );
+    pgYetiAppendToString( "defaultRenderGlobals", "preLayerRenderMel", "pgYetiPrmanFlush" );
+    pgYetiAppendToString( "defaultRenderGlobals", "postLayerRenderMel", "pgYetiPrmanFlush" );
+    pgYetiAppendToString( "defaultRenderGlobals", "postRenderMel", "pgYetiPrmanFlush" );
+    pgYetiRemoveFromString( "defaultRenderGlobals", "preRenderMel", "pgYetiPrmanFlush" );
+}
+
+global proc pgYetiPrmanUnInit()
+{
+	global int $g_pgYetiPrmanUpdateGlobalsScriptJobNewScene;
+	global int $g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene;
+
+	if ( $g_pgYetiPrmanUpdateGlobalsScriptJobNewScene != -1 )
+	{	
+		if ( `scriptJob -exists $g_pgYetiPrmanUpdateGlobalsScriptJobNewScene` )
+			scriptJob -kill $g_pgYetiPrmanUpdateGlobalsScriptJobNewScene;
+			
+		$g_pgYetiPrmanUpdateGlobalsScriptJobNewScene = -1;
+	}
+
+	if ( $g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene != -1 )
+	{	
+		if ( `scriptJob -exists $g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene` )
+			scriptJob -kill $g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene;
+
+		$g_pgYetiPrmanUpdateGlobalsScriptJobOpenedScene = -1;
+	}
+
+	pgYetiRemoveFromString( "renderManGlobals", "rman__torattr___preShapeScript", "pgYetiPrmanOutput" );
+	pgYetiRemoveFromString( "renderManGlobals", "rman__torattr___cacheShapeScript", "pgYetiPrmanCache" );
+    pgYetiRemoveFromString( "defaultRenderGlobals", "preLayerRenderMel", "pgYetiPrmanFlush" );
+    pgYetiRemoveFromString( "defaultRenderGlobals", "postLayerRenderMel", "pgYetiPrmanFlush" );
+    pgYetiRemoveFromString( "defaultRenderGlobals", "postRenderMel", "pgYetiPrmanFlush" );
+}
+
+global proc pgYetiPrmanCache()
+{
+	// Find out which object this script is associated with
+	string $object = `rman ctxGetObject`;
+	
+	if( `nodeType $object` != "pgYetiMaya" ) 
+	{
+            return;
+	}
+
+	float $time = `currentTime -q`;
+	pgYetiRenderCommand -addstep -sampleTime $time $object;
+}
+
+global proc pgYetiPrmanOutput()
+{
+   	string $object = `rman ctxGetObject`;
+   
+   	if( `nodeType $object` != "pgYetiMaya" ) {
+            return;
+   	}
+
+	float $time = `currentTime -q`;
+	float $current_frame = `rman getvar f`;
+			
+	// On Windows we need to use a different DSO if we're rendering in RFM vs. exporting Rib to be rendered via PRMan
+	int $doRMS = false;
+	if( `about -nt` ) {
+    	if( `eval("rman ctxIsRib")` ) {
+    		$doRMS = false;
+		} else {
+     		$doRMS = true;
+       	}
+   	}
+	
+	if ( $doRMS )
+	{
+		string $command = `pgYetiRenderCommand -rms -frame $current_frame -emit $object`;
+		eval( $command );
+	} else {		
+		string $command = `pgYetiRenderCommand -prm -frame $current_frame -emit $object`;
+		eval( $command );
+	}
+}
+
+global proc pgYetiPrmanFlush()
+{
+    pgYetiRenderCommand -flush;
+}

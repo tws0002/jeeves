@@ -1,0 +1,232 @@
+//
+// pgYetiVRay - Yeti VRay Integration
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+global int		$g_pgYetiVRayPluginIsLoaded = false;
+global int		$g_pgYetiVRayWaitingForPlugin = false;
+global int 		$g_pgYetiVRayUpdateGlobalsScriptJobNewScene = -1;
+global int 		$g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene = -1;
+
+// Check and see if RMS is loaded and whether or not its the Pro version
+global proc int pgYetiCheckVRayStatus()
+{
+	if (`pluginInfo -q -loaded vrayformaya`)
+	{
+  		return true;
+	}
+
+	return false;
+}
+
+// There is a chance that Yeti is loaded prior to VRay, so we need to keep track of if/when it's loaded and make sure we source our scripts appropriately
+global proc pgYetiWaitForVRayPlugin()
+{
+	if (`pluginInfo -q -loaded pgYetiMaya`)
+	{
+		global	int	$g_pgYetiVRayPluginIsLoaded;
+
+		if (pgYetiCheckVRayStatus())
+		{
+			if (!$g_pgYetiVRayPluginIsLoaded)
+			{
+				$g_pgYetiVRayPluginIsLoaded = true;
+				pgYetiVRayInit();
+			}
+		}
+		else
+		{
+			$g_pgYetiVRayPluginIsLoaded = false;
+		}
+	}
+}
+
+// Initialize our VRay commands and make sure the globals are set up correctly
+global proc pgYetiVRayInit()
+{
+	global int $g_pgYetiVRayWaitingForPlugin;
+	global int $g_pgYetiVRayUpdateGlobalsScriptJobNewScene;
+	global int $g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene;
+	
+	//	Check and see if the rendering plugin is loaded
+	if (!pgYetiCheckVRayStatus())
+	{
+		if (!$g_pgYetiVRayWaitingForPlugin)
+		{
+			pluginInfo -cc pgYetiWaitForVRayPlugin;
+			$g_pgYetiVRayWaitingForPlugin = true;
+		}
+		
+		return;
+	}
+	
+	if ( ($g_pgYetiVRayUpdateGlobalsScriptJobNewScene == -1) || !(`scriptJob -exists $g_pgYetiVRayUpdateGlobalsScriptJobNewScene`) )
+	{	
+		$g_pgYetiVRayUpdateGlobalsScriptJobNewScene = `scriptJob -event "NewSceneOpened" pgYetiVRayInit`;
+	}
+
+	if ( ($g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene == -1) || !(`scriptJob -exists $g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene`) )
+	{	
+		$g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene = `scriptJob -event "SceneOpened" pgYetiVRayInit`;
+	}
+
+	pgYetiAppendToString( "defaultRenderGlobals", "preMel", "pgYetiVRayPreRender" );
+	pgYetiAppendToString( "defaultRenderGlobals", "postMel", "pgYetiVRayPostRender" );
+}
+
+global proc pgYetiVRayUnInit()
+{
+	global int $g_pgYetiVRayUpdateGlobalsScriptJobNewScene;
+	global int $g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene;
+
+	if ( $g_pgYetiVRayUpdateGlobalsScriptJobNewScene != -1 )
+	{	
+		if ( `scriptJob -exists $g_pgYetiVRayUpdateGlobalsScriptJobNewScene` )
+			scriptJob -kill $g_pgYetiVRayUpdateGlobalsScriptJobNewScene;
+			
+		$g_pgYetiVRayUpdateGlobalsScriptJobNewScene = -1;
+	}
+
+	if ( $g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene != -1 )
+	{	
+		if ( `scriptJob -exists $g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene` )
+			scriptJob -kill $g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene;
+
+		$g_pgYetiVRayUpdateGlobalsScriptJobOpenedScene = -1;
+	}
+
+	pgYetiRemoveFromString( "defaultRenderGlobals", "preMel", "pgYetiVRayPreRender" );
+	pgYetiRemoveFromString( "defaultRenderGlobals", "postMel", "pgYetiVRayPostRender" );
+}
+
+// this will attach a Yeti VRay node to a Yeti node so it will render via VRay
+global proc string pgYetiAddYetiVRayNode( string $yeti_node )
+{
+        string $final_name = "";
+
+        if ( `nodeType( $yeti_node )` == "pgYetiMaya" )
+        {
+                string $yeti_node_parents[] = `listRelatives -parent $yeti_node`;
+                string $yeti_node_xform = $yeti_node_parents[0];
+
+                // first check and see if it's already connected to a VRay node
+                string $connectedPlugs[] = `listConnections -t pgYetiMayaVRay ( $yeti_node + ".outputData" )`;
+                if ( size( $connectedPlugs ) > 0 )
+                {
+                        pgYetiRemoveYetiVRayNode( $yeti_node );
+                }
+
+                if ( `pgYetiIsVisibleInCurrentRenderLayer( $yeti_node )` == 0 )
+                    return "";
+
+                string $newPgYetiMayaVRay = `createNode pgYetiMayaVRay`;
+
+                // rename the parent and node
+                string $transforms[] = `listRelatives -p $newPgYetiMayaVRay`;
+                rename $newPgYetiMayaVRay "tempPgYetiMayaVRayName";
+                string $transform_name = `rename $transforms[0] ( $yeti_node + "VRay")`;
+
+                $final_name = `rename "tempPgYetiMayaVRayName" ( $transform_name + "Shape" )`;
+
+                // make sure that the new node has the same set membership for both the transform and shape
+                pgYetiMatchSetMembership( $yeti_node_xform, $transform_name );
+                pgYetiMatchSetMembership( $yeti_node, $final_name );
+
+                // connect the Yeti attribute from the Yeti node to the VRay node
+                connectAttr ( $yeti_node + ".outputData" ) ( $final_name + ".inputData" );
+                connectAttr time1.outTime ( $final_name + ".currentTime" );
+
+                // make sure we re-parent for any world space translations
+                string $transforms[] = `listRelatives -p $yeti_node`;
+                parent -relative $transform_name $transforms[0];
+
+                connectAttr ($yeti_node + ".castsShadows") ($final_name + ".castsShadows");
+                connectAttr ($yeti_node + ".receiveShadows") ($final_name + ".receiveShadows");
+                connectAttr ($yeti_node + ".motionBlur") ($final_name + ".motionBlur");
+                connectAttr ($yeti_node + ".primaryVisibility") ($final_name + ".primaryVisibility");
+                connectAttr ($yeti_node + ".smoothShading") ($final_name + ".smoothShading");
+                connectAttr ($yeti_node + ".visibleInReflections") ($final_name + ".visibleInReflections");
+                connectAttr ($yeti_node + ".visibleInRefractions") ($final_name + ".visibleInRefractions");
+                connectAttr ($yeti_node + ".maxVisibilitySamplesOverride") ($final_name + ".maxVisibilitySamplesOverride");
+                connectAttr ($yeti_node + ".maxVisibilitySamples") ($final_name + ".maxVisibilitySamples");
+        }
+
+        return $final_name;
+}
+
+global proc pgYetiRemoveYetiVRayNode( string $yeti_node )
+{
+        if ( `nodeType( $yeti_node )` == "pgYetiMaya" )
+        {
+                string $connectedPlugs[] = `listConnections -t pgYetiMayaVRay ( $yeti_node + ".outputData" )`;
+                string $nodeAttr;
+                for ( $nodeAttr in $connectedPlugs )
+                {
+                        string $buffer[];
+                        $numTokens = `tokenize $nodeAttr "." $buffer`;
+
+                        delete $buffer[0];
+                }
+        }
+}
+
+// this is called prior to any rendering
+global proc pgYetiVRayPreRender()
+{
+	if ( pgYetiIsCurrentRenderer("vray") )
+	{
+		//	Check and see if the rendering plugin is loaded
+		if (pgYetiCheckVRayStatus())
+		{	
+			if (!`pluginInfo -q -loaded pgYetiVRayMaya`)
+			{
+				loadPlugin pgYetiVRayMaya;
+				if (!`pluginInfo -q -loaded pgYetiVRayMaya`)
+				{
+					warning("Yeti is unable to load the pgYetiVRayMaya plugin.");
+					return;
+				}
+			}
+		
+			string $yeti_nodes[] = `ls -type pgYetiMaya`;
+			string $yeti;
+			for ( $yeti in $yeti_nodes )
+			{
+				pgYetiAddYetiVRayNode( $yeti );
+			}
+		}
+	}
+}
+
+// this is called after the scene has been rendered
+global proc pgYetiVRayPostRender()
+{	
+	if ( pgYetiIsCurrentRenderer("vray") )
+	{
+		string $yeti_nodes[] = `ls -type pgYetiMaya`;
+		string $yeti;
+		for ( $yeti in $yeti_nodes )
+		{
+			pgYetiRemoveYetiVRayNode( $yeti );
+		}
+	}
+}
+
+

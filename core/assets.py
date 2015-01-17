@@ -1,3 +1,16 @@
+'''
+
+- as expecetd this module performs the lookup on assets. there are 5 classes, category, assets, tasks, versions and masters
+
+- each of them take a specific number of arguements and appended to the given dictionary one level at a time, eg, versions,
+masters, tasks etc.
+
+- these modules (assets / shots / renders) are somewhat limited as they require very specific arguements which is why the
+wrappers module is used more commonly as you can give them various arguements and can let the class figure out what it can
+return to you.
+
+'''
+
 print '> importing core.assets'
 import core
 import os, sys
@@ -7,6 +20,16 @@ import os, sys
 #***************************************************************************************************************
 
 class categorylookup(object):
+    '''
+    the jobdict returned from core.job is passed to this class. it then does a listdir on the assets folder for
+    that job and inserts category keys such as props, characters, if they are found on the file system.
+    
+    one the dictionary has those keys, it can then be passed to the assetlookup class, with the additon of
+    a category as a arguement for it to be further populated.
+    
+    arguements needed are jobdict
+
+    '''
     def __init__(self, jobdict):
         print '\t> core.assets.categorylookup'
         self.jobdict = jobdict
@@ -31,6 +54,13 @@ class categorylookup(object):
 #***************************************************************************************************************
 
 class assetlookup(object):
+    '''
+    the jobdict, with the asset categories populated is passed to this class, along with a specific category to
+    query. the class then adds the asset keys to the specified category.
+    
+    arguements needed are jobdict and category
+
+    '''
     def __init__(self, jobdict, category):
         print '\t> %s > core.assets.assetlookup' % category
         self.jobdict = jobdict
@@ -54,9 +84,7 @@ class assetlookup(object):
             elif os.path.isfile(os.path.join(self.category_root, asset)):
                 if not os.path.join(self.category_root, asset).startswith('.'):
                     self.loose.append(asset)
-        
-        #print self.loose
-        
+                
         try:
             self.jobdict[self.job]['3d']['assets'][self.category]['loose']['working'] = self.loose
         except:
@@ -66,6 +94,12 @@ class assetlookup(object):
 #***************************************************************************************************************
 
 class tasklookup(object):
+    '''
+    once the jobdict has the category and asset keys populated, we can then look for a tasks, such as modelling,
+    rigging etc.
+    
+    arguements needed are jobdict, category and asset
+    '''
     def __init__(self, jobdict, category, asset):
         print '\t> %s > %s > core.assets.tasklookup' % (category, asset)
         self.jobdict = jobdict
@@ -96,6 +130,13 @@ class tasklookup(object):
 #***************************************************************************************************************
 
 class versionlookup(object):
+    '''
+    once the jobdict has the category, asset and task keys populated, we can then look for the verisons associated with
+    that task. if it matches files that end in nk, ma and mb, they are added to the dict 
+    
+    arguements needed are jobdict, category, asset and task
+
+    '''
     def __init__(self, jobdict, category, asset, task):
         print '\t> %s > %s > %s > core.assets.versionlookup' % (category, asset, task)
         self.jobdict = jobdict
@@ -127,6 +168,13 @@ class versionlookup(object):
 #***************************************************************************************************************
    
 class masterlookup(object):
+    '''
+    this class takes the same arguements as the taskslookup class but returns only the masters associated with that
+    asset
+    
+    arguements needed are jobdict, category and asset
+
+    '''
     def __init__(self, jobdict, category, asset):
         print '\t> %s > %s > core.assets.masterlookup' % (category, asset)
         self.jobdict = jobdict
@@ -161,9 +209,3 @@ class masterlookup(object):
                     self.jobdict[self.job]['3d']['assets'][self.category][self.asset]['masters']['previous'].append(previous)
 
         return self.masters
-
-def asset_add():
-    pass
-
-def asset_delete():
-    pass

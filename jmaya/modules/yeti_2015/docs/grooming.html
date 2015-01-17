@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Grooming &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Guide Curves" href="guides.html"/>
+        <link rel="prev" title="Yeti Maya Node" href="yetinode.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Grooming</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="grooming">
+<h1>Grooming<a class="headerlink" href="#grooming" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Although the graph provides enough control to get a decent overall fur result in most cases you’re going to want a much more aesthetic means of controlling the look of the system.</p>
+<p>Yeti provides this control via Grooms which is a set of controllable strands that can be shaped with the ability to store any number of custom attributes on each.  A graph can rely on any number of input grooms which may control the length, density, direction or other node parameters via the Attribute node.</p>
+<div class="section" id="creating-a-groom">
+<h2>Creating a Groom<a class="headerlink" href="#creating-a-groom" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">A groom is generated via a groom node in Maya - to create the groom select a mesh and press the CRG ( Create Groom ) button in the Yeti shelf and a new empty node will be created.</p>
+<p>Grooms consist of any number of strands, defaulting to none, and require the user to create an initial set of strands - to do this use the Add followed by the Fill tool to quickly create a strand at every vertex which is a good default starting point for most grooms.</p>
+<img alt="_images/groom_01.png" class="align-center" src="_images/groom_01.png" />
+<p>The Yeti Groom node works within it’s own grooming context where you can use brushes to cut, comb and paint the Groom.  To enter the combing mode select the groom and in the attribute editor press any of the tools in the Tools palette - from this point on you can click and drag across the surface of the mesh to comb the strands in various modes.</p>
+<p>As you groom the node maintains the length of the strand and tries to relax the segments to give a more fluid feel to the workflow.</p>
+</div>
+<div class="section" id="selection">
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">While grooming it&#8217;s possible to select and de-select strands to limit the effect of the brush, to do this hold down the <strong>CTRL</strong> key and the first mouse button to select points and the <strong>CTRL</strong> key with the second mouse button to deselect points.  You may find that while working on a groom you may want to only see strands you have selected, this is possible by toggling on the <strong>Isolate Selected</strong> attribute in the grooms Display palette.</p>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p id="index-3">Global parameters are used to control the behavior of the Groom.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Radius Of Influence</td>
+<td>By default a strand in a groom has the potential of affecting any fur element created in the graph, by adjust the radius of influence you can limit the radius at which the strands affect the data.  It&#8217;s generally a good idea to use the <strong>Display Radius Of Influence</strong> display parameter to visualize this.</td>
+</tr>
+<tr class="row-odd"><td>Initial Strand Length</td>
+<td>The default length for new strands, this can also be 0 to paint points vs strands.</td>
+</tr>
+<tr class="row-even"><td>Strand Segment Length</td>
+<td>Each strand is made up of a number of segments, each segment will be equal too or less than this specified value - depending on the <strong>Initial Strand Length</strong> parameter.</td>
+</tr>
+<tr class="row-odd"><td>Conform New Strands</td>
+<td>When off new strands will use defaults set above, when on new strands will use interpolated values from the surrounding strands to conform itself to the neighbourhood.</td>
+</tr>
+<tr class="row-even"><td>Populate At Mesh Points</td>
+<td>When on new strands will be created on the vertices of the input object, when off you&#8217;re able to create new strands anywhere on the input object.</td>
+</tr>
+<tr class="row-odd"><td>Parting Randomness</td>
+<td>Can be used to globally control how random the parting regions are.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="populating">
+<span id="index-4"></span><h3>Populating<a class="headerlink" href="#populating" title="Permalink to this headline">¶</a></h3>
+<p id="index-5">When populating you are adding or removing strands from the groom, depending on parameters selected you may be arbitrarily adding points to the surface or the new surface points can be constrained to the vertex positions.</p>
+<img alt="_images/pgYeti_add.png" class="align-left" src="_images/pgYeti_add.png" />
+<p><strong>Add</strong> - used to add strands to the groom, only a single strand will be created within the radius of the brush.</p>
+<img alt="_images/pgYeti_delete.png" class="align-left" src="_images/pgYeti_delete.png" />
+<p><strong>Delete</strong> - used to remove strands from the groom.</p>
+<img alt="_images/pgYeti_scatter.png" class="align-left" src="_images/pgYeti_scatter.png" />
+<p><strong>Scatter</strong> - add strands by scattering them on the surface under the brush as if using a spray can.</p>
+</div>
+<div class="section" id="combing">
+<h3>Combing<a class="headerlink" href="#combing" title="Permalink to this headline">¶</a></h3>
+<p id="index-6">Combing tools affect the strands based on their surface position with the effect generally based on their relationship to the underlying surface and surrounding strands.</p>
+<img alt="_images/pgYeti_comb.png" class="align-left" src="_images/pgYeti_comb.png" />
+<p><strong>Comb</strong> - is the most familiar mode where the stroke pulls the strands in the direction of the brush stroke.</p>
+<img alt="_images/pgYeti_direction.png" class="align-left" src="_images/pgYeti_direction.png" />
+<p><strong>Direction</strong> - similar to comb, this will change the orientation of the strand but not it&#8217;s shape.</p>
+<img alt="_images/pgYeti_lift.png" class="align-left" src="_images/pgYeti_lift.png" />
+<p><strong>Lift</strong> - is used to lift the strands off of the surface of the mesh.</p>
+<img alt="_images/pgYeti_straighten.png" class="align-left" src="_images/pgYeti_straighten.png" />
+<p><strong>Straighten</strong> - is used to straighten out the strands.</p>
+<img alt="_images/pgYeti_smooth.png" class="align-left" src="_images/pgYeti_smooth.png" />
+<p><strong>Smooth</strong> - can be used to smooth out the strands to create a more even groom.</p>
+<img alt="_images/pgYeti_move.png" class="align-left" src="_images/pgYeti_move.png" />
+<p><strong>Move</strong> - used to move strand around the input surface</p>
+<img alt="_images/pgYeti_scale.png" class="align-left" src="_images/pgYeti_scale.png" />
+<p><strong>Scale</strong> - used to uniformly scale the strands, this differs from length as you&#8217;re not altering the strands shape.</p>
+<img alt="_images/pgYeti_clumping.png" class="align-left" src="_images/pgYeti_clumping.png" />
+<p><strong>Clump</strong> - as the brush moves the strands are pulled towards the centre axis.</p>
+<img alt="_images/pgYeti_twist.png" class="align-left" src="_images/pgYeti_twist.png" />
+<p><strong>Twist</strong> - twists the strands around the center axis of the brush.</p>
+</div>
+<div class="section" id="sculpting">
+<h3>Sculpting<a class="headerlink" href="#sculpting" title="Permalink to this headline">¶</a></h3>
+<p id="index-7">Sculpting acts on the strands in world space.  While sculpting the groom is less concerned about strand to strand relationship and focused on the over all shape/mass of the groom.</p>
+<img alt="_images/pgYeti_sculpt.png" class="align-left" src="_images/pgYeti_sculpt.png" />
+<p><strong>Sculpt</strong> - used to push/pull the strands as if you were sculpting them in a surface</p>
+<img alt="_images/pgYeti_trim.png" class="align-left" src="_images/pgYeti_trim.png" />
+<p><strong>Trim</strong> - trim away the ends of strands, as if you were using a plane/scissors to cut them</p>
+</div>
+<div class="section" id="utilities">
+<h3>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h3>
+<p id="index-8">The last few tools in the Tool palette are utilities.</p>
+<img alt="_images/pgYeti_fill.png" class="align-left" src="_images/pgYeti_fill.png" />
+<p><strong>Flood Fill</strong> - flood fill using the currently selected tool</p>
+<img alt="_images/pgYeti_deselect.png" class="align-left" src="_images/pgYeti_deselect.png" />
+<p><strong>De-Select</strong> - deselect strands previously selected with the ctrl-hot key</p>
+<img alt="_images/pgYeti_convert.png" class="align-left" src="_images/pgYeti_convert.png" />
+<p><strong>Invert Selection</strong> - invert the current selection</p>
+<img alt="_images/pgYeti_undo.png" class="align-left" src="_images/pgYeti_undo.png" />
+<p><strong>Undo</strong> - undo the last action ( CTRL + Z )</p>
+<img alt="_images/pgYeti_redo.png" class="align-left" src="_images/pgYeti_redo.png" />
+<p><strong>Redo</strong> - redo the last action ( CTRL + SHIFT + Z )</p>
+</div>
+</div>
+<div class="section" id="brush-settings">
+<h2>Brush Settings<a class="headerlink" href="#brush-settings" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/groom_brush.png" class="align-center" id="index-9" src="_images/groom_brush.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Brush Radius</td>
+<td>Radius of the brush.</td>
+</tr>
+<tr class="row-odd"><td>Brush Strength</td>
+<td>Strength of the brush.</td>
+</tr>
+<tr class="row-even"><td>Brush Softness</td>
+<td>How soft the brush is, this controls the falloff from the centre of the brush to the full radius.</td>
+</tr>
+<tr class="row-odd"><td>Brush Falloff Power</td>
+<td>Modulates the brushes effect along the length of the strand - a value of 1.0 will apply the same weight along the whole strand.</td>
+</tr>
+<tr class="row-even"><td>Scatter Density</td>
+<td>Controls how dense the strands are when using the Scatter brush in populate mode.</td>
+</tr>
+<tr class="row-odd"><td>Obey Surface Normal</td>
+<td>Used to determine if strands facing away from the stroke will be affected.</td>
+</tr>
+<tr class="row-even"><td>Mirror</td>
+<td>Turn brush mirroring on and off.</td>
+</tr>
+<tr class="row-odd"><td>Reverse Comb Curvature</td>
+<td>Applies an inverse weight along the length of the strand when Combing.</td>
+</tr>
+<tr class="row-even"><td>Mirror Plane</td>
+<td>Choose which axis will be used for mirroring.</td>
+</tr>
+<tr class="row-odd"><td>Affects Strands</td>
+<td>Initial will only apply the brush affect to the strands contained within the brush at the start of the stroke, Continuous will apply the affect to the strands within the brush during the whole stroke.</td>
+</tr>
+<tr class="row-even"><td>Update Frequency</td>
+<td>Always will continuously evaluate the graph during the stroke, On Release will only evaluate the graph at the end of the stroke (thus making the process more interactive).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attribute-painting">
+<h2>Attribute Painting<a class="headerlink" href="#attribute-painting" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/groom_attribute.png" class="align-center" id="index-10" src="_images/groom_attribute.png" />
+<p>Besides used to adjust the shape of strands Yeti Grooming allows any number of custom attributes to be painted.</p>
+<p>Attribute Painting is used to control attributes that generally represent one value per strand where the interaction takes on a more painterly feel vs. adjusting the strands directly, this includes length ( which is always available ), density and width.</p>
+<p>Except for Length any other attribute needs to be added before painting - using the four buttons at the bottom of the palette a user can Add, Duplicate, Rename and Remove attributes ( except Length ).</p>
+<p>To start painting an attribute double-click on it&#8217;s name in the Attribute List, all the brush parameters will affect the attribute paint as expected.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Display</td>
+<td>Turn attribute display on/off.</td>
+</tr>
+<tr class="row-odd"><td>Display As Heat Map</td>
+<td>Will draw the displayed paint values as a heat map vs. a greyscale representation of the values.</td>
+</tr>
+<tr class="row-even"><td>Display Size</td>
+<td>Size of the attribute in the viewport.</td>
+</tr>
+<tr class="row-odd"><td>Clipping Level</td>
+<td>An attribute is treated as an HDR value which means it&#8217;s possible to paint above 1.0 - by adjusting the clipping level you can change.</td>
+</tr>
+<tr class="row-even"><td>Mode</td>
+<td>Brush mode for painting.</td>
+</tr>
+<tr class="row-odd"><td>Value</td>
+<td>Value that will be painted.</td>
+</tr>
+<tr class="row-even"><td>Randomize Seed</td>
+<td>The seed to use with the Random brush.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h3>Utilities<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p id="index-11">It is also possible to export the current attribute to a texture map ( using the current UV coordinates of the input mesh ) and import a texture to set the values of the current attribute.</p>
+</div>
+</div>
+<div class="section" id="brush-parameters">
+<h2>Brush Parameters<a class="headerlink" href="#brush-parameters" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/groom_03.png" class="align-center" id="index-12" src="_images/groom_03.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Brush Size</td>
+<td>how big the brush is, this may also be adjusted by holding down the <strong>b key</strong> and dragging the mouse</td>
+</tr>
+<tr class="row-odd"><td>Brush Strength</td>
+<td>how much the brush stroke will affect the values</td>
+</tr>
+<tr class="row-even"><td>Brush Softness</td>
+<td>how soft the brush stroke is, 1.0 is very soft and 0.0 is completely hard</td>
+</tr>
+<tr class="row-odd"><td>Brush Power</td>
+<td>will control how strong the stroke will be along the strand.  A power of 0.0 will affect the whole strand equally where a power of 12 will push and pull the tips of the strands, as the tips are pulled the strands will maintain lengths and follow the tips.</td>
+</tr>
+<tr class="row-even"><td>Obey Surface Normal</td>
+<td>as you paint you may want to control whether the stroke affects the side of the surface you’re painting or if it’s a stroke that can affect both the front and the back side of the surface.  This toggles whether or not the surface normal is used to determine whether the surface direction should be considered when painting.</td>
+</tr>
+<tr class="row-odd"><td>Mirror</td>
+<td>mirrors the brush stroke as you paint, the mirror axis can also be selected though currently is world based vs. object based.</td>
+</tr>
+<tr class="row-even"><td>Reverse Comb Curvature</td>
+<td>as you comb the weight of the stroke varies along the strand, by default this causes the base to be pulled more than the tip - when toggled on this will reverse the effect.</td>
+</tr>
+<tr class="row-odd"><td>Mirror Plane</td>
+<td>controls what plane is used to mirror the brush in world space</td>
+</tr>
+<tr class="row-even"><td>Update Frequency</td>
+<td>is used to control how often changes to the Groom cause a dependent Yeti graph to update, when set to <strong>Always</strong> the Yeti graph will be evaluated during the brush stroke.  When set to <strong>On Release</strong> the graph will be evaluated once a stroke has been completed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="display-parameters">
+<h2>Display Parameters<a class="headerlink" href="#display-parameters" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/groom_04.png" class="align-center" id="index-13" src="_images/groom_04.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Display Strands</td>
+<td>will turn off/on the display of the strands</td>
+</tr>
+<tr class="row-odd"><td>Display Radius Of Influence</td>
+<td>when on every tenth strand will have it&#8217;s radius of influence visible</td>
+</tr>
+<tr class="row-even"><td>Display Strand Length</td>
+<td>provides feedback on the length of each strand, which is drawn at the tip</td>
+</tr>
+<tr class="row-odd"><td>Draw Stroke</td>
+<td>when on the path of the current brush stroke will be drawn</td>
+</tr>
+<tr class="row-even"><td>Color</td>
+<td>the wireframe color of the groom</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parting">
+<h2>Parting<a class="headerlink" href="#parting" title="Permalink to this headline">¶</a></h2>
+<p id="index-14">Many hair styles are defined by a part where hair is combed in opposite directions to define a distinctive shape to the groom - although it&#8217;s possible to groom strands in opposite directions; by default Yeti tries to interpolate between the strands leading a fanning effect which may not be the desired result.</p>
+<p>To support grooms where true parting is needed part regions can be created using a <strong>part_</strong> tag as a prefix to a new attribute ( eg. part_left, part_right ).  These attributes are masks that define the area of influence for the region and strands fully contained in one region will not interpolate with those fully contained in a different region, if a strand is contained in two ( or more ) regions then the effect is weighted based on the value of the masks.</p>
+<p>A special attribute called <strong>part_randomness</strong> can also be painting which modulates how random the parts appear which is helpful to avoid uniform looking results.</p>
+<p>Please see <strong>yeti_partingExample.ma</strong> for a reference.</p>
+</div>
+<div class="section" id="using-grooms">
+<h2>Using Grooms<a class="headerlink" href="#using-grooms" title="Permalink to this headline">¶</a></h2>
+<p id="index-15">Once a groom has been created you&#8217;ll want to use the result in your graph.  The first step is to attach the groom to your Yeti node, to do this select the Yeti node and open up the <strong>Graph/Input Grooms</strong> palette and <strong>Add Grooms(s)</strong>.  This will bring up a selection window that lists all the possible grooms in the scene.</p>
+<img alt="_images/groom_05.png" class="align-center" src="_images/groom_05.png" />
+<p>Select the desired groom and <strong>Select Groom(s)</strong> which will attach the Groom to your Yeti node and you should now see it in the list of Input Grooms.</p>
+<p>The next step is to return to the graph editor ( selected the Yeti Node and press GE in the Yeti shelf or <strong>Open Graph Editor</strong> ).  As with all data you will need to import the groom, use the Import node and in the attribute inspector set it too groom mode.  In the name field specify all or some of the name of the groom ( you need to specify the groom shape node, in practice it’s safe to use <code class="docutils literal"><span class="pre">myGroom*</span></code> vs. having to explicitly set <code class="docutils literal"><span class="pre">myGroomShape</span></code> ).</p>
+<img alt="_images/groom_06.png" class="align-center" src="_images/groom_06.png" />
+<p>It’s likely that the minimal use for the groom will be to adjust the fibers directions and to do this you will need to use the <strong>Comb</strong> node.  Once created make sure the main fur flow ( output from <strong>Grow</strong> ) is connected to the first input of the <strong>Comb</strong> node, and connect the output from your groom <strong>Import</strong> node to the second input of the <strong>Comb</strong> node.  When set as the root you should now see the fibers adhering to the groom you created.</p>
+<img alt="_images/groom_07.png" class="align-center" src="_images/groom_07.png" />
+<p>If you adjusted the lengths of the strands in the groom node you can also connect the groom to the second input of the <strong>Grow</strong> node, this tell the grow node to use the length attribute of the strands as a multiplier.  Lastly, if you painted a density attribute on the groom node you can also connect the groom to the <strong>Scatter</strong> node in a similar manner to control how the initial source points are generated.</p>
+<img alt="_images/groom_08.png" class="align-center" src="_images/groom_08.png" />
+<p>Once the groom has been imported and used in the graph and changes to the groom will dynamically be updated in the graph and viewport.  This is useful to see the final result of the graph though depending on the density and complexity of the graph it may slow down interactivity.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="guides.html" class="btn btn-neutral float-right" title="Guide Curves"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="yetinode.html" class="btn btn-neutral" title="Yeti Maya Node"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

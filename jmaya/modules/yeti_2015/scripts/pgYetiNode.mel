@@ -1,0 +1,212 @@
+//
+// pgYetiNode - Yeti Maya commands
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+// Procedures related to Yeti nodes
+
+// Create a new Yeti node
+global proc string pgYetiCreate()
+{
+		string $transform = `createNode -name "pgYetiMaya#" "transform"`;
+		string $newPgYetiMaya = `createNode -name ($transform + "Shape") -parent $transform pgYetiMaya`;
+		
+		connectAttr time1.outTime ( $newPgYetiMaya + ".currentTime" );
+		setAttr ($newPgYetiMaya + ".visibleInReflections") 1;
+		setAttr ($newPgYetiMaya + ".visibleInRefractions") 1;
+					
+		sets -add initialShadingGroup $newPgYetiMaya;			
+		
+		return $newPgYetiMaya;	
+}
+
+// Create a new Yeti node on the selected mesh
+global proc pgYetiCreateOnMesh()
+{
+		string $selectedMeshNodes[] = `ls -sl -dag -noIntermediate -type mesh`;
+		
+		if ( size( $selectedMeshNodes ) == 0 ) error "No Meshes Selected!";
+		
+		string $object;
+		for ( $object in $selectedMeshNodes )
+		{
+			string $newPgYetiMaya = pgYetiCreate();
+
+                        pgYetiAddGeometry( $object, $newPgYetiMaya );
+		}
+}
+
+// add a selected Groom to the specified Yeti node
+global proc pgYetiAddSelectedGroom(string $pgYetiMayaNode )
+{		
+		string $selectedGrooms[] = `ls -sl -dag -type pgYetiGroom`;
+		if ( size( $selectedGrooms ) == 0 ) error "No Grooms Selected!";
+		
+		string $groom;
+		for ( $groom in $selectedGrooms )
+		{
+			pgYetiAddGroom( $groom, $pgYetiMayaNode );
+		}
+}
+
+// add a Groom to the specified Yeti node
+global proc pgYetiAddGroom( string $groom, string $pgYetiMayaNode )
+{
+		connectAttr -nextAvailable ($groom +".outputData") ( $pgYetiMayaNode + ".inputStrandData");
+}
+
+// remove the Groom from the specified Yeti node
+global proc pgYetiRemoveGroom( string $groom, string $pgYetiMayaNode )
+{
+	string $connectedPlugs[] = `connectionInfo -destinationFromSource ( $groom + ".outputData" )`;
+	string $connected;
+	for ( $connected in $connectedPlugs )
+	{	
+		string $buffer[];
+		tokenize $connected "." $buffer;
+		if ( $buffer[0] == $pgYetiMayaNode )
+		{
+			disconnectAttr ( $groom + ".outputData" ) $connected;
+			break;
+		}
+	}
+}
+
+// add the Geometry to the specified Yeti node
+global proc pgYetiAddGeometry( string $object, string $pgYetiMayaNode )
+{
+	string $nodeType = `nodeType $object`;
+	if ( $nodeType == "mesh" )
+	{
+		connectAttr -nextAvailable ( $object + ".worldMesh[0]" ) ( $pgYetiMayaNode + ".inputGeometry" );
+	} else if ( $nodeType == "pgYetiMayaFeather" )
+	{
+		connectAttr -nextAvailable ( $object + ".outputData" ) ( $pgYetiMayaNode + ".inputGeometry" );		
+	}
+}
+
+// remove the Geometry from the specified Yeti node
+global proc pgYetiRemoveGeometry( string $object, string $pgYetiMayaNode )
+{
+	string $nodeType = `nodeType $object`;
+	if ( $nodeType == "mesh" )
+	{
+		string $connectedPlugs[] = `connectionInfo -destinationFromSource ( $object + ".worldMesh[0]" )`;
+		string $connected;
+		for ( $connected in $connectedPlugs )
+		{	
+			string $buffer[];
+			tokenize $connected "." $buffer;
+			if ( $buffer[0] == $pgYetiMayaNode )
+			{
+				disconnectAttr ( $object + ".worldMesh[0]" ) $connected;
+			}
+		}
+	} else if ( $nodeType == "pgYetiMayaFeather" )
+	{
+		string $connectedPlugs[] = `connectionInfo -destinationFromSource ( $object + ".outputData" )`;
+		string $connected;
+		for ( $connected in $connectedPlugs )
+		{	
+			string $buffer[];
+			tokenize $connected "." $buffer;
+			if ( $buffer[0] == $pgYetiMayaNode )
+			{
+				disconnectAttr ( $object + ".outputData" ) $connected;
+			}
+		}
+	}
+}
+
+// add the Guide Set to the specified Yeti node
+global proc pgYetiAddGuideSet(string $set, string $pgYetiMayaNode)
+{
+		int $nextSetConnection = `getAttr -size ($set + ".usedBy")`;
+			
+		connectAttr -nextAvailable ($set +".usedBy["+$nextSetConnection+"]") ( $pgYetiMayaNode + ".guideSets");
+}
+
+// remove the Guide Set from the specified Yeti node
+global proc pgYetiRemoveGuideSet( string $set, string $pgYetiMayaNode )
+{
+	int $numUsed = `getAttr -size ($set + ".usedBy")`;
+	int $i;
+	for ( $i = 0; $i < $numUsed; $i++)
+	{
+		string $connectedPlugs[] = `connectionInfo -destinationFromSource ( $set + ".usedBy["+$i+"]" )`;
+		string $connected;
+		for ( $connected in $connectedPlugs )
+		{	
+			string $buffer[];
+			tokenize $connected "." $buffer;
+			if ( $buffer[0] == $pgYetiMayaNode )
+			{
+				disconnectAttr ( $set + ".usedBy["+$i+"]" ) $connected;
+			}
+		}
+	}
+}
+
+// add the selected Guide Set to the specified Yeti node
+global proc pgYetiAddSelectedGuideSet(string $pgYetiMayaNode )
+{
+	string $selectedSets[] = `ls -sl -type objectSet`;
+	if ( size( $selectedSets ) == 0 ) error "No Sets Selected!";
+		
+	string $set;
+	for ( $set in $selectedSets )
+	{
+		pgYetiAddGuideSet( $set, $pgYetiMayaNode );
+	}
+}
+
+// remove any/all connections from the Yeti node
+global proc pgYetiRemoveAllConnections(string $pgYetiMayaNode)
+{
+	// disconnected input geometry
+	string $connectedGeometry[] = `listConnections -plugs true -source true -shapes true ( $pgYetiMayaNode + ".inputGeometry")`;
+	string $plug;
+	for ($plug in $connectedGeometry)
+	{	
+		disconnectAttr -na $plug ( $pgYetiMayaNode + ".inputGeometry");
+	}
+	
+	// disconnect grooms
+	string $connectedGrooms[] = `listConnections -plugs true -source true -shapes true ( $pgYetiMayaNode + ".inputStrandData")`;
+	for ($plug in $connectedGrooms)
+	{	
+		disconnectAttr -na $plug ( $pgYetiMayaNode + ".inputStrandData");
+	}
+	
+	// disconnect guide sets
+	string $connectedGuideSets[] = `listConnections -plugs true -source true -shapes true ( $pgYetiMayaNode + ".guideSets")`;
+	for ($plug in $connectedGuideSets)
+	{	
+		disconnectAttr -na $plug ( $pgYetiMayaNode + ".guideSets");
+	}
+}
+
+global proc pgYetiForceUpdate(string $pgYetiMayaNode)
+{
+	int $current_value = `getAttr ( $pgYetiMayaNode + ".update" )`;
+	$current_value = $current_value + 3;
+	
+	setAttr ( $pgYetiMayaNode + ".update" ) $current_value;
+}

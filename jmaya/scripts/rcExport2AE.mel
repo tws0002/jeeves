@@ -1,0 +1,414 @@
+/*
+__________________________________________________________
+Created By : Rob A Coakley robcoakley@gmail.com	
+__________________________________________________________
+To be used freely with the aknowledgement that the author is not responsible for any perceived damage 
+this script may directly (or indirectly) cause. Feel free to contact with any critiques or comments.
+Fixed issue with unknown nodes kicking error and not exporting 
+Added Multi-Application Support 
+Interface Update 
+1031home
+*/
+//USER VARIABLES
+global proc string AE_AppLocation(){
+    // After Effects Location on your machine 
+    // Change the location of the executables for your respective OS 
+    //MAC Location
+    string $AE_AppLocation_mac = "Adobe After Effects CS5";
+    // opt2 is CS6
+    if (`radioButtonGrp -q  -sl importOption` == 2 ) $AE_AppLocation_mac = "Adobe After Effects CS6";
+    //WIN Location
+    string $AE_AppLocation_win = "C:\\Program Files\\Adobe\\Adobe After Effects CS5\\Support Files\\AfterFX.exe";
+    if (`radioButtonGrp -q  -sl importOption` == 2 ) $AE_AppLocation_win = "C:\\Program Files\\Adobe\\Adobe After Effects CS6\\Support Files\\AfterFX.exe";
+    //OS Finder
+    string $os = `about -os`;
+    string $AE_AppLocation;  
+    if (`gmatch $os "*win*"`) $AE_AppLocation = $AE_AppLocation_win; // 64bit Win7
+    if (`gmatch $os "*nt*"`) $AE_AppLocation = $AE_AppLocation_win;  // 32bit WinXP    
+    if (`gmatch $os "*mac*"`)$AE_AppLocation = $AE_AppLocation_mac;  // MAC 10 +
+    return $AE_AppLocation;
+}  
+//BAKING SCRIPTS
+global proc rcBake(string $opt){
+	string $sel[] =`ls -sl`;
+	string $selShape[]=`ls -sl -dag`;
+	string $selTransform[]=`ls -sl -sn -typ "transform"`;
+	float $minTime = `playbackOptions -q -minTime`; float $maxTime = `playbackOptions -q -maxTime`;
+	switch($opt){
+	 case"-cam":
+	  if (size($sel)< 2) {
+	   if ( `objExists ($selShape[0]+".focalLength")`){
+	   	   if(`objExists cam_ExporttoAE`)   delete cam_ExporttoAE ;
+		    select -r $selShape[0]; 
+		    string $bakeCam[]=`duplicate -rr`;
+		    select $bakeCam[0]; 
+		    rename $bakeCam[0] "cam_ExporttoAE";
+		    if (! size(`listRelatives -p "cam_ExporttoAE"`)==0) parent -w -r;
+		    select -r $sel[0]; select -add cam_ExporttoAE;
+		    doCreatePointConstraintArgList 1 { "0","0","0","0","0","0","0","1","","1" };
+		    doCreateOrientConstraintArgList 1 { "0","0","0","0","0","0","0","1","","1" };
+		    //Bake Selected Based on Current Timeline
+		    select -r cam_ExporttoAE;
+		    
+		    setView "0";
+		    bakeResults -simulation true -sampleBy 1 -time ($minTime+":"+$maxTime)  -disableImplicitControl true -preserveOutsideKeys false -sparseAnimCurveBake false -removeBakedAttributeFromLayer false -bakeOnOverrideLayer false -controlPoints false -shape false{"cam_ExporttoAE"};
+		    setView "1";  
+		   
+		    //Remove Constraints After Baking
+		    delete cam_ExporttoAE_orientConstraint1 ; delete cam_ExporttoAE_pointConstraint1 ; 
+		    select cam_ExporttoAE; 
+		    button -e -bgc .0 .9 .0  AE_ExportButton;
+                    }
+                    else { //ERROR CHECK
+		            confirmDialog -title "AE Export" -icn "warning" -ma "center" -message "Object is Not a Camera!" ;
+		    }
+	   }
+	   else { //ERROR CHECK
+	   	   confirmDialog -title "AE Export" -icn "warning" -ma "center" -message "You Have More Than One Object Selected" ;
+	   }
+	   break;
+	 case"-obj":
+	  for ($obj in $selTransform) {
+	   string $objSubName;
+	   if (`gmatch $obj "*:*"`){
+	   	   string $split[];
+	   	   tokenize $obj ":" $split;
+	   	   int $i = (size($split)-1);
+	   	   $objSubName = ($split[$i]);
+	   } 
+	   else $objSubName = $obj;
+	   if( `objExists ("null_"+$objSubName+"_baked")`) delete ("null_"+$objSubName+"_baked");
+	   string $locator[]= `spaceLocator -n ($obj+"_loc")`;
+	   // Constrain Selected
+	    select -r $obj; select -add $locator[0];
+	    doCreatePointConstraintArgList 1 { "0","0","0","0","0","0","0","1","","1" };
+	    doCreateOrientConstraintArgList 1 { "0","0","0","0","0","0","0","1","","1" };
+	   // Bake Selected Based on Current Timeline 
+	    setView "0";
+	    bakeResults -simulation true -sampleBy 1 -time ($minTime+":"+$maxTime)  -disableImplicitControl true -preserveOutsideKeys false -sparseAnimCurveBake false -removeBakedAttributeFromLayer false -bakeOnOverrideLayer false -controlPoints false -shape false{$locator[0]};
+	    setView "1";  
+	    delete ($locator[0] + "_orientConstraint1");
+	    delete ($locator[0] + "_pointConstraint1"); 
+	   // Rename Baked Null to "null_*baked"
+	    if (`match "^null_" $obj`== "null_"){
+                	rename ($locator[0]) ($objSubName+ "_baked");
+                	rename ($objSubName+"_bakedShape") ($obj) ;
+            }
+            else{
+                	rename ($obj+"_loc") ("null_"+$objSubName+"_baked");
+                	rename ("null_"+$objSubName+"_baked"+"Shape") ("null_"+ $objSubName) ;
+            }
+            select -cl ;
+            }
+           break;
+	}
+	refreshAEUI;
+	}
+global proc setView(int $value){
+	string $modelPanels[] = `getPanel -vis`;
+	string $emptySelConn = `selectionConnection`; 
+	for( $panel in $modelPanels ) if( `getPanel -to $panel` == "modelPanel" ) {
+		isolateSelect -state (!$value) $panel;
+		if( $value ) modelEditor -e -mlc $emptySelConn $panel;
+		}
+	if( !$value ) deleteUI $emptySelConn;
+	}
+//EXPORT SCRIPTS
+global proc rcExportMA(){// Exports "Cam_ExporttoAE" and "null_*_baked" objects to file and Autoloads in AE 
+    //MA Location 
+    string $AE_MALocation = (`workspace -q -rd`)+"data/Cam2MA.ma";
+    string $AE_MayaCam = "cam_ExporttoAE";
+    //UI Load Settings ELSE DEFAULT OFF
+    string $workingUnits = `currentUnit -q`;
+    //Camera, Object Options Default
+    int $AE_scaleMA = 0; int $AE_Import = 0; int $AE_ForceHD = 0;int $AE_DelBaked=0; 
+    if (`window -exists AE_ExportWindow`) 
+    {
+      $AE_scaleMA = `checkBox -q -v  AE_checkBoxScaleAE`;
+      $AE_ForceHD =`checkBox -q -v AE_checkBoxForce1080`;
+      $AE_DelBaked =`checkBox -q -v  AE_checkBoxDelObj`;
+    }
+    
+    //Array Objects with "null_*" in name and are connected 
+    string $scene[] = `ls -type "transform"`; string $sceneNulls_tmp;
+    for ($obj in $scene)
+    {
+	  if (`gmatch $obj "null_*_baked"`) $sceneNulls_tmp += (" " + $obj); //&& `attributeQuery -node $obj -c "translateX"`
+    }
+    //Select Objects to Export
+    if(!`objExists $AE_MayaCam`) confirmDialog -title "AE Export" -icn "warning" -ma "center" -message "You Need To Bake A Camera!" ;  
+    select -r $AE_MayaCam;
+    if (size ($sceneNulls_tmp) > 0) // Select Applicable Nulls
+    {
+            string $sceneNulls[];
+            tokenize $sceneNulls_tmp " " $sceneNulls;
+            select -add $sceneNulls;
+    } 
+    //Custom Setting from UI
+    if ($AE_scaleMA == 1) currentUnit -l  "mm"; 
+    if ($AE_ForceHD == 1){ setAttr defaultResolution.width 1920; setAttr defaultResolution.height 1080; setAttr defaultResolution.deviceAspectRatio (1920/float(1080));}
+    //FileFormatWorkaround
+    string $filetype[]=`file -q -type`;
+    if ($filetype[0]== "mayaBinary") file -type "mayaAscii";
+    
+    //Prompt for Export Location
+    if (`radioButtonGrp -q  -sl importOption` == 3 )  ExportSelection;
+    file -force -options "v=0" -typ "mayaAscii" -es (`toNativePath($AE_MALocation)`);
+    
+    ////////////////////////////////////////////////////
+    //Import In AfterFX if CheckBox
+    string $os = `about -os`;
+    if (`radioButtonGrp -q  -sl importOption` <= 2 ) 
+    {
+    	    string $AE_AppLocation;
+    	    string $AE_spawn;
+            if (`gmatch $os "*win*"`) $AE_spawn = "start "+ AE_AppLocation() + " " + `toNativePath($AE_MALocation)` +"\""; 
+            if (`gmatch $os "*nt*"`)  $AE_spawn = "start "+ AE_AppLocation() + " " + `toNativePath($AE_MALocation)` +"\"";         
+            if (`gmatch $os "*mac*"`) $AE_spawn = "open -a \"" + AE_AppLocation() + "\" \"" + $AE_MALocation + "\"";
+            system $AE_spawn;
+            
+            if ($AE_DelBaked == 1)
+            {
+            pause -sec 20;
+            sysFile -delete `toNativePath($AE_MALocation)`;
+            delete ("*_baked");
+            }
+    }
+    
+    //Reset Default FileType and Working Units
+    if ($filetype[0]== "mayaBinary") file -type "mayaBinary";
+    currentUnit -l $workingUnits;
+    //Exit Out When Complete
+    if (`window -exists AE_ExportWindow`) deleteUI AE_ExportWindow; select -cl;
+	}
+global proc rcExportJS(){// Exports Image Sequence Locations and Imports Sequences in AE using Javasript (Autorun WIN ONLY!)
+	string $currentFPS = `currentUnit -q -time`;
+	string $settings_FileNamePrefix= `getAttr "defaultRenderGlobals.ifp"`;
+	string $Js_location=(`workspace -q -rd`)+"data/"+"Shot"+".js";
+	string $File_location=(`workspace -q -rd`)+"images/beauty.png";
+	string $spawnCommand;
+	
+	string $os = `about -os`;
+	if (`gmatch $os "*win*"`)
+	{ 
+	$spawnCommand = "start " + AE_AppLocation() + " -r " + `toNativePath($Js_location)`;
+	}
+	
+	if (`gmatch $os "*mac*"`)
+	{
+	confirmDialog -title "AE Export" -icn "warning" -ma "center" -message "Not Supported On MAC!" ;
+	$spawnCommand = "open -a \"" + AE_AppLocation() + "\" \"" + $File_location + "\"";
+	}
+	
+	//Build JAVA String
+	string $cmd;
+	$cmd +=	"var projFolder = \"_fromMaya\";\n";
+	$cmd +=	"var renderLayer = ('beauty'+'.png');\n";
+	$cmd += "for (var i = 1; i <= app.project.numItems; i++) \n";
+	$cmd += "{\n";
+	$cmd +=	"  if (app.project.item(i).name == projFolder) exists=1 \n";
+	$cmd +=	"}\n";
+	$cmd +=	"  var curSel = app.project.selection;\n "; 
+	$cmd +=	"  curSel[0].mainSource.alphaMode = AlphaMode.PREMULTIPLIED; \n";
+	$cmd += "}\n";
+	
+	//Write JAVA String
+	int $fd = `fopen $Js_location "w"`;
+	fprint $fd ($cmd);
+	fclose $fd;
+	//print $spawnCommand;
+	system $spawnCommand;
+	
+	}
+/////////////////////////////////////////////////////////////////////////////////////
+//EXTRAS
+global proc rcDelUnknownNodes(){//in rcToolBox
+	
+	string $unknownNodes[]= `ls -type "unknown"`;
+	string $delDecision = `confirmDialog -icn "warning" -message $unknownNodes -messageAlign "center" 
+	-button "Delete"
+	-button "Cancel"
+	-defaultButton "Delete"
+	-cancelButton "Cancel"
+	-dismissString "Cancel"`;
+	if ($delDecision == "Delete") delete `ls -type "unknown"`;
+}
+/////////////////////////////////////////////////////////////////////////////////////
+//UI and Callbacks
+global proc progWin(){
+	int $progress=0;
+	int$percent=0;
+	progressWindow -t "Baking..." -min 0 -max 200 -pr $progress;
+	}
+global proc refreshAEUI(){// Set Render Globals to HD 1080 and update UI
+ if (`checkBox -q -v AE_checkBoxForce1080`) checkBox -e -bgc .0 .9 .0 AE_checkBoxForce1080;
+  else checkBox -e -bgc 1 .5 0 AE_checkBoxForce1080;
+ if (`objExists cam_ExporttoAE`) button  -e -bgc 0 1 .0 AE_ExportButton;
+  else button  -e -bgc 1 0 .0  AE_ExportButton;
+ //Array Compatible Scene Objects  
+ iconTextScrollList -e -ra AE_outCAMOBJlist;
+ string $scene[] = `ls -type "transform"`; string $sceneNulls_tmp;
+ for ($obj in $scene){
+   if (`gmatch $obj "null_*_baked"`) $sceneNulls_tmp += (" " +$obj); //&& `attributeQuery -node $obj -c "translateX"`
+ }
+ if ( `objExists "cam_ExporttoAE"`) iconTextScrollList -e -a "cam_ExporttoAE" -sc ("select -r " + "cam_ExporttoAE")  AE_outCAMOBJlist;
+ //Add Compatible Nulls to List
+ string $sceneNulls[];
+ tokenize $sceneNulls_tmp " " $sceneNulls;
+ for ($obj in $sceneNulls) iconTextScrollList -e -a $obj -sc ("select -r " + $obj) AE_outCAMOBJlist;
+ //Add Compatible RenderLayers to List 
+ string $renderlayers[]= `lsType ("renderLayer")`;
+	$numlayer= size($renderlayers); $i=0;
+	string $onlayers[0]={"0"};
+	/*
+	iconTextScrollList -e -ra AE_outRENDERLAYERlist;
+        for($layernum=-1; $layernum < ($numlayer -2); $layernum++)
+        {
+          int $on= getAttr ($renderlayers[($layernum+1)]+".renderable");
+          if ( $on==1)
+          {
+          	  
+          	  if (!`gmatch $renderlayers[($layernum+1)] "*:*"`)
+          	  {
+          	  	  
+          	  	  iconTextScrollList -e -a ($renderlayers[($layernum+1)]) -sc ""-h 5 AE_outRENDERLAYERlist;
+          	  	  $onlayers[$i]= $renderlayers[($layernum+1)];$i++;
+          	  }
+          // write 
+          }
+        }
+        */
+	}
+global proc rcExport2AE(){
+	int $buttonwidth= 155;int $buttonheight= 40;int $checkboxheight = 16;
+	string $workingUnits = `currentUnit -q`; string $currentFPS = `currentUnit -q -time`;
+	int $scaleMA = 0; int $is1080;
+	if ( `getAttr defaultResolution.width` == "1920" && `getAttr defaultResolution.height` == "1080" ) $is1080 = 1;
+
+	//Create data Folder if it doesnt exist
+	string $Ae_MAFolderLocation=(`workspace -q -rd`)+"data/"; 
+	if (!`filetest -d $Ae_MAFolderLocation`) sysFile -makeDir $Ae_MAFolderLocation;
+	
+	//BuildUI
+	if (`window -exists AE_ExportWindow`) deleteUI AE_ExportWindow;  
+	window -w 350 -h 800 -tlb 1 -tlc 1 1 -title "Export2AE" AE_ExportWindow;
+	tabLayout -imw 0 -imh 0 -dcc "rcDelUnknownNodes;" AE_Tabs;
+	rowLayout -w 150 -h 800 -nc 2 AE_Export;
+	columnLayout -w 170 -h 750 -cat "left" 8 AE_Column; //Left Column Height 
+	
+	gridLayout -numberOfColumns 2 -cellWidthHeight 110 12;
+	text -fn "boldLabelFont"  -align "left"  -l ("CURRENT UNITS:   "); text -fn "boldLabelFont" -align "left" -l  $workingUnits;
+	text -fn "boldLabelFont" -align "left"  -l ("CURRENT FPS:   "); text -fn "boldLabelFont" -align "left" -l $currentFPS;
+	separator -h 15 -st "in" -vis 1;
+	setParent..;
+	
+	text -h 20 -fn "obliqueLabelFont" -l "   Obj and Cam Options:" -align center;
+	if ($is1080) checkBox -h $checkboxheight -label "  Set Camera to 1080" -en 0 -ann "Set Render Global Camera to \n 1920x1080" -cc refreshAEUI -v $is1080  AE_checkBoxForce1080;
+	else checkBox -h $checkboxheight -label "  Set Camera to 1080" -bgc 1 .5 .0 -en 1 -ann "Set Render Global Camera to \n 1920x1080" -cc refreshAEUI -v $is1080  AE_checkBoxForce1080;
+	
+	if ( `currentUnit -q` != "mm") checkBox -h $checkboxheight -label "  Scene to mm on Export" -ann "Sets the World Scene Unit to Millimeter"  -cc refreshAEUI -en 1 -v 1 AE_checkBoxScaleAE;
+	else checkBox -h $checkboxheight -label "  Scene to mm on Export" -cc refreshAEUI -ann "Sets the World Scene Unit to Millimeter" -en 0 -v 1 AE_checkBoxScaleAE;
+	
+	checkBox -h $checkboxheight -label "  Delete Temp Obj" -v 0 AE_checkBoxDelObj;
+	separator -h 8 -st "in" -vis 1;
+	button  -l "Bake Selected Camera"  -w $buttonwidth -h $buttonheight -align "center" -c "rcBake -cam;";
+	button  -l "Bake Selected Object"  -w $buttonwidth -h $buttonheight -align "center" -c "rcBake -obj;";
+	separator -h 10 -style "in" -vis 1;
+	//text -h 20 -fn "obliqueLabelFont" -l "    Render Layer Options:" -align center;
+	//checkBox -h $checkboxheight -label "  Import In AE5" -v 1 -ann "Loads Exported CAM2AE.ma file in \n After Efffects" AE_checkBoxImportAE;
+	//checkBox -h $checkboxheight -label "  Update Sequences"-v 1;
+	//checkBox -h $checkboxheight -label "  Option 2"-v 0;
+	//checkBox -h $checkboxheight -label "  Option 3"-v 0;
+	separator -h 10 -style "in" -vis 1;
+	//button -l "List RenderLayers" -w $buttonwidth -h $buttonheight -align "center" -c rcListLayers;
+	
+	text -h 20 -fn "obliqueLabelFont" -l "  Import Options:" -align center;
+	radioButtonGrp  -nrb 3 -cw3  40 40 60 -h $checkboxheight -sl 2 -labelArray3  "AE5" "AE6" "Manual" importOption;
+	separator -h 10 -style "in" -vis 1;
+	if(`objExists cam_ExporttoAE`) button  -l "EXPORT MA"  -ann "Bake Camera if RED"  -w $buttonwidth -h $buttonheight -bgc .0 1 .0 -align "center" -c rcExportMA AE_ExportButton;
+	else button  -l "EXPORT MA"   -w $buttonwidth -h $buttonheight  -ann "Bake Camera if RED" -bgc 1 .0 .0 -align "center" -c rcExportMA AE_ExportButton;
+	separator -h 10 -style "in";
+	//button  -l "EXPORT JS" -w $buttonwidth -h $buttonheight -bgc .185 .148 .288 -align "center" -c rcExportJS;
+	//button  -l "Set Globals" -w $buttonwidth -h $buttonheight -bgc .185 .148 .288 -align "center" -c rcSetGlobals;
+	
+	setParent AE_Export;
+	columnLayout -w 400 -h 770 -cat "left" 6 AE_Columnoutliner;
+	paneLayout -w 400 -h 800 -cn "horizontal2" AE_PaneLayout;
+	
+	string $transforms= `itemFilter -byType transform`;
+	string $nulls_= `itemFilter -byName "null_*baked"`;
+	
+	string $AE_outliner1= `outlinerPanel -mbv 0 `;
+	//outlinerEditor -e -mlc $transforms $AE_outliner1;
+	filterUIClearFilter $AE_outliner1;
+	string $AE_panel = `outlinerPanel -q -oe $AE_outliner1`; 
+        outlinerEditor -e 
+     -mainListConnection "worldList"
+     -selectionConnection "modelList"
+     -showShapes false
+     -showAttributes false
+     -showConnected false
+     -showAnimCurvesOnly false
+     -autoExpand true
+     -showDagOnly true
+     -ignoreDagHierarchy false
+     -expandConnections false
+     -showCompounds true
+     -showNumericAttrsOnly false
+     -highlightActive true
+     -autoSelectNewObjects false
+     -doNotSelectNewObjects false
+     -transmitFilters false
+     -showSetMembers true
+     -setFilter defaultSetFilter
+     $AE_panel;
+	text  -h 20 -l "Objects Going to After Effects:";
+	//setParent..; 
+	string $AE_outCAMOBJlist= `iconTextScrollList -w 50 -h 300 AE_outCAMOBJlist`;
+	/*
+	text  -h 20 -l "RenderLayers Going to After Effects:";
+	string $AE_outRENDERLAYERlist= `iconTextScrollList -w 300-h 250 AE_outRENDERLAYERlist`;
+	setParent..;
+	
+	string $AE_outliner2= `outlinerPanel `;
+	filterUIClearFilter $AE_outliner1;
+	outlinerEditor -e -f $AE_outliner1;
+	string $AE_rowLayer= `rowLayout -nc 2 -cw2 80 150 -h 200`;
+	string $AE_columnLayout= `columnLayout `;
+		string $AE_ButtonA = 	`button -l "Reset" AE_ButtonA`;
+		string $AE_ButtonB = 	`button -l "Select All" AE_ButtonB`;
+		string $AE_ButtonC = 	`button -l "Deselect" AE_ButtonC`;	
+	for ($layer in `lsType ("renderLayer")` )
+	{
+		if ($layer != "<done>" )
+		checkBox -l ($layer);
+	}
+	*/
+	
+	setParent AE_Tabs;
+ rowLayout Help;
+
+	columnLayout -w 500 -h 550 -bgc .2 .2 .2;
+	text " Use this script to convert object positions and cameras from Maya to After Effects.";
+	text " It will also save the scene and load it in After Effects.\n";
+	text " RED highlighted icons represent neccessary\n";
+	text "     Camera Be Baked-";
+	text "       Select Camera and set Current Timeline to Desired Length";
+	text "       Press Bake Selected Camera and a Baked Copy \"CAM2AE\" is created.\n";
+	text " ORANGE highlighted icons represent recommended\n";
+	text "     Set Camera to 1920x1080";
+	text "       Changes Render Globals to HD 1080\n";
+	text "     Scale Scene to Match AE";
+	text "       Changes Working Units to mm on export only!\n";
+	text "     Delete Baked Objects";
+	text "       Deletes all \"null_*_baked\" objects after export\n";
+	text "     Import Options";
+	text "       Choose the application to import the file into or"; 
+	text "       choose manual to specify a location for the file";
+	text "Change your After Effects program location in the script if Export Doesn't Work";
+	
+	showWindow AE_ExportWindow;
+	refreshAEUI;
+	}
+//////////////////////////////////////////////////////////////////////////////////////
+

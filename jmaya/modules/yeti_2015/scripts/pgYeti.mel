@@ -1,0 +1,171 @@
+//
+// pgYeti - Yeti Maya commands
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+global int 		$g_pgYetiSelectionChangedScriptJob = -1;
+global int              $g_pgYetiConstHistChangedScriptJob = -1;
+
+global proc pgYetiInit()
+{
+    // global script jobs
+    global int 		$g_pgYetiSelectionChangedScriptJob;
+    global int          $g_pgYetiConstHistChangedScriptJob;
+
+    // General Scripts
+    source pgYetiUtilities;
+    source pgYetiNode;
+    source pgYetiGroom;
+	source pgYetiFeather;
+    source pgYetiUpdateAE;
+
+    // Rendering Scripts
+    source pgYetiPrman;
+    source pgYetiVRay;
+	
+    // Initialize Renderers
+    pgYetiPrmanInit;
+    pgYetiVRayInit;
+
+    evalDeferred pgYetiInitShelf;
+
+    if ( ( $g_pgYetiSelectionChangedScriptJob == -1 ) || !(`scriptJob -exists $g_pgYetiSelectionChangedScriptJob`) )
+        $g_pgYetiSelectionChangedScriptJob = `scriptJob -event "SelectionChanged" "pgYetiUpdateAE"`;
+
+    if ( ( $g_pgYetiConstHistChangedScriptJob == -1 ) || !(`scriptJob -exists $g_pgYetiConstHistChangedScriptJob`) )
+        $g_pgYetiConstHistChangedScriptJob = `scriptJob -event "constructionHistoryChanged" "pgYetiUpdateAE"`;
+    
+    pgYetiBuildMenus;
+}
+
+global proc pgYetiUnInit()
+{
+    global int 		$g_pgYetiSelectionChangedScriptJob;
+    global int          $g_pgYetiConstHistChangedScriptJob;
+
+    pgYetiPrmanUnInit;
+    pgYetiVRayUnInit;
+
+    if ( $g_pgYetiSelectionChangedScriptJob != -1 )
+    {
+        if ( `scriptJob -exists $g_pgYetiSelectionChangedScriptJob` )
+            scriptJob -kill $g_pgYetiSelectionChangedScriptJob;
+
+        $g_pgYetiSelectionChangedScriptJob = -1;
+    }
+
+    if ( $g_pgYetiConstHistChangedScriptJob != -1 )
+    {
+        if ( `scriptJob -exists $g_pgYetiConstHistChangedScriptJob` )
+            scriptJob -kill $g_pgYetiConstHistChangedScriptJob;
+
+        $g_pgYetiConstHistChangedScriptJob = -1;
+    }
+}
+
+global proc pgYetiInitShelf()
+{
+    if(about("-batch"))
+    {
+        return;
+    }
+
+    if( !`shelfLayout -ex Yeti`) {
+        loadNewShelf "shelf_Yeti";
+    }
+}
+
+global proc pgYetiBuildMenus()
+{
+	global string $gMainWindow;
+
+	if (`menu -exists pgYetiMainWindowMenu`)
+		deleteUI pgYetiMainWindowMenu;
+
+	if ($gMainWindow != "")
+	{
+		setParent $gMainWindow;
+
+		menu -label "Yeti" -tearOff true pgYetiMainWindowMenu;
+
+                menuItem -divider true;
+                menuItem -label "Open Graph Editor"
+                        -annotation "Open the Graph Editor"
+                        -command pgYetiOpenGraphEditor;
+
+                menuItem -label "Flush Texture Cache"
+                        -annotation "Flush Texture Cache to free memory"
+                        -command "pgYetiCommand -flushTextureCache";
+
+                menuItem -label "Create Yeti Node"
+        		-annotation "Create a new Yeti node"
+        		-command pgYetiCreate;
+
+		menuItem -label "Create Yeti Node On Mesh"
+        		-annotation "Create a new Yeti node and make the selected mesh the first input"
+        		-command pgYetiCreateOnMesh;
+        		
+                menuItem -label "Create Groom on Mesh"
+        		-annotation "Create a new Groom on the selected mesh"
+        		-command pgYetiCreateGroomOnMesh;
+				
+                menuItem -label "Create Feather"
+        		-annotation "Create a new Feather node"
+        		-command pgYetiCreateFeather;
+
+		menuItem -divider true;
+		menuItem -label "Export Groom From Selected Yeti Node"
+				-annotation "Export the Currently Selected Yeti Node to a Groom file"
+				-command pgYetiExportGroomFromSelected;
+				
+                menuItem -label "Import Groom From Selected Yeti Node"
+                                -annotation "Import the Currently Referenced Grooms on the Selected Yeti Node"
+                                -command pgYetiImportGroomFileFromSelected;
+
+                menuItem -label "Convert Groom(s) to Curves"
+                                -annotation "Convert Currently Selected Groom Node to Nurbs Curves"
+                                -command "pgYetiConvertGroomToCurves";
+
+                menuItem -label "Save Groom(s) Current Strand Shape"
+                                -annotation "Bake the current strand shape"
+                                -command "pgYetiSaveCurrentStrandShapeOnSelected";
+
+                menuItem -label "Save Groom(s) Rest Pose"
+                                -annotation "Update the internal root positions for each strand based on the current input mesh"
+                                -command "pgYetiSaveGroomRestPoseOnSelected";
+                menuItem -divider true;
+                menuItem -label "Save Guides Rest Position"
+                        -annotation "Bake the current position/orientation into the guide curves"
+                        -command "pgYetiCommand -saveGuidesRestPosition";
+
+                menuItem -label "Remove Guides Rest Position"
+                        -annotation "Remove the current rest position/orientation from the guide curves"
+                        -command "pgYetiCommand -removeGuidesRestPosition";
+                menuItem -divider true;
+                menuItem -label "Convert to Maya Objects"
+                        -annotation "Convert the generated Yeti objects into Maya representations."
+                        -command "pgYetiCommand -generateMayaObjects";
+				menuItem -divider true;
+				menuItem -label "Help" -command "pgYetiCommand -help";
+				menuItem -label "About" -command "pgYetiCommand -about";
+        }
+}
+
+pgYetiInit();

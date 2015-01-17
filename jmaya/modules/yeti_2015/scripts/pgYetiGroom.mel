@@ -1,0 +1,174 @@
+//
+// pgYetiGroom - Yeti Maya commands
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+// Procedures related to Groom nodes
+
+// Create a new groom on a currently selected mesh
+global proc pgYetiCreateGroomOnMesh()
+{
+		string $selectedMeshNodes[] = `ls -sl -dag -noIntermediate -type mesh`;
+		if ( size( $selectedMeshNodes ) == 0 ) error "No Meshes Selected!";
+		
+		string $object;
+		for ( $object in $selectedMeshNodes )
+		{
+			string $transform = `createNode -name "pgYetiGroom#" "transform"`;
+			string $newPgYetiGroom = `createNode -name ($transform + "Shape") -parent $transform pgYetiGroom`;
+			
+			connectAttr ( $object + ".worldMesh[0]" ) ( $newPgYetiGroom + ".inputGeometry" );
+			connectAttr time1.outTime ( $newPgYetiGroom + ".currentTime" );
+		}
+}
+
+// Add collision geometry to a Groom
+global proc pgYetiAddCollisionGeometry( string $object, string $pgYetiMayaGroomNode )
+{
+		connectAttr -nextAvailable ( $object + ".worldMesh[0]" ) ( $pgYetiMayaGroomNode + ".collisionGeometry" );
+}
+
+// remove the collision geometry from a Groom
+global proc pgYetiRemoveCollisionGeometry( string $object, string $pgYetiMayaGroomNode )
+{
+	string $connectedPlugs[] = `connectionInfo -destinationFromSource ( $object + ".worldMesh[0]" )`;
+	string $connected;
+	for ( $connected in $connectedPlugs )
+	{	
+		string $buffer[];
+		tokenize $connected "." $buffer;
+		if ( $buffer[0] == $pgYetiMayaGroomNode )
+		{ 
+			string $buffer2[];
+			tokenize $buffer[1] "[" $buffer2;
+			if ( $buffer2[0] == "collisionGeometry" )
+				disconnectAttr ( $object + ".worldMesh" ) $connected;
+		}
+	}
+}
+
+// Add a Maya field to a Groom
+global proc pgYetiAddField( string $field, string $pgYetiMayaGroomNode )
+{
+		connectAttr -nextAvailable ( $field + ".message" ) ( $pgYetiMayaGroomNode + ".simFields" );
+		updateAE $pgYetiMayaGroomNode;
+}
+
+// Remove a Maya field from a Groom
+global proc pgYetiRemoveField( string $field, string $pgYetiMayaGroomNode )
+{
+	string $connectedPlugs[] = `connectionInfo -destinationFromSource ( $field + ".message" )`;
+	string $connected;
+	for ( $connected in $connectedPlugs )
+	{	
+		string $buffer[];
+		tokenize $connected "." $buffer;
+		if ( $buffer[0] == $pgYetiMayaGroomNode )
+		{
+			disconnectAttr ( $field + ".message" ) $connected;
+			break;
+		}
+	}
+}
+
+// Return the name of the current Groom context
+global proc string pgYetiGroomContext()
+{
+	string $pgYetiGroomContextName;
+
+	if (`optionVar -exists pgYetiGroomContextName`) {
+		$pgYetiGroomContextName = `optionVar -q pgYetiGroomContextName`;
+	 if ( `objExists $pgYetiGroomContextName` )
+	 {
+		return $pgYetiGroomContextName;
+		}
+	}
+
+	$pgYetiGroomContextName = `eval "pgYetiGroomCtxCommand"`;
+	
+	// Save the names of the UI objects just created.
+	optionVar -sv pgYetiGroomContextName $pgYetiGroomContextName;
+	
+	return $pgYetiGroomContextName;
+}
+
+// Convert a guide set connected to a Yeti node into a Groom
+global proc pgYetiConvertGuideSetToGroom( string $guide_set, string $mesh_object, float $stepSize )
+{
+    if ( `nodeType $mesh_object` == "mesh" )
+    {
+        string $newPgYetiGroom = `createNode pgYetiGroom`;
+        connectAttr ( $mesh_object + ".worldMesh[0]" ) ( $newPgYetiGroom + ".inputGeometry" );
+        connectAttr time1.outTime ( $newPgYetiGroom + ".currentTime" );
+
+        // rename the parent and node
+        string $transforms[] = `listRelatives -p $newPgYetiGroom`;
+        rename $newPgYetiGroom "tempPgYetiGroomName";
+        string $transform_name = `rename $transforms[0] pgYetiGroom`;
+        $newPgYetiGroom = `rename "tempPgYetiGroomName" ( $transform_name + "Shape" )`;
+
+        pgYetiCommand -convertFromCurves $guide_set -stepSize $stepSize $newPgYetiGroom;
+    } else {
+		error ( $mesh_object + " is not a mesh object, please check your parameters!" );
+    }
+}
+
+// Convert a groomt to a set of nurbs curves
+global proc pgYetiConvertGroomToCurves()
+{
+    string $selectedGroomNodes[] = `ls -sl -dag -noIntermediate -type pgYetiGroom`;
+    if ( size( $selectedGroomNodes ) == 0 ) error "No Grooms Selected!";
+	
+	string $groom;
+	for ( $groom in $selectedGroomNodes )
+	{
+		pgYetiCommand -convertToCurves $groom;
+	}
+}
+
+global proc pgYetiSaveCurrentStrandShapeOnSelected()
+{
+    string $selectedGroomNodes[] = `ls -sl -dag -noIntermediate -type pgYetiGroom`;
+    if ( size( $selectedGroomNodes ) == 0 ) error "No Grooms Selected!";
+
+    string $dialog = `confirmDialog -title "Save Groom(s) Current Rest Shape?" -message "This is not undoable, are you sure?"
+        -button "Yes" -button "No" -defaultButton "Yes"
+        -cancelButton "No" -dismissString "No"`;
+
+    if ( $dialog == "No" ) return;
+
+    string $object;
+    for ( $object in $selectedGroomNodes )
+    {
+        pgYetiCommand -saveCurrentStrandShape $object;
+    }
+}
+
+global proc pgYetiSaveGroomRestPoseOnSelected()
+{
+    string $selectedGroomNodes[] = `ls -sl -dag -noIntermediate -type pgYetiGroom`;
+    if ( size( $selectedGroomNodes ) == 0 ) error "No Grooms Selected!";
+
+    string $object;
+    for ( $object in $selectedGroomNodes )
+    {
+        pgYetiCommand -saveGroomRestPose $object;
+    }
+}

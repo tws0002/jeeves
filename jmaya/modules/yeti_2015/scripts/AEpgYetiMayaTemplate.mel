@@ -1,0 +1,492 @@
+//
+// AEpgYetiMayaTemplate
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+global proc AEpgYetiRemoveInputGuideSetsCMD( string $node )
+{
+	string $selectedGuides[] = `textScrollList -q -si pgYetiInputGuideSetsTextScrollListAE`;
+
+	string $guide;
+	for ( $guide in $selectedGuides )
+	{
+		pgYetiRemoveGuideSet( $guide, $node );
+	}
+	
+	updateAE( $node );
+}
+
+global proc AEpgYetiListInputGuideSetsTemplate( string $nodeAttr )
+{	
+	setUITemplate -pst attributeEditorTemplate;
+	flowLayout -columnSpacing 0;
+		button -h 20 -label "Add Guide Set(s)" pgYetiAddGuideSetsAEButton;		
+		button -h 20 -label "Remove Guide Set(s)" pgYetiRemoveGuideSetsAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+	
+	textScrollList -allowMultiSelection true pgYetiInputGuideSetsTextScrollListAE;
+
+	AEpgYetiListInputGuideSetsTemplateReplace( $nodeAttr );		
+}
+
+global proc AEpgYetiListInputGuideSetsTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $inputGuidesList[] = `listConnections -s true -sh true ( $buffer[0] + ".guideSets" )`;
+	textScrollList -e -removeAll pgYetiInputGuideSetsTextScrollListAE;
+		
+	string $geo;
+	for ( $geo in $inputGuidesList )
+	{
+		textScrollList -e -append $geo pgYetiInputGuideSetsTextScrollListAE;
+	}
+	
+	button -e -c ("pgYetiCommand -objectSelection 1 \"pgYetiAddGuideSet\" \"Select Guide Set(s)\" " + $buffer[0]) pgYetiAddGuideSetsAEButton;
+	button -e -c ("AEpgYetiRemoveInputGuideSetsCMD " + $buffer[0]) pgYetiRemoveGuideSetsAEButton;
+}
+
+
+global proc AEpgYetiRemoveInputGroomsCMD( string $node )
+{
+	string $selectedObjects[] = `textScrollList -q -si pgYetiInputGroomsTextScrollListAE`;
+
+	string $object;
+	for ( $object in $selectedObjects )
+	{
+		pgYetiRemoveGroom( $object, $node );
+	}
+}
+
+global proc AEpgYetiListInputGroomsTemplate( string $nodeAttr )
+{	
+	setUITemplate -pst attributeEditorTemplate;
+	flowLayout -columnSpacing 0;
+		button -h 20 -label "Add Groom(s)" pgYetiAddGroomsAEButton;		
+		button -h 20 -label "Remove Groom(s)" pgYetiRemoveGroomsAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+	
+	textScrollList -allowMultiSelection true pgYetiInputGroomsTextScrollListAE;
+	
+	AEpgYetiListInputGroomsTemplateReplace( $nodeAttr );
+}
+
+global proc AEpgYetiListInputGroomsTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $inputGroomsList[] = `listConnections -s true -sh true ( $buffer[0] + ".inputStrandData" )`;
+	textScrollList -e -removeAll pgYetiInputGroomsTextScrollListAE;
+			
+	string $grm;
+	for ( $grm in $inputGroomsList )
+	{
+		textScrollList -e -append $grm pgYetiInputGroomsTextScrollListAE;
+	}
+	
+	button -e -c ("pgYetiCommand -objectSelection 2 \"pgYetiAddGroom\" \"Select Groom(s)\" " + $buffer[0]) pgYetiAddGroomsAEButton;
+	button -e -c ("AEpgYetiRemoveInputGroomsCMD " + $buffer[0]) pgYetiRemoveGroomsAEButton;
+}
+
+global proc AEpgYetiRemoveInputObjectsCMD( string $node )
+{
+	string $selectedObjects[] = `textScrollList -q -si pgYetiInputObjectTextScrollListAE`;
+
+	string $object;
+	for ( $object in $selectedObjects )
+	{
+		pgYetiRemoveGeometry( $object, $node );
+	}
+}
+
+global proc AEpgYetiListInputObjectsTemplate( string $nodeAttr )
+{	
+	setUITemplate -pst attributeEditorTemplate;
+	flowLayout -columnSpacing 0;
+		button -h 20 -label "Add Object(s)" pgYetiAddObjectsAEButton;		
+		button -h 20 -label "Remove Object(s)" pgYetiRemoveObjectsAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+	
+	textScrollList -allowMultiSelection true pgYetiInputObjectTextScrollListAE;
+
+	AEpgYetiListInputObjectsTemplateReplace( $nodeAttr );		
+}
+
+global proc AEpgYetiListInputObjectsTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $inputGeometryList[] = `listConnections -s true -sh true ( $buffer[0] + ".inputGeometry" )`;
+	textScrollList -e -removeAll pgYetiInputObjectTextScrollListAE;
+		
+	string $geo;
+	for ( $geo in $inputGeometryList )
+	{
+		textScrollList -e -append $geo pgYetiInputObjectTextScrollListAE;
+	}
+	
+	button -e -c ("pgYetiCommand -objectSelection 0 \"pgYetiAddGeometry\" \"Select Object(s)\" " + $buffer[0]) pgYetiAddObjectsAEButton;
+	button -e -c ("AEpgYetiRemoveInputObjectsCMD " + $buffer[0]) pgYetiRemoveObjectsAEButton;
+}
+
+global proc AEpgYetiAddUserAttribute( int $type, string $node )
+{
+	string $dialog_result = `promptDialog
+    	-title "Add User Float"
+    	-message "Attribute Name:"
+    	-button "OK" -button "Cancel"
+    	-defaultButton "OK" -cancelButton "Cancel"
+    	-dismissString "Cancel"`;
+	
+	if ( $dialog_result == "OK" )
+	{
+		string $text = `promptDialog -query -text`;
+		if ( $text != "" )
+		{
+			if ( $type == 0 )
+			{
+				addAttr -ln ( "yetiVariableF_" + $text ) -at double -defaultValue 0.0 -softMinValue 0.0 -softMaxValue 100.0 $node;
+			} else {
+				string $parent_attribute = ( "yetiVariableV_" + $text );
+				addAttr -ln $parent_attribute -at double3 $node;
+				addAttr -ln ( $parent_attribute + "X" ) -at double -p $parent_attribute $node;
+				addAttr -ln ( $parent_attribute + "Y" ) -at double -p $parent_attribute $node;
+				addAttr -ln ( $parent_attribute + "Z" ) -at double -p $parent_attribute $node;
+			}
+		} else {
+				warning "Please provide an acceptable attribute name...";
+		}
+	
+		updateAE( $node );
+	}
+}
+
+global proc AEpgYetiListUserVariablesTemplate( string $nodeAttr )
+{	
+	setUITemplate -pst attributeEditorTemplate;
+	flowLayout -columnSpacing 0;
+		button -w 80 -h 20 -label "Add Float" pgYetiAddFloatUserVariableAEButton;		
+		button -w 80 -h 20 -label "Add Vector" pgYetiAddVectorUserVariableAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+	
+	AEpgYetiListUserVariablesTemplateReplace( $nodeAttr );
+}
+
+global proc AEpgYetiListUserVariablesTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	if ( `layout -ex pgYetiUserVariablesListAE` )
+		deleteUI -lay pgYetiUserVariablesListAE;
+		
+	columnLayout pgYetiUserVariablesListAE;
+	
+	string $possibleYetiVariables[] = `listAttr -string "yetiVariable*" $buffer[0]`;
+	string $variable;
+	for ( $variable in $possibleYetiVariables )
+	{
+		string $parent[] = `attributeQuery -n $buffer[0] -listParent $variable`;
+		if ( size($parent) == 0 )
+		{
+			string $varBuffer[];
+			$numTokens = `tokenize $variable "_" $varBuffer`;
+			if ( $numTokens > 1 )
+			{ 
+				attrControlGrp -label $varBuffer[1] -attribute ( $buffer[0] +"." +$variable);
+			}
+		}
+	}
+	
+	setParent ..;
+	
+	button -e -c ("AEpgYetiAddUserAttribute 0 " + $buffer[0]) pgYetiAddFloatUserVariableAEButton;
+	button -e -c ("AEpgYetiAddUserAttribute 1 " + $buffer[0]) pgYetiAddVectorUserVariableAEButton;
+}
+
+global proc AEpgYetiOpenGraphEditorTemplate( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+
+	button -label "Open Graph Editor" -c ("pgYetiCommand -showGraphEditor " + $buffer[0]) pgYetiOpenGraphEditorAEButton;
+}
+
+global proc AEpgYetiOpenGraphEditorTemplateReplace( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+
+	button -e -c ("pgYetiCommand -showGraphEditor " + $buffer[0]) pgYetiOpenGraphEditorAEButton;
+}
+
+global proc AEpgYetiFileBrowser( string $fileAttribute )
+{
+	string $buffer[];
+	$numTokens = `tokenize $fileAttribute "." $buffer`;
+
+    //get the directory where texure is put
+    string $path = fromNativePath(`getAttr $fileAttribute`);
+        
+    //if file exist, then use it as start directory of file browser
+    if(`filetest -f $path`) 
+    {
+        string $path = dirname( $path );
+        workspace -dir $path;
+    }
+    
+    string $caption = "";
+	if ( $buffer[1] == "groomFileName" )
+	{
+		$caption = "Load Groom";
+	} else {
+		$caption = "Load Cache";
+	}
+	
+        string $filename[] = `fileDialog2 -ds 2 -fileMode 0 -okc "Confirm" -cc "Cancel" -caption $caption`;
+	if (1 == `size($filename)`)
+	{
+		setAttr $fileAttribute -type "string" $filename[0];
+	}
+}
+
+global proc AEpgYetiFileNameNew (string $fileAttribute)
+{
+	string $buffer[];
+	$numTokens = `tokenize $fileAttribute "." $buffer`;
+
+	setUITemplate -pst attributeEditorTemplate;
+	rowLayout -nc 3 -adj 2 pgFileNameLayout;
+	if ( $buffer[1] == "groomFileName" )
+	{
+		text -label "Groom File Name";
+		} else if ( $buffer[1] == "cacheFileName" ) {
+			text -label "Input Cache File Name";
+		} else if ( $buffer[1] == "outputCacheFileName" ) {
+			text -label "Output Cache File Name";
+		}
+	textField pgFileNameField;
+        symbolButton -image "navButtonBrowse.png" pgYetiAEFileBrowser;
+	setParent ..;
+	setUITemplate -ppt;
+	
+    AEpgYetiFileNameReplace $fileAttribute;
+}
+
+global proc AEpgYetiFileNameReplace (string $fileAttribute)
+{
+	connectControl -fileName pgFileNameField $fileAttribute;
+
+    button -e -c
+                ("AEpgYetiFileBrowser \"" + $fileAttribute + "\"" ) pgYetiAEFileBrowser;
+}
+
+
+global proc AEpgYetiWriteCacheCMD( string $node )
+{
+	float $startFrame = `floatFieldGrp -q -value1 AEpgYetiWriteCacheFrameRangeField`;
+	float $endFrame = `floatFieldGrp -q -value2 AEpgYetiWriteCacheFrameRangeField`;
+	float $numberOfSamples = `floatFieldGrp -q -value3 AEpgYetiWriteCacheFrameRangeField`;
+	int $enableViewportUpdate = `checkBoxGrp -q -value1 AEpgYetiWriteCacheOptionsField`;
+	int $generatePreview = `checkBoxGrp -q -value2 AEpgYetiWriteCacheOptionsField`;
+	
+	string $fileName = `getAttr ( $node + ".outputCacheFileName" )`;
+	pgYetiCommand -writeCache $fileName -range $startFrame $endFrame -samples $numberOfSamples -updateViewport $enableViewportUpdate -generatePreview $generatePreview $node;
+}
+
+global proc AEpgYetiWriteCacheTemplate( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+
+        floatFieldGrp -numberOfFields 3 -precision 0 -label "Frame Range / Samples" -value1 1 -value2 10 -value3 3 AEpgYetiWriteCacheFrameRangeField;
+        checkBoxGrp -numberOfCheckBoxes 2 -label "Cache Options" -label1 "Update Viewport While Caching" -value1 true -label2 "Generate Preview" -value2 true AEpgYetiWriteCacheOptionsField;
+        button -label "Write Cache" -c ("AEpgYetiWriteCacheCMD " + $buffer[0]) pgYetiWriteCacheAEButton;
+}
+
+global proc AEpgYetiWriteCacheTemplateReplace( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	button -e -c ("AEpgYetiWriteCacheCMD " + $buffer[0]) pgYetiWriteCacheAEButton;
+}
+
+global proc AEpgYetiAddCorrectiveGroomCMD( string $node )
+{
+	string $selectedGroom = `optionMenu -q -v AEpgYetiCorrectiveGroomToolsGroomAEOptionMenu`;
+	pgYetiCreateCorrectiveGroom($selectedGroom, $node);
+}
+
+global proc AEpgYetiCorrectiveGroomToolsTemplate( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $grooms[] = `pgYetiCommand -listGrooms $buffer[0]`;
+	
+	setUITemplate -pst attributeEditorTemplate;
+		optionMenu -label "Current Grooms" AEpgYetiCorrectiveGroomToolsGroomAEOptionMenu;
+			if ( size($grooms ) == 0 )
+			{
+				menuItem -label "<empty>";
+			} else {
+				string $groom;
+				for ( $groom in $grooms )
+				{
+		        	menuItem -label $groom;
+		        }
+			}
+			button -label "Add Corrective Groom"
+			   -c ("AEpgYetiAddCorrectiveGroomCMD " + $buffer[0]) pgYetiAddCorrectiveGroomAEButton;
+	setUITemplate -ppt;
+}
+
+global proc AEpgYetiCorrectiveGroomToolsTemplateReplace ( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+
+	string $grooms[] = `pgYetiCommand -listGrooms $buffer[0]`;
+	
+	deleteUI AEpgYetiCorrectiveGroomToolsGroomAEOptionMenu;
+	
+	optionMenu -label "Current Grooms" AEpgYetiCorrectiveGroomToolsGroomAEOptionMenu;
+	if ( size($grooms ) == 0 )
+	{
+		menuItem -label "<empty>";
+	} else {
+		string $groom;
+		for ( $groom in $grooms )
+		{
+        	menuItem -label $groom;
+        }
+	}
+	
+	button -e -c ("AEpgYetiAddCorrectiveGroomCMD " + $buffer[0]) pgYetiAddCorrectiveGroomAEButton;
+}
+
+global proc AEpgYetiDisplayGroomCMD( string $node )
+{
+	string $selectedGroom = `optionMenu -q -v AEpgYetiDisplayGroomAEOptionMenu`;
+	if ( $selectedGroom == "None" )
+	{
+		setAttr ( $node + ".displayGroom" ) -type "string" "";
+	} else {
+			setAttr ( $node + ".displayGroom" ) -type "string" $selectedGroom;
+	}
+}
+
+global proc AEpgYetiMayaTemplate( string $nodeName )
+{
+	// Put our attributes into a scrolled layout field
+
+	editorTemplate -beginScrollLayout;
+
+	editorTemplate -beginLayout "Display" -collapse true;
+		editorTemplate -addControl "displayOutput";
+		editorTemplate -addControl "displayBoundingBoxes";
+		editorTemplate -addControl "drawWidths";
+		editorTemplate -addControl "drawFeedback";
+		editorTemplate -addControl "subdDisplay";
+		editorTemplate -addControl "featherDisplayStyle";
+		editorTemplate -addControl "viewportDensity";
+		editorTemplate -addControl "viewportLength";
+		editorTemplate -addControl "color";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Render" -collapse true;
+		editorTemplate -addControl "renderDensity";
+		editorTemplate -addControl "renderWidth";
+		editorTemplate -addControl "renderLength";
+                editorTemplate -addControl "renderThreads";
+                editorTemplate -addControl "increaseRenderBounds";
+                editorTemplate -beginLayout "Renderman" -collapse true;
+                        editorTemplate -addControl "centerSamplesAroundZero";
+                        editorTemplate -addControl "curveChunkSize";
+                editorTemplate -endLayout;
+                editorTemplate -beginLayout "Arnold" -collapse true;
+                        editorTemplate -addControl -l "Load At Initialization" "aiLoadAtInit";
+                editorTemplate -endLayout;
+        editorTemplate -endLayout;
+   editorTemplate -beginLayout "I/O" -collapse true;
+	   editorTemplate -beginLayout "Input" -collapse false;
+   			editorTemplate -label "Input Mode" -addControl "fileMode";
+			editorTemplate -callCustom "AEpgYetiFileNameNew" 
+				"AEpgYetiFileNameReplace" 
+				"groomFileName";
+				editorTemplate -callCustom "AEpgYetiFileNameNew" 
+				"AEpgYetiFileNameReplace" 
+				"cacheFileName";
+			editorTemplate -label "Ignore Cache Preview" -addControl "ignoreCachePreview";
+		editorTemplate -endLayout;
+		editorTemplate -beginLayout "Output" -collapse false;
+			editorTemplate -callCustom "AEpgYetiFileNameNew" 
+				"AEpgYetiFileNameReplace" 
+				"outputCacheFileName";
+			editorTemplate -callCustom "AEpgYetiWriteCacheTemplate" "AEpgYetiWriteCacheTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Graph" -collapse true;
+		editorTemplate -callCustom "AEpgYetiOpenGraphEditorTemplate" "AEpgYetiOpenGraphEditorTemplateReplace" "pgAttr";
+		editorTemplate -beginLayout "User Variables" -collapse true;
+			editorTemplate -callCustom "AEpgYetiListUserVariablesTemplate" "AEpgYetiListUserVariablesTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+		editorTemplate -beginLayout "Input Objects" -collapse true;
+			editorTemplate -callCustom "AEpgYetiListInputObjectsTemplate" "AEpgYetiListInputObjectsTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+		editorTemplate -beginLayout "Input Grooms" -collapse true;
+			editorTemplate -callCustom "AEpgYetiListInputGroomsTemplate" "AEpgYetiListInputGroomsTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+		editorTemplate -beginLayout "Input Guide Sets" -collapse true;
+			editorTemplate -callCustom "AEpgYetiListInputGuideSetsTemplate" "AEpgYetiListInputGuideSetsTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+		editorTemplate -addControl "ignoreNamespaces";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Corrective Grooming" -collapse true;
+                editorTemplate -addControl "correctiveGroomHandling";
+		editorTemplate -callCustom "AEpgYetiCorrectiveGroomToolsTemplate" "AEpgYetiCorrectiveGroomToolsTemplateReplace" "pgAttr";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Other" -collapse true;
+		editorTemplate -addControl "pluginVersion";
+		editorTemplate -addControl "verbosity";
+        editorTemplate -addControl "imageSearchPath";
+		editorTemplate -addControl "nodeCaching";
+		editorTemplate -addControl "overrideCacheWithInputs";
+	editorTemplate -endLayout;
+	
+	AEgeometryShapeTemplate $nodeName;	
+		
+	// Create an "Extras" section and also add controls for any
+	// attributes we have not explicitly mentioned.
+	editorTemplate -addExtraControls;
+
+	editorTemplate -suppress "inputData";
+	editorTemplate -suppress "outputData";
+	editorTemplate -suppress "displayGroom";
+	
+	editorTemplate -endScrollLayout;
+}

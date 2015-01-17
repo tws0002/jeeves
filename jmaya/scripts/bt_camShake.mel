@@ -1,0 +1,245 @@
+//	Camera Tools
+//
+//		By: Brent Tyler
+//
+//			Version 0.5
+
+global proc bt_camShake()
+{
+
+	if(`window -exists ctUI`)
+		deleteUI ctUI;
+	if(`windowPref -exists ctUI`)
+		windowPref -r ctUI;
+
+	window -title "Camera Tools" -w 300 -h 300 -s 1 -titleBar 1 -mnb 1 -mxb 1 -mb 1 ctUI;
+		tabLayout -innerMarginWidth 5 -innerMarginHeight 5;
+			columnLayout -rs 3 -columnAlign "center" "Camera Shake";
+				text -l "Adds keyframes to shake and an attribute" -width 270;
+				text -l "to change amount" -width 270;
+				separator -st "none" -h 3;
+
+			string $selected[] = `ls -sl`;
+			select -cl;
+			string $allCamShapes[] = `ls -ca`;
+			string $allCams[] = `ls -sl`;
+			string $camName[];
+			int $i=0;
+
+			for ($cam in $allCamShapes)
+			{
+				select -r $cam;
+				$camName = `pickWalk -d up`;
+				stringArrayInsertAtIndex($i, $allCams, $camName[0]);
+				select -cl;
+				$i++;
+			}
+			if ($selected[0] != "")
+			select $selected;
+
+			rowLayout -numberOfColumns 2 -columnWidth2 160 150;
+				text -l "Camera";
+				optionMenu -w 150 cameraNamePulldown;
+					for ($cam in $allCams)
+					{
+						menuItem -label $cam;
+					}
+			setParent ..;
+
+			rowLayout -numberOfColumns 3 -columnWidth3 160 60 5;
+				text -l "Shake Amount";
+				floatField -v 1 -w 50 shakeAmountField;
+				text -l "%";
+			setParent ..;
+
+			rowLayout -numberOfColumns 3 -columnWidth3 160 60 5;
+				text -l "Roll Amount";
+				floatField -v 1 -w 50 rollAmountField;
+				text -l "°";
+			setParent ..;
+
+			rowLayout -numberOfColumns 2 -columnWidth2 160 60 ;
+				text -l "Frame Spacing";
+				intField -v 5 -w 50  frameSpacingField;
+			setParent ..;
+
+			rowLayout -numberOfColumns 3 -columnWidth3 100 60 60;
+				text -l "Frame Range";
+				intField -v 1 -w 50 startFrameField;
+				intField -v 100 -w 50 endFrameField;
+			setParent ..;
+
+			separator -st "none" -h 3;
+
+			button -l "Generate Shake" -w 265 -c ct_addCamShake generateShakeBtn;
+			button -l "Update Shake" -w 265 -c ct_updateCamShake updateShakeBtn;
+		setParent ..;
+
+		int $currentWRes = `getAttr defaultResolution.width`;
+		int $currentHRes = `getAttr defaultResolution.height`;
+
+	showWindow ctUI;
+}
+
+// Add Camera Shake
+global proc ct_addCamShake()
+{
+	string $selected[] = `ls -sl`;
+	string $renderCam = `optionMenu -q -v cameraNamePulldown`;
+	select -hi $renderCam;
+	string $temp[] = `ls -sl`;
+	string $renderCamShape = $temp[1];
+
+
+	if (`attributeExists "camShake" $renderCam` != 1)
+	{
+
+
+		float $shakeAmount = `floatField -q -v shakeAmountField`;
+		float $rollAmount = `floatField -q -v rollAmountField`;
+		int $frameSpacing = `intField -q -v frameSpacingField`;
+		int $frameRange = `intField -q -v endFrameField`;
+		int $startFrame = `intField -q -v startFrameField`;
+
+		select $renderCam;
+		addAttr -ln "camShake" -k 1 -at double  $renderCam;
+		setAttr ($renderCam + ".camShake") $shakeAmount;
+		setAttr ($renderCamShape + ".shakeEnabled") 1;
+		addAttr -ln "camRoll" -k 1 -at double $renderCam;
+		setAttr ($renderCam + ".camRoll") $rollAmount;
+
+
+		for ($i=$startFrame; $i<=$frameRange; $i += $frameSpacing)
+		{
+			setKeyframe -t $i ($renderCamShape + ".horizontalShake");
+			setKeyframe -t $i ($renderCamShape + ".verticalShake");
+			setKeyframe -t $i ($renderCamShape + ".filmRollValue");
+		}
+
+
+		string $hShakeKeysOutput = `connectionInfo -sfd ($renderCam + ".horizontalShake")`;
+		string $vShakeKeysOutput = `connectionInfo -sfd ($renderCam + ".verticalShake")`;
+		string $rollKeysOutput = `connectionInfo -sfd ($renderCam + ".filmRollValue")`;
+
+		string $hShakeKeys = substituteAllString($hShakeKeysOutput, ".output", "");
+		string $vShakeKeys = substituteAllString($vShakeKeysOutput, ".output", "");
+		string $rollKeys = substituteAllString($rollKeysOutput, ".output", "");
+
+		vector $rand;
+		float $camShake;
+		float $camRoll;
+		vector $adjust;
+		float $gauss;
+
+		for ($i=$startFrame; $i <= $frameRange; $i += $frameSpacing)
+		{
+		// Horizontal
+			$rand = gauss(-0.01,0.01);
+			$camShake = `getAttr ($renderCam + ".camShake")`;
+			$adjust = $rand * $camShake;
+			$gauss = $adjust.y;
+			selectKey -k -t $i $hShakeKeys;
+			keyframe -e -iub true -o over -vc $gauss -t $i $hShakeKeys;
+		// Vertical
+			$rand = gauss(-0.01,0.01);
+			$camShake = `getAttr ($renderCam + ".camShake")`;
+			$adjust = $rand * $camShake;
+			$gauss = $adjust.y;
+			selectKey -k -t $i $vShakeKeys;
+			keyframe -e -iub true -o over -vc $gauss -t $i $vShakeKeys;
+		// Roll
+			$rand = gauss(-1,1);
+			$camRoll = `getAttr ($renderCam + ".camRoll")`;
+			$adjust = $rand * $camRoll;
+			$gauss = $adjust.y;
+			selectKey -k -t $i $rollKeys;
+			keyframe -e -iub true -o over -vc $gauss -t $i $rollKeys;
+		}
+
+	select $selected;
+	}
+	else
+	print "Shake has already been attached to camera.  Regenerate or delete shake.";
+}
+
+global proc ct_updateCamShake()
+{
+	string $selected[] = `ls -sl`;
+
+	string $renderCam = `optionMenu -q -v cameraNamePulldown`;
+	select -hi $renderCam;
+	string $temp[] = `ls -sl`;
+	string $renderCamShape = $temp[1];
+
+	float $shakeAmount = `floatField -q -v shakeAmountField`;
+	float $rollAmount = `floatField -q -v rollAmountField`;
+	int $frameSpacing = `intField -q -v frameSpacingField`;
+	int $frameRange = `intField -q -v endFrameField`;
+	int $startFrame = `intField -q -v startFrameField`;
+
+	string $hShakeKeysOutput = `connectionInfo -sfd ($renderCam + ".horizontalShake")`;
+	string $vShakeKeysOutput = `connectionInfo -sfd ($renderCam + ".verticalShake")`;
+	string $rollKeysOutput = `connectionInfo -sfd ($renderCam + ".filmRollValue")`;
+
+	string $hShakeKeys = substituteAllString($hShakeKeysOutput, ".output", "");
+	string $vShakeKeys = substituteAllString($vShakeKeysOutput, ".output", "");
+	string $rollKeys = substituteAllString($rollKeysOutput, ".output", "");
+
+
+	disconnectAttr $hShakeKeysOutput ($renderCamShape + ".horizontalShake");
+	disconnectAttr $vShakeKeysOutput ($renderCamShape + ".verticalShake");
+	disconnectAttr $rollKeysOutput ($renderCamShape + ".filmRollValue");
+
+	vector $rand;
+	float $camShake;
+	vector $adjust;
+	float $gauss;
+
+	for ($i=$startFrame; $i<=$frameRange; $i += $frameSpacing)
+	{
+		setKeyframe -t $i ($renderCamShape + ".horizontalShake");
+		setKeyframe -t $i ($renderCamShape + ".verticalShake");
+		setKeyframe -t $i ($renderCamShape + ".filmRollValue");
+	}
+
+
+	string $hShakeKeysOutput = `connectionInfo -sfd ($renderCam + ".horizontalShake")`;
+	string $vShakeKeysOutput = `connectionInfo -sfd ($renderCam + ".verticalShake")`;
+	string $rollKeysOutput = `connectionInfo -sfd ($renderCam + ".filmRollValue")`;
+
+	string $hShakeKeys = substituteAllString($hShakeKeysOutput, ".output", "");
+	string $vShakeKeys = substituteAllString($vShakeKeysOutput, ".output", "");
+	string $rollKeys = substituteAllString($rollKeysOutput, ".output", "");
+
+	vector $rand;
+	float $camShake;
+	float $camRoll;
+	vector $adjust;
+	float $gauss;
+
+	for ($i=$startFrame; $i <= $frameRange; $i += $frameSpacing)
+	{
+	// Horizontal
+		$rand = gauss(-0.01,0.01);
+		$camShake = `getAttr ($renderCam + ".camShake")`;
+		$adjust = $rand * $camShake;
+		$gauss = $adjust.y;
+		selectKey -k -t $i $hShakeKeys;
+		keyframe -e -iub true -o over -vc $gauss -t $i $hShakeKeys;
+	// Vertical
+		$rand = gauss(-0.01,0.01);
+		$camShake = `getAttr ($renderCam + ".camShake")`;
+		$adjust = $rand * $camShake;
+		$gauss = $adjust.y;
+		selectKey -k -t $i $vShakeKeys;
+		keyframe -e -iub true -o over -vc $gauss -t $i $vShakeKeys;
+	// Roll
+		$rand = gauss(-1,1);
+		$camRoll = `getAttr ($renderCam + ".camRoll")`;
+		$adjust = $rand * $camRoll;
+		$gauss = $adjust.y;
+		selectKey -k -t $i $rollKeys;
+		keyframe -e -iub true -o over -vc $gauss -t $i $rollKeys;
+	}
+}
+

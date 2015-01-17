@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Groom Pipeline &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Working With Caches" href="workingwithcaches.html"/>
+        <link rel="prev" title="Simulation and Corrective Grooming" href="simulation.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Groom Pipeline</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="groom-pipeline">
+<h1>Groom Pipeline<a class="headerlink" href="#groom-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>Once a final groom and graph has been created it’s likely that you’ll want to distribute the final look as an asset to be used in multiple shots.  Yeti provides the concept of a groom file, which bakes the groom and inputs into a single file making it easy to distribute versions of the groom.</p>
+<div class="section" id="creating-a-groom-file">
+<h2>Creating a Groom File<a class="headerlink" href="#creating-a-groom-file" title="Permalink to this headline">¶</a></h2>
+<p>To create a groom file select the <em>Export Groom From Selected Yeti Node</em> from the Yeti menu which will bring up a dialog box providing the means of entering a name of a groom.</p>
+<p>It’s generally a good idea to apply some form of versioning to the name of the groom to keep track of the changes, for example lets choose furryMonster_v01.grm.</p>
+<p>Voila!  A published groom.</p>
+</div>
+<div class="section" id="referencing-a-groom-file">
+<h2>Referencing a Groom File<a class="headerlink" href="#referencing-a-groom-file" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_03.png" class="align-center" src="_images/yetinode_03.png" />
+<p>Every Yeti node has a I/O palette that is used to assign a cache or GRM file.</p>
+<p>Once a groom has been saved it’s straight forward to reference, select the geometry you&#8217;d like to apply it to and create a new maya Yeti node ( CRM in the Yeti shelf ).</p>
+<p>Open the I/O palette in the Attribute Editor provide the full path name to the file in the Groom File Name attribute and set the file mode to Groom.  Unless imported the reference will be live, reading it off disk - if the GRM file is updated the groom will be updated in the scene.</p>
+</div>
+<div class="section" id="importing-a-groom">
+<h2>Importing A Groom<a class="headerlink" href="#importing-a-groom" title="Permalink to this headline">¶</a></h2>
+<p>In the I/O palette there is an option to Import Groom, when a node is referencing a Groom off disk it&#8217;s going to be re-reading the groom and replacing the contents of the Maya graph.  Any changes made to the Graph will be lost unless imported.  Importing a Groom also takes the steps of rebuilding the Groom nodes in Maya which gives the user the option of recreating a working scene.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Once a Groom has been imported make sure you set the I/O mode back to None, otherwise the node will still be referencing the data from disk.</p>
+</div>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="workingwithcaches.html" class="btn btn-neutral float-right" title="Working With Caches"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="simulation.html" class="btn btn-neutral" title="Simulation and Corrective Grooming"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

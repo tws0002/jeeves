@@ -1,3 +1,21 @@
+'''
+
+- as expecetd this module performs the lookup on shots. there are 4 classes, shots, tasks, versions and publishes
+
+- each of them take a specific number of arguements and appended to the given dictionary one level at a time, eg, versions,
+publishes, tasks etc.
+
+- these modules (assets / shots / renders) are somewhat limited as they require very specific arguements which is why the
+wrappers module is used more commonly as you can give them various arguements and can let the class figure out what it can
+return to you.
+
+it also contains the add / delete shot functions. these rely on xmlrpc server script running on bertie linux as i dont
+really want this stuff being performed on the local system. these are the only tasks currently ofloaded to bertie linux.
+
+if you want to make a range of shots, like it just did with audi, make a script with a range in, loop through it and call
+jeeves.core.shots.shot_add(job, each), easy peasy.
+'''
+
 print '> importing core.shots'
 import core
 import os, sys
@@ -196,6 +214,11 @@ class publisheslookup(object):
 # MODIFY SHOTS
 #***************************************************************************************************************
 def shot_add(job, rawshot):
+    '''
+    this function, builds a list of linux bash commands that get sent to the xmlrpc server for execution
+    
+    it formats the raw string input from the user and makes it conform to the standard, sh_001 or sh_openingshot etc
+    '''
     if rawshot.startswith('sh_'):
         rawshot = rawshot.split('sh_')[1]
     newshot = 'sh_' + rawshot.replace(' ', '_')
@@ -246,6 +269,9 @@ def shot_add(job, rawshot):
             return True
 
 def shot_delete(job, shot):
+    '''
+    this function, builds a list of linux bash commands that get sent to the xmlrpc server for execution
+    '''
     if os.path.isdir(os.path.join(core.jobsRoot, job, 'vfx', '3d', shot)):
         #print 'SHOT EXISTS'
         nuke = os.path.join('/mnt/bertie/Jobs', job, 'vfx', 'nuke', shot)

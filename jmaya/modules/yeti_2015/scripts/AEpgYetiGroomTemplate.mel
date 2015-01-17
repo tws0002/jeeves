@@ -1,0 +1,587 @@
+//
+// AEpgYetiGroomTemplate
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+global proc AEpgYetiRemoveFieldsCMD( string $node )
+{
+	string $selectedObjects[] = `textScrollList -q -si pgYetiFieldTextScrollListAE`;
+
+	string $object;
+	for ( $object in $selectedObjects )
+	{
+		pgYetiRemoveField( $object, $node );
+	}
+	
+	updateAE $node;
+}
+
+global proc AEpgYetiListFieldsTemplate( string $nodeAttr )
+{	
+	textScrollList -allowMultiSelection true pgYetiFieldTextScrollListAE;
+
+	button -label "Add Field(s)" pgYetiAddFieldsAEButton;		
+	button -label "Remove Field(s)" pgYetiRemoveFieldsAEButton;
+
+	AEpgYetiListFieldsTemplateReplace( $nodeAttr );		
+}
+
+global proc AEpgYetiListFieldsTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $collisionGeometryList[] = `listConnections -s true -sh true ( $buffer[0] + ".simFields" )`;
+	textScrollList -e -removeAll pgYetiFieldTextScrollListAE;
+		
+	string $geo;
+	for ( $geo in $collisionGeometryList )
+	{
+		textScrollList -e -append $geo pgYetiFieldTextScrollListAE;
+	}
+	
+	button -e -c ("pgYetiCommand -objectSelection 3 \"pgYetiAddField\" \"Select Field(s)\" " + $buffer[0]) pgYetiAddFieldsAEButton;
+	button -e -c ("AEpgYetiRemoveFieldsCMD " + $buffer[0]) pgYetiRemoveFieldsAEButton;
+}
+
+global proc AEpgYetiRemoveCollisionObjectsCMD( string $node )
+{
+	string $selectedObjects[] = `textScrollList -q -si pgYetiCollisionObjectTextScrollListAE`;
+
+	string $object;
+	for ( $object in $selectedObjects )
+	{
+		pgYetiRemoveCollisionGeometry( $object, $node );
+	}
+}
+
+global proc AEpgYetiListCollisionObjectsTemplate( string $nodeAttr )
+{	
+	textScrollList -allowMultiSelection true pgYetiCollisionObjectTextScrollListAE;
+
+	button -label "Add Object(s)" pgYetiAddCollisionObjectsAEButton;		
+	button -label "Remove Object(s)" pgYetiRemoveCollisionObjectsAEButton;
+
+	AEpgYetiListCollisionObjectsTemplateReplace( $nodeAttr );		
+}
+
+global proc AEpgYetiListCollisionObjectsTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $collisionGeometryList[] = `listConnections -s true -sh true ( $buffer[0] + ".collisionGeometry" )`;
+	textScrollList -e -removeAll pgYetiCollisionObjectTextScrollListAE;
+		
+	string $geo;
+	for ( $geo in $collisionGeometryList )
+	{
+		textScrollList -e -append $geo pgYetiCollisionObjectTextScrollListAE;
+	}
+	
+	button -e -c ("pgYetiCommand -objectSelection 0 \"pgYetiAddCollisionGeometry\" \"Select Collision Object(s)\" " + $buffer[0]) pgYetiAddCollisionObjectsAEButton;
+	button -e -c ("AEpgYetiRemoveCollisionObjectsCMD " + $buffer[0]) pgYetiRemoveCollisionObjectsAEButton;
+}
+
+global proc AEpgYetiPaintAttributeExport( string $node )
+{
+	string $selectedAttribute[] = `textScrollList -q -si pgYetiPaintAttributeTextScrollListAE`;
+
+}
+
+global proc AEpgYetiPaintAttributeCMD( string $node )
+{
+	string $combContext = `pgYetiGroomContext`;
+	select -r $node;
+	setToolTo $combContext;
+	
+	setAttr ( $node + ".brushMode" ) 1;
+
+	string $selectedAttribute[] = `textScrollList -q -si pgYetiPaintAttributeTextScrollListAE`;
+	setAttr ( $node + ".paintAttribute" ) -type "string" $selectedAttribute[0];
+}
+
+global proc AEpgYetiRemoveAttributeCMD( string $node )
+{
+	string $selectedAttribute[] = `textScrollList -q -si pgYetiPaintAttributeTextScrollListAE`;
+
+	string $yes = `confirmDialog -title "Confirm" -message ( "Are you sure you want to remove " + $selectedAttribute[0] +"?") -button "Yes" -button "No" -defaultButton "Yes" -cancelButton "No" -dismissString "No"`;
+    
+    if ( $yes == "Yes" )
+    {
+		setAttr ( $node + ".paintAttribute" ) -type "string" "length";
+		textScrollList -e -ri $selectedAttribute[0] pgYetiPaintAttributeTextScrollListAE;
+	
+		pgYetiCommand -removeAttribute $selectedAttribute[0] $node;
+	}
+	
+	updateAE( $node );
+}
+
+global proc AEpgYetiDuplicateAttributeCMD(string $node)
+{
+	string $dialog_result = `promptDialog
+    	-title "Duplicate Groom Attribute"
+    	-message "Attribute Name:"
+    	-button "OK" -button "Cancel"
+    	-defaultButton "OK" -cancelButton "Cancel"
+    	-dismissString "Cancel"`;
+	
+	if ( $dialog_result == "OK" )
+	{
+		string $text = `promptDialog -query -text`;
+		if ( $text != "" )
+		{
+			string $selectedAttribute[] = `textScrollList -q -si pgYetiPaintAttributeTextScrollListAE`;
+			if ( size($selectedAttribute)>0)
+			{
+				if ( $selectedAttribute[0] != "" )
+					pgYetiCommand -duplicateAttribute $selectedAttribute[0] $text $node;
+					textScrollList -e -append $text pgYetiPaintAttributeTextScrollListAE;
+			}
+		} else {
+		    warning "Please provide an acceptable attribute name...";
+		}
+	
+		updateAE( $node );
+	}
+}
+
+global proc AEpgYetiRenameAttributeCMD(string $node)
+{
+	string $dialog_result = `promptDialog
+    	-title "Add Groom Attribute"
+    	-message "Attribute Name:"
+    	-button "OK" -button "Cancel"
+    	-defaultButton "OK" -cancelButton "Cancel"
+    	-dismissString "Cancel"`;
+	
+	if ( $dialog_result == "OK" )
+	{
+		string $text = `promptDialog -query -text`;
+		if ( $text != "" )
+		{
+			string $selectedAttribute[] = `textScrollList -q -si pgYetiPaintAttributeTextScrollListAE`;
+			if ( size($selectedAttribute)>0)
+			{
+				if ( $selectedAttribute[0] != "" )
+					pgYetiCommand -renameAttribute $selectedAttribute[0] $text $node;
+			}
+		} else {
+				warning "Please provide an acceptable attribute name...";
+		}
+	
+		updateAE( $node );
+	}
+}
+
+global proc AEpgYetiCreateNewAttribute(string $node)
+{
+	string $dialog_result = `promptDialog
+    	-title "Add Groom Attribute"
+    	-message "Attribute Name:"
+    	-button "OK" -button "Cancel"
+    	-defaultButton "OK" -cancelButton "Cancel"
+    	-dismissString "Cancel"`;
+	
+	if ( $dialog_result == "OK" )
+	{
+		string $text = `promptDialog -query -text`;
+		if ( $text != "" )
+		{
+			pgYetiCommand -addAttribute $text $node;
+			textScrollList -e -append $text pgYetiPaintAttributeTextScrollListAE;
+		} else {
+				warning "Please provide an acceptable attribute name...";
+		}
+	
+		updateAE( $node );
+	}
+}
+
+global proc AEpgYetiPaintAttributeTemplate( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+		
+	text -label "Attribute List" -align "left" pgYetiPaintAttributeAELabel;
+	textScrollList -h 125 -allowMultiSelection false pgYetiPaintAttributeTextScrollListAE;
+	
+	setUITemplate -pst attributeEditorTemplate;
+	flowLayout -columnSpacing 0;
+		button -w 80 -h 20 -label "Add" pgYetiAddAttributeAEButton;
+		button -w 80 -h 20 -label "Duplicate" pgYetiDuplicateAttributeAEButton;
+		button -w 80 -h 20 -label "Rename" pgYetiRenameAttributeAEButton;
+		button -w 80 -h 20 -label "Remove" pgYetiRemoveAttributeAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+	
+	AEpgYetiPaintAttributeTemplateReplace($nodeAttr);
+}
+
+global proc AEpgYetiPaintAttributeTemplateReplace( string $nodeAttr )
+{	
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	string $paintAttributeList[] = `pgYetiCommand -listAttributes $buffer[0]`;
+	
+	textScrollList -e -removeAll pgYetiPaintAttributeTextScrollListAE;
+		
+	textScrollList -e -dcc ("AEpgYetiPaintAttributeCMD " + $buffer[0]) pgYetiPaintAttributeTextScrollListAE;
+	textScrollList -e -append "length" pgYetiPaintAttributeTextScrollListAE;
+	
+	string $attr;
+	for ( $attr in $paintAttributeList )
+	{
+		textScrollList -e -append $attr pgYetiPaintAttributeTextScrollListAE;
+	}
+	button -e -c ("AEpgYetiCreateNewAttribute " + $buffer[0]) pgYetiAddAttributeAEButton;
+	button -e -c ("AEpgYetiRemoveAttributeCMD " + $buffer[0]) pgYetiRemoveAttributeAEButton;
+	button -e -c ("AEpgYetiDuplicateAttributeCMD " + $buffer[0]) pgYetiDuplicateAttributeAEButton;
+	button -e -c ("AEpgYetiRenameAttributeCMD " + $buffer[0]) pgYetiRenameAttributeAEButton;
+}
+
+global proc AEpgYetiGroomToolsCombCMD( string $node, float $brushMode, float $option )
+{
+	string $combContext = `pgYetiGroomContext`;
+	select -r $node;
+	setToolTo $combContext;
+	
+	setAttr ( $node + ".brushMode" ) $brushMode;
+	
+	if ( ($brushMode == 0) || ($brushMode == 3) )
+	{
+		setAttr ($node+".sculptMode") $option;
+	} else
+	if ( $brushMode == 1 )
+	{
+		if ( $option == 0 )
+		{
+			setAttr ($node+".paintAttribute") -type "string" "length";
+		} 
+		else if ( $option == 1 )
+		{
+			setAttr ($node+".paintAttribute") -type "string" "density";
+		} 
+		else if ( $option == 2 )
+		{
+			setAttr ($node+".paintAttribute") -type "string" "width";
+		}
+	} 
+	else
+	if ( $brushMode == 2 )
+	{
+		setAttr ($node+".populateMode") $option;
+	} 
+}
+
+global proc AEpgYetiGroomToolsPaintCMD( string $node, string $attribute )
+{
+	string $combContext = `pgYetiGroomContext`;
+	select -r $node;
+	setToolTo $combContext;
+	
+	setAttr ( $node + ".brushMode" ) 1;
+	setAttr ($node+".paintAttribute") -type "string" $attribute;
+}
+
+global proc AEpgYetiGroomToolsTemplate( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	setUITemplate -pst attributeEditorTemplate;
+	gridLayout -cwh 50 50 -nc 8 -nr 2 -cr true;
+		symbolButton -i "pgYeti_add.png" -bgc 0.333 0.5 0.333 -ann "Add"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 2 0") pgYetiGroomAddToolButton;
+	   	symbolButton -i "pgYeti_delete.png" -bgc 0.333 0.5 0.333 -ann "Delete"
+	   			-c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 2 1") pgYetiGroomDeleteToolButton;
+		symbolButton -i "pgYeti_scatter.png" -bgc 0.333 0.5 0.333 -ann "Scatter"
+		   		-c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 2 2") pgYetiGroomScatterToolButton;
+		setParent ..;
+	gridLayout -cwh 50 50 -nc 8 -nr 2 -cr true;
+		symbolButton -i "pgYeti_comb.png" -bgc 0.243 0.518 0.518 -ann "Comb"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 0") pgYetiGroomCombToolButton;
+		symbolButton -i "pgYeti_direction.png" -bgc 0.243 0.518 0.518 -ann "Direction"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 1") pgYetiGroomDirectionToolButton;
+		symbolButton -i "pgYeti_straighten.png" -bgc 0.243 0.518 0.518 -ann "Straighten"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 2") pgYetiGroomStraightenToolButton;
+		symbolButton -i "pgYeti_smooth.png" -bgc 0.243 0.518 0.518 -ann "Smooth"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 3") pgYetiGroomSmoothToolButton;
+		symbolButton -i "pgYeti_lift.png" -bgc 0.243 0.518 0.518 -ann "Lift"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 4") pgYetiGroomLiftToolButton;
+	   	symbolButton -i "pgYeti_move.png" -bgc 0.243 0.518 0.518 -ann "Move"
+	   		   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 5") pgYetiGroomMoveToolButton;
+	   	symbolButton -i "pgYeti_scale.png" -bgc 0.243 0.518 0.518 -ann "Scale"
+	   		   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 6") pgYetiGroomScaleToolButton;
+		symbolButton -i "pgYeti_clumping.png" -bgc 0.243 0.518 0.518 -ann "Clump"
+		   	   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 7") pgYetiGroomClumpToolButton;
+	   	symbolButton -i "pgYeti_twist.png" -bgc 0.243 0.518 0.518 -ann "Twist"
+	   		   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 8") pgYetiGroomTwistToolButton;
+		setParent ..;
+	gridLayout -cwh 50 50 -nc 8 -nr 2 -cr true;
+		symbolButton -i "pgYeti_sculpt.png" -bgc 0.518 0.472 0.443 -ann "Sculpt"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 3 0") pgYetiGroomSculptToolButton;
+		symbolButton -i "pgYeti_trim.png" -bgc 0.518 0.472 0.443 -ann "Trim"
+			   -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 3 1") pgYetiGroomTrimToolButton;
+		setParent ..;
+	gridLayout -cwh 50 50 -nc 8 -nr 2 -cr true;
+		symbolButton -i "pgYeti_fill.png" -ann "Fill"
+			   -c ("pgYetiCommand -fillGroom " + $buffer[0]) pgYetiFillAEButton;
+		symbolButton -i "pgYeti_deselect.png" -ann "Deselect All"
+			   -c ("pgYetiCommand -deselectAll " + $buffer[0]) pgYetiDeselectAEButton;
+                symbolButton -i "pgYeti_convert.png" -ann "Invert Selection"
+                           -c ("pgYetiCommand -invertSelected " + $buffer[0]) pgYetiInvertSelectedAEButton;
+                symbolButton -i "pgYeti_mirror.png" -ann "Mirror ( Selected ) Strands"
+                           -c ("pgYetiCommand -mirror " + $buffer[0]) pgYetiMirroeAEButton;
+                setParent ..;
+	gridLayout -cwh 50 50 -nc 8 -nr 2 -cr true;
+		symbolButton -i "pgYeti_undo.png" -ann "Undo"
+			   -c ("pgYetiCommand -undoGroom " + $buffer[0]) pgYetiUndoAEButton;
+		symbolButton -i "pgYeti_redo.png" -ann "Redo"
+			   -c ("pgYetiCommand -redoGroom " + $buffer[0]) pgYetiRedoAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+}
+
+global proc AEpgYetiGroomToolsTemplateReplace ( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 2 0") pgYetiGroomAddToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 2 1") pgYetiGroomDeleteToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 2 2") pgYetiGroomScatterToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 0") pgYetiGroomCombToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 1") pgYetiGroomDirectionToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 2") pgYetiGroomStraightenToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 3") pgYetiGroomSmoothToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 4") pgYetiGroomLiftToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 5") pgYetiGroomMoveToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 6") pgYetiGroomScaleToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 7") pgYetiGroomClumpToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 0 8") pgYetiGroomTwistToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 3 0") pgYetiGroomSculptToolButton;
+	button -e -c ("AEpgYetiGroomToolsCombCMD " + $buffer[0] + " 3 1") pgYetiGroomTrimToolButton;
+	button -e -c ("pgYetiCommand -fillGroom " + $buffer[0]) pgYetiFillAEButton;
+	button -e -c ("pgYetiCommand -undoGroom " + $buffer[0]) pgYetiUndoAEButton;
+	button -e -c ("pgYetiCommand -redoGroom " + $buffer[0]) pgYetiRedoAEButton;
+	button -e -c ("pgYetiCommand -deselectAll " + $buffer[0]) pgYetiDeselectAEButton;
+	button -e -c ("pgYetiCommand -invertSelected " + $buffer[0]) pgYetiInvertSelectedAEButton;
+	button -e -c ("pgYetiCommand -mirror " + $buffer[0]) pgYetiMirroeAEButton;
+}
+
+global proc AEpgYetiGroomImportTextureForAttribute( string $node )
+{
+	string $file[] = `fileDialog2 -dialogStyle 2 -fm 1`;
+	if ( size($file) > 0 )
+	{
+		float $min = `floatFieldGrp -q -value1 pgYetiExportValueRangeAEField`;
+		float $max = `floatFieldGrp -q -value2 pgYetiExportValueRangeAEField`;
+		string $attribute = `getAttr ( $node + ".paintAttribute" )`;
+
+		float $umin = `floatFieldGrp -q -value1 pgYetiExportURangeAEField`;
+		float $umax = `floatFieldGrp -q -value2 pgYetiExportURangeAEField`;
+		float $vmin = `floatFieldGrp -q -value1 pgYetiExportVRangeAEField`;
+		float $vmax = `floatFieldGrp -q -value2 pgYetiExportVRangeAEField`;
+		
+		pgYetiCommand -importTexture $file[0] -uvrange $umin $umax $vmin $vmax -attribute $attribute $min $max $node;
+	}
+}
+
+global proc AEpgYetiGroomExportAttributeToTexture( string $node )
+{
+	string $file[] = `fileDialog2 -fileFilter "*.tif" -dialogStyle 2 -fm 0`;
+	if ( size($file) > 0 )
+	{
+		float $min = `floatFieldGrp -q -value1 pgYetiExportValueRangeAEField`;
+		float $max = `floatFieldGrp -q -value2 pgYetiExportValueRangeAEField`;
+		string $attribute = `getAttr ( $node + ".paintAttribute" )`;
+
+		float $umin = `floatFieldGrp -q -value1 pgYetiExportURangeAEField`;
+		float $umax = `floatFieldGrp -q -value2 pgYetiExportURangeAEField`;
+		float $vmin = `floatFieldGrp -q -value1 pgYetiExportVRangeAEField`;
+		float $vmax = `floatFieldGrp -q -value2 pgYetiExportVRangeAEField`;
+	
+		float $xres = `intFieldGrp -q -value1 pgYetiExportTextureResolutionAEField`;
+		float $yres = `intFieldGrp -q -value2 pgYetiExportTextureResolutionAEField`;
+	
+		pgYetiCommand -exportTexture $file[0] "tif" $xres $yres -uvrange $umin $umax $vmin $vmax -attribute $attribute $min $max $node;
+	}
+}
+
+global proc AEpgYetiGroomExportVectorToTexture( string $node )
+{
+	string $file[] = `fileDialog2 -fileFilter "*.tif" -dialogStyle 2 -fm 0`;
+	if ( size($file) > 0 )
+	{
+		float $umin = `floatFieldGrp -q -value1 pgYetiExportURangeAEField`;
+		float $umax = `floatFieldGrp -q -value2 pgYetiExportURangeAEField`;
+		float $vmin = `floatFieldGrp -q -value1 pgYetiExportVRangeAEField`;
+		float $vmax = `floatFieldGrp -q -value2 pgYetiExportVRangeAEField`;
+	
+		float $xres = `intFieldGrp -q -value1 pgYetiExportTextureResolutionAEField`;
+		float $yres = `intFieldGrp -q -value2 pgYetiExportTextureResolutionAEField`;
+	
+		pgYetiCommand -exportTexture $file[0] "tif" $xres $yres -uvrange $umin $umax $vmin $vmax -attribute "strand_vector" 0 1 $node;
+	}
+}
+
+global proc AEpgYetiGroomPaintUtilitiesTemplate( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	text -label "Export Attribute To Texture";
+	intFieldGrp -numberOfFields 2 -label "Resolution" -value1 1024 -value2 1024 pgYetiExportTextureResolutionAEField;
+	floatFieldGrp -numberOfFields 2 -label "Value Range" -value1 0.0 -value2 1.0 pgYetiExportValueRangeAEField;
+	floatFieldGrp -numberOfFields 2 -label "U Range" -value1 0.0 -value2 1.0 pgYetiExportURangeAEField;
+	floatFieldGrp -numberOfFields 2 -label "V Range" -value1 0.0 -value2 1.0 pgYetiExportVRangeAEField;
+	setUITemplate -pst attributeEditorTemplate;
+	flowLayout -columnSpacing 0;
+		button -w 80 -h 20 -label "Export" -c ("AEpgYetiGroomExportAttributeToTexture " + $buffer[0]) pgYetiExportTextureAEButton;
+		button -w 80 -h 20 -label "Import" -c ("AEpgYetiGroomImportTextureForAttribute " + $buffer[0]) pgYetiImportTextureAEButton;
+		button -w 110 -h 20 -label "Export Direction" -c ("AEpgYetiGroomExportVectorToTexture " + $buffer[0]) pgYetiExportDirectionAEButton;
+		setParent ..;
+	setUITemplate -ppt;
+}
+
+global proc AEpgYetiGroomPaintUtilitiesTemplateReplace ( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	button -e -c ("AEpgYetiGroomExportAttributeToTexture " + $buffer[0]) pgYetiExportTextureAEButton;
+	button -e -c ("AEpgYetiGroomImportTextureForAttribute " + $buffer[0]) pgYetiImportTextureAEButton;
+	button -e -c ("AEpgYetiGroomExportVectorToTexture " + $buffer[0]) pgYetiExportDirectionAEButton;
+}
+
+global proc AEpgYetiGroomResampleTemplate( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+
+     button -label "Resample" -c ("pgYetiCommand -resample " + $buffer[0]) AEpgYetiGroomResampleAEButton;
+}
+
+global proc AEpgYetiGroomResampleTemplateReplace( string $nodeAttr )
+{
+	string $buffer[];
+	$numTokens = `tokenize $nodeAttr "." $buffer`;
+	
+	button -e -c ("pgYetiCommand -resample " + $buffer[0]) AEpgYetiGroomResampleAEButton;
+}
+
+global proc AEpgYetiGroomTemplate( string $nodeName )
+{
+	// Put our attributes into a scrolled layout field
+
+	editorTemplate -beginScrollLayout;
+	editorTemplate -beginLayout "Parameters" -collapse true;
+		editorTemplate -ann "how far each strand influences the groom" -addControl "radiusOfInfluence";
+		editorTemplate -ann "control how random parting is" -addControl -l "Parting Randomness" "partRandomness";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Strands" -collapse true;
+		editorTemplate -ann "the initial length of each new strand" -addControl "initialStrandLength";
+		editorTemplate -ann "the length of each strands segments" -addControl "strandSegmentLength";
+		editorTemplate -callCustom "AEpgYetiGroomResampleTemplate" "AEpgYetiGroomResampleTemplateReplace" "pgAttr";
+		editorTemplate -ann "make sure new strands match the length, density and shape of surrounding strands" -addControl "conformNewStrands";
+		editorTemplate -ann "create new strands at mesh vertices" -addControl -l "Populate At Mesh Points in Radius" "populateAtMeshPoints";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Tools" -collapse false;
+		editorTemplate -callCustom "AEpgYetiGroomToolsTemplate" "AEpgYetiGroomToolsTemplateReplace" "myAttr";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Brush" -collapse false;
+		editorTemplate -ann "brush radius" -addControl "brushRadius";
+		editorTemplate -ann "brush strength" -addControl "brushStrength";
+		editorTemplate -ann "brush softness, 0 = hard and 1 = soft" -addControl "brushSoftness";
+		editorTemplate -ann "the strength of the brush along the length of the strand, 0 = whole strand and 10 = tip, reversed when reverse comb curvature is on" -addControl "brushFalloffPower";
+		editorTemplate -ann "the density for new strand when using the Scatter brush" -addControl "scatterDensity";
+		editorTemplate -ann "only affect strands facing in the same direction as the surface being painted on" -addControl "obeySurfaceNormal";
+                editorTemplate -ann "mirror the brush stroke" -addControl "mirror";
+                editorTemplate -ann "reverse the curvature of the comb brush, the fall off will affect the base more vs. the tip" -addControl "reverseCombCurvature";
+		editorTemplate -ann "the plane in which the brush stroke is mirrored" -addControl "mirrorPlane";
+                editorTemplate -ann "modify just the initially selected strands or continuously through the stroke" -addControl "affectStrands";
+                editorTemplate -ann "how often the Yeti graph is evaluated when grooming, always = always and on stroke = at the completion of each brush stroke" -addControl "updateFrequency";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Attribute Paint" -collapse false;
+		editorTemplate -ann "display the current paint attribute" -label "Display" -addControl "displayPaintValue";
+                editorTemplate -ann "color paint attribute output as a heat map" -label "Display As Heat Map" -addControl "displayPaintValueAsHeatMap";
+                editorTemplate -ann "size of the paint attribute display" -label "Display Size" -addControl "paintValueDisplaySize";
+		editorTemplate -ann "controls what value is displayed as white ( 1.0 ) in the viewport" -label "Clipping Level" -addControl "maxVisiblePaintValue";
+		editorTemplate -addSeparator;
+		editorTemplate -ann "painting brush type" -label "Mode" -addControl "paintMode";
+		editorTemplate -ann "paint value" -label "Value" -addControl "paintValue";
+		editorTemplate -ann "Randomize Brush Seed Value" -label "Randomize Seed" -addControl "randomSeed";
+		editorTemplate -callCustom "AEpgYetiPaintAttributeTemplate" "AEpgYetiPaintAttributeTemplateReplace" "pgAttr";
+		editorTemplate -beginLayout "Texture Utilities" -collapse true;
+			editorTemplate -callCustom "AEpgYetiGroomPaintUtilitiesTemplate" "AEpgYetiGroomPaintUtilitiesTemplateReplace" "myAttr";
+		editorTemplate -endLayout;
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Display" -collapse false;
+			editorTemplate -ann "turn the strand display on/off" -label "Display Strands" -addControl "displayStrands";
+			editorTemplate -ann "turn the strand segment display on/off" -label "Display Strand Segments" -addControl "displayStrandSegments";
+			editorTemplate -ann "only draw selected strands ( when there's a selection )" -label "Isolate Selected Strands" -addControl "isolateSelectedStrands";
+			editorTemplate -ann "draw every tenth strand with a circle showing the radius of influence" -addControl "displayRadiusOfInfluence";
+			editorTemplate -ann "display the length of each strand when hovering over it" -addControl "displayStrandLength";
+			editorTemplate -ann "draw the path of the brush stroke while painting" -addControl "drawStroke";
+			editorTemplate -ann "display color for the groom" -addControl "color";
+	editorTemplate -endLayout;
+	editorTemplate -beginLayout "Simulation" -collapse true;
+			editorTemplate -addControl -l "Simulation" "doSimulation";
+		editorTemplate -beginLayout "World" -collapse true;
+			editorTemplate -addControl -l "Start Frame" "simStartFrame";
+			editorTemplate -addControl -l "Frames Per Second" "simFPS";
+			editorTemplate -addControl -l "Iterations" "simIterations";
+            editorTemplate -addControl -l "Gravity" "simGravity";
+            editorTemplate -addControl -l "Gravity Direction" "simGravityVector";
+            editorTemplate -endLayout;
+		editorTemplate -beginLayout "Dynamic Properties" -collapse true;
+			editorTemplate -addControl -l "Damping" "simDamping";
+			editorTemplate -addControl -l "Mass" "simMass";
+            editorTemplate -addControl -l "Stiffness" "simStiffness";
+            editorTemplate -addControl -l "Rest Influence" "simRestInfluence";
+            editorTemplate -addControl -l "Rest Influence Power" "simRestInfluencePower";
+            editorTemplate -endLayout;
+		editorTemplate -beginLayout "Collision Objects" -collapse true;
+			editorTemplate -addControl -l "Collisions" "simDoCollision";
+			editorTemplate -callCustom "AEpgYetiListCollisionObjectsTemplate" "AEpgYetiListCollisionObjectsTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+		editorTemplate -beginLayout "Fields" -collapse true;
+			editorTemplate -callCustom "AEpgYetiListFieldsTemplate" "AEpgYetiListFieldsTemplateReplace" "pgAttr";
+		editorTemplate -endLayout;
+	editorTemplate -endLayout;
+
+	editorTemplate -beginLayout "Corrective Groom" -collapse true;
+			editorTemplate -addControl "correctiveGroom";
+			editorTemplate -addControl "correctiveGroomTarget";
+                        editorTemplate -addControl "correctiveGroomWeight";
+                        editorTemplate -addControl "correctiveGroomAttributes";
+        editorTemplate -endLayout;
+	
+	AEshapeTemplate $nodeName;	
+		
+	// Create an "Extras" section and also add controls for any
+	// attributes we have not explicitly mentioned.
+	editorTemplate -addExtraControls;
+
+	editorTemplate -endScrollLayout;
+}

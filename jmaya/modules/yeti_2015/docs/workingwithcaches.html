@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working With Caches &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Reference Guide" href="referenceguide.html"/>
+        <link rel="prev" title="Groom Pipeline" href="groompipeline.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Working With Caches</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="working-with-caches">
+<span id="index-0"></span><h1>Working With Caches<a class="headerlink" href="#working-with-caches" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Caching is a means of storing snapshots of data over time so they be referenced elsewhere in a pipeline, usually to optimize workflows and processes.  Traditionally caching a fur system stores the full dataset that represents all of the fibres that will be rendered - when dealing with large grooms of millions of hairs with many attributes this can lead to extremely large files.</p>
+<p>Due to it&#8217;s procedural nature Yeti caches differ in that all that is stored are the inputs needed to regenerate the groom either at render time or for display in the viewport - this leads to much smaller cache files and faster write times as well as allowing for parameters to be changed without having to recache.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Historically the cache format that Yeti uses also stores meshes, particles etc. - if just an import node is used in a graph these primitives may be cached individually and rendered.</p>
+</div>
+</div>
+<div class="section" id="cache-file-format">
+<h2>Cache File Format<a class="headerlink" href="#cache-file-format" title="Permalink to this headline">¶</a></h2>
+<p>Yeti&#8217;s cache file format is built on top <a class="reference external" href="http://www.hdfgroup.org/HDF5/">HDF5</a> format which is extremely extensible - by default attributes and data sets are written using the GZip compression scheme to improve disk space usage.</p>
+<p>If one was interested in inspecting the data stored within a Yeti cache the <a class="reference external" href="http://www.hdfgroup.org/hdf-java-html/hdfview/index.html#download_hdfview">HDFView</a> application can open and view all of the relevant data.</p>
+<p>Every cache file represents a Yeti graph with global variables, input objects, grooms and guides along with all of the attributes both dynamic and static.</p>
+</div>
+<div class="section" id="cache-previews">
+<h2>Cache Previews<a class="headerlink" href="#cache-previews" title="Permalink to this headline">¶</a></h2>
+<p>By default Yeti will use the current viewport evaluation as a preview to store in the cache, this is used to provide faster feedback to artists in the viewport when referencing the cache for lighting purposes.  This feature can be toggled on/off if needed in the I/O options of the Yeti node.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The current density value for the graph is also stored with the preview.  If, when viewing the cache, the density is lower than the stored value the fur will be culled; if higher the density value stored within the cache will be drawn.</p>
+</div>
+</div>
+<div class="section" id="caching-a-yeti-graph">
+<h2>Caching a Yeti Graph<a class="headerlink" href="#caching-a-yeti-graph" title="Permalink to this headline">¶</a></h2>
+<p>This can be done with the pgYetiCommand and a few simple flags or using the Write Cache button in the I/O palette.</p>
+<p>If you would like to cache a graph using the UI select the Yeti node you would like to cache and open the I/O palette in the Attribute Editor.  The <strong>Write Cache</strong> button can be used to start the caching process which will use the Frame Range and Samples specified in the UI.</p>
+<img alt="_images/yetinode_03.png" class="align-center" src="_images/yetinode_03.png" />
+<p>To cache a graph via command line make sure that the Yeti Node is selected ( alternatively you can provide the node shape name on the command line ) and use:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-writeCache</span> <span class="pre">filename</span> <span class="pre">-range</span> <span class="pre">startframe</span> <span class="pre">endframe</span></code></p>
+<p>the command will use standard C syntax for resolving the frame number - eg. %04d for 4 padding, so for example, I would cache 20 frames of my furry monster using:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-writeCache</span> <span class="pre">“/myCacheDir/furryMonster.%04d.fur”</span> <span class="pre">-range</span> <span class="pre">1</span> <span class="pre">20</span></code></p>
+<p>once executed you will see your scene step through the time line and cache the results to individual files.</p>
+</div>
+<div class="section" id="viewport-update">
+<h2>Viewport Update<a class="headerlink" href="#viewport-update" title="Permalink to this headline">¶</a></h2>
+<p>By default Yeti will update the current 3d viewport while caching so you can preview the results as it goes - as displaying the fur as it caches means the graph will need to evaluate you may want to turn this off in some cases to speed up the process.</p>
+<p>If caching via the UI there is a toggle used to control this behavior.</p>
+<p>On the command line the <code class="docutils literal"><span class="pre">-updateViewport</span> <span class="pre">true/false</span></code> parameter can be used.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The command line export will not obey the UI toggle so you will have to explicitly control this from the command line.</p>
+</div>
+</div>
+<div class="section" id="sample-count">
+<h2>Sample Count<a class="headerlink" href="#sample-count" title="Permalink to this headline">¶</a></h2>
+<p>By default Yeti will cache out 3 samples for every frame - for frame 1 this would be 0.5, 1.0 and 1.5 and for frame 2 this would be 1.5, 2.0 and 2.5 etc.  The cache may be referenced at any time but will be clamped outside of the time samples, if a time is requested that doesn&#8217;t lie directly on a sample Yeti will interpolate accordingly.</p>
+<p>In some instances where a character may have extremely snappy motion the scene will need to be sampled at a higher rate to capture the change in shape more accurately - this is possible with the <code class="docutils literal"><span class="pre">-samples</span> <span class="pre">nsamples</span></code> parameter.  So if you wanted to cache the above example with 5 vs 3 you would do:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-writeCache</span> <span class="pre">“/myCacheDir/furryMonster.%04d.fur”</span> <span class="pre">-range</span> <span class="pre">1</span> <span class="pre">20</span> <span class="pre">-samples</span> <span class="pre">5</span></code></p>
+<p>and now frame 1 will be stored as 0.5, 0.75, 1.0, 1.25, 1.5 as you would expect.</p>
+</div>
+<div class="section" id="displaying-a-yeti-cache">
+<h2>Displaying a Yeti Cache<a class="headerlink" href="#displaying-a-yeti-cache" title="Permalink to this headline">¶</a></h2>
+<p>As with the groom it’s straight forward to reference and render a cache file.  Create a new Yeti node ( CR in the Yeti shelf ), unlike the groom where it requires the input geometry the cache will have stored that information thus it lives on it’s own in the scene.  In the Cache Filename parameter specify the full path to the cache files, in this example it would be:</p>
+<p><code class="docutils literal"><span class="pre">/myCacheDir/furryMonster.%04d.fur</span></code></p>
+<p>as per the example above.</p>
+<p>Set the file mode to Cache the node should evaluate and display the result in the scene.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When referencing a cache Yeti will NOT require a license.  If at some point a corrective groom, new guide set or input geometry is added to the Yeti node this will cause a license to be checked out - prior to reading a cache make sure the node isn&#8217;t being fed new data to avoid unexpected licenses being checked out.</p>
+</div>
+</div>
+<div class="section" id="rendering-a-yeti-cache">
+<h2>Rendering a Yeti Cache<a class="headerlink" href="#rendering-a-yeti-cache" title="Permalink to this headline">¶</a></h2>
+<p>Rendering when referencing a cache is no different than not - in fact it&#8217;s the same thing, but when not referencing a cache an extra step of storing a temporary cache is taken - both means look identical to the renderers.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="referenceguide.html" class="btn btn-neutral float-right" title="Reference Guide"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="groompipeline.html" class="btn btn-neutral" title="Groom Pipeline"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

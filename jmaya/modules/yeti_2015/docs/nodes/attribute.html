@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Attribute &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="../index.html"/>
+        <link rel="up" title="Node Reference" href="../noderef.html"/>
+        <link rel="next" title="Blend" href="blend.html"/>
+        <link rel="prev" title="Scatter" href="scatter.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home">
+				<img class="logo" src="../_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../referenceguide.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Attribute</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <img alt="../_images/pgYeti_attribute.png" class="align-left" id="index-0" src="../_images/pgYeti_attribute.png" />
+<div class="section" id="attribute">
+<h1>Attribute<a class="headerlink" href="#attribute" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Attribute node is used to create or promote attributes in the flow.  New attributes can be used to control parameters via expressions or to pass information to the renderer via mapping.</p>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0 Data Flow</td>
+<td>Particles, Fibres and Meshes</td>
+</tr>
+<tr class="row-odd"><td>1 Strands</td>
+<td>Groom/Guide Curves which may have an attribute painted to be sampled</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h2>Attribute<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Attribute</td>
+<td>The name of the attribute, if it already exists then it will be modified - otherwise it will be created.</td>
+</tr>
+<tr class="row-odd"><td>Default</td>
+<td>the default value for the attribute.</td>
+</tr>
+<tr class="row-even"><td>Attribute Type</td>
+<td>Type either create a float or vector attribute.</td>
+</tr>
+<tr class="row-odd"><td>Detail Type</td>
+<td>Controls if the Attribute is created per fibre or per vertex.</td>
+</tr>
+<tr class="row-even"><td>Sample Groom</td>
+<td>if Input 1 is connected the specified Groom Attribute will be sampled to create the new attribute.</td>
+</tr>
+<tr class="row-odd"><td>Groom Attribute</td>
+<td>this is the attribute stored in Input 1 that will be sampled if Sample Groom is toggled on.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mapping">
+<h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h2>
+<p>Attribute mapping is a way of telling Yeti that the desired attribute needs to be passed to the rendering engine, possibly to be used for shading or to control renderer specific parameters.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Map As Renderable Attribute</td>
+<td>This will map a named attribute to a renderable attribute.  If on Yeti will output either the new attribute or an attribute specified below to the renderer.</td>
+</tr>
+<tr class="row-odd"><td>Attribute</td>
+<td>The name of the attribute to map.</td>
+</tr>
+<tr class="row-even"><td>Mapping</td>
+<td>The name of the attribute as it should be passed to the renderer, if left blank it will use it&#8217;s current name.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="geometric">
+<h2>Geometric<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h2>
+<p>Helper parameters to create geometry based attributes that rely on the topology of the incoming data.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Add Root Position ( surf_P )</td>
+<td>Will create a Yeti attribute called <code class="docutils literal"><span class="pre">root</span></code> which will be passed to the render engine as <code class="docutils literal"><span class="pre">surf_P</span></code>.  This is a vector that represents the base of the fibre.</td>
+</tr>
+<tr class="row-odd"><td>Add Tangent ( tangent )</td>
+<td>Will create a Yeti attribute called tangent, this represents the tangent of the fibre at the vertex being evaluated.</td>
+</tr>
+<tr class="row-even"><td>Add Face Index ( faceindex )</td>
+<td>Will create a Yeti attribute called faceindex, this represents the index of the face the fibre/particle was create</td>
+</tr>
+<tr class="row-odd"><td>RiCurve Basis ( renderman )</td>
+<td>Can be used to control what basis function is used when exporting the curves to a Renderman compliant renderer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><strong>Maya File:</strong> <code class="docutils literal"><span class="pre">examples/yeti_attributeExample.ma</span></code></p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="blend.html" class="btn btn-neutral float-right" title="Blend"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="scatter.html" class="btn btn-neutral" title="Scatter"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

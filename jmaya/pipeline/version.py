@@ -1,3 +1,6 @@
+'''
+module is called from the jeeves_ui, though could be called externally
+'''
 print '> importing jmaya.pipeline.version'
 import os, re, sys
 import core
@@ -8,8 +11,13 @@ import maya.cmds as cmds
 import jmaya.pipeline.workspace
 
 class version_save(object):
+    '''
+    takes the currently opened scene, checks the workspace, checks the component parts of the filepath and
+    attempts to version up the scene
+    
+    '''
     def __init__(self):
-        print '\t> jmaya.pipeline.version'
+        print '\t> jmaya.pipeline.version.version_save'
         
         # first things first lets check the workspace        
         if not jmaya.pipeline.workspace.check_workspace():
@@ -29,24 +37,21 @@ class version_save(object):
             print '\t> VERSION NOT SAVED - no vars'
 
     def version_file(self):
-        print '\t> jmaya.pipeline.version.version_file'
+        '''
+        probably a little messy, but it works
+        '''
+        print '\t> jmaya.pipeline.version.version_save.version_file'
         try:
             # this looks for a 'v' in the version name and versions up
             #version_string = re.search('[_|.]v|V[0-9]+',self.version.lower()).group(0)
             version_string = re.search('[_|.][v|V][0-9]+',self.version).group(0)
 
             if version_string[1] == 'v':
-                #print 'lower'
                 case = 'lower'
                 current_number = version_string.split('v')[-1]
             elif version_string[1] == 'V':
-                #print 'upper'
                 case = 'upper'
                 current_number = version_string.split('V')[-1]
-                
-            #print version_string
-            #print current_number
-            #return
         
             current_int = int(current_number)
     
@@ -107,7 +112,10 @@ class version_save(object):
             return True
 
     def version_vars(self):
-        print '\t> jmaya.pipeline.version.version_vars'
+        '''
+        checking to make sure we know where we are on the filesystem
+        '''
+        print '\t> jmaya.pipeline.version.version_save.version_vars'
         self.assetproj = False
         self.shotproj = False
         #we have the mayafile, with correct workspace - this is all we need
@@ -148,7 +156,8 @@ class version_save(object):
                             self.task = 'loose'
                             self.version = mayafile[7]
                             rebuild = os.path.join(core.jobsRoot, self.job, 'vfx', self.dept, '3d_assets', 'Scenes', self.category, self.asset, self.version )
-
+                        
+                        #THE TEST
                         if rebuild == self.mayafile:
                             return True
                         else:
@@ -170,6 +179,8 @@ class version_save(object):
                             self.task = 'loose'
                             self.version = mayafile[5]
                             rebuild = os.path.join(core.jobsRoot, self.job, 'vfx', self.dept, self.shot, 'Scenes', self.version )
+                        
+                        #THE TEST
                         if rebuild == self.mayafile:
                             return True
                         else:

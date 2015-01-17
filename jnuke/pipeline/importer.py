@@ -1,3 +1,6 @@
+'''
+simply pastes the contents of the passed script into current script
+'''
 print '> importing jnuke.pipeline.importer'
 import nuke
 

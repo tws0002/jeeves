@@ -1,0 +1,1952 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Change Log &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="prev" title="Example Scenes" href="examples.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Change Log</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="change-log">
+<h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>1.3.16<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a bug that was causing feather rendering to crash VRay.</li>
+<li>added stepSize parameter to pgYetiConvertGuideSetToGroom to control the amount of detail in the resulting groom strands.</li>
+<li>symbols on Linux and OSX are more agressively hidden.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>1.3.15<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>built with MtoA 1.1.2.0 and Arnold 4.2.2.0</li>
+<li>build with VRay 3.0 final release</li>
+<li>changed layout of symbols on Linux and OSX to avoid threading issues.</li>
+<li>fixed a bug in Scatter that caused Yeti to crash when scattering on instanced objects.</li>
+<li>default width now correctly set for VRay.</li>
+<li>support for spline based (smooth) hair with VRay 3.0.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>1.3.14<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed Grow segment derivation that caused motion blur issues in some cases.</li>
+<li>feathers now obey the Ignore Name Spaces option.</li>
+<li>set membership callback ids correctly managed to avoid unregistering issues.</li>
+<li>Linux Maya 2015 outliner crash issues resolved.</li>
+<li>built against MtoA 1.1.1.1 and Arnold 4.2.1.2</li>
+<li>built against Maya 2014 sp4 and Maya 2015 ext 1</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>1.3.13<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>optimized object data structures to imrpove insert/delete speed which was affecting feather generation times.</li>
+<li>fixed threading issue on Windows build.</li>
+<li>fixed Arnold warnings about Visibility using wrong data type.</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>1.3.12<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a threading bug (our embedded HDF5 wasn&#8217;t being compiled with thread safety) that was causing arnold to crash when multiple caches were being referenced in the same scene.</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>1.3.11<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>length is automatically exported to rendering engines vs. having to explicitly map it.</li>
+<li>resolved issue with Guide rest position not being stored on sub frames when no rest position is provided.</li>
+<li>empty objects now ignored when computing the bounding box for a Yeti graph, this was causing out of range bounds in some circumstances.</li>
+<li>fixed Save Guides Rest Position to now handle curves of varying parameterization.</li>
+<li>Yeti now throws an error when input guide sets don&#8217;t contain any curves.</li>
+<li>Feather orientations are now correctly exported for Arnold.</li>
+<li>built against MtoA 1.1.0.3</li>
+<li>built against VRay 3.05.03</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>1.3.10<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>initial support for Maya 2015, this should be considered experimental until Yeti 1.4.0 when Viewport 2.0 is fully supported.</li>
+<li>updated to Arnold 4.1.3.5 and MtoA 1.0.0.2</li>
+<li>support for VRay 3.0 Beta 2, these are installed in the unsupported directory, you will need to copy these to the bin and plugin directories and overwrite the VRay 2.0 builds.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>1.3.9<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a bug in the VRay engine that was generating garbage transforms for VRay motion blur when full transforms were missing causing ray acceleration issues.</li>
+<li>updated derivative computation to correctly obey per face S&amp;T values.</li>
+<li>updated pgYetiCacheInfo to fully evaluate a graph for more accurate bounding box results, &#8211;density parameter added to control the evaluation density.</li>
+<li>weight parameter on the Clump node is now evaluated on a per vertex basis.</li>
+<li>fixed naming of Tip Parameter in Width node.</li>
+<li>updated PRMan callbacks to use preLayerRenderMel and postLayerRenderMel.</li>
+<li>updated build to resolve missing lzma symbols on OSX.</li>
+<li>added a Load At Initialization toggle which forces Arnold to load and evaluate the graph on initialization vs. deferred using the bounding box data.</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>1.3.8<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Resolved duplicate output for OBJ export.</li>
+<li>Update curves to groom conversion to ignore Nref and Pref which potentially led to incorrect strand sampling.</li>
+<li>Fixed a bug with instancing Referenced graphs.</li>
+<li>updated Texture node to correctly flush images after each evaluation.</li>
+<li>empty objects are correctly pruned post node evaluation which resolves bounding box computation issues if they still existed.</li>
+<li>fixed a bug that would cause Yeti (thus Maya) to crash if a Non-graph was returned from the compute method.</li>
+<li>Texture caching is now handled globally, this provides a substantial improvement when textures are shared across Yeti nodes.</li>
+<li>Re-introduced Rest Influence and Rest Influence Power as per Yeti 1.2.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>1.3.7<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>more instance alignment/deformation improvements via new up vector propagation.</li>
+<li>Object List now ignores intermediate objects.</li>
+<li>added Ignore Rest Normal Triangulation option to guide sets that forces Yeti to take both sides of an object into consideration when deriving surface transformations.  This is useful for large flight feathers etc. when &#8220;attaching&#8221; them to a wings surface.</li>
+<li>The feather generator now creates an orientation attribute if Arnolds curve type is set to Oriented.  This will produce a shading normal that is perpendicular to the feather surface vs. Arnold&#8217;s default derivation.</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>1.3.6<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a bug in the Arnold vertex to varying parameter conversion stage, this would affect strandu and other user defined vertex attributes to be interpolated incorrectly.</li>
+<li>added feather_u and feather_v output parameters to procedural feathers for easier texture mapping.</li>
+<li>added a catch for strands that end up infinitely long, this was causing issues with the smooth brush (rightly so).</li>
+<li>guide sets converted into fibres produce the correct result when instancing/deforming other geo to them - including feathers.  This means you can instance feathers to individually controlled guide curves.  The body/base geometry needs to be the second input to the Convert node for this to work (so the guides know what surface they&#8217;re deforming on).</li>
+<li>corrected the number of repeated end points when generating Arnold curve data.</li>
+<li>removed all references to Mental Ray in example scenes.</li>
+<li>fixed float sliders in the UI that weren&#8217;t updating correctly and truncating values to two decimal places.</li>
+<li>very high U &amp; V values are now supported when using UDIM names in textures.</li>
+<li>derivative code has been updated to better handle UV borders which fixes instances where strands located on the borders would flip.</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>1.3.5<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>updated Scatter node to provide generation time similar to 1.2.x.</li>
+<li>negative values can be used for brush strength (as 1.2.x).</li>
+<li>fixed instance alignment offset that was introduced in 1.3.4.</li>
+<li>add tangent in the Attribute node won&#8217;t crash the graph evaluation.</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h2>1.3.4<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a bug with rename callbacks that caused shapes to disappear when referencing or importing a scene with grooms.</li>
+<li>previews are not stored if the result contains mesh instances, these were generating cache files that were huge and slow (defeating the purpose).</li>
+<li>fixed a bug which caused groups to disappear when node caching was enabled.</li>
+<li>attribute node now correctly evaluates on a per group basis if the attribute has already been created.</li>
+<li>added Display Strand Segments to Groom node Display options.</li>
+<li>undo support for Mirroring.</li>
+<li>added the ability to resample either all the strands in a groom or just selected strands.</li>
+<li>refactored deformed Instance alignment to reduce flipping issues.</li>
+<li>added Help and About items to the Yeti menu.</li>
+<li>added -type argument to pgYetiGraph command which allows the user to specify a node type to limit the result too.</li>
+<li>added -nodeType argument to pgYetiGRaph to query a nodes internal type.</li>
+<li>pgYetiGraph can correctly query the graph values if the graph hasn&#8217;t been evaluated.</li>
+<li>fixed an issue where the id attribute was being exported as id and not fur_id as in previous versions.</li>
+<li>limited the number of Yeti versions printed out per instance of Arnold.</li>
+<li>flood fill works with Scatter populate mode.</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>1.3.3<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed feather draw issue introduced in 1.3.2</li>
+<li>updated vector texture code for smoother results</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h2>1.3.2<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed motion blurred feather length generation bug which caused prman to crash and vray to spew incorrect normal errors.</li>
+<li>the feather_param is passed to VRay via the W coordinate of the UVW attribute.</li>
+<li>rachi length now matches Barb End to avoid the rachi extending past the end of the feather.</li>
+<li>threaded export texture.</li>
+<li>export direction from grooms now stores the map based on surface derivatives and N.</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h2>1.3.1<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a bug in the stiffness component of the dynamics solver that caused strands to end up incorrectly oriented.</li>
+<li>added node name to the graph evaluation time feedback.</li>
+<li>Yeti now uses the node name vs. the cache name when outputting log information.</li>
+<li>added rachii tip/base width controls to feather geometry.</li>
+<li>barbs are created on the surface of the rachii vs. the spine to avoid intersections.</li>
+<li>Display Output now only affects GL drawing vs. node visibility at render time.</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h2>1.3.0<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>feather geometry feather_part attribute is now set to 0 for rachii, 1 for barb right side and 2 for barb left side.</li>
+<li>fixed bug that caused Yeti to crash when input geometry is missing.</li>
+</ul>
+</div>
+<div class="section" id="rc">
+<h2>1.3.0 RC<a class="headerlink" href="#rc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed a bug caused by node caching when used with the Texture node.</li>
+<li>fixed a significant memory leak caused by the subdivision surface implementation.</li>
+<li>improved accuracy of bounding box computation for Maya yeti node. (this was causing Arnold to complain about inaccurate bounding boxes)</li>
+<li>threaded feather expansion (generation).</li>
+<li>feathers now obey their world space positions.</li>
+<li>added pgYetiGraph documentation in the Scripting Reference guide.</li>
+<li>added Export Direction to the Groom texture utilities which exports the direction of the strands to a vector map projected in the faces normal space.</li>
+<li>generated feather barb attributes were being exported to the renderer incorrectly mapped causing issues with the various render engines (mostly visible with renderman engines).</li>
+</ul>
+</div>
+<div class="section" id="beta-3">
+<h2>1.3.0 beta 3<a class="headerlink" href="#beta-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Create Feather to the Yeti menu.</li>
+<li>added Yeti node name to error output.</li>
+<li>display density will cull fibre cache previews when set lower than the value cached at.</li>
+<li>cleaned up Groom AE with better attribute list create/duplicate/rename &amp; delete workflow and UI layout.</li>
+<li>added &#8220;Add Float&#8221; and &#8220;Add Vector&#8221; controls to the User Attributes palette for the Yeti AE.</li>
+<li>Comb and Guide nodes are more strict about what can be used for their second input (Grooms for Comb and Guides for Guide).</li>
+<li>most grooming operations are now threaded optimized interaction.</li>
+<li>added Bard Azimuth Variation to Feather node to provide of plane variation to the feathers.</li>
+<li>added Tearing to feathers, which creates tears along the profile where barbs clump together.</li>
+</ul>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>import object dialog correctly lists all Feather objects for selection.</li>
+<li>Arnold now correctly renders Yeti nodes referencing a cache file.</li>
+<li>improved deformed instance alignment.</li>
+<li>improved the quality of Scatter distribution.</li>
+<li>Generated feathers correctly export strandu, feather_param and feather_part to the rendering engine for shading purposes.</li>
+<li>implemented variant of FTL solver for more stable and optimized (fewer iterations needed) dynamics.</li>
+</ul>
+</div>
+<div class="section" id="beta-2">
+<h2>1.3.0 beta 2<a class="headerlink" href="#beta-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added pgYetiForceUpdate( $pgYetiMayaNode ) command to force a Yeti node to re-evaluate it&#8217;s graph.</li>
+<li>previews are now be stored with fur caches (by default, this can be turned off) - these are then used for fast display results when viewed in Maya (preview use can be turned off if needed).  The previews use the current display context (density, width, length, etc.) for generation and are done so on the whole frame number and thus are considered static (no motion blurred).</li>
+<li>added Yeti Subdivision and Yeti Subdivision Iterations attributes to any input mesh geometry to control this outside of any renderer specific implementation.</li>
+<li>Yeti&#8217;s subdivision surfaces will match the same iteration as specific for the rendering engine (at this time only Arnold has this control).</li>
+</ul>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>component editing undo implemented correctly</li>
+<li>new feathers are created with default shape vs. a shared shape</li>
+<li>feathers can be removed from the list of input objects in the pgYetiMaya node</li>
+<li>Node Editor isn&#8217;t &#8220;always on top&#8221;</li>
+<li>Normals correctly generated for feather primitives.</li>
+<li>Attribute node can now be used to correctly modify feather attributes, please see yeti_featherAttributeExample.ma.</li>
+</ul>
+</div>
+<div class="section" id="beta-1">
+<h2>1.3.0 beta 1<a class="headerlink" href="#beta-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Bend Start and Bend End to the bend node, this change will slightly affect the look of the bend results.</li>
+<li>added Base and Tip parameter to Width node to control where the width fall off starts/stops.</li>
+<li>added Constant attribute type to the Attribute node.</li>
+<li>added pgYetiCacheInfo binary used to query .fur files for information, please use &#8211;help for options.</li>
+<li>when in component mode the Shift key can be held to alter the selected strands length by click-dragging.</li>
+<li>added a Randomize brush for attribute painting.</li>
+<li>added dynamic node result caching to optimize evaluation of graphs that contain branching and merging.  This can be toggled on and off via the Node Caching parameter in the Others palette of the Yeti AE.</li>
+<li>I/O AE palette now has separate Input and Output sections.</li>
+<li>added pgYetiRemoveAllConnections scripting command to remove any and all connections to the specified Yeti node.</li>
+<li>added more interactive sliders to float parameters in the Node Inspector along with soft ranges and a means of hiding the sliders.</li>
+<li>heavily threaded all bounding box calculations for improved redraw speeds.</li>
+<li>added the ability to convert a Yeti node result into Maya objects via the Convert to Maya Objects menu item or pgYetiCommand -generateMayaObjects command.</li>
+<li>new pgYetiGraph command that can be used to query/set nodes and their parameters in the Yeti graphs.</li>
+<li>added Twist brush for grooming.</li>
+<li>added Clump brush for grooming.</li>
+<li>added a Scatter brush to populate the grooms by scattering strands while painting.</li>
+<li>added Override Cache With Inputs option for the Yeti node, this turns off cache overriding (corrective grooming) by default.  This is useful to avoid situations where the graph steals a license when an input has been left on by mistake.</li>
+<li>Subdivision Surface evaluation.  If an input mesh is tagged by a renderer as a subdivision surface Yeti will evaluate the mesh in a subdivided state, there is a new toggle in the Yeti node display parameters to show the subdivided result in the Viewport or just as Render time (default).</li>
+<li>improved dynamics solver with more accurate friction handling.</li>
+<li>Yeti Arnold node now exports the correct bounding box to procedural call which is now expanded when needed vs. on init.</li>
+</ul>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>ignore namespaces is ON by default.</li>
+<li>removed redundant bend multiplier.</li>
+<li>cleaned up Maya field sampling code, any fields affecting grooms will likely need to be adjusted.</li>
+<li>fixed a bug in the pgYetiGroomNode which caused fatal crashes when using undo/redo.</li>
+<li>fixed a bug in Scraggle that caused the vector to flip when the segment was pointing in the opposite direction of the surface normal.</li>
+<li>Node Inspector correctly reflects parameter errors.</li>
+<li>isLicenseAvailable correctly reports license availability.</li>
+<li>input guides are stored with more detail to capture finer shapes.</li>
+<li>pgYetiCommand will return MS::kFailure if a cache write fails.</li>
+<li>OBJ export is now buffered to provide better performance when exporting large results to a network location.</li>
+<li>Yeti won&#8217;t remove the graph but default if switching to cache mode with an invalid cache file specified.</li>
+<li>improved strand tangent calculation which provides more accurate comb and guide results when needing to match input strands.</li>
+<li>Guide Set list now ignores vertex, edge, face and edit points sets.</li>
+<li>new strands are selected by default if Isolate Strands is on with strands already selected.</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h2>1.2.19<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>fixed an issue where new strands added when the surface was deformed would &#8220;pop&#8221; into an incorrect space on update.</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h2>1.2.18<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added &#8220;removeDuplicate&#8221; option to pgYetiCommand which takes a distance parameter, this will remove any duplicate strands within that distance threshold.</li>
+</ul>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>improved strand frame alignment for deforming derivatives.</li>
+<li>fixed a bug that caused displaced elements to incorrectly deform.</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h2>1.2.17<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added two new parameters to the Grow node.  Segment Creation Style and Segment Count.  This allows the user to explicitly dictate how many segments are created per fibre regardless of it&#8217;s length OR define a segment length as previously (default).  This makes animated growth more stable when motion blur is involved.</li>
+<li>added Force Uncorrected Length parameter to the Convert node to set the length attribute on the resulting fibres to the original Groom vs. any interpolated Groom lengths.  This can also be referenced in the Grow node as length_uncorrected.</li>
+<li>length attribute can now be referenced in the Scatter node to control the density.</li>
+</ul>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>fixed bug which caused Instance node to segfault if the node directly connected to the second input was an input and missing geometry.</li>
+<li>fixed a bug in pgYetiPrmanGenPTC due to core updates not being propagated.</li>
+<li>updated OBJ export to only export the first selected object and use the file name passed vs. adding in the shape name.</li>
+<li>fixed a bug in the Instance node which prevented All instancing to work.</li>
+<li>instanced objects now inherit the name of the instance node used to create them to avoid name clashing when recursion is used.</li>
+<li>Width node correctly recreates the width attribute vs. inheriting already existing attributes to avoid cases where instances are sharing a width attribute resulting in uniform width values.</li>
+<li>reverted Arnold procedural transform handling.</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h2>1.2.16<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added texture coordinates and vertex normals to Wavefront OBJ export.  Two new boolean options to control whether texture coordinates and normals should be exported have been added.</li>
+</ul>
+<p><strong>Bugs Fixed/Changes</strong></p>
+<ul class="simple">
+<li>reverted TBB scheduler changes.</li>
+<li>fixed bug where Arnold procedural was assigning/inheriting the incorrect shading group ( or NULL ).</li>
+<li>input order of Maya objects is correctly maintained when different object names used ( ie. id based, not hash based ).</li>
+<li>adding missing Mirror tool button update in AEpgYetiGroomTemplate.mel.</li>
+<li>updated pgYetiCreate and pgYetiCreateGroomOnMesh to avoid name clashing issues with similarly named nodes in the scene.</li>
+<li>node names are now more visible than node types in the graph.</li>
+<li>only object sets are listed in the Guide Set input dialog.</li>
+<li>fixed rendering DSO threading/TBB assertion issues.</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h2>1.2.15<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added custom colors for nodes in the graph editor, this includes a Helpers menu with the option of setting colors for selected nodes and reseting selected nodes to their default color.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>updated how shading groups were being assigned/handled for MtoA and Arnold which resolved an issue with AOVs not working.</li>
+<li>correctly set Groom bounding box ( to input geometry ) if no strands were present.</li>
+<li>reverted change which caused the graph geometry to not retain it&#8217;s canvas position.</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h2>1.2.14<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added checks for missing parameters in Arnold DSO.</li>
+<li>updated to MtoA 0.24.0 and Arnold 4.0.15.1</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed a bug that resulting in a graph being generated with no context when rendering via the command line.</li>
+<li>fixed a bug where corrective grooms with a weight of 0 would cause an error to be incorrectly reported.</li>
+<li>updated Group to use world space P vs. local P when a Texture Reference object was attached.</li>
+<li>VRay DSO now correctly exports instance attributes.</li>
+<li>Arnold DSO now allows referencing the same cache multiple times.</li>
+<li>re-introduced Arnold DSO transforms.</li>
+<li>updated dynamics engine to correctly handle varying time steps more accurately.</li>
+<li>updated call to checkAssetPath for VRay DSO to avoid issues with VRay 3.0.</li>
+<li>graph connections will now fail if there is potential for a loopback condition.</li>
+<li>the Groom to Curve conversion process produces cleaner results.</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h2>1.2.13<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>support for Maya 2014</li>
+<li>built w/ MtoA 0.23.1 and Arnold 4.0.14</li>
+<li>built w/ VRay 2.30 from nightlies for Maya 2013, 2013.5 and 2014</li>
+<li>built w/ 3Delight 10.0.139</li>
+<li>added Parting, artists can create attributes prefixed with the part key ie. part_region01 which is used to define parting regions.  A new Part Randomness parameter has been also added to the Groom node and it&#8217;s possible to paint part_randomness to control this on a per strand basis.</li>
+<li>added yeti_partingExample.ma example file.</li>
+<li>threaded transform derivation in core Mesh data structure.</li>
+<li>threaded Strand System geometry position derivation.</li>
+<li>added support for VRay&#8217;s VRAY_ASSETS_PATH when looking for .fur files to improve DR support.</li>
+<li>added hotkey M to increase brush strength while grooming.</li>
+<li>Non-deformed instances now use ginstance nodes for more efficient rendering with Arnold and shared GeomStaticMesh instances in VRay.</li>
+<li>VRay dso relies on renderer to generate time samples which improves single VRScene support.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed double transform introduced in Arnold DSO.</li>
+<li>fixed hotkey event handler issues where hotkeys wouldn&#8217;t work when in grooming context.</li>
+<li>fixed issues where Alt and Shift in the graph editor were causing the GE and Inspector to lose focus.</li>
+<li>removed small memory leaks in VRay DSO during refactor.</li>
+<li>scatter generates same results when the seed is the same.</li>
+<li>changing the seed produces correctly varying results ( vs. needing very high numbers ).  ( Be aware this will change graph results )</li>
+<li>objects use more predictable object id&#8217;s, these are based on the order that objects are attached to the graph and stored in the objectId attribute.</li>
+<li>instance node uses objectId for expressions.</li>
+<li>fixed bug that causes similar reference nodes to not co-exist in the same merge.</li>
+<li>fixed issue with surface derivative calculation which caused strands to flip at times.</li>
+<li>fixed issue that caused interpolated time samples to be de-allocated too early while rendering with VRay.</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h2>1.2.12<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>removed explicit .dso/.dll from Rib output for PRMan/3delight to avoid cross platform rendering issues.</li>
+<li>added imageSearchPath parameter to rendering DSO&#8217;s, this is used to set the search path for textures.  Originally baked into the graph/cache itself this means it can be updated/changed without re-caching.</li>
+<li>texture cache is owned by the Maya instance of Yeti vs. the graph, this means that caches using textures should only read the texture once and be re-used across frames.  The cache will still check time stamps for textures that are dirty.</li>
+<li>optimizations to internal mesh structures.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>swapped colours for Display as Heat Map.</li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h2>1.2.11<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Obey Face Set to the Distribution tab of Scatter node to force relaxed points to stay within the bounds a defined face set vs. diffusing the &#8220;border&#8221;.</li>
+<li>added internal cache file format versioning.</li>
+<li>internal instance geometry types.</li>
+<li>added Generate As to Instance nodes to tell Yeti to try and use the renderers internal instancing for more optimized instance rendering.</li>
+<li>support for PRMan and 3delight Object Instancing, including per instance attribute propagation ( for Uniform attributes ) via ObjectInstanceV in PRMan ( currently not supported in 3delight - please correct us if it is and in what version? ).  Please refer to the PRMan 17.0 Application Note on object instancing to fully understand shading changes needed if using per instance attributes.</li>
+<li>Yeti now clamps painted attributes that are used to control sims ( except for mass ) to avoid overdriving the simulation results ( ie. sim_stiffness painted at 10 causes the strands to collapse on themselves ).</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed long standing bug where grooms with no strands would cause a crash when exporting/rendering.</li>
+<li>fixed issue where groom strands won&#8217;t update when input geometry moved when not connected to a Yeti node.</li>
+<li>fixed issue where grooms weren&#8217;t bring projected onto the input geometry correctly ( introduced in 1.2.10 )</li>
+<li>fixed issue when Conform New Strands was using with Add &amp; Fill.</li>
+<li>fixed sculpt/comb issue that caused strands to pop to the surface when being pulled &#8220;off&#8221; the surface.</li>
+<li>strands won&#8217;t smooth below the input surface.</li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h2>1.2.10<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Scale brush to Groom.</li>
+<li>updated Licensing documentation with TIMEOUT options parameter.</li>
+<li>added -licenseAvailable and -numberOfLicensesAvailable to pgYetiCommand, see scripting documentation for more information.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed a bug introduced in 1.2.9 when instancing to particles/points.</li>
+<li>fixed a bug in scatter introduced in 1.2.9 which caused relax steps to create stray points.</li>
+<li>fixed issues reading textures using UDIM names.</li>
+<li>reduced memory consumption introduced in 1.2.9 Scatter node.</li>
+<li>fixed a bug that caused fill to not work when Initial Strands was selected as Affects mode.</li>
+<li>fixed bug in Arnold translator that assumed single faced geo with a single attribute was of FACE detail type vs. CONSTANT.</li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h2>1.2.9<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>built against MtoA 0.22.1</li>
+<li>added memory usage reporting in the node info, this represents the amount of memory allocated by graph on execution completion.</li>
+<li>Scatter, Grow refactored and heavily optimized/threaded</li>
+<li>Relax threaded for massive speed improvements</li>
+<li>Internal Closest Point code re-engineered to be a few magnitudes quicker</li>
+<li>added Point Selection to Instance node allowing control over which points in an element are instanced too.</li>
+<li>added Element Point Index attributes to Instance node which can be used to define which point in an element is used for an instance.</li>
+<li>added Local Variables, nodes can now define/expose node specific variables for expressions.  eg.  Instance node has $instanceCount, $instanceNum, $vertexNum and $vertexCount</li>
+<li>added Instance Element Index control example.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>improved Yeti nodes selection in Maya viewport, the selection is much more accurate and ghost selection doesn&#8217;t occur.</li>
+<li>fixed constant attribute type outputs in Arnold for use with aiUserFloat/aiUserVector etc.</li>
+<li>fixed arnold light linking.</li>
+<li>fixed pgYetiVRayMaya missing symbol issue on Linux.</li>
+<li>fixed issue which could cause intermittent id changes on fibres which would throw their order off.</li>
+<li>strandu attribute correctly matches u value of curve ( it was slightly truncated ).</li>
+<li>Int and Color variables for expressions are now supported ( so $numInstances could be used, etc. ).</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h2>1.2.8<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>If mapping on in Attribute node Yeti now assume you want to map the newly created attribute.  If not mapping name is given Yeti will assume it&#8217;s the name of the attribute to map.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>VRay rendering correctly obeys layer membership of parent transform.</li>
+<li>fixed numerical rounding error in Scraggle that would cause the scraggle effect to be reduced as fibre count increased.</li>
+<li>improved strand re-alignment stability which resolves an issue with overly blurred results in edge cases.</li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h2>1.2.7<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Scraggle Frequency and Scraggle Offset to Scraggle node to control the look/motion of the Scraggle effect.</li>
+<li>removed redundant Scraggle Scale from Scraggle node.</li>
+<li>renamed Bake Root Positions and Save Rest Position to Save Strand Shape and Save Rest Pose for clarity.</li>
+<li>added support for 3delights dirmap and path searching, you can use the &#8220;resource&#8221; category to set search paths for .fur files.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>orientation attribute correctly passed to Arnold.</li>
+<li>Save Strand Shape checks for groom selection prior to dialog confirmation.</li>
+<li>fixed a long standing orientation bug that was due to bad derivative calculations which cause misaligned strands when animated.  If required ( likely not ) the old method can be forced by adding a boolean attribute to the mesh shape called yetiOldDeriv and toggle it on ( you will need to refresh the viewport ).</li>
+</ul>
+</div>
+<div class="section" id="id31">
+<h2>1.2.6<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Gravity Direction attribute to Dynamics World Properties on Grooms.</li>
+<li>updated how Yeti handles the simulation start frame, it behaves like Maya now where rewinding to the start frame will reset the simulation ( not one before ).</li>
+<li>added the ability to turn simulation on/off on a per strand basis using the <strong>sim_simulate</strong> attribute.  If found any strands with a value below 0.5 will be static.</li>
+<li>removed legacy scraggle.</li>
+<li>texture will warn if trying to set &#8220;width&#8221; as a new attribute name as it&#8217;s reserved.</li>
+<li>Grooms to Guides can be applied to multiple grooms at once and/or with the Grooms transform selected for convenience.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed conversion from guide set to groom node, please note the parameters for the command has been updated to pgYetiConvertGuideSetToGroom( string $guide_set, string $mesh_object ) - please see the scripting documentation for more information.</li>
+<li>fixed issues with strand mirroring.</li>
+<li>fixed the behavior of strand hovering, if in isolate strands mode &#8220;hidden&#8221; strands won&#8217;t be drawn.</li>
+<li>fixed bug in Instance node that caused deformed instances to flip if they extended past fibres origin plane.</li>
+<li>fixed issues with scraggle node when applied to a converted guide strand.</li>
+<li>fixed Groom to Nurbs Curve conversion.</li>
+<li>removed double output to Yeti console when in batch mode.</li>
+<li>fixed offset issue with deforming instances.</li>
+</ul>
+</div>
+<div class="section" id="id32">
+<h2>1.2.5<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added console feedback when caching</li>
+<li>updated logging to provide consistent output to Maya console and shell</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed renderman procedural parse error with negative frame offsets for samples</li>
+<li>fixed clump issue caused by zero length input fibres</li>
+<li>fixed linkage to resolve symbol clashes when rendering with MtoA</li>
+</ul>
+</div>
+<div class="section" id="id33">
+<h2>1.2.4<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>initial implementation of deformable instances.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>a fix to the 3delight output where in some instances the flush command is being passed a node other than a Yeti node.</li>
+</ul>
+</div>
+<div class="section" id="id34">
+<h2>1.2.3<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed u/v coordinate issues when referencing textures via &lt;UDIM&gt; tag.</li>
+</ul>
+</div>
+<div class="section" id="id35">
+<h2>1.2.2<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Length Handling parameter to Clumping, if set to Conform If Longer then the fibres will scale to never be longer than the input clumping fibres.</li>
+<li>added a Maintain Length parameter to Clumping, the default is on which matches the historical look.</li>
+<li>added -sampleTimes argument to pgYetiCommand -writeCache which can be used to provide explicit sample offsets for caching, see scripting reference more more details.</li>
+<li>added -fileName argument to pgYetiRenderCommand -preRenderCache which can be used to provide an eplicit filename vs. using Yeti&#8217;s</li>
+<li>added more documentation for pgYetiRenderCommand in Scripting Reference.</li>
+<li>added -returnLicense argument to pgYetiCommand which forces Yeti to return the license it currently has checked out, be aware that if someone tries to check out a license while it&#8217;s returned you may be without a license next time you need to work.</li>
+<li>optimized Instance node by removing all thread locking.</li>
+<li>Texture Cache system is fully thread safe.</li>
+<li>added initial support for &lt;UDIM&gt; tags in texture names.</li>
+<li>added Display As Heat Map to Groom node to display paint values as a heat map.</li>
+<li>instances correctly inherit PRMan subdivision tags and will render as Subdivision surfaces in PRMan.</li>
+<li>added Minimum Width parameter to Width node, default is 0.00001f.</li>
+<li>added Collision Friction to input collision mesh shapes in a Yeti Attributes section.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed bug that caused Scatter node to ignore user attributes</li>
+<li>removed rand reference from documentation</li>
+<li>updated dynamics engine to make sure over sampled constraints were applied corrcetly</li>
+<li>fixed prman chunked rib output which caused the first frame of every chuck to sample at -0.125</li>
+<li>Scatter Multiplier now evaluated on a per fibre basis</li>
+<li>fixed issue where the graph was being re-evaluated too often when the Graph Editor was opened/re-opened</li>
+</ul>
+</div>
+<div class="section" id="id36">
+<h2>1.2.1<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>updated documentation to include correct PATH settings for Windows</li>
+<li>all cache writing and groom export commands resolve environment variables</li>
+<li>added inherit attributes parameter to the Instance node which is a list of attributes to inherit from the source points/elements</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>VRay instances inherit incoming user attributes</li>
+<li>Group node would abort early due to thread unsafe kdTree bug which has been fixed</li>
+<li>clumping correctly references Pref vs P which was affecting clumping around guide curves</li>
+<li>bake root positions can be used on the Groom transform as well as the Groom shape</li>
+</ul>
+</div>
+<div class="section" id="final">
+<h2>1.2 Final<a class="headerlink" href="#final" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>VRay output prints number of fibres and meshes created when verbosity is &gt; 1</li>
+<li>Arnold output prints number of fibres and meshes created when verbosity is &gt; 1</li>
+<li>added Varying attribute support in Attribute node</li>
+<li>added in app Help in both the Graph Editor window ( in the Help menu ) and on a per node basis.  By default this will take the user to the on-line documentation unless YETI_DOCS is set to the docs directory of the local Yeti installation.</li>
+<li>built against MtoA 0.21.0 and Arnold 4.0.11</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>VRay DSO correctly defines UVW when outputing converted strands</li>
+<li>fixed an issue with normal indicies not being defined correctly in the Arnold DSO</li>
+<li>properly catch errors when setting sets for render layers</li>
+<li>fixed a bug that caused surface propogation to be evaluated too many times</li>
+<li>fixed a bug that caused a crash when a strands relationship to a surface couldn&#8217;t be determined</li>
+</ul>
+</div>
+<div class="section" id="beta-7">
+<h2>1.2 Beta 7<a class="headerlink" href="#beta-7" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>moved Relax Steps into a new Distribution tab for Scatter node</li>
+<li>added Corrective Groom Handling parameter in Yeti Node-&gt;Corrective Grooming to control whether corrective grooming is applied or not</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed typo in Grow node which caused fur_id attribute to emit as fur_Id</li>
+<li>Yeti won&#8217;t crash Maya if pgYetiCommand -writeCache is used when a non-Yeti node is selected</li>
+<li>cache and groom file names now correctly expand environment variables</li>
+<li>set length correctly interpolates very small lengths correctly</li>
+<li>fixed crash bug when switching between two scenes and maya stays in the Yeti groom context</li>
+<li>Yeti nodes correctly obey render layers in VRay and Mental Ray</li>
+<li>fixed weighting for Guides when there are fewer guides than requested</li>
+<li>fixed batch mode renderer confirmation</li>
+<li>Yeti checks for invalid reference objects more aggressively</li>
+<li>now using full path name for temporary output cache hash value</li>
+<li>RPATH is correctly set to $ORIGIN on Linux</li>
+<li>fixed issue where instance node would cause a crash if there wasn&#8217;t an object present in the second input</li>
+</ul>
+</div>
+<div class="section" id="beta-6">
+<h2>1.2 Beta 6<a class="headerlink" href="#beta-6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>Yeti will check to make sure directories exist before attempting to write a cache and error out if not</li>
+<li>removed Display Grooms and Display Guides from Yeti node</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>refactored and improved mesh collision and closest point to improve accuracy</li>
+<li>fixed issue which caused cache files to grow when GRM&#8217;s referenced</li>
+<li>removed overly verbose feedback from ImageIO</li>
+<li>guide curve rest position correctly integrated into 1.2.0</li>
+</ul>
+</div>
+<div class="section" id="beta-5">
+<h2>1.2 Beta 5<a class="headerlink" href="#beta-5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Sample mode to Groom painting to be able to sample the attribute value</li>
+<li>all node string parameters now resolve environment variables if defined with ${VAR} syntax</li>
+<li>texture system resolves environment variables if defined with ${VAR} syntax in input names</li>
+<li>added search path support to Image IO library, PG_IMAGE_PATH environment variable can be used to define a global search path.  Multiple paths can be defined by using : on Unix ( and OSX ) and ; on Windows</li>
+<li>added Image Search Path attribute to pgYetiMaya node which can be used to set the paths used to search for images ( textures ) when evaluating the graph, search paths defined by PG_IMAGE_PATH environment variable will take precedence over these</li>
+<li>added -listTextures argument to pgYetiCommand which will list all textures used in a graph ( though it doesn&#8217;t check if they exist and/or the node actually fires )</li>
+<li>inlined many strand system functions for compile time optimizations</li>
+<li>added Maya 2013.5 build</li>
+<li>upgraded to MtoA 0.20.0 and Arnold 4.10.2 ( Darwin users be aware that you need to export ass + kick vs. in maya previews at this time ), MTOA_EXTENSIONS should be used instead of MTOA_EXTENSIONS_PATH as there is a bug in MtoA 0.20.0 paths</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>scatter automatically flips textures when used to control the density so they more appropriatly match mayas u/vs</li>
+<li>arnold render correctly obeys Yeti world transforms</li>
+<li>fixed bug causing a crash when a Yeti context hasn&#8217;t been removed correctly</li>
+<li>fixed a significant bug where threads parameter wasn&#8217;t initialized nor making it into the vrscene file causing intermitent behavoir</li>
+<li>refactored graph updates to help avoid threading race issues</li>
+<li>fixed issue caused by mismatched sample counts between Yeti world matrices and local matrices for Arnold</li>
+<li>fixed issue which caused strands to inadvertently change direction when increasing their length</li>
+<li>fixed issue where sculpt mode direction was inverted when zoomed in close to a surface</li>
+<li>YETI_INTERACTIVE_LICENSE variable works again on Windows</li>
+<li>instance doesn&#8217;t crash when instancing to mesh points now</li>
+<li>ImageIO EXR reader doesn&#8217;t crash with cropped images ( data window different than display window )</li>
+<li>fixed multiple pgYetiInit sourcing in Yeti initialization which was causing scriptJobs and updateAE callbacks to live as zombie procs</li>
+</ul>
+</div>
+<div class="section" id="beta-4">
+<h2>1.2 Beta 4<a class="headerlink" href="#beta-4" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>made sure missing icons were included with distribution</li>
+</ul>
+</div>
+<div class="section" id="id37">
+<h2>1.2 Beta 3<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>the look was still different between 1.1.8 and 1.2.0 which has now been correctly fixed</li>
+</ul>
+</div>
+<div class="section" id="id38">
+<h2>1.2 Beta 2<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>initial Mental Ray implementation ( only fur at the moment )</li>
+<li>reverted weighting scheme back to 1.1.8 style</li>
+<li>optimized mesh GL drawing</li>
+<li>optimized the use of face sets in Scatter node</li>
+<li>added support for user attributes in VRay</li>
+<li>temporary files and cache files that already exist are overwritten vs. appended by default</li>
+<li>added affects strand parameter to groom which controls whether the affect from the stroke is applied to only the strands under the brush when combing starts ( default ) or through the whole stroke</li>
+<li>arnold output now produces unique names in the Ass scene for duplicate Yeti nodes</li>
+<li>textures can now be added before a scatter node on Imported geometry, if the Attribute in the Texture node matches the Groom/Texture Attribute in the scatter node the texture will control the density of the scatter</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed a bug that caused Yeti to crash in some instances when input geometry wasn&#8217;t found</li>
+<li>graph IO nodes don&#8217;t try and autoconnect</li>
+<li>tbb .so.2 libraries included in distribution</li>
+<li>fixed vray export bug which was causing a recusion on graph evaluation, this little nasty hidden bug should hopefully stabilize threaded viewport issues</li>
+<li>out of range samples handled within VRay correctly</li>
+<li>fixed temp file output random value generation</li>
+<li>fixed bug which caused extranious samples when fur cache generated from maya batch/py/command line</li>
+<li>fixed Display Groom refresh in pgYetiMaya node</li>
+</ul>
+</div>
+<div class="section" id="id39">
+<h2>1.2 Beta 1<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>optimized KD tree search</li>
+<li>updated weighting scheme for grooms to smooth out interpolation</li>
+<li>Pixar dependencies are now PRMan 17 and RMS 4.0 ( though it&#8217;s likely backwards compatible )</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed crash in Arnold DSO when matrix parameter is missing.</li>
+<li>fixed a bug which was causing corrective grooms to be applied multiple times during sub frame output.</li>
+<li>resolved a fairly major memory leak introduced in the thread based DataBlocks</li>
+<li>reimplemented drawing to avoid thread update issues</li>
+<li>fixed bug that caused Comb not to work correctly on particles</li>
+</ul>
+</div>
+<div class="section" id="alpha-3">
+<h2>1.2 Alpha 3<a class="headerlink" href="#alpha-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added mirror strands tool to Groom, if no strands selected all will be mirrored otherwise just selected strands will be mirrored</li>
+<li>added Tiff support ( 8 and 32 bit ) for texture reading</li>
+<li>renamed Save Rest Position to Bake Root Positions</li>
+<li>moved Save Rest Position and Bake Root Positions to Yeti menu from Groom AE</li>
+<li>added new Save Rest Position which bakes the current shape of the Groom into the base shape of the Groom ( ie. bake dynamic positions )</li>
+<li>added support for Arnolds subdivision surface settings for instanced meshes ( inherited from mesh input )</li>
+<li>nodes will automatically connect themselves to the first selected node when created</li>
+<li>nodes will automatically be selected when created</li>
+<li>added face index option to geometry attributes in Attribute node</li>
+<li>improved brush dynamics for Sculpt mode</li>
+<li>improved brush softness dynamics for all groom modes</li>
+<li>input mesh will inherit 3delight geometric attribute PolyAsSubd on the Shape node ( not Attribute nodes )</li>
+<li>added -updateViewport command line for -writeCache which can be used to control whether or not the viewport redraws when caching.</li>
+<li>added Update Viewport option to I/O palette for caching</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>texture node will complain if an unsupported image format vs. crashing</li>
+<li>locked threaded evaluation to prevent redrawing issues</li>
+<li>fixed bug causing Yeti to crash when turning IO mode to none after sourcing a cache file</li>
+<li>Yeti node global transforms correctly applied to generated objects in Arnold DSO</li>
+<li>bounding box is correctly evaluated when generating ribs/ass/vrscene files from the command line</li>
+</ul>
+</div>
+<div class="section" id="alpha-2">
+<h2>1.2 Alpha 2<a class="headerlink" href="#alpha-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added detail type to attribute node</li>
+<li>added displacement node</li>
+<li>integrated OpenEXR</li>
+<li>added texturing and texture caching framework</li>
+<li>added texture node</li>
+<li>added tabbed ui to node inspector</li>
+<li>added evaluation mode to nodes to control evaluation for Always, display and render</li>
+<li>added twist and twist variation to instance node</li>
+<li>renderman dso outputs fibres in chunks to optimize memory usage with the size of chunks controllable, defaults to 2048 fibres</li>
+<li>corrective grooming now supports blending of user attributes with the option to toggle between all, position and user attributes</li>
+<li>added ability to paint corrective weights by adding a corrective_weight float attribute to a groom which modulates the overall weight</li>
+<li>added number of samples control to pgYeti AE template</li>
+<li>updated cache framework for automatic cache updates with texture changes</li>
+<li>added flush texture cache command and Yeti menu item to forcefully flush the cache of the current selected Yeti node(s)</li>
+<li>added reference node which allows the user to select a cache file to reference into the current graph</li>
+<li>added geometric attribute creation on attribute node</li>
+<li>added root p and ability to map attributes without needed to create an attribute</li>
+<li>added tangent to the geometric attributes in Attribute node</li>
+<li>added -convertToCurves command to convert Grooms to Nurbs Curves</li>
+<li>added Convert To Curves menu item</li>
+<li>added curve basis control to Attribute node</li>
+<li>renamed pgYetiArnoldMaya to pgYetiArnoldMtoa to avoid confusion</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue causing the move tool to improperly update new abosolute position</li>
+<li>smoothed node icon drawing in node view</li>
+<li>removed file dialog filter</li>
+<li>Exporting Groom now appends .grm when no extension is provided</li>
+<li>changed Cache file dialog to type 0 to allow non existant cache file names to be typed in</li>
+</ul>
+</div>
+<div class="section" id="alpha-1">
+<h2>1.2 Alpha 1<a class="headerlink" href="#alpha-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added thread safe random number generator</li>
+<li>new custom timer</li>
+<li>new thread based node evaluation architecture</li>
+<li>threaded attribute, bend, blend, clumping, comb, direction, group, grow, guide, instance, scatter, scraggle, shader, transform, width</li>
+<li>threaded simulation</li>
+<li>instanced objects now inherit id from source point</li>
+<li>threaded relax steps and refactored algorithm to converge on optimal result with less steps</li>
+<li>added view menu to graph editor</li>
+<li>added Display As Heat Map to color the evaluated nodes based on their execution time</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>ignore works correctly when a node is expecting more than one input</li>
+<li>direction correctly normalized when expression evaluated</li>
+</ul>
+<div class="section" id="id40">
+<h3>1.1<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+</div>
+<p>&#8212;</p>
+</div>
+<div class="section" id="id41">
+<h2>1.1.9<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added license issue feedback to Maya script editor</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>new face sets are correctly referenced by Scatter when first created</li>
+</ul>
+</div>
+<div class="section" id="id42">
+<h2>1.1.8<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>updated to MtoA 0.18.0</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>relax steps works correctly when face sets are used in scatter</li>
+<li>fixed bug with new/duplicated attributes not forcing the graph to re-evaluate correctly</li>
+</ul>
+</div>
+<div class="section" id="id43">
+<h2>1.1.7<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>made face set translation more robust to avoid empty and non-face elements</li>
+<li>face sets obey ignore namespaces</li>
+<li>updated license checking when a groom is attached and I/O mode is not none</li>
+<li>fixed reference position/normal lookup for guides</li>
+</ul>
+</div>
+<div class="section" id="id44">
+<h2>1.1.6<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Save Guides Rest Position and Remove Guides Rest Position to Yeti menu, this should be used to bake the neutral rest location into any input guide sets to help Yeti maintain the correct groom in situations where guides may not maintain their spatial relation to the rest surface ( ie. when using Maya dynamics on curves ).</li>
+<li>added support for face sets, if created in Maya Yeti will store them with the object to be referenced by the Face Set parameter in the scatter node - this will limit the scatter to the sets in the face.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+</div>
+<div class="section" id="id45">
+<h2>1.1.5<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>( Ticket #424 ) added support to evaluate width on a per vertex basis in the Width node</li>
+<li>( Ticket #424 ) added parent_id to instances</li>
+<li>relaxed Grooms license usage, they can now live in the scene without take an interactive license - these will only be checked out if actually grooming or simulating</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #403 ) vertex selection/dispay in component mode is limited to the selected vertices when isolate selected is on for a Groom</li>
+<li>( Ticket #435 ) grooms are now accesible in the graph when converted from guides</li>
+<li>fixed corrective grooming instability</li>
+</ul>
+</div>
+<div class="section" id="id46">
+<h2>1.1.4<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added groom attribute support for restInfluence and restInfluencePower ( sim_restInfluence and sim_restInfluencePower )</li>
+<li>added 3delight 10.0.50 support for Maya 2013 build</li>
+<li>built against MtoA 0.17.0 and Arnold 4.0.6.0</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue that was causing nodes in the graph not to save their position correctly in Maya 2013</li>
+<li>( Ticket #402 ) custom Arnold attributes are now exported with the correct detail type</li>
+<li>fixed twist issues introduced in 1.1.2 that changed groom looks drasically</li>
+</ul>
+</div>
+<div class="section" id="id47">
+<h2>1.1.3<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>built against MtoA 0.16.1 and Arnold 4.0.5.3</li>
+<li>added rest influence and rest influence power to control the dynamic strands want to maintain it&#8217;s rest shape</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue with renderman output that was causing multiple P tokens in the rib</li>
+<li>fixed twist effect in clump to match guides twist</li>
+</ul>
+</div>
+<div class="section" id="id48">
+<h2>1.1.2<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>updated to MtoA 0.16.0 and built against Arnold 4.0.5.1</li>
+<li>set the default number of cache samples to 3, if you need more please explicitly call pgYetiCommand -writeCache</li>
+<li>corrective grooming is now based on delta&#8217;s so multiple corrective grooms may be correctly layered with weights normalized where overlapping</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed a bug in scraggle causing alignment issues</li>
+<li>fixed clumping re-scaling</li>
+<li>fixed random number issues caused by dropped/deleted fibres</li>
+<li>fixed groom bug that caused a crash when re-selecting a groom in the combing context</li>
+<li>brush strength clamped to 1.0 in paint mode</li>
+</ul>
+</div>
+<div class="section" id="id49">
+<h2>1.1.1<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>Arnold integration now outputs mapped attributes to custom parameters on nodes similar to Renderman integration</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue with guides not sampling at a high enough rate when tiny</li>
+<li>visibility parameters ( opacity, self shadow and visible ) now correctly inherited for mesh objects in Arnold renders</li>
+<li>fixed intropolation issue when strand segments became tiny</li>
+<li>fixed bug that caused Arnold to crash when curve mode was set to Ribbon and no width attribute had been defined in the graph</li>
+</ul>
+</div>
+<div class="section" id="id50">
+<h2>1.1.0<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<div class="section" id="id51">
+<h3>1.0<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+</div>
+<p>&#8212;</p>
+</div>
+<div class="section" id="id52">
+<h2>1.0.17<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>downstream nodes now inherit evaluateGuidesAtShutterOpen from Grow.</li>
+<li>added Legacy Scraggle parameter to the scraggle node to switch between the new ( better ) scraggle and the pre 1.0.14 scraggle.</li>
+<li>reimplementation of rotational constraints for strand dynamics which is much more predictable and solves result variation between playback and cache</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed cache name output for Arnold to avoid the wrong name ending up in the ASS file/scene.</li>
+<li>improved VRay memory usage by sharing Yeti&#8217;s memory allocation with VRay</li>
+<li>fixed vray instacne transform order</li>
+<li>modified rlm symbol visibility to avoid name clashes with like minded ISV&#8217;s</li>
+</ul>
+</div>
+<div class="section" id="id53">
+<h2>1.0.16<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>( Ticket #293 ) added Space parameter for clump evaluation with Local and World space options, this changes how guides are applied to clumping</li>
+<li>added Evaluated Input Guides At Shutter Open to the grow node, this forces the input guide curves to be evaluated at the same time across motion samples to avoid degenerate samples being generated when input guides change their relationship to the input surface.</li>
+<li>updated documentation for <a class="reference internal" href="yetinode.html"><em>Yeti Maya Node</em></a>, <a class="reference internal" href="noderef.html"><em>Node Reference</em></a>, <a class="reference internal" href="installation.html"><em>Installation</em></a>, <a class="reference internal" href="licensing.html"><em>License Installation</em></a> and added <a class="reference internal" href="scriptingref.html"><em>Scripting Reference</em></a>.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #289 ) fixed offset/rotation reference in instancer</li>
+<li>( Ticket #268 ) Arnold procedural correctly obeys the opaque, self shadows and visibility parameters set in MtoA</li>
+</ul>
+</div>
+<div class="section" id="id54">
+<h2>1.0.15<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #258 ) fixed precision issue in grow node</li>
+<li>( Ticket #258 ) fixed guide offset application in guide node</li>
+<li>( Ticket #276 ) fixed instance rendering issues introduce in 1.0.14</li>
+<li>( Ticket #253 update ) added getStaticLength to strand system to return a consistent length for the duration of shutter open when generating motion blur</li>
+</ul>
+</div>
+<div class="section" id="id55">
+<h2>1.0.14<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>( Ticket #250 ) instances now inherit a parent_s and parent_t which are the u/v coordinate</li>
+<li>added particle count to node info</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #266 ) fixed crash when input mesh was missing uv coordinates in some instances</li>
+<li>fixed issue with simulation causing nan values in cache files</li>
+</ul>
+</div>
+<div class="section" id="id56">
+<h2>1.0.13<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>VRay correctly inherits render attributes from Yeti node</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>Yeti built against 0.15 MtoA release binaries vs from source for compatibility reasons</li>
+<li>( Ticket #253 ) Fixed VRay batch rendering issues</li>
+<li>( Ticket #260 ) Re-implemented scraggle node, you will likely need to adjust your graphs</li>
+<li>re-engineered pose space deformation for fur to simplify graph calculations</li>
+</ul>
+</div>
+<div class="section" id="id57">
+<h2>1.0.12<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>initial support for Solid Angle&#8217;s Arnold Renderer, requires MTOA 0.15 and Arnold 4.0.20</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #236 ) fixed issue with radius of influence not being correctly set on import</li>
+<li>fixed dynamic caching inconsitencies</li>
+<li>optimized simulation while improving stability</li>
+<li>fixed issue with &#8220;width&#8221; ending up with nan values in some situations</li>
+</ul>
+</div>
+<div class="section" id="id58">
+<h2>1.0.11<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added second input to convert to supply reference geometry for strand conversion</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed vray sub frame sample issue, introduced with centred motion blur for frame duration less than 0.35</li>
+<li>added root attribute to fibres created via convert node</li>
+</ul>
+</div>
+<div class="section" id="id59">
+<h2>1.0.10<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added a new logging system for console output - messages can also be saved to a log file specific with PEREGRINE_LOG_FILE environment variable</li>
+<li>middle mouse button will invert the brush effect when using lift, and increase/decrease in paint mode</li>
+<li>added &#8220;root&#8221; attribute that is created when fur is grown, this is the base of the fibre and is mapped to surf_P for renderman renderers</li>
+<li>locked all platforms to hdf5 1.8.7</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #224 ) fixed issues with save rest position</li>
+<li>fixed issue where selection resets when undo/redo used</li>
+<li>( Ticket #228 ) fixed issue with comb node collapsing hairs that existed outside region of influence</li>
+<li>rebuilt all hdf5 libraries to be strictly thread safe</li>
+</ul>
+</div>
+<div class="section" id="id60">
+<h2>1.0.9<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>( Ticket #197 ) added u/v range fields to support exporting/importing attribute maps for u/v ranges beyond 0.0-1.0</li>
+<li>added &#8220;Fibres to Strands&#8221; in the Convert node, this lets you convert input fibres into strands that can then be used for Comb and Guide.  An example would be importing guide curves, converting them to fibres and doing a scraggle on them, then convert them back to use with Comb.</li>
+<li>added YETI_INTERACTIVE_LICENSE environment variable support, if set to 0 it will force Yeti to avoid checking out an interactive license, if it doesn&#8217;t exist or set to 1 it will allow it</li>
+<li>optimized groom weighing speed</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed comb node that was causing attribute combing to not work in some instances</li>
+<li>( Ticket #203 ) re-implemented bend to mimic direction node, new attributes to control the direction of the bend ( similar to direction node ) - BE AWARE YOUR GRAPHS MAY NEED UPDATING</li>
+<li>( Ticket #203 ) fixed caching of field dynamics with dT being applied twice</li>
+<li>fixed issue which caused motion blur to fail when rendering with Groom input mode and VRay</li>
+<li>( Ticket #197 ) fixed texture import issues</li>
+<li>fixed issue that would cause all connections to geometry to be lost when removing collision geometry</li>
+<li>( Ticket #219 ) guide sets couldn&#8217;t be added via the Yeti outliner ( a change in 1.0.8 broke this )</li>
+</ul>
+</div>
+<div class="section" id="id61">
+<h2>1.0.8<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>( Ticket #185 ) Yeti&#8217;s file inputs now obey any directory mappings defined with dirmap</li>
+<li>added &#8220;Import Groom From Selected Yeti Node&#8221; to the Yeti menu</li>
+<li>moved export groom from Yeti Graph window to Yeti Menu, renamed it to &#8220;Export Groom From Selected Yeti Node&#8221;</li>
+<li>( Ticket #130 ) added pgYetiConvertGuideSetToGroom to convert nurbs guide curves into a groom, use is pgYetiConvertGuideSetToGroom( groom, yeti_node, guide set on yeti node )</li>
+<li>( Ticket #113 ) added Direction node to control inclination and roll witht he options of providing an up vector to specify the vector flow of the surface</li>
+<li>( Ticket #199 ) added Weight attribute to Guide node which can be sampled on a per vertex basis</li>
+<li>added viewport feedback to show what attribute is currently selected for painting</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>( Ticket #188 ) fix clump node causing clump searches to be off by a factor of 2</li>
+<li>fixed issue where &#8220;hidden&#8221; groom attributes were listed in a Groom&#8217;s attribute list</li>
+</ul>
+</div>
+<div class="section" id="id62">
+<h2>1.0.7<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added percent parameter to scraggle to control how many of the actual fibres are affected ( 0 none, 1 all )</li>
+<li>added root and tip scraggle controls to modulate the effect of scraggle over the length of the fibre</li>
+<li>added support for animated/changing lengths on input guide curves</li>
+<li>all platforms built with official VRay for Maya release ( Feb 3rd 2.20 )</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>radius of influence correctly set when grooms are imported</li>
+<li>( Ticket #37 ) fixed issue with object selection when two objects have the same name in the scene ( grouped under different parents )</li>
+<li>( Ticket #182 ) grooming with Display Output is now as fast as 1.0.5</li>
+<li>( Ticket #158 ) in some instances Maya wasn&#8217;t evaluating Yeti nodes fully when in prompt/batch mode so we have to force an initial evaluation</li>
+</ul>
+</div>
+<div class="section" id="id63">
+<h2>1.0.6<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>initial support for Chaos Group&#8217;s V-Ray renderer</li>
+<li>added UVW support to V-Ray DSO</li>
+<li>added -objExport option to pgYetiCommand for exporting Yeti node data to obj files, this only supports exporting of Mesh data - useful for baking out instances etc.</li>
+<li>added Spread attribute to Guide node</li>
+<li>refactored data stream creation</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>added scriptJobs to make sure RMS integration remains when scene is opened/new&#8217;d.</li>
+<li>fixed a bug with nodes referencing uniform attributes incorrectly</li>
+<li>Yeti warns about degenerate/invalid/missing UVs on input mesh</li>
+<li>correctly drawing guides when reading cache files</li>
+<li>fixed guide per frame sample interpolation issues which caused erroneous PRef locations</li>
+<li>visible in reflections/refractions on by default when a Yeti node is created</li>
+</ul>
+</div>
+<div class="section" id="id64">
+<h2>1.0.5<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>changed licensing scheme, Yeti will only check out an interactive license if you&#8217;re opening the graph, creating grooms, simulating or applying a GRM file.  This means that referenceing a cache file for rendering will only take a render license. Yeti also doesn&#8217;t take a license when first loaded, only if a node is created - but it does check and to see if a valid license is available.</li>
+<li>added time variable for expressions, this is the exact sample time at evaluation vs. frame/F which is the round frame number</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue where graph variables weren&#8217;t being written to cache files correctly</li>
+<li>fixed issue with variable evaluation that affected motion blur</li>
+<li>fixed installation issue with shelf_Yeti.mel</li>
+</ul>
+</div>
+<div class="section" id="id65">
+<h2>1.0.4<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>guide curve shapes internally match Maya&#8217;s a lot closer</li>
+<li>added attraction bias to guide curve controls</li>
+<li>added maxNumberOfGuideInfluences to guide curve set and removed from guide node ( to globally control the effect vs. just in the guide node )</li>
+<li>guide curves can have a texture reference object for world space animation</li>
+<li>fairly large optimization where groom elements are pre-cached</li>
+<li>improved guide weighting</li>
+<li>adjusting guide clumping to always clump to the guide curve that currently contributes the most weight ( vs. trying to do weighted clumping )</li>
+<li>added Tutorials section to documentation with Instancing ( and Feathers ) and Grouping tutorial</li>
+<li>added two example scenes for said Tutorials</li>
+<li>improved Pixar&#8217;s Renderman and Renderman for Maya integration ( no need to set up all of the Mel scripts, just render! )</li>
+<li>pgYetiRMSRender is only built on Windows as it&#8217;s not required on the other platforms</li>
+<li>improved comb strand interpolation</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue if something other than a groom/guide was connected to second input of scatter and grow</li>
+<li>converted strands now correctly inherit u and v ( s and t, actually ) coordinates when converted to fibres</li>
+</ul>
+</div>
+<div class="section" id="id66">
+<h2>1.0.3<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>improved guide curve clumping ( much smoother ) and twist</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue introduced in 1.0.2 with scatter and grow not obeying radius of influence</li>
+<li>( Ticket #106 ) hairs don&#8217;t get attracted to the maya curves tight enough and some not beeing used, guide curves work correctly with comb node</li>
+</ul>
+</div>
+<div class="section" id="id67">
+<h2>1.0.2<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>it is now possible to use input guide curves with the comb node</li>
+<li>current frame now used in temp render cache filename</li>
+<li>added Guide Influences parameter to the guide node, prior to this version Yeti considered all guide curves when evaluating the node which led to overly and over soft looking affect, by limiting the number of curves you can control the look easier.  To revert to the previous method set this value to 0 ( use all curves ).</li>
+<li>improved guide clumping and twist result</li>
+<li>Yeti shelf create when plugin loads</li>
+<li>guide curves can now be applied to GRM and Cache files to replaced stored curves dynamically, this is done by attaching the same guide set once the groom has been loaded</li>
+<li>added &#8220;Lock To Surface&#8221; attribute that is on the Guide Set to have guide curves follow deforming surfaces similar to Grooms</li>
+<li>added Display Bounding Boxes to display palette of Yeti Node to draw relevent bounding</li>
+<li>added Increase Render Bounds attribute to cheat the DSO bounding box&#8217;s bounds in situations where the generated data ends up exceeding the predicted bounds ( similar to prman displacement bounds )</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed comb interpolation issue</li>
+<li>only the first input is evaluated when a node is ignored now ( this was the original intention that was broken )</li>
+<li>( Ticket #104 ) fill using &#8220;minus&#8221; hair tool with selection, deleting now obeys selected strands</li>
+<li>( Ticket #103 ) convert strands to fiber + width node, Yeti will now not crash when connecting the converted strands to the second input of the width node</li>
+</ul>
+</div>
+<div class="section" id="id68">
+<h2>1.0.1<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>improved dynamics solve for extremely fast moving deformations</li>
+<li>fixed RMS and Prman linkage on OSX</li>
+</ul>
+<div class="section" id="id69">
+<h3>0.9<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+</div>
+<p>&#8212;</p>
+</div>
+<div class="section" id="id70">
+<h2>0.9.6<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added -verbose flag to procedural DSO to control output level, 0 = none, 1 = some and 2 = all</li>
+<li>added Verbosity attribute to pgYetiMaya node ( in the Other palette ) to control output verbosity at render time</li>
+<li>added attraction bias to Clumping which controls how far along the hair the clumping transition happens ( 1.0 pushes it to the tip, -1.0 to the base )</li>
+<li>added file dialogs to I/O palette in Yeti Node for Groom File Name and Cache File Name</li>
+<li>added graph evaluation time to Full Verbosity output</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed bug which caused comb node to crash when combing points when no comb attrbiute specified</li>
+</ul>
+</div>
+<div class="section" id="id71">
+<h2>0.9.5<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added Relax Steps to scatter to lay out scattered points more evenly</li>
+<li>added Plugin Version read only attribute to pgYetiMaya node in the Other palette ( helper only )</li>
+<li>exposed pgYetiMaya attributes in the channel box</li>
+<li>added ability to instance to individual strands converted to fibres</li>
+<li>comb can now create attributes on fibres</li>
+<li>added pgYetiSwapGeometry command to provide an easy way of swapping all the connections from one geometry to another</li>
+<li>added offset parameter to instance node</li>
+<li>added ignore namespaces parameter to pgYetiMaya node to truncate namespaces on input objects/grooms/guide sets to the yeti node</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue that caused Yeti not to render when reading a groom file</li>
+<li>guide feedback now correctly draw in viewport when &#8220;display guides&#8221; is on</li>
+<li>instanced geometry now has texture coordinates correctly defined as facevarying in renderman output</li>
+<li>u and v attributes are mapped to s and t in rib</li>
+</ul>
+</div>
+<div class="section" id="id72">
+<h2>0.9.4<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added cycle option to instance node to cycle input objects</li>
+<li>now linking against 3delight 10.0.4 &amp; PRMan 16.2</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed a bug in the custom object selector that was deleting references prematurely</li>
+<li>fixed an issue in the group node which caused it to crash when specifying a non-vector attribute</li>
+<li>fixed bug where stroke was being drawn even when mouse button wasn&#8217;t being pressed</li>
+<li>fixed sculpt mode, it should work as expected now</li>
+</ul>
+</div>
+<div class="section" id="id73">
+<h2>0.9.3<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed rest position bug introduced in 0.9.2</li>
+<li>another tweak to the dynamics stability</li>
+</ul>
+</div>
+<div class="section" id="id74">
+<h2>0.9.2<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>updated the attribute node which will create new attributes if they don&#8217;t exist and now take a second input, a groom, which can be used to set the default values for the new attribute by sampling attributes on the groom</li>
+<li>added invert selection to groom tools</li>
+<li>added Maya field support for groom simulation</li>
+<li>improved strands rotational constraint solver accuracy</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed an issue which caused some refereces to crash maya on input</li>
+<li>fixed issue where selected points would change if deleting strands while selected</li>
+<li>refactored groom drawing to solve stability issues</li>
+<li>fixed issue with strands popping to the other side of a model when painting on a very thin model ( ears etc. )</li>
+</ul>
+</div>
+<div class="section" id="id75">
+<h2>0.9.1<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>new attributes default to a value of 1.0</li>
+<li>dynamics take into account scale of strand segment for more accurate gravitational effect</li>
+<li>added isolate selected strands option in groom, when on ( by default ) only the selected strands will be drawn and affected</li>
+<li>add the ability to create new attributes in Comb, so if you want to instance feathers you can have a comb attribute T and in the instance node us $N as your upvector and $T as the alignment - works well for controlling the direction of branches more effectively too.</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue with Maya 2012 which caused the nodes in a graph to bunch up when re-opening</li>
+<li>fixed crash bug when undoing after creating new strands</li>
+<li>fixed caching of dynamic sims</li>
+<li>refactored groom and groom manipulator to hopefully fix outliner issues</li>
+<li>fixed RMS linking issues</li>
+<li>fixed bug which caused Yeti to crash when deleting strands after importing them into the scene</li>
+</ul>
+</div>
+<div class="section" id="id76">
+<h2>0.9.0<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>ability to paint dynamic stiffness via &#8220;sim_stiffness&#8221; strand attribute, renamed mass control attribute to &#8220;sim_mass&#8221;</li>
+<li>added RenderMan Studio support for Maya 2012</li>
+<li>added the ability to output subdivision surfaces from yeti graphs</li>
+<li>added strand selection feedback</li>
+<li>added custom object outliner to replace maya&#8217;s, this should hopefully resolve Maya outliner issues</li>
+<li>RMS support for Maya 2012</li>
+<li>removed redundant Keep On Surface parameter</li>
+<li>reorganized paintable attribute palette to include display options</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>single point not drawn at 0,0,0 when strands are hidden on groom</li>
+<li>resolved instabilities with sim_stiffness attribute</li>
+<li>resolved a bug which caused setLength to stop working when strands had a tiny strand segment</li>
+<li>fixed a bug that caused 0 values when trying to smooth outside of selected vertices</li>
+</ul>
+<div class="section" id="id77">
+<h3>0.8<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
+</div>
+<p>&#8212;</p>
+</div>
+<div class="section" id="id78">
+<h2>0.8.17<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added the option of instancing on a per element or per point basis so objects can be instanced to individual fibres or converted grooms</li>
+<li>added -saveGroom [filename] to pgYetiCommand to save out pgYetiMaya .grm files from mel scripts</li>
+<li>dynamics uses mass attribute painted in groom to control the over all mass of strands</li>
+<li>refactored/optimized dynamics</li>
+<li>graphs are encoded in the cache file</li>
+<li>added diffuse_mix option to the shader to mix in the surface diffuse value into shading result for more predictible ( though slightly wrong ) lighting</li>
+<li>optimized the draw of painted attributes</li>
+<li>set up build process to support Maya 2012</li>
+<li>removed tablet pressure</li>
+<li>changed default segment length in Grow node to 0.5</li>
+<li>added collision objects to groom dynamics w/ new interface to specifying collision objects in the scene</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>global scalar variables don&#8217;t crash the graph when referenced by vector fields</li>
+<li>dynamics now correctly compute dt</li>
+<li>volume grouping correctly groups points scattered on recursive geometry</li>
+<li>removed redudant attributes on nodes</li>
+<li>fixed texture export issue that caused large black areas on output</li>
+<li>fixed misaligned specular in shader and specular_deviation now obeyed ( defaults to 0.0 )</li>
+<li>hopefully issues with outliner window resolved, please report back if this still persists</li>
+</ul>
+</div>
+<div class="section" id="id79">
+<h2>0.8.16<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>multiple objects can be instanced to a single point</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>import texture on groom now correctly saves an undo state</li>
+<li>rolled back some changes that may be affecting temporal output for motion blur</li>
+<li>fixed a bug in scatter which was causing the texture reference object to be ignored</li>
+<li>fixed issues where hairs weren&#8217;t being groomed correctly if they were longer than an input groom</li>
+</ul>
+</div>
+<div class="section" id="id80">
+<h2>0.8.15<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added object selection to instance, for example id is defined and cycle($id,0,4) in the object parameter will cycle through 5 possible input objects ( if they exist)</li>
+<li>alignment and scale variation for instancing</li>
+<li>added particle/point support for comb, which lets the user comb N</li>
+<li>added comb attribute to control what attribute is actually combed when applied to points</li>
+<li>added the ability to scatter across multiple objects</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>cleaned up global variables correctly, resolves issue with cache files slowly growing during the course of a shot</li>
+<li>improved prman/rms sampling for motion blur</li>
+<li>fixed bug which caused radius to be ignored on nurbs guide curves</li>
+<li>cache files can now handle unlimited sized graphs ( ie. fixed graph size limitation )</li>
+<li>fixed strand weight equation to avoid &#8220;spikes&#8221; in texture export</li>
+</ul>
+</div>
+<div class="section" id="id81">
+<h2>0.8.14<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added option of specifying a grouping attribute ( by default P )</li>
+<li>added group support to instance and grow ( ie. only instancing/growing off points in group )</li>
+<li>added alignment and up vector to instance</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>empty graph would cause maya to crash</li>
+<li>fixed popping in clumping node</li>
+</ul>
+</div>
+<div class="section" id="id82">
+<h2>0.8.13<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>updated Yeti shelf, please reload to pick up changes as some of the mel function names have changed</li>
+<li>new groom I/O to support paintable user attributes</li>
+<li>custom user attributes can be painted, this is a re-design of the painting methodology.  When in paint mode density, width and any other attribute has to be created to be used - any number of custom attributes can be created for use within the graph.  Length is a special case and ALWAYS exists as it&#8217;s a geometric attribute that can&#8217;t not exist.</li>
+<li>scatter and grow have been updated to allow specification of a specific attribute to be used, defaults to the historical values ( density and length ).</li>
+<li>removed paint mode types and refactored groom UI to support the custom paintable attributes, to paint and attribute you can double click it&#8217;s name and/or use the paint attribute button</li>
+<li>added duplicate &amp; rename attribute and removed set from length tools ( redundant )</li>
+<li>added export paint attribute to texture for grooms</li>
+<li>added import texture to attribute for grooms</li>
+<li>graphs can now handle mulitple input objects and grooms</li>
+<li>added new AE UI in the Graph section of the pgYetiMaya node, objects and grooms can be added/removed using the input lists</li>
+<li>guide sets are now added to the graph similar to objects and grooms in the AE Graph-&gt;Input Guide Sets vs. the graph editor menu option</li>
+<li>refactored grouping</li>
+<li>added expression mode to grouping to group based on an expressions result</li>
+<li>removed the draw toggle and now defaulting to drawing the &#8220;root&#8221; node</li>
+<li>added drawFeedback option to pgYetiMayaNode to turn on/off node feedback ( such as grouped points ) in the viewport</li>
+<li>added bounding objects to grouping so geometry can be used to group points</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>graph correctly evaluates when first reading cache/grm files</li>
+<li>fixed motion blur samples issue when a full frame ( -0.5, 0.5 ) was requested</li>
+<li>fixed &#8220;Write Cache&#8221; button in pgYetiMaya</li>
+</ul>
+</div>
+<div class="section" id="id83">
+<h2>0.8.12<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>it&#8217;s possible to create 0 length strands in grooms ( for painting instancing locations )</li>
+<li>cleaned up groom/strand drawing</li>
+<li>optimized GL drawing</li>
+<li>added viewport length to pgYetiMaya node</li>
+<li>added photoshop style hotkeys to resize brush ( [ and ] )</li>
+<li>added &#8220;maintain length&#8221; parameter to scraggle, default to on where fibres will maintain their length ( regular behavoir ) and off means that they maintain the direction/groom more accurately</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue with brush lag</li>
+<li>hopefully isolated intermittent crashes with painting</li>
+<li>brush set length bug resolved</li>
+<li>adjusted brush event filter to handle tablet pressure on windows more reliably</li>
+<li>fixed thread safety issue when rendering on windows</li>
+<li>resolved a memory leak introduced a few versions ago due to badly managed shared pointers</li>
+<li>grooms draw using user defined colour when in shaded mode ( yeti nodes only in wireframe due to material needs )</li>
+</ul>
+</div>
+<div class="section" id="id84">
+<h2>0.8.11<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed incorrect face vertex uv output</li>
+<li>refactored mesh primitive to avoid redundant re-allocation of input parameters</li>
+</ul>
+</div>
+<div class="section" id="id85">
+<h2>0.8.10<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>Renderman Studio support, most of the shared libraries and binaries should be compatible between RMS and Prman but in some instances ( Windows ) they&#8217;re not.  As stressed by Pixar in the RMS docs, be aware of what dso&#8217;s you&#8217;re using.</li>
+<li>undo/redo hot keys implemented, using ctrl-z, ctrl-shift-z</li>
+<li>brush scaling now uses B key vs. shift</li>
+<li>added Sculpting brush which allows the use to push/pull strands in the viewing plane</li>
+<li>added Trim brush which allows you to trim hair away, this works well when trimming profiles</li>
+<li>mirroring support added for Sculpt and Trim brushes</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed issue introduced in 0.8.9 rendering on Windows</li>
+<li>length floating point precision set to 2 when drawing strand length</li>
+<li>fixed bug that crashed Yeti when an input was missing in scatter</li>
+<li>renamed &#8220;Geometry&#8221; to &#8220;Selection&#8221; on import node for clarity</li>
+<li>fixed tablet pressure &#8220;ssllloowwwww upppddatteee&#8221; on Windows</li>
+<li>fixed issue where node info was creating multiples of the same attributes/variables</li>
+<li>mapped attributes correctly merged</li>
+</ul>
+</div>
+<div class="section" id="id86">
+<h2>0.8.9<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added a transform node to move whole objects in the graph</li>
+<li>added the instance node revealing the power of Yeti instancing!</li>
+<li>mesh objects now drawn when dislpayed in the graph</li>
+<li>renamed displayFur attribute to displayOutput ( as you can generate more than fur now )</li>
+<li>mesh rendering rolled into this build</li>
+<li>initial instance rendering implemented</li>
+<li>instancing accepts any type of geometry for input ( as long as it has P )</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed bug which was causing only 1 shape to be cached when previewing renders</li>
+</ul>
+</div>
+<div class="section" id="id87">
+<h2>0.8.8<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added adjust HSV option to shader node</li>
+<li>added hsv_adjust parameter to fur shader</li>
+<li>new documentation! ( you&#8217;re reading it! )</li>
+<li>removed all dependency on Maya for flexibility and optimizations ( future versions will integrate into Houdini etc. )</li>
+<li>strands are kept above the input surface when grooming + a &#8220;Keep On Surface&#8221; option on the groom node</li>
+<li>improved handling of multiple input grooms in the graph as well as updating reference surfaces</li>
+<li>re-written brush event system</li>
+<li>tablet pressure now supported for grooming</li>
+<li>initial dynamics implementation in place</li>
+<li>moved simulation controls from pgYetiMaya node to pgYetiGroom node</li>
+<li>added color parameter to Yeti node to draw the fur a specific colour when not selected</li>
+<li>added input groom list to Yeti node</li>
+<li>brush is now drawn on the surface all the time, not just when button is pressed</li>
+<li>select/deselect strands while grooming to limit the brush effect to specific areas</li>
+<li>added display strand length parameter that draws the length of a strand when hovering over one</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed shader bug where opacity_map_value was being redeclared</li>
+<li>node editor correctly display error node</li>
+<li>fixed import node pattern matching</li>
+<li>text fields set with list dialogs now update right away ( vs. needing to press enter )</li>
+<li>fixed issues where 0 length strands would cause nan values in groom</li>
+<li>fixed missed normalization with direction brush, now it&#8217;s way more accurate</li>
+<li>groom node only uses user define colour when not selected etc.</li>
+<li>duplicating grooms work</li>
+<li>using shift to change brush size provides correct scaling information</li>
+</ul>
+</div>
+<div class="section" id="id88">
+<h2>0.8.7<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added input geometry list to pgYetiMaya AE template</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>import object list now populated without the need to cook the node</li>
+<li>import groom now works when there is more than one groom</li>
+</ul>
+</div>
+<div class="section" id="id89">
+<h2>0.8.6<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fill now works again</li>
+<li>painting works when obey surface normal is off</li>
+<li>paint values are exactly as set vs. filtered</li>
+</ul>
+</div>
+<div class="section" id="id90">
+<h2>0.8.5<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>improved smooth brush</li>
+<li>fixed painting length issues that led to crashes</li>
+<li>sped  up kd-tree search</li>
+<li>fixed issue with &#8220;missing&#8221; fibres which is caused by the tangental interpolation on the input strands</li>
+<li>fixed path name issues on windows</li>
+</ul>
+</div>
+<div class="section" id="id91">
+<h2>0.8.4<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>compiling against 3delight 9.0.89 on Windows</li>
+<li>windows paths have slashes replaced to make sure they&#8217;re resolved correctly</li>
+<li>fixed issue where grooms couldn&#8217;t be created when a previous groom had been deleted</li>
+<li>re-implemented tree hashing to improve graph re-evaluation</li>
+<li>importing grooms now work, added import groom button in Yeti AE</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>removed nan generation issue when clumping fibres were shorter than the fibres to be clumped</li>
+<li>undo fixed</li>
+<li>GL sorting issues when group node is drawn in the viewport resolved</li>
+<li>refreshing grooms when renamed updates immediately</li>
+<li>fill works correctly now</li>
+<li>correctly removes graph editor when graph/node deleted</li>
+<li>ptc generation works on Windows w/ latest 3delight</li>
+</ul>
+</div>
+<div class="section" id="id92">
+<h2>0.8.3<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>completely re-implemented SeExpr integration for ultimate awesomeness</li>
+<li>added global variable list to node info</li>
+<li>added user variable display and open graph editor button to pgYetiMaya AE</li>
+<li>much better paint mode brush dynamics and re-implementation of smooth in paint mode</li>
+<li>added geometry sampling, attributes from the input geometry can be transferred to the source points and fibres</li>
+<li>updated procedural call to handle more robust input parameters ( WARNING: old archived ribs will not work! )</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed bug in graph which caused a crash when nodes have been deleted</li>
+<li>fixed graph bug which drew an input on nodes that have none ( such as import )</li>
+<li>fixed backwards compatibility with vector types in graph</li>
+<li>adjusting render values won&#8217;t cause the fur to update in the viewport</li>
+</ul>
+</div>
+<div class="section" id="id93">
+<h2>0.8.2<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added some heuristics to avoid groomed strands being pushed through the surface</li>
+<li>optimized the grooms use of setSurface for snappier feedback</li>
+<li>finished prman integration!</li>
+<li>groom display color can be changed</li>
+<li>populate at mesh points true by default on grooms</li>
+<li>added direction brush + icon</li>
+<li>added tooltips to all groom parameters</li>
+<li>improved brush dynamics</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>groom move mode wasn&#8217;t updating the new surface position which caused garbage combing values</li>
+<li>groups work on blend nodes now</li>
+<li>flood fill works with propgate at all mesh points</li>
+<li>fixed smooth sculpt to use strand normal vs. brush normal and modulate by dot</li>
+<li>tweaked comb brush and added the option to reverse the curvature</li>
+<li>fixed comform new strands</li>
+</ul>
+</div>
+<div class="section" id="id94">
+<h2>0.8.1<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>using discs to display paint values for groom</li>
+<li>ability to scale paint value discs in groom</li>
+<li>removed fly aways on guide curves</li>
+<li>added convert node to convert strands to fibres</li>
+<li>clumping now accepts strands as a second input as well as fibres</li>
+<li>added attribute mapping</li>
+<li>added attribute node to remap attributes to those that can be passed to the renderer</li>
+<li>optimized populate at vertex positions</li>
+<li>delete strands now obeys brush weight allowing multiple deletions at a time</li>
+<li>added status bar to graph editor</li>
+<li>added attribute mapping to node info</li>
+<li>custom variables can be fed into the graph via yetiVariableF and yetiVariableV maya attributes</li>
+<li>rib export handled via mel bindings to remove dependency on renderer dlls ( resulting in one plugin again )</li>
+<li>strands align to new surface normal when moved</li>
+<li>added direction parameter to grow</li>
+<li>differentiated between groom and cache file name</li>
+<li>added varying update frequencies on groom</li>
+<li>populate and length disabled on corrective grooms ( as topology can&#8217;t change )</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>no missed points when populating at vertices</li>
+<li>corrective grooms work on caches again</li>
+</ul>
+</div>
+<div class="section" id="id95">
+<h2>0.8.0<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>added scale parameter to scraggle node</li>
+<li>fixes and optimizations to guides</li>
+<li>added populate at vertex positions in groom</li>
+<li>zero length strands can be created</li>
+<li>fixed bend and added bend direction</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>grow correctly handles min/max length when a groom is attached</li>
+</ul>
+<div class="section" id="id96">
+<h3>0.7<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h3>
+</div>
+<p>&#8212;</p>
+</div>
+<div class="section" id="id97">
+<h2>0.7.5<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>cleaned up Groom UI</li>
+<li>added radius of influence to groom to limit the strands influence if greater than 0.0</li>
+<li>cross platform cache compression added</li>
+<li>added write cache control to Yeti AE</li>
+<li>fixed strand movement in groom edit mode</li>
+<li>added icons :)</li>
+<li>added node info widget to graph editor</li>
+<li>integrated new dynamics solver</li>
+<li>added initial strand length parameter to groom node</li>
+<li>added strand collision with groom surface to avoid grooming inside of base surface</li>
+<li>added a timer to node information</li>
+<li>added ability for new strands to conform to the same direction as neighbours</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>added undo for groom fill</li>
+<li>bounding box correctly computed in maya_batch/rib archive output mode</li>
+</ul>
+</div>
+<div class="section" id="id98">
+<h2>0.7.4<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<p><strong>Bugs Fixed</strong></p>
+</div>
+<div class="section" id="id99">
+<h2>0.7.3<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>grid now drawing in graph UI</li>
+<li>added version number to window title</li>
+<li>correct license checking for gui and render components</li>
+<li>added the concept of static and dynamic attributes, this means that cache files are even smaller</li>
+<li>replaced Peregrine expression language with Disney&#8217;s SeExpr ( <a class="reference external" href="http://www.disneyanimation.com/technology/seexpr.html">http://www.disneyanimation.com/technology/seexpr.html</a> )</li>
+<li>optimized internal allocations with make_shared</li>
+<li>strands now update with geometry changes ( make sure reference changes too! )</li>
+<li>optimized strands class</li>
+<li>re-implementation of brush and groom functionality</li>
+<li>added flood fill feature for grooming</li>
+<li>added cubic interpolation to stored motion samples</li>
+<li>cleaned up groom interpolation</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>need <cite>setenv MAYA_SET_PARENT_HINT 0</cite> on Linux to avoid crash when showing graph editor</li>
+<li>lowered repeated ends for renderman RiCurve output</li>
+<li>fixed first vertex cropping in grow</li>
+<li>fixed crash bug when requesting a new scene when graph editor has been opened</li>
+<li>fixed crash in 3delight DSO on close with uninitialized data</li>
+</ul>
+<p>Note
+This version requires MAYA_LOCATION defined, and maya&#8217;s dlls in the path</p>
+</div>
+<div class="section" id="id100">
+<h2>0.7.2<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Additions</strong></p>
+<ul class="simple">
+<li>updated mel to provide new pgYetiNewNode so nodes can be created without Mesh select for cache reading.</li>
+<li>each Yeti node now has it&#8217;s own graph editor so two graphs can be edited at once</li>
+<li>added inheritUVs to Import node</li>
+<li>added copy/paste support to graph editor, nodes can be pasted both into the current graph and betweens graphs</li>
+<li>much nicer per component grooming control</li>
+<li>node aesthetic changes</li>
+<li>noodles now drawn as cubic curves</li>
+</ul>
+<p><strong>Bugs Fixed</strong></p>
+<ul class="simple">
+<li>fixed precision bug that caused motion blur samples to be misaligned</li>
+<li>fixed a bug which caused Yeti to crash when input geometry had degenerate UVs</li>
+<li>when a node is set to &#8220;root&#8221; and deleted it will now set one of it&#8217;s input to render</li>
+</ul>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+      
+        <a href="examples.html" class="btn btn-neutral" title="Example Scenes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

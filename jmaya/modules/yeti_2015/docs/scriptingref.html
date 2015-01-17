@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scripting Reference &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Reference Guide" href="referenceguide.html"/>
+        <link rel="next" title="Expression Reference" href="expressionref.html"/>
+        <link rel="prev" title="Width" href="nodes/width.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Scripting Reference</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="scripting-reference">
+<h1>Scripting Reference<a class="headerlink" href="#scripting-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="graph">
+<h2>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h2>
+<p>The pgYetiGraph command can be used to query and edit values within a graph.  The command takes any number of arguments and the name of the Yeti node, for example:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiGraph</span> <span class="pre">-listNodes</span> <span class="pre">pgYetiMayaShape1</span></code></p>
+<p>will list all of the nodes within the graph.  Or</p>
+<p><code class="docutils literal"><span class="pre">pgYetiGraph</span> <span class="pre">-listNodes</span> <span class="pre">-type</span> <span class="pre">&quot;scatter&quot;</span> <span class="pre">pgYetiMayaShape1</span></code></p>
+<p>will limited the list to the node type specified.</p>
+<p>Once you know what node you want to query you can specify it with the -node parameter and then query the parameter names:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiGraph</span> <span class="pre">-node</span> <span class="pre">&quot;scatter01&quot;</span> <span class="pre">-listParams</span> <span class="pre">pgYetiMayaShape1</span></code></p>
+<p>And now that you know what parameters there are for the node, you can used the -param argument to query the parameters value:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiGraph</span> <span class="pre">-node</span> <span class="pre">&quot;scatter01&quot;</span> <span class="pre">-param</span> <span class="pre">&quot;density&quot;</span> <span class="pre">-getParamValue</span> <span class="pre">pgYetiMayaShape1</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-listNodes</td>
+<td>Will list all of the nodes in the graph.</td>
+</tr>
+<tr class="row-odd"><td>-listParams</td>
+<td>Will list all of the parameters on the node in a graph, specified with the -node argument.</td>
+</tr>
+<tr class="row-even"><td>-type</td>
+<td>Is used to specify the type of node to be listed.</td>
+</tr>
+<tr class="row-odd"><td>-node &lt;string node&gt;</td>
+<td>Used to specify which node you want to query.</td>
+</tr>
+<tr class="row-even"><td>-nodeType</td>
+<td>Return the type of the node specified by the -node parameter.</td>
+</tr>
+<tr class="row-odd"><td>-param &lt;string param&gt;</td>
+<td>Used to specify which parameter you want to query.</td>
+</tr>
+<tr class="row-even"><td>-paramNiceName</td>
+<td>Return the name for the parameter used by Yetis UI.</td>
+</tr>
+<tr class="row-odd"><td>-paramType</td>
+<td>Return the data type of the parameter.</td>
+</tr>
+<tr class="row-even"><td>-getParamValue</td>
+<td>Return the value of the parameter, it will be cast to the required data type.</td>
+</tr>
+<tr class="row-odd"><td>-setParamValueBoolean &lt;bool&gt;</td>
+<td>Set the specified parameters value if it&#8217;s a boolean data type.</td>
+</tr>
+<tr class="row-even"><td>-setParamValueScalar &lt;scalar&gt;</td>
+<td>Set the specified parameters value if it&#8217;s a int or float data type.</td>
+</tr>
+<tr class="row-odd"><td>-setParamValueVector &lt;vector&gt;</td>
+<td>Set the specified parameters value if it&#8217;s a vector, point or color data type.</td>
+</tr>
+<tr class="row-even"><td>-setParamValueString &lt;string&gt;</td>
+<td>Set the specified parameters value if it&#8217;s a string data type.</td>
+</tr>
+<tr class="row-odd"><td>-setParamValueExpr &lt;string&gt;</td>
+<td>Set the specified parameters value to the passed expression.</td>
+</tr>
+<tr class="row-even"><td>-isParamConstant</td>
+<td>Returns whether or not the value of the parameter is a variable expression or not.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="caching">
+<h2>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h2>
+<p>You can use pgYetiCommand to cache out a select Yeti node using the <code class="docutils literal"><span class="pre">-writeCache</span></code> parameter which requires the full pathname as a string, frame padding should be specified using standard C notation ( ie. %04d for 4 digit padding ).  Used on it&#8217;s own <code class="docutils literal"><span class="pre">-writeCache</span></code> will only generate a cache for the current frame, to write a range of caches the <code class="docutils literal"><span class="pre">-range</span></code> parameter should be used with a start and end frame.  By default Yeti writes 3 samples for each frame, in most cases this should be sufficient but in cases where fast moving characters are the basis for the fur generation sometimes higher samples ( up to 7 ) can be used.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-writeCache &lt;string fileName&gt;</td>
+<td>This tells Yeti you want to write a cache to the specified file name.</td>
+</tr>
+<tr class="row-odd"><td>-range &lt;int start&gt; &lt;int end&gt;</td>
+<td>The frame range to export.</td>
+</tr>
+<tr class="row-even"><td>-samples &lt;int numberOfSamples&gt;</td>
+<td>The number of samples to be used for each frame, this is centered around the frame eg. 3 samples will write 2.5, 3.0 and 3.5 if the current frame was 3.</td>
+</tr>
+<tr class="row-odd"><td>-sampleTimes &lt;string sampleTimes&gt;</td>
+<td>A string that represents a list of sample times for each frame separated by a space, these are frame offsets.  eg. &#8220;-0.3 0.0 0.3&#8221; will write 2.7, 3.0 and 3.3 to the cache for frame 3.</td>
+</tr>
+<tr class="row-even"><td>-updateViewport &lt;boolean&gt;</td>
+<td>Toggle whether the 3d viewport updates while exporting.</td>
+</tr>
+<tr class="row-odd"><td>-generatePreview &lt;boolean&gt;</td>
+<td>Toggle whether a preview is generated in the cache files.</td>
+</tr>
+</tbody>
+</table>
+<p>As an example, if you wanted to cache out all the fur from frame 1-100 with 5 motion samples per frame you could used</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-writeCache</span> <span class="pre">&quot;/base/vfx/tmp/myCache.%04d.fur&quot;</span> <span class="pre">-range</span> <span class="pre">1</span> <span class="pre">100</span> <span class="pre">-samples</span> <span class="pre">5</span></code></p>
+</div>
+<div class="section" id="obj-export">
+<h2>OBJ Export<a class="headerlink" href="#obj-export" title="Permalink to this headline">¶</a></h2>
+<p>pgYetiCommand can also be used with the <code class="docutils literal"><span class="pre">-objExport</span></code> to export polygonal geometry from the currently selected Yeti node.  This will ignore any fibres and is generally meant to bake out instancing.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-objExport</span> <span class="pre">[density</span> <span class="pre">(float)]</span> <span class="pre">[filename</span> <span class="pre">(string)]</span> <span class="pre">[do_texture_coordinates</span> <span class="pre">(bool)]</span> <span class="pre">[do_normals</span> <span class="pre">(bool)]</span></code></p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-objExport</span> <span class="pre">1</span> <span class="pre">&quot;/base/vfx/tmp/myInstances.obj&quot;</span> <span class="pre">true</span> <span class="pre">true</span></code></p>
+</div>
+<div class="section" id="generating-maya-objects">
+<h2>Generating Maya Objects<a class="headerlink" href="#generating-maya-objects" title="Permalink to this headline">¶</a></h2>
+<p>In some instances you may want to generate Maya representations of the objects created by Yeti - to do this you can select the node and either use the &#8220;Convert to Maya Objects&#8221; option in the Yeti menu or run:</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-generateMayaObjects</span></code></p>
+</div>
+<div class="section" id="yeti-node">
+<h2>Yeti Node<a class="headerlink" href="#yeti-node" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">pgYetiCreate()</span></code> is used to create a new Yeti node in the Maya scene.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCreateOnMesh()</span></code> can be used to expedite the process of adding an initial input object, make sure a mesh has been selected prior to using the command.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiAddGroom(</span> <span class="pre">string</span> <span class="pre">$groom,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will add the groom <code class="docutils literal"><span class="pre">$groom</span></code> as an input to <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRemoveGroom(</span> <span class="pre">string</span> <span class="pre">$groom,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will remove the groom <code class="docutils literal"><span class="pre">$groom</span></code> as an input to <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiAddGeometry(</span> <span class="pre">string</span> <span class="pre">$object,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will add the geometry <code class="docutils literal"><span class="pre">$object</span></code> as an input to <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRemoveGeometry(</span> <span class="pre">string</span> <span class="pre">$object,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will remove the geometry <code class="docutils literal"><span class="pre">$object</span></code> as an input to <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiAddGuideSet(</span> <span class="pre">string</span> <span class="pre">$set,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will add the maya set, containing guide curves, <code class="docutils literal"><span class="pre">$set</span></code> as an input to <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRemoveGuideSet(</span> <span class="pre">string</span> <span class="pre">$set,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will remove the maya set <code class="docutils literal"><span class="pre">$set</span></code> as an input to <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRemoveAllConnections(</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will remove any and all connections on the Yeti node.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiForceUpdate(</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> forces the specified node to re-evaluate it&#8217;s graph.</p>
+</div>
+<div class="section" id="groom-node">
+<h2>Groom Node<a class="headerlink" href="#groom-node" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">pgYetiCreateGroomOnMesh()</span></code> creates a new Groom node on a selected mesh object.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiAddCollisionGeometry(</span> <span class="pre">string</span> <span class="pre">$object,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaGroomNode</span> <span class="pre">)</span></code> will add the geometry <code class="docutils literal"><span class="pre">$object</span></code> to <code class="docutils literal"><span class="pre">$pgYetiMayaGroomNode</span></code>&#8216;s list of collision geometry.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRemoveCollisionGeometry(</span> <span class="pre">string</span> <span class="pre">$object,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaGroomNode</span> <span class="pre">)</span></code> will remove the geometry <code class="docutils literal"><span class="pre">$object</span></code> to <code class="docutils literal"><span class="pre">$pgYetiMayaGroomNodes</span></code>&#8216;s list of collision geometry.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiAddField(</span> <span class="pre">string</span> <span class="pre">$field,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaGroomNode</span> <span class="pre">)</span></code> attaches <code class="docutils literal"><span class="pre">$field</span></code> to <code class="docutils literal"><span class="pre">$pgYetiMayaGroomNode</span></code> to affect dynamic simulation.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRemoveField(</span> <span class="pre">string</span> <span class="pre">$field,</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaGroomNode</span> <span class="pre">)</span></code> detaches <code class="docutils literal"><span class="pre">$field</span></code> from <code class="docutils literal"><span class="pre">$pgYetiMayaGroomNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommand</span> <span class="pre">-removeDuplicate</span> <span class="pre">&lt;distance&gt;</span></code> is used to remove duplicate strands within the distance threshold.</p>
+</div>
+<div class="section" id="utilities">
+<h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">pgYetiConvertGuideSetToGroom(</span> <span class="pre">string</span> <span class="pre">$guide_set,</span> <span class="pre">string</span> <span class="pre">$mesh_object,</span> <span class="pre">float</span> <span class="pre">$stepSize</span> <span class="pre">)</span></code> is used to convert a guide curve set into a Yeti Groom node for combing, <code class="docutils literal"><span class="pre">$guide_set</span></code> is the set that you want to convert and <code class="docutils literal"><span class="pre">$mesh_object</span></code> is the object the guides are to be growing from.  Step size should be 0.1 by default, but other values may be passed to refine the detail of the output strands.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiImportGroomFileFromNode(</span> <span class="pre">string</span> <span class="pre">$pgYetiMayaNode</span> <span class="pre">)</span></code> will rebuild a graph and groom nodes stored in a GRM file currently referenced by <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiExtractGroomFromNode(</span> <span class="pre">string</span> <span class="pre">$in_groom,</span> <span class="pre">string</span> <span class="pre">$yetiNode,</span> <span class="pre">string</span> <span class="pre">$postFix</span> <span class="pre">)</span></code> is used to extract and rebuild a single groom stored in a GRM or cache file currently referenced by <code class="docutils literal"><span class="pre">$pgYetiMayaNode</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiSwapGeometry(</span> <span class="pre">string</span> <span class="pre">$originalGeometry,</span> <span class="pre">string</span> <span class="pre">$newGeometry</span> <span class="pre">)</span></code> is a utility to swap all the Yeti connections on one mesh to another, possibly a when a model updates.</p>
+</div>
+<div class="section" id="license-utilities">
+<h2>License Utilities<a class="headerlink" href="#license-utilities" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">pgYetiCommaned</span> <span class="pre">-licenseAvailable</span></code> returns true ( 1 ) if a license is available and/or if the license is already successfully checked out.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommaned</span> <span class="pre">-numberOfLicensesAvailable</span></code> returns the number of available licenses as reported by the license server.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiCommaned</span> <span class="pre">-returnLicense</span></code> can be used to forcibly return the Yeti license checked out by the current user.</p>
+</div>
+<div class="section" id="rendering">
+<h2>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline">¶</a></h2>
+<p>Yeti has a separate render command that is used by a few of the different rendering integration tools ( it conforms to what 3delight needs and is used by RMS ) to provide a means of sampling the scene as well as saving a cache.  Below are the commands that are supported that may be of interest to others building integration tools.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-addStep</span> <span class="pre">-sampleTime</span> <span class="pre">&lt;time&gt;</span> <span class="pre">-frame</span> <span class="pre">&lt;frame&gt;</span> <span class="pre">$yeti_shape_node</span></code> is used to add a sample for the specified Yeti node.  &lt;sampleTime&gt; is the current time and &lt;frame&gt; is the whole frame number.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-list</span></code> returns a list of Yeti shape nodes currently in a state of being sampled.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-flush</span></code> flushes all of the stores cached data for previously cached nodes, this should be done before you start and after you&#8217;ve written a cache to disk.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-remove</span> <span class="pre">$yeti_shape_node</span></code> will remove all off the stored samples/data for the specified shape node, this is similar to flush except on a per shape basis.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-contains</span> <span class="pre">$yeti_shape_node</span></code> returns true if the specified shape node has data to be written to disk/emitted.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-preRenderCache</span> <span class="pre">-fileName</span> <span class="pre">&lt;file&gt;</span> <span class="pre">$yeti_shape_node</span></code> can be used to save and/or query the file name used for rendering the current node with a result being the filename resolved.  The -fileName parameter is optional, if specified this will override any temporary or cache file name.</p>
+<p><code class="docutils literal"><span class="pre">pgYetiRenderCommand</span> <span class="pre">-emit</span> <span class="pre">$yeti_shape_name</span></code> will stored the cache samples to disk and emit the Renderman calls to include the shape and Yeti node in the Rib files.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="expressionref.html" class="btn btn-neutral float-right" title="Expression Reference"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="nodes/width.html" class="btn btn-neutral" title="Width"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

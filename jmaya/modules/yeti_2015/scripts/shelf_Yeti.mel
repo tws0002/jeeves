@@ -1,0 +1,141 @@
+global proc shelf_Yeti () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+    shelfButton
+        -ann "Create Yeti Node"
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -align "center" 
+        -label "Create Yeti Node" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CR" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "pgYeti_icon.png" 
+        -image1 "pgYeti_icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pgYetiCreate();\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    
+        shelfButton
+        -ann "Create Yeti Node On Selected Mesh"
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -align "center" 
+        -label "Create Yeti Node On Selected Mesh" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CRM" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "pgYeti_icon.png" 
+        -image1 "pgYeti_icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pgYetiCreateOnMesh();\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    
+    shelfButton
+        -ann "Create Groom on selected Mesh"
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -align "center" 
+        -label "Create Groom on selected Mesh" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CRG" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "pgYeti_icon.png" 
+        -image1 "pgYeti_icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pgYetiCreateGroomOnMesh();\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+
+    shelfButton
+        -ann "Create Feather"
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -align "center" 
+        -label "Create A Feather" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CRF" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "pgYeti_icon.png" 
+        -image1 "pgYeti_icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pgYetiCreateFeather();\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+
+    shelfButton
+    	-ann "Open Graph Editor"
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -align "center" 
+        -label "Open Graph Editor" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "GE" 
+        -overlayLabelColor 1 1 1 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "pgYeti_icon.png" 
+        -image1 "pgYeti_icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pgYetiOpenGraphEditor();\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+
+} 

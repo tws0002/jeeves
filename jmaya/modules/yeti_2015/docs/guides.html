@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Guide Curves &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Feathers" href="feathers.html"/>
+        <link rel="prev" title="Grooming" href="grooming.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Guide Curves</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="guide-curves">
+<span id="id1"></span><h1>Guide Curves<a class="headerlink" href="#guide-curves" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/guide_02.png" class="align-center" src="_images/guide_02.png" />
+<p>As with grooms, guide curves are created outside of the graph context and imported as data.  A guide curve can be any nurbs curve created within Maya, thus it’s up to the reader to be comfortable with Maya’s curve creation and editing tools.</p>
+<p>Although the location of the guide curves are arbitrary, it’s generally good practice to have them created as close to the surface as possible and reasonably aligned ( ie. not inside the surface ).</p>
+<div class="section" id="using-guide-curves">
+<h2>Using Guide Curves<a class="headerlink" href="#using-guide-curves" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/guide_01.png" class="align-center" src="_images/guide_01.png" />
+<p>To use guide curves within a graph you first have to place them within a Maya set as you will be referencing a guide set vs. individual curves.  With a guide set created use the Input Guide Sets palette on the Yeti node to assign new sets to the node.</p>
+<p>As with all data a new Import node will need to be created and in the attribute inspector change the mode to Guides and provide the correct name for the set.</p>
+<p>A Guide node is generally used to deform the fur along the input curves, you also have the option of clumping the hair around the guide curves via new attributes Yeti creates on the input curve shapes ( see below for reference ).  It is also possible to preview the guides falloff in the Maya viewport via the Display Guides toggle in the Yeti nodes Display palette.</p>
+<p>As with the Groom node, imported guides can be used to set the density and length of the generated fibers, just connect the output of the guides Import ( or merge with a Groom ) to the Scatter and/or Grow node for similar results.</p>
+<p>The Maya curves are considered live data in the graph with any and all changes causing an interactive update of the graph.</p>
+<p>By default the guides are sampled based on their global position assuming that they may be rigged and used dynamically, the other option is to treat the guides similar to grooms and assume that their initial relationship to the surface should be maintained even if deforming.  This can be accomplished via the &#8220;Lock To Surface&#8221; attribute that Yeti will create on any Guide sets - with this attribute toggled on the guides will travel with the deforming surface.</p>
+</div>
+<div class="section" id="guide-curve-attributes">
+<h2>Guide Curve Attributes<a class="headerlink" href="#guide-curve-attributes" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/guide_03.png" class="align-center" src="_images/guide_03.png" />
+<p>Once a curve set has been added to a Yeti node each curve shape in the set will be given attribute used to control the effect of that curve.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Weight</td>
+<td>controls the overall weight of the curve, this does not effect the weight of the curve on the Grow node</td>
+</tr>
+<tr class="row-odd"><td>Length</td>
+<td>Weight will control the effect of the curve on the length of grown hairs when connected to a Grow node</td>
+</tr>
+<tr class="row-even"><td>Inner/Outer Radius</td>
+<td>adjust the fall off of the effect, any fibres within the inner radius will be affected fully and outside of Outer Radius will be unaffected.</td>
+</tr>
+<tr class="row-odd"><td>Density</td>
+<td>adjusts the density when connected to a Scatter node</td>
+</tr>
+<tr class="row-even"><td>Base/Tip Attraction</td>
+<td>the amount, if any, the fibres should be attracted to the guide curves - this is one way of implementing clumping</td>
+</tr>
+<tr class="row-odd"><td>Random Attraction</td>
+<td>randomize a fibres attraction</td>
+</tr>
+<tr class="row-even"><td>Twist</td>
+<td>will cause the fibres to twist around the guide curves</td>
+</tr>
+<tr class="row-odd"><td>Surface Direction Limit</td>
+<td>can be used to create a fall off effect between the direction of the guide curve and the surface normal</td>
+</tr>
+<tr class="row-even"><td>Surface Direction Limit Falloff</td>
+<td>how fast the Surface Direction Limit effect falls off</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="reference-position">
+<h2>Reference Position<a class="headerlink" href="#reference-position" title="Permalink to this headline">¶</a></h2>
+<p>As with any input geometry Yeti provides a means of creating a rest position for guide curves that ensures their relation to the underlying surface is maintained.</p>
+<p>To create the rest position make sure you have either the individual curves or the whole guide set ( to apply the rest position in one go ) selected and use the Save Guides Rest Position item from the Yeti menu.</p>
+<p>Be aware that if your guides default ( rest ) position changes you will need to re-save the rest position.</p>
+<p>To remove the rest position data select the curves or set as before and use Remove Guides Rest Position item from the Yeti menu.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="feathers.html" class="btn btn-neutral float-right" title="Feathers"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="grooming.html" class="btn btn-neutral" title="Grooming"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+proc string makeCurve()
+{
+string $curveName = `curve -d 3 -p -12 0 0 -p -11.992 0 0 -p -11.984 0 0 -p -11.976 0 0 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 `;
+rebuildCurve -ch 1 -rpo 1 -rt 0 -end 1 -kr 0 -kcp 0 -kep 1 -kt 0 -s 128 -d 3 -tol 1e-005 $curveName;
+move -12 0 0 ($curveName+".scalePivot") ($curveName+".rotatePivot") ;
+//scale -a 0.001 0.001 0.001 $curveName;
+select -r $curveName;
+makeIdentity -apply true -t 0 -r 0 -s 1 -n 0 $curveName;
+
+return $curveName;
+
+}
+
+global proc curveExtrusion()
+{
+string $name[] = `ls -sl`;
+int $num = `size $name`;
+
+for ($i = 1; $i<$num; $i++)
+{
+
+select -r $name[0] ;
+string $ext[] = `duplicate -rr`;
+    addAttr -ln "divisions"  -at long  ("|"+$ext[0]);
+    addAttr -ln "extrusion"  -at double  ("|"+$ext[0]);
+    setAttr -e-keyable true ("|"+$ext[0]+".divisions");
+    setAttr -e-keyable true ("|"+$ext[0]+".extrusion");
+    
+    int $face[] = (`polyEvaluate -f $ext[0]`);
+
+float $length = `arclen $name[$i]`;
+float $size = $length * 41.4;
+string $curveName = makeCurve();
+string $pathName = `pathAnimation  -follow 1 -fa x -c $name[$i] $curveName`;
+    
+    setAttr  ($ext[0]+".divisions") (`floor ($length+0.5)`/2);
+
+    select -cl;
+    select -r $ext[0];
+    select -add $curveName;
+    parent;
+    move -a -ls -12 0 0 $ext[0];
+    rotate -a 0 0 0 $ext[0];
+    select -r $ext[0];
+    parent -w;
+    float $lattice = `floor ($length+0.5)`;
+string $flow[] =`flow -divisions $lattice 2 2 -objectCentered 0 -localCompute 1 -localDivisions 5 2 2 $curveName`;
+    setDrivenKeyframe -currentDriver ($ext[0]+".extrusion") ($curveName+".scaleX");
+    
+    setAttr ($ext[0]+".extrusion") 1;
+    setAttr ($curveName+".scaleX") $size;
+    setDrivenKeyframe -currentDriver ($ext[0]+".extrusion") ($curveName+".scaleX");
+    setKeyframe -attribute extrusion -time 100  $ext[0];
+    setAttr ($ext[0]+".extrusion") 0;
+    setKeyframe -attribute extrusion -time 1  $ext[0];
+    
+    scale 0.1 0.1 0.1 $flow[3];
+    
+string $extrude[] =`polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -2.58123866 -pvy 0 -pvz -0.5041015933 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 -inputCurve $curveName ($ext[0]+".f[0:"+($face[0]-1)+"]")`;
+expression -s ($extrude[0]+".divisions = "+$ext[0]+".divisions;")  -o $extrude -ae 1 -uc all ;
+
+
+setAttr ($name[$i]+".visibility") 0;
+setAttr ($flow[2]+".visibility") 0;
+setAttr ($flow[3]+".visibility") 0;
+//float $pos[] = `pointOnCurve -p -pr 0`;
+//float $tan[] = `pointOnCurve -t -pr 0`;
+
+
+
+
+}
+
+}

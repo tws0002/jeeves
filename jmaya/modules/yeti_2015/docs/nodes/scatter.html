@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scatter &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="../index.html"/>
+        <link rel="up" title="Node Reference" href="../noderef.html"/>
+        <link rel="next" title="Attribute" href="attribute.html"/>
+        <link rel="prev" title="Reference" href="reference.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home">
+				<img class="logo" src="../_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../referenceguide.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Scatter</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <img alt="../_images/pgYeti_scatter1.png" class="align-left" id="index-0" src="../_images/pgYeti_scatter1.png" />
+<div class="section" id="scatter">
+<h1>Scatter<a class="headerlink" href="#scatter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Scatter node is used to randomly scatter particles over the input geometry, the various parameters and inputs can be used to limit the location/density of the scattered points as well as how evenly they are spaced.  If a second input is connected this may have an attribute used to control the density of the particles, by default Scatter looks for an attribute named <code class="docutils literal"><span class="pre">density</span></code> but any can be used, as long as the Groom/Texture Attribute parameter is set correctly.</p>
+<p>A Texture node may be use prior to the Scatter node to control the density via a painted image - this is treated as a special case and the name of the Attribute created in the Texture node will need to be set in the Groom/Texture Attribute vs. referenced in a parameter expression.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The reason why the Texture node attribute can&#8217;t be referenced in the same way is that up until the point of the Scatter node no geometry has existed, so the attribute at this stage is a placeholder vs. fully sampled.</p>
+</div>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0 Data Flow</td>
+<td>Fibres</td>
+</tr>
+<tr class="row-odd"><td>1 Strands</td>
+<td>Groom/Guide Curves which may have an attribute painted to control the density</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h2>Scatter<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Density Multiplier</td>
+<td>a density value is usually defined between 0-1, if you have an input Groom to control the density this is usually the case.  This value is a multiplier on top of the base density.</td>
+</tr>
+<tr class="row-odd"><td>Density</td>
+<td>the density, based on input area.  This is overridden if Input 1 is connected.</td>
+</tr>
+<tr class="row-even"><td>Lock Density</td>
+<td>in some cases ( such as with clumping ) you need to make sure a specific density is retained even if rendering, this will make sure the Scatter node produces the same points regardless of the Display and Render densities.</td>
+</tr>
+<tr class="row-odd"><td>Seed</td>
+<td>a random seed value used to generate the points and also passed through the flow to any other connected nodes that may require random number evaluation.</td>
+</tr>
+<tr class="row-even"><td>Groom/Texture Attribute</td>
+<td>the attribute that defines the density of the points if Input 1 is connected or the incoming flow has a Texture attribute pre-defined</td>
+</tr>
+<tr class="row-odd"><td>Source Objects</td>
+<td>if more than one mesh is imported up stream this provides a means of generating points either on the first mesh, or all of them.</td>
+</tr>
+<tr class="row-even"><td>Face Set</td>
+<td>limits the creation of source points to faces only contained within the named face set ( if it exists ).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="distribution">
+<h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h2>
+<p>Parameters to control the distribution of the points more closely.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Relax Steps</td>
+<td>By default Scatter creates fairly random points, by increasing the relaxation steps the points relax their positions which result in a more even and regular distribution ( which is generally what you need for feathers ).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Relax Steps can be a slow procedure and is only recommended for feathers and instances where there are generally fewer points and a clean placement is more desirable.  Using this with fur/hair would make a negligible difference to the look for a potentially massive increase in computation time.</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Maya File: <code class="docutils literal"><span class="pre">examples/yeti_textureExample.ma</span></code></p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="attribute.html" class="btn btn-neutral float-right" title="Attribute"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="reference.html" class="btn btn-neutral" title="Reference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

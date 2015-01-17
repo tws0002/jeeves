@@ -1,3 +1,16 @@
+'''
+this really isnt used at the moment, but it's ready to have some sort of custom nuke read node attached to it so that
+new renders can be brought in automatically.
+
+much like the 3d / nuke scenes lookup, it takes the jobdict as an arguement, plus additional arguements so that it
+can return a dict with the renders for a specific shot
+
+this could be a fun way to make jeeves your own, a nuke read node thingy
+
+it uses the pyseq module, to return a string which can later be reversed to give the individual frames rather than a
+string simply describing the sequence.
+'''
+
 print '> importing core.renders'
 import core
 import os, sys

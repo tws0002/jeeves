@@ -1,0 +1,209 @@
+//
+// pgYetiUpdateAE - attribute editor tools
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+global int $g_pgYetiDeleteAEScriptJob = -1;
+
+global string $g_pgYetiAttributes[] = { "yetiSubdivision", "yetiSubdivisionIterations", "collisionFriction", "lockToSurface", "ignoreRestNormalTriangulation", "maxNumberOfGuideInfluences", "weight", "lengthWeight", "innerRadius", "outerRadius", "fallOff", "density", "baseAttraction", "tipAttraction", "attractionBias", "randomAttraction", "twist", "surfaceDirectionLimit", "surfaceDirectionLimitFalloff"  };
+
+global proc pgYetiDoAEUpdate()
+{
+    global string		$gAETabLayoutName;
+    global string		$gAEControlLayoutName;
+    global string		$gRelatedNodes[];
+    global string		$gAERootLayoutName;
+    global string 		$g_pgYetiAttributes[];
+    global int          $g_pgYetiDeleteAEScriptJob;
+    string              $pgYetiAELabel = "Yeti Attributes";
+    string              $extraAttributesLabel = "Extra Attributes";
+
+    if( `layout -exists $gAERootLayoutName` ) {
+    	setParent $gAERootLayoutName;
+    	if( !`scriptJob -exists $g_pgYetiDeleteAEScriptJob` ) 
+        {
+    		$g_pgYetiDeleteAEScriptJob = `scriptJob -runOnce true -uiDeleted $gAERootLayoutName "pgYetiUpdateAE"`;
+        }
+    }
+
+    if( !`layout -exists $gAETabLayoutName` ) {
+    	return;
+    }
+    
+    string $tabChangeCmd = `tabLayout -q -changeCommand $gAETabLayoutName`;
+    if( `match "pgYeti*" $tabChangeCmd` == "" ) {
+    	tabLayout -e -changeCommand ("pgYetiUpdateAE;\n" + $tabChangeCmd) $gAETabLayoutName;
+    }
+
+    string $tab = `tabLayout -q -selectTab $gAETabLayoutName`;
+    int $tabIndex = `tabLayout -q -selectTabIndex $gAETabLayoutName`;
+
+    if( $tabIndex <= 0 ) 
+	return;
+ 
+    string $node = $gRelatedNodes[$tabIndex-1];
+    if (!`objExists $node`) return;
+
+    string $node_type = `nodeType $node`;
+
+    if( $node_type == "nurbsCurve" || $node_type == "objectSet" || $node_type == "mesh" )
+    {
+    	string $nodeTypeForm = ("AttrEd"+$node_type+"FormLayout");
+    
+    	int $ex = `formLayout -exists $nodeTypeForm`;
+
+    	if( `formLayout -exists $nodeTypeForm` ) {
+    		setUITemplate -pushTemplate attributeEditorTemplate;
+    		string $oldParent = `setParent -q`;
+
+    		setParent $gAEControlLayoutName;
+
+    		// Hunt for container that holds the frame layouts in AE, 
+    		// so we can add a frame for RenderMan Extra Attributes.
+    		// Makes assumptions about layout of AE.
+    		setParent $nodeTypeForm;
+    		string $kidsi[] = `layout -q -ca $nodeTypeForm`;
+    		int $i, $j;
+    		string $pgYetiFrame = "";
+    		string $playout = "";
+    		for( $i=0; $i<size($kidsi); $i++ ) {
+    			if( `match "scrollLayout*" $kidsi[$i]` == "scrollLayout") {
+    				string $kidsj[] = `layout -q -ca $kidsi[$i]`;
+    				for( $j=0; $j<size($kidsj); $j++ ) {
+    					if( `match "columnLayout*" $kidsj[$j]` == "columnLayout") {
+    						$playout = $kidsj[$j];
+    						break;
+    					}
+    				}
+    				if( $playout != "" )
+    					break;
+    			}
+    		}
+
+    		if( $playout != "" ) {
+    			setParent $playout;
+    			$kidsi = `layout -q -ca $playout`;
+    		}
+
+    		int $isGeom = 0;
+    		string $geom[] = `ls -geometry $node`;
+    		if( size($geom) ) {
+    			$isGeom = 1;
+    		}
+
+    		for( $i=0; $i<size($kidsi); $i++ ) {
+    			if( `match "frameLayout*" $kidsi[$i]` == "frameLayout" ) {
+    				string $label = `frameLayout -q -label $kidsi[$i]`;
+    				// If pgYeti section is found, delete it; it'll be 
+    				// added again further down.
+    				if( $label == $pgYetiAELabel ) {
+    					$pgYetiFrame = $kidsi[$i];
+    					string $kidsj[] = `layout -q -ca $kidsi[$i]`;
+    					for( $j=0; $j<size($kidsj); $j++ ) {
+    						deleteUI $kidsj[$j];
+    					}
+    				}
+    				
+    				// Hide pgYeti attr controls in regular Extra Attributes layout.
+    				// Deleting the controls mostly works but causes some 
+    				// annoying errors.
+    				if( $label == $extraAttributesLabel ) {
+    					string $extraAttributesFrame = $kidsi[$i];
+    					string $kidsj[] = `layout -q -ca $kidsi[$i]`;
+    					if( size($kidsj) == 1 ) {
+    						$kidsj = `layout -q -ca $kidsj[0]`;
+    						for( $j=0; $j<size($kidsj); $j++ ) {
+    							string $ctl = $kidsj[$j];
+    							string $at = `attrControlGrp -q -a $ctl`;
+    							string $buf[];
+    							tokenize($at, ".", $buf);
+    							$at = $buf[size($buf)-1];
+    							for ( $p = 0; $p<size($g_pgYetiAttributes); $p++)
+    							{
+    								if( $at == $g_pgYetiAttributes[$p] ) {
+    									control -e -vis 0 $ctl;
+    									break;
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+
+                // Add controls for pgYeti attrs under Yeti Extra Attributes frame.
+    		// Assume pgYeti attrs begin with pgYeti.
+    		string $attrs[] = `listAttr $node`;
+    		string $state;
+    		string $buffer[];
+    		int $i = 0;
+    		int $haspgYetiAttrs = 0;
+    		global string $gpgYetiNodeType;
+    		string $masterWidgets[];
+    		string $masterAttrs[];
+    		string $widget;
+    		for( $i=0; $i < size($attrs); $i++ )
+    		{
+					for ( $p = 0; $p<size($g_pgYetiAttributes); $p++)
+					{
+						if( $attrs[$i] == $g_pgYetiAttributes[$p] ) {
+							if( !$haspgYetiAttrs ) 
+							{
+								if( $pgYetiFrame != "" ) {
+									setParent $pgYetiFrame;
+								} else {
+									$pgYetiFrame = `frameLayout -label $pgYetiAELabel -mw 0 -cll true -cl true`;
+									if( $playout == "" ) {
+										formLayout -e -attachForm $pgYetiFrame "bottom" 5 $nodeTypeForm;
+									}
+								}
+								string $lyt = `columnLayout`;
+								$haspgYetiAttrs = 1;
+							}
+							attrControlGrp -attribute ( $node + "." + $attrs[$i] );
+							break;
+						}
+					}
+    		}
+    		
+    		// Update master switch controls
+    		for( $i=0; $i < size($masterWidgets); $i++ ) {
+    			pgYetiUpdateControl $node $masterWidgets[$i] $masterAttrs[$i];
+    		}
+    		
+    		// If pgYeti frame is empty, delete it 
+    		if( $pgYetiFrame != "" ) {
+    			string $pgYetiKids[] = `layout -q -ca $pgYetiFrame`;
+    			if( size($pgYetiKids) == 1 )
+    				$pgYetiKids = `layout -q -ca $pgYetiKids[0]`;
+    			if(size($pgYetiKids) == 0 || !$haspgYetiAttrs)
+    				deleteUI $pgYetiFrame;                
+    		}
+
+    		setParent $oldParent;
+    		setUITemplate -popTemplate;
+    	}
+    }
+}
+
+global proc pgYetiUpdateAE()
+{
+	evalDeferred -lowestPriority "pgYetiDoAEUpdate";
+}

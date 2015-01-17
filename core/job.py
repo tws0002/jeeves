@@ -1,9 +1,22 @@
+'''
+- this module includes the lookup class which attempts to match a job the search text and return a dict for further
+population by subsequent calls to other modules in jeeves.core
+
+- there is also the class check_schema, which checks what kind of schema the job is using. currently, we are using the
+default schema, but for other more complex jobs, this can be extended to load in custom dictionary schemas or db calls.
+
+'''
+
 print '> importing core.job'
 import core
 import os, sys
 
 class lookup(object):
-    #this just returns a dict with the job number, shots and asset keys, plus the self.job var
+    '''
+    this takes some search text and tries to return a dictionary with the job num, 3d and nuke keys. it also creates
+    the self.job var which can be used once the class is instanced instead of having to go looking for the job number
+    simply in the jobdict
+    '''
     def __init__(self, searchtext ):
         self.jobdict = {}
         self.job(searchtext)

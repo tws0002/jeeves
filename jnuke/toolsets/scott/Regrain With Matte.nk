@@ -1,0 +1,247 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Group {
+name Group1
+selected true
+xpos 5337
+ypos 257
+addUserKnob {20 User}
+addUserKnob {6 premult1 l "Use luminance" +STARTLINE}
+premult1 true
+}
+BackdropNode {
+inputs 0
+name BackdropNode1
+tile_color 0x388e8e00
+label Regrain
+note_font_size 42
+xpos 379
+ypos 196
+bdwidth 976
+bdheight 623
+}
+Input {
+inputs 0
+name Source
+xpos 794
+ypos 276
+}
+set N3ad9a4b0 [stack 0]
+Dot {
+name Dot8
+xpos 1299
+ypos 280
+}
+Keyer {
+operation "luminance key"
+name Keyer1
+xpos 1265
+ypos 488
+}
+Constant {
+inputs 0
+channels rgb
+color 1
+name Constant4
+xpos 947
+ypos 374
+}
+set Nbc8e4a10 [stack 0]
+Dot {
+name Dot1
+xpos 1131
+ypos 401
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy2
+xpos 1097
+ypos 488
+}
+Premult {
+name Premult1
+xpos 1097
+ypos 634
+}
+push $N3ad9a4b0
+FrameHold {
+first_frame 3512
+name FrameHold3
+xpos 794
+ypos 551
+}
+Input {
+inputs 0
+name Alpha
+xpos 596
+ypos 304
+number 1
+}
+Dot {
+name Dot7
+xpos 630
+ypos 487
+}
+push $Nbc8e4a10
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos 947
+ypos 477
+}
+OFXuk.co.thefoundry.furnace.f_regrain_v403 {
+inputs 2
+grainType "From Grain Clip"
+presetStock "FUJIF250Under 2K"
+amount 1
+size 1
+output Result
+"Analysis Region" 0
+regionBL {927.2999382 501.9000256}
+regionTR {1005.29995 565.9000325}
+frame 3512
+grainColourSpace Cineon
+Advanced 0
+processRed true
+redAmount 1
+redSize 1
+processGreen true
+greenAmount 1
+greenSize 1
+processBlue true
+blueAmount 1
+blueSize 1
+"Grain Response" 0
+srcColourSpace "Grain Colour Space"
+lowGain 1
+midGain 1
+highGain 1
+useResponse false
+responseMix 1
+drawResponse false
+needsGrainSample true
+notBeenAnalysed false
+grainClipNeeded false
+inputHasChanged false
+responseR0Counts 0
+responseR0Samples 0
+responseG0Counts 0
+responseG0Samples 0
+responseB0Counts 0
+responseB0Samples 0
+responseR1Counts 0
+responseR1Samples 0
+responseG1Counts 0
+responseG1Samples 0
+responseB1Counts 0
+responseB1Samples 0
+responseR2Counts 0
+responseR2Samples 0
+responseG2Counts 0
+responseG2Samples 0
+responseB2Counts 0
+responseB2Samples 0
+responseR3Counts 0
+responseR3Samples 0
+responseG3Counts 0
+responseG3Samples 0
+responseB3Counts 0
+responseB3Samples 0
+responseR4Counts 0
+responseR4Samples 0
+responseG4Counts 0
+responseG4Samples 0
+responseB4Counts 0
+responseB4Samples 0
+responseR5Counts 0
+responseR5Samples 0
+responseG5Counts 0
+responseG5Samples 0
+responseB5Counts 0
+responseB5Samples 0
+responseR6Counts 0
+responseR6Samples 0
+responseG6Counts 0
+responseG6Samples 0
+responseB6Counts 0
+responseB6Samples 0
+responseR7Counts 0
+responseR7Samples 0
+responseG7Counts 0
+responseG7Samples 0
+responseB7Counts 0
+responseB7Samples 0
+responseR8Counts 0
+responseR8Samples 0
+responseG8Counts 0
+responseG8Samples 0
+responseB8Counts 0
+responseB8Samples 0
+responseR9Counts 0
+responseR9Samples 0
+responseG9Counts 0
+responseG9Samples 0
+responseB9Counts 0
+responseB9Samples 0
+grainSample ""
+cacheBreaker true
+name F_ReGrain2
+xpos 947
+ypos 557
+}
+Premult {
+name Premult2
+xpos 947
+ypos 595
+}
+Merge2 {
+inputs 2
+name Merge2
+xpos 947
+ypos 634
+}
+push $Nbc8e4a10
+Dot {
+name Dot6
+xpos 702
+ypos 401
+}
+Merge2 {
+inputs 2
+name Merge4
+xpos 668
+ypos 634
+}
+push 0
+Merge2 {
+inputs 2
+operation multiply
+name Merge1
+xpos 389
+ypos 634
+}
+Output {
+name Output1
+xpos 389
+ypos 789
+}
+StickyNote {
+inputs 0
+name StickyNote2
+label "use alpha to define where grain will be applied"
+xpos 383
+ypos 344
+}
+StickyNote {
+inputs 0
+name StickyNote1
+label "Luminance used to get accurate grads across grained patches"
+xpos 1035
+ypos 246
+}
+end_group

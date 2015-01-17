@@ -1,0 +1,3 @@
+global proc skinClusterRead(){
+	icTransferSkinCluster 1 0;
+}

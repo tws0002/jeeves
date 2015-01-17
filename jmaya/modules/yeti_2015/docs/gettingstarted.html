@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Yeti Maya Node" href="yetinode.html"/>
+        <link rel="prev" title="Users Guide" href="usersguide.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Getting Started</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Once installed and you have the Yeti plugin loaded you’ll be ready to create your first graph.</p>
+<p>A graph contains the flow of nodes that describe the process that the fur will undergo during the course of evaluation - these nodes can be re-organized, removed, and values changed to affect the final appearance of the fur.</p>
+<div class="section" id="yeti-maya-node">
+<h2>Yeti Maya Node<a class="headerlink" href="#yeti-maya-node" title="Permalink to this headline">¶</a></h2>
+<p>Each instance of a Yeti node in Maya owns it’s own graph, so the first step in creating a graph is making sure a Yeti node has been created.</p>
+<p>To create a Yeti node make sure a mesh is selected and use the CRM ( Create On Mesh ) button on the Yeti shelf, this will create a new Yeti node and add the selected geometry as an input.  This new Yeti node is a container for an evaluated graph and also used as a way of referencing grooms and caches into the scene - it’s generally a good idea to rename this node to something useful so you can find it easily.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Most of the time you will be creating Yeti graphs on input geometry that will be deforming - due to the way Yeti resolves the surfaces motion it&#8217;s required to have a Texture Reference object for each mesh that may be deforming.  These can be created by selecting the Mesh and using the Create Texture Reference in Maya&#8217;s Texture menu.  If not created you&#8217;ll likely end up with sliding/popping fur.</p>
+</div>
+<p>You may also create Yeti nodes with the CR ( Create Node ) button in the Yeti shelf, or with the <code class="docutils literal"><span class="pre">pgYetiNewNode</span></code> mel command though when created this way there will be no input objects assigned thus they will need to be added manually.</p>
+<p>If at any point you want to add or remove input objects to the Yeti node open up the <strong>Graph/Input</strong> Objects palette in the Attribute Editor and <strong>Add Object(s)</strong> which will bring up a list of objects in the scene that can be added.</p>
+<p>With this Yeti node selected use the GE ( Graph Editor ) button in the Yeti shelf, or Open Graph Editor in the Attribute Editor, to open up the editor for the current graph.  As you have just created this node the graph area will be empty with the available nodes at the top of the window.</p>
+<img alt="_images/grapheditor_01.png" class="align-center" src="_images/grapheditor_01.png" />
+</div>
+<div class="section" id="nodes">
+<h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">A node in a graph is used to apply a specific operation to the data flow and is allowed any number of inputs and at least one output.  There are three categories of nodes:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Node Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Input/Output</td>
+<td>used for data IO for the graph - Import, for example, is used to import geometry, strand and guide data from the scene.</td>
+</tr>
+<tr class="row-odd"><td>Creation</td>
+<td>used to create new data in the graph - whether scattering point samples or growing the fur</td>
+</tr>
+<tr class="row-even"><td>Modify</td>
+<td>used to actually modify the data flow - combing, guides, scraggle, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>A nodes inputs and output are used to chain them together via arrows ( sometimes called noodles ) which defines how the data flows through the graph, it is useful to visualize the data as it moves from one node to another with each node applying it&#8217;s own operation to the data.  Any output can be connected to multiple inputs, and inputs are limited to one connected output.</p>
+</div>
+<div class="section" id="first-graph">
+<h2>First Graph<a class="headerlink" href="#first-graph" title="Permalink to this headline">¶</a></h2>
+<p>Every graph ( for fur ) will require an <strong>Import</strong>, <strong>Scatter</strong> and <strong>Grow</strong> node.  Begin by creating an <strong>Import</strong> node, this should appear in the centre of the graph.  You can select nodes, move them around and delete them.</p>
+<p id="index-2">The <strong>Import</strong> node is used to source data from the Maya scene so the graph knows what it’s to work with, this can either be the geometry from which the fur will grow, grooms or guide sets.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although you have access to the input geometry and grooms assigned in Maya the relationship to these in the graph is completely based on the nodes name.  If the name of a node in Maya changes it will not automatically be reflected in the graph, thus you will have to manual update it.</p>
+</div>
+<p id="index-3">You can double click any node to bring up the attribute inspector which is used to control the values of the node - for Input this includes the Import type describe above as well as a name used to identify one of multiple inputs.  Yeti uses the name of the geometry to determine if it should imported, you can also use wildcards ( * ) to import multiple objects at the same time - by default Yeti assumes you want to import everything.</p>
+<img alt="_images/import_01.png" class="align-center" src="_images/import_01.png" />
+<p id="index-4">Now that you have geometry available in your graph you can begin to generate the fur which is a two step process.  First a <strong>Scatter</strong> node will need to be created to scatter source points across the geometry and secondly you will need to create a <strong>Grow</strong> node which actually generates the fibers from those points.</p>
+<img alt="_images/firstgraph_01.png" class="align-center" src="_images/firstgraph_01.png" />
+<p>The <strong>Scatter</strong> node has various attributes for controlling the density of system which ( as shown later ) can be controlled by grooms to limit it’s influence.  When a Yeti graph is evaluated a global density multiplier is used to vary the density of the system between the viewport and rendering which directly affects the values in the <strong>Scatter</strong> node.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In some instances you may have a scatter node ( source points for clumping ) that should stay consistent between varying densities, in this case you can use the Lock attribute in the inspector to lock the density to the specified values.</p>
+</div>
+<p>The <strong>Grow</strong> node is used to grow the fibers from the scattered points with control over length as well as segment length ( examples of controlling this with an input groom to follow ).  Segment length is used to control how detailed the resulting fur geometry is and is directly related to the length of a fiber.  The default is 0.25 ( based on Maya’s world space units ) which in most cases is a good default, if you’re working with smaller characters a smaller value may be more useful.</p>
+</div>
+<div class="section" id="connections-flow">
+<h2>Connections ( Flow )<a class="headerlink" href="#connections-flow" title="Permalink to this headline">¶</a></h2>
+<p id="index-5">When more than one node has been created you will use the connections ( io’s ) on the nodes to create arrows between each node to control the flow of data.</p>
+<p>In most cases each node will only have one output with the possibility of having multiple inputs with the top input being the first and the bottom being the last. For our simple graph this means that the output from the <strong>Import</strong> node should be connected to the first Input on the <strong>Scatter</strong> node with the output of the <strong>Scatter</strong> node then being connected to the first input on the <strong>Grow</strong> node.</p>
+<img alt="_images/firstgraph_02.png" class="align-center" src="_images/firstgraph_02.png" />
+<p>If a node is currently selected each new node will automatically be connected to it&#8217;s output - this can be toggled off view the <strong>Auto Connect Nodes</strong> in the View menu.</p>
+</div>
+<div class="section" id="root-ignore">
+<h2>Root/Ignore<a class="headerlink" href="#root-ignore" title="Permalink to this headline">¶</a></h2>
+<p id="index-6">Each node has two toggles along the bottom for controlling the node and/or graph behavior.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Toggle</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Root</td>
+<td>The first toggle signifies that the node is the Root of the graph and is the point that the graph will be evaluated up until.  As you work with the graph you may want to visualize the result of each step individually which is possible by changing this root node.</td>
+</tr>
+<tr class="row-odd"><td>Ignore</td>
+<td>The second toggle is for ignoring the node which is useful if you’re experimenting with a graph and want to see how the result looks with or without a nodes influence.</td>
+</tr>
+</tbody>
+</table>
+<img alt="_images/firstgraph_03.png" class="align-center" src="_images/firstgraph_03.png" />
+<p>At this stage you should have a fairly evenly groomed furry sphere/cube/geometry of some sort in your Maya viewport and you may want to render.</p>
+<img alt="_images/firstgraph_04.png" class="align-center" src="_images/firstgraph_04.png" />
+</div>
+<div class="section" id="animation">
+<h2>Animation<a class="headerlink" href="#animation" title="Permalink to this headline">¶</a></h2>
+<p id="index-7">In most circumstances the surface that Yeti is attached to will need to be animated in some way - as characters move and deform Yeti relies on a rest position to handle temporal and spatial changes to the input geometry.</p>
+<p>This is done using Maya’s 3D Texture Reference objects in the Rendering context under the Texture main menu - this simple process is straight forward and the reference should be included in any rigs or other setups you may use, just select the mesh in question and select <strong>Texturing-&gt;Create Texture Reference Object</strong>.</p>
+<p>If at any point the geometry topology changes just make sure to re-create this relationship.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="yetinode.html" class="btn btn-neutral float-right" title="Yeti Maya Node"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="usersguide.html" class="btn btn-neutral" title="Users Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

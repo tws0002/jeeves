@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instance &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="../index.html"/>
+        <link rel="up" title="Node Reference" href="../noderef.html"/>
+        <link rel="next" title="Reference" href="reference.html"/>
+        <link rel="prev" title="Import" href="import.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home">
+				<img class="logo" src="../_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../referenceguide.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Instance</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <img alt="../_images/pgYeti_instance.png" class="align-left" id="index-0" src="../_images/pgYeti_instance.png" />
+<div class="section" id="instance">
+<h1>Instance<a class="headerlink" href="#instance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Instance node is a way of creating controlled duplicates of geometry, whether mesh or fibres, connected to Input 1 at every point or element in Input 0.</p>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0 Data Flow</td>
+<td>Fibres, Particles and Meshes</td>
+</tr>
+<tr class="row-odd"><td>1 Data Flow</td>
+<td>Fibres, Particles and Meshes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h2>Instance<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Instance To</td>
+<td>in most cases you want to have an instance per input point, but if you&#8217;re input is fibres you may want to limit the instance to one per fibre - Elements tells the node to instance on a per element ( fibre ) basis where as Points will instance to all the incoming points.</td>
+</tr>
+<tr class="row-odd"><td>Alignment</td>
+<td>Either a variable or static expression used to align the instance.</td>
+</tr>
+<tr class="row-even"><td>Alignment Variation</td>
+<td>Means of introducing random variation into the resulting alignment.</td>
+</tr>
+<tr class="row-odd"><td>Offset</td>
+<td>Per instance offset, a possible value may be &#8220;$N * 0.1&#8221; to shift all of the instances 0.1 units away from the surface.</td>
+</tr>
+<tr class="row-even"><td>Scale</td>
+<td>Per instance scale, this could be an expression, eg. &#8220;noise($id * 10)&#8221;</td>
+</tr>
+<tr class="row-odd"><td>Scale Variation</td>
+<td>Used to randomize the resulting scale.</td>
+</tr>
+<tr class="row-even"><td>Twist</td>
+<td>Twists the new instance around the resulting axis.</td>
+</tr>
+<tr class="row-odd"><td>Twist Variation</td>
+<td>Varies each instances twist value.</td>
+</tr>
+<tr class="row-even"><td>Up Vector</td>
+<td>either a variable or static expression used as an up vector in determining the instances orientation.</td>
+</tr>
+<tr class="row-odd"><td>Axis Of Alignment</td>
+<td>defines what axis in the input object will be aligned to the Alignment vector.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Source Objects</td>
+<td>in the case where Input1 has multiple input objects you may limit it to just the first, or all of them.</td>
+</tr>
+<tr class="row-odd"><td>Object Expression</td>
+<td>if Input1 contains multiple objects this is an expression used to determine which object to use for the current instance.  For multiple objects a cycle expression can be used to cycle through the multiple inputs, eg. &#8220;cycle($id, 0, 5 )&#8221;</td>
+</tr>
+<tr class="row-even"><td>Inherit Attributes</td>
+<td>defines a list of attributes, each separated by a space, that will be inherited from the geometry the instances are assigned too.</td>
+</tr>
+<tr class="row-odd"><td>Deform</td>
+<td>if toggled on instances will deform to the shape of the fibres being instanced too.  This requires input fibres, and the mode set to Elements.</td>
+</tr>
+<tr class="row-even"><td>Generate As</td>
+<td>As Input will reuse as much data to create a completely new geometric representation of the object ( original method ), As Instance will try and use the rendering engines instancing implementation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="selection">
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Point Selection</td>
+<td>Allows the user to write a boolean based selection to define which points are instanced too in an element.</td>
+</tr>
+<tr class="row-odd"><td>Element Point Index</td>
+<td>Used to define which point in an element is used for an instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="local-variables">
+<h2>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>instanceNum</td>
+<td>The instance index for the current fibre.</td>
+</tr>
+<tr class="row-odd"><td>instanceCount</td>
+<td>The number of instances for the current fibre.</td>
+</tr>
+<tr class="row-even"><td>vertexNum</td>
+<td>The vertex index for the current instance in the fibre.</td>
+</tr>
+<tr class="row-odd"><td>vertexCount</td>
+<td>Number of vertices in the fibre.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><strong>Maya File:</strong> <code class="docutils literal"><span class="pre">examples/yeti_instanceExample.ma</span></code></p>
+<p>This is a basic example of how one might go about making Feathers with the Instance node.</p>
+<p>As always we will start with a Sphere and a Plane, set the Planes X &amp; Y subdivisions to 1 and scale it in Z.</p>
+<img alt="../_images/instancing_01.png" class="align-center" src="../_images/instancing_01.png" />
+<p>The Sphere will be the surface we will be used to instance the Plane object too.  Select the Sphere and press the CRM ( Create on Mesh ) icon in the Yeti shelf, this will create a new Yeti node and assign the Sphere as an input.  In the Yeti nodes Graph palette add the Plane as an Input Object.</p>
+<img alt="../_images/instancing_02.png" class="align-center" src="../_images/instancing_02.png" />
+<p>Open the Graph Editor and create an Import node selecting the Sphere as the input, and append a Scatter node to it with a Density Multiplier of 20.  Now create a second Import node and selected the Plane.</p>
+<img alt="../_images/instancing_03.png" class="align-center" src="../_images/instancing_03.png" />
+<p>Append an Instance node to the Scatter node ( as we&#8217;ll be instancing onto the newly created points ) and add the Plane&#8217;s Import node as the second input then turn on the Display toggle for the instance node.</p>
+<img alt="../_images/instancing_04.png" class="align-center" src="../_images/instancing_04.png" />
+<p>As you can see, the plane has been instanced - but it looks wrong.  If you recall the initial plane was created in the X/Z plane and scaled in Z - to correct the alignment of the Plane open the Attribute Inspector for the Instance node and set the Axis of Alignment to X.</p>
+<img alt="../_images/instancing_05.png" class="align-center" src="../_images/instancing_05.png" />
+<p>The keen observer may also notice that the Plane is centred on the point, where we&#8217;d really want to pivot to be at the base of the plane - this is easy to correct by adding a Transform node between the Plane&#8217;s Import node and the Instance and Translating the Plane in X by 0.5 units.</p>
+<img alt="../_images/instancing_06.png" class="align-center" src="../_images/instancing_06.png" />
+<p>Voila!  That&#8217;s better.  As far as instancing goes that&#8217;s a great start, but it doesn&#8217;t look very appealing.  We&#8217;ll now use a Groom node to groom the instances to make them look more like feathers.  First step is to select the Sphere and use the GRG ( Create Groom ) icon in the Yeti shelf to create a new Groom.  All grooms are empty by default, so once created used the Add tool ( pressing the + button ) and Flood Fill strands on the surface ( with the bucket ).  By default the Groom is set to Populate at Mesh Points which will create strands at vertex locations - this isn&#8217;t a requirement but is generally a good place to start.</p>
+<p>Once created we&#8217;ll add it to the Yeti node in the Graph-&gt;Input Grooms palette.</p>
+<img alt="../_images/instancing_07.png" class="align-center" src="../_images/instancing_07.png" />
+<p>With the Groom created and assigned we can Import it into our graph using the Import node, setting it to Groom and select our newly created Groom object. Once Imported we&#8217;ll want to use the Groom to set the direction of the instances, this can be done with the Comb node by specifying a Comb Attribute.  If the attribute already exists in the Flow it will be set ( like N ) or you can specify a new attribute to be created.  We&#8217;ll use feather_dir.</p>
+<img alt="../_images/instancing_08.png" class="align-center" src="../_images/instancing_08.png" />
+<p>With the Comb node created and a new attribute being set we can replace the Scatter Node with the Comb Node as the first input to the Instance node.  At this stage the Instance node still won&#8217;t change it&#8217;s output - we need to tell it what to do with the new attribute.  By default the Instance node will have it&#8217;s Alignment set to the surface normal ( $N ) and the up vector set to Y ( [0 1 0] ).  As we want our feathers to follow the direction of feather_dir we&#8217;ll replace the Alignment parameter with $feather_dir and make sure the Up Vector is now set to $N - this defines a nice coordinate system for the feathers.  The Instance will change but may not look much different as we haven&#8217;t Groomed anything $feather_dir and $N are pointing in the same direction.</p>
+<img alt="../_images/instancing_09.png" class="align-center" src="../_images/instancing_09.png" />
+<p>Now the fun part, close the Graph editor and start grooming!</p>
+<img alt="../_images/instancing_10.png" class="align-center" src="../_images/instancing_10.png" />
+<p>Dynamics and other deformers/nodes can be used to tweak the look and the Attribute node ( Tutorial coming soon... ) can be used to paint Scale and other parameters for the instance.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="reference.html" class="btn btn-neutral float-right" title="Reference"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="import.html" class="btn btn-neutral" title="Import"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

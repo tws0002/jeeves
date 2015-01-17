@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="next" title="License Installation" href="licensing.html"/>
+        <link rel="prev" title="Preamble" href="preamble.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usersguide.html">Users Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Installation</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The Yeti distributions consists of two main components; the Maya plug-in which is used for building Yeti graphs, grooming and simulation - and the rendering extensions which are used by the various rendering engines to evaluate the graph at render time.</p>
+<div class="section" id="yeti-documentation">
+<h2>Yeti Documentation<a class="headerlink" href="#yeti-documentation" title="Permalink to this headline">¶</a></h2>
+<p>By default Yeti will try and access on-line documentation via the UI based help tools - if YETI_DOCS exists it will check this location first for a local copy of the documentation.</p>
+</div>
+<div class="section" id="maya-plug-in-configuration">
+<h2>Maya Plug-in Configuration<a class="headerlink" href="#maya-plug-in-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Yeti&#8217;s distribution takes advantage of Maya&#8217;s Module scheme, where a single .mod file located in the installation root can be used to define the location of all plugins, scripts and icons needed ot use Yeti.  Once you have extracted Yeti to the location of your choosing there are two quick steps that need to be followed to make sure Yeti can be used properly within Maya.</p>
+<ol class="arabic simple">
+<li>You will need to edit the pgYetiMaya.mod file and replace path_to_yeti_root with the full path to the Yeti root directory ( which is most likely the directory the file is in )</li>
+</ol>
+<p>and then</p>
+<ol class="arabic simple" start="2">
+<li>set the environment variable MAYA_MODULE_PATH to point to the directory when the previously edited .mod file resides</li>
+</ol>
+<p>When Maya loads you will be able to load the plug-in from Maya’s plug-ins window by selected pgYetiMaya.so/dylib/dll from the plug-ins manager.  This is the only plugin you will need to worry about loading, all of the other extensions will be loaded automatically when required.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On Windows be sure that the Yeti bin directory has been added to your PATH environment variable.</p>
+</div>
+</div>
+<div class="section" id="rendering-plug-in-configuration">
+<h2>Rendering Plug-in Configuration<a class="headerlink" href="#rendering-plug-in-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Yeti ships with support for multiple rendering engines, due to the difference in the way each of these renderers have been integrated into Maya as well as how they resolve dependencies each one may need to be configured differently and may require multiple environment variables to be set.</p>
+<div class="admonition note" id="index-1">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are unfamiliar with the process of setting environment variables for your specific platform here are some resources for <a class="reference external" href="http://searchsystemschannel.techtarget.com/feature/Setting-Windows-7-environment-variables">Windows</a> and <a class="reference external" href="http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x">OSX</a> - if using Linux you should add these to your .tcshrc, .cshrc or .bashrc files depending on what Shell you&#8217;re using.</p>
+</div>
+<div class="section" id="delight-studio-pro">
+<h3>3Delight Studio Pro<a class="headerlink" href="#delight-studio-pro" title="Permalink to this headline">¶</a></h3>
+<p id="index-2">Yeti uses both a procedural DSO for rendering Yeti cache files as well as integrating into 3Delight Studio Pro.</p>
+<p>The 3delight extension must be included in the procedural search path which can either be set in your rendermn.ini file or by setting the <code class="docutils literal"><span class="pre">DL_PROCEDURALS_PATH</span></code> environment variable.  If you&#8217;d prefer not to set these for some reason you can also make sure your 3Delight for Maya ( or other rib generation software ) adds the search path option to the rib files.</p>
+<p>The 3Delight Maya translator also needs to be told how to interpret the custom Yeti shapes when generating rib files to be able to output the neccesary information for render Yeti caches.  We provide a very generic set of Mel commands that does this for you in <code class="docutils literal"><span class="pre">pgYetiDL.mel</span></code> - this Mel script defines the required <code class="docutils literal"><span class="pre">DL_userGetGeoTypeData</span></code> and <code class="docutils literal"><span class="pre">DL_pgYetiMayaCanUseObjectInstance</span></code> global procedures as described in the 3delight manuals, if Yeti is the only procedural shape you are using it is safe to source this file directly.</p>
+<p>If you have other custom shapes you will need to integrate the settings from our supplied <code class="docutils literal"><span class="pre">pgYetiDL.mel</span></code> file in the one used by your studio.</p>
+<p>If in doubt, it&#8217;s probably safe to use <code class="docutils literal"><span class="pre">source</span> <span class="pre">pgYetiDL;</span></code> before rendering.</p>
+<p>On OSX you may need to set DYLD_LIBRARY_PATH to 3Delights /lib directory if the renderer complains it can&#8217;t load lib3delight.dylib - whether or not this is correctly set depends on your 3delight installation and how you have launched Maya which can vary between platforms and installations.</p>
+</div>
+<div class="section" id="pixar-s-photo-realistic-renderman-and-renderman-for-maya-pro">
+<h3>Pixar&#8217;s Photo Realistic Renderman and Renderman For Maya Pro<a class="headerlink" href="#pixar-s-photo-realistic-renderman-and-renderman-for-maya-pro" title="Permalink to this headline">¶</a></h3>
+<p id="index-3">Rendering with PRMan and Renderman For Maya Pro is straight forward, the main installation concern is to make sure you have the Yeti DSO in the Procedural search path.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Windows Users</strong> - a different version of the Yeti DSO has to be used when rendering internally to RMS than when using PRMan, please make sure your RMS path is set to /bin/rms</p>
+</div>
+<p>There are two ways of doing this, via the RMSWorkspace.ini file for Renderman For Maya and/or the rendermn.ini file.</p>
+<p>If you want to edit the RMSWorkspace.ini file you need to update the WSSearchPaths.procedural preference to include the path where Yeti is installed.  Open RMSWorkspace.ini and change</p>
+<p><code class="docutils literal"><span class="pre">SetPref</span> <span class="pre">WSSearchPaths.procedural</span> <span class="pre">[list</span> <span class="pre">\\\${RMSTREE}/lib/plugins</span> <span class="pre">&#64;]</span></code></p>
+<p>to</p>
+<p><code class="docutils literal"><span class="pre">SetPref</span> <span class="pre">WSSearchPaths.procedural</span> <span class="pre">[list</span> <span class="pre">\\\${RMSTREE}/lib/plugins</span> <span class="pre">&#64;</span> <span class="pre">{/Applications/Peregrine</span> <span class="pre">Labs/Yeti</span> <span class="pre">1.0/bin}</span> <span class="pre">]</span></code></p>
+<p>If you have spaces in the path you need to include curly braces, you can also use environment variables but they have to be prefaced with slashes, for example:</p>
+<p><code class="docutils literal"><span class="pre">SetPref</span> <span class="pre">WSSearchPaths.procedural</span> <span class="pre">[list</span> <span class="pre">\\\${RMSTREE}/lib/plugins</span> <span class="pre">&#64;</span> <span class="pre">\\\$OUR_PROCEDURAL_LOCATION</span> <span class="pre">]</span></code></p>
+<p>to update your rendermn.ini it&#8217;s just a matter of adding the path to the proceduralpath option, like</p>
+<p><code class="docutils literal"><span class="pre">/proceduralpath</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">.:&#64;:&quot;/Applications/Peregrine</span> <span class="pre">Labs/Yeti</span> <span class="pre">1.0/bin&quot;</span></code></p>
+<p>and any instance of PRman should be configured correctly.</p>
+<p>Please refer to the PRMan documentation &#8220;Using Procedural Primitives in PhotoRealistic RenderMan&#8221; for cross platform installation solutions.</p>
+</div>
+<div class="section" id="chaos-group-v-ray">
+<h3>Chaos Group V-Ray<a class="headerlink" href="#chaos-group-v-ray" title="Permalink to this headline">¶</a></h3>
+<p id="index-4">To render Yeti graphs using the supplied VRay plugins you first need to make sure that VRay will be able to find the appropriate binaries, to support rendering in both Maya and standalone you will need to append the bin directory in the Yeti installation path to the <code class="docutils literal"><span class="pre">VRAY_FOR_MAYA2012_PLUGINS_x64</span></code> and <code class="docutils literal"><span class="pre">VRAY_PLUGINS_x64</span></code> environment variables.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to append these to the paths already set or else VRAY will cease to function correctly.</p>
+</div>
+<p>Once the environment variables have been set your Yeti nodes will be rendered as expected, Yeti supports all shader assignments and is meant to be used with Chaos Groups supplied hair and fur shaders.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On Windows be sure that the Yeti bin directory has been added to your PATH environment variable.</p>
+</div>
+</div>
+<div class="section" id="solid-angle-s-arnold">
+<h3>Solid Angle&#8217;s Arnold<a class="headerlink" href="#solid-angle-s-arnold" title="Permalink to this headline">¶</a></h3>
+<p id="index-5">To render Yeti graphs using the supplied Arnold plugins you first need to make sure that Arnold will be able to find the appropriate binaries, to support rendering in both Maya and standalone you will need to set <code class="docutils literal"><span class="pre">MTOA_EXTENSIONS_PATH</span></code> to point to the plug-ins directory.  You will then have to tell Arnold how to find the Yeti procedural by specifying the Yeti bin path in the Procedural Path parameter of the Arnold render globals or make sure the Yeti bin directory has been added to your LD_LIBRARY_PATH/DYLD_LIBRARY_PATH environment variables.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">be sure to append these to the paths already set or else Arnold will cease to function correctly.</p>
+</div>
+<p>Once the environment variables have been set you&#8217;re Yeti nodes will be rendered as expected, Yeti supports all shader assignments and is meant to be used with Solid Angle&#8217;s supplied hair and fur shaders.</p>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p id="index-6"><strong>YETI_HOME</strong> - the root directory of the Yeti installation</p>
+<p><strong>YETI_DOCS</strong> - used to specify the location of the Yeti documentation, if not available on-line docs will be used.</p>
+<p><strong>YETI_TMP</strong> - let&#8217;s you specify where Yeti will store intermediate files.  When Yeti renders it will cache out a temporary file that the rendering DSO will use to generate data - generally you will want these to go into a directory that will be purged often, by default this is a yeti/tmp directory within your projects root directory.</p>
+<p><strong>YETI_INTERACTIVE_LICENSE</strong> - if set to 0 it will force Yeti to avoid checking out an interactive license, if it doesn&#8217;t exist or set to 1 it will allow it.</p>
+<p><strong>PEREGRINE_LOG_FILE</strong> - can be used to specify a log file to store Yeti&#8217;s console output, this is a full absolute path.</p>
+<p><strong>RLM_LICENSE</strong> - used to specify the machine to be used as a license server, <a class="reference external" href="mailto:port&#37;&#52;&#48;servername">port<span>&#64;</span>servername</a> - ie. <a class="reference external" href="mailto:5053&#37;&#52;&#48;licenseserver">5053<span>&#64;</span>licenseserver</a></p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="licensing.html" class="btn btn-neutral float-right" title="License Installation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="preamble.html" class="btn btn-neutral" title="Preamble"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

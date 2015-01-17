@@ -3,8 +3,9 @@ import pickle, os
 
 def shader_export():
     mayafile = os.path.normpath(cmds.file(q=True, sn=True).replace('scenes','Scenes'))
+    print mayafile
     pklpath = os.path.join(os.path.sep.join(mayafile.split(os.path.sep)[:-1]), 'shaders.pkl')
-    #print pklpath
+    print pklpath
     
     shader_dict = {}
     shaders = cmds.ls(mat=True)
@@ -29,8 +30,8 @@ def shader_export():
     pklfile.close()
 
 def shader_ui(jobdict, job, cat,ass, shots, cur_index):
-    import maya_jeeves.ui.shader_ui#;reload(maya_jeeves.ui.shader_ui)
-    maya_jeeves.ui.shader_ui.run(jobdict, job, cat,ass, shots, cur_index)
+    import jmaya.pipeline.tools.shader_ui#;reload(maya_jeeves.ui.shader_ui)
+    jmaya.pipeline.tools.shader_ui.run(jobdict, job, cat,ass, shots, cur_index)
     mayafile = cmds.file(q=True, sn=True).replace('scenes','Scenes')
 
 def shader_assign(pklpath, geo_nm, shad_nm):

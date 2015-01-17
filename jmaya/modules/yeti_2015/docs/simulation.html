@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulation and Corrective Grooming &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Groom Pipeline" href="groompipeline.html"/>
+        <link rel="prev" title="Feathers" href="feathers.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yetinode.html">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Simulation and Corrective Grooming</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="simulation-and-corrective-grooming">
+<h1>Simulation and Corrective Grooming<a class="headerlink" href="#simulation-and-corrective-grooming" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="simulation-overview">
+<span id="index-0"></span><h2>Simulation Overview<a class="headerlink" href="#simulation-overview" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Simulation in Yeti is applied at the strand level, this means that it is the Groom nodes that control the simulation and each groom node can do so differently.  Within the context of simulation there is the strands dynamic properties, collision objects and the ability to use Maya fields to apply forces.</p>
+</div>
+<div class="section" id="simulation-parameters">
+<h2>Simulation Parameters<a class="headerlink" href="#simulation-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Simulation is turned on and off with the Simulation toggle in the Simulation palette of a Groom.</p>
+<img alt="_images/simulation_01.png" class="align-center" src="_images/simulation_01.png" />
+<p>World attributes control how the simulation runs and Dynamic properties control the strands physical properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some parameters can be controlled by painting specific per strand attributes, these are listed below for each individual parameter.  A <strong>sim_simulate</strong> attribute can also be used to turn simulation on or off on a per strand basis, if the value is below 0.5 then no simulation will be run on the strand.</p>
+</div>
+<div class="section" id="world-attributes">
+<h3>World Attributes<a class="headerlink" href="#world-attributes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Start Frame</td>
+<td>controls at which frame Yeti should start running the dynamic simulation.</td>
+</tr>
+<tr class="row-odd"><td>Frames Per Second</td>
+<td>defines the time step used to run the simulation, you generally want this to reflect your current FPS in Maya but may also be used to slow down or speed up the dynamic motion.</td>
+</tr>
+<tr class="row-even"><td>Iterations</td>
+<td>the number of times internal constraints are applied each simulation step, lower values result in springy strands that may not collide as desired.  If a simulation &#8220;blows up&#8221; ( the motion isn&#8217;t as expected, usually resulting in a mess ) then it&#8217;s a good idea to increase the iterations to provide a more accurate solve.</td>
+</tr>
+<tr class="row-odd"><td>Gravity</td>
+<td>sets the gravity applied to the simulation.  You can set this to 0 and rely on Maya&#8217;s gravity field if desired.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="dynamics-properties">
+<h3>Dynamics Properties<a class="headerlink" href="#dynamics-properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Damping</td>
+<td>the amount of damping to apply to the dynamic forces</td>
+</tr>
+<tr class="row-odd"><td>Mass</td>
+<td>the expected mass of the strand, this can be set on a per strand basis by painting a <strong>sim_mass</strong> attribute.</td>
+</tr>
+<tr class="row-even"><td>Stiffness</td>
+<td>how stiff the hair is, this can be set on a per strand basis by painting a <strong>sim_stiffness</strong> attribute.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="collision-objects">
+<h2>Collision Objects<a class="headerlink" href="#collision-objects" title="Permalink to this headline">¶</a></h2>
+<p>By default a groom will not collide with any of the objects in the scene, including the surface the strands have grown from.</p>
+<img alt="_images/simulation_03.png" class="align-center" src="_images/simulation_03.png" />
+<p>All collision objects have to be explicitly added by opening the Collision Objects palette and using the Add Object(s) button to select which objects will affect the strands.</p>
+<p>Once an object has been added to a Groom as a collision object Yeti will add a Collision Friction attribute which can be used to control how collisions with the object will affect the motion of the fibres if/when they collide.</p>
+<p>You can also use the <strong>Collisions</strong> toggle to completely ignore all of the objects in the list if desired.</p>
+</div>
+<div class="section" id="maya-fields">
+<h2>Maya Fields<a class="headerlink" href="#maya-fields" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s possible to use Maya&#8217;s dynamic field node to affect the strands, to do so they just need to be added to the Fields palette via the Add Field(s) button which gives you the option of selecting any number of fields present in the scene.</p>
+<img alt="_images/simulation_04.png" class="align-center" src="_images/simulation_04.png" />
+</div>
+<div class="section" id="corrective-grooming">
+<span id="id1"></span><h2>Corrective Grooming<a class="headerlink" href="#corrective-grooming" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">Corrective grooming is a non-destructive way of making changes to a groom, usually after the hero groom has been published and either been applied to an animated character or post simulation.  In some cases the fur may not look ideal in certain poses and thus an artist can create a corrective groom to fix the appearance of the fur in that pose.</p>
+<p>This will work whether you&#8217;re using a cache, GRM file or just working on the original groom file.</p>
+<img alt="_images/simulation_05.png" class="align-center" src="_images/simulation_05.png" />
+<p>To begin you will have to open up the Corrective Grooming palette on the pgYetiMaya node you&#8217;d like to apply the correction too - select the groom you would like to correct and press the Add Corrective Groom button.</p>
+<p>This will create a new groom node in your scene which can be used to adjust the current groom - by default this has no effect and you will need to adjust the groom weight.</p>
+<img alt="_images/simulation_06.png" class="align-center" src="_images/simulation_06.png" />
+<p>Adjusting the groom weight is as easy as selecting the new corrective groom and opening the Corrective Groom palette, in here is a value slider named Corrective Groom Weight that can be used to blend the updated groom on or off ( and animated! ).</p>
+<p>The other values are un-important at this time.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="groompipeline.html" class="btn btn-neutral float-right" title="Groom Pipeline"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="feathers.html" class="btn btn-neutral" title="Feathers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

@@ -1,3 +1,18 @@
+'''
+this modules helps the op choose where to save the scene to with a gui. unlike, jeeves, publish and import, this gui
+is written directly with pyside, simply becuase it's so small and easy to manage
+
+the ui has two tabs, one for shots, the other for assets. in each of them, they have drop downs so the user can
+choose the shot, category and asset that they want to save into. for both of them, there is a final drop down, the
+task dropdown, this includes options to save it as a lighting, modelling etc scene.there is a checkbox to next
+it under a lighting, modelling sub folder also.
+
+lastly,the name of the file you are writing out is exposed. it is built from the drop down selections, but can be
+overwritten directly, including making custom folder with the use of a path sep in the filename string
+'''
+
+print '> importing jmaya.pipeline.save_as'
+
 from PySide import QtCore, QtGui
 import traceback, sys, os
 from shiboken import wrapInstance
@@ -23,6 +38,13 @@ def maya_main_window():
 ####################################################################################################################################
 
 class Ui_Save(QtGui.QDialog):
+    '''
+    single class of the save_as module, builds the ui from pyside
+    the 'create' method is called from 'run' function which sets up the ui and signals / slots
+    
+    is passed lists of shots, categories, assets ect to populate the ui with, could have pulled them out of the jobdict
+    though, meh
+    '''
     
     test_signal = QtCore.Signal()
     
@@ -42,8 +64,10 @@ class Ui_Save(QtGui.QDialog):
         self.setWindowTitle("Save As")
         self.setWindowFlags(QtCore.Qt.Tool)
         
+        #possible task choices
         self.tasks = ['none', 'layout', 'modelling', 'texturing', 'rigging', 'animation', 'simulation', 'lighting']
         
+        #set up the controls, layout and connections of the ui
         self.create_controls()
         self.create_layout()
         self.create_connections()
@@ -51,6 +75,11 @@ class Ui_Save(QtGui.QDialog):
         self.set_string()
         
     def create_controls(self):
+        '''
+        set up the widgets and controls
+        '''
+        print '\t> jmaya.pipeline.save_as.Ui_save.create_controls'
+
         self.setObjectName("Dialog")
         self.resize(310, 300)
         
@@ -88,11 +117,14 @@ class Ui_Save(QtGui.QDialog):
 
         self.btn_saveas = QtGui.QPushButton()
         self.btn_saveas.setText('Save As')
-
-        #self.tabWidget.setCurrentIndex(self.cur_index)
+        #set the defaults
         self.set_defaults()
 
     def create_layout(self):
+        '''
+        layout for the widgets and dropdowns
+        '''
+        print '\t> jmaya.pipeline.save_as.Ui_save.create_layout'
         assets_verticalLayout = QtGui.QVBoxLayout(self.assets_vertical_widget)
         assets_verticalLayout.addWidget(self.assets_combo_category)
         assets_verticalLayout.addWidget(self.assets_combo_assets)
@@ -115,14 +147,17 @@ class Ui_Save(QtGui.QDialog):
         
         main_layout.addWidget(self.tabWidget)
         main_layout.addWidget(self.btn_saveas)
+        #set the layout
         self.setLayout(main_layout)
 
     def create_connections(self):
+        '''
+        create the connections between the buttons and actions and methods
+        '''
+        print '\t> jmaya.pipeline.save_as.Ui_save.create_connections'
         self.assets_combo_category.activated.connect(self.category_changed)
-        self.assets_combo_assets.activated.connect(self.asset_changed)
-        self.shots_combo.activated.connect(self.change_shot)
-        #self.assets_name_entry.textChanged.connect(self.filename_change)
-        #self.shots_name_entry.textChanged.connect(self.filename_change)
+        self.assets_combo_assets.activated.connect(self.set_string)
+        self.shots_combo.activated.connect(self.set_string)
         self.btn_saveas.clicked.connect(self.save_as)
         self.tabWidget.currentChanged.connect(self.set_string)
         self.assets_combo_tasks.activated.connect(self.set_string)
@@ -133,68 +168,66 @@ class Ui_Save(QtGui.QDialog):
 ####################################################################################################################################  
 
     def set_defaults(self):
+        '''
+        set the defaults for the ui. if the op was on the shots tab in jeeves, it will default to shots on the save_as ui
+        '''
+        print '\t> jmaya.pipeline.save_as.Ui_save.set_defaults'
+        #grab the current scene names project name
         mayaproject = os.path.normpath(cmds.workspace( q=True, sn=True )).split(os.path.sep)[-1]
-        print mayaproject
         
+        #set the current save_as tab to either assets or shots
         if mayaproject == '3d_assets':
             self.tabWidget.setCurrentIndex(0)
             mayafile = os.path.normpath(cmds.file(q=True, sn=True).replace('scenes','Scenes'))
-            #mayafile = os.path.normpath(mayafile)
-            
-            if mayafile:
-                x = mayafile.split('Scenes' + os.path.sep)
-                keep = x[-1]
-
-                cat = keep.split(os.path.sep)[0]
-                ass = keep.split(os.path.sep)[1]
-                
-                cat_index = self.cat.index(cat)
-                ass_index = self.ass.index(ass)
-                
-                self.assets_combo_category.setCurrentIndex(cat_index)
-                self.assets_combo_assets.setCurrentIndex(ass_index)
+            try:
+                if mayafile:
+                    x = mayafile.split('Scenes' + os.path.sep)
+                    keep = x[-1]
+    
+                    cat = keep.split(os.path.sep)[0]
+                    ass = keep.split(os.path.sep)[1]
+                    
+                    cat_index = self.cat.index(cat)
+                    ass_index = self.ass.index(ass)
+                    
+                    self.assets_combo_category.setCurrentIndex(cat_index)
+                    self.assets_combo_assets.setCurrentIndex(ass_index)
+            except:
+                pass
             
             else:
-                pass
-                print 'no open file'
-            
+                print '\t> jmaya.pipeline.save_as.Ui_save.set_defaults > no open file'            
         else:
             self.tabWidget.setCurrentIndex(1)
             index = self.shots.index(mayaproject)
             self.shots_combo.setCurrentIndex(index)
-            
-    def change_shot(self):
-        print 'change shot'
-        self.set_string()
-    
-    def filename_change(self):
-        print 'filename change'
     
     def save_as(self):
-        print 'save as'
+        print '\t> jmaya.pipeline.save_as.Ui_save.save_as'
         if self.save_path():
             if self.save_file():
-                if jmaya.pipeline.workspace.check_workspace():              
+                if jmaya.pipeline.workspace.check_workspace():
+                    #close the save_as ui
                     self.reject()
             else:
                 return False
         else:
             return False
-
-        #save file
-        #need to check workspace
-        #refresh main gui?
     
     def save_file(self):
-        print self.savepath
-        print self.filename
+        '''
+        checks to see if the file exists already and prompts the user to confirm an overwrite, if not, it just returns to ui
+        
+        if all is good, we save the current scene to the new path and rename accordingly
+        '''
+        print '\t> jmaya.pipeline.save_as.Ui_save.save_file'
         
         if os.path.isfile(os.path.join(self.savepath, self.filename)):
-            print 'file already exists'
+            #scene already exists - run up a confirm dialog
             text = os.path.join(self.savepath, self.filename)
-            
             result = cmds.confirmDialog( title='Confirm Overwrite' ,  message=text, button=['Yes','No'], defaultButton='Yes', cancelButton='No', dismissString='No' )
             
+            #check the result
             if result == 'Yes':
                 cmds.file( rename=os.path.join(self.savepath, self.filename))
                 cmds.file( save=True, type='mayaBinary' )
@@ -207,6 +240,12 @@ class Ui_Save(QtGui.QDialog):
             return True
 
     def save_path(self):
+        '''
+        creates the self.savepath varibale and makes that dir if it doesnt exist
+        '''
+        print '\t> jmaya.pipeline.save_as.Ui_save.save_path'
+        
+        #get the current index of the save_as ui to determine the paths
         cur_index = self.tabWidget.currentIndex()
         
         if cur_index == 0:
@@ -241,9 +280,12 @@ class Ui_Save(QtGui.QDialog):
             return False
 
     def category_changed(self):
-        print 'cat changed'
+        '''
+        triggered when the asset category combo box is changed
+        '''
         self.jobdict = assets.assetlookup(jobdict = self.jobdict, category = self.assets_combo_category.currentText())
         self.assets = self.jobdict.assets
+        #sorts the list alphabetically
         self.assets = sorted(self.assets, key=lambda s: s.lower())
         self.jobdict = self.jobdict.jobdict
 
@@ -253,6 +295,15 @@ class Ui_Save(QtGui.QDialog):
         self.set_string()
     
     def set_string(self):
+        '''
+        THIS METHOD GENERATES THE SUGGESTED NAME OF THE FILE AND IS THEREFORE QUITE IMPORTANT
+        
+        it takes the current selection of the drop down boxes, the user initials adn other known variables
+        
+        by default we save to maya binary
+        
+        it then udates the entry box in the ui where the scene name is set
+        '''
         cur_index = self.tabWidget.currentIndex()
         
         if cur_index == 0:
@@ -278,10 +329,19 @@ class Ui_Save(QtGui.QDialog):
             self.shots_name_entry.setText(text)
 
     def asset_short(self, asset):
+        '''
+        returns a string of the first three characters of the string passed, called to abbreviate an asset when building the
+        scenename. this may be an area of contention, maybe try the first 4?
+        '''
         asset = asset[:3]
         return asset
 
-    def category_short(self, category):       
+    def category_short(self, category):
+        '''
+        returns a dictionary of category abbreviations
+        
+        used to build suggested scenename
+        '''
         cat_dict = {'Characters' : 'cha',
                     'Environments' : 'env',
                     'Props' : 'pro',
@@ -293,7 +353,12 @@ class Ui_Save(QtGui.QDialog):
         return cat_dict[category]
     
     def task_short(self, task):
+        '''
+        returns a dictionary of task abbreviations
         
+        used to build suggested scenename
+
+        '''
         task_dict = {'lighting' : 'lig',
                      'layout' : 'lay',
                      'texturing' : 'tex',
@@ -306,31 +371,26 @@ class Ui_Save(QtGui.QDialog):
 
         return task_dict[task]
 
-    def asset_changed(self):
-        print 'asset changed'
-        self.set_string()
-
 #######################################################################################################################
    
 def run(jobdict, job, cat,ass, shots, cur_index):
-    #print __name__
-
-    if __name__ == "__main__" or 'maya_jeeves.publish_ui':
-        #print 
-        
-        # Development workaround for PySide winEvent error (in Maya 2014)
-        # Make sure the UI is deleted before recreating
+    '''
+    called from jeeves_ui and is passed args such as job, the current index of jeeves tabs, assets or shots etc etc
+    '''
+    #print __name__    
+    if __name__ == "__main__" or 'jmaya.pipeline.save_as':
         try:
             test_ui.deleteLater()
         except:
             pass
         
-        # Create minimal UI object
+        # Create minimal UI object and initialise
         test_ui = Ui_Save(jobdict, job, cat, ass, shots, cur_index)
         
         # Delete the UI if errors occur to avoid causing winEvent
         # and event errors (in Maya 2014)
         try:
+            #call the create method
             test_ui.create()
             test_ui.show()
         except:

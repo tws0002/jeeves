@@ -1,0 +1,2 @@
+file -import -type "mayaBinary" -gr  -ignoreVersion -ra true -rdn -mergeNamespacesOnClash false -namespace "sh_001_ani_es_v02" -options "v=0;p=17;f=0"  -pr "/mnt/bertie/Jobs/999955_UNIT_jeeves/vfx/3d/sh_001/Scenes/sh_001_ani_es_v02.mb";
+file -import -type "mayaBinary" -gr  -ignoreVersion -ra true -rdn -mergeNamespacesOnClash false -namespace "sh_001_lig_es_v01" -options "v=0;p=17;f=0"  -pr -loadReferenceDepth "all" "/mnt/bertie/Jobs/999955_UNIT_jeeves/vfx/3d/sh_001/Scenes/sh_001_lig_es_v01.mb";

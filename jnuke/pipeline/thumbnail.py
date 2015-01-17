@@ -1,7 +1,15 @@
+'''
+generates a thumbnail by hooking up a write node to the current viewer, resizing to 256x144 and rendering out a jpg
+
+after render, it deletes the write and reformat nodes
+
+is passed job and shot vars to build thumbpath
+'''
 print '> importing jnuke.pipeline.thumbnail'
 import nukescripts, os, core, nuke
 
 def run(job, shot):
+    #thumbnail path, only one per shot - could alter this to one per version
     thumbpath = os.path.join(core.jobsRoot, job, 'vfx', 'nuke', shot, 'scripts', 'thumb.jpg')
     
     ### getting active node
@@ -10,6 +18,7 @@ def run(job, shot):
     acticeVinput = curViewer.activeInput()
     curN = curNode.input(acticeVinput)
     
+    #create the reformat
     r = nuke.createNode("Reformat")
     r.setName("tempReformat")
     r.setInput(0, curN)

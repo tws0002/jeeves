@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Yeti Maya Node &mdash; Yeti v1.3 Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1.3.16',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Yeti v1.3 Documentation" href="index.html"/>
+        <link rel="up" title="Users Guide" href="usersguide.html"/>
+        <link rel="next" title="Grooming" href="grooming.html"/>
+        <link rel="prev" title="Getting Started" href="gettingstarted.html"/> 
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home">
+				<img class="logo" src="_static/pgYeti.png" alt="Logo"/>
+			Yeti v1.3
+		</a>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preamble.html">Preamble</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="licensing.html">License Installation</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="usersguide.html">Users Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Yeti Maya Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grooming.html">Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides.html">Guide Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feathers.html">Feathers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Simulation and Corrective Grooming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groompipeline.html">Groom Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workingwithcaches.html">Working With Caches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenceguide.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noderef.html">Node Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptingref.html">Scripting Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressionref.html">Expression Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandlineandrendering.html">Command Line Tools and Rendering DSO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example Scenes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">Yeti v1.3</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Yeti Maya Node</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+
+          
+  <div class="section" id="yeti-maya-node">
+<h1>Yeti Maya Node<a class="headerlink" href="#yeti-maya-node" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The Yeti Node is the main container for a single Yeti Graph within Maya, you will use this to edit the Graph, assign input Objects, Grooms and Guides as well as set display and rendering parameters.</p>
+<div class="section" id="display">
+<h2>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_01.png" class="align-center" src="_images/yetinode_01.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Display Output</td>
+<td>Used to toggle the display of the graph evaluation.  This avoids the need to hide the Yeti node and thus it will still render correctly.</td>
+</tr>
+<tr class="row-odd"><td>Draw Feedback</td>
+<td>A few nodes ( Group, etc. ) draw feedback into the viewport as you work with them, this provides a means of turning this feedback on and off.</td>
+</tr>
+<tr class="row-even"><td>Display Bounding Boxes</td>
+<td>Draw the individual bounding boxes of each object generated by the Yeti graph.</td>
+</tr>
+<tr class="row-odd"><td>Subd Display</td>
+<td>Toggle Yeti&#8217;s Subdivision surface evaluation between Display &amp; Render or just Render time.  Please see the Subdivision Surface note below for more details.</td>
+</tr>
+<tr class="row-even"><td>Feather Display Style</td>
+<td>Yeti has the option of drawing evaluated feathers as very fast Skeleton representations (which is the control mesh for the feather) or the fully evaluated feather, when displaying a fully evaluated feather both the evaluation and display will be slower depending on how highly detailed the feathers are.</td>
+</tr>
+<tr class="row-odd"><td>Viewport Density</td>
+<td>As Yeti defines a procedural graph certain nodes can be evaluated at different densities ( Scatter ), by adjusting this you can preview how the graph will look at the specified density.</td>
+</tr>
+<tr class="row-even"><td>Viewport Length</td>
+<td>A means of increasing the overall length of the fur if scale changes.</td>
+</tr>
+<tr class="row-odd"><td>Color</td>
+<td>Used to change the color used to draw the groom in the viewport</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Yeti by default uses the different rendering engines settings to decide if a mesh should be treated as a subdivision surface or not.  If you would like to force a mesh to evaluate as a Subdivision surface you can use both the Yeti Subdivision and Yeti Subdivision Iterations attributes added to the mesh when connected to a node.</p>
+</div>
+</div>
+<div class="section" id="render">
+<h2>Render<a class="headerlink" href="#render" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_02.png" class="align-center" src="_images/yetinode_02.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Render Density</td>
+<td>This controls how dense the fur will be at render time.</td>
+</tr>
+<tr class="row-odd"><td>Render Width</td>
+<td>Override the width of the fur at render time.</td>
+</tr>
+<tr class="row-even"><td>Render Length</td>
+<td>A means of increasing the overall length of the fur at render time.</td>
+</tr>
+<tr class="row-odd"><td>Render Threads</td>
+<td>The number of threads to use when evaluating the graph at render time, 0 = all threads.</td>
+</tr>
+<tr class="row-even"><td>Increase Render Bounds</td>
+<td>Increase the bounds defined by Yeti at render time.</td>
+</tr>
+<tr class="row-odd"><td>Center Samples Around Zero</td>
+<td>Controls whether motion blur will be defined at the current frame or based around 0 ( which some rendering engines require )</td>
+</tr>
+<tr class="row-even"><td>Curve Chunk Size</td>
+<td>Defines the number of fibres per RiCurve call in the resulting Rib output</td>
+</tr>
+<tr class="row-odd"><td>Load At Initialization</td>
+<td>Forces Yeti to use the load_at_init Arnold parameter to evaluate the cache on initialization vs. deferred.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="i-o">
+<h2>I/O<a class="headerlink" href="#i-o" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_03.png" class="align-center" src="_images/yetinode_03.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Input Mode</td>
+<td>Control whether or not the Yeti Node will read in a Groom, Cache or nothing.</td>
+</tr>
+<tr class="row-odd"><td>Groom File Name</td>
+<td>Groom file to be referenced.</td>
+</tr>
+<tr class="row-even"><td>Input Cache File Name</td>
+<td>The desired cache file to referenced by the node.</td>
+</tr>
+<tr class="row-odd"><td>Ignore Cache Preview</td>
+<td>Ignore any baked previews that may be stored in the cache file and re-evaluate the graph.</td>
+</tr>
+<tr class="row-even"><td>Output Cache File Name</td>
+<td>Used to specify an output name when caching a Yeti node.</td>
+</tr>
+<tr class="row-odd"><td>Frame Range</td>
+<td>Frame range used when caching initiated by the Write Cache button as well as the number of samples for each frame.</td>
+</tr>
+<tr class="row-even"><td>Update Viewport</td>
+<td>Toggle whether the viewport will update while iterating through the frames as caching.</td>
+</tr>
+<tr class="row-odd"><td>Generate Preview</td>
+<td>Store a pre-baked preview of the fur result into the cache file which will be used to draw the cache vs. the need to evaluate.</td>
+</tr>
+<tr class="row-even"><td>Write Cache</td>
+<td>If not using the command line tools this can be used to write a cache to disk using the specified name and frame range.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Once a Groom file has been imported be sure to set the I/O Mode back to None</p>
+</div>
+</div>
+<div class="section" id="graph">
+<h2>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_04.png" class="align-center" src="_images/yetinode_04.png" />
+<p>The graph palette is used to manage the connections between the Maya scene and Yeti&#8217;s internal representation of the geometry.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Open Graph Editor</td>
+<td>Will open the graph editor for the current node.</td>
+</tr>
+<tr class="row-odd"><td>User Variables</td>
+<td>A list of user specified variables.  Yeti can be controls by external maya attributes when names correctly, supporting both float and vector variables. This is done by prefixing a Maya attribute created on the Yeti node with either <code class="docutils literal"><span class="pre">yetiVariableF_</span></code> for a float or <code class="docutils literal"><span class="pre">yetiVariableV_</span></code> for a vector.  Once created these can be accessed in the Yeti graph as a global variable, for example: <code class="docutils literal"><span class="pre">yetiVariableF_myValue</span></code> can be used in the Yeti graph as <code class="docutils literal"><span class="pre">$myValue</span></code>.</td>
+</tr>
+<tr class="row-even"><td>Add Float</td>
+<td>Add a user float to the graph.</td>
+</tr>
+<tr class="row-odd"><td>Input Object</td>
+<td>A list of input geometry to the graph, use Add/Remove object to control which objects in your Maya scene are accessible to Yeti.</td>
+</tr>
+<tr class="row-even"><td>Input Grooms</td>
+<td>Acts similarly to Input Objects but for Yeti groom nodes.</td>
+</tr>
+<tr class="row-odd"><td>Input Guide Sets</td>
+<td>Allows you to reference in object Sets that contain Nurbs Curves, these curves can be used as guides in the Yeti graph.</td>
+</tr>
+<tr class="row-even"><td>Ignore Namespaces</td>
+<td>When referencing objects/grooms and guide sets by name there is a chance the Maya node will live in a specific namespace ( usually denoted by a : in the name ), toggling this on will only consider the leaf name of the object when resolving names in the graph.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="corrective-grooming">
+<h2>Corrective Grooming<a class="headerlink" href="#corrective-grooming" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_05.png" class="align-center" src="_images/yetinode_05.png" />
+<p>Corrective grooming is a way in which pose space grooms can be created, the process is straight forward and any number of corrective grooms may be layered to achieve the desired result.  Please refer to the <a class="reference internal" href="simulation.html#corrective-grooming"><em>Corrective Grooming</em></a> documentation for more information.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Corrective Groom Handling</td>
+<td>Toggle the corrective grooms on and off.</td>
+</tr>
+<tr class="row-odd"><td>Current Grooms</td>
+<td>List the currently available grooms, select the desired groom you&#8217;d like to build a corrective groom for.</td>
+</tr>
+<tr class="row-even"><td>Add Corrective Groom</td>
+<td>Will add a new groom node to the current scene which will be applied as a corrective groom.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/yetinode_06.png" class="align-center" src="_images/yetinode_06.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Plugin Version</td>
+<td>The version of the currently loaded Yeti plugin.</td>
+</tr>
+<tr class="row-odd"><td>Verbosity</td>
+<td>Can be used to change how much information Yeti outputs during evaluation and rendering.</td>
+</tr>
+<tr class="row-even"><td>Image Search Path</td>
+<td>Define a list of paths to use to search for textures.</td>
+</tr>
+<tr class="row-odd"><td>Node Caching</td>
+<td>Toggles node caching on/off - when on node evaluation results will be cached if there is potential for the node to be evaluated more than once when the graph runs.  Depending on graph sizes this may produce a decent optimization though will also consume more memory during evaluation.</td>
+</tr>
+<tr class="row-even"><td>Over Cache With Inputs</td>
+<td>If on any input connections to the node in Maya will be used to override the data stored in a currently referenced cache file.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Image Search Path uses colon delineation on OSX/Linux and semi colon on Windows, environment variables can be used via the ${ENVVAR} syntax.</p>
+</div>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="grooming.html" class="btn btn-neutral float-right" title="Grooming"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="gettingstarted.html" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2010 - Present Peregrine Labs, a division of Peregrine Visual Storytelling Ltd.
+  </p>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

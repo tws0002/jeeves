@@ -1,0 +1,12 @@
+global proc hypershadeThumbnail()
+{
+int $query = `renderThumbnailUpdate -q`;
+if ($query == 0){
+renderThumbnailUpdate true;
+}
+else
+{
+renderThumbnailUpdate false;
+}
+
+}

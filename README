@@ -1,29 +1,65 @@
-high priority
+jeeves.core.setup
 
-- nuke - save - jmaya.pipeline.save
-- nuke - save as - jmaya.pipeline.save_as
-- nuke - version - jmaya.pipeline.version
-- nuke - unsaved changes dialog thing, when open is pressed - jnuke.pipeline.open
-- nuke - callbacks in init.py - inc favourites dirs, after file is open?
-- nuke - output write button
+The initial requirements to set up jeeves are as follows:
 
-low priority
+Maya:
 
-- standalone - write the subprocess code to open or import nuke and maya files from the standalone jeeves
-- standalone - maya or nuke choice dialog
-- nuke - nuke tools tab
-- maya - maya tools tab
-- maya - convert publish.ui to pyside code and keep in one publish module
-- maya - publish - selection sets
-- maya - import maya type dialog options - jmaya.pipeline.importer
-- maya - import alembic options dialog - jmaya.pipeline.importer
-- nuke - add python plugins to drop down
+take the files in jeeves/core/setup (userSetup.py, userSetup.mel and Maya.env) and read the instructions in them. Essentially,
+you need to place these files in ~/maya/scripts or symlink to them, so that the required sys paths are set and the menus
+are added correctly and the plugins and modules are centralised correctly
 
+Nuke:
 
+the NUKE_PATH environment varibale needs to be set to point to jeeves/core/setup. nuke will look for a init.py and menu.py at
+this location to customise nuke for jeeves.
 
-import sys
-sys.path.append('/Users/elliott/Google Drive/pipeline/jeeves_dev')
+all these files are commented to help. there is the variable, dev = True/False to distinguish between stable and dev
+versions of jeeves, edit these to point to other versions of jeeves
 
-import core;reload(core)
-import core.ui;reload(core.ui)
-import core.ui.jeeves_ui;reload(core.ui.jeeves_ui)
+-------------------------------------------------------------------------------------------------------------------------------
+
+jeeves.core
+
+again the __init__.py module set the sys paths and other important info when jeeves.core is imported. the core packages are used
+to build a dictionary of the job, based on arguements given.
+
+the initial search string is sent to the jeeves.core.job module. the search string is matched against a job on bertie and if
+one exists a basic dict is returned with the job num as the top level key followed by '3d' and 'nuke' keys. no shot or
+asset info is added yet.
+
+once a basic job dict is returned, it can then be sent to shots, assets, renders or wrappers modules to be populated with
+actual data relating to the job. if you look at jeeves/test.py and uncomment various things, you'll see how you can
+return a dict with very specific data in or if you dont know exactly what you want, a dict that contains all shots / assets
+/ task.
+
+to make this a bit easier, the wrappers modules will accept various arguements and will return what it can based on those
+arguements. if you give it only the job dict, it will get everything. if you give it the job dict, the dept and shot,
+eg, 3d, shot_01, it will only get the scenes for 3d shot_01. and so on. it works on a top down approach.
+
+the jeeves_ui, uses the wrapper module to retreive information, but should any changes needed to be made to the way that
+jeeves performs the lookup, both the shots, assets, job, renders and wrappers modules will need to be altered to reflect
+those changes.
+
+the locate module, takes the currently open maya/nuke file and tries to ascertain where it is on the file system, the job,
+shot, asset, version etc etc. if in the correct place, it will return all the relevant information about that file, shot, task,
+version, user etc etc. this module is used when opening, saving etc.
+
+the pyseq module in core, is used to return a string of sequential files, eg renders that are nicer to store in the jobdict than
+each individual frame. this is actually from pipi or somewhere like that, it's not mine.
+
+so thats basically the core package. i would have a look at the test.py script and comment / uncomment various things to
+get an understanding of how loose or specific you can be when making lookups. there is provisions for doing other lookup
+methods from the job module, but at the moment these are not in place. if you want to make the call to a db, edit the job
+module.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+jeeves.core.ui
+
+the other part of jeeves.core is the ui folder / package.
+
+the templates folder contains the .ui files for jeeves, import and publish. these are created in qt designer and then converted
+dynamically for maya / nuke when the jeeves_ui.py module is called. pysideuic is used to convert them.
+
+pysideuic is included with maya as standard. the lib/site_packages folder within maya needs to be appended to the sys path for
+nuke so that nuke can convert these ui files on the fly. this means that maya needs to be on the nuke linux machines. hey ho.

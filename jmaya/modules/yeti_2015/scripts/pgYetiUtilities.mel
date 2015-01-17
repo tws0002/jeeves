@@ -1,0 +1,229 @@
+//
+// pgYetiUtilities - Yeti Maya commands
+// 
+// (c) 2010-Present Peregrine Labs a division of Peregrine Visual Storytelling Ltd.
+// All rights reserved.
+//
+// The coded instructions, statements, computer programs, and/or related
+// material (collectively the "Data") in these files contain unpublished
+// information proprietary to Peregrine Visual Storytelling Ltd. ("Peregrine") 
+// and/or its licensors, which is protected by U.S. and Canadian federal 
+// copyright law and by international treaties.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. PEREGRINE
+// DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES
+// INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE 
+// OF DEALING, USAGE, OR TRADE PRACTICE. IN NO EVENT WILL PEREGRINE AND/OR ITS
+// LICENSORS BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR SPECIAL,
+// DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES, EVEN IF PEREGRINE AND/OR ITS
+// LICENSORS HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+//
+
+// General Yeti utility procedures
+
+// open the graph editor and show the graph associated with the currently selected pgYeti node
+global proc pgYetiOpenGraphEditor()
+{
+	string $selectedMayaNode[] = `ls -sl -dag -type pgYetiMaya`;
+	if ( size($selectedMayaNode) > 0 )
+		pgYetiCommand -showGraphEditor $selectedMayaNode[0];
+}
+
+global proc pgYetiExportGroomFromSelected()
+{
+	string $selectedYetiNodes[] = `ls -sl -dag -noIntermediate -type pgYetiMaya`;
+	if ( size( $selectedYetiNodes ) == 0 )
+	{
+		error "No Yeti Nodes Selected!";
+	} else {
+                string $filename[] = `fileDialog2 -fileMode 0 -caption "Export Groom" -fileFilter "Yeti Groom ( *.grm )"`;
+		if (1 == `size($filename)`)
+		{
+			pgYetiCommand -exportGroom $filename[0] $selectedYetiNodes[0];
+		}
+	}
+}
+
+global proc pgYetiImportGroomFileFromSelected()
+{
+	string $selectedYetiNodes[] = `ls -sl -dag -noIntermediate -type pgYetiMaya`;
+	if ( size( $selectedYetiNodes ) == 0 )
+	{
+		error "No Yeti Nodes Selected!";
+	} else {
+		pgYetiImportGroomFileFromNode( $selectedYetiNodes[0] );
+	}
+}
+
+// import the GRM data into the current Maya scene, this will re-create all of the Groom nodes
+global proc pgYetiImportGroomFileFromNode( string $pgYetiMayaNode )
+{
+	int $fileMode = `getAttr ( $pgYetiMayaNode + ".fileMode" )`;
+	if ( $fileMode == 1 )
+	{		
+		string $grooms[] = `pgYetiCommand -listGrooms $pgYetiMayaNode`;
+	
+		string $groom;
+		for ( $groom in $grooms )
+		{
+			string $new_groom = pgYetiExtractGroomFromNode( $groom, $pgYetiMayaNode, "" );
+		}		
+	} else {
+		error ( $pgYetiMayaNode + " isn't currently using a groom file.");
+	}
+}
+
+// swap all of the Yeti connections on one mesh with another
+global proc pgYetiSwapGeometry( string $originalGeometry, string $newGeometry )
+{
+	if ( `objectType $originalGeometry` == "mesh" )
+	{
+		if ( `objectType $newGeometry` == "mesh" )
+		{
+			string $currentConnections[] = `connectionInfo -destinationFromSource ( $originalGeometry + ".worldMesh")`;
+			string $currentConnection;
+			for ( $currentConnection in $currentConnections )
+			{
+				string $buffer[];
+				$numTokens = `tokenize  $currentConnection "." $buffer`;
+				
+				string $nodeName = $buffer[0];
+				string $attrName = $buffer[1];
+				if ( `objectType $nodeName` == "pgYetiGroom" )
+				{
+					connectAttr -force ( $newGeometry + ".worldMesh[0]" ) ( $nodeName + ".inputGeometry" );
+				} else if ( `objectType $nodeName` == "pgYetiMaya" )
+				{
+				    connectAttr -force ( $newGeometry + ".worldMesh[0]" ) ( $nodeName + "." + $attrName );
+				}
+			}
+		} else {
+			error("pgYeti: " + $newGeometry + " isn't a mesh object!");
+		}
+	} else {
+		error("pgYeti: " + $originalGeometry + " isn't a mesh object!");
+	}
+};
+
+// this will extract a Groom stored in a Yeti node ( either via a cache or GRM file ) an recreate the Groom node
+global proc string pgYetiExtractGroomFromNode( string $in_groom, string $yetiNode, string $postFix )
+{
+	string $selectedMeshNodes[] = `listConnections -shapes true ( $yetiNode + ".inputGeometry")`;
+	
+	string $newPgYetiGroom = `createNode pgYetiGroom`;
+	if ( size( $selectedMeshNodes ) > 0 )
+	{
+		connectAttr ( $selectedMeshNodes[0] + ".worldMesh[0]" ) ( $newPgYetiGroom + ".inputGeometry" );
+		connectAttr time1.outTime ( $newPgYetiGroom + ".currentTime" );
+	}
+	
+	string $groom = $in_groom;
+	string $shapeTest = substring( $groom, size($groom) - 4, size($groom));
+	if ( $shapeTest == "Shape" )
+	{
+		$groom = substring( $groom, 1, size($groom) - 5);
+	}
+	
+	// rename the parent and node
+	string $transforms[] = `listRelatives -p $newPgYetiGroom`;
+	rename $newPgYetiGroom "tempPgYetiGroomName";
+	string $transform_name = `rename $transforms[0] ( $groom + $postFix)`;
+	$newPgYetiGroom = `rename "tempPgYetiGroomName" ( $transform_name + "Shape" )`;
+				
+	pgYetiCommand -setStrands $yetiNode $in_groom $newPgYetiGroom;
+		
+	pgYetiAddGroom( $newPgYetiGroom, $yetiNode );	
+	
+	return $newPgYetiGroom;
+}
+
+// this will create a corrective groom for the specified groom and yeti node
+global proc pgYetiCreateCorrectiveGroom(string $groom, string $yetiNode)
+{
+	string $newPgYetiGroom = pgYetiExtractGroomFromNode( $groom, $yetiNode, "CorrectiveGroom" );
+			
+	setAttr ( $newPgYetiGroom + ".correctiveGroom" ) true;
+	setAttr ( $newPgYetiGroom + ".correctiveGroomTarget" ) -type "string" $groom;
+}
+
+// helper to add a new command or string entry to an attribute when we don't know if it already contains the entry
+global proc pgYetiAppendToString(string $node, string $attr, string $toAppend)
+{
+	if (objExists($node) && `attributeExists $attr $node`)
+	{
+		pgYetiRemoveFromString($node, $attr, $toAppend);
+
+		string	$val = getAttr($node + "." + $attr);
+
+		if (($val == "") || (size(`match "^[ \t]*$" $val`) > 0))
+			$val = $toAppend;
+		else
+			$val += "; " + $toAppend;
+
+		setAttr -type "string" ($node + "." + $attr) $val;
+	}
+}
+
+// helper to remove a new command or string entry from a string attribute, if it exists
+global proc pgYetiRemoveFromString(string $node, string $attr, string $toRemove)
+{
+	if (objExists($node) && `attributeExists $attr $node`)
+	{
+		string	$val = getAttr($node + "." + $attr);
+		
+		$val = substitute((";[ \t]*" + $toRemove + "[ \t]*"), $val, "");
+		$val = substitute(("[ \t]*" + $toRemove + "[ \t]*;"), $val, "");
+		$val = substitute(("[ \t]*" + $toRemove + "[ \t]*"), $val, "");
+
+		setAttr -type "string" ($node + "." + $attr) $val;
+	}
+}
+
+global proc int pgYetiIsCurrentRenderer(string $renderer)
+{
+	string  $currentRenderer = "";
+
+	if ( objExists("defaultRenderGlobals"))
+		if(attributeExists("currentRenderer", "defaultRenderGlobals"))
+			$currentRenderer = getAttr("defaultRenderGlobals.currentRenderer");
+		
+	if ( $currentRenderer == $renderer )
+		return true;
+
+	return false;
+}
+
+global proc int pgYetiIsVisibleInCurrentRenderLayer( string $node )
+{
+    string $currentRenderLayer = `editRenderLayerGlobals -q -currentRenderLayer`;
+    string $currentRenderLayerMembers[] = `editRenderLayerMembers -q $currentRenderLayer`;
+    string $currentMemeber;
+    for ( $currentMember in $currentRenderLayerMembers )
+    {
+        if ( $currentMember == $node )
+            return true;
+			
+		// we need to check and see if the parent ( transform ) is a member of this layer
+		string $relatives[] = `listRelatives -parent $node`;
+		string $relative;
+		for ( $relative in $relatives )
+		{
+			if ( $currentMember == $relative )
+				return true;
+		}
+    }
+
+    return false;
+}
+
+// this will make sure $matched has the same set membership as $to_match
+global proc pgYetiMatchSetMembership( string $to_match, string $matched )
+{
+    string $connections[] = `listConnections ( $to_match + ".instObjGroups" )`;
+    string $set;
+    for ( $set in $connections )
+    {
+        catchQuiet ( `sets -add $set $matched` );
+    }
+}
