@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ btoa2" tasks="Mootzoid - emTools/Tools - Primal" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12365981">
+	<definition>
+		<nodes>
+			<node type="emTools_btoa2" index="0">
+				<param name="Input1" type="11" value="false"></param>
+				<portdef name="Input1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1984</prop>
+					<prop name="posy">1250</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Input1" username="Boolean1" basename="Boolean1" portlabel="Boolean1" exposetype="all_instances"> </port>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Boolean1" min="0" max="0"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

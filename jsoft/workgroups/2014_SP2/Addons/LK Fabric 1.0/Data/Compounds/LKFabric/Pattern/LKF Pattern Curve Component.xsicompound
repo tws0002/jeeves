@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="LKF Pattern Curve Component" tasks="LK Fabric/Pattern" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="2386897">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="pointposition"></param>
+				<param_ext name="reference" type="31" value="pointposition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1668</prop>
+					<prop name="posy">764</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="1">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1444</prop>
+					<prop name="posy">781</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="inname" username="CurveName" basename="CurveName" portlabel="CurveName" exposetype="single"> </port>
+			<port index="1" portname="array" username="PatternCurve" basename="PatternCurve" portlabel="PatternCurve" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="CurveName"> </item>
+			<item type="output" name="PatternCurve"> </item>
+		</layout>
+	</definition>
+</xsi_file>

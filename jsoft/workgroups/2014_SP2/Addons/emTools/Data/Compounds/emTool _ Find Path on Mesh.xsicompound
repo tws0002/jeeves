@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Find Path on Mesh" tasks="Mootzoid - emTools/Tools - All Sorts of Things" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTool _ Find Path on Mesh Adv" version="1.0" index="0">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Method" type="3" value="0"></param>
+				<param name="In_Flags" type="11" value="true"></param>
+				<param name="Index_0" type="3" value="0"></param>
+				<portdef name="Index_0" type="2" structure="2" group="2" instance="0" port="0" groupname="Index 0"></portdef>
+				<portdef name="In_Name_of_Geometry" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Flags" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Method" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2029</prop>
+					<prop name="posy">240</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-2494</prop>
+					<prop name="posy">307</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2596</prop>
+					<prop name="posy">323</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="17">
+				<param name="reference" type="31" value="VertexIndex"></param>
+				<param_ext name="reference" type="31" value="VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2204</prop>
+					<prop name="posy">419</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetClosestLocationNode" index="20">
+				<param name="proximitymethod" type="3" value="1"></param>
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="enablecutoffdistance" type="11" value="false"></param>
+				<param name="cutoffdistance" type="4" value="0.000000"></param>
+				<portdef name="geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="position" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="enablecutoffdistance" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="cutoffdistance" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2403</prop>
+					<prop name="posy">400</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="24">
+				<param name="value1.value1_x" type="4" value="-7.000000"></param>
+				<param name="value1.value1_y" type="4" value="-7.000000"></param>
+				<param name="value1.value1_z" type="4" value="-7.000000"></param>
+				<param name="value2.value2_x" type="4" value="7.000000"></param>
+				<param name="value2.value2_y" type="4" value="7.000000"></param>
+				<param name="value2.value2_z" type="4" value="7.000000"></param>
+				<portdef name="value1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2605</prop>
+					<prop name="posy">448</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-2419" offsety="372" sizex="368" sizey="133"><![CDATA[convert positions to vertex indices]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Found" username="Found" basename="Found" portlabel="Found" exposetype="single"> </port>
+			<port index="0" portname="Vertex_Indices" username="Vertex_Indices" basename="Vertex Indices" portlabel="Vertex Indices" exposetype="single"> </port>
+			<port index="0" portname="Positions" username="Positions" basename="Positions" portlabel="Positions" exposetype="single"> </port>
+			<port index="1" portname="in" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="4" portname="inname" username="In_Name_of_Geometry" basename="In Name of Geometry" portlabel="In Name of Geometry" exposetype="single"> </port>
+			<port index="24" portname="value1" username="Position_0" basename="Position 0" portlabel="Position 0" exposetype="all_instances"> </port>
+			<port index="24" portname="value2" username="Position_1" basename="Position 0" portlabel="Position 1" exposetype="all_instances"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="20" from_port="location" to_node="17" to_port="source"> </cnx>
+			<cnx from_node="24" from_port="array" to_node="20" to_port="position"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="20" to_port="geometry"> </cnx>
+			<cnx from_node="4" from_port="outname" to_node="0" to_port="In_Name_of_Geometry"> </cnx>
+			<cnx from_node="17" from_port="value" to_node="0" to_port="Index_0"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="Enable"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="In_Name_of_Geometry"> </item>
+			<item type="input" name="Main"> </item>
+			<item type="input" name="Flags"> </item>
+			<group type="input" name="Key Positions">
+				<item type="input" name="Position_0" min="0" max="0"> </item>
+				<item type="input" name="Position_1" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Found"> </item>
+			<item type="output" name="Vertex_Indices"> </item>
+			<item type="output" name="Positions"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

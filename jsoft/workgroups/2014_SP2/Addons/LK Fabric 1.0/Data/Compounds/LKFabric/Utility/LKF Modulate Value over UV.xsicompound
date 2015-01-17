@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="LKF Modulate Value over UV" tasks="LK Fabric/Utility" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="5724092">
+	<definition>
+		<nodes>
+			<node type="IntegerNode" index="0">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-902</prop>
+					<prop name="posy">68</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Mode.]]></comment>
+			</node>
+			<node type="LinearInterpolateNode" index="1">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-963</prop>
+					<prop name="posy">232</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="2">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1179</prop>
+					<prop name="posy">428</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="3">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1199</prop>
+					<prop name="posy">298</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="4">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1361</prop>
+					<prop name="posy">631</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="5">
+				<param name="profile" type="buffer">2 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 1.000000 0.333333 0.000000 -0.333333 0.000000 4 2
+0 1.000000 0.000000 0.333333 0.000000 -0.333333 0.000000 4 2
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1666</prop>
+					<prop name="posy">588</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="6">
+				<param name="profile" type="buffer">2 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 1.000000 0.333333 0.000000 -0.333333 0.000000 4 3
+0 1.000000 0.000000 0.333333 0.000000 -0.333333 0.000000 4 3
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1676</prop>
+					<prop name="posy">349</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="7">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1544</prop>
+					<prop name="posy">163</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="7" offsety="-21" sizex="61" sizey="19"><![CDATA[Influence.]]></comment>
+			</node>
+			<node type="ScalarNode" index="8">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1317</prop>
+					<prop name="posy">192</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="9">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1493</prop>
+					<prop name="posy">284</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Value.]]></comment>
+			</node>
+			<node type="ScalarNode" index="10">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">76</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="7" offsety="-21" sizex="61" sizey="19"><![CDATA[Influence.]]></comment>
+			</node>
+			<node type="LinearInterpolateNode" index="11">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-955</prop>
+					<prop name="posy">449</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_0]" index="12">
+				<param name="Value_for_U_Strands" type="4" value="0.189000"></param>
+				<param name="Value_for_V_Strands" type="4" value="0.189000"></param>
+				<portdef name="Value_for_U_Strands" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value_for_V_Strands" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1512</prop>
+					<prop name="posy">459</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_1]" index="13">
+				<param name="Value_for_U_Strands" type="4" value="0.189000"></param>
+				<param name="Value_for_V_Strands" type="4" value="0.189000"></param>
+				<portdef name="Value_for_U_Strands" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value_for_V_Strands" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1384</prop>
+					<prop name="posy">100</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="14">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1178</prop>
+					<prop name="posy">203</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="15">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1183</prop>
+					<prop name="posy">543</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="16">
+				<param name="reference" type="31" value="self.VPosition"></param>
+				<param_ext name="reference" type="31" value="self.VPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1863</prop>
+					<prop name="posy">562</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="17">
+				<param name="reference" type="31" value="self.UPosition"></param>
+				<param_ext name="reference" type="31" value="self.UPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1858</prop>
+					<prop name="posy">341</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="18">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.000000"></param>
+				<param name="case1" type="4" value="0.000000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-678</prop>
+					<prop name="posy">336</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+			<port index="5" portname="profile" username="V_Curve" basename="V Curve" portlabel="V Curve" exposetype="single"> </port>
+			<port index="6" portname="profile" username="U_Curve" basename="U Curve" portlabel="U Curve" exposetype="single"> </port>
+			<port index="7" portname="value" username="V_Influence" basename="V Influence" portlabel="V Influence" exposetype="single"> </port>
+			<port index="9" portname="in" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="10" portname="value" username="U_Influence" basename="U Influence" portlabel="U Influence" exposetype="single"> </port>
+			<port index="18" portname="result" username="Modulated_Value" basename="Modulated Value" portlabel="Modulated Value" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="13" from_port="Result" to_node="1" to_port="blend"> </cnx>
+			<cnx from_node="13" from_port="Result" to_node="11" to_port="blend"> </cnx>
+			<cnx from_node="12" from_port="Result" to_node="3" to_port="factor"> </cnx>
+			<cnx from_node="12" from_port="Result" to_node="2" to_port="value2"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="18" to_port="condition"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="18" to_port="case0"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="11" to_port="second"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="1" to_port="second"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="15" to_port="value2"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="12" to_port="Value_for_V_Strands"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="12" to_port="Value_for_U_Strands"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="13" to_port="Value_for_V_Strands"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="14" to_port="factor"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="3" to_port="value"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="2" to_port="value1"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="15" to_port="value1"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="13" to_port="Value_for_U_Strands"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="18" to_port="case1"> </cnx>
+			<cnx from_node="14" from_port="result" to_node="1" to_port="first"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="11" to_port="first"> </cnx>
+			<cnx from_node="16" from_port="value" to_node="5" to_port="in"> </cnx>
+			<cnx from_node="17" from_port="value" to_node="6" to_port="in"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Mode" min="0" max="0">
+				<enum value="0"><![CDATA[Multiplier]]></enum>
+				<enum value="1"><![CDATA[Offset]]></enum>
+			</item>
+			<item type="input" name="Value"> </item>
+			<group type="input" name="U Parameters" collapsed="false">
+				<item type="input" name="U_Influence" min="0" max="1"> </item>
+				<item type="input" name="U_Curve"> </item>
+			</group>
+			<group type="input" name="U Parameters" collapsed="false">
+				<item type="input" name="V_Influence" min="0" max="1"> </item>
+				<item type="input" name="V_Curve"> </item>
+			</group>
+			<item type="output" name="Modulated_Value"> </item>
+		</layout>
+	</definition>
+	<embedded_0 name="LKF Select Value by UV Direction" tasks="LK Fabric/Utility" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="5724092">
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.LKFUVID"></param>
+				<param_ext name="reference" type="31" value="self.LKFUVID"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-81</prop>
+					<prop name="posy">1681</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="1">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.189000"></param>
+				<param name="case1" type="4" value="0.189000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">1775</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="case0" username="Value_for_U_Strands" basename="Value for U Strands" portlabel="Value for U Strands" exposetype="single"> </port>
+			<port index="1" portname="case1" username="Value_for_V_Strands" basename="Value for V Strands" portlabel="Value for V Strands" exposetype="single"> </port>
+			<port index="1" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Value_for_U_Strands"> </item>
+			<item type="input" name="Value_for_V_Strands"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</embedded_0>
+	<embedded_1 name="LKF Select Value by UV Direction" tasks="LK Fabric/Utility" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="5724092">
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.LKFUVID"></param>
+				<param_ext name="reference" type="31" value="self.LKFUVID"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-81</prop>
+					<prop name="posy">1681</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="1">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.189000"></param>
+				<param name="case1" type="4" value="0.189000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">1775</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="case0" username="Value_for_U_Strands" basename="Value for U Strands" portlabel="Value for U Strands" exposetype="single"> </port>
+			<port index="1" portname="case1" username="Value_for_V_Strands" basename="Value for V Strands" portlabel="Value for V Strands" exposetype="single"> </port>
+			<port index="1" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Value_for_U_Strands"> </item>
+			<item type="input" name="Value_for_V_Strands"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</embedded_1>
+</xsi_file>

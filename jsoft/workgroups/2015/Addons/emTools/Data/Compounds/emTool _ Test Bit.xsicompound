@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Test Bit" tasks="Mootzoid - emTools/Tools - Bits and Bytes" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_tbit" index="0">
+				<param name="Value" type="3" value="0"></param>
+				<param name="Bit" type="3" value="0"></param>
+				<portdef name="Value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Bit" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1372</prop>
+					<prop name="posy">721</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToBooleanNode" index="1">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1223</prop>
+					<prop name="posy">740</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Value" username="32_Bit_Integer" basename="32 Bit Integer" portlabel="32 Bit Integer" exposetype="single"> </port>
+			<port index="0" portname="Bit" username="Bit" basename="Bit" portlabel="Bit" exposetype="single"> </port>
+			<port index="1" portname="boolean" username="Bit_is_set" basename="Bit is set" portlabel="Bit is set" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Result" to_node="1" to_port="integer"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="32_Bit_Integer" min="0" max="0"> </item>
+			<item type="input" name="Bit" min="0" max="31"> </item>
+			<item type="output" name="Bit_is_set"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

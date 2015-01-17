@@ -1,0 +1,129 @@
+
+===================================
+V-Ray | Softimage 1.7 release notes
+===================================
+
+Contents:
+
+1. Uninstalling V-Ray | Softimage
+2. Empty Softimage preview window displayed instead of VFB preview
+3. Demo version limitations
+4. Changes and improvements in this version since 1.6 Official Release
+
+
+
+=================================
+1. Uninstalling V-Ray | Softimage
+
+Prior to uninstalling the V-Ray | Softimage .xsiaddon file, you need to ensure that no rendering jobs
+are in progress, that the VFB window is not open, that no render regions are active, and that the material 
+manager window is closed.
+
+On some earlier versions of the platform, attempting to uninstall the V-Ray add-on directly may result
+in a crash. To avoid this, you must ensure that the V-Ray plugin is stopped before attempting to uninstall.
+
+To stop the V-Ray plugin:
+* Choose File | Plug-in Manager... from the Softimage menu
+* Navigate to User Root -> V-Ray (Addon) -> Plug-ins (this is in the Tree tab)
+* Right-click on V-Ray (plugin) and choose Unload. The V-Ray plugin is now stopped.
+
+An alternative approach via script (also usable in batch mode, e.g. in a render farm environment)
+* Issue the following script command, substituting the exact path to V-Ray on the target machine:
+  UnloadPlugin "C:\Users\<<User>>\Autodesk\Softimage_<<V1>>\Addons\V-Ray\Application\Plugins\vray4xsi<<V2>>.dll
+  (substitute V1 and V2 with the appropriate name for your version of the host platform)
+
+Now that the plug-in is stopped, you can successfully invoke the Uninstall command to remove it.
+
+For extra safety (especially if you have used beta versions, demo builds, etc.) please manually remove
+any leftover files after the automatic uninstall. To do so, open the folder named
+       C:\Users\<<Your Name>>\Autodesk\Softimage_<<V1>>\Addons\V-Ray
+and delete any files and nested folders.
+
+
+
+==================================================================
+2. Empty Softimage preview window displayed instead of VFB preview
+
+In certain cases, when you click the Preview button on the SI render bar (and you have chosen the VFB
+as your preview instrument), the Softimage built-in preview window will appear with nothing in it.
+Normally, when the VFB option is turned on (default), this window stays minimized at the bottom of the screen.
+
+This issue is related to the interaction between SI and V-Ray. The best workaround is to simply close the
+SI previw window, then click Preview again. VFB will appear and show the preview as expected.
+
+
+
+===========================
+3. Demo version limitations
+
+The following limitations apply to the V-Ray | SI demo version (demo build):
+
+* Renders and preview renders are limited to a size of 640x450 pixels. Attempting to set up wider or
+  taller output scene sizes will result in an error being displayed in the Output window, and the render
+  will be aborted
+
+* If the scene contains more than 5 lights, only the first five will be exported and rendered (or previewed)
+
+* A watermark will appear on all renders and previews, in the upper left portion of the image
+
+
+
+======================================================================
+4. Changes and improvements in this version since 1.6 Official Release
+
+These bug fixes and new features have been introduced since the official release of VRay/SI 1.6:
+
+[feature request] Add support for image sequences (scene time source) 
+[feature request] Add support for Softimage 2015
+[feature request] Add support for ICE vertex colors and weightmaps
+[bug] ICE attributes don't work on instanced custom geometry 
+[bug] Hiding polygons produces crash 
+[bug] Brightness difference in the output between machines with different preferences 
+[bug] Transforms ignored in ICE instances with instance time. 
+[bug] Include/Exclude Lists of VrayDirt are not saved correctly 
+[bug] Tangent space normal maps render incorrectly 
+[modified feature] Add option to number vrscene-per-frame output as specified in Pass Options | Archive instead of automatically 
+[bug] Flickering lighting problem 
+[bug] Crash when changing object hierarchy 
+[bug] Scripted parameter changes in SPDL don't work when multiple objects are selected 
+[new feature] Implement "Color to Scalars" shader 
+[bug] Add Server Button grayed out when closing and opening the DR panel. 
+[bug] Hair Renderer Material - incorrect Tip Color Ballance distribution. 
+[bug] Different bucket brightness with DR 
+[bug] FPS value is taken from the preferences instead of from the scene 
+[bug] ICE instances with shape instance time and VRay displacement do not render 
+[bug] Slowdown in scene with Crowd FX 
+[bug] VRay lights scaling in multi-selection mode leads to arbitrary resizing 
+[feature request] Support for standard lights diffuse and specular options 
+[bug] Instanced Lights do not respect the inclusive/exclusive Parameters 
+[bug] Particles rendering produces error messages in Softimage 2014 
+[bug] Bump map changes with render resolution 
+[bug] Color temp icon in PPG is wrong when multiple VRayLight objects are selected 
+[bug] VRay standalone randomly crashes when rendering .vrscene file with "RawBitmapBuffer" plugins in it. 
+[bug] VRayNoiseMaya doesn't accept textures on input ports 
+[bug] Crash with ICE "Create Copies From Polygon Mesh" compound 
+[bug] Softimage freezes when rendering Crowd FX geometry. 
+[bug] NoiseMaya texture doesn't support choosing uv maps 
+[bug] MultiMatte render channel doesn't work for bumped materials 
+[feature request] Add support for ICE user normals 
+[bug] ICE integer attributes don't work on instanced custom geometry 
+[feature request] Add support for floating point color values in Render Region 
+[bug] VRay seems to mess with XSI object selection in OnTimeChange event handler
+[bug] Instanced geometry with ICE produces a creating keyframes error 
+[bug] Bitmaps from 3dsMax vrscene are not imported 
+[feature request] Materials importer should preserve the original materials names 
+[new feature] Add VRaySetHelperFolderLocation custom SI command to customize the VRay1 folder location 
+[bug] UVWGen doesn't export properly uvw channels for some materials 
+[bug] Wrong rendering result when NURBS objects are used in Light Associate lists. 
+[bug] Inclusive/Exclusive lists of the Toon shader are not saved correctly. 
+[feature request] Add the "Affect channels" options to VRayMtl for reflection 
+[bug] VRayEnvFog emission texture is not exported 
+[feature request] Add support for texture maps with Extra Texture render element 
+[bug] Crash when attaching texture to a pass shader 
+[bug] Crash when attaching shaders to input ports of VRayEnvFog 
+[bug] PTex applied on subdivided objects. 
+[feature request] Add "UV coord" sampler type to VRaySamplerInfoTex 
+[bug] Strand scales are not respected 
+[bug] Camera rescaling causes texture blurring 
+[bug] Sometimes DR servers will decide to use the RT CUDA engine (which we do not support and do not ship) 
+[bug] Crash with image clips when choosing different rescale type and then disabling effects 

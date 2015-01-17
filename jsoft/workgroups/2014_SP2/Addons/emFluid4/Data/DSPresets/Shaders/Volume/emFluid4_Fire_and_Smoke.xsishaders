@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="ShaderTree" name="emFluid4_Fire_and_Smoke" category="Volume" formatversion="1.0">
+	<definition>
+		<nodes>
+			<node type="embedded_compound" progid="0" index="0">
+				<param name="Name" type="31" ><![CDATA[emFluid4_Fire_and_Smoke]]></param>
+				<param name="Cell_Size" type="4" value="1.000000"></param>
+				<param name="Density" type="4" value="15.000000"></param>
+				<param name="Ambient" type="4" value="0.100000"></param>
+				<param name="Diffuse" type="4" value="0.950000"></param>
+				<param name="Use_Custom_Smoke_Color" type="11" value="false"></param>
+				<param name="Custom_Smoke_Color.red" type="4" value="0.500000"></param>
+				<param name="Custom_Smoke_Color.green" type="4" value="0.500000"></param>
+				<param name="Custom_Smoke_Color.blue" type="4" value="0.500000"></param>
+				<param name="Custom_Smoke_Color.alpha" type="4" value="0.000000"></param>
+				<param name="Scale_Smoke_Color1" type="4" value="1.500000"></param>
+				<param name="Ambient_" type="4" value="1.200000"></param>
+				<param name="Diffuse_" type="4" value="0.000000"></param>
+				<param name="Use_Custom_Flame_Color" type="11" value="false"></param>
+				<param name="Custom_Flame_Color.red" type="4" value="0.900000"></param>
+				<param name="Custom_Flame_Color.green" type="4" value="0.700000"></param>
+				<param name="Custom_Flame_Color.blue" type="4" value="0.400000"></param>
+				<param name="Custom_Flame_Color.alpha" type="4" value="0.000000"></param>
+				<param name="Scale_Flame_Color" type="4" value="1.333000"></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">5,1;7,1;8,1;10,1;12,1;15,1;21,1;</prop>
+					<prop name="posx">-11</prop>
+					<prop name="posy">-22</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-44" offsety="-338" sizex="292" sizey="305"><![CDATA[
+==--.. emFluid4   "Fire & Smoke" ..--==
+
+Tips and Tricks:
+
+1) "Cell Size"
+Use large values (>= 1) for preview rendering and low values (< 0.5) for the final renderings.
+The smaller the cell size the better the result (-> less flickering), but the longer the render times.
+
+2) "Density"
+Use large values (> 10) for dense fire and smoke (and faster render times).
+Use smaller values (< 4) for less opaque fire and smoke (looks prettier but the render times are longer, sometimes MUCH longer).
+
+3) "Enter the shader compound"
+Go into the "emFluid4___FireAndSmoke" compound and look at the comment attached to the "Particle_Volume_Cloud" shader.]]></comment>
+			</node>
+		</nodes>
+		<connections>
+		</connections>
+	</definition>
+	<embedded_compound0 name="emFluid4_Fire_and_Smoke" author="Eric Mootz" formatversion="1.1" compoundversion="1.0" color="6404805" editable="1">
+		<nodes>
+			<node type="shader" progid="Softimage.BA_volume_cloud.1.0" index="0">
+				<param name="Name" type="31" ><![CDATA[Particle_Volume_Cloud]]></param>
+				<param name="diffuse.red" type="4" value="1.000000"></param>
+				<param name="diffuse.green" type="4" value="1.000000"></param>
+				<param name="diffuse.blue" type="4" value="1.000000"></param>
+				<param name="diffuse.alpha" type="4" value="1.000000"></param>
+				<param name="density" type="4" value="1.000000"></param>
+				<param name="ambience.red" type="4" value="0.000000"></param>
+				<param name="ambience.green" type="4" value="0.000000"></param>
+				<param name="ambience.blue" type="4" value="0.000000"></param>
+				<param name="ambience.alpha" type="4" value="1.000000"></param>
+				<param name="MinSizeX" type="4" value="-25.000000"></param>
+				<param name="MaxSizeX" type="4" value="25.000000"></param>
+				<param name="MinSizeY" type="4" value="-25.000000"></param>
+				<param name="MaxSizeY" type="4" value="25.000000"></param>
+				<param name="MinSizeZ" type="4" value="0.000000"></param>
+				<param name="MaxSizeZ" type="4" value="25.000000"></param>
+				<param name="TilesX" type="3" value="49"></param>
+				<param name="TilesY" type="3" value="50"></param>
+				<param name="TilesZ" type="3" value="51"></param>
+				<param name="ParticleDensity" type="4" value="1.000000"></param>
+				<param name="ParticleDensity_shadow" type="4" value="3.300000"></param>
+				<param name="ParticleDensity_scatter" type="4" value="1.000000"></param>
+				<param name="shading_strength" type="4" value="1.000000"></param>
+				<param name="scatter_samplerate" type="4" value="0.350000"></param>
+				<param name="IntensitySunlight.red" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.green" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.blue" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.alpha" type="4" value="1.000000"></param>
+				<param name="IntensityScatter.red" type="4" value="0.250000"></param>
+				<param name="IntensityScatter.green" type="4" value="0.250000"></param>
+				<param name="IntensityScatter.blue" type="4" value="0.250000"></param>
+				<param name="IntensityScatter.alpha" type="4" value="1.000000"></param>
+				<param name="free_MarchSizeRay" type="4" value="0.400000"></param>
+				<param name="free_MarchSizeShadow" type="4" value="0.600000"></param>
+				<param name="m_freeH" type="3" value="8"></param>
+				<param name="light_list_shadows" type="11" value="false"></param>
+				<param name="p_showcelldetail" type="11" value="false"></param>
+				<param name="half_boxtiles" type="11" value="false"></param>
+				<param name="free_Grid_MultiSampling" type="3" value="0"></param>
+				<param name="UseTexture_Min" type="4" value="-0.018000"></param>
+				<param name="Switch_to_Grid_MarchAlpha" type="4" value="0.850000"></param>
+				<param name="ShadowSaturation" type="4" value="0.500000"></param>
+				<param name="Enable_Illumination" type="11" value="true"></param>
+				<param name="Enable_Scatter" type="11" value="false"></param>
+				<param name="Shading_model" type="3" value="3"></param>
+				<param name="Use_normal" type="11" value="true"></param>
+				<param name="Shadows_interior" type="3" value="0"></param>
+				<param name="free_Shadows_exterior" type="3" value="0"></param>
+				<param name="Scatter_flat_shading" type="11" value="true"></param>
+				<param name="shading_flat_mix" type="4" value="0.000000"></param>
+				<param name="AutoBoundingBox" type="11" value="true"></param>
+				<param name="TileSize" type="4" value="1.000000"></param>
+				<param name="free_TileSizeY" type="4" value="0.600000"></param>
+				<param name="free_TileSizeZ" type="4" value="0.600000"></param>
+				<param name="UseTileSize" type="11" value="true"></param>
+				<param name="Scatter_supress" type="4" value="1.000000"></param>
+				<param name="OnlyMainLightNormal" type="11" value="false"></param>
+				<param name="p_fast_cell_shadows" type="11" value="false"></param>
+				<param name="shadow_col_adjust.red" type="4" value="1.000000"></param>
+				<param name="shadow_col_adjust.green" type="4" value="1.000000"></param>
+				<param name="shadow_col_adjust.blue" type="4" value="1.000000"></param>
+				<param name="shadow_col_adjust.alpha" type="4" value="1.000000"></param>
+				<param name="UseTexture_Max" type="4" value="1.400000"></param>
+				<param name="fg_receive_color.red" type="4" value="0.500000"></param>
+				<param name="fg_receive_color.green" type="4" value="0.500000"></param>
+				<param name="fg_receive_color.blue" type="4" value="0.500000"></param>
+				<param name="fg_receive_color.alpha" type="4" value="0.500000"></param>
+				<param name="FG_trans_fix" type="11" value="false"></param>
+				<param name="absorption_color.red" type="4" value="1.000000"></param>
+				<param name="absorption_color.green" type="4" value="1.000000"></param>
+				<param name="absorption_color.blue" type="4" value="1.000000"></param>
+				<param name="absorption_color.alpha" type="4" value="1.000000"></param>
+				<param name="absorption_inuse" type="11" value="false"></param>
+				<param name="absorption_inuse_shadows" type="11" value="false"></param>
+				<param name="ParticleDensity_absorption" type="4" value="1.000000"></param>
+				<param name="enable_specular" type="11" value="false"></param>
+				<param name="fg_receive" type="11" value="false"></param>
+				<param name="distort_enable" type="11" value="false"></param>
+				<param name="contrast_ammount" type="4" value="0.000000"></param>
+				<param name="contrast_center" type="4" value="0.500000"></param>
+				<param name="free_normal_analyse_dist" type="4" value="0.010000"></param>
+				<param name="FreeA" type="3" value="0"></param>
+				<param name="cell_interpolation" type="3" value="2"></param>
+				<param name="memory_limit" type="3" value="4096"></param>
+				<param name="specular_color.red" type="4" value="0.750000"></param>
+				<param name="specular_color.green" type="4" value="0.750000"></param>
+				<param name="specular_color.blue" type="4" value="0.750000"></param>
+				<param name="specular_color.alpha" type="4" value="1.000000"></param>
+				<param name="fg_cast_color.red" type="4" value="1.000000"></param>
+				<param name="fg_cast_color.green" type="4" value="0.750000"></param>
+				<param name="fg_cast_color.blue" type="4" value="0.500000"></param>
+				<param name="fg_cast_color.alpha" type="4" value="1.000000"></param>
+				<param name="distort_color.red" type="4" value="0.000000"></param>
+				<param name="distort_color.green" type="4" value="0.000000"></param>
+				<param name="distort_color.blue" type="4" value="0.000000"></param>
+				<param name="distort_color.alpha" type="4" value="0.000000"></param>
+				<param name="free13.x" type="4" value="0.000000"></param>
+				<param name="free13.y" type="4" value="0.000000"></param>
+				<param name="free13.z" type="4" value="0.000000"></param>
+				<param name="free14.x" type="4" value="0.000000"></param>
+				<param name="free14.y" type="4" value="0.000000"></param>
+				<param name="free14.z" type="4" value="0.000000"></param>
+				<param name="spec_rim" type="4" value="0.100000"></param>
+				<param name="spec_decay" type="4" value="7.000000"></param>
+				<param name="max_motion" type="4" value="50.000000"></param>
+				<param name="free_FG_precalc" type="4" value="5.000000"></param>
+				<param name="fg_use_input_normal" type="11" value="false"></param>
+				<param name="shadows_normal" type="11" value="false"></param>
+				<param name="preview_mode" type="11" value="false"></param>
+				<param name="p_illum" type="11" value="true"></param>
+				<param name="p_spec" type="11" value="true"></param>
+				<param name="p_scatter" type="11" value="true"></param>
+				<param name="p_shading" type="11" value="true"></param>
+				<param name="p_free_MarchSizeRay" type="4" value="3.000000"></param>
+				<param name="free_p_MarchSizeShadow" type="4" value="1.500000"></param>
+				<param name="free_p_MarchSizeFG" type="4" value="2.000000"></param>
+				<param name="free_p_MarchSizeFGprecalc" type="4" value="1.500000"></param>
+				<param name="p_free_large_march" type="11" value="false"></param>
+				<param name="march_threshold" type="4" value="0.200000"></param>
+				<param name="p_slice_density" type="4" value="1.000000"></param>
+				<param name="fg_back_side" type="4" value="1.000000"></param>
+				<param name="fg_col_intensity" type="4" value="1.000000"></param>
+				<param name="fg_illum_intensity" type="4" value="0.150000"></param>
+				<param name="fg_stored_points_intensity" type="4" value="1.000000"></param>
+				<param name="Grid_MultiSampling_light" type="3" value="0"></param>
+				<param name="Grid_MultiSampling_FG" type="3" value="0"></param>
+				<param name="march_subdivision" type="3" value="1"></param>
+				<param name="p_slices_mode" type="3" value="0"></param>
+				<param name="p_no_slices" type="3" value="3"></param>
+				<param name="fb_distance" type="3" value="0"></param>
+				<param name="fb_illum" type="3" value="0"></param>
+				<param name="fb_spec" type="3" value="0"></param>
+				<param name="fb_scatter" type="3" value="0"></param>
+				<param name="fb_ambience" type="3" value="0"></param>
+				<param name="fb_fg" type="3" value="0"></param>
+				<param name="p_table_reduction" type="3" value="0"></param>
+				<param name="p_render_table" type="11" value="true"></param>
+				<param name="fg_cast" type="11" value="false"></param>
+				<param name="distort_intensity" type="4" value="1.000000"></param>
+				<param name="distort_input_range" type="3" value="0"></param>
+				<param name="free_p_distort_view" type="11" value="false"></param>
+				<param name="fg_double_sided" type="11" value="false"></param>
+				<param name="fb_motion" type="3" value="0"></param>
+				<param name="p_slices_input" type="3" value="0"></param>
+				<param name="simple_mode" type="11" value="true"></param>
+				<param name="s_detail" type="3" value="1"></param>
+				<param name="s_density" type="3" value="0"></param>
+				<param name="p_slice_trans_edge" type="11" value="false"></param>
+				<param name="mblur_samples" type="3" value="4"></param>
+				<param name="free_p_cell_interpolation" type="3" value="1"></param>
+				<param name="fb_AO" type="3" value="0"></param>
+				<param name="fb_ambient2" type="3" value="0"></param>
+				<param name="fb_normal" type="3" value="0"></param>
+				<param name="fb_s_distance" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_illum" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_spec" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_scatter" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_ambience" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_fg" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_motion" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_AO" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_ambient2" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_normal" type="8" ><![CDATA[]]></param>
+				<param name="fb_enable_distance" type="11" value="false"></param>
+				<param name="fb_enable_illum" type="11" value="false"></param>
+				<param name="fb_enable_spec" type="11" value="false"></param>
+				<param name="fb_enable_scatter" type="11" value="false"></param>
+				<param name="fb_enable_ambience" type="11" value="false"></param>
+				<param name="fb_enable_fg" type="11" value="false"></param>
+				<param name="fb_enable_motion" type="11" value="false"></param>
+				<param name="fb_enable_AO" type="11" value="false"></param>
+				<param name="fb_enable_ambient2" type="11" value="false"></param>
+				<param name="fb_enable_normal" type="11" value="false"></param>
+				<param name="AO_color.red" type="4" value="0.000000"></param>
+				<param name="AO_color.green" type="4" value="0.000000"></param>
+				<param name="AO_color.blue" type="4" value="0.000000"></param>
+				<param name="AO_color.alpha" type="4" value="1.000000"></param>
+				<param name="ambient2.red" type="4" value="1.000000"></param>
+				<param name="ambient2.green" type="4" value="1.000000"></param>
+				<param name="ambient2.blue" type="4" value="1.000000"></param>
+				<param name="ambient2.alpha" type="4" value="1.000000"></param>
+				<param name="fb_col_FreeC.red" type="4" value="0.300000"></param>
+				<param name="fb_col_FreeC.green" type="4" value="0.500000"></param>
+				<param name="fb_col_FreeC.blue" type="4" value="0.750000"></param>
+				<param name="fb_col_FreeC.alpha" type="4" value="1.000000"></param>
+				<param name="fb_new_xsi_buffernames" type="11" value="true"></param>
+				<param name="fb_fbonly_illum" type="11" value="false"></param>
+				<param name="fb_fbonly_spec" type="11" value="false"></param>
+				<param name="fb_fbonly_scatter" type="11" value="false"></param>
+				<param name="fb_fbonly_ambience" type="11" value="false"></param>
+				<param name="fb_fbonly_fg" type="11" value="false"></param>
+				<param name="fb_fbonly_motion" type="11" value="false"></param>
+				<param name="fb_fbonly_AO" type="11" value="false"></param>
+				<param name="fbFreeB" type="11" value="false"></param>
+				<param name="fb_FreeC" type="11" value="false"></param>
+				<param name="fb_distance_min" type="4" value="0.000000"></param>
+				<param name="fb_distance_max" type="4" value="200.000000"></param>
+				<param name="AO_enable" type="11" value="false"></param>
+				<param name="AO_intensity" type="4" value="1.000000"></param>
+				<param name="AO_maxdistance" type="4" value="5.000000"></param>
+				<param name="free_AO_bias" type="4" value="0.500000"></param>
+				<param name="ScatterDistance" type="4" value="5.000000"></param>
+				<param name="preview_renderregion" type="11" value="false"></param>
+				<param name="manual_BBox" type="11" value="false"></param>
+				<param name="BBox_camera_coord" type="11" value="false"></param>
+				<param name="p_AO" type="11" value="true"></param>
+				<param name="ambience_intensity" type="4" value="1.000000"></param>
+				<param name="diffuse_intensity" type="4" value="1.000000"></param>
+				<param name="ParticleDensity_globalscale" type="4" value="100.000000"></param>
+				<param name="restrict_lights" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">27,1;29,1;30,1;33,1;35,1;36,1;38,1;40,1;42,1;</prop>
+					<prop name="posx">-605</prop>
+					<prop name="posy">-252</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="16777215" title_text="0" offsetx="-36" offsety="-326" sizex="255" sizey="305"><![CDATA[
+
+
+
+	*************
+	Things to try:
+	*************
+
+1) In the tab "Density" you can increase/decrease the Shadow Density Value for harder/softer shadows.
+
+2) In the tab "Shading" you can choose another "Shading model" or disable "Normal shading".
+
+3) In the tab "Preview" you can enable "Preview Mode" to render only the lookup table (= pure volume, no particles).]]></comment>
+			</node>
+			<node type="shader" progid="Softimage.BA_particle_density3.1.0" index="1">
+				<param name="Name" type="31" ><![CDATA[Particle_Density1]]></param>
+				<param name="falloff_start" type="4" value="0.000000"></param>
+				<param name="Elliptical_shape" type="3" value="4"></param>
+				<param name="falloff_type" type="3" value="0"></param>
+				<param name="falloff_bias" type="4" value="0.500000"></param>
+				<param name="use_input_density_shape" type="11" value="true"></param>
+				<param name="use_particle_color" type="11" value="true"></param>
+				<param name="particle_color.red" type="4" value="1.000000"></param>
+				<param name="particle_color.green" type="4" value="0.000000"></param>
+				<param name="particle_color.blue" type="4" value="1.000000"></param>
+				<param name="particle_color.alpha" type="4" value="1.000000"></param>
+				<param name="ref_convert" type="11" value="true"></param>
+				<param name="scale_texture_coords" type="11" value="true"></param>
+				<param name="rotate_texture_coords" type="11" value="true"></param>
+				<param name="density_texture" type="4" value="1.000000"></param>
+				<param name="use_input_density_texture" type="11" value="false"></param>
+				<param name="Elliptical" type="4" value="0.000000"></param>
+				<param name="metaball_shape" type="4" value="0.000000"></param>
+				<param name="density_shape" type="4" value="1.000000"></param>
+				<param name="trans_by_size" type="11" value="false"></param>
+				<param name="pt_size_neighbour" type="11" value="false"></param>
+				<param name="use_bubble" type="11" value="false"></param>
+				<param name="motion_blur_samples" type="3" value="1"></param>
+				<param name="pt_adjustsize_mult" type="4" value="2.000000"></param>
+				<param name="trans_by_size_min" type="4" value="0.050000"></param>
+				<param name="motion_blur_fake" type="11" value="false"></param>
+				<param name="motion_blur_curved" type="11" value="false"></param>
+				<param name="unique_texture_coords" type="11" value="true"></param>
+				<param name="flow_texture" type="11" value="false"></param>
+				<param name="enable_global_gradient_color" type="11" value="true"></param>
+				<param name="motion_blur_length" type="4" value="0.100000"></param>
+				<param name="flow_texture_scl" type="4" value="1.000000"></param>
+				<param name="roll_min" type="4" value="0.000000"></param>
+				<param name="roll_max" type="4" value="0.000000"></param>
+				<param name="trans_by_size_type" type="3" value="0"></param>
+				<param name="rotation_type" type="3" value="0"></param>
+				<param name="flow_mode" type="3" value="0"></param>
+				<param name="flow_texture_col.red" type="4" value="1.000000"></param>
+				<param name="flow_texture_col.green" type="4" value="1.000000"></param>
+				<param name="flow_texture_col.blue" type="4" value="1.000000"></param>
+				<param name="flow_texture_col.alpha" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.red" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.green" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.blue" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.alpha" type="4" value="1.000000"></param>
+				<param name="rot_point_dir.x" type="4" value="0.000000"></param>
+				<param name="rot_point_dir.y" type="4" value="0.000000"></param>
+				<param name="rot_point_dir.z" type="4" value="0.000000"></param>
+				<param name="screw_min" type="4" value="0.000000"></param>
+				<param name="screw_max" type="4" value="0.000000"></param>
+				<param name="rot_cloud_dist" type="4" value="10.000000"></param>
+				<param name="inst_inuse" type="11" value="false"></param>
+				<param name="intensity_global_gradient_color" type="4" value="1.000000"></param>
+				<param name="intensity_global_gradient_density" type="4" value="1.000000"></param>
+				<param name="use_particle" type="11" value="true"></param>
+				<param name="density_shape_intensity" type="4" value="1.000000"></param>
+				<param name="density_texture_intensity" type="4" value="0.750000"></param>
+				<param name="limit_density" type="4" value="1.000000"></param>
+				<param name="global_gradient_density_channel" type="3" value="0"></param>
+				<param name="global_gradient_density.red" type="4" value="0.000000"></param>
+				<param name="global_gradient_density.green" type="4" value="0.000000"></param>
+				<param name="global_gradient_density.blue" type="4" value="0.000000"></param>
+				<param name="global_gradient_density.alpha" type="4" value="1.000000"></param>
+				<param name="strand_scaledown_max" type="4" value="0.500000"></param>
+				<param name="strand_densitydown_max" type="4" value="0.500000"></param>
+				<param name="strand_head_density" type="4" value="0.000000"></param>
+				<param name="strand_head_size" type="4" value="0.000000"></param>
+				<param name="strand_tail_density" type="4" value="0.000000"></param>
+				<param name="strand_tail_size" type="4" value="0.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">23,1;24,1;31,0;32,0;33,1;34,0;38,0;</prop>
+					<prop name="posx">-1171</prop>
+					<prop name="posy">142</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.BA_particle_density3.1.0" index="2">
+				<param name="Name" type="31" ><![CDATA[Particle_Density]]></param>
+				<param name="falloff_start" type="4" value="0.000000"></param>
+				<param name="Elliptical_shape" type="3" value="4"></param>
+				<param name="falloff_type" type="3" value="0"></param>
+				<param name="falloff_bias" type="4" value="0.500000"></param>
+				<param name="use_input_density_shape" type="11" value="true"></param>
+				<param name="use_particle_color" type="11" value="true"></param>
+				<param name="particle_color.red" type="4" value="1.000000"></param>
+				<param name="particle_color.green" type="4" value="0.000000"></param>
+				<param name="particle_color.blue" type="4" value="1.000000"></param>
+				<param name="particle_color.alpha" type="4" value="1.000000"></param>
+				<param name="ref_convert" type="11" value="true"></param>
+				<param name="scale_texture_coords" type="11" value="true"></param>
+				<param name="rotate_texture_coords" type="11" value="true"></param>
+				<param name="density_texture" type="4" value="1.000000"></param>
+				<param name="use_input_density_texture" type="11" value="false"></param>
+				<param name="Elliptical" type="4" value="0.000000"></param>
+				<param name="metaball_shape" type="4" value="0.000000"></param>
+				<param name="density_shape" type="4" value="1.000000"></param>
+				<param name="trans_by_size" type="11" value="false"></param>
+				<param name="pt_size_neighbour" type="11" value="false"></param>
+				<param name="use_bubble" type="11" value="false"></param>
+				<param name="motion_blur_samples" type="3" value="1"></param>
+				<param name="pt_adjustsize_mult" type="4" value="2.000000"></param>
+				<param name="trans_by_size_min" type="4" value="0.050000"></param>
+				<param name="motion_blur_fake" type="11" value="false"></param>
+				<param name="motion_blur_curved" type="11" value="false"></param>
+				<param name="unique_texture_coords" type="11" value="true"></param>
+				<param name="flow_texture" type="11" value="false"></param>
+				<param name="enable_global_gradient_color" type="11" value="true"></param>
+				<param name="motion_blur_length" type="4" value="0.100000"></param>
+				<param name="flow_texture_scl" type="4" value="1.000000"></param>
+				<param name="roll_min" type="4" value="0.000000"></param>
+				<param name="roll_max" type="4" value="0.000000"></param>
+				<param name="trans_by_size_type" type="3" value="0"></param>
+				<param name="rotation_type" type="3" value="0"></param>
+				<param name="flow_mode" type="3" value="0"></param>
+				<param name="flow_texture_col.red" type="4" value="1.000000"></param>
+				<param name="flow_texture_col.green" type="4" value="1.000000"></param>
+				<param name="flow_texture_col.blue" type="4" value="1.000000"></param>
+				<param name="flow_texture_col.alpha" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.red" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.green" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.blue" type="4" value="1.000000"></param>
+				<param name="global_gradient_color.alpha" type="4" value="1.000000"></param>
+				<param name="rot_point_dir.x" type="4" value="0.000000"></param>
+				<param name="rot_point_dir.y" type="4" value="0.000000"></param>
+				<param name="rot_point_dir.z" type="4" value="0.000000"></param>
+				<param name="screw_min" type="4" value="0.000000"></param>
+				<param name="screw_max" type="4" value="0.000000"></param>
+				<param name="rot_cloud_dist" type="4" value="10.000000"></param>
+				<param name="inst_inuse" type="11" value="false"></param>
+				<param name="intensity_global_gradient_color" type="4" value="1.000000"></param>
+				<param name="intensity_global_gradient_density" type="4" value="1.000000"></param>
+				<param name="use_particle" type="11" value="true"></param>
+				<param name="density_shape_intensity" type="4" value="1.000000"></param>
+				<param name="density_texture_intensity" type="4" value="0.750000"></param>
+				<param name="limit_density" type="4" value="1.000000"></param>
+				<param name="global_gradient_density_channel" type="3" value="0"></param>
+				<param name="global_gradient_density.red" type="4" value="0.000000"></param>
+				<param name="global_gradient_density.green" type="4" value="0.000000"></param>
+				<param name="global_gradient_density.blue" type="4" value="0.000000"></param>
+				<param name="global_gradient_density.alpha" type="4" value="1.000000"></param>
+				<param name="strand_scaledown_max" type="4" value="0.500000"></param>
+				<param name="strand_densitydown_max" type="4" value="0.500000"></param>
+				<param name="strand_head_density" type="4" value="0.000000"></param>
+				<param name="strand_head_size" type="4" value="0.000000"></param>
+				<param name="strand_tail_density" type="4" value="0.000000"></param>
+				<param name="strand_tail_size" type="4" value="0.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">23,1;24,1;31,0;32,0;33,1;34,0;38,0;</prop>
+					<prop name="posx">-1175</prop>
+					<prop name="posy">-194</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_basic.1.0" index="3">
+				<param name="Name" type="31" ><![CDATA[Multiply]]></param>
+				<param name="input1" type="4" value="0.000000"></param>
+				<param name="input2" type="4" value="15.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-837</prop>
+					<prop name="posy">-237</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_attribute_color.1.0" index="4">
+				<param name="Name" type="31" ><![CDATA[Color_Attribute]]></param>
+				<param name="attribute" type="8" ><![CDATA[Color]]></param>
+				<param name="index" type="3" value="0"></param>
+				<param name="default.red" type="4" value="1.000000"></param>
+				<param name="default.green" type="4" value="1.000000"></param>
+				<param name="default.blue" type="4" value="1.000000"></param>
+				<param name="default.alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-3449</prop>
+					<prop name="posy">-345</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_attribute_integer.1.0" index="5">
+				<param name="Name" type="31" ><![CDATA[Integer_Attribute1]]></param>
+				<param name="attribute" type="8" ><![CDATA[__emFluid_Type]]></param>
+				<param name="index" type="3" value="0"></param>
+				<param name="default" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-3471</prop>
+					<prop name="posy">-470</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="6" offsety="-35" sizex="134" sizey="32"><![CDATA[get the emFluid4 particle type (flame, smoke, etc.)]]></comment>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_multi_switch.1.0" index="6">
+				<param name="Name" type="31" ><![CDATA[Color_Multi-Switch]]></param>
+				<param name="default.red" type="4" value="0.000000"></param>
+				<param name="default.green" type="4" value="0.000000"></param>
+				<param name="default.blue" type="4" value="0.000000"></param>
+				<param name="default.alpha" type="4" value="0.000000"></param>
+				<param name="switch" type="3" value="0"></param>
+				<param name="value0" type="3" value="-1"></param>
+				<param name="input0.red" type="4" value="1.000000"></param>
+				<param name="input0.green" type="4" value="0.000000"></param>
+				<param name="input0.blue" type="4" value="1.000000"></param>
+				<param name="input0.alpha" type="4" value="0.000000"></param>
+				<param name="value1" type="3" value="-1"></param>
+				<param name="input1.red" type="4" value="1.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="1.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="value2" type="3" value="2"></param>
+				<param name="input2.red" type="4" value="0.000000"></param>
+				<param name="input2.green" type="4" value="0.000000"></param>
+				<param name="input2.blue" type="4" value="0.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="value3" type="3" value="-1"></param>
+				<param name="input3.red" type="4" value="1.000000"></param>
+				<param name="input3.green" type="4" value="0.000000"></param>
+				<param name="input3.blue" type="4" value="1.000000"></param>
+				<param name="input3.alpha" type="4" value="0.000000"></param>
+				<param name="value4" type="3" value="4"></param>
+				<param name="input4.red" type="4" value="0.000000"></param>
+				<param name="input4.green" type="4" value="0.000000"></param>
+				<param name="input4.blue" type="4" value="0.000000"></param>
+				<param name="input4.alpha" type="4" value="0.000000"></param>
+				<param name="value5" type="3" value="-1"></param>
+				<param name="input5.red" type="4" value="1.000000"></param>
+				<param name="input5.green" type="4" value="0.000000"></param>
+				<param name="input5.blue" type="4" value="1.000000"></param>
+				<param name="input5.alpha" type="4" value="0.000000"></param>
+				<param name="value6" type="3" value="-1"></param>
+				<param name="input6.red" type="4" value="1.000000"></param>
+				<param name="input6.green" type="4" value="0.000000"></param>
+				<param name="input6.blue" type="4" value="1.000000"></param>
+				<param name="input6.alpha" type="4" value="0.000000"></param>
+				<param name="value7" type="3" value="-1"></param>
+				<param name="input7.red" type="4" value="1.000000"></param>
+				<param name="input7.green" type="4" value="0.000000"></param>
+				<param name="input7.blue" type="4" value="1.000000"></param>
+				<param name="input7.alpha" type="4" value="0.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-1436</prop>
+					<prop name="posy">10</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_switch.1.0" index="7">
+				<param name="Name" type="31" ><![CDATA[Color_Switch1]]></param>
+				<param name="input1.red" type="4" value="1.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="0.500000"></param>
+				<param name="input2.green" type="4" value="0.500000"></param>
+				<param name="input2.blue" type="4" value="0.500000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="switch" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2485</prop>
+					<prop name="posy">100</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="8">
+				<param name="Name" type="31" ><![CDATA[scale_smoke_color]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2056</prop>
+					<prop name="posy">148</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="9">
+				<param name="Name" type="31" ><![CDATA[Scalar_To_Color]]></param>
+				<param name="input" type="4" value="1.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2247</prop>
+					<prop name="posy">247</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_unary.1.0" index="10">
+				<param name="Name" type="31" ><![CDATA[abs1]]></param>
+				<param name="input" type="4" value="0.100000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2586</prop>
+					<prop name="posy">467</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_unary.1.0" index="11">
+				<param name="Name" type="31" ><![CDATA[abs]]></param>
+				<param name="input" type="4" value="0.950000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2585</prop>
+					<prop name="posy">212</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="12">
+				<param name="Name" type="31" ><![CDATA[scale_smoke_color2]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2279</prop>
+					<prop name="posy">110</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="13">
+				<param name="Name" type="31" ><![CDATA[Scalar_To_Color1]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2503</prop>
+					<prop name="posy">211</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="14">
+				<param name="Name" type="31" ><![CDATA[Scalar_To_Color2]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2502</prop>
+					<prop name="posy">466</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="15">
+				<param name="Name" type="31" ><![CDATA[scale_shadow_color2]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2266</prop>
+					<prop name="posy">377</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="16">
+				<param name="Name" type="31" ><![CDATA[scale_smoke_color3]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2050</prop>
+					<prop name="posy">392</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_multi_switch.1.0" index="17">
+				<param name="Name" type="31" ><![CDATA[Color_Multi-Switch1]]></param>
+				<param name="default.red" type="4" value="0.000000"></param>
+				<param name="default.green" type="4" value="0.000000"></param>
+				<param name="default.blue" type="4" value="0.000000"></param>
+				<param name="default.alpha" type="4" value="0.000000"></param>
+				<param name="switch" type="3" value="0"></param>
+				<param name="value0" type="3" value="-1"></param>
+				<param name="input0.red" type="4" value="1.000000"></param>
+				<param name="input0.green" type="4" value="0.000000"></param>
+				<param name="input0.blue" type="4" value="1.000000"></param>
+				<param name="input0.alpha" type="4" value="0.000000"></param>
+				<param name="value1" type="3" value="-1"></param>
+				<param name="input1.red" type="4" value="1.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="1.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="value2" type="3" value="2"></param>
+				<param name="input2.red" type="4" value="0.000000"></param>
+				<param name="input2.green" type="4" value="0.000000"></param>
+				<param name="input2.blue" type="4" value="0.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="value3" type="3" value="-1"></param>
+				<param name="input3.red" type="4" value="1.000000"></param>
+				<param name="input3.green" type="4" value="0.000000"></param>
+				<param name="input3.blue" type="4" value="1.000000"></param>
+				<param name="input3.alpha" type="4" value="0.000000"></param>
+				<param name="value4" type="3" value="4"></param>
+				<param name="input4.red" type="4" value="0.000000"></param>
+				<param name="input4.green" type="4" value="0.000000"></param>
+				<param name="input4.blue" type="4" value="0.000000"></param>
+				<param name="input4.alpha" type="4" value="0.000000"></param>
+				<param name="value5" type="3" value="-1"></param>
+				<param name="input5.red" type="4" value="1.000000"></param>
+				<param name="input5.green" type="4" value="0.000000"></param>
+				<param name="input5.blue" type="4" value="1.000000"></param>
+				<param name="input5.alpha" type="4" value="0.000000"></param>
+				<param name="value6" type="3" value="-1"></param>
+				<param name="input6.red" type="4" value="1.000000"></param>
+				<param name="input6.green" type="4" value="0.000000"></param>
+				<param name="input6.blue" type="4" value="1.000000"></param>
+				<param name="input6.alpha" type="4" value="0.000000"></param>
+				<param name="value7" type="3" value="-1"></param>
+				<param name="input7.red" type="4" value="1.000000"></param>
+				<param name="input7.green" type="4" value="0.000000"></param>
+				<param name="input7.blue" type="4" value="1.000000"></param>
+				<param name="input7.alpha" type="4" value="0.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-1434</prop>
+					<prop name="posy">368</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="18">
+				<param name="Name" type="31" ><![CDATA[scale_color4]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2057</prop>
+					<prop name="posy">798</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="19">
+				<param name="Name" type="31" ><![CDATA[scale_color5]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2051</prop>
+					<prop name="posy">1042</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="20">
+				<param name="Name" type="31" ><![CDATA[scale_color]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2267</prop>
+					<prop name="posy">1027</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_math_basic.1.0" index="21">
+				<param name="Name" type="31" ><![CDATA[scale_color6]]></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="1.000000"></param>
+				<param name="input2.green" type="4" value="1.000000"></param>
+				<param name="input2.blue" type="4" value="1.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2280</prop>
+					<prop name="posy">760</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="22">
+				<param name="Name" type="31" ><![CDATA[Scalar_To_Color3]]></param>
+				<param name="input" type="4" value="1.333000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2248</prop>
+					<prop name="posy">897</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="23">
+				<param name="Name" type="31" ><![CDATA[Scalar_To_Color4]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2503</prop>
+					<prop name="posy">1116</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_switch.1.0" index="24">
+				<param name="Name" type="31" ><![CDATA[Color_Switch]]></param>
+				<param name="input1.red" type="4" value="1.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="input2.red" type="4" value="0.900000"></param>
+				<param name="input2.green" type="4" value="0.700000"></param>
+				<param name="input2.blue" type="4" value="0.400000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="switch" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2486</prop>
+					<prop name="posy">750</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="25">
+				<param name="Name" type="31" ><![CDATA[Scalar_To_Color5]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2504</prop>
+					<prop name="posy">861</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_unary.1.0" index="26">
+				<param name="Name" type="31" ><![CDATA[abs2]]></param>
+				<param name="input" type="4" value="1.200000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2587</prop>
+					<prop name="posy">1117</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_unary.1.0" index="27">
+				<param name="Name" type="31" ><![CDATA[abs3]]></param>
+				<param name="input" type="4" value="0.000000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-2586</prop>
+					<prop name="posy">862</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-2601" offsety="77" sizex="766" sizey="253"><![CDATA[smoke diffuse color]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-2603" offsety="346" sizex="766" sizey="218"><![CDATA[smoke ambient color]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-2604" offsety="996" sizex="766" sizey="218"><![CDATA[flame ambient color]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-2602" offsety="727" sizex="766" sizey="253"><![CDATA[flame diffuse color]]></comment>
+		</nodes>
+		<connections>
+			<cnx from_node="1" from_port="color" to_node="0" to_port="ambience"> </cnx>
+			<cnx from_node="2" from_port="density" to_node="3" to_port="input1"> </cnx>
+			<cnx from_node="2" from_port="color" to_node="0" to_port="diffuse"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="0" to_port="density"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="6" to_port="default"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="17" to_port="default"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="7" to_port="input1"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="24" to_port="input1"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="6" to_port="switch"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="17" to_port="switch"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="2" to_port="particle_color"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="12" to_port="input1"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="15" to_port="input1"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="6" to_port="input4"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="8" to_port="input2"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="16" to_port="input2"> </cnx>
+			<cnx from_node="10" from_port="out" to_node="14" to_port="input"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="13" to_port="input"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="8" to_port="input1"> </cnx>
+			<cnx from_node="13" from_port="out" to_node="12" to_port="input2"> </cnx>
+			<cnx from_node="14" from_port="out" to_node="15" to_port="input2"> </cnx>
+			<cnx from_node="15" from_port="out" to_node="16" to_port="input1"> </cnx>
+			<cnx from_node="16" from_port="out" to_node="17" to_port="input4"> </cnx>
+			<cnx from_node="17" from_port="out" to_node="1" to_port="particle_color"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="6" to_port="input2"> </cnx>
+			<cnx from_node="19" from_port="out" to_node="17" to_port="input2"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="19" to_port="input1"> </cnx>
+			<cnx from_node="21" from_port="out" to_node="18" to_port="input1"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="18" to_port="input2"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="19" to_port="input2"> </cnx>
+			<cnx from_node="23" from_port="out" to_node="20" to_port="input2"> </cnx>
+			<cnx from_node="24" from_port="out" to_node="20" to_port="input1"> </cnx>
+			<cnx from_node="24" from_port="out" to_node="21" to_port="input1"> </cnx>
+			<cnx from_node="25" from_port="out" to_node="21" to_port="input2"> </cnx>
+			<cnx from_node="26" from_port="out" to_node="23" to_port="input"> </cnx>
+			<cnx from_node="27" from_port="out" to_node="25" to_port="input"> </cnx>
+		</connections>
+		<exposed_ports>
+			<port index="0" portname="TileSize" username="Cell_Size" displayname="Cell Size"></port>
+			<port index="3" portname="input2" username="Density" displayname="Density"></port>
+			<port index="10" portname="input" username="Ambient" displayname="Ambient"></port>
+			<port index="11" portname="input" username="Diffuse" displayname="Diffuse"></port>
+			<port index="7" portname="switch" username="Use_Custom_Smoke_Color" displayname="Use Custom Color"></port>
+			<port index="7" portname="input2" username="Custom_Smoke_Color" displayname="Custom Color"></port>
+			<port index="9" portname="input" username="Scale_Smoke_Color1" displayname="Scale Color"></port>
+			<port index="26" portname="input" username="Ambient_" displayname="Ambient"></port>
+			<port index="27" portname="input" username="Diffuse_" displayname="Diffuse"></port>
+			<port index="24" portname="switch" username="Use_Custom_Flame_Color" displayname="Use Custom Color"></port>
+			<port index="24" portname="input2" username="Custom_Flame_Color" displayname="Custom Color"></port>
+			<port index="22" portname="input" username="Scale_Flame_Color" displayname="Scale Color"></port>
+			<port index="0" portname="out" username="volume" displayname="Volume"></port>
+		</exposed_ports>
+		<layout>
+			<item type="input" name="Cell_Size" min="0.25" max="2" ppgvis="1" portvis="1" portgroup="Main"> </item>
+			<item type="input" name="Density" min="0" max="50" ppgvis="1" portvis="1" portgroup="Main"> </item>
+			<item type="input" name="Ambient" min="0" max="2" ppgvis="1" portvis="1" portgroup="Smoke"> </item>
+			<item type="input" name="Diffuse" min="0" max="2" ppgvis="1" portvis="1" portgroup="Smoke"> </item>
+			<item type="input" name="Use_Custom_Smoke_Color" min="0" max="-1" ppgvis="1" portvis="1" portgroup="Smoke"> </item>
+			<item type="input" name="Custom_Smoke_Color" ppgvis="1" portvis="1" portgroup="Smoke"> </item>
+			<item type="input" name="Scale_Smoke_Color1" min="0" max="2" ppgvis="1" portvis="1" portgroup="Smoke"> </item>
+			<item type="input" name="Ambient_" min="0" max="2" ppgvis="1" portvis="1" portgroup="Flame"> </item>
+			<item type="input" name="Diffuse_" min="0" max="2" ppgvis="1" portvis="1" portgroup="Flame"> </item>
+			<item type="input" name="Use_Custom_Flame_Color" min="0" max="-1" ppgvis="1" portvis="1" portgroup="Flame"> </item>
+			<item type="input" name="Custom_Flame_Color" ppgvis="1" portvis="1" portgroup="Flame"> </item>
+			<item type="input" name="Scale_Flame_Color" min="0" max="1" ppgvis="1" portvis="1" portgroup="Flame"> </item>
+			<item type="output" name="volume" ppgvis="1" portvis="1"> </item>
+		</layout>
+		<ppglogic lang="JScript"><![CDATA[
+function OnInit()                                       
+{                                                       
+	OnInit_RebuildLayout();                             
+}                                                       
+
+function OnInit_RebuildLayout()                         
+{                                                       
+	var oLayout = PPG.PPGLayout;                        
+	oLayout.Clear();
+	//
+	oLayout.AddGroup("Main");
+		oLayout.AddItem("Cell_Size","Cell Size");
+		oLayout.AddItem("Density","Density");
+	oLayout.EndGroup();
+	//
+	oLayout.AddGroup("Smoke");
+		oLayout.AddItem("Ambient","Ambient");
+		oLayout.AddItem("Diffuse","Diffuse");
+		oLayout.AddItem("Use_Custom_Smoke_Color","Use Custom Color");
+		oLayout.AddColor("Custom_Smoke_Color","Custom Color");
+		oLayout.AddItem("Scale_Smoke_Color1","Scale Color");
+	oLayout.EndGroup();
+	//
+	oLayout.AddGroup("Flame");
+		oLayout.AddItem("Ambient_","Ambient");
+		oLayout.AddItem("Diffuse_","Diffuse");
+		oLayout.AddItem("Use_Custom_Flame_Color","Use Custom Color");
+		oLayout.AddColor("Custom_Flame_Color","Custom Color");
+		oLayout.AddItem("Scale_Flame_Color","Scale Color");
+	oLayout.EndGroup();
+
+
+	//
+	PPG.Refresh();
+}]]></ppglogic>
+	</embedded_compound0>
+</xsi_file>

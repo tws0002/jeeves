@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Modify Softbody Links" category="" tasks="Momentum/Softbodies" author="" url="" formatversion="1.4" compoundversion="1.2" versiontag="" constructionmode="Current" backgroundcolor="14140773">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="BuildArrayNode" index="0">
+				<param name="value1" type="11" value="false"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-663</prop>
+					<prop name="posy">503</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.Momentumbase"></param>
+				<param_ext name="reference" type="31" value="self.Momentumbase"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-711</prop>
+					<prop name="posy">116</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MOM_ModifyLink" index="2">
+				<param name="base" type="3" value="0"></param>
+				<param name="links" type="3" value="-1"></param>
+				<param name="tags" type="3" value="1"></param>
+				<param name="connect" type="11" value="false"></param>
+				<param name="remove" type="11" value="false"></param>
+				<portdef name="base" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="links" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="tags" type="2" structure="2" group="0" instance="0" port="2"></portdef>
+				<portdef name="connect" type="1" structure="2" group="0" instance="0" port="3"></portdef>
+				<portdef name="remove" type="1" structure="2" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-394</prop>
+					<prop name="posy">180</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="3">
+				<param name="value1" type="11" value="false"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-666</prop>
+					<prop name="posy">424</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="4">
+				<param name="value1" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-678</prop>
+					<prop name="posy">243</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="5">
+				<param name="Reference" type="31" value="self.MomentumBase"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="self.MomentumBase"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="2" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-143</prop>
+					<prop name="posy">217</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="6">
+				<param name="value1" type="3" value="1"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-675</prop>
+					<prop name="posy">330</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value1" username="remove" basename="remove" portlabel="remove" exposetype="single"> </port>
+			<port index="3" portname="value1" username="connect" basename="connect" portlabel="connect" exposetype="single"> </port>
+			<port index="4" portname="value1" username="links" basename="links" portlabel="links" exposetype="single"> </port>
+			<port index="5" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="6" portname="value1" username="tags" basename="tags" portlabel="tags" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="outbase" to_node="5" to_port="Value"> </cnx>
+			<cnx from_node="0" from_port="array" to_node="2" to_port="remove"> </cnx>
+			<cnx from_node="3" from_port="array" to_node="2" to_port="connect"> </cnx>
+			<cnx from_node="4" from_port="array" to_node="2" to_port="links"> </cnx>
+			<cnx from_node="6" from_port="array" to_node="2" to_port="tags"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="2" to_port="base"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="links"> </item>
+			<item type="input" name="tags"> </item>
+			<item type="input" name="connect"> </item>
+			<item type="input" name="remove"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

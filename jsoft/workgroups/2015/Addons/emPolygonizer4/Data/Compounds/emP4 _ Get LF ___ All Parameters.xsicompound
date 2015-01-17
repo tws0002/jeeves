@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4 _ Get LF ___ All Parameters" tasks="Mootzoid - emPolygonizer4/Tools (Liquid Filaments)" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12556140">
+	<definition>
+		<nodes>
+			<node type="emP4 _ Get LF Self" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self._emP_LF_self"></param>
+				<param_ext name="Reference" type="31" value="Self._emP_LF_self"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1140</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Active" version="1.0" index="1">
+				<param name="Reference" type="31" value="Self._emP_LF_active"></param>
+				<param_ext name="Reference" type="31" value="Self._emP_LF_active"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1080</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Caster" version="1.0" index="2">
+				<param name="Reference" type="31" value="self._emP_LF_caster"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_caster"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1200</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Receiver" version="1.0" index="3">
+				<param name="Reference" type="31" value="self._emP_LF_receiver"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_receiver"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1260</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Filament Length" version="1.0" index="4">
+				<param name="Reference" type="31" value="self._emP_LF_distance"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_distance"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1320</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Level of Detail" version="1.0" index="5">
+				<param name="Reference" type="31" value="self._emP_LF_detail"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_detail"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1380</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Iso Multiplier" version="1.0" index="6">
+				<param name="Reference" type="31" value="self._emP_LF_iso"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_iso"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1440</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Thickness" version="1.0" index="7">
+				<param name="Reference" type="31" value="self._emP_LF_thickness"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_thickness"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1500</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Meeting at" version="1.0" index="8">
+				<param name="Reference" type="31" value="self._emP_LF_meetingpoint"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_meetingpoint"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1200</prop>
+					<prop name="posy">1560</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Self" username="Self" basename="Self" portlabel="Self" exposetype="single"> </port>
+			<port index="1" portname="Active" username="Active" basename="Active" portlabel="Active" exposetype="single"> </port>
+			<port index="2" portname="Caster" username="Caster" basename="Caster" portlabel="Caster" exposetype="single"> </port>
+			<port index="3" portname="Receiver" username="Receiver" basename="Receiver" portlabel="Receiver" exposetype="single"> </port>
+			<port index="4" portname="Filament_Length" username="Filament_Length" basename="Filament Length" portlabel="Filament Length" exposetype="single"> </port>
+			<port index="5" portname="Level_of_Detail" username="Level_of_Detail" basename="Level of Detail" portlabel="Level of Detail" exposetype="single"> </port>
+			<port index="6" portname="Iso_Multiplier" username="Iso_Multiplier" basename="Iso Multiplier" portlabel="Iso Multiplier" exposetype="single"> </port>
+			<port index="7" portname="Thickness" username="Thickness" basename="Thickness" portlabel="Thickness" exposetype="single"> </port>
+			<port index="8" portname="Meeting_at" username="Meeting_at" basename="Meeting at" portlabel="Meeting at" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="output" name="Active"> </item>
+			<item type="output" name="Self"> </item>
+			<item type="output" name="Caster"> </item>
+			<item type="output" name="Receiver"> </item>
+			<item type="output" name="Filament_Length"> </item>
+			<item type="output" name="Level_of_Detail"> </item>
+			<item type="output" name="Iso_Multiplier"> </item>
+			<item type="output" name="Thickness"> </item>
+			<item type="output" name="Meeting_at"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFluid4 __ Cache Grids on File" tasks="" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" constructionmode="Current" backgroundcolor="9025979">
+	<definition>
+		<nodes>
+			<node type="IntegerNode" index="0">
+				<param name="value" type="3" value="2"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2777</prop>
+					<prop name="posy">-458</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="1">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2777</prop>
+					<prop name="posy">-481</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<param name="in.in_string" type="8" value=""></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<portdef name="in" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3821</prop>
+					<prop name="posy">-423</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="3">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_string" type="8" value=""></param>
+				<param name="case0.case0_uimode" type="8" value=""></param>
+				<param name="case0.case0_filepathseq" type="8" value=""></param>
+				<param name="case0.case0_filename" type="8" value=""></param>
+				<param name="case1.case1_string" type="8" value=""></param>
+				<param name="case1.case1_uimode" type="8" value=""></param>
+				<param name="case1.case1_filepathseq" type="8" value=""></param>
+				<param name="case1.case1_filename" type="8" value=""></param>
+				<param name="case2.case2_string" type="8" value=""></param>
+				<param name="case2.case2_uimode" type="8" value=""></param>
+				<param name="case2.case2_filepathseq" type="8" value=""></param>
+				<param name="case2.case2_filename" type="8" value=""></param>
+				<param name="case3.case3_string" type="8" value=""></param>
+				<param name="case3.case3_uimode" type="8" value=""></param>
+				<param name="case3.case3_filepathseq" type="8" value=""></param>
+				<param name="case3.case3_filename" type="8" value=""></param>
+				<param name="case4.case4_string" type="8" value=""></param>
+				<param name="case4.case4_uimode" type="8" value=""></param>
+				<param name="case4.case4_filepathseq" type="8" value=""></param>
+				<param name="case4.case4_filename" type="8" value=""></param>
+				<param name="case5.case5_string" type="8" value=""></param>
+				<param name="case5.case5_uimode" type="8" value=""></param>
+				<param name="case5.case5_filepathseq" type="8" value=""></param>
+				<param name="case5.case5_filename" type="8" value=""></param>
+				<param name="case6.case6_string" type="8" value=""></param>
+				<param name="case6.case6_uimode" type="8" value=""></param>
+				<param name="case6.case6_filepathseq" type="8" value=""></param>
+				<param name="case6.case6_filename" type="8" value=""></param>
+				<param name="default.default_string" type="8" value=""></param>
+				<param name="default.default_uimode" type="8" value=""></param>
+				<param name="default.default_filepathseq" type="8" value=""></param>
+				<param name="default.default_filename" type="8" value=""></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="131072" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="131072" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="131072" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="case3" type="131072" structure="1" group="1" instance="3" port="0"></portdef>
+				<portdef name="case4" type="131072" structure="1" group="1" instance="4" port="0"></portdef>
+				<portdef name="case5" type="131072" structure="1" group="1" instance="5" port="0"></portdef>
+				<portdef name="case6" type="131072" structure="1" group="1" instance="6" port="0"></portdef>
+				<portdef name="default" type="131072" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1477</prop>
+					<prop name="posy">694</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="4">
+				<param name="value.value_string" type="8" value="###"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1258</prop>
+					<prop name="posy">786</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Concatenate" index="5">
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param name="Value2.Value2_string" type="8" value=""></param>
+				<param name="Value2.Value2_uimode" type="8" value=""></param>
+				<param name="Value2.Value2_filepathseq" type="8" value=""></param>
+				<param name="Value2.Value2_filename" type="8" value=""></param>
+				<param name="Value3.Value3_string" type="8" value=""></param>
+				<param name="Value3.Value3_uimode" type="8" value=""></param>
+				<param name="Value3.Value3_filepathseq" type="8" value=""></param>
+				<param name="Value3.Value3_filename" type="8" value=""></param>
+				<param name="Value4.Value4_string" type="8" value=""></param>
+				<param name="Value4.Value4_uimode" type="8" value=""></param>
+				<param name="Value4.Value4_filepathseq" type="8" value=""></param>
+				<param name="Value4.Value4_filename" type="8" value=""></param>
+				<param name="Value5.Value5_string" type="8" value=""></param>
+				<param name="Value5.Value5_uimode" type="8" value=""></param>
+				<param name="Value5.Value5_filepathseq" type="8" value=""></param>
+				<param name="Value5.Value5_filename" type="8" value=""></param>
+				<param name="Value6.Value6_string" type="8" value=""></param>
+				<param name="Value6.Value6_uimode" type="8" value=""></param>
+				<param name="Value6.Value6_filepathseq" type="8" value=""></param>
+				<param name="Value6.Value6_filename" type="8" value=""></param>
+				<portdef name="Value1" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Value2" type="131072" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="Value3" type="131072" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="Value4" type="131072" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="Value5" type="131072" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="Value6" type="131072" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2755</prop>
+					<prop name="posy">319</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="6">
+				<param name="value.value_string" type="8" value="##"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1258</prop>
+					<prop name="posy">756</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="7">
+				<param name="value.value_string" type="8" value="#####"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1258</prop>
+					<prop name="posy">846</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="8">
+				<param name="value.value_string" type="8" value="####"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1258</prop>
+					<prop name="posy">816</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="9">
+				<param name="value.value_string" type="8" value="fileformat:=bafl;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1224</prop>
+					<prop name="posy">1285</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="10">
+				<param name="value.value_string" type="8" value="/"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1538</prop>
+					<prop name="posy">228</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in.in_string" type="8" value="grid"></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<portdef name="in" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">1245</prop>
+					<prop name="posy">225</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="12">
+				<param name="in.in_string" type="8" value="[Project Path]\Simulation\emFluid\[Scene]"></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<portdef name="in" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">1245</prop>
+					<prop name="posy">158</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Concatenate" index="13">
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param name="Value2.Value2_string" type="8" value=""></param>
+				<param name="Value2.Value2_uimode" type="8" value=""></param>
+				<param name="Value2.Value2_filepathseq" type="8" value=""></param>
+				<param name="Value2.Value2_filename" type="8" value=""></param>
+				<param name="Value3.Value3_string" type="8" value=""></param>
+				<param name="Value3.Value3_uimode" type="8" value=""></param>
+				<param name="Value3.Value3_filepathseq" type="8" value=""></param>
+				<param name="Value3.Value3_filename" type="8" value=""></param>
+				<param name="Value4.Value4_string" type="8" value=""></param>
+				<param name="Value4.Value4_uimode" type="8" value=""></param>
+				<param name="Value4.Value4_filepathseq" type="8" value=""></param>
+				<param name="Value4.Value4_filename" type="8" value=""></param>
+				<portdef name="Value1" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Value2" type="131072" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="Value3" type="131072" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="Value4" type="131072" structure="1" group="0" instance="3" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1652</prop>
+					<prop name="posy">161</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="14">
+				<param name="value.value_string" type="8" value="filepath:="></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1474</prop>
+					<prop name="posy">158</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="15">
+				<param name="value.value_string" type="8" value="######"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1258</prop>
+					<prop name="posy">876</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Concatenate" index="16">
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param name="Value2.Value2_string" type="8" value=""></param>
+				<param name="Value2.Value2_uimode" type="8" value=""></param>
+				<param name="Value2.Value2_filepathseq" type="8" value=""></param>
+				<param name="Value2.Value2_filename" type="8" value=""></param>
+				<param name="Value3.Value3_string" type="8" value=""></param>
+				<param name="Value3.Value3_uimode" type="8" value=""></param>
+				<param name="Value3.Value3_filepathseq" type="8" value=""></param>
+				<param name="Value3.Value3_filename" type="8" value=""></param>
+				<portdef name="Value1" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Value2" type="131072" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="Value3" type="131072" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2132</prop>
+					<prop name="posy">146</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="17">
+				<param name="value.value_string" type="8" value="boxmode:=writeprimary;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2048</prop>
+					<prop name="posy">-203</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-173" offsety="0" sizex="158" sizey="19"><![CDATA[Cache only Primary Box]]></comment>
+			</node>
+			<node type="StringFilePathSequenceNode" index="18">
+				<param name="value.value_string" type="8" value="D:\SoftXSI_DB\emFluid4\Render_Pictures\abc.####"></param>
+				<param name="value.value_uimode" type="8" value="2"></param>
+				<param name="value.value_filepathseq" type="8" value="[Project Path]\Render_Pictures"></param>
+				<param name="value.value_filename" type="8" value="abc.####"></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1842</prop>
+					<prop name="posy">162</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="19">
+				<param name="value.value_string" type="8" value="#"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1267</prop>
+					<prop name="posy">691</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="3" value="2"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">1247</prop>
+					<prop name="posy">984</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="21">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_string" type="8" value=""></param>
+				<param name="case0.case0_uimode" type="8" value=""></param>
+				<param name="case0.case0_filepathseq" type="8" value=""></param>
+				<param name="case0.case0_filename" type="8" value=""></param>
+				<param name="case1.case1_string" type="8" value=""></param>
+				<param name="case1.case1_uimode" type="8" value=""></param>
+				<param name="case1.case1_filepathseq" type="8" value=""></param>
+				<param name="case1.case1_filename" type="8" value=""></param>
+				<param name="case2.case2_string" type="8" value=""></param>
+				<param name="case2.case2_uimode" type="8" value=""></param>
+				<param name="case2.case2_filepathseq" type="8" value=""></param>
+				<param name="case2.case2_filename" type="8" value=""></param>
+				<param name="default.default_string" type="8" value=""></param>
+				<param name="default.default_uimode" type="8" value=""></param>
+				<param name="default.default_filepathseq" type="8" value=""></param>
+				<param name="default.default_filename" type="8" value=""></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="131072" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="131072" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="131072" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="131072" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1472</prop>
+					<prop name="posy">968</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="22">
+				<param name="value.value_string" type="8" value="boxmode:=writeall;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2082</prop>
+					<prop name="posy">-175</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-150" offsety="0" sizex="120" sizey="19"><![CDATA[Cache all Boxes]]></comment>
+			</node>
+			<node type="PassThroughNode" index="23">
+				<param name="in" type="3" value="2"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1231</prop>
+					<prop name="posy">-256</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="24">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3692</prop>
+					<prop name="posy">-407</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="25">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1243</prop>
+					<prop name="posy">1192</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="26">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_string" type="8" value=""></param>
+				<param name="case0.case0_uimode" type="8" value=""></param>
+				<param name="case0.case0_filepathseq" type="8" value=""></param>
+				<param name="case0.case0_filename" type="8" value=""></param>
+				<param name="case1.case1_string" type="8" value=""></param>
+				<param name="case1.case1_uimode" type="8" value=""></param>
+				<param name="case1.case1_filepathseq" type="8" value=""></param>
+				<param name="case1.case1_filename" type="8" value=""></param>
+				<param name="case2.case2_string" type="8" value=""></param>
+				<param name="case2.case2_uimode" type="8" value=""></param>
+				<param name="case2.case2_filepathseq" type="8" value=""></param>
+				<param name="case2.case2_filename" type="8" value=""></param>
+				<param name="default.default_string" type="8" value=""></param>
+				<param name="default.default_uimode" type="8" value=""></param>
+				<param name="default.default_filepathseq" type="8" value=""></param>
+				<param name="default.default_filename" type="8" value=""></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="131072" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="131072" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="131072" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="131072" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2332</prop>
+					<prop name="posy">-268</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="27">
+				<param name="value.value_string" type="8" value="boxindices:=numeric;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1180</prop>
+					<prop name="posy">1062</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="28">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_string" type="8" value=""></param>
+				<param name="case0.case0_uimode" type="8" value=""></param>
+				<param name="case0.case0_filepathseq" type="8" value=""></param>
+				<param name="case0.case0_filename" type="8" value=""></param>
+				<param name="default.default_string" type="8" value=""></param>
+				<param name="default.default_uimode" type="8" value=""></param>
+				<param name="default.default_filepathseq" type="8" value=""></param>
+				<param name="default.default_filename" type="8" value=""></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="131072" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="default" type="131072" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1477</prop>
+					<prop name="posy">1234</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="29">
+				<param name="value.value_string" type="8" value="boxindices:=literal;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1187</prop>
+					<prop name="posy">1088</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="30">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1378</prop>
+					<prop name="posy">1442</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="31">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1378</prop>
+					<prop name="posy">1562</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="32">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1375</prop>
+					<prop name="posy">1982</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="33">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1376</prop>
+					<prop name="posy">1877</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="34">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1375</prop>
+					<prop name="posy">2087</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="35">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1376</prop>
+					<prop name="posy">2192</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="36">
+				<param name="value.value_string" type="8" value="null"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3158</prop>
+					<prop name="posy">-339</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Concatenate" index="37">
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param name="Value2.Value2_string" type="8" value=""></param>
+				<param name="Value2.Value2_uimode" type="8" value=""></param>
+				<param name="Value2.Value2_filepathseq" type="8" value=""></param>
+				<param name="Value2.Value2_filename" type="8" value=""></param>
+				<portdef name="Value1" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Value2" type="131072" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1530</prop>
+					<prop name="posy">1531</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Concatenate" index="38">
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param name="Value2.Value2_string" type="8" value=""></param>
+				<param name="Value2.Value2_uimode" type="8" value=""></param>
+				<param name="Value2.Value2_filepathseq" type="8" value=""></param>
+				<param name="Value2.Value2_filename" type="8" value=""></param>
+				<param name="Value3.Value3_string" type="8" value=""></param>
+				<param name="Value3.Value3_uimode" type="8" value=""></param>
+				<param name="Value3.Value3_filepathseq" type="8" value=""></param>
+				<param name="Value3.Value3_filename" type="8" value=""></param>
+				<param name="Value4.Value4_string" type="8" value=""></param>
+				<param name="Value4.Value4_uimode" type="8" value=""></param>
+				<param name="Value4.Value4_filepathseq" type="8" value=""></param>
+				<param name="Value4.Value4_filename" type="8" value=""></param>
+				<param name="Value5.Value5_string" type="8" value=""></param>
+				<param name="Value5.Value5_uimode" type="8" value=""></param>
+				<param name="Value5.Value5_filepathseq" type="8" value=""></param>
+				<param name="Value5.Value5_filename" type="8" value=""></param>
+				<portdef name="Value1" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Value2" type="131072" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="Value3" type="131072" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="Value4" type="131072" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="Value5" type="131072" structure="1" group="0" instance="4" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1545</prop>
+					<prop name="posy">1950</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="39">
+				<param name="in" type="3" value="4"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1241</prop>
+					<prop name="posy">615</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="40">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_string" type="8" value=""></param>
+				<param name="iftrue.iftrue_uimode" type="8" value=""></param>
+				<param name="iftrue.iftrue_filepathseq" type="8" value=""></param>
+				<param name="iftrue.iftrue_filename" type="8" value=""></param>
+				<param name="iffalse.iffalse_string" type="8" value=""></param>
+				<param name="iffalse.iffalse_uimode" type="8" value=""></param>
+				<param name="iffalse.iffalse_filepathseq" type="8" value=""></param>
+				<param name="iffalse.iffalse_filename" type="8" value=""></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1375</prop>
+					<prop name="posy">2299</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CombineLogicNode" index="41">
+				<param name="type" type="3" value="0"></param>
+				<param name="value1" type="11" value="true"></param>
+				<param name="value2" type="11" value="true"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3162</prop>
+					<prop name="posy">-630</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="42">
+				<param name="value.value_string" type="8" value="halffloat:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1171</prop>
+					<prop name="posy">1493</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="43">
+				<param name="value.value_string" type="8" value="compression:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1150</prop>
+					<prop name="posy">1613</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="44">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">1233</prop>
+					<prop name="posy">-615</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="45">
+				<param name="value.value_string" type="8" value="gridwaste:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1156</prop>
+					<prop name="posy">1928</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="46">
+				<param name="value.value_string" type="8" value="gridheat:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1173</prop>
+					<prop name="posy">2032</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="47">
+				<param name="value.value_string" type="8" value="griddensity:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1157</prop>
+					<prop name="posy">2138</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="48">
+				<param name="value.value_string" type="8" value="gridfuel:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1172</prop>
+					<prop name="posy">2243</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="49">
+				<param name="value.value_string" type="8" value="gridvelocity:=on;"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1143</prop>
+					<prop name="posy">2350</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="50">
+				<param name="value.value_string" type="8" value=";"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2005</prop>
+					<prop name="posy">243</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="In Range" version="1.0" index="51">
+				<param name="Value" type="3" value="0"></param>
+				<param name="Min" type="3" value="0"></param>
+				<param name="Max" type="3" value="0"></param>
+				<portdef name="Value" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Max" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Min" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2872</prop>
+					<prop name="posy">-543</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="55">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1269</prop>
+					<prop name="posy">2218</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="out" username="Cache_Grids" basename="Cache Grids" portlabel="Cache Grids" exposetype="single"> </port>
+			<port index="11" portname="in" username="Filename_" basename="Filename " portlabel="Filename " exposetype="single"> </port>
+			<port index="12" portname="in" username="Path_" basename="Path " portlabel="Path " exposetype="single"> </port>
+			<port index="20" portname="in" username="Box_Indices" basename="Box Indices" portlabel="Box Indices" exposetype="single"> </port>
+			<port index="23" portname="in" username="Box_Mode" basename="Box Mode" portlabel="Box Mode" exposetype="single"> </port>
+			<port index="25" portname="in" username="File_Format" basename="File Format" portlabel="File Format" exposetype="single"> </port>
+			<port index="30" portname="condition" username="Save_Half_Float_Values" basename="Save Half_Float Values" portlabel="Save Half_Float Values" exposetype="single"> </port>
+			<port index="31" portname="condition" username="Enable_Compression_and_Filtering" basename="Enable Compression and Filtering" portlabel="Enable Compression and Filtering" exposetype="single"> </port>
+			<port index="32" portname="condition" username="Heat" basename="Heat" portlabel="Heat" exposetype="single"> </port>
+			<port index="33" portname="condition" username="Waste" basename="Waste" portlabel="Waste" exposetype="single"> </port>
+			<port index="34" portname="condition" username="Density" basename="Density" portlabel="Density" exposetype="single"> </port>
+			<port index="39" portname="in" username="Padding" basename="Padding" portlabel="Padding" exposetype="single"> </port>
+			<port index="40" portname="condition" username="Velocity" basename="Velocity" portlabel="Velocity" exposetype="single"> </port>
+			<port index="44" portname="in" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="27" from_port="result" to_node="21" to_port="case1"> </cnx>
+			<cnx from_node="28" from_port="result" to_node="5" to_port="Value4"> </cnx>
+			<cnx from_node="37" from_port="Result" to_node="5" to_port="Value5"> </cnx>
+			<cnx from_node="38" from_port="Result" to_node="5" to_port="Value6"> </cnx>
+			<cnx from_node="49" from_port="result" to_node="40" to_port="iftrue"> </cnx>
+			<cnx from_node="50" from_port="result" to_node="16" to_port="Value3"> </cnx>
+			<cnx from_node="55" from_port="result" to_node="35" to_port="condition"> </cnx>
+			<cnx from_node="41" from_port="result" to_node="24" to_port="condition"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="51" to_port="Max"> </cnx>
+			<cnx from_node="24" from_port="result" to_node="2" to_port="in"> </cnx>
+			<cnx from_node="29" from_port="result" to_node="21" to_port="case2"> </cnx>
+			<cnx from_node="30" from_port="result" to_node="37" to_port="Value1"> </cnx>
+			<cnx from_node="31" from_port="result" to_node="37" to_port="Value2"> </cnx>
+			<cnx from_node="32" from_port="result" to_node="38" to_port="Value2"> </cnx>
+			<cnx from_node="33" from_port="result" to_node="38" to_port="Value1"> </cnx>
+			<cnx from_node="34" from_port="result" to_node="38" to_port="Value3"> </cnx>
+			<cnx from_node="35" from_port="result" to_node="38" to_port="Value4"> </cnx>
+			<cnx from_node="36" from_port="result" to_node="24" to_port="iffalse"> </cnx>
+			<cnx from_node="40" from_port="result" to_node="38" to_port="Value5"> </cnx>
+			<cnx from_node="42" from_port="result" to_node="30" to_port="iftrue"> </cnx>
+			<cnx from_node="43" from_port="result" to_node="31" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="result" to_node="33" to_port="iftrue"> </cnx>
+			<cnx from_node="46" from_port="result" to_node="32" to_port="iftrue"> </cnx>
+			<cnx from_node="47" from_port="result" to_node="34" to_port="iftrue"> </cnx>
+			<cnx from_node="48" from_port="result" to_node="35" to_port="iftrue"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="51" to_port="Min"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="13" to_port="Value4"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="13" to_port="Value2"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="21" to_port="condition"> </cnx>
+			<cnx from_node="23" from_port="out" to_node="51" to_port="Value"> </cnx>
+			<cnx from_node="23" from_port="out" to_node="26" to_port="condition"> </cnx>
+			<cnx from_node="25" from_port="out" to_node="28" to_port="condition"> </cnx>
+			<cnx from_node="39" from_port="out" to_node="3" to_port="condition"> </cnx>
+			<cnx from_node="44" from_port="out" to_node="41" to_port="value1"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="16" to_port="Value2"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="3" to_port="case2"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="3" to_port="case5"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="3" to_port="case4"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="28" to_port="case0"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="28" to_port="default"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="13" to_port="Value3"> </cnx>
+			<cnx from_node="13" from_port="Result" to_node="18" to_port="value"> </cnx>
+			<cnx from_node="14" from_port="result" to_node="13" to_port="Value1"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="3" to_port="case6"> </cnx>
+			<cnx from_node="16" from_port="Result" to_node="5" to_port="Value2"> </cnx>
+			<cnx from_node="17" from_port="result" to_node="26" to_port="case1"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="3" to_port="case0"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="3" to_port="case1"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="3" to_port="default"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="5" to_port="Value3"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="26" to_port="case2"> </cnx>
+			<cnx from_node="26" from_port="result" to_node="5" to_port="Value1"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="3" to_port="case3"> </cnx>
+			<cnx from_node="5" from_port="Result" to_node="24" to_port="iftrue"> </cnx>
+			<cnx from_node="18" from_port="result" to_node="16" to_port="Value1"> </cnx>
+			<cnx from_node="51" from_port="Result" to_node="41" to_port="value2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Box_Mode">
+				<enum value="1"><![CDATA[Cache only Primary Box]]></enum>
+				<enum value="2"><![CDATA[Cache all Boxes]]></enum>
+			</item>
+			<group type="input" name="File Path and Format">
+				<item type="input" name="Path_"> </item>
+				<item type="input" name="Filename_"> </item>
+				<item type="input" name="Box_Indices" min="0" max="0">
+					<enum value="0"><![CDATA[Add Nothing]]></enum>
+					<enum value="1"><![CDATA[Add numeric Index to Filename]]></enum>
+					<enum value="2"><![CDATA[Add literal Index to Filename]]></enum>
+				</item>
+				<item type="input" name="Padding">
+					<enum value="1"><![CDATA[#]]></enum>
+					<enum value="2"><![CDATA[##]]></enum>
+					<enum value="3"><![CDATA[###]]></enum>
+					<enum value="4"><![CDATA[####]]></enum>
+					<enum value="5"><![CDATA[#####]]></enum>
+				</item>
+				<item type="input" name="File_Format">
+					<enum value="0"><![CDATA[baFluid (*.bafl)]]></enum>
+				</item>
+			</group>
+			<group type="input" name="Settings">
+				<item type="input" name="Save_Half_Float_Values"> </item>
+				<item type="input" name="Enable_Compression_and_Filtering"> </item>
+				<group type="input" name="Grids">
+					<item type="input" name="Waste"> </item>
+					<item type="input" name="Heat"> </item>
+					<item type="input" name="Density"> </item>
+					<item type="input" name="Velocity" min="0" max="0"> </item>
+				</group>
+			</group>
+			<item type="output" name="Cache_Grids"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

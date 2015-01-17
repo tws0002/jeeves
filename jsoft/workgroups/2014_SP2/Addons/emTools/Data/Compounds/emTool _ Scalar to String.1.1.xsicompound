@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Scalar to String" tasks="Mootzoid - emTools/Tools - Conversion" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.1" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_ntoa" index="0">
+				<param name="Input" type="4" value="0.000000"></param>
+				<param name="Precision" type="3" value="0"></param>
+				<param name="TreatAsInt" type="11" value="false"></param>
+				<param name="IntLead0" type="3" value="0"></param>
+				<portdef name="Input" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Precision" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="TreatAsInt" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="IntLead0" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1547</prop>
+					<prop name="posy">1559</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="0" portname="Input" username="Scalar" basename="Scalar" portlabel="Scalar" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Scalar"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

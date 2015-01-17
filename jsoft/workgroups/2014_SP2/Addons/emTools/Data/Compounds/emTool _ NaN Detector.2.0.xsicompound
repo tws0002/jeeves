@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ NaN Detector" tasks="Mootzoid - emTools/Tools - Bits and Bytes" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="CombineLogicNode" index="0">
+				<param name="type" type="3" value="1"></param>
+				<param name="value1" type="11" value="false"></param>
+				<param name="value2" type="11" value="false"></param>
+				<param name="value3" type="11" value="false"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="1" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1413</prop>
+					<prop name="posy">1449</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToBooleanNode" index="1">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1693</prop>
+					<prop name="posy">1448</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="NotNode" index="2">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1276</prop>
+					<prop name="posy">1449</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToBooleanNode" index="3">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1693</prop>
+					<prop name="posy">1421</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTools_nan2" index="4">
+				<param name="Input" type="4" value="0.000000"></param>
+				<portdef name="Input" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1863</prop>
+					<prop name="posy">1386</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToBooleanNode" index="5">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1692</prop>
+					<prop name="posy">1393</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="boolean" username="Is_negative_INF" basename="Is negative INF" portlabel="Is negative INF" exposetype="single"> </port>
+			<port index="2" portname="result" username="Is_finite_Number" basename="Is finite Number" portlabel="Is finite Number" exposetype="single"> </port>
+			<port index="3" portname="boolean" username="Is_positive_INF" basename="Is positive INF" portlabel="Is positive INF" exposetype="single"> </port>
+			<port index="4" portname="Input" username="Input" basename="Input" portlabel="Input" exposetype="single"> </port>
+			<port index="5" portname="boolean" username="Is_NaN" basename="Is NaN" portlabel="Is NaN" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="result" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="boolean" to_node="0" to_port="value3"> </cnx>
+			<cnx from_node="3" from_port="boolean" to_node="0" to_port="value2"> </cnx>
+			<cnx from_node="4" from_port="IsNaN" to_node="5" to_port="integer"> </cnx>
+			<cnx from_node="4" from_port="IsINFpos" to_node="3" to_port="integer"> </cnx>
+			<cnx from_node="4" from_port="IsINFneg" to_node="1" to_port="integer"> </cnx>
+			<cnx from_node="5" from_port="boolean" to_node="0" to_port="value1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Input"> </item>
+			<item type="output" name="Is_NaN"> </item>
+			<item type="output" name="Is_positive_INF"> </item>
+			<item type="output" name="Is_negative_INF"> </item>
+			<item type="output" name="Is_finite_Number"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

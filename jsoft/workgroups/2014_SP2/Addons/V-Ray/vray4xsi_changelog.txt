@@ -1,0 +1,186 @@
+
+===================================
+V-Ray | Softimage 1.6 release notes
+===================================
+
+Contents:
+
+1. Uninstalling V-Ray | Softimage
+2. Empty Softimage preview window displayed instead of VFB preview
+3. Demo version limitations
+4. Changes and improvements in this version since 1.5 Official Release
+
+
+
+=================================
+1. Uninstalling V-Ray | Softimage
+
+Prior to uninstalling the V-Ray | Softimage .xsiaddon file, you need to ensure that no rendering jobs
+are in progress, that the VFB window is not open, that no render regions are active, and that the material 
+manager window is closed.
+
+On some earlier versions of the platform, attempting to uninstall the V-Ray add-on directly may result
+in a crash. To avoid this, you must ensure that the V-Ray plugin is stopped before attempting to uninstall.
+
+To stop the V-Ray plugin:
+* Choose File | Plug-in Manager... from the Softimage menu
+* Navigate to User Root -> V-Ray (Addon) -> Plug-ins (this is in the Tree tab)
+* Right-click on V-Ray (plugin) and choose Unload. The V-Ray plugin is now stopped.
+
+An alternative approach via script (also usable in batch mode, e.g. in a render farm environment)
+* Issue the following script command, substituting the exact path to V-Ray on the target machine:
+  UnloadPlugin "C:\Users\<<User>>\Autodesk\Softimage_<<V1>>\Addons\V-Ray\Application\Plugins\vray4xsi<<V2>>.dll
+  (substitute V1 and V2 with the appropriate name for your version of the host platform)
+
+Now that the plug-in is stopped, you can successfully invoke the Uninstall command to remove it.
+
+For extra safety (especially if you have used beta versions, demo builds, etc.) please manually remove
+any leftover files after the automatic uninstall. To do so, open the folder named
+       C:\Users\<<Your Name>>\Autodesk\Softimage_<<V1>>\Addons\V-Ray
+and delete any files and nested folders.
+
+
+
+==================================================================
+2. Empty Softimage preview window displayed instead of VFB preview
+
+In certain cases, when you click the Preview button on the SI render bar (and you have chosen the VFB
+as your preview instrument), the Softimage built-in preview window will appear with nothing in it.
+Normally, when the VFB option is turned on (default), this window stays minimized at the bottom of the screen.
+
+This issue is related to the interaction between SI and V-Ray. The best workaround is to simply close the
+SI previw window, then click Preview again. VFB will appear and show the preview as expected.
+
+
+
+===========================
+3. Demo version limitations
+
+The following limitations apply to the V-Ray | SI demo version (demo build):
+
+* Renders and preview renders are limited to a size of 640x450 pixels. Attempting to set up wider or
+  taller output scene sizes will result in an error being displayed in the Output window, and the render
+  will be aborted
+
+* If the scene contains more than 5 lights, only the first five will be exported and rendered (or previewed)
+
+* A watermark will appear on all renders and previews, in the upper left portion of the image
+
+
+
+======================================================================
+4. Changes and improvements in this version since 1.5 Official Release
+
+These bugs and new features have been introduced since the official release of VRay/SI 1.5 in March 2012:
+
+- 0006918: [feature request] Add "UV coord" sampler type to VRaySamplerInfoTex
+- 0006927: [bug] Strand scales are not respected
+- 0005373: [bug] Proxies not properly updated in viewport
+- 0006871: [bug] UVWGenChannel is not exported along with BRDFBump
+- 0006872: [bug] Camera rescaling causes texture blurring
+- 0006780: [bug] Sometimes DR servers will decide to use the RT CUDA engine (which we do not support and do not ship)
+- 0006556: [modified feature] Fix the way the .vrscene exporter uses openList()/closeList() to conform to the documentation (may be major break!)
+- 0005077: [bug] Cached polygonizer meshes - animation not rendered, only the first frame appears - closed.
+- 0006734: [modified feature] Speed up license obtaining when rendering shaderballs for material manager
+- 0006649: [modified feature] Change parent relationship of VFB window to SI's main window instead of NULL
+- 0006308: [feature request] Add support for RGBA combine and RGBA split shaders
+- 0006698: [bug] No Motion blur on Cached geometry animation
+- 0006678: [bug] Model instance is not animated in a multiframe render when animation is applied to the parent model
+- 0006532: [bug] Geometry with applied user normals renders incorrectly under xsibatch
+- 0006838: [feature request] Implement shape instance time
+- 0006648: [bug] TexColor2Scalar should not consider alpha channel when computing color intensity
+- 0006650: [feature request] Incorporate Alembic mesh import in the main VRay|SI build
+- 0006644: [bug] Remove not user-adjustable parameters from VRayPhysicalCamera UI
+- 0004784: [feature request] Add support for Softimage property overrides
+- 0005667: [feature request] Add support for VRay Sphere Fade
+- 0006614: [bug] Volume shaders exported twice in some cases
+- 0006607: [bug] Environment shaders have no effect when there are volume shaders
+- 0006387: [bug] Pass Volume shaders should not be applied when rendering shaderball previews
+- 0006634: [modified feature] Speed up render preparation by reusing global thread manager
+- 0006335: [bug] "Skip Rendered Frames" option is ignored
+- 0006210: [new feature] Add Maya-like noise in VRay for Softimage
+- 0006494: [bug] FOV type not considered by VRayPhysicalCamera when "Get FOV from camera" is checked
+- 0006567: [bug] Render region's view is wrong when there is camera MB
+- 0006376: [feature request] Add "use camera path" to Ir. Map and L. Cache and "use adaptive sampling" to L. Cache
+- 0006287: [bug] Extra image files are written when rendering in batch mode and the output image format is multichannel
+- 0006178: [bug] Nurbs geometry is not exported correctly to .vrscene file
+- 0006254: [feature request] Add presets to VRay Hair Material
+- 0006260: [bug] The [Project Path] token is not resolved for vray proxies
+- 0005807: [bug] Instanced pointclouds don't work.
+- 0005609: [bug] Instances of Render Element added from Output Pass Shaders overwrite each other when saved into separate files.
+- 0005758: [bug] Attaching a bump map causes blocky environment reflections
+- 0005718: [bug] Motion blur may disappear on ICE pointclouds on second render
+- 0005677: [bug] MultiMatte render channel doesn't work for bumped materials
+- 0005711: [bug] Bug with textured softimage hair: render termination
+- 0005540: [feature request] Add support for CrowdFX - related ICE attributes (2013)
+- 0005658: [bug] Irradiance map not loaded correctly in "Animation (rendering)" IM mode
+- 0005684: [bug] Wrong gamma correction for HDR files
+- 0005563: [bug] Wrong way for checking the animation of a camera
+- 0005562: [feature request] Add Gizmos control to the environment fog.
+- 0005611: [modified feature] Help button ("?") in each VRay element's PPG doesn't point to Spot3d
+- 0004787: [feature request] Implement VFB render region capability
+- 0005570: [modified feature] Re-render button in VFB window should really re-render the scene
+- 0005467: [bug] Default UVW projection looks wrong
+- 0005204: [modified feature] Image clip-related effects (blur, crop, etc) should not be handled by the VRay renderer
+- 0005205: [feature request] Add "texture filtering multiplier" as a global rendering option
+- 0005437: [feature request] Add vrscene export options like in Maya
+- 0005417: [bug] Problems with materials when exporting proxies
+- 0005451: [bug] Instances of models with applied meshlight are not rendered
+- 0005258: [bug] SI hangs with a particular scene
+- 0005362: [modified feature] Softimage blocks while rendering shaderballs
+- 0005448: [bug] Shader compunds' inner nodes are ignored
+- 0005895: [bug] V-Ray doesn't take into account the Shader Compound color control
+- 0004988: [bug] Velocity render element not working
+- 0005421: [bug] VRay Toon Include list bug when there are models in the scene.
+- 0005404: [new feature] Add "Material ID" option for materials
+- 0005333: [bug] UV Wrap ignored on proxy objects
+- 0005360: [bug] Textures are not applied right to VRay Rect Light
+- 0005370: [feature request] Open property PPG after it's created
+- 0005241: [feature request] Browsing for image output folder in output tab does not default to current folder.
+- 0004727: [bug] Individual shaderball previews on Shader tree nodes are inconsistent with VRayMtl
+- 0005359: [modified feature] PTex IFL and gamma parameters should have valid defaults
+- 0005342: [bug] Crash when instantiating a model with attached texture
+- 0005337: [bug] Default Displacement tab's parameters are not taken in account
+- 0005328: [bug] Bug when in VRayDisplacement "Edge lenght" parameter is set to 0
+- 0005327: [bug] 2D-Displacement "Resolution" parameter bug
+- 0005279: [bug] Vector displacement is not working correctly
+- 0005291: [modified feature] Applying vray material through the menu is not being logged.
+- 0006222: [bug] The diffuse filter render element must not have a "Color Map" option
+- 0006151: [bug] Bump map applied wrong on blended materials
+- 0005999: [bug] Different shapes in one point cloud don't render correctly
+- 0006071: [bug] The [Pass] token isn't being resolved
+- 0006187: [bug] Light include/exclude lists won't work right for lights under a model
+- 0006160: [bug] Accessing invalid ice attribute data
+- 0006090: [bug] Pointcloud appears at the wrong position when rendered from a vrscene
+- 0006051: [bug] SPDL related code should check for non-editable material
+- 0002167: [feature request] Distributed Rendering (DR) support
+- 0006029: [feature request] Support for ICE Integer attributes
+- 0006047: [bug] Seconds scale is wrong
+- 0006062: [feature request] Support for alembic meshes (*.abc) as VRay Proxies
+- 0006012: [feature request] Rework the "Affect alpha" option in the VRayMtl material to include the "Affect all channels" option
+- 0005866: [bug] Path and filename in Export proxy UI are treated incorrectly, and object dropdown is not properly refreshed
+- 0006041: [feature request] Add options to disable immediate preview update and delay before an update is started for the VFB
+- 0005992: [feature request] Add option for exporting frames into separate .vrscene files
+- 0006014: [bug] Artifacts appear with pointclouds with 0 sized particles
+- 0006002: [bug] ICE instances of groups with hidden objects do not render all objects
+- 0005976: [bug] VRay 2-sided material is exported (and rendered) incorrectly
+- 0005917: [bug] VRayBlendMtl doesn't render correctly when base material is simple RGB constant
+- 0005918: [modified feature] Add option to ZDepth RE to disable AA/filtering
+- 0005534: [bug] Object's animation is not exported
+- 0005924: [bug] Bumpmap multiplier does not accept textures
+- 0005923: [bug] Painting on a weightmap doesn't invalidate the export cache
+- 0005867: [modified feature] Proxy export / "automatically create proxies" should respect original object's partition and layer
+- 0005723: [feature request] A way to disable VFB auto rendering on scene change
+- 0005882: [bug] Shader passthroughs are not exported correctly
+- 0005884: [bug] Time parameter of the fractal texture is not exported
+- 0005826: [bug] Normal Map appears black with the default multiplier
+- 0005851: [bug] Wrong projections on VRay Environment Fog textures
+- 0005571: [bug] Render requests have no effect with the OpenVRayFrameBuffer menu
+- 0005603: [bug] Show Window option in VRay System settings does not work
+- 0005835: [bug] ICE Particles with constant attribute render incorrectly in SI 2013
+- 0005975: [bug] Wrong strand attribute index accessed, assert() reported in debug build
+- 0005825: [bug] MtlExportInfo is null when exporting ExtraTex
+- 0004969: [feature request] Clusters imported from .vrmesh are autorenamed (original cluster names not preserved)
+- 0005569: [modified feature] "Save as PSD" option in the VFB UI must be removed
+- 0005588: [bug] *.hdr files used for texturing with enabled effects(like Crop) are not rendered correctly
+

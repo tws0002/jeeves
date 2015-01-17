@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFlock2 _ Flocking" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.3" constructionmode="Current" backgroundcolor="14390936">
+	<definition>
+		<nodes>
+			<node type="PassThroughNode" index="0">
+				<param name="in" type="4" value="0.750000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-797</prop>
+					<prop name="posy">-131</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="1">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1227</prop>
+					<prop name="posy">1362</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emFly _ Get Values" version="2.1" index="2">
+				<datablob category="ui_infos">
+					<prop name="posx">-1902</prop>
+					<prop name="posy">-574</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="3">
+				<param name="value" type="4" value="3.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-702</prop>
+					<prop name="posy">1902</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-203" offsety="0" sizex="79" sizey="19"><![CDATA[for debugging]]></comment>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-818</prop>
+					<prop name="posy">41</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="12113878" title_text="0" offsetx="-175" offsety="0" sizex="140" sizey="32"><![CDATA[- don't use this -
+(for compatibility reasons)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-809</prop>
+					<prop name="posy">1032</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="12113878" title_text="0" offsetx="-175" offsety="0" sizex="140" sizey="32"><![CDATA[- don't use this -
+(for compatibility reasons)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2877</prop>
+					<prop name="posy">1474</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="26" offsety="-24" sizex="116" sizey="19"><![CDATA[Enable this compound]]></comment>
+			</node>
+			<node type="BooleanToIntegerNode" index="7">
+				<param name="boolean" type="11" value="false"></param>
+				<portdef name="boolean" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-846</prop>
+					<prop name="posy">891</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-170" offsety="0" sizex="155" sizey="19"><![CDATA[Verbose ( !=0: on, ==0: off )]]></comment>
+			</node>
+			<node type="IfNode" index="8">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="-1"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1551</prop>
+					<prop name="posy">-1865</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="9">
+				<param name="condition" type="3" value="3"></param>
+				<param name="case0.case0_string" type="8" value=""></param>
+				<param name="case0.case0_uimode" type="8" value=""></param>
+				<param name="case0.case0_filepathseq" type="8" value=""></param>
+				<param name="case0.case0_filename" type="8" value=""></param>
+				<param name="case1.case1_string" type="8" value=""></param>
+				<param name="case1.case1_uimode" type="8" value=""></param>
+				<param name="case1.case1_filepathseq" type="8" value=""></param>
+				<param name="case1.case1_filename" type="8" value=""></param>
+				<param name="default.default_string" type="8" value=""></param>
+				<param name="default.default_uimode" type="8" value=""></param>
+				<param name="default.default_filepathseq" type="8" value=""></param>
+				<param name="default.default_filename" type="8" value=""></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="131072" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="131072" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="131072" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1131</prop>
+					<prop name="posy">-1801</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="10">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2858</prop>
+					<prop name="posy">473</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-813</prop>
+					<prop name="posy">985</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="12113878" title_text="0" offsetx="-175" offsety="0" sizex="140" sizey="32"><![CDATA[- don't use this -
+(for compatibility reasons)]]></comment>
+			</node>
+			<node type="Set Particle Velocity" version="1.0" index="12">
+				<param name="Reference" type="31" value="Self.PointVelocity"></param>
+				<param name="Velocity.Velocity_x" type="4" value="0.000000"></param>
+				<param name="Velocity.Velocity_y" type="4" value="0.000000"></param>
+				<param name="Velocity.Velocity_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.PointVelocity"></param_ext>
+				<portdef name="Velocity" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3425</prop>
+					<prop name="posy">1509</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="13">
+				<param name="in" type="3" value="2"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-812</prop>
+					<prop name="posy">934</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-128" offsety="-1" sizex="89" sizey="19"><![CDATA[keep-in-memory]]></comment>
+			</node>
+			<node type="PassThroughNode" index="14">
+				<param name="in" type="4" value="6.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-797</prop>
+					<prop name="posy">-498</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Velocity" version="1.0" index="15">
+				<param name="Reference" type="31" value="Self.PointVelocity"></param>
+				<param_ext name="Reference" type="31" value="Self.PointVelocity"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">3019</prop>
+					<prop name="posy">1146</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="17">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3308</prop>
+					<prop name="posy">396</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="42" offsety="-43" sizex="250" sizey="19"><![CDATA[The neighbor positions.]]></comment>
+			</node>
+			<node type="IntegerNode" index="19">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2906</prop>
+					<prop name="posy">308</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3307</prop>
+					<prop name="posy">577</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="42" offsety="-43" sizex="250" sizey="19"><![CDATA[The vectors going from the point to its neighbors.]]></comment>
+			</node>
+			<node type="PassThroughNode" index="21">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3307</prop>
+					<prop name="posy">231</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="43" offsety="-50" sizex="135" sizey="19"><![CDATA[The IDs of the neighbors.]]></comment>
+			</node>
+			<node type="ScalarNode" index="22">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2905</prop>
+					<prop name="posy">830</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="23">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2857</prop>
+					<prop name="posy">654</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="24">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3309</prop>
+					<prop name="posy">753</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="40" offsety="-41" sizex="164" sizey="19"><![CDATA[The distances of the neighbors.]]></comment>
+			</node>
+			<node type="IfNode" index="25">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3208</prop>
+					<prop name="posy">212</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="26">
+				<param name="size" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2984</prop>
+					<prop name="posy">830</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="27">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_x" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_y" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_z" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_x" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_y" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_z" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="16" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3210</prop>
+					<prop name="posy">558</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="28">
+				<param name="size" type="3" value="0"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2982</prop>
+					<prop name="posy">654</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="29">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2902</prop>
+					<prop name="posy">142</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="30">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3204</prop>
+					<prop name="posy">46</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="31">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3303</prop>
+					<prop name="posy">65</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="36" offsety="-48" sizex="217" sizey="19"><![CDATA[The amount of neighbors that were found.]]></comment>
+			</node>
+			<node type="BuildArrayNode" index="32">
+				<param name="value1" type="3" value="0"></param>
+				<param name="value2" type="3" value="0"></param>
+				<param name="value3" type="3" value="0"></param>
+				<param name="value4" type="3" value="0"></param>
+				<param name="value5" type="3" value="0"></param>
+				<param name="value6" type="3" value="0"></param>
+				<param name="value7" type="3" value="0"></param>
+				<param name="value8" type="3" value="0"></param>
+				<param name="value9" type="3" value="0"></param>
+				<param name="value10" type="3" value="0"></param>
+				<param name="value11" type="3" value="0"></param>
+				<param name="value12" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="2" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="value4" type="2" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="value5" type="2" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="value6" type="2" structure="1" group="0" instance="5" port="0"></portdef>
+				<portdef name="value7" type="2" structure="1" group="0" instance="6" port="0"></portdef>
+				<portdef name="value8" type="2" structure="1" group="0" instance="7" port="0"></portdef>
+				<portdef name="value9" type="2" structure="1" group="0" instance="8" port="0"></portdef>
+				<portdef name="value10" type="2" structure="1" group="0" instance="9" port="0"></portdef>
+				<portdef name="value11" type="2" structure="1" group="0" instance="10" port="0"></portdef>
+				<portdef name="value12" type="2" structure="1" group="0" instance="11" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-556</prop>
+					<prop name="posy">855</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Parameters (as an Array of Longs)]]></comment>
+			</node>
+			<node type="IfNode" index="33">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_x" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_y" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_z" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_x" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_y" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_z" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="16" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3211</prop>
+					<prop name="posy">377</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="34">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-816</prop>
+					<prop name="posy">93</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="12113878" title_text="0" offsetx="-175" offsety="0" sizex="140" sizey="32"><![CDATA[- don't use this -
+(for compatibility reasons)]]></comment>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="35">
+				<param name="size" type="3" value="0"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2983</prop>
+					<prop name="posy">473</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="36">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-810</prop>
+					<prop name="posy">1091</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="12113878" title_text="0" offsetx="-175" offsety="0" sizex="140" sizey="32"><![CDATA[- don't use this -
+(for compatibility reasons)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="37">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-810</prop>
+					<prop name="posy">1141</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-272" offsety="0" sizex="167" sizey="32"><![CDATA[if != 0 then use multithreading when building the octree, else singlethreading]]></comment>
+			</node>
+			<node type="IfNode" index="38">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue" type="3" value="1"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1006</prop>
+					<prop name="posy">1352</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="39">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1227</prop>
+					<prop name="posy">1336</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="40">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue" type="3" value="1"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1006</prop>
+					<prop name="posy">1248</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="41">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-809</prop>
+					<prop name="posy">1194</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-274" offsety="0" sizex="213" sizey="19"><![CDATA[if != 0 then use multithreading when inside the function _Evaluate(), else singlethreaded.]]></comment>
+			</node>
+			<node type="PassThroughNode" index="42">
+				<param name="in" type="4" value="2.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-798</prop>
+					<prop name="posy">-277</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="43">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-797</prop>
+					<prop name="posy">-244</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="44">
+				<param name="in" type="4" value="120.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-795</prop>
+					<prop name="posy">-427</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2" index="45">
+				<param name="pntpositions.pntpositions_x" type="4" value="0.000000"></param>
+				<param name="pntpositions.pntpositions_y" type="4" value="0.000000"></param>
+				<param name="pntpositions.pntpositions_z" type="4" value="0.000000"></param>
+				<param name="pntvelocities.pntvelocities_x" type="4" value="0.000000"></param>
+				<param name="pntvelocities.pntvelocities_y" type="4" value="0.000000"></param>
+				<param name="pntvelocities.pntvelocities_z" type="4" value="0.000000"></param>
+				<param name="pntscales.pntscales_x" type="4" value="1.000000"></param>
+				<param name="pntscales.pntscales_y" type="4" value="1.000000"></param>
+				<param name="pntscales.pntscales_z" type="4" value="1.000000"></param>
+				<param name="pntorientations.pntorientations_x" type="4" value="1.000000"></param>
+				<param name="pntorientations.pntorientations_y" type="4" value="0.000000"></param>
+				<param name="pntorientations.pntorientations_z" type="4" value="0.000000"></param>
+				<param name="pntorientations.pntorientations_angle" type="4" value="0.000000"></param>
+				<param name="pntIDs" type="3" value="0"></param>
+				<param name="paramsBool" type="11" value="false"></param>
+				<param name="paramsLong" type="3" value="0"></param>
+				<param name="paramsFloat" type="4" value="0.000000"></param>
+				<param name="pntcutoffdistances" type="4" value="2.000000"></param>
+				<param name="pntcutoffangles" type="4" value="120.000000"></param>
+				<param name="pntcutoffanglefalloffs" type="4" value="60.000000"></param>
+				<param name="pntmaxneighbors" type="3" value="10"></param>
+				<param name="pnt_flock_strength" type="4" value="1.000000"></param>
+				<param name="pnt_flock_wishdist" type="4" value="7.500000"></param>
+				<param name="pnt_flock_velalignment" type="4" value="0.250000"></param>
+				<param name="pnt_flock_privacydist" type="4" value="2.500000"></param>
+				<param name="pnt_flock_privacystrength" type="4" value="2.500000"></param>
+				<param name="pnt_flock_considersize" type="3" value="1"></param>
+				<param name="pnt_flock_ignoreratio" type="4" value="0.250000"></param>
+				<param name="pnt_flock_cohesion" type="4" value="1.000000"></param>
+				<portdef name="pntpositions" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="pntvelocities" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="pntscales" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="pntorientations" type="16384" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="pntIDs" type="2" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="paramsBool" type="1" structure="2" group="0" instance="0" port="5"></portdef>
+				<portdef name="paramsLong" type="2" structure="2" group="0" instance="0" port="6"></portdef>
+				<portdef name="paramsFloat" type="4" structure="2" group="0" instance="0" port="7"></portdef>
+				<portdef name="pntcutoffdistances" type="4" structure="1" group="0" instance="0" port="8"></portdef>
+				<portdef name="pntcutoffangles" type="4" structure="1" group="0" instance="0" port="9"></portdef>
+				<portdef name="pntcutoffanglefalloffs" type="4" structure="1" group="0" instance="0" port="10"></portdef>
+				<portdef name="pntmaxneighbors" type="2" structure="1" group="0" instance="0" port="11"></portdef>
+				<portdef name="pnt_flock_strength" type="4" structure="1" group="0" instance="0" port="12"></portdef>
+				<portdef name="pnt_flock_wishdist" type="4" structure="1" group="0" instance="0" port="13"></portdef>
+				<portdef name="pnt_flock_velalignment" type="4" structure="1" group="0" instance="0" port="14"></portdef>
+				<portdef name="pnt_flock_privacydist" type="4" structure="1" group="0" instance="0" port="15"></portdef>
+				<portdef name="pnt_flock_privacystrength" type="4" structure="1" group="0" instance="0" port="16"></portdef>
+				<portdef name="pnt_flock_considersize" type="2" structure="1" group="0" instance="0" port="17"></portdef>
+				<portdef name="pnt_flock_ignoreratio" type="4" structure="1" group="0" instance="0" port="18"></portdef>
+				<portdef name="pnt_flock_cohesion" type="4" structure="1" group="0" instance="0" port="19"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">206</prop>
+					<prop name="posy">-169</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="46">
+				<param name="in" type="4" value="3.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-796</prop>
+					<prop name="posy">-210</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="47">
+				<param name="in" type="4" value="315.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-794</prop>
+					<prop name="posy">-461</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="48">
+				<param name="reference" type="31" value="self.PointVelocity"></param>
+				<param_ext name="reference" type="31" value="self.PointVelocity"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-852</prop>
+					<prop name="posy">-1103</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="49">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3211</prop>
+					<prop name="posy">906</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="50">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2904</prop>
+					<prop name="posy">1002</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="51">
+				<param name="size" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2983</prop>
+					<prop name="posy">1002</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="52">
+				<param name="value1" type="11" value="false"></param>
+				<param name="value2" type="11" value="false"></param>
+				<param name="value3" type="11" value="false"></param>
+				<param name="value4" type="11" value="false"></param>
+				<param name="value5" type="11" value="false"></param>
+				<param name="value6" type="11" value="false"></param>
+				<param name="value7" type="11" value="false"></param>
+				<param name="value8" type="11" value="false"></param>
+				<param name="value9" type="11" value="false"></param>
+				<param name="value10" type="11" value="false"></param>
+				<param name="value11" type="11" value="false"></param>
+				<param name="value12" type="11" value="false"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="1" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="value4" type="1" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="value5" type="1" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="value6" type="1" structure="1" group="0" instance="5" port="0"></portdef>
+				<portdef name="value7" type="1" structure="1" group="0" instance="6" port="0"></portdef>
+				<portdef name="value8" type="1" structure="1" group="0" instance="7" port="0"></portdef>
+				<portdef name="value9" type="1" structure="1" group="0" instance="8" port="0"></portdef>
+				<portdef name="value10" type="1" structure="1" group="0" instance="9" port="0"></portdef>
+				<portdef name="value11" type="1" structure="1" group="0" instance="10" port="0"></portdef>
+				<portdef name="value12" type="1" structure="1" group="0" instance="11" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-557</prop>
+					<prop name="posy">59</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-25" offsety="-19" sizex="175" sizey="19"><![CDATA[Parameters (as an Array of Bools)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="53">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-984</prop>
+					<prop name="posy">-550</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="54">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3311</prop>
+					<prop name="posy">1095</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="42" offsety="-43" sizex="250" sizey="19"><![CDATA[The flocking velocities.]]></comment>
+			</node>
+			<node type="PassThroughNode" index="55">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-827</prop>
+					<prop name="posy">-1965</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="1" offsety="-29" sizex="116" sizey="19"><![CDATA[Enable this compound]]></comment>
+			</node>
+			<node type="PassThroughNode" index="56">
+				<param name="in" type="3" value="10"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-796</prop>
+					<prop name="posy">-395</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="58">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2215</prop>
+					<prop name="posy">-245</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="61">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="11" value="false"></param>
+				<param name="iffalse" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2298</prop>
+					<prop name="posy">-320</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="62">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-830</prop>
+					<prop name="posy">-1013</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="63">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3212</prop>
+					<prop name="posy">734</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="64">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue.iftrue_x" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_y" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_z" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_x" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_y" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_z" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3214</prop>
+					<prop name="posy">1076</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="65">
+				<param name="reference" type="31" value="self.Scale"></param>
+				<param_ext name="reference" type="31" value="self.Scale"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1131</prop>
+					<prop name="posy">-1025</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Point ID" version="1.0" index="66">
+				<param name="In_Name_Reference" type="31" value="Self"></param>
+				<param_ext name="In_Name_Reference" type="31" value="Self"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-804</prop>
+					<prop name="posy">-803</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="67">
+				<param name="reference" type="31" value="self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-855</prop>
+					<prop name="posy">-1170</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="68">
+				<param name="reference" type="31" value="self.Orientation"></param>
+				<param_ext name="reference" type="31" value="self.Orientation"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-840</prop>
+					<prop name="posy">-901</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="69">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-798</prop>
+					<prop name="posy">-364</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="70">
+				<param name="reference" type="31" value="self.Size"></param>
+				<param_ext name="reference" type="31" value="self.Size"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-987</prop>
+					<prop name="posy">-968</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="71">
+				<param name="in" type="4" value="0.250000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-801</prop>
+					<prop name="posy">-315</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="72">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-796</prop>
+					<prop name="posy">-170</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="73">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3902</prop>
+					<prop name="posy">1458</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="74">
+				<param name="value" type="4" value="0.120000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-702</prop>
+					<prop name="posy">1928</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-203" offsety="0" sizex="79" sizey="19"><![CDATA[for debugging]]></comment>
+			</node>
+			<node type="SimulationStepNode" index="75">
+				<datablob category="ui_infos">
+					<prop name="posx">-764</prop>
+					<prop name="posy">1954</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-185" offsety="1" sizex="134" sizey="19"><![CDATA[simulation step  =  1 / fps]]></comment>
+			</node>
+			<node type="PassThroughNode" index="81">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-815</prop>
+					<prop name="posy">180</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-169" offsety="0" sizex="119" sizey="19"><![CDATA[Find closest Neighbors]]></comment>
+			</node>
+			<node type="PassThroughNode" index="82">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3308</prop>
+					<prop name="posy">925</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="40" offsety="-41" sizex="164" sizey="19"><![CDATA[The angles of the neighbors.]]></comment>
+			</node>
+			<node type="StringNode" index="83">
+				<param name="value.value_string" type="8" value="emFlock2: all Licenses in use -> switching to Trial Mode."></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">733</prop>
+					<prop name="posy">-1727</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="84">
+				<param name="value.value_string" type="8" value="emFlock2: Trial Mode (no license found)."></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">730</prop>
+					<prop name="posy">-1699</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="85">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1556</prop>
+					<prop name="posy">-477</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="86">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">679</prop>
+					<prop name="posy">-1882</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="87">
+				<param name="type" type="3" value="0"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1440</prop>
+					<prop name="posy">-1899</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="88">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1372</prop>
+					<prop name="posy">-1848</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="89">
+				<param name="value" type="3" value="-1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1443</prop>
+					<prop name="posy">-1814</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="90">
+				<param name="type" type="3" value="1"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1696</prop>
+					<prop name="posy">-1881</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="1" offsety="-25" sizex="68" sizey="19"><![CDATA[always true]]></comment>
+			</node>
+			<node type="IntegerNode" index="91">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1628</prop>
+					<prop name="posy">-1830</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="93">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1870</prop>
+					<prop name="posy">-643</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="94">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-818</prop>
+					<prop name="posy">-585</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="95">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1543</prop>
+					<prop name="posy">-568</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="LinearInterpolateNode" index="96">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1428</prop>
+					<prop name="posy">-554</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="97">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1628</prop>
+					<prop name="posy">-387</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="98">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<param name="value3" type="4" value="0.000000"></param>
+				<param name="value4" type="4" value="0.000000"></param>
+				<param name="value5" type="4" value="0.000000"></param>
+				<param name="value6" type="4" value="0.000000"></param>
+				<param name="value7" type="4" value="0.000000"></param>
+				<param name="value8" type="4" value="0.000000"></param>
+				<param name="value9" type="4" value="0.000000"></param>
+				<param name="value10" type="4" value="0.000000"></param>
+				<param name="value11" type="4" value="0.000000"></param>
+				<param name="value12" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="4" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="value4" type="4" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="value5" type="4" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="value6" type="4" structure="1" group="0" instance="5" port="0"></portdef>
+				<portdef name="value7" type="4" structure="1" group="0" instance="6" port="0"></portdef>
+				<portdef name="value8" type="4" structure="1" group="0" instance="7" port="0"></portdef>
+				<portdef name="value9" type="4" structure="1" group="0" instance="8" port="0"></portdef>
+				<portdef name="value10" type="4" structure="1" group="0" instance="9" port="0"></portdef>
+				<portdef name="value11" type="4" structure="1" group="0" instance="10" port="0"></portdef>
+				<portdef name="value12" type="4" structure="1" group="0" instance="11" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-550</prop>
+					<prop name="posy">1887</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-27" offsety="-19" sizex="188" sizey="19"><![CDATA[Parameters (as an Array of Floats)]]></comment>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="99">
+				<param name="size" type="3" value="0"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2980</prop>
+					<prop name="posy">308</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="100">
+				<param name="value.value_string" type="8" value="emFlock2: Okay."></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">837</prop>
+					<prop name="posy">-1753</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Find" index="101">
+				<param name="Value.Value_string" type="8" value=""></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param name="SubString.SubString_string" type="8" value="bak"></param>
+				<param name="SubString.SubString_uimode" type="8" value=""></param>
+				<param name="SubString.SubString_filepathseq" type="8" value=""></param>
+				<param name="SubString.SubString_filename" type="8" value=""></param>
+				<param name="SubStringStart" type="3" value="0"></param>
+				<param name="CaseSensitive" type="11" value="true"></param>
+				<param name="Find Sub String From Right" type="11" value="false"></param>
+				<portdef name="Value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="SubString" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="SubStringStart" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="CaseSensitive" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="Find Sub String From Right" type="1" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1300</prop>
+					<prop name="posy">-1817</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<datablob category="vis_1">
+					<prop name="colorb">0.370000</prop>
+					<prop name="colorg">0.676000</prop>
+					<prop name="colorr">0.753000</prop>
+					<prop name="displaymode">0</prop>
+					<prop name="enable">1</prop>
+					<prop name="offsetx">-32</prop>
+					<prop name="offsety">-36</prop>
+					<prop name="port">Value</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="102">
+				<param name="in1.in1_x" type="4" value="0.000000"></param>
+				<param name="in1.in1_y" type="4" value="0.000000"></param>
+				<param name="in1.in1_z" type="4" value="0.000000"></param>
+				<param name="in2.in2_x" type="4" value="0.000000"></param>
+				<param name="in2.in2_y" type="4" value="0.000000"></param>
+				<param name="in2.in2_z" type="4" value="0.000000"></param>
+				<portdef name="in1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-986</prop>
+					<prop name="posy">-1051</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="103">
+				<param name="value.value_x" type="4" value="1.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1109</prop>
+					<prop name="posy">-1000</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="104">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-816</prop>
+					<prop name="posy">262</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-210" offsety="0" sizex="155" sizey="19"><![CDATA[enable/disable emFlock2 node]]></comment>
+			</node>
+			<node type="PassThroughNode" index="105">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1727</prop>
+					<prop name="posy">-1950</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="106">
+				<param name="in" type="4" value="1.250000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1282</prop>
+					<prop name="posy">2101</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[collision radius]]></comment>
+			</node>
+			<node type="PassThroughNode" index="107">
+				<param name="in" type="4" value="5.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1281</prop>
+					<prop name="posy">2057</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[collision strength]]></comment>
+			</node>
+			<node type="ScalarNode" index="108">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-708</prop>
+					<prop name="posy">2079</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-70" offsety="0" sizex="47" sizey="19"><![CDATA[unused]]></comment>
+			</node>
+			<node type="IntegerNode" index="109">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-735</prop>
+					<prop name="posy">1326</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-58" offsety="0" sizex="47" sizey="19"><![CDATA[unused]]></comment>
+			</node>
+			<node type="BooleanNode" index="110">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-759</prop>
+					<prop name="posy">411</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-52" offsety="0" sizex="47" sizey="19"><![CDATA[unused]]></comment>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.800000" title="14876671" title_text="0" offsetx="183" offsety="-207" sizex="300" sizey="546"><![CDATA[Heart of Flock (c++ node)]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-1169" offsety="-1287" sizex="535" sizey="556"><![CDATA[The required "per point" inputs:
+
+point positions
+point velocities
+point scales
+point orientations
+point IDs]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="5449" background_alpha="0.494000" title="14876671" title_text="0" offsetx="136" offsety="-290" sizex="389" sizey="675"><![CDATA[.]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-1327" offsety="-47" sizex="962" sizey="2244"><![CDATA[The "per Object" Parameters.
+All Parameters are encapsulated into Arrays.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="2846" offsety="-32" sizex="790" sizey="1256"><![CDATA[OUTPUT]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-1020" offsety="-710" sizex="383" sizey="635"><![CDATA[The optional "per point" inputs:
+
+strength
+cutoff distances
+cutoff angles (0-360)
+.
+.
+etc.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="39347" background_alpha="0.225000" title="14876671" title_text="0" offsetx="113" offsety="-332" sizex="433" sizey="737"><![CDATA[.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="56" background_alpha="0.700000" title="14876671" title_text="0" offsetx="160" offsety="-250" sizex="343" sizey="612"><![CDATA[.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="636" offsety="-1960" sizex="1153" sizey="312"><![CDATA[licensing messages]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="3402" offsety="1419" sizex="589" sizey="151"><![CDATA[set velocities]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1958" offsety="-687" sizex="744" sizey="375"><![CDATA[mind emFly]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Cohesion_Strength" basename="Cohesion_Strength" portlabel="Cohesion_Strength" exposetype="single"> </port>
+			<port index="7" portname="boolean" username="Verbose" basename="Verbose" portlabel="Verbose" exposetype="single"> </port>
+			<port index="13" portname="in" username="Keep_in_Memory" basename="Keep-in-Memory" portlabel="Keep-in-Memory" exposetype="single"> </port>
+			<port index="14" portname="in" username="Distance" basename="Distance" portlabel="Distance" exposetype="single"> </port>
+			<port index="17" portname="out" username="Neighbor_Positions" basename="Neighbor Positions" portlabel="Neighbor Positions" exposetype="single"> </port>
+			<port index="20" portname="out" username="Point__Neighbor_Vectors" basename="Point->Neighbor Vectors" portlabel="Point->Neighbor Vectors" exposetype="single"> </port>
+			<port index="21" portname="out" username="Neighbor_IDs" basename="Neighbor IDs" portlabel="Neighbor IDs" exposetype="single"> </port>
+			<port index="24" portname="out" username="Neighbor_Distances" basename="Neighbor Distances" portlabel="Neighbor Distances" exposetype="single"> </port>
+			<port index="31" portname="out" username="Number_of_Neighbors" basename="Number of Neighbors" portlabel="Number of Neighbors" exposetype="single"> </port>
+			<port index="38" portname="condition" username="Multi_Processing__Neighboring_" basename="Multi-Processing (Neighboring)" portlabel="Multi-Processing (Neighboring)" exposetype="single"> </port>
+			<port index="40" portname="condition" username="Multi_Processing__Octree_Creation______" basename="Multi-Processing (Octree Creation)     " portlabel="Multi-Processing (Octree Creation)     " exposetype="single"> </port>
+			<port index="42" portname="in" username="Desired_Distances_to_Neighbors_____" basename="Desired Distances to Neighbors     " portlabel="Desired Distances to Neighbors     " exposetype="single"> </port>
+			<port index="43" portname="in" username="Privacy_Distance" basename="Privacy_Distance" portlabel="Privacy_Distance" exposetype="single"> </port>
+			<port index="44" portname="in" username="Angle_Falloff" basename="Angle Falloff" portlabel="Angle Falloff" exposetype="single"> </port>
+			<port index="46" portname="in" username="Privacy_Strength" basename="Privacy_Strength" portlabel="Privacy_Strength" exposetype="single"> </port>
+			<port index="47" portname="in" username="Angle" basename="Angle" portlabel="Angle" exposetype="single"> </port>
+			<port index="53" portname="in" username="Strength" basename="Strength" portlabel="Strength" exposetype="single"> </port>
+			<port index="54" portname="out" username="Flocking_Velocities" basename="Flocking Velocities" portlabel="Flocking Velocities" exposetype="single"> </port>
+			<port index="56" portname="in" username="Maximum_Number_of_Neighbors" basename="Maximum_Number_of_Neighbors" portlabel="Maximum_Number_of_Neighbors" exposetype="single"> </port>
+			<port index="69" portname="in" username="Size_Mode" basename="Size Mode" portlabel="Size Mode" exposetype="single"> </port>
+			<port index="71" portname="in" username="Ignore_smaller_Neighbors" basename="Ignore_smaller_Neighbors" portlabel="Ignore_smaller_Neighbors" exposetype="single"> </port>
+			<port index="72" portname="in" username="Velocity_Alignment" basename="Velocity_Alignment" portlabel="Velocity_Alignment" exposetype="single"> </port>
+			<port index="73" portname="result" username="Set_Flocking_Velocities" basename="Set Flocking Velocities" portlabel="Set Flocking Velocities" exposetype="single"> </port>
+			<port index="81" portname="in" username="Sort_Neighbors_by_Distance" basename="Sort Neighbors by Distance" portlabel="Sort Neighbors by Distance" exposetype="single"> </port>
+			<port index="82" portname="out" username="Neighbor_Angles" basename="Neighbor Angles" portlabel="Neighbor Angles" exposetype="single"> </port>
+			<port index="93" portname="in" username="Mind_emFly" basename="Mind emFly" portlabel="Mind emFly" exposetype="single"> </port>
+			<port index="105" portname="in" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="106" portname="in" username="Radius_Mul_" basename="Radius(Mul)" portlabel="Radius(Mul)" exposetype="single"> </port>
+			<port index="107" portname="in" username="Strength_" basename="Strength " portlabel="Strength " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="out" to_node="45" to_port="pnt_flock_cohesion"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="40" to_port="iffalse"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="38" to_port="iffalse"> </cnx>
+			<cnx from_node="2" from_port="Active" to_node="85" to_port="condition"> </cnx>
+			<cnx from_node="2" from_port="emFlock_Fader" to_node="85" to_port="iftrue"> </cnx>
+			<cnx from_node="12" from_port="Execute" to_node="73" to_port="iftrue"> </cnx>
+			<cnx from_node="15" from_port="Velocity" to_node="64" to_port="iffalse"> </cnx>
+			<cnx from_node="66" from_port="Point_ID" to_node="45" to_port="pntIDs"> </cnx>
+			<cnx from_node="7" from_port="integer" to_node="32" to_port="value1"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="35" to_port="value"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="32" to_port="value3"> </cnx>
+			<cnx from_node="13" from_port="out" to_node="32" to_port="value2"> </cnx>
+			<cnx from_node="14" from_port="out" to_node="45" to_port="pntcutoffdistances"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="99" to_port="value"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="26" to_port="value"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="28" to_port="value"> </cnx>
+			<cnx from_node="29" from_port="result" to_node="30" to_port="iffalse"> </cnx>
+			<cnx from_node="34" from_port="out" to_node="52" to_port="value2"> </cnx>
+			<cnx from_node="36" from_port="out" to_node="32" to_port="value5"> </cnx>
+			<cnx from_node="37" from_port="out" to_node="32" to_port="value6"> </cnx>
+			<cnx from_node="39" from_port="result" to_node="40" to_port="iftrue"> </cnx>
+			<cnx from_node="39" from_port="result" to_node="38" to_port="iftrue"> </cnx>
+			<cnx from_node="41" from_port="out" to_node="32" to_port="value7"> </cnx>
+			<cnx from_node="42" from_port="out" to_node="45" to_port="pnt_flock_wishdist"> </cnx>
+			<cnx from_node="43" from_port="out" to_node="45" to_port="pnt_flock_privacydist"> </cnx>
+			<cnx from_node="44" from_port="out" to_node="45" to_port="pntcutoffanglefalloffs"> </cnx>
+			<cnx from_node="46" from_port="out" to_node="45" to_port="pnt_flock_privacystrength"> </cnx>
+			<cnx from_node="48" from_port="value" to_node="45" to_port="pntvelocities"> </cnx>
+			<cnx from_node="51" from_port="array" to_node="49" to_port="iffalse"> </cnx>
+			<cnx from_node="99" from_port="array" to_node="25" to_port="iffalse"> </cnx>
+			<cnx from_node="101" from_port="Result" to_node="8" to_port="iffalse"> </cnx>
+			<cnx from_node="102" from_port="out" to_node="62" to_port="value"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="98" to_port="value1"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="52" to_port="value1"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="32" to_port="value4"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="73" to_port="condition"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="90" to_port="first"> </cnx>
+			<cnx from_node="25" from_port="result" to_node="21" to_port="in"> </cnx>
+			<cnx from_node="27" from_port="result" to_node="20" to_port="in"> </cnx>
+			<cnx from_node="30" from_port="result" to_node="31" to_port="in"> </cnx>
+			<cnx from_node="33" from_port="result" to_node="17" to_port="in"> </cnx>
+			<cnx from_node="38" from_port="result" to_node="41" to_port="in"> </cnx>
+			<cnx from_node="40" from_port="result" to_node="37" to_port="in"> </cnx>
+			<cnx from_node="49" from_port="result" to_node="82" to_port="in"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="49" to_port="condition"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="63" to_port="condition"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="30" to_port="condition"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="25" to_port="condition"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="33" to_port="condition"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="27" to_port="condition"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="64" to_port="condition"> </cnx>
+			<cnx from_node="63" from_port="result" to_node="24" to_port="in"> </cnx>
+			<cnx from_node="64" from_port="result" to_node="12" to_port="Velocity"> </cnx>
+			<cnx from_node="64" from_port="result" to_node="54" to_port="in"> </cnx>
+			<cnx from_node="83" from_port="result" to_node="9" to_port="case1"> </cnx>
+			<cnx from_node="84" from_port="result" to_node="9" to_port="default"> </cnx>
+			<cnx from_node="85" from_port="result" to_node="96" to_port="second"> </cnx>
+			<cnx from_node="100" from_port="result" to_node="9" to_port="case0"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="101" to_port="Value"> </cnx>
+			<cnx from_node="47" from_port="out" to_node="45" to_port="pntcutoffangles"> </cnx>
+			<cnx from_node="50" from_port="result" to_node="51" to_port="value"> </cnx>
+			<cnx from_node="53" from_port="out" to_node="94" to_port="value"> </cnx>
+			<cnx from_node="55" from_port="out" to_node="61" to_port="condition"> </cnx>
+			<cnx from_node="55" from_port="out" to_node="6" to_port="in"> </cnx>
+			<cnx from_node="56" from_port="out" to_node="45" to_port="pntmaxneighbors"> </cnx>
+			<cnx from_node="58" from_port="result" to_node="61" to_port="iffalse"> </cnx>
+			<cnx from_node="62" from_port="result" to_node="45" to_port="pntscales"> </cnx>
+			<cnx from_node="69" from_port="out" to_node="45" to_port="pnt_flock_considersize"> </cnx>
+			<cnx from_node="71" from_port="out" to_node="45" to_port="pnt_flock_ignoreratio"> </cnx>
+			<cnx from_node="72" from_port="out" to_node="45" to_port="pnt_flock_velalignment"> </cnx>
+			<cnx from_node="74" from_port="result" to_node="98" to_port="value2"> </cnx>
+			<cnx from_node="75" from_port="time" to_node="98" to_port="value3"> </cnx>
+			<cnx from_node="81" from_port="out" to_node="52" to_port="value3"> </cnx>
+			<cnx from_node="86" from_port="out" to_node="87" to_port="first"> </cnx>
+			<cnx from_node="86" from_port="out" to_node="9" to_port="condition"> </cnx>
+			<cnx from_node="87" from_port="result" to_node="8" to_port="condition"> </cnx>
+			<cnx from_node="88" from_port="result" to_node="87" to_port="second"> </cnx>
+			<cnx from_node="89" from_port="result" to_node="8" to_port="iftrue"> </cnx>
+			<cnx from_node="90" from_port="result" to_node="61" to_port="iftrue"> </cnx>
+			<cnx from_node="91" from_port="result" to_node="90" to_port="second"> </cnx>
+			<cnx from_node="93" from_port="out" to_node="96" to_port="blend"> </cnx>
+			<cnx from_node="94" from_port="result" to_node="45" to_port="pnt_flock_strength"> </cnx>
+			<cnx from_node="65" from_port="value" to_node="102" to_port="in1"> </cnx>
+			<cnx from_node="67" from_port="value" to_node="45" to_port="pntpositions"> </cnx>
+			<cnx from_node="68" from_port="value" to_node="45" to_port="pntorientations"> </cnx>
+			<cnx from_node="70" from_port="value" to_node="62" to_port="factor"> </cnx>
+			<cnx from_node="95" from_port="result" to_node="96" to_port="first"> </cnx>
+			<cnx from_node="96" from_port="result" to_node="94" to_port="factor"> </cnx>
+			<cnx from_node="97" from_port="result" to_node="85" to_port="iffalse"> </cnx>
+			<cnx from_node="103" from_port="result" to_node="102" to_port="in2"> </cnx>
+			<cnx from_node="104" from_port="out" to_node="52" to_port="value4"> </cnx>
+			<cnx from_node="105" from_port="out" to_node="55" to_port="in"> </cnx>
+			<cnx from_node="105" from_port="out" to_node="104" to_port="in"> </cnx>
+			<cnx from_node="106" from_port="out" to_node="98" to_port="value5"> </cnx>
+			<cnx from_node="107" from_port="out" to_node="98" to_port="value4"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value6"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value7"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value8"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value9"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value10"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value11"> </cnx>
+			<cnx from_node="108" from_port="result" to_node="98" to_port="value12"> </cnx>
+			<cnx from_node="109" from_port="result" to_node="32" to_port="value8"> </cnx>
+			<cnx from_node="109" from_port="result" to_node="32" to_port="value9"> </cnx>
+			<cnx from_node="109" from_port="result" to_node="32" to_port="value10"> </cnx>
+			<cnx from_node="109" from_port="result" to_node="32" to_port="value11"> </cnx>
+			<cnx from_node="109" from_port="result" to_node="32" to_port="value12"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value5"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value6"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value7"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value8"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value9"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value10"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value11"> </cnx>
+			<cnx from_node="110" from_port="result" to_node="52" to_port="value12"> </cnx>
+			<cnx from_node="26" from_port="array" to_node="63" to_port="iffalse"> </cnx>
+			<cnx from_node="28" from_port="array" to_node="27" to_port="iffalse"> </cnx>
+			<cnx from_node="32" from_port="array" to_node="45" to_port="paramsLong"> </cnx>
+			<cnx from_node="35" from_port="array" to_node="33" to_port="iffalse"> </cnx>
+			<cnx from_node="45" from_port="LMstate" to_node="86" to_port="in"> </cnx>
+			<cnx from_node="45" from_port="neighborNums" to_node="30" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="neighborIDs" to_node="25" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="neighborPositions" to_node="33" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="neighborVectors" to_node="27" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="neighborDistances" to_node="63" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="neighborAngles" to_node="49" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="flock_velocities" to_node="64" to_port="iftrue"> </cnx>
+			<cnx from_node="52" from_port="array" to_node="45" to_port="paramsBool"> </cnx>
+			<cnx from_node="98" from_port="array" to_node="45" to_port="paramsFloat"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Verbose"> </item>
+			<item type="input" name="Strength" min="0" max="1"> </item>
+			<item type="input" name="Mind_emFly" min="0" max="1"> </item>
+			<group type="input" name=" ">
+				<group type="input" name="View Cone">
+					<item type="input" name="Distance" min="0" max="50"> </item>
+					<item type="input" name="Angle" min="0" max="360"> </item>
+					<item type="input" name="Angle_Falloff" min="0" max="180"> </item>
+				</group>
+				<group type="input" name="Behavior">
+					<group type="input" name=" ">
+						<item type="input" name="Maximum_Number_of_Neighbors" min="0" max="50"> </item>
+						<item type="input" name="Size_Mode">
+							<enum value="-1"><![CDATA[Ignore Size]]></enum>
+							<enum value="0"><![CDATA[Consider Size (Coarse)]]></enum>
+							<enum value="1"><![CDATA[Consider Size (Medium)]]></enum>
+							<enum value="2"><![CDATA[Consider Size (Fine)]]></enum>
+							<enum value="3"><![CDATA[Consider Size (Best)]]></enum>
+						</item>
+						<item type="input" name="Ignore_smaller_Neighbors" min="0" max="1"> </item>
+					</group>
+					<group type="input" name=" ">
+						<item type="input" name="Desired_Distances_to_Neighbors_____" min="0" max="20"> </item>
+						<item type="input" name="Privacy_Distance" min="0" max="10"> </item>
+						<item type="input" name="Privacy_Strength" min="0" max="5"> </item>
+						<item type="input" name="Velocity_Alignment" min="0" max="1"> </item>
+						<item type="input" name="Cohesion_Strength" min="0" max="1"> </item>
+						<group type="input" name="Collision">
+							<item type="input" name="Strength_"> </item>
+							<item type="input" name="Radius_Mul_" min="1.0" max="2.0"> </item>
+						</group>
+					</group>
+				</group>
+			</group>
+			<group type="input" name="Miscellaneous">
+				<item type="input" name="Multi_Processing__Octree_Creation______"> </item>
+				<item type="input" name="Multi_Processing__Neighboring_"> </item>
+				<item type="input" name="Sort_Neighbors_by_Distance"> </item>
+				<item type="input" name="Keep_in_Memory">
+					<enum value="0"><![CDATA[Nothing]]></enum>
+					<enum value="1"><![CDATA[IDs only]]></enum>
+					<enum value="2"><![CDATA[IDs + Vectors + Distances]]></enum>
+				</item>
+			</group>
+			<item type="output" name="Number_of_Neighbors"> </item>
+			<item type="output" name="Neighbor_IDs"> </item>
+			<item type="output" name="Neighbor_Positions"> </item>
+			<item type="output" name="Point__Neighbor_Vectors"> </item>
+			<item type="output" name="Neighbor_Distances"> </item>
+			<item type="output" name="Neighbor_Angles"> </item>
+			<item type="output" name="Flocking_Velocities"> </item>
+			<item type="output" name="Set_Flocking_Velocities"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

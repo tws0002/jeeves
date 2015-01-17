@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Null to Ellipsoid" tasks="Mootzoid - emTools/Tools - Conversion" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="8437150">
+	<definition>
+		<nodes>
+			<node type="emTool _ Null to Box" version="1.0" index="0">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Scale" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">48</prop>
+					<prop name="posy">-358</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="0" portname="Position" username="Position" basename="Position" portlabel="Position" exposetype="single"> </port>
+			<port index="0" portname="Size" username="Radius" basename="Radius" portlabel="Radius" exposetype="single"> </port>
+			<port index="0" portname="Rotation" username="Rotation" basename="Rotation" portlabel="Rotation" exposetype="single"> </port>
+			<port index="0" portname="Scale" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+			<port index="0" portname="In_Name" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="input" name="Scale" min="0" max="2"> </item>
+			<item type="output" name="Position"> </item>
+			<item type="output" name="Radius"> </item>
+			<item type="output" name="Rotation"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

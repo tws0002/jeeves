@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emRPC4 __ Settings3 _ Particles" tasks="Mootzoid - emRPC4/Main" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" constructionmode="Current" backgroundcolor="5876389">
+	<definition>
+		<nodes>
+			<node type="emRPC4 __ Settings _ Particles" version="4.0" index="95">
+				<param name="Use_this_Particle_or_Strand" type="11" value="true"></param>
+				<param name="Strand_LOD" type="3" value="1"></param>
+				<param name="Strand_LOD_x2_for_Particle_to_first_Strand_Point" type="11" value="false"></param>
+				<param name="Shape" type="3" value="1"></param>
+				<param name="Drawing_Mode" type="3" value="0"></param>
+				<param name="Opacity" type="4" value="1.000000"></param>
+				<param name="Scale" type="4" value="1.000000"></param>
+				<param name="Number_of_virtual_Points" type="3" value="0"></param>
+				<param name="Shader" type="3" value="0"></param>
+				<param name="Lighting_Scale" type="4" value="1.000000"></param>
+				<param name="Illumigain" type="4" value="0.000000"></param>
+				<param name="Boost" type="4" value="0.200000"></param>
+				<param name="Use_" type="3" value="1"></param>
+				<param name="Custom_Size" type="4" value="1.000000"></param>
+				<param name="Use" type="3" value="1"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_red" type="4" value="1.000000"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_green" type="4" value="1.000000"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_blue" type="4" value="1.000000"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_alpha" type="4" value="1.000000"></param>
+				<param name="Amount" type="4" value="1.000000"></param>
+				<param name="Primary" type="11" value="true"></param>
+				<param name="Secondary" type="11" value="true"></param>
+				<param name="Cast" type="4" value="1.000000"></param>
+				<param name="Receive" type="4" value="1.000000"></param>
+				<param name="Calculation_Method" type="3" value="1"></param>
+				<param name="Cast_" type="4" value="1.000000"></param>
+				<param name="Receive_" type="4" value="1.000000"></param>
+				<param name="Cast__" type="4" value="1.000000"></param>
+				<param name="Receive__" type="4" value="1.000000"></param>
+				<param name="Illumigain_" type="4" value="0.000000"></param>
+				<param name="Emission" type="4" value="0.000000"></param>
+				<param name="Emission_RGB_Color.Emission_RGB_Color_red" type="4" value="1.000000"></param>
+				<param name="Emission_RGB_Color.Emission_RGB_Color_green" type="4" value="1.000000"></param>
+				<param name="Emission_RGB_Color.Emission_RGB_Color_blue" type="4" value="1.000000"></param>
+				<param name="Emission_RGB_Color.Emission_RGB_Color_alpha" type="4" value="1.000000"></param>
+				<param name="Add_Emission_to_final_Lighting" type="4" value="0.500000"></param>
+				<portdef name="Drawing_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shape" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Lighting_Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Boost" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Receive" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shader" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strand_LOD" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_RGBA_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Primary" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Receive__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Receive_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_this_Particle_or_Strand" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Add_Emission_to_final_Lighting" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Opacity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emission_RGB_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Illumigain" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Calculation_Method" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Secondary" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emission" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strand_LOD_x2_for_Particle_to_first_Strand_Point" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Illumigain_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Number_of_virtual_Points" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-330</prop>
+					<prop name="posy">-5310</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="95" portname="Particle___Strand_Settings" username="Particle___Strand_Settings" basename="Particle / Strand Settings" portlabel="Particle / Strand Settings" exposetype="single"> </port>
+			<port index="95" portname="Use_this_Particle_or_Strand" username="Use_this_Particle_or_Strand" basename="Use this Particle or Strand" portlabel="Use this Particle or Strand" exposetype="single"> </port>
+			<port index="95" portname="Drawing_Mode" username="Drawing_Mode" basename="Drawing-Mode" portlabel="Drawing-Mode" exposetype="single"> </port>
+			<port index="95" portname="Opacity" username="Opacity" basename="Opacity" portlabel="Opacity" exposetype="single"> </port>
+			<port index="95" portname="Scale" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+			<port index="95" portname="Number_of_virtual_Points" username="Number_of_virtual_Points" basename="Number-of-virtual-Points" portlabel="Number-of-virtual-Points" exposetype="single"> </port>
+			<port index="95" portname="Shape" username="Shape" basename="Shape" portlabel="Shape" exposetype="single"> </port>
+			<port index="95" portname="Shader" username="Shader" basename="Shader" portlabel="Shader" exposetype="single"> </port>
+			<port index="95" portname="Lighting_Scale" username="Lighting_Scale" basename="Lighting-Scale" portlabel="Lighting-Scale" exposetype="single"> </port>
+			<port index="95" portname="Use_" username="Use_" basename="Use " portlabel="Use " exposetype="single"> </port>
+			<port index="95" portname="Custom_Size" username="Custom_Size" basename="Custom Size" portlabel="Custom Size" exposetype="single"> </port>
+			<port index="95" portname="Use" username="Use" basename="Use" portlabel="Use" exposetype="single"> </port>
+			<port index="95" portname="Custom_RGBA_Color" username="Custom_RGBA_Color" basename="Custom RGBA Color" portlabel="Custom RGBA Color" exposetype="single"> </port>
+			<port index="95" portname="Cast" username="Cast" basename="Cast" portlabel="Cast" exposetype="single"> </port>
+			<port index="95" portname="Receive" username="Receive" basename="Receive" portlabel="Receive" exposetype="single"> </port>
+			<port index="95" portname="Cast_" username="Cast_" basename="Cast " portlabel="Cast " exposetype="single"> </port>
+			<port index="95" portname="Receive_" username="Receive_" basename="Receive " portlabel="Receive " exposetype="single"> </port>
+			<port index="95" portname="Cast__" username="Cast__" basename="Cast  " portlabel="Cast  " exposetype="single"> </port>
+			<port index="95" portname="Receive__" username="Receive__" basename="Receive  " portlabel="Receive  " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Use_this_Particle_or_Strand"> </item>
+			<group type="input" name=" ">
+				<group type="input" name="Drawing">
+					<item type="input" name="Shape">
+						<enum value="6"><![CDATA[Box (No Falloff)]]></enum>
+						<enum value="0"><![CDATA[Sphere (No Falloff)]]></enum>
+						<enum value="1"><![CDATA[Sphere (Linear Falloff)]]></enum>
+						<enum value="2"><![CDATA[Sphere (Square Root Falloff)]]></enum>
+						<enum value="3"><![CDATA[Sphere (Square Falloff)]]></enum>
+						<enum value="4"><![CDATA[Sphere (Cubic Falloff)]]></enum>
+						<enum value="5"><![CDATA[Sphere (Sine Falloff)]]></enum>
+					</item>
+					<item type="input" name="Drawing_Mode">
+						<enum value="0"><![CDATA[Overlay]]></enum>
+						<enum value="1"><![CDATA[Additive]]></enum>
+						<enum value="2"><![CDATA[Screen]]></enum>
+					</item>
+					<item type="input" name="Opacity" min="0" max="2"> </item>
+					<item type="input" name="Scale" min="0" max="2"> </item>
+					<item type="input" name="Number_of_virtual_Points" min="0" max="0"> </item>
+				</group>
+				<group type="input" name="Shading">
+					<item type="input" name="Shader">
+						<enum value="0"><![CDATA[Constant]]></enum>
+						<enum value="1"><![CDATA[Shaded (Simple, 1 Vector)]]></enum>
+						<enum value="2"><![CDATA[Shaded (Simple, 5 Vectors)]]></enum>
+						<enum value="3"><![CDATA[Shaded (Simple, 6 Vectors)]]></enum>
+						<enum value="4"><![CDATA[Shaded (Boost, 6 Vectors)]]></enum>
+					</item>
+					<item type="input" name="Lighting_Scale" min="0" max="2"> </item>
+				</group>
+				<group type="input" name="Particle Size">
+					<item type="input" name="Use_">
+						<enum value="0"><![CDATA[Current Size]]></enum>
+						<enum value="1"><![CDATA[Current Size * Custom Size]]></enum>
+						<enum value="2"><![CDATA[Pixels (Custom Size)]]></enum>
+					</item>
+					<item type="input" name="Custom_Size" min="0" max="2"> </item>
+				</group>
+				<group type="input" name="Particle Color">
+					<item type="input" name="Use">
+						<enum value="0"><![CDATA[Current Color]]></enum>
+						<enum value="1"><![CDATA[Current Color * Custom Color]]></enum>
+						<enum value="2"><![CDATA[Custom Color]]></enum>
+					</item>
+					<item type="input" name="Custom_RGBA_Color"> </item>
+				</group>
+			</group>
+			<group type="input" name="Shadows">
+				<item type="input" name="Cast" min="0" max="2"> </item>
+				<item type="input" name="Receive" min="0" max="2"> </item>
+			</group>
+			<group type="input" name="Ambient Occlusion">
+				<item type="input" name="Cast_" min="0" max="2"> </item>
+				<item type="input" name="Receive_" min="0" max="2"> </item>
+			</group>
+			<group type="input" name="Global Illumination">
+				<item type="input" name="Cast__" min="0" max="2"> </item>
+				<item type="input" name="Receive__" min="0" max="2"> </item>
+			</group>
+			<item type="output" name="Particle___Strand_Settings"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

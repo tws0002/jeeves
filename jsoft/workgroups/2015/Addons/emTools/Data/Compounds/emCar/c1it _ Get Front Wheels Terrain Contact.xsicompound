@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="c1it _ Get Front Wheels Terrain Contact" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="1961830">
+	<definition>
+		<nodes>
+			<node type="SelectInArrayNode" index="0">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="11" value="false"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="1" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">433</prop>
+					<prop name="posy">2759</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="1">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="11" value="false"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="1" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">433</prop>
+					<prop name="posy">2840</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BooleanToIntegerNode" index="2">
+				<param name="boolean" type="11" value="false"></param>
+				<portdef name="boolean" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">589</prop>
+					<prop name="posy">2778</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="3">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">363</prop>
+					<prop name="posy">2875</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="4">
+				<param name="value" type="4" value="0.500000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">961</prop>
+					<prop name="posy">2825</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="5">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">363</prop>
+					<prop name="posy">2794</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="6">
+				<param name="value1" type="3" value="0"></param>
+				<param name="value2" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">769</prop>
+					<prop name="posy">2778</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BooleanToIntegerNode" index="7">
+				<param name="boolean" type="11" value="false"></param>
+				<portdef name="boolean" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">586</prop>
+					<prop name="posy">2859</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="11">
+				<param name="reference" type="31" value="Self.Car_WheelHasTerrainContact"></param>
+				<param_ext name="reference" type="31" value="Self.Car_WheelHasTerrainContact"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-80</prop>
+					<prop name="posy">2871</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="13">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">896</prop>
+					<prop name="posy">2797</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="14">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1060</prop>
+					<prop name="posy">2762</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="334" offsety="2692" sizex="919" sizey="257"><![CDATA[amount of front wheel contact with the terrain:
+0: no contact, 0.5: one wheel contact, 1: two wheel contact.]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="14" portname="result" username="Front_Wheels_Terrain_Contact" basename="Front Wheels Terrain Contact" portlabel="Front Wheels Terrain Contact" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="11" from_port="value" to_node="0" to_port="array"> </cnx>
+			<cnx from_node="11" from_port="value" to_node="1" to_port="array"> </cnx>
+			<cnx from_node="2" from_port="integer" to_node="6" to_port="value1"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="1" to_port="index"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="14" to_port="factor"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="0" to_port="index"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="13" to_port="integer"> </cnx>
+			<cnx from_node="7" from_port="integer" to_node="6" to_port="value2"> </cnx>
+			<cnx from_node="13" from_port="scalar" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="2" to_port="boolean"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="7" to_port="boolean"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Front_Wheels_Terrain_Contact"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emTool _ Init slim Particle Data" tasks="" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="9216938">
+	<definition>
+		<nodes>
+			<node type="Set Data" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self.Init_Size"></param>
+				<param name="Reference1" type="31" value="Self.Init_Scale"></param>
+				<param name="Reference2" type="31" value="Self.Init_Color"></param>
+				<param name="Value" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_x" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_y" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_z" type="4" value="1.000000"></param>
+				<param name="Value2.Value2_red" type="4" value="0.700000"></param>
+				<param name="Value2.Value2_green" type="4" value="0.700000"></param>
+				<param name="Value2.Value2_blue" type="4" value="0.700000"></param>
+				<param name="Value2.Value2_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Init_Size"></param_ext>
+				<param_ext name="Reference1" type="31" value="Self.Init_Scale"></param_ext>
+				<param_ext name="Reference2" type="31" value="Self.Init_Color"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="16" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="512" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1075</prop>
+					<prop name="posy">124</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1542</prop>
+					<prop name="posy">-300</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="2">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Reference1" type="31" value="Self.Scale"></param>
+				<param name="Reference2" type="31" value="Self.Color"></param>
+				<param name="Reference3" type="31" value="Self.Shape"></param>
+				<param name="Reference4" type="31" value="Self.State_ID"></param>
+				<param name="Value" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_x" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_y" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_z" type="4" value="1.000000"></param>
+				<param name="Value2.Value2_red" type="4" value="0.700000"></param>
+				<param name="Value2.Value2_green" type="4" value="0.700000"></param>
+				<param name="Value2.Value2_blue" type="4" value="0.700000"></param>
+				<param name="Value2.Value2_alpha" type="4" value="1.000000"></param>
+				<param name="Value3" type="3" value="0"></param>
+				<param name="Value4" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<param_ext name="Reference1" type="31" value="Self.Scale"></param_ext>
+				<param_ext name="Reference2" type="31" value="Self.Color"></param_ext>
+				<param_ext name="Reference3" type="31" value="Self.Shape"></param_ext>
+				<param_ext name="Reference4" type="31" value="Self.State_ID"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="16" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="512" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value3" type="32768" structure="1" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<portdef name="Value4" type="2" structure="1" group="2" instance="4" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1081</prop>
+					<prop name="posy">-133</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="3">
+				<param name="in.in_x" type="4" value="1.000000"></param>
+				<param name="in.in_y" type="4" value="1.000000"></param>
+				<param name="in.in_z" type="4" value="1.000000"></param>
+				<portdef name="in" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1539</prop>
+					<prop name="posy">-270</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in.in_red" type="4" value="0.770000"></param>
+				<param name="in.in_green" type="4" value="0.770000"></param>
+				<param name="in.in_blue" type="4" value="0.770000"></param>
+				<param name="in.in_alpha" type="4" value="1.000000"></param>
+				<portdef name="in" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1538</prop>
+					<prop name="posy">-242</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1539</prop>
+					<prop name="posy">-188</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Execute" username="Set_Init_Data" basename="Set Init Data" portlabel="Set Init Data" exposetype="single"> </port>
+			<port index="1" portname="in" username="Size" basename="Size" portlabel="Size" exposetype="single"> </port>
+			<port index="2" portname="Execute" username="Set_Data" basename="Set Data" portlabel="Set Data" exposetype="single"> </port>
+			<port index="2" portname="Value3" username="Shape" basename="Shape" portlabel="Shape" exposetype="single"> </port>
+			<port index="3" portname="in" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+			<port index="4" portname="in" username="Color" basename="Color" portlabel="Color" exposetype="single"> </port>
+			<port index="5" portname="in" username="State_ID" basename="State_ID" portlabel="State_ID" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="out" to_node="0" to_port="Value1"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="2" to_port="Value1"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="Value"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="2" to_port="Value"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="2" to_port="Value4"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="0" to_port="Value2"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="2" to_port="Value2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Size"> </item>
+			<item type="input" name="Scale"> </item>
+			<item type="input" name="Color"> </item>
+			<item type="input" name="Shape"> </item>
+			<item type="input" name="State_ID"> </item>
+			<item type="output" name="Set_Data"> </item>
+			<item type="output" name="Set_Init_Data"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

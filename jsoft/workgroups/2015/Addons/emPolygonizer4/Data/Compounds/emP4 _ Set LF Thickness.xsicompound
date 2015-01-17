@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4 _ Set LF Thickness" tasks="Mootzoid - emPolygonizer4/Tools (Liquid Filaments)" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12556140">
+	<definition>
+		<nodes>
+			<node type="Set Data" version="1.0" index="0">
+				<param name="Reference" type="31" value="self._emP_LF_thickness"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_thickness"></param_ext>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-750</prop>
+					<prop name="posy">1272</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<datablob category="vis_1">
+					<prop name="displaymode">0</prop>
+					<prop name="enable">1</prop>
+					<prop name="port">Value</prop>
+					<prop name="selectedonly">1</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="1">
+				<param name="Reference" type="31" value="self._emP_LF_thickness"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_thickness"></param_ext>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-765</prop>
+					<prop name="posy">1066</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get LF Thickness" version="1.0" index="2">
+				<param name="Reference" type="31" value="self._emP_LF_thickness"></param>
+				<param_ext name="Reference" type="31" value="self._emP_LF_thickness"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1009</prop>
+					<prop name="posy">1303</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="3">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-888</prop>
+					<prop name="posy">1062</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1030" offsety="1233" sizex="448" sizey="161"><![CDATA[these unconnected nodes ensure that the ICE data gets evaluated]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="1" portname="Reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="3" portname="value" username="Thickness" basename="Thickness" portlabel="Thickness" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="Thickness" to_node="0" to_port="Value"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="1" to_port="Value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Thickness" min="0" max="1"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,1 @@
+Dart Throw v002 is a tool for distributing non-overlapping particles on meshes with user-specified distance radii. This new version supports weight maps for both erasing points and controlling the spacing.

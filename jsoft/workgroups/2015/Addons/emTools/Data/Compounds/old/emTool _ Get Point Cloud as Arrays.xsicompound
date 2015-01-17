@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Get Point Cloud as Arrays" tasks="Mootzoid - emTools/Tools - All Sorts of Things" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="11636889">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="PointPosition"></param>
+				<param_ext name="reference" type="31" value="PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1004</prop>
+					<prop name="posy">-138</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="PointVelocity"></param>
+				<param_ext name="reference" type="31" value="PointVelocity"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1004</prop>
+					<prop name="posy">42</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="Size"></param>
+				<param_ext name="reference" type="31" value="Size"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1004</prop>
+					<prop name="posy">-41</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSet" index="3">
+				<param name="Value" type="4" value="0.000000"></param>
+				<portdef name="Value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-451</prop>
+					<prop name="posy">-73</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSet" index="4">
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<portdef name="Value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-450</prop>
+					<prop name="posy">25</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSet" index="5">
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<portdef name="Value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-451</prop>
+					<prop name="posy">-155</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<portdef name="in" type="8192" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1240</prop>
+					<prop name="posy">-32</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="Color"></param>
+				<param_ext name="reference" type="31" value="Color"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1001</prop>
+					<prop name="posy">134</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSet" index="8">
+				<param name="Value.Value_red" type="4" value="0.000000"></param>
+				<param name="Value.Value_green" type="4" value="0.000000"></param>
+				<param name="Value.Value_blue" type="4" value="0.000000"></param>
+				<param name="Value.Value_alpha" type="4" value="1.000000"></param>
+				<portdef name="Value" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-452</prop>
+					<prop name="posy">117</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="9">
+				<param name="reference" type="31" value="Scale"></param>
+				<param_ext name="reference" type="31" value="Scale"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1000</prop>
+					<prop name="posy">223</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSet" index="10">
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<portdef name="Value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-452</prop>
+					<prop name="posy">206</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="11">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-732</prop>
+					<prop name="posy">-57</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="3" portname="Array" username="Size_Array" basename="Size Array" portlabel="Size Array" exposetype="single"> </port>
+			<port index="4" portname="Array" username="Velocity_Array" basename="Velocity Array" portlabel="Velocity Array" exposetype="single"> </port>
+			<port index="5" portname="Array" username="Position_Array" basename="Position Array" portlabel="Position Array" exposetype="single"> </port>
+			<port index="6" portname="in" username="In_Point_Cloud" basename="In Point Cloud" portlabel="In Point Cloud" exposetype="single"> </port>
+			<port index="11" portname="factor" username="Size_Scale" basename="Size Scale" portlabel="Size Scale" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="11" from_port="result" to_node="3" to_port="Value"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="9" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="2" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="7" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="0" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="1" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="5" to_port="Value"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="4" to_port="Value"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="11" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="8" to_port="Value"> </cnx>
+			<cnx from_node="9" from_port="value" to_node="10" to_port="Value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Point_Cloud"> </item>
+			<item type="input" name="Size_Scale" min="0" max="2"> </item>
+			<item type="output" name="Position_Array"> </item>
+			<item type="output" name="Size_Array"> </item>
+			<item type="output" name="Velocity_Array"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

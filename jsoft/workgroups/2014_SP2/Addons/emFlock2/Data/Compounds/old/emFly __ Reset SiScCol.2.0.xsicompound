@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFly __ Reset SiScCol" category="" tasks="Mootzoid/Flocking (b) Fly" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" versiontag="" constructionmode="Current" backgroundcolor="11028846">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="this.Init_Size"></param>
+				<param_ext name="reference" type="31" value="this.Init_Size"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1385</prop>
+					<prop name="posy">-159</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="this.Init_Color"></param>
+				<param_ext name="reference" type="31" value="this.Init_Color"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1389</prop>
+					<prop name="posy">33</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="this.Init_Scale"></param>
+				<param_ext name="reference" type="31" value="this.Init_Scale"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1393</prop>
+					<prop name="posy">-62</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Scale" version="1.0" index="3">
+				<param name="Reference" type="31" value="Self.Scale"></param>
+				<param name="Scale.Scale_x" type="4" value="2.000000"></param>
+				<param name="Scale.Scale_y" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_z" type="4" value="0.500000"></param>
+				<param_ext name="Reference" type="31" value="Self.Scale"></param_ext>
+				<portdef name="Scale" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1217</prop>
+					<prop name="posy">-63</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Color" version="1.0" index="4">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param name="Color.Color_red" type="4" value="0.000000"></param>
+				<param name="Color.Color_green" type="4" value="0.000000"></param>
+				<param name="Color.Color_blue" type="4" value="1.000000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1215</prop>
+					<prop name="posy">33</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Size" version="1.0" index="5">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Size" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1209</prop>
+					<prop name="posy">-160</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="6">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1017</prop>
+					<prop name="posy">-87</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="6" portname="execute" username="execute" basename="execute" portlabel="execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="value" to_node="5" to_port="Size"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="4" to_port="Color"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="3" to_port="Scale"> </cnx>
+			<cnx from_node="5" from_port="Execute" to_node="6" to_port="port1"> </cnx>
+			<cnx from_node="4" from_port="Execute" to_node="6" to_port="port3"> </cnx>
+			<cnx from_node="3" from_port="Execute" to_node="6" to_port="port2"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

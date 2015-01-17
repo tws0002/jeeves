@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title> RSMB tutorial - &copy; Revision FX </title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <link rel="stylesheet" href="lmstyle.css">
+</head>
+
+<body>
+
+<div class="greybox">
+	<div class="disclaim">
+		<a href="RSMBVectors_XSI.html">[.previous]</a>
+		<a href="RSMBXSIdoc.htm">[.home.]</a>
+		<a href="RSMBPro_XSI.html">[next.]</a>
+		&nbsp;&nbsp;Copyright 1999-2005
+		<a href="http://www.revisionfx.com"> RE:Vision Effects</a>, Inc
+
+	</div>
+	<div class="maintitle">
+		<font color="#800000">
+			RSMB for Softimage|XSI
+		</font>
+		  -
+		<font size="-1">
+			tutorials and exemple scenes
+		</font>
+    </div>
+</div>
+
+
+<div class="content">
+
+<h1>Important Notice : before loading the scenes in Softimage|XSI</h1>
+	<p>
+	you need to install lamaison's <a href="http://www.alamaison.fr/3d/lm_2DMV/lm_2DMV.htm">lm_2DMV</a> mental ray shader
+	in order to open the tutorial scenes rsmbvectors1 and 2.
+	</p>
+<h1>Tutorial scenes :</h1>
+	<p>you can load the tutorials from <a href="http://www.revisionfx.com/mblur/RSMBXSITutorials.htm">here</a></p>
+	<p>you should find the following scenes inside the tutorials database:</p>
+	<ul>
+		<li><b>rsmb.scn</b> : using RSMB in the FXtree
+  		</li>
+ 		 <li><b>rsmbvectors[1,2].scn</b> : using RSMBVectors for 2D motionblur
+  		</li>
+  		<li><b>rsmb_points.scn</b> : using RSMB with 2D geometries
+  		</li>
+	</ul>
+
+<h1>RSMBVectors scenes (rsmbvectors2.scn) </h1>
+	<h2>the scene has 4 passes</h2>
+	<p>
+		<img alt="" src="Images/passes.jpg">
+	</p>
+
+	<ul>
+	  <li><b>color_bg</b> : renders the background image sequence
+			without motion blur
+	  </li>
+	  <li><b>motionvector_bg</b> : renders the image sequence of
+			the background motion vectors
+	  </li>
+	  <li><b>color_fg</b> : renders the foreground image sequence
+			without motion blur
+	  </li>
+	  <li><b>motionvector_fg</b> : renders the image sequence of
+			the foreground motion vectors
+	  </li>
+	</ul>
+
+<h2>fxtree :</h2>
+
+	<p>
+		<img alt="" src="Images/RSMB_vectorsfxtree.jpg">
+	</p>
+	<p>
+			<img alt="" src="Images/RSMB_posteffect.jpg">
+	</p>
+	<p>
+		the fxtree in the scene shows you how to apply the 2D motion blur as a
+		post effect
+		on both foreground and background layer and composite them together.
+		Because motion blur is applied as a postprocess during compositing ,
+		you can modifiy
+		some layers in 2D before motionblur.(here with a painterly effect for
+		example)
+	</p>
+
+<h2>Workflow :</h2>
+	<p>
+		<img alt="" src="Images/renderallpasses.jpg">
+	</p>
+	<p>
+		<img alt="" src="Images/fxtreerender.jpg">
+	</p>
+	<p>
+		render all passes then process the output node of the
+		fxtree
+	</p>
+
+<h1>RSMB scene (rsmb.scn) </h1>
+	<p>
+		<img alt="" src="Images/RSMB_tut.jpg">
+	</p>
+	<p>
+		this scene shows you how to use RSMB , and RSMB with an external motion source<br>
+		to blur image sequences
+	</p>
+
+<h1>RSMB and 2D geometries scene (rsmb_points.scn) </h1>
+	<p>
+	you need to install lamaison's <a href="http://www.alamaison.fr/3d/lmProjectionPlane/lmProjectionPlane.html">lmProjectionPlane</a> plugin
+	in order to open the tutorial scene rsmb_points.
+	</p>
+	<p>
+		<img alt="" src="Images/RSMBpoints_tut.jpg">
+	</p>
+	<p>
+		this scene shows you how to use 2D geometries to help twixtor estimating the motion
+	</p>
+</div>
+
+
+<div class="greybox">
+	<div class="disclaim">
+		<a href="RSMBVectors_XSI.html">[.previous]</a>
+		<a href="RSMBXSIdoc.htm">[.home.]</a>
+		<a href="RSMBPro_XSI.html">[next.]</a>
+	</div>
+	<div class="disclaim">
+		Twixtor, ReelSmart, FieldsKit and SmoothKit are trademarks of RE:Vision Effects, Inc.
+		<br>
+		Softimage and XSI are registered trademarks of Avid Technology , Inc.
+		<br>
+		Copyright 1999-2005 RE:Vision Effects, Inc
+	</div>
+</div>
+
+</body>
+
+</html>

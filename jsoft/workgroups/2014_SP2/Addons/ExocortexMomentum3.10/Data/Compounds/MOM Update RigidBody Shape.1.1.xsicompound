@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Update RigidBody Shape" category="" tasks="Momentum/RigidBody" author="" url="" formatversion="1.4" compoundversion="1.1" versiontag="" backgroundcolor="899090">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="FirstValidNode" index="0">
+				<param name="in1" type="4" value="0.000000"></param>
+				<param name="in2" type="4" value="0.000000"></param>
+				<portdef name="in1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-663</prop>
+					<prop name="posy">803</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MOM_ShapeUpdate" index="1">
+				<param name="base" type="3" value="0"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="update" type="11" value="true"></param>
+				<param name="shape" type="3" value="0"></param>
+				<param name="frame" type="4" value="0.000000"></param>
+				<portdef name="base" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="update" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="shape" type="32768" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="frame" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-426</prop>
+					<prop name="posy">564</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CurrentTimeNode" index="2">
+				<param name="globaltime" type="11" value="true"></param>
+				<portdef name="globaltime" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-930</prop>
+					<prop name="posy">949</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetElementIndicesNode" index="3">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-870</prop>
+					<prop name="posy">641</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="4">
+				<param name="in1" type="3" value="0"></param>
+				<param name="in2" type="3" value="0"></param>
+				<portdef name="in1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-663</prop>
+					<prop name="posy">567</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SimulationStepNode" index="5">
+				<datablob category="ui_infos">
+					<prop name="posx">-1074</prop>
+					<prop name="posy">897</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="6">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="divideby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-888</prop>
+					<prop name="posy">795</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="self.MomentumBasis"></param>
+				<param_ext name="reference" type="31" value="self.MomentumBasis"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-706</prop>
+					<prop name="posy">420</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="8">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Value" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Value" type="2" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-149</prop>
+					<prop name="posy">505</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="9">
+				<param name="reference" type="31" value="self.ID"></param>
+				<param_ext name="reference" type="31" value="self.ID"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-827</prop>
+					<prop name="posy">532</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="10">
+				<param name="reference" type="31" value="self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1065</prop>
+					<prop name="posy">641</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="11">
+				<param name="reference" type="31" value="self.ShapeInstanceTime"></param>
+				<param_ext name="reference" type="31" value="self.ShapeInstanceTime"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1157</prop>
+					<prop name="posy">779</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="12">
+				<param name="reference" type="31" value="self.Shape"></param>
+				<param_ext name="reference" type="31" value="self.Shape"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-694</prop>
+					<prop name="posy">691</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="update" username="update" basename="update" portlabel="update" exposetype="single"> </port>
+			<port index="8" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="out_base" to_node="8" to_port="Value"> </cnx>
+			<cnx from_node="2" from_port="time" to_node="0" to_port="in2"> </cnx>
+			<cnx from_node="3" from_port="indices" to_node="4" to_port="in2"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="1" to_port="id"> </cnx>
+			<cnx from_node="5" from_port="time" to_node="6" to_port="divideby"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="0" to_port="in1"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="1" to_port="base"> </cnx>
+			<cnx from_node="7" from_port="outname" to_node="8" to_port="In_Name"> </cnx>
+			<cnx from_node="9" from_port="value" to_node="4" to_port="in1"> </cnx>
+			<cnx from_node="10" from_port="value" to_node="3" to_port="value"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="1" to_port="frame"> </cnx>
+			<cnx from_node="11" from_port="value" to_node="6" to_port="value"> </cnx>
+			<cnx from_node="12" from_port="value" to_node="1" to_port="shape"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="update"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

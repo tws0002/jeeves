@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFluid4 _ Emit Density" tasks="Mootzoid - emFluid4/Tools" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" constructionmode="Current" backgroundcolor="5678214">
+	<definition>
+		<nodes>
+			<node type="emFluid4 ___ Emit Data from SRT" version="4.0" index="0">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Size" type="4" value="1.000000"></param>
+				<param name="Multiply_Size_by_global_Z_Scale" type="11" value="true"></param>
+				<param name="Emit_Fuel" type="11" value="false"></param>
+				<param name="Emit_Heat" type="11" value="false"></param>
+				<param name="Emit_Oxygen" type="11" value="false"></param>
+				<param name="Emit_Density" type="11" value="true"></param>
+				<param name="Emit_Velocity" type="11" value="false"></param>
+				<param name="Fuel" type="4" value="0.010000"></param>
+				<param name="Auto_Ignition_for_freshly_emitted_Fuel____" type="11" value="true"></param>
+				<param name="Use_Single_Frame_Fuel____" type="11" value="true"></param>
+				<param name="Heat" type="4" value="5000.000000"></param>
+				<param name="Oxygen" type="4" value="5.000000"></param>
+				<param name="Density" type="4" value="200.000000"></param>
+				<param name="Velocity" type="4" value="15.000000"></param>
+				<param name="Direction_of_Velocity" type="3" value="2"></param>
+				<param name="Custom_Direction_Vector.Custom_Direction_Vector_x" type="4" value="0.000000"></param>
+				<param name="Custom_Direction_Vector.Custom_Direction_Vector_y" type="4" value="1.000000"></param>
+				<param name="Custom_Direction_Vector.Custom_Direction_Vector_z" type="4" value="0.000000"></param>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emit_Velocity" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emit_Fuel" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Auto_Ignition_for_freshly_emitted_Fuel____" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Heat" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Name__Position_" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Oxygen" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emit_Density" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emit_Oxygen" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fuel" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Direction_of_Velocity" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Direction_Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Emit_Heat" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multiply_Size_by_global_Z_Scale" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_Single_Frame_Fuel____" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">480</prop>
+					<prop name="posy">64</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Active" username="Active" basename="Active" portlabel="Active" exposetype="single"> </port>
+			<port index="0" portname="In_Name__Position_" username="In_Name__Position_" basename="In Name (Position)" portlabel="In Name (Position)" exposetype="single"> </port>
+			<port index="0" portname="Size" username="Size" basename="Size" portlabel="Size" exposetype="single"> </port>
+			<port index="0" portname="Multiply_Size_by_global_Z_Scale" username="Multiply_Size_by_global_Z_Scale" basename="Multiply Size by global Z-Scale" portlabel="Multiply Size by global Z-Scale" exposetype="single"> </port>
+			<port index="0" portname="Data" username="Data" basename="Data" portlabel="Data" exposetype="single"> </port>
+			<port index="0" portname="Density" username="Amount" basename="Amount" portlabel="Amount" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Active"> </item>
+			<item type="input" name="In_Name__Position_"> </item>
+			<item type="input" name="Size"> </item>
+			<item type="input" name="Multiply_Size_by_global_Z_Scale"> </item>
+			<group type="input" name="Density">
+				<item type="input" name="Amount"> </item>
+			</group>
+			<item type="output" name="Data"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

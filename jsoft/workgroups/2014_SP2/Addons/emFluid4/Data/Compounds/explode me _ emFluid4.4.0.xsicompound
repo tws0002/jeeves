@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="explode me _ emFluid4" tasks="Mootzoid - emFluid4/Main" formatversion="1.4" compoundversion="4.0">
+	<definition>
+		<nodes>
+			<node type="emFluid4 _ Solver" version="6.0" index="0">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Weight" type="4" value="1.000000"></param>
+				<param name="Multithreading" type="11" value="true"></param>
+				<param name="Global_Simulation_Start_Frame" type="3" value="3"></param>
+				<param name="Memory_Limit__MByte_" type="3" value="2048"></param>
+				<param name="Box_Mode" type="3" value="3"></param>
+				<param name="Primary_Index" type="3" value="0"></param>
+				<param name="Velocity_" type="4" value="0.250000"></param>
+				<param name="Waste" type="4" value="0.001000"></param>
+				<param name="Consider_Point_Cloud_Bounding_Box" type="11" value="false"></param>
+				<param name="Cell_Size_" type="4" value="1.000000"></param>
+				<param name="Viscosity" type="4" value="0.010000"></param>
+				<param name="Vorticity" type="4" value="5.000000"></param>
+				<param name="Gravity" type="4" value="0.015000"></param>
+				<param name="In_Behavior" type="4" value="0.000000"></param>
+				<param name="Multiplier" type="4" value="1.000000"></param>
+				<param name="Anti_Stratification" type="4" value="0.050000"></param>
+				<param name="Falloff" type="4" value="0.000000"></param>
+				<param name="Avoidance_Strength" type="4" value="1.500000"></param>
+				<param name="Avoidance_Thickness" type="4" value="2.500000"></param>
+				<param name="Close_Top" type="11" value="true"></param>
+				<param name="Close_Bottom" type="11" value="true"></param>
+				<param name="Close_Left" type="11" value="true"></param>
+				<param name="Close_Right" type="11" value="true"></param>
+				<param name="Close_Front" type="11" value="true"></param>
+				<param name="Close_Back" type="11" value="true"></param>
+				<param name="In_Data_1.In_Data_1_x" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_y" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_z" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_w" type="4" value="0.000000"></param>
+				<param name="In_Data_2.In_Data_2_x" type="4" value="0.000000"></param>
+				<param name="In_Data_2.In_Data_2_y" type="4" value="0.000000"></param>
+				<param name="In_Data_2.In_Data_2_z" type="4" value="0.000000"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Weight" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Global_Simulation_Start_Frame" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cell_Size_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Viscosity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Vorticity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Gravity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Behavior" type="4" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multiplier" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Anti_Stratification" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Data_1" type="32" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Data_2" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Top" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Bottom" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Left" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Right" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Front" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Back" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Fluid_Box_SRT_0" type="8192" structure="1" group="2" instance="0" port="0" groupname="In Fluid Box SRT 0"></portdef>
+				<portdef name="Primary_Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Box_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Falloff" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Avoidance_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Avoidance_Thickness" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Consider_Point_Cloud_Bounding_Box" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Memory_Limit__MByte_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multithreading" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">735</prop>
+					<prop name="posy">-1696</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 _ Main" version="4.0" index="1">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Delete_Particles_at_Age_Limit" type="11" value="true"></param>
+				<param name="Set_Particle_Velocity_" type="11" value="true"></param>
+				<param name="Visualize_Grid_Cells_" type="11" value="false"></param>
+				<param name="Create_Particles_" type="11" value="true"></param>
+				<portdef name="Set_Particle_Velocity_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Particle_Velocity" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Visualize_Grid_Cells" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Visualize_Grid_Cells_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Create_Particles_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Create_Particles" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_1" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute 1"></portdef>
+				<portdef name="Delete_Particles_at_Age_Limit" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1358</prop>
+					<prop name="posy">-1792</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 __ Particle Size and Color" version="4.0" index="2">
+				<param name="Gradient_.interp" type="3" value="1"></param>
+				<param name="Gradient_.color1.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color1.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color1.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color1.a" type="5" value="0.250000"></param>
+				<param name="Gradient_.pos1" type="5" value="0.000000"></param>
+				<param name="Gradient_.mid1" type="5" value="0.500000"></param>
+				<param name="Gradient_.color2.r" type="5" value="0.873000"></param>
+				<param name="Gradient_.color2.g" type="5" value="0.400000"></param>
+				<param name="Gradient_.color2.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color2.a" type="5" value="0.765000"></param>
+				<param name="Gradient_.pos2" type="5" value="0.524164"></param>
+				<param name="Gradient_.mid2" type="5" value="0.690873"></param>
+				<param name="Gradient_.color3.r" type="5" value="1.000000"></param>
+				<param name="Gradient_.color3.g" type="5" value="0.976000"></param>
+				<param name="Gradient_.color3.b" type="5" value="0.564000"></param>
+				<param name="Gradient_.color3.a" type="5" value="0.876000"></param>
+				<param name="Gradient_.pos3" type="5" value="0.657588"></param>
+				<param name="Gradient_.mid3" type="5" value="0.244444"></param>
+				<param name="Gradient_.color4.r" type="5" value="0.273000"></param>
+				<param name="Gradient_.color4.g" type="5" value="0.085000"></param>
+				<param name="Gradient_.color4.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color4.a" type="5" value="0.606000"></param>
+				<param name="Gradient_.pos4" type="5" value="0.348754"></param>
+				<param name="Gradient_.mid4" type="5" value="0.500000"></param>
+				<param name="Gradient_.color5.r" type="5" value="0.139000"></param>
+				<param name="Gradient_.color5.g" type="5" value="0.139000"></param>
+				<param name="Gradient_.color5.b" type="5" value="0.139000"></param>
+				<param name="Gradient_.color5.a" type="5" value="0.618000"></param>
+				<param name="Gradient_.pos5" type="5" value="0.142349"></param>
+				<param name="Gradient_.mid5" type="5" value="0.500000"></param>
+				<param name="Gradient_.color6.r" type="5" value="1.000000"></param>
+				<param name="Gradient_.color6.g" type="5" value="1.000000"></param>
+				<param name="Gradient_.color6.b" type="5" value="1.000000"></param>
+				<param name="Gradient_.color6.a" type="5" value="0.222000"></param>
+				<param name="Gradient_.pos6" type="5" value="1.000000"></param>
+				<param name="Gradient_.mid6" type="5" value="0.500000"></param>
+				<param name="Gradient_.color7.r" type="5" value="0.992003"></param>
+				<param name="Gradient_.color7.g" type="5" value="0.981998"></param>
+				<param name="Gradient_.color7.b" type="5" value="0.672963"></param>
+				<param name="Gradient_.color7.a" type="5" value="0.948517"></param>
+				<param name="Gradient_.pos7" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid7" type="5" value="0.500000"></param>
+				<param name="Gradient_.color8.r" type="5" value="1.000000"></param>
+				<param name="Gradient_.color8.g" type="5" value="0.985000"></param>
+				<param name="Gradient_.color8.b" type="5" value="0.846000"></param>
+				<param name="Gradient_.color8.a" type="5" value="0.444000"></param>
+				<param name="Gradient_.pos8" type="5" value="0.866667"></param>
+				<param name="Gradient_.mid8" type="5" value="0.500000"></param>
+				<param name="Gradient_.color9.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color9.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color9.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color9.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos9" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid9" type="5" value="0.500000"></param>
+				<param name="Gradient_.color10.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color10.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color10.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color10.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos10" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid10" type="5" value="0.500000"></param>
+				<param name="Gradient_.color11.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color11.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color11.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color11.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos11" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid11" type="5" value="0.500000"></param>
+				<param name="Gradient_.color12.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color12.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color12.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color12.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos12" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid12" type="5" value="0.500000"></param>
+				<param name="Gradient_.color13.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color13.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color13.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color13.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos13" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid13" type="5" value="0.500000"></param>
+				<param name="Gradient_.color14.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color14.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color14.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color14.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos14" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid14" type="5" value="0.500000"></param>
+				<param name="Gradient_.color15.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color15.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color15.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color15.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos15" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid15" type="5" value="0.500000"></param>
+				<param name="Gradient_.color16.r" type="5" value="0.000000"></param>
+				<param name="Gradient_.color16.g" type="5" value="0.000000"></param>
+				<param name="Gradient_.color16.b" type="5" value="0.000000"></param>
+				<param name="Gradient_.color16.a" type="5" value="0.000000"></param>
+				<param name="Gradient_.pos16" type="5" value="-1.000000"></param>
+				<param name="Gradient_.mid16" type="5" value="0.500000"></param>
+				<param name="Gradient__.interp" type="3" value="1"></param>
+				<param name="Gradient__.color1.r" type="5" value="0.330000"></param>
+				<param name="Gradient__.color1.g" type="5" value="0.330000"></param>
+				<param name="Gradient__.color1.b" type="5" value="0.330000"></param>
+				<param name="Gradient__.color1.a" type="5" value="1.000000"></param>
+				<param name="Gradient__.pos1" type="5" value="0.272374"></param>
+				<param name="Gradient__.mid1" type="5" value="0.500000"></param>
+				<param name="Gradient__.color2.r" type="5" value="0.853000"></param>
+				<param name="Gradient__.color2.g" type="5" value="0.735000"></param>
+				<param name="Gradient__.color2.b" type="5" value="0.346000"></param>
+				<param name="Gradient__.color2.a" type="5" value="0.735000"></param>
+				<param name="Gradient__.pos2" type="5" value="0.809339"></param>
+				<param name="Gradient__.mid2" type="5" value="0.690873"></param>
+				<param name="Gradient__.color3.r" type="5" value="0.600000"></param>
+				<param name="Gradient__.color3.g" type="5" value="0.700000"></param>
+				<param name="Gradient__.color3.b" type="5" value="0.800000"></param>
+				<param name="Gradient__.color3.a" type="5" value="1.000000"></param>
+				<param name="Gradient__.pos3" type="5" value="0.529183"></param>
+				<param name="Gradient__.mid3" type="5" value="0.540856"></param>
+				<param name="Gradient__.color4.r" type="5" value="0.150000"></param>
+				<param name="Gradient__.color4.g" type="5" value="0.150000"></param>
+				<param name="Gradient__.color4.b" type="5" value="0.150000"></param>
+				<param name="Gradient__.color4.a" type="5" value="1.000000"></param>
+				<param name="Gradient__.pos4" type="5" value="0.000000"></param>
+				<param name="Gradient__.mid4" type="5" value="0.500000"></param>
+				<param name="Gradient__.color5.r" type="5" value="0.139000"></param>
+				<param name="Gradient__.color5.g" type="5" value="0.139000"></param>
+				<param name="Gradient__.color5.b" type="5" value="0.139000"></param>
+				<param name="Gradient__.color5.a" type="5" value="0.618000"></param>
+				<param name="Gradient__.pos5" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid5" type="5" value="0.500000"></param>
+				<param name="Gradient__.color6.r" type="5" value="0.968000"></param>
+				<param name="Gradient__.color6.g" type="5" value="1.000000"></param>
+				<param name="Gradient__.color6.b" type="5" value="1.000000"></param>
+				<param name="Gradient__.color6.a" type="5" value="0.467000"></param>
+				<param name="Gradient__.pos6" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid6" type="5" value="0.500000"></param>
+				<param name="Gradient__.color7.r" type="5" value="0.984436"></param>
+				<param name="Gradient__.color7.g" type="5" value="0.987673"></param>
+				<param name="Gradient__.color7.b" type="5" value="1.000000"></param>
+				<param name="Gradient__.color7.a" type="5" value="1.000000"></param>
+				<param name="Gradient__.pos7" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid7" type="5" value="0.500000"></param>
+				<param name="Gradient__.color8.r" type="5" value="0.968000"></param>
+				<param name="Gradient__.color8.g" type="5" value="1.000000"></param>
+				<param name="Gradient__.color8.b" type="5" value="1.000000"></param>
+				<param name="Gradient__.color8.a" type="5" value="0.794000"></param>
+				<param name="Gradient__.pos8" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid8" type="5" value="0.500000"></param>
+				<param name="Gradient__.color9.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color9.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color9.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color9.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos9" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid9" type="5" value="0.500000"></param>
+				<param name="Gradient__.color10.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color10.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color10.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color10.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos10" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid10" type="5" value="0.500000"></param>
+				<param name="Gradient__.color11.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color11.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color11.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color11.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos11" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid11" type="5" value="0.500000"></param>
+				<param name="Gradient__.color12.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color12.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color12.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color12.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos12" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid12" type="5" value="0.500000"></param>
+				<param name="Gradient__.color13.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color13.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color13.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color13.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos13" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid13" type="5" value="0.500000"></param>
+				<param name="Gradient__.color14.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color14.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color14.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color14.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos14" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid14" type="5" value="0.500000"></param>
+				<param name="Gradient__.color15.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color15.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color15.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color15.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos15" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid15" type="5" value="0.500000"></param>
+				<param name="Gradient__.color16.r" type="5" value="0.000000"></param>
+				<param name="Gradient__.color16.g" type="5" value="0.000000"></param>
+				<param name="Gradient__.color16.b" type="5" value="0.000000"></param>
+				<param name="Gradient__.color16.a" type="5" value="0.000000"></param>
+				<param name="Gradient__.pos16" type="5" value="-1.000000"></param>
+				<param name="Gradient__.mid16" type="5" value="0.500000"></param>
+				<param name="Gradient.interp" type="3" value="1"></param>
+				<param name="Gradient.color1.r" type="5" value="0.158832"></param>
+				<param name="Gradient.color1.g" type="5" value="0.154086"></param>
+				<param name="Gradient.color1.b" type="5" value="0.129168"></param>
+				<param name="Gradient.color1.a" type="5" value="0.621000"></param>
+				<param name="Gradient.pos1" type="5" value="0.000000"></param>
+				<param name="Gradient.mid1" type="5" value="0.520000"></param>
+				<param name="Gradient.color2.r" type="5" value="0.111000"></param>
+				<param name="Gradient.color2.g" type="5" value="0.065000"></param>
+				<param name="Gradient.color2.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color2.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos2" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid2" type="5" value="0.458878"></param>
+				<param name="Gradient.color3.r" type="5" value="0.850000"></param>
+				<param name="Gradient.color3.g" type="5" value="0.778000"></param>
+				<param name="Gradient.color3.b" type="5" value="0.601000"></param>
+				<param name="Gradient.color3.a" type="5" value="0.961000"></param>
+				<param name="Gradient.pos3" type="5" value="0.365759"></param>
+				<param name="Gradient.mid3" type="5" value="0.583333"></param>
+				<param name="Gradient.color4.r" type="5" value="1.000000"></param>
+				<param name="Gradient.color4.g" type="5" value="0.816000"></param>
+				<param name="Gradient.color4.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color4.a" type="5" value="0.542000"></param>
+				<param name="Gradient.pos4" type="5" value="1.000000"></param>
+				<param name="Gradient.mid4" type="5" value="0.500000"></param>
+				<param name="Gradient.color5.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color5.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color5.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color5.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos5" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid5" type="5" value="0.500000"></param>
+				<param name="Gradient.color6.r" type="5" value="1.000000"></param>
+				<param name="Gradient.color6.g" type="5" value="0.987000"></param>
+				<param name="Gradient.color6.b" type="5" value="0.843000"></param>
+				<param name="Gradient.color6.a" type="5" value="0.895000"></param>
+				<param name="Gradient.pos6" type="5" value="0.478599"></param>
+				<param name="Gradient.mid6" type="5" value="0.500000"></param>
+				<param name="Gradient.color7.r" type="5" value="0.984436"></param>
+				<param name="Gradient.color7.g" type="5" value="0.987673"></param>
+				<param name="Gradient.color7.b" type="5" value="1.000000"></param>
+				<param name="Gradient.color7.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid7" type="5" value="0.500000"></param>
+				<param name="Gradient.color8.r" type="5" value="1.000000"></param>
+				<param name="Gradient.color8.g" type="5" value="1.000000"></param>
+				<param name="Gradient.color8.b" type="5" value="1.000000"></param>
+				<param name="Gradient.color8.a" type="5" value="0.641000"></param>
+				<param name="Gradient.pos8" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid8" type="5" value="0.519608"></param>
+				<param name="Gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid9" type="5" value="0.500000"></param>
+				<param name="Gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid10" type="5" value="0.500000"></param>
+				<param name="Gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid11" type="5" value="0.500000"></param>
+				<param name="Gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid12" type="5" value="0.500000"></param>
+				<param name="Gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid13" type="5" value="0.500000"></param>
+				<param name="Gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid14" type="5" value="0.500000"></param>
+				<param name="Gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid15" type="5" value="0.500000"></param>
+				<param name="Gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid16" type="5" value="0.500000"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Heat_from_Fluid_Solver" type="4" value="0.000000"></param>
+				<param name="Scale_Size__" type="4" value="0.500000"></param>
+				<param name="Start__" type="4" value="0.000000"></param>
+				<param name="End__" type="4" value="400.000000"></param>
+				<param name="Scale_Alpha__" type="4" value="0.050000"></param>
+				<param name="Scale_Heat__" type="4" value="1.000000"></param>
+				<param name="Cooling__" type="4" value="1.000000"></param>
+				<param name="Fade_Alpha_by_Particle_Age_Percentage__" type="11" value="true"></param>
+				<param name="Scale_Size_" type="4" value="0.250000"></param>
+				<param name="Scale_Alpha_" type="4" value="0.250000"></param>
+				<param name="Scale_Heat_" type="4" value="1.000000"></param>
+				<param name="Cooling_" type="4" value="1.000000"></param>
+				<param name="Fade_Alpha_by_Particle_Age_Percentage_" type="11" value="true"></param>
+				<param name="Scale_Size" type="4" value="0.200000"></param>
+				<param name="Scale_Alpha" type="4" value="0.500000"></param>
+				<param name="Scale_Heat" type="4" value="1.000000"></param>
+				<param name="Cooling" type="4" value="1.000000"></param>
+				<param name="Fade_Alpha_by_Particle_Age_Percentage" type="11" value="true"></param>
+				<portdef name="Fade_Alpha_by_Particle_Age_Percentage__" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cooling__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Alpha__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Heat" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Size_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Size__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Heat_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cooling_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cooling" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fade_Alpha_by_Particle_Age_Percentage_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Alpha_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Heat_from_Fluid_Solver" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Alpha" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fade_Alpha_by_Particle_Age_Percentage" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale_Heat__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1044</prop>
+					<prop name="posy">-1384</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 __ Particle Emitter" version="4.0" index="3">
+				<param name="Smoke_Positions.Smoke_Positions_x" type="4" value="0.000000"></param>
+				<param name="Smoke_Positions.Smoke_Positions_y" type="4" value="0.000000"></param>
+				<param name="Smoke_Positions.Smoke_Positions_z" type="4" value="0.000000"></param>
+				<param name="Flame_Positions.Flame_Positions_x" type="4" value="0.000000"></param>
+				<param name="Flame_Positions.Flame_Positions_y" type="4" value="0.000000"></param>
+				<param name="Flame_Positions.Flame_Positions_z" type="4" value="0.000000"></param>
+				<param name="Waste_Positions.Waste_Positions_x" type="4" value="0.000000"></param>
+				<param name="Waste_Positions.Waste_Positions_y" type="4" value="0.000000"></param>
+				<param name="Waste_Positions.Waste_Positions_z" type="4" value="0.000000"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Shape" type="3" value="0"></param>
+				<param name="Color.Color_red" type="4" value="0.000000"></param>
+				<param name="Color.Color_green" type="4" value="0.000000"></param>
+				<param name="Color.Color_blue" type="4" value="0.000000"></param>
+				<param name="Color.Color_alpha" type="4" value="0.000000"></param>
+				<param name="Age_Limit__Value_Type_" type="3" value="0"></param>
+				<param name="Create_Particles_from_Smoke_Positions" type="11" value="false"></param>
+				<param name="Init_Heat__" type="4" value="100.000000"></param>
+				<param name="Age_Limit__" type="4" value="1.250000"></param>
+				<param name="Create_Particles_from_Flame_Positions" type="11" value="true"></param>
+				<param name="Init_Heat_" type="4" value="600.000000"></param>
+				<param name="Age_Limit_" type="4" value="0.750000"></param>
+				<param name="Create_Particles_from_Waste_Positions" type="11" value="false"></param>
+				<param name="Init_Heat" type="4" value="170.000000"></param>
+				<param name="Age_Limit" type="4" value="3.000000"></param>
+				<portdef name="Flame_Positions" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste_Positions" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Smoke_Positions" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Init_Heat" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Init_Heat_" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Init_Heat__" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Age_Limit_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Age_Limit__Value_Type_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_on_Emit__1" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute on Emit  1"></portdef>
+				<portdef name="Age_Limit" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_on_Emit1" type="4096" structure="1" group="3" instance="0" port="0" groupname="Execute on Emit1"></portdef>
+				<portdef name="Execute_on_Emit_1" type="4096" structure="1" group="4" instance="0" port="0" groupname="Execute on Emit 1"></portdef>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shape" type="32768" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Age_Limit__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Create_Particles_from_Smoke_Positions" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Create_Particles_from_Flame_Positions" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Create_Particles_from_Waste_Positions" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">Flame,Smoke,Waste</prop>
+					<prop name="posx">1065</prop>
+					<prop name="posy">-1616</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 ___ Emit Data" version="4.0" index="4">
+				<param name="Enable_Emission_from_SRT" type="11" value="true"></param>
+				<param name="Enable_Emission_from_Points" type="11" value="true"></param>
+				<param name="In_Data_1.In_Data_1_x" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_y" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_z" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_w" type="4" value="0.000000"></param>
+				<param name="In_Data__1.In_Data__1_x" type="4" value="0.000000"></param>
+				<param name="In_Data__1.In_Data__1_y" type="4" value="0.000000"></param>
+				<param name="In_Data__1.In_Data__1_z" type="4" value="0.000000"></param>
+				<portdef name="Enable_Emission_from_SRT" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_Emission_from_Points" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Data__1" type="16" structure="1" group="2" instance="0" port="0" groupname="In Data  1"></portdef>
+				<portdef name="In_Data_1" type="32" structure="1" group="3" instance="0" port="0" groupname="In Data 1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">429</prop>
+					<prop name="posy">-992</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 __ Behavior" version="4.0" index="5">
+				<param name="Enable_Combustion" type="11" value="true"></param>
+				<param name="Burn_Rate__Fuel_" type="4" value="1.000000"></param>
+				<param name="Ignition_Temperature" type="4" value="250.000000"></param>
+				<param name="Heat_of_Combustion" type="4" value="650.000000"></param>
+				<param name="Cooling" type="4" value="1.000000"></param>
+				<param name="Amount" type="4" value="0.000000"></param>
+				<param name="Burn_Rate__Gas_" type="4" value="0.900000"></param>
+				<param name="Follow_Velocity____" type="4" value="0.700000"></param>
+				<param name="Enable_" type="11" value="true"></param>
+				<param name="Expansion_" type="4" value="0.125000"></param>
+				<param name="Buoyancy_" type="4" value="0.200000"></param>
+				<param name="Randomness" type="4" value="0.750000"></param>
+				<param name="Damping" type="4" value="0.250000"></param>
+				<param name="Follow_Velocity_____" type="4" value="1.000000"></param>
+				<param name="Amount_Multiplier" type="4" value="0.250000"></param>
+				<param name="Smoke" type="4" value="1000.000000"></param>
+				<param name="Flame" type="4" value="500.000000"></param>
+				<param name="Waste" type="4" value="500.000000"></param>
+				<param name="Min_" type="4" value="110.000000"></param>
+				<param name="Max_" type="4" value="130.000000"></param>
+				<param name="Waste_Dependency_" type="4" value="1.000000"></param>
+				<param name="Start" type="4" value="450.000000"></param>
+				<param name="End" type="4" value="600.000000"></param>
+				<param name="Waste_Dependency" type="4" value="1.000000"></param>
+				<portdef name="Buoyancy_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Expansion_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ignition_Temperature" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Burn_Rate__Fuel_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount_Multiplier" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Burn_Rate__Gas_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Randomness" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cooling" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Heat_of_Combustion" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_Combustion" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Follow_Velocity____" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Damping" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Smoke" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste_Dependency_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste_Dependency" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Follow_Velocity_____" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Max_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Min_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Flame" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">BEHAVIOR..,COMBUSTION.. / AUTO-DATA-GENERATION..,GENERATE EMISSION POSITIONS..,GENERATE..</prop>
+					<prop name="posx">428</prop>
+					<prop name="posy">-1232</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="406" offsety="-1866" sizex="1139" sizey="1121"><![CDATA[
+emFluid4 Setup for Fire and Smoke
+]]></comment>
+		</nodes>
+		<exposed_ports>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Set_Particle_Velocity" to_node="1" to_port="Set_Particle_Velocity"> </cnx>
+			<cnx from_node="0" from_port="Heat" to_node="2" to_port="Heat_from_Fluid_Solver"> </cnx>
+			<cnx from_node="0" from_port="Waste_Positions__Array_" to_node="3" to_port="Waste_Positions"> </cnx>
+			<cnx from_node="0" from_port="Flame_Positions__Array_" to_node="3" to_port="Flame_Positions"> </cnx>
+			<cnx from_node="0" from_port="Smoke_Positions__Array_" to_node="3" to_port="Smoke_Positions"> </cnx>
+			<cnx from_node="0" from_port="Visualize_Grid_Cells" to_node="1" to_port="Visualize_Grid_Cells"> </cnx>
+			<cnx from_node="0" from_port="Execute" to_node="1" to_port="Execute_"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="1" to_port="Execute_1"> </cnx>
+			<cnx from_node="3" from_port="Create_Particles" to_node="1" to_port="Create_Particles"> </cnx>
+			<cnx from_node="4" from_port="Data_1" to_node="0" to_port="In_Data_1"> </cnx>
+			<cnx from_node="4" from_port="Data_2" to_node="0" to_port="In_Data_2"> </cnx>
+			<cnx from_node="5" from_port="Behavior" to_node="0" to_port="In_Behavior"> </cnx>
+		</connections>
+		<layout>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

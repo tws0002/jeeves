@@ -1,0 +1,547 @@
+import win32com.client
+from win32com.client import constants
+import os
+import ctypes
+
+null = None
+false = 0
+true = 1 
+ 
+def XSILoadPlugin( in_reg ):
+
+	in_reg.Author = "OlegBliznuk";
+	in_reg.Name = "VDB_shaderDefs_ai";
+	in_reg.Major = 1;
+	in_reg.Minor = 0;
+
+
+#force loading tbb libs
+	dllPath_release = Application.Plugins("Arnold Shaders").OriginPath + "bin\\nt-x86-64\\tbb42.dll";
+	#dllPath_debug = Application.Plugins("Arnold Shaders").OriginPath + "bin\\nt-x86-64\\tbb42_debug.dll";
+	tbbDLL_release = ctypes.WinDLL (dllPath_release)
+	#tbbDLL_debug = ctypes.WinDLL (dllPath_debug)	
+	
+
+	in_reg.RegisterShader( "VDBGridReaderScalar_ai", 1, 0 );
+	in_reg.RegisterShader( "VDBGridReaderInt_ai", 1, 0 );
+	in_reg.RegisterShader( "VDBGridReaderVec3_ai", 1, 0 );
+	in_reg.RegisterShader( "VDBVolumeShaderSimple_ai", 1, 0 );
+	in_reg.RegisterShader( "VDBBlackbody_ai", 1, 0 );
+
+	#RegistrationInsertionPoint - do not remove this line
+	
+	return true;
+
+
+def XSIUnloadPlugin( in_reg ):
+	strPluginName = in_reg.Name
+	Application.LogMessage(str(strPluginName) + str(" has been unloaded."),constants.siVerbose)
+	return true
+	
+	
+
+######################################################################
+### Define info
+######################################################################
+def  VDB_shaderDefs_ai_VDBGridReaderScalar_ai_1_0_DefineInfo( in_ctxt ) :
+
+	in_ctxt.SetAttribute("Category", "VDB Shaders" );
+	in_ctxt.SetAttribute("DisplayName", "VDBGridReaderScalar_ai" );
+
+	return true;
+
+def  VDB_shaderDefs_ai_VDBGridReaderVec3_ai_1_0_DefineInfo( in_ctxt ) :
+
+	in_ctxt.SetAttribute("Category", "VDB Shaders" );
+	in_ctxt.SetAttribute("DisplayName", "VDBGridReaderVec3_ai" );
+
+	return true;
+	
+def  VDB_shaderDefs_ai_VDBGridReaderInt_ai_1_0_DefineInfo( in_ctxt ) :
+
+	in_ctxt.SetAttribute("Category", "VDB Shaders" );
+	in_ctxt.SetAttribute("DisplayName", "VDBGridReaderInt_ai" );
+
+	return true;
+
+def  VDB_shaderDefs_ai_VDBVolumeShaderSimple_ai_1_0_DefineInfo( in_ctxt ) :
+
+	in_ctxt.SetAttribute("Category", "VDB Shaders" );
+	in_ctxt.SetAttribute("DisplayName", "VDBVolumeShaderSimple_ai" );
+	
+	return true;
+
+def  VDB_shaderDefs_ai_VDBBlackbody_ai_1_0_DefineInfo( in_ctxt ) :
+
+	in_ctxt.SetAttribute("Category", "VDB Shaders" );
+	in_ctxt.SetAttribute("DisplayName", "VDBBlackbody_ai" );
+	
+	return true;
+
+
+####################################################################################
+## scalar reader PPG
+####################################################################################
+def  VDB_shaderDefs_ai_VDBGridReaderScalar_ai_1_0_Define( in_ctxt ) :
+
+	shaderDef = in_ctxt.GetAttribute("Definition");
+
+	
+	shaderDef.AddShaderFamily(constants.siShaderFamilyTexture);
+			
+	
+	# Input Parameter: frame number
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("CurrentFrame");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "CurrentFrame", constants.siShaderDataTypeInteger, paramOptions );	
+
+		# Input Parameter: grids file path
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("FilePath");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetDefaultValue("D:\\OpenvdGridsFolder\\");		
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "FilePath", constants.siShaderDataTypeString, paramOptions );	
+
+			# Input Parameter: grids file name
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("FileName");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetDefaultValue("houdiniCloud$F5");	
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "FileName", constants.siShaderDataTypeString, paramOptions );	
+
+		# Input Parameter: specific grid name
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("GridName");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetDefaultValue("density");	
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "GridName", constants.siShaderDataTypeString, paramOptions );	
+	
+	# Output Parameter: out
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("out");
+	
+	params = shaderDef.OutputParamDefs;
+	paramDef = params.AddParamDef( "out", constants.siShaderDataTypeScalar, paramOptions );
+	paramDef.MainPort = true;	
+	
+	# Renderer definition
+	rendererDef = shaderDef.AddRendererDef( "Mental ray" );
+	rendererDef.SymbolName = "VDBGridReaderScalar_ai";
+	rendererDef.CodePath = Application.Plugins("Arnold Shaders").OriginPath + "bin\nt-x86-64" + "\VDB_Softimage_Shaders_ai.{EXT}";
+	#rendererDef.CodePath = Application.Plugins("VDB_shaderDefs_mi").OriginPath+  "\VDB_Softimage_Shaders_ai.{EXT}";
+	return true;
+
+
+####################################################################################
+## vec3 reader PPG
+####################################################################################
+def  VDB_shaderDefs_ai_VDBGridReaderVec3_ai_1_0_Define( in_ctxt ) :
+
+	shaderDef = in_ctxt.GetAttribute("Definition");
+
+	
+	shaderDef.AddShaderFamily(constants.siShaderFamilyTexture);
+			
+	
+		# Input Parameter: frame number
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("CurrentFrame");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "CurrentFrame", constants.siShaderDataTypeInteger, paramOptions );	
+
+		# Input Parameter: grids file path
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("FilePath");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetDefaultValue("D:\\OpenvdGridsFolder\\");		
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "FilePath", constants.siShaderDataTypeString, paramOptions );	
+
+			# Input Parameter: grids file name
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("FileName");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetDefaultValue("houdiniCloud$F5");	
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "FileName", constants.siShaderDataTypeString, paramOptions );	
+
+		# Input Parameter: specific grid name
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("GridName");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetDefaultValue("velocity");	
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "GridName", constants.siShaderDataTypeString, paramOptions );	
+	
+	# Output Parameter: out
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("out");
+	
+	params = shaderDef.OutputParamDefs;
+	paramDef = params.AddParamDef( "out", constants.siShaderDataTypeVector3, paramOptions );
+	paramDef.MainPort = true;	
+	
+	# Renderer definition
+	rendererDef = shaderDef.AddRendererDef( "Mental ray" );
+	rendererDef.SymbolName = "VDBGridReaderVec3_ai";
+	rendererDef.CodePath = Application.Plugins("Arnold Shaders").OriginPath + "bin\nt-x86-64" + "\VDB_Softimage_Shaders_ai.{EXT}";
+	
+	return true;
+	
+####################################################################################
+## int reader PPG
+####################################################################################
+def  VDB_shaderDefs_ai_VDBGridReaderInt_ai_1_0_Define( in_ctxt ) :
+
+	shaderDef = in_ctxt.GetAttribute("Definition");
+
+	
+	shaderDef.AddShaderFamily(constants.siShaderFamilyTexture);
+			
+	
+#	# Input Parameter: frame number
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("CurrentFrame");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "CurrentFrame", constants.siShaderDataTypeInteger, paramOptions );	
+
+		# Input Parameter: grids file path
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("FilePath");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetDefaultValue("D:\\OpenvdGridsFolder\\");		
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "FilePath", constants.siShaderDataTypeString, paramOptions );	
+
+			# Input Parameter: grids file name
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("FileName");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetDefaultValue("houdiniCloud$F5");	
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "FileName", constants.siShaderDataTypeString, paramOptions );	
+
+		# Input Parameter: specific grid name
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("GridName");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetDefaultValue("closestPointID");	
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "GridName", constants.siShaderDataTypeString, paramOptions );	
+	
+	# Output Parameter: out
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("out");
+	
+	params = shaderDef.OutputParamDefs;
+	paramDef = params.AddParamDef( "out", constants.siShaderDataTypeInteger, paramOptions );
+	paramDef.MainPort = true;	
+	
+	# Renderer definition
+	rendererDef = shaderDef.AddRendererDef( "Mental ray" );
+	rendererDef.SymbolName = "VDBGridReaderInt_ai";
+	rendererDef.CodePath = Application.Plugins("Arnold Shaders").OriginPath + "bin\nt-x86-64" + "\VDB_Softimage_Shaders_ai.{EXT}";
+	
+	return true;	
+	
+####################################################################################
+# volume simple shader PPG
+####################################################################################
+def VDB_shaderDefs_ai_VDBVolumeShaderSimple_ai_1_0_Define( in_ctxt ) :
+
+	shaderDef = in_ctxt.GetAttribute("Definition");
+	
+	shaderDef.AddShaderFamily(constants.siShaderFamilyVolume);
+	
+
+		
+	# Input Parameter: dens shader
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("Density");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(true);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetSoftLimit(0, 5);
+	paramOptions.SetDefaultValue(1.0);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "0" );
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "Density", constants.siShaderDataTypeScalar, paramOptions );	
+	
+	# Input Parameter: light abs color
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("LightAbsorptionColor");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(true);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "LightAbsorptionColor",constants.siShaderDataTypeColor3, paramOptions );	
+	
+		# Input Parameter: buty abs abs color
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("BeautyAbsorptionColor");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(true);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "BeautyAbsorptionColor",constants.siShaderDataTypeColor3, paramOptions );	
+	
+	# Input Parameter: diff color
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("DiffuseColor");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(true);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "DiffuseColor",constants.siShaderDataTypeColor3, paramOptions );
+	
+	# Input Parameter: amb color
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("AmbientColor");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(true);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "AmbientColor",constants.siShaderDataTypeColor3, paramOptions );
+	
+
+
+	
+		# Input Parameter: phase
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("ScatteringPhase");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetSoftLimit(-1, 1);
+	paramOptions.SetDefaultValue(0);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "ScatteringPhase", constants.siShaderDataTypeScalar, paramOptions );	
+
+		
+	# Input Parameter: dens mult buty
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("DensityBeautyMult");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetSoftLimit(0, 5);
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "DensityBeautyMult", constants.siShaderDataTypeScalar, paramOptions );	
+
+
+
+	# Input Parameter: dens light buty
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("DensityLightMult");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetSoftLimit(0, 5);
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "DensityLightMult", constants.siShaderDataTypeScalar, paramOptions );	
+
+
+		# Input Parameter: DiffuseMult
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("DiffuseMult");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetSoftLimit(0, 5);
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "DiffuseMult", constants.siShaderDataTypeScalar, paramOptions );	
+
+
+			# Input Parameter: AmbientMult
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("AmbientMult");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);	
+	paramOptions.SetSoftLimit(0, 5);
+	paramOptions.SetDefaultValue(1);	
+	paramOptions.SetAttribute("siDefaultConnectionAttribute", "1" );
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "AmbientMult", constants.siShaderDataTypeScalar, paramOptions );	
+
+
+	
+	# Output Parameter: out
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("out");
+	
+	params = shaderDef.OutputParamDefs;
+	paramDef = params.AddParamDef( "out", constants.siShaderDataTypeColor4, paramOptions );
+	paramDef.MainPort = true;	
+	
+	# Renderer definition
+	rendererDef = shaderDef.AddRendererDef( "Mental ray" );
+	rendererDef.SymbolName = "VDBVolumeShaderSimple_ai";
+	rendererDef.CodePath = Application.Plugins("Arnold Shaders").OriginPath + "bin\nt-x86-64" + "\VDB_Softimage_Shaders_ai.{EXT}";
+	
+	return true;
+
+####################################################################################
+# blackbody PPG
+####################################################################################
+def VDB_shaderDefs_ai_VDBBlackbody_ai_1_0_Define( in_ctxt ) :
+
+	shaderDef = in_ctxt.GetAttribute("Definition");
+	
+	shaderDef.AddShaderFamily(constants.siShaderFamilyTexture);
+	
+	# Input Parameter: temperature
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("temperature");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(true);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);
+	paramOptions.SetDefaultValue(5.0);		
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "temperature",constants.siShaderDataTypeScalar, paramOptions );	
+		
+
+
+
+	
+	
+	# Input Parameter: eyeAdoptation
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("eyeAdoptation");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);
+	paramOptions.SetSoftLimit(0.000,10.0);
+	paramOptions.SetDefaultValue(3.0);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "eyeAdoptation",constants.siShaderDataTypeScalar, paramOptions );	
+
+	# Input Parameter: physicalIntensity
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("physicalIntensity");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);
+	paramOptions.SetSoftLimit(0.000,1.0);
+	paramOptions.SetDefaultValue(0.1);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "physicalIntensity",constants.siShaderDataTypeScalar, paramOptions );	
+
+	
+
+	# Input Parameter: outClamp
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("clampOut");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);
+	paramOptions.SetDefaultValue(false);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "clampOut",constants.siShaderDataTypeBoolean, paramOptions );	
+
+	# Input Parameter: outClampValue
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("clampOutValue");
+	paramOptions.SetAnimatable(true);
+	paramOptions.SetTexturable(false);
+	paramOptions.SetReadOnly(false);
+	paramOptions.SetInspectable(true);
+	paramOptions.SetDefaultValue([2.0, 2.0, 2.0]);	
+	params = shaderDef.InputParamDefs;
+	params.AddParamDef( "clampOutValue",constants.siShaderDataTypeColor3, paramOptions );	
+
+	
+	
+	# Output Parameter: out
+	paramOptions = XSIFactory.CreateShaderParamDefOptions();
+	paramOptions.SetLongName("out");
+	
+	params = shaderDef.OutputParamDefs;
+	paramDef = params.AddParamDef( "out", constants.siShaderDataTypeColor3, paramOptions );
+	paramDef.MainPort = true;	
+	
+	# Renderer definition
+	rendererDef = shaderDef.AddRendererDef( "Mental ray" );
+	rendererDef.SymbolName = "VDBBlackbody_ai";
+	rendererDef.CodePath = Application.Plugins("Arnold Shaders").OriginPath + "bin\nt-x86-64" + "\VDB_Blackbody_Shaders_ai.{EXT}";
+	
+	return true;

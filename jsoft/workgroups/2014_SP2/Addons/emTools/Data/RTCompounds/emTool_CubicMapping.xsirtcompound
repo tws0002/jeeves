@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="ShaderCompound" name="emTool_CubicMapping" category="Texture" author="Eric Mootz" formatversion="1.1" compoundversion="1.0" color="14593649" editable="1">
+	<definition>
+		<nodes>
+			<node type="shader" progid="Softimage.sib_color_8mix.1.0" index="0">
+				<param name="Name" type="31" ><![CDATA[Mix_8_Colors_]]></param>
+				<param name="mixersize" type="3" value="8"></param>
+				<param name="base_color.red" type="4" value="0.000000"></param>
+				<param name="base_color.green" type="4" value="0.000000"></param>
+				<param name="base_color.blue" type="4" value="0.000000"></param>
+				<param name="base_color.alpha" type="4" value="0.000000"></param>
+				<param name="color1.red" type="4" value="1.000000"></param>
+				<param name="color1.green" type="4" value="0.549000"></param>
+				<param name="color1.blue" type="4" value="0.195000"></param>
+				<param name="color1.alpha" type="4" value="0.000000"></param>
+				<param name="mode1" type="3" value="2"></param>
+				<param name="weight1.red" type="4" value="0.500000"></param>
+				<param name="weight1.green" type="4" value="0.500000"></param>
+				<param name="weight1.blue" type="4" value="0.500000"></param>
+				<param name="weight1.alpha" type="4" value="0.000000"></param>
+				<param name="alpha1" type="11" value="false"></param>
+				<param name="inuse1" type="11" value="true"></param>
+				<param name="color2.red" type="4" value="0.664000"></param>
+				<param name="color2.green" type="4" value="1.000000"></param>
+				<param name="color2.blue" type="4" value="0.248000"></param>
+				<param name="color2.alpha" type="4" value="0.000000"></param>
+				<param name="mode2" type="3" value="2"></param>
+				<param name="weight2.red" type="4" value="0.500000"></param>
+				<param name="weight2.green" type="4" value="0.500000"></param>
+				<param name="weight2.blue" type="4" value="0.500000"></param>
+				<param name="weight2.alpha" type="4" value="0.000000"></param>
+				<param name="alpha2" type="11" value="false"></param>
+				<param name="inuse2" type="11" value="true"></param>
+				<param name="color3.red" type="4" value="0.230000"></param>
+				<param name="color3.green" type="4" value="0.717000"></param>
+				<param name="color3.blue" type="4" value="1.000000"></param>
+				<param name="color3.alpha" type="4" value="0.000000"></param>
+				<param name="mode3" type="3" value="2"></param>
+				<param name="weight3.red" type="4" value="0.500000"></param>
+				<param name="weight3.green" type="4" value="0.500000"></param>
+				<param name="weight3.blue" type="4" value="0.500000"></param>
+				<param name="weight3.alpha" type="4" value="0.000000"></param>
+				<param name="alpha3" type="11" value="false"></param>
+				<param name="inuse3" type="11" value="true"></param>
+				<param name="color4.red" type="4" value="1.000000"></param>
+				<param name="color4.green" type="4" value="1.000000"></param>
+				<param name="color4.blue" type="4" value="1.000000"></param>
+				<param name="color4.alpha" type="4" value="0.000000"></param>
+				<param name="mode4" type="3" value="1"></param>
+				<param name="weight4.red" type="4" value="0.500000"></param>
+				<param name="weight4.green" type="4" value="0.500000"></param>
+				<param name="weight4.blue" type="4" value="0.500000"></param>
+				<param name="weight4.alpha" type="4" value="0.000000"></param>
+				<param name="alpha4" type="11" value="false"></param>
+				<param name="inuse4" type="11" value="false"></param>
+				<param name="color5.red" type="4" value="1.000000"></param>
+				<param name="color5.green" type="4" value="1.000000"></param>
+				<param name="color5.blue" type="4" value="1.000000"></param>
+				<param name="color5.alpha" type="4" value="0.000000"></param>
+				<param name="mode5" type="3" value="1"></param>
+				<param name="weight5.red" type="4" value="0.500000"></param>
+				<param name="weight5.green" type="4" value="0.500000"></param>
+				<param name="weight5.blue" type="4" value="0.500000"></param>
+				<param name="weight5.alpha" type="4" value="0.000000"></param>
+				<param name="alpha5" type="11" value="false"></param>
+				<param name="inuse5" type="11" value="false"></param>
+				<param name="color6.red" type="4" value="1.000000"></param>
+				<param name="color6.green" type="4" value="1.000000"></param>
+				<param name="color6.blue" type="4" value="1.000000"></param>
+				<param name="color6.alpha" type="4" value="0.000000"></param>
+				<param name="mode6" type="3" value="1"></param>
+				<param name="weight6.red" type="4" value="0.500000"></param>
+				<param name="weight6.green" type="4" value="0.500000"></param>
+				<param name="weight6.blue" type="4" value="0.500000"></param>
+				<param name="weight6.alpha" type="4" value="0.000000"></param>
+				<param name="alpha6" type="11" value="false"></param>
+				<param name="inuse6" type="11" value="false"></param>
+				<param name="color7.red" type="4" value="1.000000"></param>
+				<param name="color7.green" type="4" value="1.000000"></param>
+				<param name="color7.blue" type="4" value="1.000000"></param>
+				<param name="color7.alpha" type="4" value="0.000000"></param>
+				<param name="mode7" type="3" value="1"></param>
+				<param name="weight7.red" type="4" value="0.500000"></param>
+				<param name="weight7.green" type="4" value="0.500000"></param>
+				<param name="weight7.blue" type="4" value="0.500000"></param>
+				<param name="weight7.alpha" type="4" value="0.000000"></param>
+				<param name="alpha7" type="11" value="false"></param>
+				<param name="inuse7" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">134</prop>
+					<prop name="posy">150</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="1">
+				<param name="Name" type="31" ><![CDATA[scl2col2_]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-65</prop>
+					<prop name="posy">233</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="2">
+				<param name="Name" type="31" ><![CDATA[scl2col3_]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-64</prop>
+					<prop name="posy">265</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_to_color.1.0" index="3">
+				<param name="Name" type="31" ><![CDATA[scl2col1_]]></param>
+				<param name="input" type="4" value="0.500000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-67</prop>
+					<prop name="posy">201</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_state_vector.1.0" index="4">
+				<param name="Name" type="31" ><![CDATA[GeomNormVector_]]></param>
+				<param name="mode" type="3" value="3"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-785</prop>
+					<prop name="posy">214</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_vector_to_scalar_old.1.0" index="5">
+				<param name="Name" type="31" ><![CDATA[GetX_]]></param>
+				<param name="input.x" type="4" value="1.000000"></param>
+				<param name="input.y" type="4" value="1.000000"></param>
+				<param name="input.z" type="4" value="1.000000"></param>
+				<param name="component" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-348</prop>
+					<prop name="posy">233</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_vector_to_scalar_old.1.0" index="6">
+				<param name="Name" type="31" ><![CDATA[GetY_]]></param>
+				<param name="input.x" type="4" value="1.000000"></param>
+				<param name="input.y" type="4" value="1.000000"></param>
+				<param name="input.z" type="4" value="1.000000"></param>
+				<param name="component" type="3" value="1"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-347</prop>
+					<prop name="posy">265</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_vector_math_vector.1.0" index="7">
+				<param name="Name" type="31" ><![CDATA[normalize_]]></param>
+				<param name="mode" type="3" value="3"></param>
+				<param name="vector_input1.x" type="4" value="0.000000"></param>
+				<param name="vector_input1.y" type="4" value="0.000000"></param>
+				<param name="vector_input1.z" type="4" value="0.000000"></param>
+				<param name="vector_input2.x" type="4" value="0.000000"></param>
+				<param name="vector_input2.y" type="4" value="0.000000"></param>
+				<param name="vector_input2.z" type="4" value="0.000000"></param>
+				<param name="scalar_input1" type="4" value="0.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-471</prop>
+					<prop name="posy">233</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_exponent.1.0" index="8">
+				<param name="Name" type="31" ><![CDATA[square1_]]></param>
+				<param name="input" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="2.000000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">201</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_space_conversion.1.0" index="9">
+				<param name="Name" type="31" ><![CDATA[local2obj_]]></param>
+				<param name="type" type="3" value="1"></param>
+				<param name="transform" type="3" value="2"></param>
+				<param name="vector_input.x" type="4" value="0.000000"></param>
+				<param name="vector_input.y" type="4" value="0.000000"></param>
+				<param name="vector_input.z" type="4" value="0.000000"></param>
+				<param name="transform_input._00" type="4" value="1.000000"></param>
+				<param name="transform_input._01" type="4" value="0.000000"></param>
+				<param name="transform_input._02" type="4" value="0.000000"></param>
+				<param name="transform_input._03" type="4" value="0.000000"></param>
+				<param name="transform_input._10" type="4" value="0.000000"></param>
+				<param name="transform_input._11" type="4" value="1.000000"></param>
+				<param name="transform_input._12" type="4" value="0.000000"></param>
+				<param name="transform_input._13" type="4" value="0.000000"></param>
+				<param name="transform_input._20" type="4" value="0.000000"></param>
+				<param name="transform_input._21" type="4" value="0.000000"></param>
+				<param name="transform_input._22" type="4" value="1.000000"></param>
+				<param name="transform_input._23" type="4" value="0.000000"></param>
+				<param name="transform_input._30" type="4" value="0.000000"></param>
+				<param name="transform_input._31" type="4" value="0.000000"></param>
+				<param name="transform_input._32" type="4" value="0.000000"></param>
+				<param name="transform_input._33" type="4" value="1.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-606</prop>
+					<prop name="posy">233</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_exponent.1.0" index="10">
+				<param name="Name" type="31" ><![CDATA[square2_]]></param>
+				<param name="input" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="2.000000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-210</prop>
+					<prop name="posy">233</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_scalar_math_exponent.1.0" index="11">
+				<param name="Name" type="31" ><![CDATA[square3_]]></param>
+				<param name="input" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="2.000000"></param>
+				<param name="op" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">265</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_vector_to_scalar_old.1.0" index="12">
+				<param name="Name" type="31" ><![CDATA[GetZ_]]></param>
+				<param name="input.x" type="4" value="1.000000"></param>
+				<param name="input.y" type="4" value="1.000000"></param>
+				<param name="input.z" type="4" value="1.000000"></param>
+				<param name="component" type="3" value="2"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-350</prop>
+					<prop name="posy">201</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<connections>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="weight2"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="0" to_port="weight3"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="0" to_port="weight1"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="9" to_port="vector_input"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="10" to_port="input"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="11" to_port="input"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="12" to_port="input"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="5" to_port="input"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="6" to_port="input"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="3" to_port="input"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="7" to_port="vector_input1"> </cnx>
+			<cnx from_node="10" from_port="out" to_node="1" to_port="input"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="2" to_port="input"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="8" to_port="input"> </cnx>
+		</connections>
+		<exposed_ports>
+			<port index="0" portname="color1" username="Image_XY" displayname="Image XY"></port>
+			<port index="0" portname="color2" username="Image_YZ" displayname="Image YZ"></port>
+			<port index="0" portname="color3" username="Image_XZ" displayname="Image XZ"></port>
+			<port index="0" portname="out" username="Color" displayname="diffuse"></port>
+		</exposed_ports>
+		<layout>
+			<item type="input" name="Image_XY" ppgvis="1" portvis="1"> </item>
+			<item type="input" name="Image_YZ" ppgvis="1" portvis="1"> </item>
+			<item type="input" name="Image_XZ" ppgvis="1" portvis="1"> </item>
+			<item type="output" name="Color" ppgvis="1" portvis="1"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+</xsi_file>

@@ -1,0 +1,1711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFluid4 __ Behavior Advanced" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" constructionmode="Current" backgroundcolor="13415859">
+	<definition>
+		<nodes>
+			<node type="PassThroughNode" index="0">
+				<param name="in" type="4" value="100.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-197</prop>
+					<prop name="posy">2281</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-184" offsety="0" sizex="126" sizey="19"><![CDATA[Smoke Heat Interval Min]]></comment>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="4" value="500.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-195</prop>
+					<prop name="posy">2355</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-184" offsety="0" sizex="185" sizey="58"><![CDATA[Smoke Heat Interval Max]]></comment>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">182</prop>
+					<prop name="posy">2301</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="3">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">180</prop>
+					<prop name="posy">2372</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-196</prop>
+					<prop name="posy">2418</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-184" offsety="0" sizex="137" sizey="19"><![CDATA[Smoke Waste Dependency]]></comment>
+			</node>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">183</prop>
+					<prop name="posy">2438</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-200</prop>
+					<prop name="posy">1754</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-234" offsety="0" sizex="198" sizey="19"><![CDATA[Particles per cubic SI Unit of Flame]]></comment>
+			</node>
+			<node type="PassThroughNode" index="7">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">763</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-218" offsety="1" sizex="161" sizey="19"><![CDATA[Generate Velocity from Density]]></comment>
+			</node>
+			<node type="ScalarNode" index="8">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-113</prop>
+					<prop name="posy">820</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="9">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">414</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-150" offsety="-3" sizex="93" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="IfNode" index="10">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-47</prop>
+					<prop name="posy">742</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in" type="4" value="2.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">633</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-158" offsety="-1" sizex="93" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="12">
+				<param name="in" type="4" value="0.210000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">449</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-173" offsety="-2" sizex="117" sizey="19"><![CDATA[Damping Target Value]]></comment>
+			</node>
+			<node type="PassThroughNode" index="13">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">378</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-139" offsety="-2" sizex="82" sizey="19"><![CDATA[Follow Velocity]]></comment>
+			</node>
+			<node type="BuildArrayNode" index="14">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<param name="value3" type="4" value="0.000000"></param>
+				<param name="value4" type="4" value="0.000000"></param>
+				<param name="value5" type="4" value="0.000000"></param>
+				<param name="value6" type="4" value="0.000000"></param>
+				<param name="value7" type="4" value="0.000000"></param>
+				<param name="value8" type="4" value="0.000000"></param>
+				<param name="value9" type="4" value="0.000000"></param>
+				<param name="value10" type="4" value="0.000000"></param>
+				<param name="value11" type="4" value="0.000000"></param>
+				<param name="value12" type="4" value="0.000000"></param>
+				<param name="value13" type="4" value="0.000000"></param>
+				<param name="value14" type="4" value="0.000000"></param>
+				<param name="value15" type="4" value="0.000000"></param>
+				<param name="value16" type="4" value="0.000000"></param>
+				<param name="value17" type="4" value="0.000000"></param>
+				<param name="value18" type="4" value="0.000000"></param>
+				<param name="value19" type="4" value="0.000000"></param>
+				<param name="value20" type="4" value="0.000000"></param>
+				<param name="value21" type="4" value="0.000000"></param>
+				<param name="value22" type="4" value="0.000000"></param>
+				<param name="value23" type="4" value="0.000000"></param>
+				<param name="value24" type="4" value="0.000000"></param>
+				<param name="value25" type="4" value="0.000000"></param>
+				<param name="value26" type="4" value="0.000000"></param>
+				<param name="value27" type="4" value="0.000000"></param>
+				<param name="value28" type="4" value="0.000000"></param>
+				<param name="value29" type="4" value="0.000000"></param>
+				<param name="value30" type="4" value="0.000000"></param>
+				<param name="value31" type="4" value="0.000000"></param>
+				<param name="value32" type="4" value="0.000000"></param>
+				<param name="value33" type="4" value="0.000000"></param>
+				<param name="value34" type="4" value="0.000000"></param>
+				<param name="value35" type="4" value="0.000000"></param>
+				<param name="value36" type="4" value="0.000000"></param>
+				<param name="value37" type="4" value="0.000000"></param>
+				<param name="value38" type="4" value="0.000000"></param>
+				<param name="value39" type="4" value="0.000000"></param>
+				<param name="value40" type="4" value="0.000000"></param>
+				<param name="value41" type="4" value="0.000000"></param>
+				<param name="value42" type="4" value="0.000000"></param>
+				<param name="value43" type="4" value="0.000000"></param>
+				<param name="value44" type="4" value="0.000000"></param>
+				<param name="value45" type="4" value="0.000000"></param>
+				<param name="value46" type="4" value="0.000000"></param>
+				<param name="value47" type="4" value="0.000000"></param>
+				<param name="value48" type="4" value="0.000000"></param>
+				<param name="value49" type="4" value="0.000000"></param>
+				<param name="value50" type="4" value="0.000000"></param>
+				<param name="value51" type="4" value="0.000000"></param>
+				<param name="value52" type="4" value="0.000000"></param>
+				<param name="value53" type="4" value="0.000000"></param>
+				<param name="value54" type="4" value="0.000000"></param>
+				<param name="value55" type="4" value="0.000000"></param>
+				<param name="value56" type="4" value="0.000000"></param>
+				<param name="value57" type="4" value="0.000000"></param>
+				<param name="value58" type="4" value="0.000000"></param>
+				<param name="value59" type="4" value="0.000000"></param>
+				<param name="value60" type="4" value="0.000000"></param>
+				<param name="value61" type="4" value="0.000000"></param>
+				<param name="value62" type="4" value="0.000000"></param>
+				<param name="value63" type="4" value="0.000000"></param>
+				<param name="value64" type="4" value="0.000000"></param>
+				<param name="value65" type="4" value="0.000000"></param>
+				<param name="value66" type="4" value="0.000000"></param>
+				<param name="value67" type="4" value="0.000000"></param>
+				<param name="value68" type="4" value="0.000000"></param>
+				<param name="value69" type="4" value="0.000000"></param>
+				<param name="value70" type="4" value="0.000000"></param>
+				<param name="value71" type="4" value="0.000000"></param>
+				<param name="value72" type="4" value="0.000000"></param>
+				<param name="value73" type="4" value="0.000000"></param>
+				<param name="value74" type="4" value="0.000000"></param>
+				<param name="value75" type="4" value="0.000000"></param>
+				<param name="value76" type="4" value="0.000000"></param>
+				<param name="value77" type="4" value="0.000000"></param>
+				<param name="value78" type="4" value="0.000000"></param>
+				<param name="value79" type="4" value="0.000000"></param>
+				<param name="value80" type="4" value="0.000000"></param>
+				<param name="value81" type="4" value="0.000000"></param>
+				<param name="value82" type="4" value="0.000000"></param>
+				<param name="value83" type="4" value="0.000000"></param>
+				<param name="value84" type="4" value="0.000000"></param>
+				<param name="value85" type="4" value="0.000000"></param>
+				<param name="value86" type="4" value="0.000000"></param>
+				<param name="value87" type="4" value="0.000000"></param>
+				<param name="value88" type="4" value="0.000000"></param>
+				<param name="value89" type="4" value="0.000000"></param>
+				<param name="value90" type="4" value="0.000000"></param>
+				<param name="value91" type="4" value="0.000000"></param>
+				<param name="value92" type="4" value="0.000000"></param>
+				<param name="value93" type="4" value="0.000000"></param>
+				<param name="value94" type="4" value="0.000000"></param>
+				<param name="value95" type="4" value="0.000000"></param>
+				<param name="value96" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="4" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="value4" type="4" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="value5" type="4" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="value6" type="4" structure="1" group="0" instance="5" port="0"></portdef>
+				<portdef name="value7" type="4" structure="1" group="0" instance="6" port="0"></portdef>
+				<portdef name="value8" type="4" structure="1" group="0" instance="7" port="0"></portdef>
+				<portdef name="value9" type="4" structure="1" group="0" instance="8" port="0"></portdef>
+				<portdef name="value10" type="4" structure="1" group="0" instance="9" port="0"></portdef>
+				<portdef name="value11" type="4" structure="1" group="0" instance="10" port="0"></portdef>
+				<portdef name="value12" type="4" structure="1" group="0" instance="11" port="0"></portdef>
+				<portdef name="value13" type="4" structure="1" group="0" instance="12" port="0"></portdef>
+				<portdef name="value14" type="4" structure="1" group="0" instance="13" port="0"></portdef>
+				<portdef name="value15" type="4" structure="1" group="0" instance="14" port="0"></portdef>
+				<portdef name="value16" type="4" structure="1" group="0" instance="15" port="0"></portdef>
+				<portdef name="value17" type="4" structure="1" group="0" instance="16" port="0"></portdef>
+				<portdef name="value18" type="4" structure="1" group="0" instance="17" port="0"></portdef>
+				<portdef name="value19" type="4" structure="1" group="0" instance="18" port="0"></portdef>
+				<portdef name="value20" type="4" structure="1" group="0" instance="19" port="0"></portdef>
+				<portdef name="value21" type="4" structure="1" group="0" instance="20" port="0"></portdef>
+				<portdef name="value22" type="4" structure="1" group="0" instance="21" port="0"></portdef>
+				<portdef name="value23" type="4" structure="1" group="0" instance="22" port="0"></portdef>
+				<portdef name="value24" type="4" structure="1" group="0" instance="23" port="0"></portdef>
+				<portdef name="value25" type="4" structure="1" group="0" instance="24" port="0"></portdef>
+				<portdef name="value26" type="4" structure="1" group="0" instance="25" port="0"></portdef>
+				<portdef name="value27" type="4" structure="1" group="0" instance="26" port="0"></portdef>
+				<portdef name="value28" type="4" structure="1" group="0" instance="27" port="0"></portdef>
+				<portdef name="value29" type="4" structure="1" group="0" instance="28" port="0"></portdef>
+				<portdef name="value30" type="4" structure="1" group="0" instance="29" port="0"></portdef>
+				<portdef name="value31" type="4" structure="1" group="0" instance="30" port="0"></portdef>
+				<portdef name="value32" type="4" structure="1" group="0" instance="31" port="0"></portdef>
+				<portdef name="value33" type="4" structure="1" group="0" instance="32" port="0"></portdef>
+				<portdef name="value34" type="4" structure="1" group="0" instance="33" port="0"></portdef>
+				<portdef name="value35" type="4" structure="1" group="0" instance="34" port="0"></portdef>
+				<portdef name="value36" type="4" structure="1" group="0" instance="35" port="0"></portdef>
+				<portdef name="value37" type="4" structure="1" group="0" instance="36" port="0"></portdef>
+				<portdef name="value38" type="4" structure="1" group="0" instance="37" port="0"></portdef>
+				<portdef name="value39" type="4" structure="1" group="0" instance="38" port="0"></portdef>
+				<portdef name="value40" type="4" structure="1" group="0" instance="39" port="0"></portdef>
+				<portdef name="value41" type="4" structure="1" group="0" instance="40" port="0"></portdef>
+				<portdef name="value42" type="4" structure="1" group="0" instance="41" port="0"></portdef>
+				<portdef name="value43" type="4" structure="1" group="0" instance="42" port="0"></portdef>
+				<portdef name="value44" type="4" structure="1" group="0" instance="43" port="0"></portdef>
+				<portdef name="value45" type="4" structure="1" group="0" instance="44" port="0"></portdef>
+				<portdef name="value46" type="4" structure="1" group="0" instance="45" port="0"></portdef>
+				<portdef name="value47" type="4" structure="1" group="0" instance="46" port="0"></portdef>
+				<portdef name="value48" type="4" structure="1" group="0" instance="47" port="0"></portdef>
+				<portdef name="value49" type="4" structure="1" group="0" instance="48" port="0"></portdef>
+				<portdef name="value50" type="4" structure="1" group="0" instance="49" port="0"></portdef>
+				<portdef name="value51" type="4" structure="1" group="0" instance="50" port="0"></portdef>
+				<portdef name="value52" type="4" structure="1" group="0" instance="51" port="0"></portdef>
+				<portdef name="value53" type="4" structure="1" group="0" instance="52" port="0"></portdef>
+				<portdef name="value54" type="4" structure="1" group="0" instance="53" port="0"></portdef>
+				<portdef name="value55" type="4" structure="1" group="0" instance="54" port="0"></portdef>
+				<portdef name="value56" type="4" structure="1" group="0" instance="55" port="0"></portdef>
+				<portdef name="value57" type="4" structure="1" group="0" instance="56" port="0"></portdef>
+				<portdef name="value58" type="4" structure="1" group="0" instance="57" port="0"></portdef>
+				<portdef name="value59" type="4" structure="1" group="0" instance="58" port="0"></portdef>
+				<portdef name="value60" type="4" structure="1" group="0" instance="59" port="0"></portdef>
+				<portdef name="value61" type="4" structure="1" group="0" instance="60" port="0"></portdef>
+				<portdef name="value62" type="4" structure="1" group="0" instance="61" port="0"></portdef>
+				<portdef name="value63" type="4" structure="1" group="0" instance="62" port="0"></portdef>
+				<portdef name="value64" type="4" structure="1" group="0" instance="63" port="0"></portdef>
+				<portdef name="value65" type="4" structure="1" group="0" instance="64" port="0"></portdef>
+				<portdef name="value66" type="4" structure="1" group="0" instance="65" port="0"></portdef>
+				<portdef name="value67" type="4" structure="1" group="0" instance="66" port="0"></portdef>
+				<portdef name="value68" type="4" structure="1" group="0" instance="67" port="0"></portdef>
+				<portdef name="value69" type="4" structure="1" group="0" instance="68" port="0"></portdef>
+				<portdef name="value70" type="4" structure="1" group="0" instance="69" port="0"></portdef>
+				<portdef name="value71" type="4" structure="1" group="0" instance="70" port="0"></portdef>
+				<portdef name="value72" type="4" structure="1" group="0" instance="71" port="0"></portdef>
+				<portdef name="value73" type="4" structure="1" group="0" instance="72" port="0"></portdef>
+				<portdef name="value74" type="4" structure="1" group="0" instance="73" port="0"></portdef>
+				<portdef name="value75" type="4" structure="1" group="0" instance="74" port="0"></portdef>
+				<portdef name="value76" type="4" structure="1" group="0" instance="75" port="0"></portdef>
+				<portdef name="value77" type="4" structure="1" group="0" instance="76" port="0"></portdef>
+				<portdef name="value78" type="4" structure="1" group="0" instance="77" port="0"></portdef>
+				<portdef name="value79" type="4" structure="1" group="0" instance="78" port="0"></portdef>
+				<portdef name="value80" type="4" structure="1" group="0" instance="79" port="0"></portdef>
+				<portdef name="value81" type="4" structure="1" group="0" instance="80" port="0"></portdef>
+				<portdef name="value82" type="4" structure="1" group="0" instance="81" port="0"></portdef>
+				<portdef name="value83" type="4" structure="1" group="0" instance="82" port="0"></portdef>
+				<portdef name="value84" type="4" structure="1" group="0" instance="83" port="0"></portdef>
+				<portdef name="value85" type="4" structure="1" group="0" instance="84" port="0"></portdef>
+				<portdef name="value86" type="4" structure="1" group="0" instance="85" port="0"></portdef>
+				<portdef name="value87" type="4" structure="1" group="0" instance="86" port="0"></portdef>
+				<portdef name="value88" type="4" structure="1" group="0" instance="87" port="0"></portdef>
+				<portdef name="value89" type="4" structure="1" group="0" instance="88" port="0"></portdef>
+				<portdef name="value90" type="4" structure="1" group="0" instance="89" port="0"></portdef>
+				<portdef name="value91" type="4" structure="1" group="0" instance="90" port="0"></portdef>
+				<portdef name="value92" type="4" structure="1" group="0" instance="91" port="0"></portdef>
+				<portdef name="value93" type="4" structure="1" group="0" instance="92" port="0"></portdef>
+				<portdef name="value94" type="4" structure="1" group="0" instance="93" port="0"></portdef>
+				<portdef name="value95" type="4" structure="1" group="0" instance="94" port="0"></portdef>
+				<portdef name="value96" type="4" structure="1" group="0" instance="95" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1338</prop>
+					<prop name="posy">-612</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="15">
+				<param name="in" type="4" value="0.100000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">341</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-139" offsety="0" sizex="80" sizey="19"><![CDATA[Diffusion Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="16">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-208</prop>
+					<prop name="posy">-722</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-144" offsety="-1" sizex="80" sizey="19"><![CDATA[Diffusion Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="17">
+				<param name="in" type="4" value="1.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-216</prop>
+					<prop name="posy">872</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-126" offsety="0" sizex="61" sizey="19"><![CDATA[Expansion]]></comment>
+			</node>
+			<node type="PassThroughNode" index="18">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">-758</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-142" offsety="0" sizex="82" sizey="19"><![CDATA[Follow Velocity]]></comment>
+			</node>
+			<node type="PassThroughNode" index="19">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">-646</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-175" offsety="0" sizex="117" sizey="19"><![CDATA[Damping Target Value]]></comment>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">155</prop>
+					<prop name="posy">-1015</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="21">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">44</prop>
+					<prop name="posy">-1510</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="22">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-38</prop>
+					<prop name="posy">-1457</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="23">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-37</prop>
+					<prop name="posy">-1432</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="24">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-216</prop>
+					<prop name="posy">-1474</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-163" offsety="1" sizex="103" sizey="19"><![CDATA[Enable Combustion]]></comment>
+			</node>
+			<node type="3DVectorToScalarNode" index="25">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">125</prop>
+					<prop name="posy">-106</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="26">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="1.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-218</prop>
+					<prop name="posy">-39</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-192" offsety="-1" sizex="138" sizey="19"><![CDATA[Buoyancy Direction]]></comment>
+			</node>
+			<node type="PassThroughNode" index="27">
+				<param name="in" type="4" value="0.200000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-217</prop>
+					<prop name="posy">-163</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-114" offsety="0" sizex="59" sizey="19"><![CDATA[Buoyancy]]></comment>
+			</node>
+			<node type="PassThroughNode" index="28">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">-1379</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-153" offsety="-1" sizex="84" sizey="32"><![CDATA[Burn Rate (Fuel)]]></comment>
+			</node>
+			<node type="MultiplyNode" index="29">
+				<param name="value1" type="4" value="1.000000"></param>
+				<param name="value2" type="4" value="1.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">169</prop>
+					<prop name="posy">-1380</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="30">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-208</prop>
+					<prop name="posy">-415</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-209" offsety="0" sizex="147" sizey="19"><![CDATA[Damping (=Cooling) Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="31">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-208</prop>
+					<prop name="posy">-451</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-145" offsety="0" sizex="82" sizey="19"><![CDATA[Follow Velocity]]></comment>
+			</node>
+			<node type="PassThroughNode" index="32">
+				<param name="in" type="4" value="23.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">-378</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-227" offsety="0" sizex="171" sizey="19"><![CDATA[Damping (=Cooling) Target Value]]></comment>
+			</node>
+			<node type="PassThroughNode" index="33">
+				<param name="in" type="4" value="0.050000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-208</prop>
+					<prop name="posy">-488</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-144" offsety="-1" sizex="80" sizey="19"><![CDATA[Diffusion Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="34">
+				<param name="in" type="4" value="250.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">-606</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-176" offsety="1" sizex="113" sizey="19"><![CDATA[Ignition Temperature]]></comment>
+			</node>
+			<node type="PassThroughNode" index="35">
+				<param name="in" type="4" value="650.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">-1155</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-171" offsety="-1" sizex="107" sizey="19"><![CDATA[Heat of Combustion]]></comment>
+			</node>
+			<node type="PassThroughNode" index="36">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-200</prop>
+					<prop name="posy">1691</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-234" offsety="-1" sizex="180" sizey="19"><![CDATA[Particles per cubic SI Unit of Waste]]></comment>
+			</node>
+			<node type="BooleanToIntegerNode" index="37">
+				<param name="boolean" type="11" value="true"></param>
+				<portdef name="boolean" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">2092</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-191" offsety="2" sizex="139" sizey="19"><![CDATA[Flame Heat Interval Clamp]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="38">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">134</prop>
+					<prop name="posy">-240</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="39">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-215</prop>
+					<prop name="posy">180</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-256" offsety="1" sizex="219" sizey="45"><![CDATA[Use inverse Gravity Vector
+(instead of the custom direction vector)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="40">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">-293</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-200" offsety="1" sizex="148" sizey="19"><![CDATA[Generate Velocity from Heat]]></comment>
+			</node>
+			<node type="ScalarNode" index="41">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-111</prop>
+					<prop name="posy">-236</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="42">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-45</prop>
+					<prop name="posy">-314</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="83" offsety="-37" sizex="260" sizey="45"><![CDATA[Only pass a 100th of the amount to the main compound (because Temperature values are about 100 times bigger than all the other values).]]></comment>
+			</node>
+			<node type="PassThroughNode" index="43">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-214</prop>
+					<prop name="posy">1149</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-266" offsety="0" sizex="211" sizey="19"><![CDATA[Amount of Velocity Direction Randomness]]></comment>
+			</node>
+			<node type="PassThroughNode" index="44">
+				<param name="in" type="4" value="0.125000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-218</prop>
+					<prop name="posy">909</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-125" offsety="-1" sizex="68" sizey="19"><![CDATA[Buoyancy]]></comment>
+			</node>
+			<node type="PassThroughNode" index="45">
+				<param name="in" type="4" value="0.040000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-216</prop>
+					<prop name="posy">110</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-208" offsety="0" sizex="156" sizey="19"><![CDATA[Randomness Animation Speed]]></comment>
+			</node>
+			<node type="PassThroughNode" index="46">
+				<param name="in" type="4" value="0.040000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">1232</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-208" offsety="0" sizex="156" sizey="19"><![CDATA[Randomness Animation Speed]]></comment>
+			</node>
+			<node type="IntegerToScalarNode" index="47">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">140</prop>
+					<prop name="posy">1192</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="48">
+				<param name="in" type="3" value="14444"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">1191</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-129" offsety="-1" sizex="92" sizey="32"><![CDATA[Random Seed]]></comment>
+			</node>
+			<node type="PassThroughNode" index="49">
+				<param name="in" type="3" value="4444"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-217</prop>
+					<prop name="posy">69</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-129" offsety="-1" sizex="92" sizey="32"><![CDATA[Random Seed]]></comment>
+			</node>
+			<node type="IntegerToScalarNode" index="50">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">145</prop>
+					<prop name="posy">69</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="51">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">136</prop>
+					<prop name="posy">198</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="52">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">218</prop>
+					<prop name="posy">145</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="53">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">137</prop>
+					<prop name="posy">223</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="54">
+				<param name="in" type="4" value="0.750000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-218</prop>
+					<prop name="posy">29</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-264" offsety="1" sizex="211" sizey="19"><![CDATA[Amount of Velocity Direction Randomness]]></comment>
+			</node>
+			<node type="3DVectorToScalarNode" index="55">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">995</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="56">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="-1.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">1062</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-156" offsety="0" sizex="104" sizey="19"><![CDATA[Buoyancy Direction]]></comment>
+			</node>
+			<node type="PassThroughNode" index="57">
+				<param name="in" type="4" value="0.125000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-218</prop>
+					<prop name="posy">-193</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-117" offsety="0" sizex="61" sizey="19"><![CDATA[Expansion]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="58">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">136</prop>
+					<prop name="posy">-207</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="59">
+				<param name="value" type="4" value="0.010000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-129</prop>
+					<prop name="posy">-263</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="60">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">136</prop>
+					<prop name="posy">811</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="61">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">138</prop>
+					<prop name="posy">846</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="62">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-114</prop>
+					<prop name="posy">793</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="63">
+				<param name="in" type="4" value="0.900000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-210</prop>
+					<prop name="posy">-1343</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-153" offsety="-1" sizex="91" sizey="19"><![CDATA[Burn Rate (Gas)]]></comment>
+			</node>
+			<node type="MultiplyNode" index="64">
+				<param name="value1" type="4" value="1.000000"></param>
+				<param name="value2" type="4" value="1.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">169</prop>
+					<prop name="posy">-1346</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="65">
+				<param name="in" type="4" value="2.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-210</prop>
+					<prop name="posy">-1248</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-201" offsety="-1" sizex="126" sizey="19"><![CDATA[Generate Gas from Fuel]]></comment>
+			</node>
+			<node type="PassThroughNode" index="66">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-213</prop>
+					<prop name="posy">1294</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-257" offsety="1" sizex="220" sizey="45"><![CDATA[Use Gravity Vector
+(instead of the custom direction vector)]]></comment>
+			</node>
+			<node type="ScalarNode" index="67">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">134</prop>
+					<prop name="posy">1311</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="68">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">219</prop>
+					<prop name="posy">1258</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="69">
+				<param name="in" type="4" value="0.100000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">597</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-147" offsety="-1" sizex="82" sizey="19"><![CDATA[Follow Velocity]]></comment>
+			</node>
+			<node type="ScalarNode" index="70">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">135</prop>
+					<prop name="posy">1336</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="71">
+				<param name="in" type="4" value="0.050000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">560</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-144" offsety="0" sizex="80" sizey="19"><![CDATA[Diffusion Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="72">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">668</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-180" offsety="-1" sizex="117" sizey="19"><![CDATA[Damping Target Value]]></comment>
+			</node>
+			<node type="PassThroughNode" index="73">
+				<param name="in" type="4" value="300.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">1946</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-184" offsety="0" sizex="126" sizey="19"><![CDATA[Flame Heat Interval Min]]></comment>
+			</node>
+			<node type="IntegerToScalarNode" index="74">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">150</prop>
+					<prop name="posy">2112</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="75">
+				<param name="in" type="4" value="0.050000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">-1016</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-144" offsety="-1" sizex="80" sizey="19"><![CDATA[Diffusion Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="76">
+				<param name="in" type="4" value="500.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-200</prop>
+					<prop name="posy">2020</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-184" offsety="0" sizex="126" sizey="19"><![CDATA[Flame Heat Interval Max]]></comment>
+			</node>
+			<node type="PassThroughNode" index="77">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">-908</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-175" offsety="0" sizex="117" sizey="19"><![CDATA[Damping Target Value]]></comment>
+			</node>
+			<node type="PassThroughNode" index="78">
+				<param name="in" type="4" value="0.010000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">-943</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-150" offsety="1" sizex="93" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="79">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-209</prop>
+					<prop name="posy">-681</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-150" offsety="1" sizex="93" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="80">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">-979</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-142" offsety="0" sizex="82" sizey="19"><![CDATA[Follow Velocity]]></comment>
+			</node>
+			<node type="PassThroughNode" index="81">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">-413</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="82">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">157</prop>
+					<prop name="posy">-904</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="83">
+				<param name="in" type="4" value="0.750000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">1484</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-147" offsety="-1" sizex="82" sizey="19"><![CDATA[Follow Velocity]]></comment>
+			</node>
+			<node type="PassThroughNode" index="84">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">160</prop>
+					<prop name="posy">-721</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="85">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">-644</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="86">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">163</prop>
+					<prop name="posy">106</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="87">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">1447</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-144" offsety="0" sizex="80" sizey="19"><![CDATA[Diffusion Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="88">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">141</prop>
+					<prop name="posy">-1248</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="89">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">158</prop>
+					<prop name="posy">411</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="90">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">162</prop>
+					<prop name="posy">-487</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="91">
+				<param name="in" type="4" value="0.100000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">1520</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-158" offsety="-1" sizex="93" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="92">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">158</prop>
+					<prop name="posy">-978</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="93">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">-378</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="94">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">-866</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="95">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">158</prop>
+					<prop name="posy">-682</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="96">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">-606</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="97">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">158</prop>
+					<prop name="posy">446</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="98">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-212</prop>
+					<prop name="posy">1555</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-180" offsety="-1" sizex="117" sizey="19"><![CDATA[Damping Target Value]]></comment>
+			</node>
+			<node type="PassThroughNode" index="99">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">143</prop>
+					<prop name="posy">-1155</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="100">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">160</prop>
+					<prop name="posy">-451</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="101">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">157</prop>
+					<prop name="posy">-941</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="102">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">163</prop>
+					<prop name="posy">-758</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="103">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">174</prop>
+					<prop name="posy">1483</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="104">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">163</prop>
+					<prop name="posy">1230</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="105">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">174</prop>
+					<prop name="posy">1450</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="106">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">171</prop>
+					<prop name="posy">1710</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="107">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">168</prop>
+					<prop name="posy">1772</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="108">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">175</prop>
+					<prop name="posy">1834</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="109">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">177</prop>
+					<prop name="posy">1966</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="110">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">175</prop>
+					<prop name="posy">2037</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="111">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">176</prop>
+					<prop name="posy">1557</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="112">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">161</prop>
+					<prop name="posy">1150</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="113">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">175</prop>
+					<prop name="posy">1519</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="114">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">161</prop>
+					<prop name="posy">339</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="115">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">631</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="116">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">162</prop>
+					<prop name="posy">560</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="117">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">2173</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-184" offsety="0" sizex="144" sizey="32"><![CDATA[Flame Waste Dependency]]></comment>
+			</node>
+			<node type="PassThroughNode" index="118">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">177</prop>
+					<prop name="posy">2193</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="119">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">376</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="120">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">163</prop>
+					<prop name="posy">595</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="121">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">668</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="122">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">162</prop>
+					<prop name="posy">29</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="123">
+				<param name="in" type="4" value="250.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-202</prop>
+					<prop name="posy">-868</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-176" offsety="1" sizex="113" sizey="19"><![CDATA[Ignition Temperature]]></comment>
+			</node>
+			<node type="PassThroughNode" index="124">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-200</prop>
+					<prop name="posy">1816</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-234" offsety="0" sizex="212" sizey="19"><![CDATA[Particles per cubic SI Unit of Smoke]]></comment>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-238" offsety="-799" sizex="568" sizey="253"><![CDATA[Fuel]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-238" offsety="-536" sizex="568" sizey="811"><![CDATA[Heat]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-240" offsety="-1539" sizex="561" sizey="445"><![CDATA[Combustion of Fuel (with Oxygen)]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-237" offsety="1627" sizex="580" sizey="886"><![CDATA[Generation of Emission Positions]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-240" offsety="296" sizex="583" sizey="198"><![CDATA[Oxygen]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-240" offsety="1402" sizex="588" sizey="213"><![CDATA[Waste]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-240" offsety="516" sizex="583" sizey="867"><![CDATA[Density]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-239" offsety="-1080" sizex="567" sizey="272"><![CDATA[Gas]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Smoke_Heat_Interval_Min" basename="Smoke Heat Interval Min" portlabel="Smoke Heat Interval Min" exposetype="single"> </port>
+			<port index="1" portname="in" username="Smoke_Heat_Interval_Max" basename="Smoke Heat Interval Max" portlabel="Smoke Heat Interval Max" exposetype="single"> </port>
+			<port index="4" portname="in" username="Smoke_Waste_Dependency" basename="Smoke Waste Dependency" portlabel="Smoke Waste Dependency" exposetype="single"> </port>
+			<port index="6" portname="in" username="Amount_per_cubic_SI_Unit_of_Flame" basename="Amount per cubic SI Unit of Flame" portlabel="Amount per cubic SI Unit of Flame" exposetype="single"> </port>
+			<port index="7" portname="in" username="Enable___" basename="Enable   " portlabel="Enable   " exposetype="single"> </port>
+			<port index="9" portname="in" username="Damping_Rate__" basename="Damping-Rate  " portlabel="Damping-Rate  " exposetype="single"> </port>
+			<port index="11" portname="in" username="Damping_Rate___" basename="Damping-Rate   " portlabel="Damping-Rate   " exposetype="single"> </port>
+			<port index="12" portname="in" username="Damping_Target_Value__" basename="Damping-Target-Value  " portlabel="Damping-Target-Value  " exposetype="single"> </port>
+			<port index="13" portname="in" username="Follow_Velocity__" basename="Follow-Velocity  " portlabel="Follow-Velocity  " exposetype="single"> </port>
+			<port index="14" portname="array" username="Behavior" basename="Behavior" portlabel="Behavior" exposetype="single"> </port>
+			<port index="15" portname="in" username="Diffusion_Rate__" basename="Diffusion-Rate  " portlabel="Diffusion-Rate  " exposetype="single"> </port>
+			<port index="16" portname="in" username="Diffusion_Rate" basename="Diffusion-Rate" portlabel="Diffusion-Rate" exposetype="single"> </port>
+			<port index="17" portname="in" username="Expansion___" basename="Expansion   " portlabel="Expansion   " exposetype="single"> </port>
+			<port index="18" portname="in" username="Follow_Velocity" basename="Follow-Velocity" portlabel="Follow-Velocity" exposetype="single"> </port>
+			<port index="19" portname="in" username="Damping_Target_Value" basename="Damping-Target-Value" portlabel="Damping-Target-Value" exposetype="single"> </port>
+			<port index="24" portname="in" username="Enable_Combustion" basename="Enable Combustion" portlabel="Enable Combustion" exposetype="single"> </port>
+			<port index="26" portname="in" username="Custom_Buoyancy_Direction_" basename="Custom Buoyancy Direction " portlabel="Custom Buoyancy Direction " exposetype="single"> </port>
+			<port index="27" portname="in" username="Buoyancy_" basename="Buoyancy " portlabel="Buoyancy " exposetype="single"> </port>
+			<port index="28" portname="in" username="Burn_Rate__Fuel_" basename="Burn-Rate-(Fuel)" portlabel="Burn-Rate-(Fuel)" exposetype="single"> </port>
+			<port index="30" portname="in" username="Damping_Rate_" basename="Damping-Rate " portlabel="Damping-Rate " exposetype="single"> </port>
+			<port index="31" portname="in" username="Follow_Velocity_" basename="Follow-Velocity " portlabel="Follow-Velocity " exposetype="single"> </port>
+			<port index="32" portname="in" username="Damping_Target_Value_" basename="Damping-Target-Value " portlabel="Damping-Target-Value " exposetype="single"> </port>
+			<port index="33" portname="in" username="Diffusion_Rate_" basename="Diffusion-Rate " portlabel="Diffusion-Rate " exposetype="single"> </port>
+			<port index="34" portname="in" username="Ignition_Temperature__Fuel_" basename="Ignition-Temperature (Fuel)" portlabel="Ignition-Temperature (Fuel)" exposetype="single"> </port>
+			<port index="35" portname="in" username="Heat_of_Combustion" basename="Heat of Combustion" portlabel="Heat of Combustion" exposetype="single"> </port>
+			<port index="36" portname="in" username="Amount_per_cubic_SI_Unit_of_Waste" basename="Amount per cubic SI Unit of Waste" portlabel="Amount per cubic SI Unit of Waste" exposetype="single"> </port>
+			<port index="37" portname="boolean" username="Flame_Heat_Interval_Clamp" basename="Flame Heat Interval Clamp" portlabel="Flame Heat Interval Clamp" exposetype="single"> </port>
+			<port index="39" portname="in" username="Use_inverse_Gravity_Vector_as_Buoyancy_Direction_" basename="Use inverse Gravity Vector as Buoyancy Direction " portlabel="Use inverse Gravity Vector as Buoyancy Direction " exposetype="single"> </port>
+			<port index="40" portname="in" username="Enable_" basename="Enable " portlabel="Enable " exposetype="single"> </port>
+			<port index="43" portname="in" username="Amount______" basename="Amount      " portlabel="Amount      " exposetype="single"> </port>
+			<port index="44" portname="in" username="Buoyancy___" basename="Buoyancy   " portlabel="Buoyancy   " exposetype="single"> </port>
+			<port index="45" portname="in" username="Animation_Speed_" basename="Animation-Speed " portlabel="Animation-Speed " exposetype="single"> </port>
+			<port index="46" portname="in" username="Animation_Speed___" basename="Animation-Speed   " portlabel="Animation-Speed   " exposetype="single"> </port>
+			<port index="48" portname="in" username="Seed___" basename="Seed   " portlabel="Seed   " exposetype="single"> </port>
+			<port index="49" portname="in" username="Seed_" basename="Seed " portlabel="Seed " exposetype="single"> </port>
+			<port index="54" portname="in" username="Amount__" basename="Amount  " portlabel="Amount  " exposetype="single"> </port>
+			<port index="56" portname="in" username="Custom_Buoyancy_Direction___" basename="Custom Buoyancy Direction   " portlabel="Custom Buoyancy Direction   " exposetype="single"> </port>
+			<port index="57" portname="in" username="Expansion_" basename="Expansion " portlabel="Expansion " exposetype="single"> </port>
+			<port index="63" portname="in" username="Burn_Rate__Gas_" basename="Burn-Rate-(Gas)" portlabel="Burn-Rate-(Gas)" exposetype="single"> </port>
+			<port index="65" portname="in" username="Generate_Gas_from_Fuel" basename="Generate-Gas-from-Fuel" portlabel="Generate-Gas-from-Fuel" exposetype="single"> </port>
+			<port index="66" portname="in" username="Use_Gravity_Vector_as_Buoyancy_Direction___" basename="Use Gravity Vector as Buoyancy Direction   " portlabel="Use Gravity Vector as Buoyancy Direction   " exposetype="single"> </port>
+			<port index="69" portname="in" username="Follow_Velocity___" basename="Follow-Velocity   " portlabel="Follow-Velocity   " exposetype="single"> </port>
+			<port index="71" portname="in" username="Diffusion_Rate___" basename="Diffusion-Rate   " portlabel="Diffusion-Rate   " exposetype="single"> </port>
+			<port index="72" portname="in" username="Damping_Target_Value___" basename="Damping-Target-Value   " portlabel="Damping-Target-Value   " exposetype="single"> </port>
+			<port index="73" portname="in" username="Flame_Heat_Interval_Min" basename="Flame Heat Interval Min" portlabel="Flame Heat Interval Min" exposetype="single"> </port>
+			<port index="75" portname="in" username="Diffusion_Rate____" basename="Diffusion-Rate    " portlabel="Diffusion-Rate    " exposetype="single"> </port>
+			<port index="76" portname="in" username="Flame_Heat_Interval_Max" basename="Flame Heat Interval Max" portlabel="Flame Heat Interval Max" exposetype="single"> </port>
+			<port index="77" portname="in" username="Damping_Target_Value____" basename="Damping-Target-Value    " portlabel="Damping-Target-Value    " exposetype="single"> </port>
+			<port index="78" portname="in" username="Damping_Rate____" basename="Damping-Rate    " portlabel="Damping-Rate    " exposetype="single"> </port>
+			<port index="79" portname="in" username="Damping_Rate" basename="Damping-Rate" portlabel="Damping-Rate" exposetype="single"> </port>
+			<port index="80" portname="in" username="Follow_Velocity____" basename="Follow-Velocity    " portlabel="Follow-Velocity    " exposetype="single"> </port>
+			<port index="83" portname="in" username="Follow_Velocity_____" basename="Follow-Velocity     " portlabel="Follow-Velocity     " exposetype="single"> </port>
+			<port index="87" portname="in" username="Diffusion_Rate_____" basename="Diffusion-Rate     " portlabel="Diffusion-Rate     " exposetype="single"> </port>
+			<port index="91" portname="in" username="Damping_Rate_____" basename="Damping-Rate     " portlabel="Damping-Rate     " exposetype="single"> </port>
+			<port index="98" portname="in" username="Damping_Target_Value_____" basename="Damping-Target-Value     " portlabel="Damping-Target-Value     " exposetype="single"> </port>
+			<port index="117" portname="in" username="Flame_Waste_Dependency" basename="Flame Waste Dependency" portlabel="Flame Waste Dependency" exposetype="single"> </port>
+			<port index="123" portname="in" username="Ignition_Temperature__Gas_" basename="Ignition-Temperature (Gas)" portlabel="Ignition-Temperature (Gas)" exposetype="single"> </port>
+			<port index="124" portname="in" username="Amount_per_cubic_SI_Unit_of_Smoke" basename="Amount per cubic SI Unit of Smoke" portlabel="Amount per cubic SI Unit of Smoke" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="10" from_port="result" to_node="60" to_port="factor"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="61" to_port="factor"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="2" to_port="in"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="3" to_port="in"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="14" to_port="value93"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="14" to_port="value94"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="5" to_port="in"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="14" to_port="value95"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="107" to_port="in"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="10" to_port="condition"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="10" to_port="iffalse"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="89" to_port="in"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="115" to_port="in"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="97" to_port="in"> </cnx>
+			<cnx from_node="13" from_port="out" to_node="119" to_port="in"> </cnx>
+			<cnx from_node="15" from_port="out" to_node="114" to_port="in"> </cnx>
+			<cnx from_node="16" from_port="out" to_node="84" to_port="in"> </cnx>
+			<cnx from_node="17" from_port="out" to_node="60" to_port="value"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="102" to_port="in"> </cnx>
+			<cnx from_node="19" from_port="out" to_node="85" to_port="in"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="14" to_port="value9"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="21" to_port="iftrue"> </cnx>
+			<cnx from_node="29" from_port="result" to_node="14" to_port="value1"> </cnx>
+			<cnx from_node="37" from_port="integer" to_node="74" to_port="integer"> </cnx>
+			<cnx from_node="47" from_port="scalar" to_node="14" to_port="value59"> </cnx>
+			<cnx from_node="55" from_port="x" to_node="14" to_port="value55"> </cnx>
+			<cnx from_node="55" from_port="y" to_node="14" to_port="value56"> </cnx>
+			<cnx from_node="55" from_port="z" to_node="14" to_port="value57"> </cnx>
+			<cnx from_node="25" from_port="x" to_node="14" to_port="value31"> </cnx>
+			<cnx from_node="25" from_port="y" to_node="14" to_port="value32"> </cnx>
+			<cnx from_node="25" from_port="z" to_node="14" to_port="value33"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="29" to_port="value1"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="64" to_port="value1"> </cnx>
+			<cnx from_node="42" from_port="result" to_node="38" to_port="value"> </cnx>
+			<cnx from_node="42" from_port="result" to_node="58" to_port="value"> </cnx>
+			<cnx from_node="52" from_port="result" to_node="14" to_port="value37"> </cnx>
+			<cnx from_node="68" from_port="result" to_node="14" to_port="value61"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="21" to_port="iffalse"> </cnx>
+			<cnx from_node="24" from_port="out" to_node="21" to_port="condition"> </cnx>
+			<cnx from_node="26" from_port="out" to_node="25" to_port="vector"> </cnx>
+			<cnx from_node="27" from_port="out" to_node="58" to_port="factor"> </cnx>
+			<cnx from_node="28" from_port="out" to_node="29" to_port="value2"> </cnx>
+			<cnx from_node="30" from_port="out" to_node="81" to_port="in"> </cnx>
+			<cnx from_node="31" from_port="out" to_node="100" to_port="in"> </cnx>
+			<cnx from_node="32" from_port="out" to_node="93" to_port="in"> </cnx>
+			<cnx from_node="33" from_port="out" to_node="90" to_port="in"> </cnx>
+			<cnx from_node="34" from_port="out" to_node="96" to_port="in"> </cnx>
+			<cnx from_node="35" from_port="out" to_node="99" to_port="in"> </cnx>
+			<cnx from_node="36" from_port="out" to_node="106" to_port="in"> </cnx>
+			<cnx from_node="38" from_port="result" to_node="14" to_port="value29"> </cnx>
+			<cnx from_node="39" from_port="out" to_node="52" to_port="condition"> </cnx>
+			<cnx from_node="40" from_port="out" to_node="42" to_port="condition"> </cnx>
+			<cnx from_node="41" from_port="result" to_node="42" to_port="iffalse"> </cnx>
+			<cnx from_node="43" from_port="out" to_node="112" to_port="in"> </cnx>
+			<cnx from_node="44" from_port="out" to_node="61" to_port="value"> </cnx>
+			<cnx from_node="45" from_port="out" to_node="86" to_port="in"> </cnx>
+			<cnx from_node="46" from_port="out" to_node="104" to_port="in"> </cnx>
+			<cnx from_node="48" from_port="out" to_node="47" to_port="integer"> </cnx>
+			<cnx from_node="49" from_port="out" to_node="50" to_port="integer"> </cnx>
+			<cnx from_node="50" from_port="scalar" to_node="14" to_port="value35"> </cnx>
+			<cnx from_node="51" from_port="result" to_node="52" to_port="iftrue"> </cnx>
+			<cnx from_node="53" from_port="result" to_node="52" to_port="iffalse"> </cnx>
+			<cnx from_node="54" from_port="out" to_node="122" to_port="in"> </cnx>
+			<cnx from_node="56" from_port="out" to_node="55" to_port="vector"> </cnx>
+			<cnx from_node="57" from_port="out" to_node="38" to_port="factor"> </cnx>
+			<cnx from_node="58" from_port="result" to_node="14" to_port="value30"> </cnx>
+			<cnx from_node="59" from_port="result" to_node="42" to_port="iftrue"> </cnx>
+			<cnx from_node="60" from_port="result" to_node="14" to_port="value53"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="14" to_port="value54"> </cnx>
+			<cnx from_node="62" from_port="result" to_node="10" to_port="iftrue"> </cnx>
+			<cnx from_node="63" from_port="out" to_node="64" to_port="value2"> </cnx>
+			<cnx from_node="64" from_port="result" to_node="14" to_port="value2"> </cnx>
+			<cnx from_node="65" from_port="out" to_node="88" to_port="in"> </cnx>
+			<cnx from_node="66" from_port="out" to_node="68" to_port="condition"> </cnx>
+			<cnx from_node="67" from_port="result" to_node="68" to_port="iftrue"> </cnx>
+			<cnx from_node="69" from_port="out" to_node="120" to_port="in"> </cnx>
+			<cnx from_node="70" from_port="result" to_node="68" to_port="iffalse"> </cnx>
+			<cnx from_node="71" from_port="out" to_node="116" to_port="in"> </cnx>
+			<cnx from_node="72" from_port="out" to_node="121" to_port="in"> </cnx>
+			<cnx from_node="73" from_port="out" to_node="109" to_port="in"> </cnx>
+			<cnx from_node="74" from_port="scalar" to_node="14" to_port="value91"> </cnx>
+			<cnx from_node="75" from_port="out" to_node="20" to_port="in"> </cnx>
+			<cnx from_node="76" from_port="out" to_node="110" to_port="in"> </cnx>
+			<cnx from_node="77" from_port="out" to_node="82" to_port="in"> </cnx>
+			<cnx from_node="78" from_port="out" to_node="101" to_port="in"> </cnx>
+			<cnx from_node="79" from_port="out" to_node="95" to_port="in"> </cnx>
+			<cnx from_node="80" from_port="out" to_node="92" to_port="in"> </cnx>
+			<cnx from_node="81" from_port="out" to_node="14" to_port="value27"> </cnx>
+			<cnx from_node="82" from_port="out" to_node="14" to_port="value12"> </cnx>
+			<cnx from_node="83" from_port="out" to_node="103" to_port="in"> </cnx>
+			<cnx from_node="84" from_port="out" to_node="14" to_port="value17"> </cnx>
+			<cnx from_node="85" from_port="out" to_node="14" to_port="value20"> </cnx>
+			<cnx from_node="86" from_port="out" to_node="14" to_port="value36"> </cnx>
+			<cnx from_node="87" from_port="out" to_node="105" to_port="in"> </cnx>
+			<cnx from_node="88" from_port="out" to_node="14" to_port="value3"> </cnx>
+			<cnx from_node="89" from_port="out" to_node="14" to_port="value43"> </cnx>
+			<cnx from_node="90" from_port="out" to_node="14" to_port="value25"> </cnx>
+			<cnx from_node="91" from_port="out" to_node="113" to_port="in"> </cnx>
+			<cnx from_node="92" from_port="out" to_node="14" to_port="value10"> </cnx>
+			<cnx from_node="93" from_port="out" to_node="14" to_port="value28"> </cnx>
+			<cnx from_node="94" from_port="out" to_node="14" to_port="value13"> </cnx>
+			<cnx from_node="95" from_port="out" to_node="14" to_port="value19"> </cnx>
+			<cnx from_node="96" from_port="out" to_node="14" to_port="value21"> </cnx>
+			<cnx from_node="97" from_port="out" to_node="14" to_port="value44"> </cnx>
+			<cnx from_node="98" from_port="out" to_node="111" to_port="in"> </cnx>
+			<cnx from_node="99" from_port="out" to_node="14" to_port="value4"> </cnx>
+			<cnx from_node="100" from_port="out" to_node="14" to_port="value26"> </cnx>
+			<cnx from_node="101" from_port="out" to_node="14" to_port="value11"> </cnx>
+			<cnx from_node="102" from_port="out" to_node="14" to_port="value18"> </cnx>
+			<cnx from_node="103" from_port="out" to_node="14" to_port="value66"> </cnx>
+			<cnx from_node="104" from_port="out" to_node="14" to_port="value60"> </cnx>
+			<cnx from_node="105" from_port="out" to_node="14" to_port="value65"> </cnx>
+			<cnx from_node="106" from_port="out" to_node="14" to_port="value83"> </cnx>
+			<cnx from_node="107" from_port="out" to_node="14" to_port="value84"> </cnx>
+			<cnx from_node="108" from_port="out" to_node="14" to_port="value85"> </cnx>
+			<cnx from_node="109" from_port="out" to_node="14" to_port="value89"> </cnx>
+			<cnx from_node="110" from_port="out" to_node="14" to_port="value90"> </cnx>
+			<cnx from_node="111" from_port="out" to_node="14" to_port="value68"> </cnx>
+			<cnx from_node="112" from_port="out" to_node="14" to_port="value58"> </cnx>
+			<cnx from_node="113" from_port="out" to_node="14" to_port="value67"> </cnx>
+			<cnx from_node="114" from_port="out" to_node="14" to_port="value41"> </cnx>
+			<cnx from_node="115" from_port="out" to_node="14" to_port="value51"> </cnx>
+			<cnx from_node="116" from_port="out" to_node="14" to_port="value49"> </cnx>
+			<cnx from_node="117" from_port="out" to_node="118" to_port="in"> </cnx>
+			<cnx from_node="118" from_port="out" to_node="14" to_port="value92"> </cnx>
+			<cnx from_node="119" from_port="out" to_node="14" to_port="value42"> </cnx>
+			<cnx from_node="120" from_port="out" to_node="14" to_port="value50"> </cnx>
+			<cnx from_node="121" from_port="out" to_node="14" to_port="value52"> </cnx>
+			<cnx from_node="122" from_port="out" to_node="14" to_port="value34"> </cnx>
+			<cnx from_node="123" from_port="out" to_node="94" to_port="in"> </cnx>
+			<cnx from_node="124" from_port="out" to_node="108" to_port="in"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Combustion of Fuel and Gas with Oxygen">
+				<item type="input" name="Enable_Combustion"> </item>
+				<item type="input" name="Generate_Gas_from_Fuel" min="0" max="1"> </item>
+				<item type="input" name="Burn_Rate__Fuel_" min="0" max="2"> </item>
+				<item type="input" name="Burn_Rate__Gas_" min="0" max="2"> </item>
+				<item type="input" name="Ignition_Temperature__Fuel_" min="250" max="1500"> </item>
+				<item type="input" name="Ignition_Temperature__Gas_"> </item>
+				<item type="input" name="Heat_of_Combustion" min="250" max="1500"> </item>
+			</group>
+			<group type="input" name="Data Behavior">
+				<group type="input" name="FUEL">
+					<item type="input" name="Diffusion_Rate" min="0" max="0.1"> </item>
+					<item type="input" name="Follow_Velocity" min="0" max="1"> </item>
+					<item type="input" name="Damping_Rate" min="0" max="0.25"> </item>
+					<item type="input" name="Damping_Target_Value" min="0" max="1"> </item>
+				</group>
+				<group type="input" name="GAS">
+					<item type="input" name="Diffusion_Rate____" min="0" max="0.1"> </item>
+					<item type="input" name="Follow_Velocity____" min="0" max="1"> </item>
+					<item type="input" name="Damping_Rate____" min="0" max="0.25"> </item>
+					<item type="input" name="Damping_Target_Value____" min="0" max="1"> </item>
+				</group>
+				<group type="input" name="HEAT">
+					<item type="input" name="Diffusion_Rate_" min="0" max="0.1"> </item>
+					<item type="input" name="Follow_Velocity_" min="0" max="1"> </item>
+					<item type="input" name="Damping_Rate_" min="0" max="0.25"> </item>
+					<item type="input" name="Damping_Target_Value_" min="0" max="1"> </item>
+					<group type="input" name="Generate Velocity from Heat">
+						<item type="input" name="Enable_"> </item>
+						<item type="input" name="Expansion_" min="0" max="1"> </item>
+						<item type="input" name="Buoyancy_" min="0" max="1"> </item>
+						<item type="input" name="Use_inverse_Gravity_Vector_as_Buoyancy_Direction_"> </item>
+						<item type="input" name="Custom_Buoyancy_Direction_"> </item>
+						<group type="input" name="Randomness">
+							<item type="input" name="Amount__" min="0" max="1.57"> </item>
+							<item type="input" name="Seed_"> </item>
+							<item type="input" name="Animation_Speed_" min="0" max="1"> </item>
+						</group>
+					</group>
+				</group>
+				<group type="input" name="OXYGEN">
+					<item type="input" name="Diffusion_Rate__" min="0" max="0.1"> </item>
+					<item type="input" name="Follow_Velocity__" min="0" max="1"> </item>
+					<item type="input" name="Damping_Rate__" min="0" max="0.25"> </item>
+					<item type="input" name="Damping_Target_Value__" min="0" max="1"> </item>
+				</group>
+				<group type="input" name="DENSITY">
+					<item type="input" name="Diffusion_Rate___" min="0" max="0.1"> </item>
+					<item type="input" name="Follow_Velocity___" min="0" max="1"> </item>
+					<item type="input" name="Damping_Rate___" min="0" max="0.25"> </item>
+					<item type="input" name="Damping_Target_Value___" min="0" max="1"> </item>
+					<group type="input" name="Generate Velocity from Density">
+						<item type="input" name="Enable___"> </item>
+						<item type="input" name="Expansion___" min="0" max="1"> </item>
+						<item type="input" name="Buoyancy___" min="0" max="1"> </item>
+						<item type="input" name="Use_Gravity_Vector_as_Buoyancy_Direction___"> </item>
+						<item type="input" name="Custom_Buoyancy_Direction___"> </item>
+						<group type="input" name="Randomness">
+							<item type="input" name="Amount______" min="0" max="1.57"> </item>
+							<item type="input" name="Seed___"> </item>
+							<item type="input" name="Animation_Speed___" min="0" max="1"> </item>
+						</group>
+					</group>
+				</group>
+				<group type="input" name="WASTE">
+					<item type="input" name="Diffusion_Rate_____" min="0" max="0.1"> </item>
+					<item type="input" name="Follow_Velocity_____" min="0" max="1"> </item>
+					<item type="input" name="Damping_Rate_____" min="0" max="0.25"> </item>
+					<item type="input" name="Damping_Target_Value_____" min="0" max="1"> </item>
+				</group>
+			</group>
+			<group type="input" name="Generation of Emission Positions">
+				<item type="input" name="Amount_per_cubic_SI_Unit_of_Waste"> </item>
+				<item type="input" name="Amount_per_cubic_SI_Unit_of_Flame"> </item>
+				<item type="input" name="Amount_per_cubic_SI_Unit_of_Smoke"> </item>
+				<item type="input" name="Flame_Heat_Interval_Min" min="200" max="700"> </item>
+				<item type="input" name="Flame_Heat_Interval_Max" min="200" max="700"> </item>
+				<item type="input" name="Flame_Heat_Interval_Clamp"> </item>
+				<item type="input" name="Flame_Waste_Dependency" min="0" max="1"> </item>
+				<item type="input" name="Smoke_Heat_Interval_Min" min="0" max="700"> </item>
+				<item type="input" name="Smoke_Heat_Interval_Max" min="0" max="700"> </item>
+				<item type="input" name="Smoke_Waste_Dependency" min="0" max="1"> </item>
+			</group>
+			<item type="output" name="Behavior"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

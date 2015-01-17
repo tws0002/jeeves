@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="Dart Throw Version 3" category="Custom ICENode" author="Julian Johnson" formatversion="1.4" compoundversion="3.0" backgroundcolor="7910332">
+	<definition>
+		<nodes>
+			<node type="SelectInArrayNode" index="0">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">119</prop>
+					<prop name="posy">290</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="1">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">121</prop>
+					<prop name="posy">198</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="self.id"></param>
+				<param_ext name="reference" type="31" value="self.id"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-83</prop>
+					<prop name="posy">178</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Dart_Throw_Version_3" index="3">
+				<param name="Size" type="4" value="0.150000"></param>
+				<param name="Iterations" type="3" value="50000"></param>
+				<param name="Iteration Abort Threshold" type="4" value="1.000000"></param>
+				<param name="Use Absolute Size" type="11" value="false"></param>
+				<param name="Size Map" type="4" value="0.000000"></param>
+				<param name="Adjusted Size" type="4" value="0.150000"></param>
+				<param name="Erase Map" type="4" value="0.000000"></param>
+				<param name="Erase Threshold" type="4" value="1.000000"></param>
+				<param name="Randomise" type="11" value="true"></param>
+				<param name="Use Absolute Random" type="11" value="true"></param>
+				<param name="Variance" type="4" value="0.300000"></param>
+				<param name="Seed" type="3" value="1"></param>
+				<param name="Min Size" type="4" value="0.050000"></param>
+				<portdef name="Geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Size" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="Iterations" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="Iteration Abort Threshold" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="Use Absolute Size" type="1" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="Size Map" type="4" structure="1" group="0" instance="0" port="5"></portdef>
+				<portdef name="Adjusted Size" type="4" structure="1" group="0" instance="0" port="6"></portdef>
+				<portdef name="Erase Map" type="4" structure="1" group="0" instance="0" port="7"></portdef>
+				<portdef name="Erase Threshold" type="4" structure="1" group="0" instance="0" port="8"></portdef>
+				<portdef name="Randomise" type="1" structure="1" group="0" instance="0" port="9"></portdef>
+				<portdef name="Use Absolute Random" type="1" structure="1" group="0" instance="0" port="10"></portdef>
+				<portdef name="Variance" type="4" structure="1" group="0" instance="0" port="11"></portdef>
+				<portdef name="Seed" type="2" structure="1" group="0" instance="0" port="12"></portdef>
+				<portdef name="Min Size" type="4" structure="1" group="0" instance="0" port="13"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-279</prop>
+					<prop name="posy">45</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="Size_Index_Per_Point" basename="Size Index Per Point" portlabel="Size Index Per Point" exposetype="single"> </port>
+			<port index="1" portname="value" username="Size_Per_Point" basename="Size Per Point" portlabel="Size Per Point" exposetype="single"> </port>
+			<port index="3" portname="Geometry" username="Geometry" basename="Geometry" portlabel="Geometry" exposetype="single"> </port>
+			<port index="3" portname="Size" username="Size" basename="Size" portlabel="Size" exposetype="single"> </port>
+			<port index="3" portname="Points" username="Points" basename="Points" portlabel="Points" exposetype="single"> </port>
+			<port index="3" portname="Sizes" username="Size_Array" basename="Size Array" portlabel="Size Array" exposetype="single"> </port>
+			<port index="3" portname="Indices" username="Size_Index_Array" basename="Size Index Array" portlabel="Size Index Array" exposetype="single"> </port>
+			<port index="3" portname="Iterations" username="Iterations" basename="Iterations" portlabel="Iterations" exposetype="single"> </port>
+			<port index="3" portname="Use Absolute Size" username="Use_Absolute_Size" basename="Use Absolute Size" portlabel="Use Absolute Size" exposetype="single"> </port>
+			<port index="3" portname="Size Map" username="Size_Map" basename="Size Map" portlabel="Size Map" exposetype="single"> </port>
+			<port index="3" portname="Adjusted Size" username="Adjusted_Size" basename="Adjusted Size" portlabel="Adjusted Size" exposetype="single"> </port>
+			<port index="3" portname="Erase Map" username="Erase_Map" basename="Erase Map" portlabel="Erase Map" exposetype="single"> </port>
+			<port index="3" portname="Erase Threshold" username="Erase_Threshold" basename="Erase Threshold" portlabel="Erase Threshold" exposetype="single"> </port>
+			<port index="3" portname="Randomise" username="Randomise" basename="Randomise" portlabel="Randomise" exposetype="single"> </port>
+			<port index="3" portname="Use Absolute Random" username="Use_Absolute_Random" basename="Use Absolute Random" portlabel="Use Absolute Random" exposetype="single"> </port>
+			<port index="3" portname="Variance" username="Variance" basename="Variance" portlabel="Variance" exposetype="single"> </port>
+			<port index="3" portname="Seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="3" portname="Iteration Abort Threshold" username="Iteration_Abort_Threshold" basename="Iteration Abort Threshold" portlabel="Iteration Abort Threshold" exposetype="single"> </port>
+			<port index="3" portname="Min Size" username="Min_Size" basename="Min Size" portlabel="Min Size" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="value" to_node="0" to_port="index"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="1" to_port="index"> </cnx>
+			<cnx from_node="3" from_port="Indices" to_node="0" to_port="array"> </cnx>
+			<cnx from_node="3" from_port="Sizes" to_node="1" to_port="array"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Basics" collapsed="false">
+				<item type="input" name="Geometry" min="0" max="0"> </item>
+				<item type="input" name="Size" min="0" max="0"> </item>
+				<item type="input" name="Iterations" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="Size Adjustment" collapsed="false">
+				<item type="input" name="Use_Absolute_Size" min="0" max="0"> </item>
+				<item type="input" name="Size_Map" min="0" max="0"> </item>
+				<item type="input" name="Adjusted_Size" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="Erase" collapsed="false">
+				<item type="input" name="Erase_Map" min="0" max="0"> </item>
+				<item type="input" name="Erase_Threshold" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="Randomise" collapsed="false">
+				<item type="input" name="Randomise" min="0" max="0"> </item>
+				<item type="input" name="Use_Absolute_Random" min="0" max="0"> </item>
+				<item type="input" name="Variance" min="0" max="0"> </item>
+				<item type="input" name="Seed" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="Misc" collapsed="false">
+				<item type="input" name="Iteration_Abort_Threshold" min="0" max="0"> </item>
+				<item type="input" name="Min_Size" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Points"> </item>
+			<group type="output" name="Arrays" collapsed="false">
+				<item type="output" name="Size_Index_Array" min="0" max="0"> </item>
+				<item type="output" name="Size_Array" min="0" max="0"> </item>
+			</group>
+			<group type="output" name="Per Point" collapsed="false">
+				<item type="output" name="Size_Per_Point" min="0" max="0"> </item>
+				<item type="output" name="Size_Index_Per_Point" min="0" max="0"> </item>
+			</group>
+		</layout>
+	</definition>
+</xsi_file>

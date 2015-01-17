@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Init slim Particle Data" tasks="Mootzoid - emTools/Tools - All Sorts of Things" formatversion="1.4" compoundversion="3.0" constructionmode="Current" backgroundcolor="9216938">
+	<definition>
+		<nodes>
+			<node type="Set Data" version="1.0" index="0">
+				<param name="Reference" type="31" value="Init_Size"></param>
+				<param name="Reference1" type="31" value="Init_Mass"></param>
+				<param name="Reference2" type="31" value="Init_Scale"></param>
+				<param name="Reference3" type="31" value="Init_Color"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param name="Value1" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_x" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_y" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_z" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_red" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_green" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_blue" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Init_Size"></param_ext>
+				<param_ext name="Reference1" type="31" value="Init_Mass"></param_ext>
+				<param_ext name="Reference2" type="31" value="Init_Scale"></param_ext>
+				<param_ext name="Reference3" type="31" value="Init_Color"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="4" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="16" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value3" type="512" structure="1" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-800</prop>
+					<prop name="posy">-80</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-470</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="2">
+				<param name="Reference" type="31" value="Shape"></param>
+				<param name="Reference1" type="31" value="Size"></param>
+				<param name="Reference2" type="31" value="Mass"></param>
+				<param name="Reference3" type="31" value="Scale"></param>
+				<param name="Reference4" type="31" value="Color"></param>
+				<param name="Reference5" type="31" value="State_ID"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param name="Value1" type="4" value="0.000000"></param>
+				<param name="Value2" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_x" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_y" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_z" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_red" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_green" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_blue" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_alpha" type="4" value="1.000000"></param>
+				<param name="Value5" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="Shape"></param_ext>
+				<param_ext name="Reference1" type="31" value="Size"></param_ext>
+				<param_ext name="Reference2" type="31" value="Mass"></param_ext>
+				<param_ext name="Reference3" type="31" value="Scale"></param_ext>
+				<param_ext name="Reference4" type="31" value="Color"></param_ext>
+				<param_ext name="Reference5" type="31" value="State_ID"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="32768" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="4" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="4" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value3" type="16" structure="1" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<portdef name="Value4" type="512" structure="1" group="2" instance="4" port="0" groupname="Value"></portdef>
+				<portdef name="Value5" type="2" structure="1" group="2" instance="5" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-800</prop>
+					<prop name="posy">-580</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="3">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="32768" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-550</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in.in_red" type="4" value="0.000000"></param>
+				<param name="in.in_green" type="4" value="0.203000"></param>
+				<param name="in.in_blue" type="4" value="0.943000"></param>
+				<param name="in.in_alpha" type="4" value="1.000000"></param>
+				<portdef name="in" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-240</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_0]" index="5">
+				<param name="State_ID" type="3" value="0"></param>
+				<portdef name="State_ID" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-160</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_1]" index="6">
+				<param name="Scale.Scale_x" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_y" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_z" type="4" value="1.000000"></param>
+				<portdef name="Scale" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-320</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="7">
+				<param name="in" type="4" value="0.100000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-400</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="8">
+				<param name="reference" type="31" value="Self"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1509</prop>
+					<prop name="posy">-739</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="9">
+				<param name="value.value_x" type="4" value="1.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1656</prop>
+					<prop name="posy">-319</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="10">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1611</prop>
+					<prop name="posy">-157</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Execute" username="Set_Init_Data" basename="Set Init Data" portlabel="Set Init Data" exposetype="single"> </port>
+			<port index="1" portname="in" username="Size" basename="Size" portlabel="Size" exposetype="single"> </port>
+			<port index="2" portname="Execute" username="Set_Data" basename="Set Data" portlabel="Set Data" exposetype="single"> </port>
+			<port index="3" portname="in" username="Shape" basename="Shape" portlabel="Shape" exposetype="single"> </port>
+			<port index="4" portname="in" username="Color" basename="Color" portlabel="Color" exposetype="single"> </port>
+			<port index="7" portname="in" username="Mass" basename="Mass" portlabel="Mass" exposetype="single"> </port>
+			<port index="8" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="9" from_port="result" to_node="6" to_port="Scale"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="5" to_port="State_ID"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="2" to_port="Value4"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="0" to_port="Value3"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="2" to_port="Value"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="2" to_port="Value1"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="Value"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="2" to_port="Value2"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="0" to_port="Value1"> </cnx>
+			<cnx from_node="5" from_port="Out" to_node="2" to_port="Value5"> </cnx>
+			<cnx from_node="6" from_port="Out" to_node="0" to_port="Value2"> </cnx>
+			<cnx from_node="6" from_port="Out" to_node="2" to_port="Value3"> </cnx>
+			<cnx from_node="8" from_port="outname" to_node="0" to_port="In_Name"> </cnx>
+			<cnx from_node="8" from_port="outname" to_node="2" to_port="In_Name"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Reference"> </item>
+			<group type="input" name="Data">
+				<item type="input" name="Shape" min="0" max="0"> </item>
+				<item type="input" name="Size" min="0" max="2"> </item>
+				<item type="input" name="Mass" min="0" max="1"> </item>
+				<item type="input" name="Color" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Set_Data"> </item>
+			<item type="output" name="Set_Init_Data"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+	<embedded_0 name="Pass Through" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1540</prop>
+					<prop name="posy">-160</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="5" portname="in" username="State_ID" basename="State_ID" portlabel="State_ID" exposetype="single"> </port>
+			<port index="5" portname="out" username="Out" basename="Out" portlabel="Out" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="State_ID"> </item>
+			<item type="output" name="Out"> </item>
+		</layout>
+	</embedded_0>
+	<embedded_1 name="Pass Through" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="PassThroughNode" index="3">
+				<param name="in.in_x" type="4" value="1.000000"></param>
+				<param name="in.in_y" type="4" value="1.000000"></param>
+				<param name="in.in_z" type="4" value="1.000000"></param>
+				<portdef name="in" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-1539</prop>
+					<prop name="posy">-317</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="3" portname="out" username="Out" basename="Out" portlabel="Out" exposetype="single"> </port>
+			<port index="3" portname="in" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Scale"> </item>
+			<item type="output" name="Out"> </item>
+		</layout>
+	</embedded_1>
+</xsi_file>

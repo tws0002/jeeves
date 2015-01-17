@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Debug Cluster Groups" category="" tasks="Momentum/Clusters" author="" url="" formatversion="1.4" compoundversion="1.1" versiontag="" backgroundcolor="12358775">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="ExecuteNode" index="0">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">267</prop>
+					<prop name="posy">244</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.clusterGroupId"></param>
+				<param_ext name="reference" type="31" value="self.clusterGroupId"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-303</prop>
+					<prop name="posy">366</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="self.clusterId"></param>
+				<param_ext name="reference" type="31" value="self.clusterId"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-230</prop>
+					<prop name="posy">206</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Color" version="1.0" index="3">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-257</prop>
+					<prop name="posy">468</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Color" version="1.0" index="4">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param name="Color.Color_red" type="4" value="0.000000"></param>
+				<param name="Color.Color_green" type="4" value="0.000000"></param>
+				<param name="Color.Color_blue" type="4" value="1.000000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">81</prop>
+					<prop name="posy">340</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="5">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Value" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="2" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">12</prop>
+					<prop name="posy">201</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<datablob category="vis_1">
+					<prop name="displaymode">0</prop>
+					<prop name="enable">1</prop>
+					<prop name="port">Value</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="6">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_red" type="4" value="1.000000"></param>
+				<param name="case0.case0_green" type="4" value="0.000000"></param>
+				<param name="case0.case0_blue" type="4" value="0.000000"></param>
+				<param name="case0.case0_alpha" type="4" value="1.000000"></param>
+				<param name="case1.case1_red" type="4" value="0.000000"></param>
+				<param name="case1.case1_green" type="4" value="1.000000"></param>
+				<param name="case1.case1_blue" type="4" value="0.000000"></param>
+				<param name="case1.case1_alpha" type="4" value="1.000000"></param>
+				<param name="default.default_red" type="4" value="0.000000"></param>
+				<param name="default.default_green" type="4" value="0.000000"></param>
+				<param name="default.default_blue" type="4" value="0.000000"></param>
+				<param name="default.default_alpha" type="4" value="1.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="512" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="512" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="512" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-65</prop>
+					<prop name="posy">333</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="7">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">147</prop>
+					<prop name="posy">229</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="6" portname="case0" username="Color_for_GroupID_0" basename="Color for GroupID 0" portlabel="Color for GroupID 0" exposetype="all_instances"> </port>
+			<port index="6" portname="case1" username="Color_for_GroupID_1" basename="Color for GroupID 0" portlabel="Color for GroupID 1" exposetype="all_instances"> </port>
+			<port index="7" portname="condition" username="Show_ClusterID" basename="Show ClusterID" portlabel="Show ClusterID" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="value" to_node="6" to_port="condition"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="5" to_port="In_Name"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="5" to_port="Value"> </cnx>
+			<cnx from_node="3" from_port="Color" to_node="6" to_port="default"> </cnx>
+			<cnx from_node="4" from_port="Execute" to_node="0" to_port="port2"> </cnx>
+			<cnx from_node="5" from_port="Execute" to_node="7" to_port="iftrue"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="4" to_port="Color"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="0" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Show_ClusterID"> </item>
+			<item type="input" name="Color_for_GroupID_0" min="0" max="0"> </item>
+			<item type="input" name="Color_for_GroupID_1" min="0" max="0"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Intersection of two Ellipsoids" tasks="Mootzoid - emTools/Tools - Intersection" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6004121">
+	<definition>
+		<nodes>
+			<node type="ScalarNode" index="0">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-5715</prop>
+					<prop name="posy">-342</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="1">
+				<param name="type" type="3" value="3"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-5620</prop>
+					<prop name="posy">-393</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emTools_cdbte" index="2">
+				<param name="mode" type="3" value="0"></param>
+				<param name="tmA.tmA_00" type="4" value="1.000000"></param>
+				<param name="tmA.tmA_01" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_02" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_03" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_10" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_11" type="4" value="1.000000"></param>
+				<param name="tmA.tmA_12" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_13" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_20" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_21" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_22" type="4" value="1.000000"></param>
+				<param name="tmA.tmA_23" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_30" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_31" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_32" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_33" type="4" value="1.000000"></param>
+				<param name="tmB.tmB_00" type="4" value="1.000000"></param>
+				<param name="tmB.tmB_01" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_02" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_03" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_10" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_11" type="4" value="1.000000"></param>
+				<param name="tmB.tmB_12" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_13" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_20" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_21" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_22" type="4" value="1.000000"></param>
+				<param name="tmB.tmB_23" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_30" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_31" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_32" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_33" type="4" value="1.000000"></param>
+				<portdef name="mode" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="tmA" type="256" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="tmB" type="256" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6130</prop>
+					<prop name="posy">-374</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="result" username="A_and_B_intersect" basename="A and B intersect" portlabel="A and B intersect" exposetype="single"> </port>
+			<port index="2" portname="tmA" username="Transform_of_Ellipsoid_A" basename="Transform of Ellipsoid A" portlabel="Transform of Ellipsoid A" exposetype="single"> </port>
+			<port index="2" portname="tmB" username="Transform_of_Ellipsoid_B" basename="Transform of Ellipsoid B" portlabel="Transform of Ellipsoid B" exposetype="single"> </port>
+			<port index="2" portname="mode" username="Method" basename="Method" portlabel="Method" exposetype="single"> </port>
+			<port index="2" portname="result" username="Nearest_Surface_Distance" basename="Nearest Surface Distance" portlabel="Nearest Surface Distance" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="result" to_node="1" to_port="second"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="1" to_port="first"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Method" min="0" max="0">
+				<enum value="0"><![CDATA[Moderate Approximation]]></enum>
+			</item>
+			<item type="input" name="Transform_of_Ellipsoid_A"> </item>
+			<item type="input" name="Transform_of_Ellipsoid_B"> </item>
+			<item type="output" name="A_and_B_intersect"> </item>
+			<item type="output" name="Nearest_Surface_Distance"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

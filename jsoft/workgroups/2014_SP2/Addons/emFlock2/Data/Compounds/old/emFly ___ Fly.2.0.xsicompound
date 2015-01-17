@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFly ___ Fly" tasks="Mootzoid/Flocking (b) Fly" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="13402009">
+	<definition>
+		<nodes>
+			<node type="emFly __ Trigger" version="2.0" index="0">
+				<param name="Trigger___Flying" type="11" value="true"></param>
+				<param name="Trigger___Landing" type="11" value="false"></param>
+				<param name="Trigger___Taking_Off" type="11" value="false"></param>
+				<param name="Reset_Flags_and_Variables___" type="11" value="false"></param>
+				<portdef name="Trigger___Flying" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Trigger___Taking_Off" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Trigger___Landing" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Reset_Flags_and_Variables___" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2718</prop>
+					<prop name="posy">-5517</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="1">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2326</prop>
+					<prop name="posy">-5439</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3253</prop>
+					<prop name="posy">-4868</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="3">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3251</prop>
+					<prop name="posy">-4680</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3251</prop>
+					<prop name="posy">-4655</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3251</prop>
+					<prop name="posy">-4628</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3251</prop>
+					<prop name="posy">-4705</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="7">
+				<param name="in" type="4" value="5.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3253</prop>
+					<prop name="posy">-4840</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="8">
+				<param name="in" type="4" value="2.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-3254</prop>
+					<prop name="posy">-4549</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emFly __ Land" version="2.1" index="9">
+				<param name="Profile" type="buffer">2 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 0.000000 0.296415 0.293948 -0.218886 -0.217065 6 3
+0 1.000000 1.000000 0.199741 0.198860 -0.284890 -0.283634 6 3
+</param>
+				<param name="Active" type="11" value="true"></param>
+				<param name="Mode" type="3" value="1"></param>
+				<param name="T__Seconds_" type="4" value="5.000000"></param>
+				<param name="Use_End_Orientation" type="11" value="true"></param>
+				<param name="Use_End_Size" type="11" value="true"></param>
+				<param name="Use_End_Scale" type="11" value="true"></param>
+				<param name="Use_End_Color" type="11" value="true"></param>
+				<param name="Use_post_Size_Scale" type="11" value="false"></param>
+				<param name="Duration__Seconds__" type="4" value="2.000000"></param>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="T__Seconds_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_post_Size_Scale" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Scale" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Size" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Duration__Seconds__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Orientation" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Color" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2981</prop>
+					<prop name="posy">-4936</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFly __ Fly through Position Array" version="2.0" index="50">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Pathleader_Distance" type="4" value="25.000000"></param>
+				<param name="Pathleader_Increment" type="4" value="0.500000"></param>
+				<param name="Increment_when_Pathleader_is_behind_Particle" type="11" value="true"></param>
+				<param name="Amount" type="4" value="0.150000"></param>
+				<param name="Permanent_Pathleader_Increment" type="4" value="0.000000"></param>
+				<param name="Limit_Rotational_Velocity" type="11" value="true"></param>
+				<param name="Maximum_Rotational_Velocity" type="4" value="1.000000"></param>
+				<param name="Show_Path_Positions_and_Pathleader" type="11" value="false"></param>
+				<param name="Condition" type="3" value="1"></param>
+				<param name="End_Range" type="4" value="50.000000"></param>
+				<param name="Timeout__Seconds_" type="4" value="20.000000"></param>
+				<param name="Minimum_Flight_Duration__Seconds_" type="4" value="0.500000"></param>
+				<portdef name="Minimum_Flight_Duration__Seconds_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Pathleader_Increment" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Pathleader_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Show_Path_Positions_and_Pathleader" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Rotational_Velocity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Limit_Rotational_Velocity" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Increment_when_Pathleader_is_behind_Particle" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_Landing" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Condition" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End_Range" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Timeout__Seconds_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Permanent_Pathleader_Increment" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_Take_Off" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2718</prop>
+					<prop name="posy">-5335</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFly __ Take Off" version="2.0" index="51">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Duration__Seconds_" type="4" value="2.000000"></param>
+				<param name="Use_End_Orientation" type="11" value="true"></param>
+				<param name="Use_End_Size" type="11" value="true"></param>
+				<param name="Use_End_Scale" type="11" value="true"></param>
+				<param name="Use_End_Color" type="11" value="true"></param>
+				<portdef name="Duration__Seconds_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Orientation" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Size" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Scale" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_End_Color" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2972</prop>
+					<prop name="posy">-4615</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Trigger___Flying" username="Trigger___Flying" basename="Trigger   Flying" portlabel="Trigger   Flying" exposetype="single"> </port>
+			<port index="0" portname="Trigger___Landing" username="Trigger___Landing" basename="Trigger   Landing" portlabel="Trigger   Landing" exposetype="single"> </port>
+			<port index="0" portname="Trigger___Taking_Off" username="Trigger___Taking_Off" basename="Trigger   Taking Off" portlabel="Trigger   Taking Off" exposetype="single"> </port>
+			<port index="0" portname="Reset_Flags_and_Variables___" username="Reset" basename="Reset" portlabel="Reset" exposetype="single"> </port>
+			<port index="1" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="2" portname="in" username="Mode_" basename="Mode " portlabel="Mode " exposetype="single"> </port>
+			<port index="3" portname="in" username="Use_End_Size" basename="Use End Size" portlabel="Use End Size" exposetype="single"> </port>
+			<port index="4" portname="in" username="Use_End_Scale" basename="Use End Scale" portlabel="Use End Scale" exposetype="single"> </port>
+			<port index="5" portname="in" username="Use_End_Color" basename="Use End Color" portlabel="Use End Color" exposetype="single"> </port>
+			<port index="6" portname="in" username="Use_End_Orientation" basename="Use End Orientation" portlabel="Use End Orientation" exposetype="single"> </port>
+			<port index="7" portname="in" username="T__Seconds_" basename="T (Seconds)" portlabel="T (Seconds)" exposetype="single"> </port>
+			<port index="8" portname="in" username="Duration__Seconds__" basename="Duration (Seconds) " portlabel="Duration (Seconds) " exposetype="single"> </port>
+			<port index="50" portname="Strength" username="Strength" basename="Strength" portlabel="Strength" exposetype="single"> </port>
+			<port index="50" portname="Pathleader_Distance" username="Pathleader_Distance" basename="Pathleader Distance" portlabel="Pathleader Distance" exposetype="single"> </port>
+			<port index="50" portname="Pathleader_Increment" username="Pathleader_Increment" basename="Pathleader Increment" portlabel="Pathleader Increment" exposetype="single"> </port>
+			<port index="50" portname="Increment_when_Pathleader_is_behind_Particle" username="Increment_when_Pathleader_is_behind_Particle" basename="Increment when Pathleader is behind Particle" portlabel="Increment when Pathleader is behind Particle" exposetype="single"> </port>
+			<port index="50" portname="Amount" username="Amount" basename="Amount" portlabel="Amount" exposetype="single"> </port>
+			<port index="50" portname="Permanent_Pathleader_Increment" username="Permanent_Pathleader_Increment" basename="Permanent Pathleader Increment" portlabel="Permanent Pathleader Increment" exposetype="single"> </port>
+			<port index="50" portname="Show_Path_Positions_and_Pathleader" username="Show_Path_Positions_and_Pathleader" basename="Show Path Positions and Pathleader" portlabel="Show Path Positions and Pathleader" exposetype="single"> </port>
+			<port index="50" portname="Condition" username="Condition" basename="Condition" portlabel="Condition" exposetype="single"> </port>
+			<port index="50" portname="End_Range" username="End_Range" basename="End-Range" portlabel="End-Range" exposetype="single"> </port>
+			<port index="50" portname="Timeout__Seconds_" username="Timeout__Seconds_" basename="Timeout (Seconds)" portlabel="Timeout (Seconds)" exposetype="single"> </port>
+			<port index="50" portname="Minimum_Flight_Duration__Seconds_" username="Minimum_Flight_Duration__Seconds_" basename="Minimum-Flight-Duration (Seconds)" portlabel="Minimum-Flight-Duration (Seconds)" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Execute" to_node="1" to_port="port1"> </cnx>
+			<cnx from_node="50" from_port="Execute" to_node="1" to_port="port2"> </cnx>
+			<cnx from_node="51" from_port="Execute_Take_Off" to_node="50" to_port="Execute_Take_Off"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="9" to_port="Mode"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="9" to_port="T__Seconds_"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="51" to_port="Duration__Seconds_"> </cnx>
+			<cnx from_node="9" from_port="Execute_Landing" to_node="50" to_port="Execute_Landing"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="9" to_port="Use_End_Size"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="51" to_port="Use_End_Size"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="9" to_port="Use_End_Scale"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="51" to_port="Use_End_Scale"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="9" to_port="Use_End_Color"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="51" to_port="Use_End_Color"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="9" to_port="Use_End_Orientation"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="51" to_port="Use_End_Orientation"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Triggers">
+				<item type="input" name="Trigger___Flying"> </item>
+				<item type="input" name="Trigger___Landing"> </item>
+				<item type="input" name="Trigger___Taking_Off"> </item>
+				<group type="input" name="Reset">
+					<item type="input" name="Reset"> </item>
+				</group>
+			</group>
+			<group type="input" name="Fly">
+				<item type="input" name="Strength" min="0" max="1.25"> </item>
+				<item type="input" name="Show_Path_Positions_and_Pathleader"> </item>
+				<group type="input" name="Pathleader Incrementation">
+					<item type="input" name="Pathleader_Distance" min="5" max="50"> </item>
+					<item type="input" name="Pathleader_Increment" min="0" max="0.5"> </item>
+					<item type="input" name="Increment_when_Pathleader_is_behind_Particle"> </item>
+					<item type="input" name="Amount" min="0" max="0.5"> </item>
+					<item type="input" name="Permanent_Pathleader_Increment" min="0" max="0.05"> </item>
+				</group>
+				<group type="input" name="Engage Landing when..">
+					<item type="input" name="Condition">
+						<enum value="0"><![CDATA[a) ..Pathleader reaches End]]></enum>
+						<enum value="1"><![CDATA[b) ..Particle in End-Range]]></enum>
+						<enum value="2"><![CDATA[c) ..Flight Duration > Timeout]]></enum>
+						<enum value="3"><![CDATA[a) or b)]]></enum>
+						<enum value="4"><![CDATA[a) or c)]]></enum>
+						<enum value="5"><![CDATA[b) or c)]]></enum>
+						<enum value="6"><![CDATA[a) or b) or c)]]></enum>
+					</item>
+					<item type="input" name="End_Range"> </item>
+					<item type="input" name="Timeout__Seconds_"> </item>
+					<group type="input" name=" ">
+						<item type="input" name="Minimum_Flight_Duration__Seconds_" min="0" max="5"> </item>
+					</group>
+				</group>
+			</group>
+			<group type="input" name="End Values (Land / Take Off)">
+				<item type="input" name="Use_End_Orientation"> </item>
+				<item type="input" name="Use_End_Size"> </item>
+				<item type="input" name="Use_End_Scale"> </item>
+				<item type="input" name="Use_End_Color"> </item>
+			</group>
+			<group type="input" name="Land">
+				<item type="input" name="Mode_">
+					<enum value="0"><![CDATA[Automatic Duration]]></enum>
+					<enum value="1"><![CDATA[Automatic Duration <= T]]></enum>
+					<enum value="2"><![CDATA[Fixed Duration = T]]></enum>
+				</item>
+				<item type="input" name="T__Seconds_" min="1" max="7"> </item>
+			</group>
+			<group type="input" name="Take Off">
+				<item type="input" name="Duration__Seconds__"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

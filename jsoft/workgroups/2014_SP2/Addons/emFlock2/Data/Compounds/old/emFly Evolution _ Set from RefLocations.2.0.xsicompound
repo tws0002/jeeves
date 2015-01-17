@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFly Evolution _ Set from RefLocations" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Modeling" backgroundcolor="13401284">
+	<definition>
+		<nodes>
+			<node type="IfNode" index="0">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1456</prop>
+					<prop name="posy">750</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.__emFly_Evolve__RefLocation"></param>
+				<param_ext name="reference" type="31" value="self.__emFly_Evolve__RefLocation"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">367</prop>
+					<prop name="posy">797</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emFly __ Set End Data" version="2.0" index="2">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Set_End_Position" type="11" value="true"></param>
+				<param name="Set_End_Rotation" type="11" value="false"></param>
+				<param name="Set_End_Size" type="11" value="false"></param>
+				<param name="Set_End_Scale" type="11" value="false"></param>
+				<param name="Set_End_Color" type="11" value="false"></param>
+				<param name="In_End_Position.In_End_Position_x" type="4" value="0.000000"></param>
+				<param name="In_End_Position.In_End_Position_y" type="4" value="0.000000"></param>
+				<param name="In_End_Position.In_End_Position_z" type="4" value="0.000000"></param>
+				<param name="In_End_Rotation.In_End_Rotation_x" type="4" value="1.000000"></param>
+				<param name="In_End_Rotation.In_End_Rotation_y" type="4" value="0.000000"></param>
+				<param name="In_End_Rotation.In_End_Rotation_z" type="4" value="0.000000"></param>
+				<param name="In_End_Rotation.In_End_Rotation_angle" type="4" value="0.000000"></param>
+				<param name="In_End_Size" type="4" value="1.000000"></param>
+				<param name="In_End_Scale.In_End_Scale_x" type="4" value="1.000000"></param>
+				<param name="In_End_Scale.In_End_Scale_y" type="4" value="1.000000"></param>
+				<param name="In_End_Scale.In_End_Scale_z" type="4" value="1.000000"></param>
+				<param name="In_End_Color.In_End_Color_red" type="4" value="0.000000"></param>
+				<param name="In_End_Color.In_End_Color_green" type="4" value="0.000000"></param>
+				<param name="In_End_Color.In_End_Color_blue" type="4" value="0.000000"></param>
+				<param name="In_End_Color.In_End_Color_alpha" type="4" value="1.000000"></param>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Position" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Rotation" type="16384" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Scale" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_End_Rotation" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_End_Size" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_End_Position" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_End_Color" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_End_Scale" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1233</prop>
+					<prop name="posy">830</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Is Valid Location" version="1.0" index="3">
+				<portdef name="Point_locator" type="2048" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">874</prop>
+					<prop name="posy">765</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="PointPosition"></param>
+				<param_ext name="reference" type="31" value="PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">868</prop>
+					<prop name="posy">878</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="5">
+				<portdef name="in1" type="2048" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="2048" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">729</prop>
+					<prop name="posy">781</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="6">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1682</prop>
+					<prop name="posy">718</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="UndefinedLocationNode" index="7">
+				<datablob category="ui_infos">
+					<prop name="posx">484</prop>
+					<prop name="posy">891</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="6" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="6" portname="result" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="Execute" to_node="0" to_port="iftrue"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="5" to_port="in1"> </cnx>
+			<cnx from_node="3" from_port="Result" to_node="0" to_port="condition"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="2" to_port="In_End_Position"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="6" to_port="iftrue"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="4" to_port="source"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="3" to_port="Point_locator"> </cnx>
+			<cnx from_node="7" from_port="location" to_node="5" to_port="in2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

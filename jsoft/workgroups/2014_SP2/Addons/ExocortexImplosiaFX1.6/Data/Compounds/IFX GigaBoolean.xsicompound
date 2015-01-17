@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="IFX GigaBoolean" tasks="Implosia FX/GTopology" author="Mr.Core" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12807564">
+	<definition>
+		<nodes>
+			<node type="IFX Assembly Polygonal Object" version="1.0" index="0">
+				<param name="Cache_Data" type="11" value="false"></param>
+				<param name="Display_AABB" type="11" value="false"></param>
+				<param name="Display_Normals" type="11" value="false"></param>
+				<param name="Display_FaceID" type="11" value="false"></param>
+				<param name="Disply_Upd_Isl_ID" type="11" value="false"></param>
+				<param name="Display_Orig_Isl_ID" type="11" value="false"></param>
+				<param name="Display_nVertices_Per_Face" type="11" value="false"></param>
+				<portdef name="Cache_Data" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_Normals" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_FaceID" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Disply_Upd_Isl_ID" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_Orig_Isl_ID" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_nVertices_Per_Face" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Gtopo" type="65536" structure="1" group="-1" instance="-1" port="-1" supportedblob="3"></portdef>
+				<portdef name="Display_AABB" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">143</prop>
+					<prop name="posy">333</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Gtopology" version="1.0" index="1">
+				<param name="Reference" type="31" value="Self"></param>
+				<param_ext name="Reference" type="31" value="Self"></param_ext>
+				<portdef name="Gtopology" type="65536" structure="1" group="-1" instance="-1" port="-1" supportedblob="3" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">193</prop>
+					<prop name="posy">184</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Gtopology" version="1.0" index="2">
+				<param name="Reference" type="31" value="self."></param>
+				<param_ext name="Reference" type="31" value="self."></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-32</prop>
+					<prop name="posy">333</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="3">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-485</prop>
+					<prop name="posy">318</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[orig faces id]]></comment>
+			</node>
+			<node type="BooleanNode" index="4">
+				<param name="value" type="11" value="true"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-15</prop>
+					<prop name="posy">437</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="5">
+				<param name="value" type="3" value="-1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-491</prop>
+					<prop name="posy">378</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[new faces id]]></comment>
+			</node>
+			<node type="ExecuteNode" index="14">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">767</prop>
+					<prop name="posy">95</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="15">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">955</prop>
+					<prop name="posy">108</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IFX Decompose topo" version="1.0" index="18">
+				<param name="UV_Name" type="31" value=".cls.Texture_Coordinates_AUTO.Texture_Projection.UVWs"></param>
+				<param name="Faces_ID_for_Gtopo" type="3" value="0"></param>
+				<param_ext name="UV_Name" type="31" value=".cls.Texture_Coordinates_AUTO.Texture_Projection.UVWs"></param_ext>
+				<portdef name="Faces_ID_for_Gtopo" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Geo_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-601</prop>
+					<prop name="posy">115</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IFX Decompose topo" version="1.0" index="19">
+				<param name="UV_Name" type="31" value=".cls.Texture_Coordinates_AUTO.Texture_Projection.UVWs"></param>
+				<param name="Faces_ID_for_Gtopo" type="3" value="0"></param>
+				<param_ext name="UV_Name" type="31" value=".cls.Texture_Coordinates_AUTO.Texture_Projection.UVWs"></param_ext>
+				<portdef name="Faces_ID_for_Gtopo" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Geo_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-611</prop>
+					<prop name="posy">-58</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IFX_Boolean" index="22">
+				<param name="A_Point_Position.A_Point_Position_x" type="4" value="1.000000"></param>
+				<param name="A_Point_Position.A_Point_Position_y" type="4" value="1.000000"></param>
+				<param name="A_Point_Position.A_Point_Position_z" type="4" value="1.000000"></param>
+				<param name="A_Polygonal_Description" type="3" value="0"></param>
+				<param name="A_UV_Coordinates.A_UV_Coordinates_x" type="4" value="0.000000"></param>
+				<param name="A_UV_Coordinates.A_UV_Coordinates_y" type="4" value="0.000000"></param>
+				<param name="A_UV_Coordinates.A_UV_Coordinates_z" type="4" value="0.000000"></param>
+				<param name="A_Normals.A_Normals_x" type="4" value="0.000000"></param>
+				<param name="A_Normals.A_Normals_y" type="4" value="0.000000"></param>
+				<param name="A_Normals.A_Normals_z" type="4" value="0.000000"></param>
+				<param name="A_Faces_ID" type="3" value="0"></param>
+				<param name="B_Point_Position.B_Point_Position_x" type="4" value="1.000000"></param>
+				<param name="B_Point_Position.B_Point_Position_y" type="4" value="1.000000"></param>
+				<param name="B_Point_Position.B_Point_Position_z" type="4" value="1.000000"></param>
+				<param name="B_Polygonal_Description" type="3" value="0"></param>
+				<param name="B_UV_Coordinates.B_UV_Coordinates_x" type="4" value="0.000000"></param>
+				<param name="B_UV_Coordinates.B_UV_Coordinates_y" type="4" value="0.000000"></param>
+				<param name="B_UV_Coordinates.B_UV_Coordinates_z" type="4" value="0.000000"></param>
+				<param name="B_Normals.B_Normals_x" type="4" value="0.000000"></param>
+				<param name="B_Normals.B_Normals_y" type="4" value="0.000000"></param>
+				<param name="B_Normals.B_Normals_z" type="4" value="0.000000"></param>
+				<param name="B_Faces_ID" type="3" value="0"></param>
+				<param name="Function" type="3" value="0"></param>
+				<param name="Triangulate_out" type="11" value="true"></param>
+				<param name="ConstVertOrder" type="11" value="false"></param>
+				<portdef name="A_Point_Position" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="A_Polygonal_Description" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="A_UV_Coordinates" type="16" structure="2" group="0" instance="0" port="2"></portdef>
+				<portdef name="A_Normals" type="16" structure="2" group="0" instance="0" port="3"></portdef>
+				<portdef name="A_Faces_ID" type="2" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="AGtopo" type="65536" structure="1" group="0" instance="0" port="5" supportedblob="3"></portdef>
+				<portdef name="BGtopo" type="65536" structure="1" group="0" instance="0" port="6" supportedblob="3"></portdef>
+				<portdef name="B_Point_Position" type="16" structure="2" group="0" instance="0" port="7"></portdef>
+				<portdef name="B_Polygonal_Description" type="2" structure="1" group="0" instance="0" port="8"></portdef>
+				<portdef name="B_UV_Coordinates" type="16" structure="2" group="0" instance="0" port="9"></portdef>
+				<portdef name="B_Normals" type="16" structure="2" group="0" instance="0" port="10"></portdef>
+				<portdef name="B_Faces_ID" type="2" structure="1" group="0" instance="0" port="11"></portdef>
+				<portdef name="Function" type="2" structure="1" group="0" instance="0" port="12"></portdef>
+				<portdef name="Triangulate_out" type="1" structure="1" group="0" instance="0" port="13"></portdef>
+				<portdef name="ConstVertOrder" type="1" structure="1" group="0" instance="0" port="14"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-267</prop>
+					<prop name="posy">24</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="15" portname="result" username="Perform" basename="Perform" portlabel="Perform" exposetype="single"> </port>
+			<port index="15" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="18" portname="Geo_Name" username="B_Geo" basename="B Geo" portlabel="B Geo" exposetype="single"> </port>
+			<port index="18" portname="UV_Name" username="B_UV_Name" basename="B UV Name" portlabel="B UV Name" exposetype="single"> </port>
+			<port index="19" portname="Geo_Name" username="A_Geo" basename="A Geo" portlabel="A Geo" exposetype="single"> </port>
+			<port index="19" portname="UV_Name" username="A_UV_Name" basename="A UV Name" portlabel="A UV Name" exposetype="single"> </port>
+			<port index="22" portname="Function" username="Function" basename="Function" portlabel="Function" exposetype="single"> </port>
+			<port index="22" portname="Triangulate_out" username="Triangulate_Out" basename="Triangulate Out" portlabel="Triangulate Out" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Perform" to_node="14" to_port="port4"> </cnx>
+			<cnx from_node="19" from_port="Point_Position" to_node="22" to_port="A_Point_Position"> </cnx>
+			<cnx from_node="19" from_port="Polygonal_Descipion" to_node="22" to_port="A_Polygonal_Description"> </cnx>
+			<cnx from_node="19" from_port="Normals" to_node="22" to_port="A_Normals"> </cnx>
+			<cnx from_node="19" from_port="UVW" to_node="22" to_port="A_UV_Coordinates"> </cnx>
+			<cnx from_node="18" from_port="Polygonal_Descipion" to_node="22" to_port="B_Polygonal_Description"> </cnx>
+			<cnx from_node="18" from_port="Normals" to_node="22" to_port="B_Normals"> </cnx>
+			<cnx from_node="18" from_port="UVW" to_node="22" to_port="B_UV_Coordinates"> </cnx>
+			<cnx from_node="18" from_port="Point_Position" to_node="22" to_port="B_Point_Position"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="14" to_port="port2"> </cnx>
+			<cnx from_node="2" from_port="Value" to_node="0" to_port="Gtopo"> </cnx>
+			<cnx from_node="22" from_port="Out_Gtopo" to_node="1" to_port="Gtopology"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="22" to_port="A_Faces_ID"> </cnx>
+			<cnx from_node="14" from_port="execute" to_node="15" to_port="iftrue"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="0" to_port="Cache_Data"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="22" to_port="B_Faces_ID"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="A_Geo"> </item>
+			<item type="input" name="A_UV_Name"> </item>
+			<item type="input" name="B_Geo"> </item>
+			<item type="input" name="B_UV_Name"> </item>
+			<item type="input" name="Function" min="0" max="0">
+				<enum value="0"><![CDATA[Union]]></enum>
+				<enum value="1"><![CDATA[Intersection]]></enum>
+				<enum value="2"><![CDATA[A-B]]></enum>
+				<enum value="3"><![CDATA[B-A]]></enum>
+				<enum value="4"><![CDATA[Symmetrical Difference (XOR)]]></enum>
+			</item>
+			<item type="input" name="Triangulate_Out"> </item>
+			<item type="output" name="Perform"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="3" color="393088">
+				<typename><![CDATA[GigaTopo3.0]]></typename>
+				<displayname><![CDATA[GigaTopo3.0]]></displayname>
+				<description><![CDATA[GigaTopo3.0 data for one-pass calculation]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

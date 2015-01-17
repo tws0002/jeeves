@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Hemisphere Table" tasks="Mootzoid - emTools/Tools - Arrays" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_hst" index="0">
+				<param name="Amount" type="3" value="343"></param>
+				<portdef name="Amount" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1823</prop>
+					<prop name="posy">1019</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="1">
+				<param name="condition" type="3" value="-1"></param>
+				<param name="case0" type="3" value="3"></param>
+				<param name="case1" type="3" value="7"></param>
+				<param name="case2" type="3" value="23"></param>
+				<param name="case3" type="3" value="87"></param>
+				<param name="case4" type="3" value="343"></param>
+				<param name="case5" type="3" value="1367"></param>
+				<param name="case6" type="3" value="5463"></param>
+				<param name="case7" type="3" value="21847"></param>
+				<param name="case8" type="3" value="87383"></param>
+				<param name="default" type="3" value="87"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="2" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="2" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="2" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="case3" type="2" structure="1" group="1" instance="3" port="0"></portdef>
+				<portdef name="case4" type="2" structure="1" group="1" instance="4" port="0"></portdef>
+				<portdef name="case5" type="2" structure="1" group="1" instance="5" port="0"></portdef>
+				<portdef name="case6" type="2" structure="1" group="1" instance="6" port="0"></portdef>
+				<portdef name="case7" type="2" structure="1" group="1" instance="7" port="0"></portdef>
+				<portdef name="case8" type="2" structure="1" group="1" instance="8" port="0"></portdef>
+				<portdef name="default" type="2" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1967</prop>
+					<prop name="posy">1035</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="11842740" title_text="0" offsetx="-78" offsety="-23" sizex="205" sizey="19"><![CDATA[1 + 2 [+ 4 [+ 16] [+ 64] [+ 256]..etc..]]]></comment>
+			</node>
+			<node type="NegateNode" index="2">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1643</prop>
+					<prop name="posy">1105</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="3">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<param name="value2.value2_x" type="4" value="0.000000"></param>
+				<param name="value2.value2_y" type="4" value="0.000000"></param>
+				<param name="value2.value2_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="2" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1528</prop>
+					<prop name="posy">1054</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Result" username="Single_Hemisphere" basename="Single Hemisphere" portlabel="Single Hemisphere" exposetype="single"> </port>
+			<port index="1" portname="condition" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+			<port index="1" portname="default" username="Custom" basename="Custom" portlabel="Custom" exposetype="single"> </port>
+			<port index="3" portname="array" username="Both_Hemispheres" basename="Both Hemispheres" portlabel="Both Hemispheres" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="result" to_node="0" to_port="Amount"> </cnx>
+			<cnx from_node="0" from_port="Result" to_node="3" to_port="value1"> </cnx>
+			<cnx from_node="0" from_port="Result" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="3" to_port="value2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Mode">
+				<enum value="-1"><![CDATA[Use Custom Amount]]></enum>
+				<enum value="0"><![CDATA[3]]></enum>
+				<enum value="1"><![CDATA[7]]></enum>
+				<enum value="2"><![CDATA[23]]></enum>
+				<enum value="3"><![CDATA[87]]></enum>
+				<enum value="4"><![CDATA[343]]></enum>
+				<enum value="5"><![CDATA[1367]]></enum>
+				<enum value="6"><![CDATA[5463]]></enum>
+				<enum value="7"><![CDATA[21847]]></enum>
+				<enum value="8"><![CDATA[87383]]></enum>
+			</item>
+			<item type="input" name="Custom" min="3" max="343"> </item>
+			<item type="output" name="Single_Hemisphere"> </item>
+			<item type="output" name="Both_Hemispheres"> </item>
+		</layout>
+	</definition>
+</xsi_file>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Init Mesh Softbody" category="" tasks="Momentum/Softbodies,Momentum/Simulation" author="" url="" formatversion="1.4" compoundversion="1.11" versiontag="" constructionmode="Current" backgroundcolor="6732954">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="BuildArrayNode" index="0">
+				<param name="value1" type="4" value="0.100000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-93</prop>
+					<prop name="posy">501</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MOM_CreateMeshSoftbody" index="1">
+				<param name="clusters" type="3" value="64"></param>
+				<param name="constraints" type="3" value="2"></param>
+				<param name="iterations" type="3" value="4"></param>
+				<param name="margin" type="4" value="0.010000"></param>
+				<param name="links" type="3" value="-1"></param>
+				<param name="collgroup" type="3" value="1"></param>
+				<param name="collfilter" type="3" value="15"></param>
+				<portdef name="clusters" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="constraints" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iterations" type="2" structure="2" group="0" instance="0" port="2"></portdef>
+				<portdef name="margin" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="geo" type="1024" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="links" type="2" structure="2" group="0" instance="0" port="5"></portdef>
+				<portdef name="collgroup" type="2" structure="2" group="0" instance="0" port="6"></portdef>
+				<portdef name="collfilter" type="2" structure="2" group="0" instance="0" port="7"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-240</prop>
+					<prop name="posy">107</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="2">
+				<param name="Reference" type="31" value="self.PointID"></param>
+				<param name="Reference1" type="31" value="self.MomentumBase"></param>
+				<param name="Reference2" type="31" value="self.MomentumBase"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param name="Value1" type="3" value="0"></param>
+				<param name="Value2" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="self.PointID"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.MomentumBase"></param_ext>
+				<param_ext name="Reference2" type="31" value="self.MomentumBase"></param_ext>
+				<portdef name="Value" type="2" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="2" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="2" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">310</prop>
+					<prop name="posy">34</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetElementIndicesNode" index="3">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">30</prop>
+					<prop name="posy">30</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="self"></param>
+				<param_ext name="reference" type="31" value="self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-482</prop>
+					<prop name="posy">203</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value="self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-254</prop>
+					<prop name="posy">10</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MOM_SetSBAttributes" index="6">
+				<param name="base" type="3" value="0"></param>
+				<param name="set_position" type="fcurve">0 10 1 0 0 0 1 0
+</param>
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="set_velocity" type="11" value="false"></param>
+				<param name="velocity.velocity_x" type="4" value="0.000000"></param>
+				<param name="velocity.velocity_y" type="4" value="0.000000"></param>
+				<param name="velocity.velocity_z" type="4" value="0.000000"></param>
+				<param name="set_mass" type="11" value="true"></param>
+				<param name="mass" type="4" value="1.000000"></param>
+				<param name="set_stiffness" type="11" value="true"></param>
+				<param name="stiffness" type="4" value="10.000000"></param>
+				<param name="set_damping" type="11" value="true"></param>
+				<param name="damping" type="4" value="0.010000"></param>
+				<param name="set_drag" type="11" value="true"></param>
+				<param name="drag" type="4" value="0.100000"></param>
+				<param name="set_friction" type="11" value="true"></param>
+				<param name="friction" type="4" value="0.500000"></param>
+				<param name="set_recover_shape" type="11" value="true"></param>
+				<param name="recover_shape" type="4" value="0.000000"></param>
+				<param name="set_volume_cons" type="11" value="true"></param>
+				<param name="volume_cons" type="4" value="0.000000"></param>
+				<param name="set_pressure" type="11" value="true"></param>
+				<param name="pressure" type="4" value="0.000000"></param>
+				<portdef name="base" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="set_position" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="set_velocity" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="velocity" type="16" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="set_mass" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<portdef name="mass" type="4" structure="1" group="0" instance="0" port="6"></portdef>
+				<portdef name="set_stiffness" type="1" structure="2" group="0" instance="0" port="7"></portdef>
+				<portdef name="stiffness" type="4" structure="2" group="0" instance="0" port="8"></portdef>
+				<portdef name="set_damping" type="1" structure="2" group="0" instance="0" port="9"></portdef>
+				<portdef name="damping" type="4" structure="2" group="0" instance="0" port="10"></portdef>
+				<portdef name="set_drag" type="1" structure="2" group="0" instance="0" port="11"></portdef>
+				<portdef name="drag" type="4" structure="2" group="0" instance="0" port="12"></portdef>
+				<portdef name="set_friction" type="1" structure="2" group="0" instance="0" port="13"></portdef>
+				<portdef name="friction" type="4" structure="2" group="0" instance="0" port="14"></portdef>
+				<portdef name="set_recover_shape" type="1" structure="2" group="0" instance="0" port="15"></portdef>
+				<portdef name="recover_shape" type="4" structure="2" group="0" instance="0" port="16"></portdef>
+				<portdef name="set_volume_cons" type="1" structure="2" group="0" instance="0" port="17"></portdef>
+				<portdef name="volume_cons" type="4" structure="2" group="0" instance="0" port="18"></portdef>
+				<portdef name="set_pressure" type="1" structure="2" group="0" instance="0" port="19"></portdef>
+				<portdef name="pressure" type="4" structure="2" group="0" instance="0" port="20"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">251</prop>
+					<prop name="posy">478</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="PointID"></param>
+				<param_ext name="reference" type="31" value="PointID"></param_ext>
+				<portdef name="source" type="2048" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-496</prop>
+					<prop name="posy">339</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="8">
+				<param name="value1" type="4" value="10.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-225</prop>
+					<prop name="posy">303</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="9">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-542</prop>
+					<prop name="posy">552</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="10">
+				<param name="value" type="4" value="1.000000"></param>
+				<param name="divideby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-323</prop>
+					<prop name="posy">479</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="11">
+				<param name="reference" type="31" value="self.NbPoints"></param>
+				<param_ext name="reference" type="31" value="self.NbPoints"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-745</prop>
+					<prop name="posy">541</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="12">
+				<param name="value1" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-207</prop>
+					<prop name="posy">693</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="13">
+				<param name="value1" type="4" value="0.010000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-230</prop>
+					<prop name="posy">391</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="14">
+				<param name="value1" type="4" value="0.500000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">602</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="15">
+				<param name="value1" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-203</prop>
+					<prop name="posy">782</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="16">
+				<param name="value1" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-184</prop>
+					<prop name="posy">870</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="17">
+				<param name="value1" type="11" value="true"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1</prop>
+					<prop name="posy">818</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value="self.PointNeighbors"></param>
+				<param_ext name="reference" type="31" value="self.PointNeighbors"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-772</prop>
+					<prop name="posy">345</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="19">
+				<param name="value1" type="3" value="64"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-770</prop>
+					<prop name="posy">-94</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="20">
+				<param name="value1" type="3" value="2"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-771</prop>
+					<prop name="posy">0</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="21">
+				<param name="value1" type="3" value="4"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-779</prop>
+					<prop name="posy">89</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="22">
+				<param name="value1" type="3" value="1"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-778</prop>
+					<prop name="posy">170</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="23">
+				<param name="value1" type="3" value="15"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-779</prop>
+					<prop name="posy">248</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="8" portname="value1" username="stiffness_0" basename="stiffness_0" portlabel="stiffness_0" exposetype="all_instances"> </port>
+			<port index="10" portname="value" username="mass" basename="mass" portlabel="mass" exposetype="single"> </port>
+			<port index="12" portname="value1" username="recover_shape" basename="recover_shape" portlabel="recover_shape" exposetype="all_instances"> </port>
+			<port index="13" portname="value1" username="damping" basename="damping" portlabel="damping" exposetype="all_instances"> </port>
+			<port index="14" portname="value1" username="friction" basename="friction" portlabel="friction" exposetype="all_instances"> </port>
+			<port index="15" portname="value1" username="volume_cons" basename="volume_cons" portlabel="volume_cons" exposetype="all_instances"> </port>
+			<port index="16" portname="value1" username="pressure" basename="pressure" portlabel="pressure" exposetype="all_instances"> </port>
+			<port index="19" portname="value1" username="clusters_0" basename="clusters_0" portlabel="clusters_0" exposetype="all_instances"> </port>
+			<port index="20" portname="value1" username="constraints_0" basename="constraints_0" portlabel="constraints_0" exposetype="all_instances"> </port>
+			<port index="21" portname="value1" username="iterations_0" basename="iterations_0" portlabel="iterations_0" exposetype="all_instances"> </port>
+			<port index="22" portname="value1" username="collgroup_0" basename="collgroup_0" portlabel="collgroup_0" exposetype="all_instances"> </port>
+			<port index="23" portname="value1" username="collfilter_0" basename="collfilter_0" portlabel="collfilter_0" exposetype="all_instances"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="base" to_node="6" to_port="base"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="1" to_port="geo"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="3" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="outbase" to_node="2" to_port="Value2"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="1" to_port="links"> </cnx>
+			<cnx from_node="11" from_port="value" to_node="9" to_port="integer"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="7" to_port="source"> </cnx>
+			<cnx from_node="3" from_port="indices" to_node="2" to_port="Value"> </cnx>
+			<cnx from_node="9" from_port="scalar" to_node="10" to_port="divideby"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="6" to_port="mass"> </cnx>
+			<cnx from_node="0" from_port="array" to_node="6" to_port="drag"> </cnx>
+			<cnx from_node="8" from_port="array" to_node="6" to_port="stiffness"> </cnx>
+			<cnx from_node="12" from_port="array" to_node="6" to_port="recover_shape"> </cnx>
+			<cnx from_node="13" from_port="array" to_node="6" to_port="damping"> </cnx>
+			<cnx from_node="14" from_port="array" to_node="6" to_port="friction"> </cnx>
+			<cnx from_node="15" from_port="array" to_node="6" to_port="volume_cons"> </cnx>
+			<cnx from_node="16" from_port="array" to_node="6" to_port="pressure"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_stiffness"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_damping"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_drag"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_friction"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_recover_shape"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_volume_cons"> </cnx>
+			<cnx from_node="17" from_port="array" to_node="6" to_port="set_pressure"> </cnx>
+			<cnx from_node="19" from_port="array" to_node="1" to_port="clusters"> </cnx>
+			<cnx from_node="20" from_port="array" to_node="1" to_port="constraints"> </cnx>
+			<cnx from_node="21" from_port="array" to_node="1" to_port="iterations"> </cnx>
+			<cnx from_node="22" from_port="array" to_node="1" to_port="collgroup"> </cnx>
+			<cnx from_node="23" from_port="array" to_node="1" to_port="collfilter"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="clusters_0" min="-1" max="256"> </item>
+			<item type="input" name="constraints_0" min="0" max="4"> </item>
+			<item type="input" name="iterations_0" min="1" max="8"> </item>
+			<item type="input" name="collgroup_0" min="1" max="8">
+				<enum value="1"><![CDATA[GroupA]]></enum>
+				<enum value="2"><![CDATA[GroupB]]></enum>
+				<enum value="4"><![CDATA[GroupC]]></enum>
+				<enum value="8"><![CDATA[GroupD]]></enum>
+			</item>
+			<item type="input" name="collfilter_0" min="0" max="15"> </item>
+			<item type="input" name="mass"> </item>
+			<item type="input" name="stiffness_0" min="0" max="50"> </item>
+			<item type="input" name="damping" min="0" max=".1"> </item>
+			<item type="input" name="friction" min="0" max="1"> </item>
+			<item type="input" name="volume_cons" min="0" max=".5"> </item>
+			<item type="input" name="pressure" min="0" max="50"> </item>
+			<item type="input" name="recover_shape" min="0" max=".1"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

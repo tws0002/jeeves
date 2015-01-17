@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4 _ Create Particles from IR" tasks="Mootzoid - emPolygonizer4/Tools (Internal Representation)" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12553073">
+	<definition>
+		<nodes>
+			<node type="ColorToRGBANode" index="0">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2462</prop>
+					<prop name="posy">1734</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Shape" version="1.0" index="1">
+				<param name="Reference" type="31" value="Self.Shape"></param>
+				<param name="Shape" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="Self.Shape"></param_ext>
+				<portdef name="Shape" type="32768" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1518</prop>
+					<prop name="posy">1258</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Size" version="1.0" index="2">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Size" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1503</prop>
+					<prop name="posy">1362</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddPointNode" index="3">
+				<param name="reference" type="31" value="Self"></param>
+				<param name="positions1.positions1_x" type="4" value="0.000000"></param>
+				<param name="positions1.positions1_y" type="4" value="0.000000"></param>
+				<param name="positions1.positions1_z" type="4" value="0.000000"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="positions1" type="16" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="oncreation1" type="4096" structure="1" group="4" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1498</prop>
+					<prop name="posy">855</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[create points]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="4">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="0.500000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1947</prop>
+					<prop name="posy">1385</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4559</prop>
+					<prop name="posy">939</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="6">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1768</prop>
+					<prop name="posy">1408</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetElementIndicesNode" index="7">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3322</prop>
+					<prop name="posy">2077</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RGBAToColorNode" index="8">
+				<param name="red" type="4" value="1.000000"></param>
+				<param name="green" type="4" value="0.400000"></param>
+				<param name="blue" type="4" value="0.100000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="red" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="green" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blue" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1900</prop>
+					<prop name="posy">1681</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="9">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2296</prop>
+					<prop name="posy">1768</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Color" version="1.0" index="10">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param name="Color.Color_red" type="4" value="0.911000"></param>
+				<param name="Color.Color_green" type="4" value="0.778000"></param>
+				<param name="Color.Color_blue" type="4" value="0.370000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1506</prop>
+					<prop name="posy">1667</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Clamp Zero One" version="1.0" index="11">
+				<param name="Scalar" type="4" value="0.000000"></param>
+				<portdef name="Scalar" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2126</prop>
+					<prop name="posy">1768</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Velocity" version="1.0" index="12">
+				<param name="Reference" type="31" value="Self.PointVelocity"></param>
+				<param name="Velocity.Velocity_x" type="4" value="0.000000"></param>
+				<param name="Velocity.Velocity_y" type="4" value="0.000000"></param>
+				<param name="Velocity.Velocity_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.PointVelocity"></param_ext>
+				<portdef name="Velocity" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1523</prop>
+					<prop name="posy">1923</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get IR Data Arrays" version="1.0" index="13">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Default_Color.Default_Color_red" type="4" value="1.000000"></param>
+				<param name="Default_Color.Default_Color_green" type="4" value="0.000000"></param>
+				<param name="Default_Color.Default_Color_blue" type="4" value="1.000000"></param>
+				<param name="Default_Color.Default_Color_alpha" type="4" value="1.000000"></param>
+				<param name="Default_Velocity.Default_Velocity_x" type="4" value="0.000000"></param>
+				<param name="Default_Velocity.Default_Velocity_y" type="4" value="0.000000"></param>
+				<param name="Default_Velocity.Default_Velocity_z" type="4" value="0.000000"></param>
+				<param name="Velocity_Scale" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Velocity_Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Default_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Default_Velocity" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2268</prop>
+					<prop name="posy">887</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Point Position" version="1.0" index="14">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-3503</prop>
+					<prop name="posy">2093</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4 _ Get IR Data" version="1.0" index="15">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Index" type="3" value="0"></param>
+				<param name="Default_Color.Default_Color_red" type="4" value="1.000000"></param>
+				<param name="Default_Color.Default_Color_green" type="4" value="0.000000"></param>
+				<param name="Default_Color.Default_Color_blue" type="4" value="1.000000"></param>
+				<param name="Default_Color.Default_Color_alpha" type="4" value="1.000000"></param>
+				<param name="Default_Velocity.Default_Velocity_x" type="4" value="0.000000"></param>
+				<param name="Default_Velocity.Default_Velocity_y" type="4" value="0.000000"></param>
+				<param name="Default_Velocity.Default_Velocity_z" type="4" value="0.000000"></param>
+				<param name="Velocity_Scale" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Default_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Default_Velocity" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity_Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3084</prop>
+					<prop name="posy">1851</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="16">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue.iftrue_red" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_green" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_blue" type="4" value="0.000000"></param>
+				<param name="iftrue.iftrue_alpha" type="4" value="1.000000"></param>
+				<param name="iffalse.iffalse_red" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_green" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_blue" type="4" value="0.000000"></param>
+				<param name="iffalse.iffalse_alpha" type="4" value="1.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="512" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="512" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1668</prop>
+					<prop name="posy">1679</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="17">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-812</prop>
+					<prop name="posy">489</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="18">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="port6" type="4096" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1119</prop>
+					<prop name="posy">1121</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="DeletePointNode" index="19">
+				<param name="reference" type="31" value="Self"></param>
+				<param name="deleted" type="11" value="true"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="deleted" type="1" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1498</prop>
+					<prop name="posy">721</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[clear all particles]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="20">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2477</prop>
+					<prop name="posy">1781</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-3556" offsety="1184" sizex="2251" sizey="1004"><![CDATA[
+set the per particle attributes]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="Shape" username="Shape" basename="Shape" portlabel="Shape" exposetype="single"> </port>
+			<port index="4" portname="factor" username="Falloff_Scale" basename="Falloff Scale" portlabel="Falloff Scale" exposetype="single"> </port>
+			<port index="5" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="5" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="15" portname="Default_Color" username="Default_Color" basename="Default Color" portlabel="Default Color" exposetype="single"> </port>
+			<port index="15" portname="Default_Velocity" username="Default_Velocity" basename="Default Velocity" portlabel="Default Velocity" exposetype="single"> </port>
+			<port index="15" portname="Velocity_Scale" username="Velocity_Scale" basename="Velocity Scale" portlabel="Velocity Scale" exposetype="single"> </port>
+			<port index="16" portname="condition" username="Multiply_Alpha_with_Isovalue" basename="Multiply Alpha with Isovalue" portlabel="Multiply Alpha with Isovalue" exposetype="single"> </port>
+			<port index="17" portname="result" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="17" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="20" portname="factor" username="Isovalue_Scale" basename="Isovalue Scale" portlabel="Isovalue Scale" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="add" to_node="18" to_port="port2"> </cnx>
+			<cnx from_node="14" from_port="Value" to_node="7" to_port="value"> </cnx>
+			<cnx from_node="15" from_port="Falloff" to_node="4" to_port="value"> </cnx>
+			<cnx from_node="15" from_port="Isovalue" to_node="20" to_port="value"> </cnx>
+			<cnx from_node="15" from_port="Radius" to_node="6" to_port="value1"> </cnx>
+			<cnx from_node="15" from_port="Velocity" to_node="12" to_port="Velocity"> </cnx>
+			<cnx from_node="15" from_port="Color" to_node="0" to_port="color"> </cnx>
+			<cnx from_node="15" from_port="Color" to_node="16" to_port="iffalse"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="2" to_port="Size"> </cnx>
+			<cnx from_node="8" from_port="color" to_node="16" to_port="iftrue"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="11" to_port="Scalar"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="6" to_port="value2"> </cnx>
+			<cnx from_node="7" from_port="indices" to_node="15" to_port="Index"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="10" to_port="Color"> </cnx>
+			<cnx from_node="11" from_port="Result" to_node="8" to_port="alpha"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="18" to_port="port4"> </cnx>
+			<cnx from_node="13" from_port="Position_Array" to_node="3" to_port="positions1"> </cnx>
+			<cnx from_node="12" from_port="Execute" to_node="18" to_port="port6"> </cnx>
+			<cnx from_node="10" from_port="Execute" to_node="18" to_port="port5"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="18" to_port="port3"> </cnx>
+			<cnx from_node="5" from_port="outname" to_node="13" to_port="In_Name"> </cnx>
+			<cnx from_node="5" from_port="outname" to_node="15" to_port="In_Name"> </cnx>
+			<cnx from_node="0" from_port="red" to_node="8" to_port="red"> </cnx>
+			<cnx from_node="0" from_port="green" to_node="8" to_port="green"> </cnx>
+			<cnx from_node="0" from_port="blue" to_node="8" to_port="blue"> </cnx>
+			<cnx from_node="0" from_port="alpha" to_node="9" to_port="value"> </cnx>
+			<cnx from_node="18" from_port="execute" to_node="17" to_port="iftrue"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="9" to_port="factor"> </cnx>
+			<cnx from_node="19" from_port="execute" to_node="18" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Reference"> </item>
+			<group type="input" name="Parameters">
+				<item type="input" name="Shape"> </item>
+				<item type="input" name="Falloff_Scale" min="0" max="1"> </item>
+				<item type="input" name="Multiply_Alpha_with_Isovalue"> </item>
+				<item type="input" name="Isovalue_Scale" min="0" max="1"> </item>
+			</group>
+			<group type="input" name="Misc">
+				<item type="input" name="Default_Color"> </item>
+				<item type="input" name="Default_Velocity"> </item>
+				<item type="input" name="Velocity_Scale" min="0" max="2"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="LKF Select Value by UV Direction" tasks="LK Fabric/Utility" formatversion="1.4" compoundversion="1.0" backgroundcolor="5724092">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.LKFUVID"></param>
+				<param_ext name="reference" type="31" value="self.LKFUVID"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-81</prop>
+					<prop name="posy">1681</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="1">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.000000"></param>
+				<param name="case1" type="4" value="0.000000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">1775</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="case0" username="Value_for_U_Strands" basename="Value for U Strands" portlabel="Value for U Strands" exposetype="single"> </port>
+			<port index="1" portname="case1" username="Value_for_V_Strands" basename="Value for V Strands" portlabel="Value for V Strands" exposetype="single"> </port>
+			<port index="1" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Value_for_U_Strands"> </item>
+			<item type="input" name="Value_for_V_Strands"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</definition>
+</xsi_file>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Scale Particle Size with Random" tasks="Mootzoid - emTools/Tools - All Sorts of Things" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12228200">
+	<definition>
+		<nodes>
+			<node type="emTool _ Scale Particle Size" version="1.0" index="0">
+				<param name="Scale" type="4" value="1.000000"></param>
+				<portdef name="Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">401</prop>
+					<prop name="posy">272</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Point ID" version="1.0" index="5">
+				<param name="In_Name_Reference" type="31" value="Self"></param>
+				<param_ext name="In_Name_Reference" type="31" value="Self"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-115</prop>
+					<prop name="posy">355</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RandomValueNode" index="6">
+				<param name="distributiontype" type="3" value="0"></param>
+				<param name="seed" type="3" value="314159"></param>
+				<param name="timevarying" type="11" value="false"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="meanvalue" type="4" value="1.000000"></param>
+				<param name="variance" type="4" value="0.250000"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="meanvalue" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="variance" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">164</prop>
+					<prop name="posy">288</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="6" portname="distributiontype" username="Distribution_Type" basename="Distribution Type" portlabel="Distribution Type" exposetype="single"> </port>
+			<port index="6" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="6" portname="timevarying" username="Time_Varying" basename="Time Varying" portlabel="Time Varying" exposetype="single"> </port>
+			<port index="6" portname="variance" username="Variance" basename="Variance" portlabel="Variance" exposetype="single"> </port>
+			<port index="6" portname="meanvalue" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="Point_ID" to_node="6" to_port="id"> </cnx>
+			<cnx from_node="6" from_port="value" to_node="0" to_port="Scale"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Scale" min="0" max="2"> </item>
+			<group type="input" name="Random">
+				<item type="input" name="Distribution_Type"> </item>
+				<item type="input" name="Seed"> </item>
+				<item type="input" name="Time_Varying"> </item>
+				<item type="input" name="Variance" min="0" max="1"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

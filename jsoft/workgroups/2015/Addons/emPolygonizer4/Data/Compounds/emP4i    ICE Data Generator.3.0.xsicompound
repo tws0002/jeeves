@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4i    ICE Data Generator" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="3.0" constructionmode="Current" backgroundcolor="11187071">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="Self"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-320</prop>
+					<prop name="posy">132</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ReferenceToStringNode" index="1">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-201</prop>
+					<prop name="posy">116</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emPoly4ICEDataGen" index="2">
+				<param name="Name.Name_string" type="8" value="hello"></param>
+				<param name="Name.Name_uimode" type="8" value=""></param>
+				<param name="Name.Name_filepathseq" type="8" value=""></param>
+				<param name="Name.Name_filename" type="8" value=""></param>
+				<portdef name="Name" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">5</prop>
+					<prop name="posy">52</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="Motions" username="Motion_Array" basename="Motion Array" portlabel="Motion Array" exposetype="single"> </port>
+			<port index="2" portname="Normals" username="Normal_Array" basename="Normal Array" portlabel="Normal Array" exposetype="single"> </port>
+			<port index="2" portname="UVWs" username="UVW_Array" basename="UVW Array" portlabel="UVW Array" exposetype="single"> </port>
+			<port index="2" portname="Colors" username="Color_Array" basename="Color Array" portlabel="Color Array" exposetype="single"> </port>
+			<port index="2" portname="IR_Positions" username="IR_Position_Array" basename="IR Position Array" portlabel="IR Position Array" exposetype="single"> </port>
+			<port index="2" portname="IR_Velocities" username="IR_Velocity_Array" basename="IR Velocity Array" portlabel="IR Velocity Array" exposetype="single"> </port>
+			<port index="2" portname="IR_Colors" username="IR_Color_Array" basename="IR Color Array" portlabel="IR Color Array" exposetype="single"> </port>
+			<port index="2" portname="IR_Radiuses" username="IR_Radius_Array" basename="IR Radius Array" portlabel="IR Radius Array" exposetype="single"> </port>
+			<port index="2" portname="IR_Falloffs" username="IR_Falloff_Array" basename="IR Falloff Array" portlabel="IR Falloff Array" exposetype="single"> </port>
+			<port index="2" portname="IR_FalloffTypes" username="IR_FalloffTypes" basename="IR_FalloffTypes" portlabel="IR_FalloffTypes" exposetype="single"> </port>
+			<port index="2" portname="IR_Isovalues" username="IR_Isovalues" basename="IR_Isovalues" portlabel="IR_Isovalues" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="outname" to_node="1" to_port="inname"> </cnx>
+			<cnx from_node="1" from_port="outstringname" to_node="2" to_port="Name"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Motion_Array"> </item>
+			<item type="output" name="Normal_Array"> </item>
+			<item type="output" name="UVW_Array"> </item>
+			<item type="output" name="Color_Array"> </item>
+			<item type="output" name="IR_Position_Array"> </item>
+			<item type="output" name="IR_Velocity_Array"> </item>
+			<item type="output" name="IR_Color_Array"> </item>
+			<item type="output" name="IR_Radius_Array"> </item>
+			<item type="output" name="IR_Falloff_Array"> </item>
+			<item type="output" name="IR_FalloffTypes"> </item>
+			<item type="output" name="IR_Isovalues"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

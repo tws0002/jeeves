@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFly Equal Distribution _ Calc" category="" tasks="Mootzoid/Flocking (c) Tools" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" versiontag="" constructionmode="Current" backgroundcolor="12354706">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="Get Particle Position" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">134</prop>
+					<prop name="posy">2858</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="1">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-617</prop>
+					<prop name="posy">2163</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="PointPosition"></param>
+				<param_ext name="reference" type="31" value="PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">29</prop>
+					<prop name="posy">2293</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MaximumNode" index="3">
+				<param name="value1" type="3" value="0"></param>
+				<param name="value2" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-532</prop>
+					<prop name="posy">2112</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetClosestLocationNode" index="4">
+				<param name="proximitymethod" type="3" value="2"></param>
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="enablecutoffdistance" type="11" value="false"></param>
+				<param name="cutoffdistance" type="4" value="1.000000"></param>
+				<portdef name="geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="enablecutoffdistance" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="cutoffdistance" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-271</prop>
+					<prop name="posy">2325</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="5">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-578</prop>
+					<prop name="posy">2462</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="6">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="divideby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-69</prop>
+					<prop name="posy">2065</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SimulationStepNode" index="7">
+				<datablob category="ui_infos">
+					<prop name="posx">-741</prop>
+					<prop name="posy">2520</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="8">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<param name="value2.value2_x" type="4" value="0.000000"></param>
+				<param name="value2.value2_y" type="4" value="0.000000"></param>
+				<param name="value2.value2_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-402</prop>
+					<prop name="posy">2416</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-53" offsety="-22" sizex="155" sizey="19"><![CDATA[new particle position]]></comment>
+			</node>
+			<node type="Set Particle Position" version="1.0" index="9">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param name="Position.Position_x" type="4" value="0.000000"></param>
+				<param name="Position.Position_y" type="4" value="0.000000"></param>
+				<param name="Position.Position_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<portdef name="Position" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">222</prop>
+					<prop name="posy">2277</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 __ Flocking" version="2.0" index="10">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Distance" type="4" value="12.000000"></param>
+				<param name="Angle" type="4" value="360.000000"></param>
+				<param name="Angle_Falloff" type="4" value="0.000000"></param>
+				<param name="Maximum_Number_of_Neighbors_____" type="3" value="10"></param>
+				<param name="Size_Mode" type="3" value="1"></param>
+				<param name="Ignore_smaller_Neighbors" type="4" value="0.250000"></param>
+				<param name="Desired_Distances_to_Neighbors_____" type="4" value="7.000000"></param>
+				<param name="Privacy_Distance" type="4" value="0.000000"></param>
+				<param name="Privacy_Strength" type="4" value="3.000000"></param>
+				<param name="Velocity_Alignment" type="4" value="0.000000"></param>
+				<param name="Cohesion_Strength" type="4" value="0.000000"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Number_of_Neighbors_____" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Size_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cohesion_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity_Alignment" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Privacy_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Privacy_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Desired_Distances_to_Neighbors_____" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ignore_smaller_Neighbors" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Angle_Falloff" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Angle" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">168</prop>
+					<prop name="posy">1758</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-57" offsety="-37" sizex="245" sizey="45"><![CDATA[use the flocking compound to make the particles want to have a certain distance to their neighbors]]></comment>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in" type="3" value="5"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1557</prop>
+					<prop name="posy">1218</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="57" sizey="19"><![CDATA[iterations]]></comment>
+			</node>
+			<node type="ExecuteNode" index="12">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1042</prop>
+					<prop name="posy">2367</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Position" version="1.0" index="13">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-595</prop>
+					<prop name="posy">2432</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Velocity" version="1.0" index="14">
+				<param name="Reference" type="31" value="Self.PointVelocity"></param>
+				<param_ext name="Reference" type="31" value="Self.PointVelocity"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-766</prop>
+					<prop name="posy">2490</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="15">
+				<param name="Reference" type="31" value="self.__emFly_evDistLocation"></param>
+				<param_ext name="Reference" type="31" value="self.__emFly_evDistLocation"></param_ext>
+				<portdef name="Value" type="2048" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">540</prop>
+					<prop name="posy">2759</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 __ Speed Control" version="2.0" index="16">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Use" type="11" value="false"></param>
+				<param name="Speed" type="4" value="25.000000"></param>
+				<param name="Strength" type="4" value="0.025000"></param>
+				<param name="Use_" type="11" value="true"></param>
+				<param name="Minimum" type="4" value="0.000000"></param>
+				<param name="Maximum" type="4" value="0.500000"></param>
+				<param name="Use__" type="11" value="false"></param>
+				<param name="Amount" type="4" value="0.005000"></param>
+				<param name="Give_slow_Particles_a_Kick_in_the_Butt____" type="11" value="true"></param>
+				<param name="Kick_Strength_" type="4" value="0.125000"></param>
+				<param name="Kick_Direction" type="3" value="4"></param>
+				<param name="Custom_Direction.Custom_Direction_x" type="4" value="1.000000"></param>
+				<param name="Custom_Direction.Custom_Direction_y" type="4" value="0.000000"></param>
+				<param name="Custom_Direction.Custom_Direction_z" type="4" value="0.000000"></param>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Give_slow_Particles_a_Kick_in_the_Butt____" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Kick_Strength_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Direction" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Kick_Direction" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Minimum" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use__" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Speed" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">159</prop>
+					<prop name="posy">2017</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="17">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">481</prop>
+					<prop name="posy">1832</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="18">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1721</prop>
+					<prop name="posy">1029</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="19">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1556</prop>
+					<prop name="posy">1307</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-100" offsety="0" sizex="52" sizey="19"><![CDATA[distance]]></comment>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="3" value="8"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1554</prop>
+					<prop name="posy">1390</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-116" offsety="0" sizex="92" sizey="32"><![CDATA[num neighbors]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="21">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-53</prop>
+					<prop name="posy">1886</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="22">
+				<param name="value" type="4" value="0.500000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-141</prop>
+					<prop name="posy">1937</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="23">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1557</prop>
+					<prop name="posy">1044</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-82" offsety="0" sizex="44" sizey="19"><![CDATA[enable]]></comment>
+			</node>
+			<node type="PassThroughNode" index="24">
+				<portdef name="in" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1905</prop>
+					<prop name="posy">1013</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="25">
+				<portdef name="in" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1545</prop>
+					<prop name="posy">1199</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="26">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="4.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-242</prop>
+					<prop name="posy">2063</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="27">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-419</prop>
+					<prop name="posy">2113</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFly Equal Distribution _ Set" version="2.0" index="28">
+				<datablob category="ui_infos">
+					<prop name="posx">384</prop>
+					<prop name="posy">3008</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-213" offsety="-24" sizex="458" sizey="19"><![CDATA[This is only here to ensure that ICE will actually store the data "self.__emFly_evDistLocation"]]></comment>
+			</node>
+			<node type="RepeatNode" index="29">
+				<param name="iterations" type="3" value="12"></param>
+				<portdef name="iterations" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">697</prop>
+					<prop name="posy">1682</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetClosestLocationNode" index="30">
+				<param name="proximitymethod" type="3" value="0"></param>
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="enablecutoffdistance" type="11" value="false"></param>
+				<param name="cutoffdistance" type="4" value="1.000000"></param>
+				<portdef name="geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="enablecutoffdistance" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="cutoffdistance" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">334</prop>
+					<prop name="posy">2791</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="31">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">773</prop>
+					<prop name="posy">2853</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-642" offsety="1980" sizex="1033" sizey="224"><![CDATA[control the speed so that the particles move slowly.]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-792" offsety="2235" sizex="1202" sizey="324"><![CDATA[calculate the new particle position based on its current position and its velocity, then position it back onto the closest location of the surface.]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="100" offsety="2699" sizex="641" sizey="385"><![CDATA[store the location in an own ICE data (for the compound "Evenly Distribute _ Set")]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="11" portname="in" username="Iterations" basename="Iterations" portlabel="Iterations" exposetype="single"> </port>
+			<port index="19" portname="in" username="Distance" basename="Distance" portlabel="Distance" exposetype="single"> </port>
+			<port index="20" portname="in" username="Neighbors" basename="Neighbors" portlabel="Neighbors" exposetype="single"> </port>
+			<port index="23" portname="in" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="24" portname="out" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="25" portname="in" username="Geometry" basename="Geometry" portlabel="Geometry" exposetype="single"> </port>
+			<port index="30" portname="proximitymethod" username="Proximity_Method" basename="Proximity Method" portlabel="Proximity Method" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="4" from_port="location" to_node="2" to_port="source"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="9" to_port="Position"> </cnx>
+			<cnx from_node="17" from_port="execute" to_node="29" to_port="port"> </cnx>
+			<cnx from_node="19" from_port="out" to_node="21" to_port="value"> </cnx>
+			<cnx from_node="19" from_port="out" to_node="10" to_port="Distance"> </cnx>
+			<cnx from_node="19" from_port="out" to_node="26" to_port="value"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="10" to_port="Maximum_Number_of_Neighbors_____"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="10" to_port="Desired_Distances_to_Neighbors_____"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="21" to_port="factor"> </cnx>
+			<cnx from_node="23" from_port="out" to_node="18" to_port="condition"> </cnx>
+			<cnx from_node="25" from_port="out" to_node="4" to_port="geometry"> </cnx>
+			<cnx from_node="25" from_port="out" to_node="30" to_port="geometry"> </cnx>
+			<cnx from_node="26" from_port="result" to_node="6" to_port="value"> </cnx>
+			<cnx from_node="27" from_port="scalar" to_node="26" to_port="factor"> </cnx>
+			<cnx from_node="27" from_port="scalar" to_node="6" to_port="divideby"> </cnx>
+			<cnx from_node="29" from_port="execute" to_node="12" to_port="port1"> </cnx>
+			<cnx from_node="31" from_port="execute" to_node="12" to_port="port2"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="3" to_port="value2"> </cnx>
+			<cnx from_node="3" from_port="max" to_node="27" to_port="integer"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="8" to_port="value2"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="16" to_port="Maximum"> </cnx>
+			<cnx from_node="7" from_port="time" to_node="5" to_port="factor"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="4" to_port="position"> </cnx>
+			<cnx from_node="30" from_port="location" to_node="15" to_port="Value"> </cnx>
+			<cnx from_node="18" from_port="result" to_node="24" to_port="in"> </cnx>
+			<cnx from_node="0" from_port="Position" to_node="30" to_port="position"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="3" to_port="value1"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="29" to_port="iterations"> </cnx>
+			<cnx from_node="12" from_port="execute" to_node="18" to_port="iftrue"> </cnx>
+			<cnx from_node="9" from_port="Execute" to_node="17" to_port="port3"> </cnx>
+			<cnx from_node="10" from_port="Set_Flocking_Velocities" to_node="17" to_port="port1"> </cnx>
+			<cnx from_node="13" from_port="Position" to_node="8" to_port="value1"> </cnx>
+			<cnx from_node="14" from_port="Velocity" to_node="5" to_port="value"> </cnx>
+			<cnx from_node="15" from_port="Execute" to_node="31" to_port="port1"> </cnx>
+			<cnx from_node="16" from_port="Execute" to_node="17" to_port="port2"> </cnx>
+			<cnx from_node="28" from_port="Execute" to_node="31" to_port="port2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Geometry"> </item>
+			<item type="input" name="Iterations" min="0" max="10"> </item>
+			<item type="input" name="Distance" min="0.1" max="2"> </item>
+			<item type="input" name="Neighbors" min="4" max="15"> </item>
+			<item type="input" name="Proximity_Method"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

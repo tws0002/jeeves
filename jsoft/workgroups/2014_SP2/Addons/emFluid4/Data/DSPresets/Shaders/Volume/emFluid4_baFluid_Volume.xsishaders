@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="ShaderTree" name="emFluid4_baFluid_Volume" category="Volume" formatversion="1.0">
+	<definition>
+		<nodes>
+			<node type="shader" progid="Softimage.BA_volume_cloud.1.0" index="0">
+				<param name="Name" type="31" ><![CDATA[Particle_Volume]]></param>
+				<param name="diffuse.red" type="4" value="1.000000"></param>
+				<param name="diffuse.green" type="4" value="1.000000"></param>
+				<param name="diffuse.blue" type="4" value="1.000000"></param>
+				<param name="diffuse.alpha" type="4" value="1.000000"></param>
+				<param name="density" type="4" value="1.000000"></param>
+				<param name="ambience.red" type="4" value="1.000000"></param>
+				<param name="ambience.green" type="4" value="1.000000"></param>
+				<param name="ambience.blue" type="4" value="1.000000"></param>
+				<param name="ambience.alpha" type="4" value="1.000000"></param>
+				<param name="ParticleDensity" type="4" value="1.000000"></param>
+				<param name="ParticleDensity_shadow" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.red" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.green" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.blue" type="4" value="1.000000"></param>
+				<param name="IntensitySunlight.alpha" type="4" value="1.000000"></param>
+				<param name="free_MarchSizeRay" type="4" value="0.400000"></param>
+				<param name="free_MarchSizeShadow" type="4" value="0.600000"></param>
+				<param name="m_freeH" type="3" value="8"></param>
+				<param name="light_list_shadows" type="11" value="false"></param>
+				<param name="half_boxtiles" type="11" value="false"></param>
+				<param name="free_Grid_MultiSampling" type="3" value="0"></param>
+				<param name="ShadowSaturation" type="4" value="0.500000"></param>
+				<param name="Enable_Illumination" type="11" value="true"></param>
+				<param name="Enable_Scatter" type="11" value="false"></param>
+				<param name="Shading_model" type="3" value="0"></param>
+				<param name="Shadows_interior" type="3" value="0"></param>
+				<param name="free_Shadows_exterior" type="3" value="0"></param>
+				<param name="Scatter_flat_shading" type="11" value="true"></param>
+				<param name="AutoBoundingBox" type="11" value="true"></param>
+				<param name="TileSize" type="4" value="0.750000"></param>
+				<param name="free_TileSizeY" type="4" value="0.600000"></param>
+				<param name="free_TileSizeZ" type="4" value="0.600000"></param>
+				<param name="UseTileSize" type="11" value="true"></param>
+				<param name="shadow_col_adjust.red" type="4" value="1.000000"></param>
+				<param name="shadow_col_adjust.green" type="4" value="1.000000"></param>
+				<param name="shadow_col_adjust.blue" type="4" value="1.000000"></param>
+				<param name="shadow_col_adjust.alpha" type="4" value="1.000000"></param>
+				<param name="FG_trans_fix" type="11" value="false"></param>
+				<param name="absorption_inuse" type="11" value="false"></param>
+				<param name="enable_specular" type="11" value="false"></param>
+				<param name="fg_receive" type="11" value="false"></param>
+				<param name="distort_enable" type="11" value="false"></param>
+				<param name="contrast_ammount" type="4" value="0.000000"></param>
+				<param name="contrast_center" type="4" value="0.500000"></param>
+				<param name="FreeA" type="3" value="0"></param>
+				<param name="cell_interpolation" type="3" value="1"></param>
+				<param name="memory_limit" type="3" value="2048"></param>
+				<param name="free13.x" type="4" value="0.000000"></param>
+				<param name="free13.y" type="4" value="0.000000"></param>
+				<param name="free13.z" type="4" value="0.000000"></param>
+				<param name="free14.x" type="4" value="0.000000"></param>
+				<param name="free14.y" type="4" value="0.000000"></param>
+				<param name="free14.z" type="4" value="0.000000"></param>
+				<param name="max_motion" type="4" value="50.000000"></param>
+				<param name="free_FG_precalc" type="4" value="5.000000"></param>
+				<param name="shadows_normal" type="11" value="false"></param>
+				<param name="preview_mode" type="11" value="false"></param>
+				<param name="p_free_MarchSizeRay" type="4" value="3.000000"></param>
+				<param name="free_p_MarchSizeShadow" type="4" value="1.500000"></param>
+				<param name="free_p_MarchSizeFG" type="4" value="2.000000"></param>
+				<param name="free_p_MarchSizeFGprecalc" type="4" value="1.500000"></param>
+				<param name="p_free_large_march" type="11" value="false"></param>
+				<param name="Grid_MultiSampling_FG" type="3" value="0"></param>
+				<param name="fb_distance" type="3" value="0"></param>
+				<param name="fb_illum" type="3" value="0"></param>
+				<param name="fb_spec" type="3" value="0"></param>
+				<param name="fb_scatter" type="3" value="0"></param>
+				<param name="fb_ambience" type="3" value="0"></param>
+				<param name="fb_fg" type="3" value="0"></param>
+				<param name="fg_cast" type="11" value="false"></param>
+				<param name="distort_input_range" type="3" value="0"></param>
+				<param name="free_p_distort_view" type="11" value="false"></param>
+				<param name="fb_motion" type="3" value="0"></param>
+				<param name="simple_mode" type="11" value="true"></param>
+				<param name="s_detail" type="3" value="1"></param>
+				<param name="s_density" type="3" value="0"></param>
+				<param name="mblur_samples" type="3" value="4"></param>
+				<param name="free_p_cell_interpolation" type="3" value="1"></param>
+				<param name="fb_AO" type="3" value="0"></param>
+				<param name="fb_ambient2" type="3" value="0"></param>
+				<param name="fb_normal" type="3" value="0"></param>
+				<param name="fb_s_distance" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_illum" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_spec" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_scatter" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_ambience" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_fg" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_motion" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_AO" type="8" ><![CDATA[]]></param>
+				<param name="fb_s_ambient2" type="8" ><![CDATA[]]></param>
+				<param name="fb_enable_distance" type="11" value="false"></param>
+				<param name="fb_enable_illum" type="11" value="false"></param>
+				<param name="fb_enable_spec" type="11" value="false"></param>
+				<param name="fb_enable_scatter" type="11" value="false"></param>
+				<param name="fb_enable_ambience" type="11" value="false"></param>
+				<param name="fb_enable_fg" type="11" value="false"></param>
+				<param name="fb_enable_motion" type="11" value="false"></param>
+				<param name="fb_enable_AO" type="11" value="false"></param>
+				<param name="fb_enable_ambient2" type="11" value="false"></param>
+				<param name="fb_enable_normal" type="11" value="false"></param>
+				<param name="ambient2.red" type="4" value="1.000000"></param>
+				<param name="ambient2.green" type="4" value="1.000000"></param>
+				<param name="ambient2.blue" type="4" value="1.000000"></param>
+				<param name="ambient2.alpha" type="4" value="1.000000"></param>
+				<param name="fb_col_FreeC.red" type="4" value="0.300000"></param>
+				<param name="fb_col_FreeC.green" type="4" value="0.500000"></param>
+				<param name="fb_col_FreeC.blue" type="4" value="0.750000"></param>
+				<param name="fb_col_FreeC.alpha" type="4" value="1.000000"></param>
+				<param name="fb_new_xsi_buffernames" type="11" value="true"></param>
+				<param name="fb_fbonly_illum" type="11" value="false"></param>
+				<param name="fb_fbonly_spec" type="11" value="false"></param>
+				<param name="fb_fbonly_scatter" type="11" value="false"></param>
+				<param name="fb_fbonly_ambience" type="11" value="false"></param>
+				<param name="fb_fbonly_fg" type="11" value="false"></param>
+				<param name="fb_fbonly_motion" type="11" value="false"></param>
+				<param name="fb_fbonly_AO" type="11" value="false"></param>
+				<param name="fbFreeB" type="11" value="false"></param>
+				<param name="fb_FreeC" type="11" value="false"></param>
+				<param name="fb_distance_min" type="4" value="0.000000"></param>
+				<param name="fb_distance_max" type="4" value="200.000000"></param>
+				<param name="AO_enable" type="11" value="false"></param>
+				<param name="free_AO_bias" type="4" value="0.500000"></param>
+				<param name="manual_BBox" type="11" value="false"></param>
+				<param name="ambience_intensity" type="4" value="1.000000"></param>
+				<param name="diffuse_intensity" type="4" value="1.000000"></param>
+				<param name="ParticleDensity_globalscale" type="4" value="100.000000"></param>
+				<param name="restrict_lights" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">26,0;28,1;29,1;</prop>
+					<prop name="posx">-325</prop>
+					<prop name="posy">-55</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.BA_fluid.1.0" index="1">
+				<param name="Name" type="31" ><![CDATA[BA_fluid3]]></param>
+				<param name="fluiddata" type="8" ><![CDATA[__baFluidBuffer]]></param>
+				<param name="color.red" type="4" value="0.000000"></param>
+				<param name="color.green" type="4" value="1.000000"></param>
+				<param name="color.blue" type="4" value="0.000000"></param>
+				<param name="color.alpha" type="4" value="1.000000"></param>
+				<param name="interpolationtype" type="3" value="5"></param>
+				<param name="setAlpha" type="11" value="true"></param>
+				<param name="alphainput" type="4" value="0.000000"></param>
+				<param name="renderid" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-722</prop>
+					<prop name="posy">-133</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_channel_picker.1.0" index="2">
+				<param name="Name" type="31" ><![CDATA[Picker1]]></param>
+				<param name="input.red" type="4" value="1.000000"></param>
+				<param name="input.green" type="4" value="1.000000"></param>
+				<param name="input.blue" type="4" value="1.000000"></param>
+				<param name="input.alpha" type="4" value="1.000000"></param>
+				<param name="colspace" type="3" value="1"></param>
+				<param name="channel_rgba" type="3" value="4"></param>
+				<param name="channel_hlsa" type="3" value="1"></param>
+				<param name="channel_hsva" type="3" value="1"></param>
+				<param name="invert" type="11" value="false"></param>
+				<param name="alphamultiply" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-611</prop>
+					<prop name="posy">-136</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_gradient.1.0" index="3">
+				<param name="Name" type="31" ><![CDATA[Gradient2]]></param>
+				<param name="input" type="4" value="1.000000"></param>
+				<param name="coord.x" type="4" value="0.000000"></param>
+				<param name="coord.y" type="4" value="0.000000"></param>
+				<param name="coord.z" type="4" value="0.000000"></param>
+				<param name="input_type" type="3" value="0"></param>
+				<param name="gradient_type" type="3" value="0"></param>
+				<param name="invert" type="11" value="false"></param>
+				<param name="clip" type="11" value="false"></param>
+				<param name="enable_alpha_gradient" type="11" value="false"></param>
+				<param name="min" type="4" value="0.000000"></param>
+				<param name="max" type="4" value="1.000000"></param>
+				<param name="rgba_interpolation" type="3" value="1"></param>
+				<param name="color1.red" type="4" value="0.503000"></param>
+				<param name="color1.green" type="4" value="0.503000"></param>
+				<param name="color1.blue" type="4" value="0.503000"></param>
+				<param name="color1.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color1" type="4" value="0.000000"></param>
+				<param name="mid_color1" type="4" value="0.690909"></param>
+				<param name="color2.red" type="4" value="1.000000"></param>
+				<param name="color2.green" type="4" value="0.514000"></param>
+				<param name="color2.blue" type="4" value="0.000000"></param>
+				<param name="color2.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color2" type="4" value="-1.000000"></param>
+				<param name="mid_color2" type="4" value="0.500000"></param>
+				<param name="color3.red" type="4" value="0.328000"></param>
+				<param name="color3.green" type="4" value="0.328000"></param>
+				<param name="color3.blue" type="4" value="0.328000"></param>
+				<param name="color3.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color3" type="4" value="0.508897"></param>
+				<param name="mid_color3" type="4" value="0.500000"></param>
+				<param name="color4.red" type="4" value="0.000000"></param>
+				<param name="color4.green" type="4" value="1.000000"></param>
+				<param name="color4.blue" type="4" value="1.000000"></param>
+				<param name="color4.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color4" type="4" value="-1.000000"></param>
+				<param name="mid_color4" type="4" value="0.500000"></param>
+				<param name="color5.red" type="4" value="0.582000"></param>
+				<param name="color5.green" type="4" value="0.412000"></param>
+				<param name="color5.blue" type="4" value="0.107000"></param>
+				<param name="color5.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color5" type="4" value="0.864769"></param>
+				<param name="mid_color5" type="4" value="0.500000"></param>
+				<param name="color6.red" type="4" value="0.709060"></param>
+				<param name="color6.green" type="4" value="0.401000"></param>
+				<param name="color6.blue" type="4" value="0.193908"></param>
+				<param name="color6.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color6" type="4" value="1.000000"></param>
+				<param name="mid_color6" type="4" value="0.500000"></param>
+				<param name="color7.red" type="4" value="0.000000"></param>
+				<param name="color7.green" type="4" value="0.000000"></param>
+				<param name="color7.blue" type="4" value="0.000000"></param>
+				<param name="color7.alpha" type="4" value="0.000000"></param>
+				<param name="pos_color7" type="4" value="-1.000000"></param>
+				<param name="mid_color7" type="4" value="0.500000"></param>
+				<param name="color8.red" type="4" value="0.000000"></param>
+				<param name="color8.green" type="4" value="0.000000"></param>
+				<param name="color8.blue" type="4" value="0.000000"></param>
+				<param name="color8.alpha" type="4" value="0.000000"></param>
+				<param name="pos_color8" type="4" value="-1.000000"></param>
+				<param name="mid_color8" type="4" value="0.500000"></param>
+				<param name="alpha_interpolation" type="3" value="1"></param>
+				<param name="alpha1" type="4" value="0.000000"></param>
+				<param name="pos_alpha1" type="4" value="0.000000"></param>
+				<param name="mid_alpha1" type="4" value="0.500000"></param>
+				<param name="alpha2" type="4" value="1.000000"></param>
+				<param name="pos_alpha2" type="4" value="1.000000"></param>
+				<param name="mid_alpha2" type="4" value="0.500000"></param>
+				<param name="alpha3" type="4" value="0.000000"></param>
+				<param name="pos_alpha3" type="4" value="-1.000000"></param>
+				<param name="mid_alpha3" type="4" value="0.500000"></param>
+				<param name="alpha4" type="4" value="0.000000"></param>
+				<param name="pos_alpha4" type="4" value="-1.000000"></param>
+				<param name="mid_alpha4" type="4" value="0.500000"></param>
+				<param name="alpha5" type="4" value="0.000000"></param>
+				<param name="pos_alpha5" type="4" value="-1.000000"></param>
+				<param name="mid_alpha5" type="4" value="0.500000"></param>
+				<param name="alpha6" type="4" value="0.000000"></param>
+				<param name="pos_alpha6" type="4" value="-1.000000"></param>
+				<param name="mid_alpha6" type="4" value="0.500000"></param>
+				<param name="alpha7" type="4" value="0.000000"></param>
+				<param name="pos_alpha7" type="4" value="-1.000000"></param>
+				<param name="mid_alpha7" type="4" value="0.700000"></param>
+				<param name="alpha8" type="4" value="0.000000"></param>
+				<param name="pos_alpha8" type="4" value="-1.000000"></param>
+				<param name="mid_alpha8" type="4" value="0.500000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-622</prop>
+					<prop name="posy">30</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.BA_fluid.1.0" index="4">
+				<param name="Name" type="31" ><![CDATA[BA_fluid2]]></param>
+				<param name="fluiddata" type="8" ><![CDATA[__baFluidBuffer]]></param>
+				<param name="color.red" type="4" value="0.000000"></param>
+				<param name="color.green" type="4" value="1.000000"></param>
+				<param name="color.blue" type="4" value="0.000000"></param>
+				<param name="color.alpha" type="4" value="1.000000"></param>
+				<param name="interpolationtype" type="3" value="5"></param>
+				<param name="setAlpha" type="11" value="true"></param>
+				<param name="alphainput" type="4" value="0.000000"></param>
+				<param name="renderid" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-861</prop>
+					<prop name="posy">83</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_channel_picker.1.0" index="5">
+				<param name="Name" type="31" ><![CDATA[Picker2]]></param>
+				<param name="input.red" type="4" value="1.000000"></param>
+				<param name="input.green" type="4" value="1.000000"></param>
+				<param name="input.blue" type="4" value="1.000000"></param>
+				<param name="input.alpha" type="4" value="1.000000"></param>
+				<param name="colspace" type="3" value="1"></param>
+				<param name="channel_rgba" type="3" value="4"></param>
+				<param name="channel_hlsa" type="3" value="1"></param>
+				<param name="channel_hsva" type="3" value="1"></param>
+				<param name="invert" type="11" value="false"></param>
+				<param name="alphamultiply" type="11" value="false"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-744</prop>
+					<prop name="posy">80</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_gradient.1.0" index="6">
+				<param name="Name" type="31" ><![CDATA[Gradient]]></param>
+				<param name="input" type="4" value="1.000000"></param>
+				<param name="coord.x" type="4" value="0.000000"></param>
+				<param name="coord.y" type="4" value="0.000000"></param>
+				<param name="coord.z" type="4" value="0.000000"></param>
+				<param name="input_type" type="3" value="0"></param>
+				<param name="gradient_type" type="3" value="0"></param>
+				<param name="invert" type="11" value="false"></param>
+				<param name="clip" type="11" value="false"></param>
+				<param name="enable_alpha_gradient" type="11" value="false"></param>
+				<param name="min" type="4" value="0.000000"></param>
+				<param name="max" type="4" value="1.000000"></param>
+				<param name="rgba_interpolation" type="3" value="1"></param>
+				<param name="color1.red" type="4" value="0.000000"></param>
+				<param name="color1.green" type="4" value="0.000000"></param>
+				<param name="color1.blue" type="4" value="0.000000"></param>
+				<param name="color1.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color1" type="4" value="0.000000"></param>
+				<param name="mid_color1" type="4" value="0.690909"></param>
+				<param name="color2.red" type="4" value="1.000000"></param>
+				<param name="color2.green" type="4" value="0.514000"></param>
+				<param name="color2.blue" type="4" value="0.000000"></param>
+				<param name="color2.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color2" type="4" value="0.686833"></param>
+				<param name="mid_color2" type="4" value="0.500000"></param>
+				<param name="color3.red" type="4" value="0.604238"></param>
+				<param name="color3.green" type="4" value="0.000000"></param>
+				<param name="color3.blue" type="4" value="0.000000"></param>
+				<param name="color3.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color3" type="4" value="0.508897"></param>
+				<param name="mid_color3" type="4" value="0.500000"></param>
+				<param name="color4.red" type="4" value="0.000000"></param>
+				<param name="color4.green" type="4" value="1.000000"></param>
+				<param name="color4.blue" type="4" value="1.000000"></param>
+				<param name="color4.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color4" type="4" value="-1.000000"></param>
+				<param name="mid_color4" type="4" value="0.500000"></param>
+				<param name="color5.red" type="4" value="1.000000"></param>
+				<param name="color5.green" type="4" value="1.000000"></param>
+				<param name="color5.blue" type="4" value="0.000000"></param>
+				<param name="color5.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color5" type="4" value="0.864769"></param>
+				<param name="mid_color5" type="4" value="0.500000"></param>
+				<param name="color6.red" type="4" value="1.000000"></param>
+				<param name="color6.green" type="4" value="1.000000"></param>
+				<param name="color6.blue" type="4" value="0.836000"></param>
+				<param name="color6.alpha" type="4" value="1.000000"></param>
+				<param name="pos_color6" type="4" value="1.000000"></param>
+				<param name="mid_color6" type="4" value="0.500000"></param>
+				<param name="color7.red" type="4" value="0.000000"></param>
+				<param name="color7.green" type="4" value="0.000000"></param>
+				<param name="color7.blue" type="4" value="0.000000"></param>
+				<param name="color7.alpha" type="4" value="0.000000"></param>
+				<param name="pos_color7" type="4" value="-1.000000"></param>
+				<param name="mid_color7" type="4" value="0.500000"></param>
+				<param name="color8.red" type="4" value="0.000000"></param>
+				<param name="color8.green" type="4" value="0.000000"></param>
+				<param name="color8.blue" type="4" value="0.000000"></param>
+				<param name="color8.alpha" type="4" value="0.000000"></param>
+				<param name="pos_color8" type="4" value="-1.000000"></param>
+				<param name="mid_color8" type="4" value="0.500000"></param>
+				<param name="alpha_interpolation" type="3" value="1"></param>
+				<param name="alpha1" type="4" value="0.000000"></param>
+				<param name="pos_alpha1" type="4" value="0.000000"></param>
+				<param name="mid_alpha1" type="4" value="0.500000"></param>
+				<param name="alpha2" type="4" value="1.000000"></param>
+				<param name="pos_alpha2" type="4" value="1.000000"></param>
+				<param name="mid_alpha2" type="4" value="0.500000"></param>
+				<param name="alpha3" type="4" value="0.000000"></param>
+				<param name="pos_alpha3" type="4" value="-1.000000"></param>
+				<param name="mid_alpha3" type="4" value="0.500000"></param>
+				<param name="alpha4" type="4" value="0.000000"></param>
+				<param name="pos_alpha4" type="4" value="-1.000000"></param>
+				<param name="mid_alpha4" type="4" value="0.500000"></param>
+				<param name="alpha5" type="4" value="0.000000"></param>
+				<param name="pos_alpha5" type="4" value="-1.000000"></param>
+				<param name="mid_alpha5" type="4" value="0.500000"></param>
+				<param name="alpha6" type="4" value="0.000000"></param>
+				<param name="pos_alpha6" type="4" value="-1.000000"></param>
+				<param name="mid_alpha6" type="4" value="0.500000"></param>
+				<param name="alpha7" type="4" value="0.000000"></param>
+				<param name="pos_alpha7" type="4" value="-1.000000"></param>
+				<param name="mid_alpha7" type="4" value="0.700000"></param>
+				<param name="alpha8" type="4" value="0.000000"></param>
+				<param name="pos_alpha8" type="4" value="-1.000000"></param>
+				<param name="mid_alpha8" type="4" value="0.500000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-616</prop>
+					<prop name="posy">101</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.BA_fluid_value_float.1.0" index="7">
+				<param name="Name" type="31" ><![CDATA[heat1]]></param>
+				<param name="value" type="3" value="1"></param>
+				<param name="input_clip_min" type="4" value="33.000000"></param>
+				<param name="input_clip_max" type="4" value="1500.000000"></param>
+				<param name="bias" type="4" value="0.500000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-1073</prop>
+					<prop name="posy">98</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.BA_fluid_value_float.1.0" index="8">
+				<param name="Name" type="31" ><![CDATA[waste1]]></param>
+				<param name="value" type="3" value="3"></param>
+				<param name="input_clip_min" type="4" value="0.000000"></param>
+				<param name="input_clip_max" type="4" value="0.001000"></param>
+				<param name="bias" type="4" value="0.500000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-1074</prop>
+					<prop name="posy">-116</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<connections>
+			<cnx from_node="1" from_port="out" to_node="2" to_port="input"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="0" to_port="density"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="0" to_port="diffuse"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="5" to_port="input"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="3" to_port="input"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="6" to_port="input"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="0" to_port="ambience"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="4" to_port="alphainput"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="1" to_port="alphainput"> </cnx>
+		</connections>
+	</definition>
+</xsi_file>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Intersection of two Boxes" tasks="Mootzoid - emTools/Tools - Intersection" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6004121">
+	<definition>
+		<nodes>
+			<node type="emTools_iotb" index="0">
+				<param name="mode" type="3" value="1"></param>
+				<param name="tmA.tmA_00" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_01" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_02" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_03" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_10" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_11" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_12" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_13" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_20" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_21" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_22" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_23" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_30" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_31" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_32" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_33" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_00" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_01" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_02" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_03" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_10" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_11" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_12" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_13" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_20" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_21" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_22" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_23" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_30" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_31" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_32" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_33" type="4" value="0.000000"></param>
+				<portdef name="mode" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="tmA" type="256" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="tmB" type="256" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-5978</prop>
+					<prop name="posy">-483</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="result" username="A_and_B_intersect" basename="A and B intersect" portlabel="A and B intersect" exposetype="single"> </port>
+			<port index="0" portname="tmA" username="Transformation_of_Box_A" basename="Transformation of Box A" portlabel="Transformation of Box A" exposetype="single"> </port>
+			<port index="0" portname="tmB" username="Transformation_of_Box_B" basename="Transformation of Box B" portlabel="Transformation of Box B" exposetype="single"> </port>
+			<port index="0" portname="mode" username="Method" basename="Method" portlabel="Method" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Method" min="0" max="0">
+				<enum value="-1"><![CDATA[Rough Approximation]]></enum>
+				<enum value="0"><![CDATA[Moderate Approximation]]></enum>
+				<enum value="1"><![CDATA[Fine Approximation]]></enum>
+			</item>
+			<item type="input" name="Transformation_of_Box_A"> </item>
+			<item type="input" name="Transformation_of_Box_B"> </item>
+			<item type="output" name="A_and_B_intersect"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

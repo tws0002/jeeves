@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFluid4 __ Particle Size and Color" tasks="Mootzoid - emFluid4/Main" author="Eric Mootz and Oliver Weingarten" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" constructionmode="Current" backgroundcolor="8363693">
+	<definition>
+		<nodes>
+			<node type="Set Particle Size" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Size" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1641</prop>
+					<prop name="posy">148</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="1">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-10</prop>
+					<prop name="posy">168</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="2">
+				<param name="profile" type="buffer">4 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 0.000000 0.000000 0.731288 0.000000 -0.381766 4 3
+0 0.306228 1.000039 0.043613 0.062600 -0.102077 -0.146515 8196 3
+0 0.437067 0.999740 0.187644 -0.292412 -0.043613 0.067964 8196 3
+0 1.000000 -0.000351 0.063798 0.000000 -0.187644 0.000000 4 3
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">508</prop>
+					<prop name="posy">307</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-56" offsety="-34" sizex="201" sizey="32"><![CDATA[fade the particle's alpha channel in/out depending on its age percentage.]]></comment>
+			</node>
+			<node type="PassThroughNode" index="3">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1589</prop>
+					<prop name="posy">118</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="67" sizey="19"><![CDATA[Heat Scale]]></comment>
+			</node>
+			<node type="SimulationStepNode" index="4">
+				<datablob category="ui_infos">
+					<prop name="posx">-1052</prop>
+					<prop name="posy">509</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ClampNode" index="5">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="limit1" type="4" value="0.000000"></param>
+				<param name="limit2" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="limit1" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="limit2" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-730</prop>
+					<prop name="posy">477</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RGBAToColorNode" index="6">
+				<param name="red" type="4" value="0.000000"></param>
+				<param name="green" type="4" value="0.000000"></param>
+				<param name="blue" type="4" value="0.000000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="red" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="green" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blue" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1466</prop>
+					<prop name="posy">56</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="7">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">958</prop>
+					<prop name="posy">153</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ColorToRGBANode" index="8">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">786</prop>
+					<prop name="posy">74</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="9">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-629</prop>
+					<prop name="posy">544</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="10">
+				<param name="profile" type="buffer">4 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 0.000000 0.072088 0.000000 -0.333333 0.000000 4 3
+0 0.216263 1.000039 0.043613 0.062600 -0.072088 -0.103471 8196 3
+0 0.347102 0.999740 0.217633 -0.339144 -0.043613 0.067964 8196 3
+0 1.000000 -0.000351 0.063798 0.000000 -0.217633 0.000000 4 3
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">501</prop>
+					<prop name="posy">1208</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-56" offsety="-34" sizex="201" sizey="32"><![CDATA[fade the particle's alpha channel in/out depending on its age percentage.]]></comment>
+			</node>
+			<node type="AddNode" index="11">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-323</prop>
+					<prop name="posy">572</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="12">
+				<param name="reference" type="31" value="self.__emFluid_Heat"></param>
+				<param_ext name="reference" type="31" value="self.__emFluid_Heat"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-858</prop>
+					<prop name="posy">1480</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="13">
+				<param name="value" type="4" value="23.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-739</prop>
+					<prop name="posy">1507</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-120" offsety="0" sizex="114" sizey="19"><![CDATA[Heat Damping Target]]></comment>
+			</node>
+			<node type="ExecuteNode" index="14">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1881</prop>
+					<prop name="posy">925</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="15">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-902</prop>
+					<prop name="posy">1359</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="16">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-508</prop>
+					<prop name="posy">1413</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="17">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-806</prop>
+					<prop name="posy">1300</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="18">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-638</prop>
+					<prop name="posy">1286</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="19">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">743</prop>
+					<prop name="posy">343</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1588</prop>
+					<prop name="posy">-104</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-93" offsety="0" sizex="79" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="SelectCaseNode" index="21">
+				<param name="condition" type="3" value="0"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4096" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4096" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="4096" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="case3" type="4096" structure="1" group="1" instance="3" port="0"></portdef>
+				<portdef name="case4" type="4096" structure="1" group="1" instance="4" port="0"></portdef>
+				<portdef name="default" type="4096" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2901</prop>
+					<prop name="posy">-1204</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-10" offsety="-52" sizex="106" sizey="45"><![CDATA[0x01: type "waste"
+0x02: type "flame"
+0x04: type "smoke"]]></comment>
+			</node>
+			<node type="IfNode" index="22">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3440</prop>
+					<prop name="posy">-1866</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Color" version="1.0" index="23">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param name="Color.Color_red" type="4" value="0.000000"></param>
+				<param name="Color.Color_green" type="4" value="0.000000"></param>
+				<param name="Color.Color_blue" type="4" value="0.370000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1634</prop>
+					<prop name="posy">-865</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="24">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1595</prop>
+					<prop name="posy">941</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-213" offsety="0" sizex="198" sizey="19"><![CDATA[Fade Alpha by Particle Age Percentage]]></comment>
+			</node>
+			<node type="FirstValidNode" index="25">
+				<param name="in1" type="4" value="0.000000"></param>
+				<param name="in2" type="4" value="0.000000"></param>
+				<portdef name="in1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">809</prop>
+					<prop name="posy">1193</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="26">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">736</prop>
+					<prop name="posy">1244</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="27">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1135</prop>
+					<prop name="posy">-898</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="28">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1595</prop>
+					<prop name="posy">797</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-93" offsety="0" sizex="79" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="GetDataNode" index="29">
+				<param name="reference" type="31" value="self.__emFluid_Type"></param>
+				<param_ext name="reference" type="31" value="self.__emFluid_Type"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2617</prop>
+					<prop name="posy">-1239</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="30">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1595</prop>
+					<prop name="posy">866</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="67" sizey="19"><![CDATA[Alpha Scale]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="31">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1210</prop>
+					<prop name="posy">855</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-102" offsety="0" sizex="96" sizey="19"><![CDATA[apply Alpha Scale]]></comment>
+			</node>
+			<node type="PassThroughNode" index="32">
+				<portdef name="in" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3659</prop>
+					<prop name="posy">-1882</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="33">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1133</prop>
+					<prop name="posy">7</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="34">
+				<param name="in1" type="4" value="0.000000"></param>
+				<param name="in2" type="4" value="0.000000"></param>
+				<portdef name="in1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">816</prop>
+					<prop name="posy">292</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="35">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1583</prop>
+					<prop name="posy">-725</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="67" sizey="19"><![CDATA[Heat Scale]]></comment>
+			</node>
+			<node type="FCurveNode" index="36">
+				<param name="profile" type="buffer">4 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 0.000000 0.072088 0.000000 -0.333333 0.000000 4 3
+0 0.216263 1.000039 0.043613 0.062600 -0.072088 -0.103471 8196 3
+0 0.347102 0.999740 0.217633 -0.339144 -0.043613 0.067964 8196 3
+0 1.000000 -0.000351 0.063798 0.000000 -0.217633 0.000000 4 3
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">510</prop>
+					<prop name="posy">-598</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-56" offsety="-34" sizex="201" sizey="32"><![CDATA[fade the particle's alpha channel in/out depending on its age percentage.]]></comment>
+			</node>
+			<node type="FirstValidNode" index="37">
+				<param name="in1" type="4" value="0.000000"></param>
+				<param name="in2" type="4" value="0.000000"></param>
+				<portdef name="in1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">818</prop>
+					<prop name="posy">-613</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="38">
+				<param name="reference" type="31" value="self.__emFluid_Heat"></param>
+				<param_ext name="reference" type="31" value="self.__emFluid_Heat"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-851</prop>
+					<prop name="posy">579</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MaximumNode" index="39">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-149</prop>
+					<prop name="posy">418</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-50" offsety="-43" sizex="212" sizey="32"><![CDATA[take maximum of "locally calculated heat" and "solver's heat"]]></comment>
+			</node>
+			<node type="SimulationStepNode" index="40">
+				<datablob category="ui_infos">
+					<prop name="posx">-1059</prop>
+					<prop name="posy">1410</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ClampNode" index="41">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="limit1" type="4" value="0.000000"></param>
+				<param name="limit2" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="limit1" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="limit2" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-737</prop>
+					<prop name="posy">1378</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RGBAToColorNode" index="42">
+				<param name="red" type="4" value="0.000000"></param>
+				<param name="green" type="4" value="0.000000"></param>
+				<param name="blue" type="4" value="0.000000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="red" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="green" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blue" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1459</prop>
+					<prop name="posy">957</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="43">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">951</prop>
+					<prop name="posy">1054</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ColorToRGBANode" index="44">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">779</prop>
+					<prop name="posy">975</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="45">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-636</prop>
+					<prop name="posy">1445</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MaximumNode" index="46">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-156</prop>
+					<prop name="posy">1319</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-50" offsety="-43" sizex="212" sizey="32"><![CDATA[take maximum of "locally calculated heat" and "solver's heat"]]></comment>
+			</node>
+			<node type="AddNode" index="47">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-330</prop>
+					<prop name="posy">1473</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="48">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1880</prop>
+					<prop name="posy">-2022</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-121" offsety="0" sizex="106" sizey="19"><![CDATA[Heat from Solver]]></comment>
+			</node>
+			<node type="ScalarNode" index="49">
+				<param name="value" type="4" value="23.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-732</prop>
+					<prop name="posy">606</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-120" offsety="0" sizex="114" sizey="19"><![CDATA[Heat Damping Target]]></comment>
+			</node>
+			<node type="ExecuteNode" index="50">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1888</prop>
+					<prop name="posy">24</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="51">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-895</prop>
+					<prop name="posy">458</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="52">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-501</prop>
+					<prop name="posy">512</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="53">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-799</prop>
+					<prop name="posy">399</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="54">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-631</prop>
+					<prop name="posy">385</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="55">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1588</prop>
+					<prop name="posy">40</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-213" offsety="0" sizex="198" sizey="19"><![CDATA[Fade Alpha by Particle Age Percentage]]></comment>
+			</node>
+			<node type="PassThroughNode" index="56">
+				<param name="in" type="4" value="0.250000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1588</prop>
+					<prop name="posy">-35</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="67" sizey="19"><![CDATA[Alpha Scale]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="57">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1217</prop>
+					<prop name="posy">-46</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-102" offsety="0" sizex="96" sizey="19"><![CDATA[apply Alpha Scale]]></comment>
+			</node>
+			<node type="SimulationStepNode" index="58">
+				<datablob category="ui_infos">
+					<prop name="posx">-1050</prop>
+					<prop name="posy">-396</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ClampNode" index="59">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="limit1" type="4" value="0.000000"></param>
+				<param name="limit2" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="limit1" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="limit2" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-728</prop>
+					<prop name="posy">-428</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RGBAToColorNode" index="60">
+				<param name="red" type="4" value="0.000000"></param>
+				<param name="green" type="4" value="0.000000"></param>
+				<param name="blue" type="4" value="0.000000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="red" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="green" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blue" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1468</prop>
+					<prop name="posy">-849</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="61">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">960</prop>
+					<prop name="posy">-752</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ColorToRGBANode" index="62">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">788</prop>
+					<prop name="posy">-831</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="63">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-627</prop>
+					<prop name="posy">-361</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MaximumNode" index="64">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-147</prop>
+					<prop name="posy">-487</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-50" offsety="-43" sizex="212" sizey="32"><![CDATA[take maximum of "locally calculated heat" and "solver's heat"]]></comment>
+			</node>
+			<node type="AddNode" index="65">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-321</prop>
+					<prop name="posy">-333</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="66">
+				<param name="value" type="4" value="23.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-730</prop>
+					<prop name="posy">-299</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-120" offsety="0" sizex="114" sizey="19"><![CDATA[Heat Damping Target]]></comment>
+			</node>
+			<node type="ExecuteNode" index="67">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1890</prop>
+					<prop name="posy">-881</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="68">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-893</prop>
+					<prop name="posy">-447</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="69">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-499</prop>
+					<prop name="posy">-393</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="70">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-797</prop>
+					<prop name="posy">-506</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="71">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-629</prop>
+					<prop name="posy">-520</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="72">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1586</prop>
+					<prop name="posy">-803</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-213" offsety="0" sizex="198" sizey="19"><![CDATA[Fade Alpha by Particle Age Percentage]]></comment>
+			</node>
+			<node type="ScalarNode" index="73">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">745</prop>
+					<prop name="posy">-562</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="74">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1586</prop>
+					<prop name="posy">-947</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-93" offsety="0" sizex="79" sizey="19"><![CDATA[Damping Rate]]></comment>
+			</node>
+			<node type="PassThroughNode" index="75">
+				<param name="in" type="4" value="0.050000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1586</prop>
+					<prop name="posy">-878</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="67" sizey="19"><![CDATA[Alpha Scale]]></comment>
+			</node>
+			<node type="MultiplyByScalarNode" index="76">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1219</prop>
+					<prop name="posy">-951</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-102" offsety="0" sizex="96" sizey="19"><![CDATA[apply Alpha Scale]]></comment>
+			</node>
+			<node type="Get Particle Age Percentage" version="1.0" index="77">
+				<datablob category="ui_infos">
+					<prop name="posx">167</prop>
+					<prop name="posy">-563</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Color" version="1.0" index="78">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param name="Color.Color_red" type="4" value="0.000000"></param>
+				<param name="Color.Color_green" type="4" value="0.000000"></param>
+				<param name="Color.Color_blue" type="4" value="0.370000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1625</prop>
+					<prop name="posy">941</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Age Percentage" version="1.0" index="79">
+				<datablob category="ui_infos">
+					<prop name="posx">158</prop>
+					<prop name="posy">1243</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="80">
+				<param name="Reference" type="31" value="self.__emFluid_Heat"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.__emFluid_Heat"></param_ext>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1577</prop>
+					<prop name="posy">1301</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GradientNode" index="81">
+				<param name="gradient.interp" type="3" value="1"></param>
+				<param name="gradient.color1.r" type="5" value="0.000000"></param>
+				<param name="gradient.color1.g" type="5" value="0.000000"></param>
+				<param name="gradient.color1.b" type="5" value="0.000000"></param>
+				<param name="gradient.color1.a" type="5" value="0.250000"></param>
+				<param name="gradient.pos1" type="5" value="0.000000"></param>
+				<param name="gradient.mid1" type="5" value="0.500000"></param>
+				<param name="gradient.color2.r" type="5" value="0.873000"></param>
+				<param name="gradient.color2.g" type="5" value="0.400000"></param>
+				<param name="gradient.color2.b" type="5" value="0.000000"></param>
+				<param name="gradient.color2.a" type="5" value="0.765000"></param>
+				<param name="gradient.pos2" type="5" value="0.524164"></param>
+				<param name="gradient.mid2" type="5" value="0.690873"></param>
+				<param name="gradient.color3.r" type="5" value="1.000000"></param>
+				<param name="gradient.color3.g" type="5" value="0.976000"></param>
+				<param name="gradient.color3.b" type="5" value="0.564000"></param>
+				<param name="gradient.color3.a" type="5" value="0.876000"></param>
+				<param name="gradient.pos3" type="5" value="0.657588"></param>
+				<param name="gradient.mid3" type="5" value="0.244444"></param>
+				<param name="gradient.color4.r" type="5" value="0.273000"></param>
+				<param name="gradient.color4.g" type="5" value="0.085000"></param>
+				<param name="gradient.color4.b" type="5" value="0.000000"></param>
+				<param name="gradient.color4.a" type="5" value="0.606000"></param>
+				<param name="gradient.pos4" type="5" value="0.348754"></param>
+				<param name="gradient.mid4" type="5" value="0.500000"></param>
+				<param name="gradient.color5.r" type="5" value="0.139000"></param>
+				<param name="gradient.color5.g" type="5" value="0.139000"></param>
+				<param name="gradient.color5.b" type="5" value="0.139000"></param>
+				<param name="gradient.color5.a" type="5" value="0.618000"></param>
+				<param name="gradient.pos5" type="5" value="0.142349"></param>
+				<param name="gradient.mid5" type="5" value="0.500000"></param>
+				<param name="gradient.color6.r" type="5" value="1.000000"></param>
+				<param name="gradient.color6.g" type="5" value="1.000000"></param>
+				<param name="gradient.color6.b" type="5" value="1.000000"></param>
+				<param name="gradient.color6.a" type="5" value="0.222000"></param>
+				<param name="gradient.pos6" type="5" value="1.000000"></param>
+				<param name="gradient.mid6" type="5" value="0.500000"></param>
+				<param name="gradient.color7.r" type="5" value="0.992003"></param>
+				<param name="gradient.color7.g" type="5" value="0.981998"></param>
+				<param name="gradient.color7.b" type="5" value="0.672963"></param>
+				<param name="gradient.color7.a" type="5" value="0.948517"></param>
+				<param name="gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="gradient.mid7" type="5" value="0.500000"></param>
+				<param name="gradient.color8.r" type="5" value="1.000000"></param>
+				<param name="gradient.color8.g" type="5" value="0.985000"></param>
+				<param name="gradient.color8.b" type="5" value="0.846000"></param>
+				<param name="gradient.color8.a" type="5" value="0.444000"></param>
+				<param name="gradient.pos8" type="5" value="0.866667"></param>
+				<param name="gradient.mid8" type="5" value="0.500000"></param>
+				<param name="gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="gradient.mid9" type="5" value="0.500000"></param>
+				<param name="gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="gradient.mid10" type="5" value="0.500000"></param>
+				<param name="gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="gradient.mid11" type="5" value="0.500000"></param>
+				<param name="gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="gradient.mid12" type="5" value="0.500000"></param>
+				<param name="gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="gradient.mid13" type="5" value="0.500000"></param>
+				<param name="gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="gradient.mid14" type="5" value="0.500000"></param>
+				<param name="gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="gradient.mid15" type="5" value="0.500000"></param>
+				<param name="gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="gradient.mid16" type="5" value="0.500000"></param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">372</prop>
+					<prop name="posy">137</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-77" offsety="-35" sizex="188" sizey="32"><![CDATA[colorize the particle using a gradient driven by the heat]]></comment>
+			</node>
+			<node type="GradientNode" index="82">
+				<param name="gradient.interp" type="3" value="1"></param>
+				<param name="gradient.color1.r" type="5" value="0.158832"></param>
+				<param name="gradient.color1.g" type="5" value="0.154086"></param>
+				<param name="gradient.color1.b" type="5" value="0.129168"></param>
+				<param name="gradient.color1.a" type="5" value="0.621000"></param>
+				<param name="gradient.pos1" type="5" value="0.000000"></param>
+				<param name="gradient.mid1" type="5" value="0.520000"></param>
+				<param name="gradient.color2.r" type="5" value="0.111000"></param>
+				<param name="gradient.color2.g" type="5" value="0.065000"></param>
+				<param name="gradient.color2.b" type="5" value="0.000000"></param>
+				<param name="gradient.color2.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos2" type="5" value="-1.000000"></param>
+				<param name="gradient.mid2" type="5" value="0.458878"></param>
+				<param name="gradient.color3.r" type="5" value="0.850000"></param>
+				<param name="gradient.color3.g" type="5" value="0.778000"></param>
+				<param name="gradient.color3.b" type="5" value="0.601000"></param>
+				<param name="gradient.color3.a" type="5" value="0.961000"></param>
+				<param name="gradient.pos3" type="5" value="0.365759"></param>
+				<param name="gradient.mid3" type="5" value="0.583333"></param>
+				<param name="gradient.color4.r" type="5" value="1.000000"></param>
+				<param name="gradient.color4.g" type="5" value="0.816000"></param>
+				<param name="gradient.color4.b" type="5" value="0.000000"></param>
+				<param name="gradient.color4.a" type="5" value="0.542000"></param>
+				<param name="gradient.pos4" type="5" value="1.000000"></param>
+				<param name="gradient.mid4" type="5" value="0.500000"></param>
+				<param name="gradient.color5.r" type="5" value="0.000000"></param>
+				<param name="gradient.color5.g" type="5" value="0.000000"></param>
+				<param name="gradient.color5.b" type="5" value="0.000000"></param>
+				<param name="gradient.color5.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos5" type="5" value="-1.000000"></param>
+				<param name="gradient.mid5" type="5" value="0.500000"></param>
+				<param name="gradient.color6.r" type="5" value="1.000000"></param>
+				<param name="gradient.color6.g" type="5" value="0.987000"></param>
+				<param name="gradient.color6.b" type="5" value="0.843000"></param>
+				<param name="gradient.color6.a" type="5" value="0.895000"></param>
+				<param name="gradient.pos6" type="5" value="0.478599"></param>
+				<param name="gradient.mid6" type="5" value="0.500000"></param>
+				<param name="gradient.color7.r" type="5" value="0.984436"></param>
+				<param name="gradient.color7.g" type="5" value="0.987673"></param>
+				<param name="gradient.color7.b" type="5" value="1.000000"></param>
+				<param name="gradient.color7.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="gradient.mid7" type="5" value="0.500000"></param>
+				<param name="gradient.color8.r" type="5" value="1.000000"></param>
+				<param name="gradient.color8.g" type="5" value="1.000000"></param>
+				<param name="gradient.color8.b" type="5" value="1.000000"></param>
+				<param name="gradient.color8.a" type="5" value="0.641000"></param>
+				<param name="gradient.pos8" type="5" value="-1.000000"></param>
+				<param name="gradient.mid8" type="5" value="0.519608"></param>
+				<param name="gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="gradient.mid9" type="5" value="0.500000"></param>
+				<param name="gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="gradient.mid10" type="5" value="0.500000"></param>
+				<param name="gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="gradient.mid11" type="5" value="0.500000"></param>
+				<param name="gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="gradient.mid12" type="5" value="0.500000"></param>
+				<param name="gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="gradient.mid13" type="5" value="0.500000"></param>
+				<param name="gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="gradient.mid14" type="5" value="0.500000"></param>
+				<param name="gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="gradient.mid15" type="5" value="0.500000"></param>
+				<param name="gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="gradient.mid16" type="5" value="0.500000"></param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">365</prop>
+					<prop name="posy">1038</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-77" offsety="-35" sizex="188" sizey="32"><![CDATA[colorize the particle using a gradient driven by the heat]]></comment>
+			</node>
+			<node type="Set Particle Color" version="1.0" index="83">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param name="Color.Color_red" type="4" value="0.000000"></param>
+				<param name="Color.Color_green" type="4" value="0.000000"></param>
+				<param name="Color.Color_blue" type="4" value="0.370000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1632</prop>
+					<prop name="posy">40</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Age Percentage" version="1.0" index="84">
+				<datablob category="ui_infos">
+					<prop name="posx">165</prop>
+					<prop name="posy">342</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="85">
+				<param name="Reference" type="31" value="self.__emFluid_Heat"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.__emFluid_Heat"></param_ext>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1584</prop>
+					<prop name="posy">400</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GradientNode" index="86">
+				<param name="gradient.interp" type="3" value="1"></param>
+				<param name="gradient.color1.r" type="5" value="0.330000"></param>
+				<param name="gradient.color1.g" type="5" value="0.330000"></param>
+				<param name="gradient.color1.b" type="5" value="0.330000"></param>
+				<param name="gradient.color1.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos1" type="5" value="0.272374"></param>
+				<param name="gradient.mid1" type="5" value="0.500000"></param>
+				<param name="gradient.color2.r" type="5" value="0.853000"></param>
+				<param name="gradient.color2.g" type="5" value="0.735000"></param>
+				<param name="gradient.color2.b" type="5" value="0.346000"></param>
+				<param name="gradient.color2.a" type="5" value="0.735000"></param>
+				<param name="gradient.pos2" type="5" value="0.809339"></param>
+				<param name="gradient.mid2" type="5" value="0.690873"></param>
+				<param name="gradient.color3.r" type="5" value="0.600000"></param>
+				<param name="gradient.color3.g" type="5" value="0.700000"></param>
+				<param name="gradient.color3.b" type="5" value="0.800000"></param>
+				<param name="gradient.color3.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos3" type="5" value="0.529183"></param>
+				<param name="gradient.mid3" type="5" value="0.540856"></param>
+				<param name="gradient.color4.r" type="5" value="0.150000"></param>
+				<param name="gradient.color4.g" type="5" value="0.150000"></param>
+				<param name="gradient.color4.b" type="5" value="0.150000"></param>
+				<param name="gradient.color4.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos4" type="5" value="0.000000"></param>
+				<param name="gradient.mid4" type="5" value="0.500000"></param>
+				<param name="gradient.color5.r" type="5" value="0.139000"></param>
+				<param name="gradient.color5.g" type="5" value="0.139000"></param>
+				<param name="gradient.color5.b" type="5" value="0.139000"></param>
+				<param name="gradient.color5.a" type="5" value="0.618000"></param>
+				<param name="gradient.pos5" type="5" value="-1.000000"></param>
+				<param name="gradient.mid5" type="5" value="0.500000"></param>
+				<param name="gradient.color6.r" type="5" value="0.968000"></param>
+				<param name="gradient.color6.g" type="5" value="1.000000"></param>
+				<param name="gradient.color6.b" type="5" value="1.000000"></param>
+				<param name="gradient.color6.a" type="5" value="0.467000"></param>
+				<param name="gradient.pos6" type="5" value="-1.000000"></param>
+				<param name="gradient.mid6" type="5" value="0.500000"></param>
+				<param name="gradient.color7.r" type="5" value="0.984436"></param>
+				<param name="gradient.color7.g" type="5" value="0.987673"></param>
+				<param name="gradient.color7.b" type="5" value="1.000000"></param>
+				<param name="gradient.color7.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="gradient.mid7" type="5" value="0.500000"></param>
+				<param name="gradient.color8.r" type="5" value="0.968000"></param>
+				<param name="gradient.color8.g" type="5" value="1.000000"></param>
+				<param name="gradient.color8.b" type="5" value="1.000000"></param>
+				<param name="gradient.color8.a" type="5" value="0.794000"></param>
+				<param name="gradient.pos8" type="5" value="-1.000000"></param>
+				<param name="gradient.mid8" type="5" value="0.500000"></param>
+				<param name="gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="gradient.mid9" type="5" value="0.500000"></param>
+				<param name="gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="gradient.mid10" type="5" value="0.500000"></param>
+				<param name="gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="gradient.mid11" type="5" value="0.500000"></param>
+				<param name="gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="gradient.mid12" type="5" value="0.500000"></param>
+				<param name="gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="gradient.mid13" type="5" value="0.500000"></param>
+				<param name="gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="gradient.mid14" type="5" value="0.500000"></param>
+				<param name="gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="gradient.mid15" type="5" value="0.500000"></param>
+				<param name="gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="gradient.mid16" type="5" value="0.500000"></param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">374</prop>
+					<prop name="posy">-768</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-77" offsety="-35" sizex="188" sizey="32"><![CDATA[colorize the particle using a gradient driven by the heat]]></comment>
+			</node>
+			<node type="Set Data" version="1.0" index="87">
+				<param name="Reference" type="31" value="self.__emFluid_Heat"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.__emFluid_Heat"></param_ext>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1586</prop>
+					<prop name="posy">-505</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="88">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1126</prop>
+					<prop name="posy">908</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="89">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-24</prop>
+					<prop name="posy">-737</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="90">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1300.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">205</prop>
+					<prop name="posy">153</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="91">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1300.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">187</prop>
+					<prop name="posy">1054</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="92">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-28</prop>
+					<prop name="posy">1069</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="93">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1300.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">191</prop>
+					<prop name="posy">-752</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="94">
+				<param name="reference" type="31" value="self.__emFluid_Heat"></param>
+				<param_ext name="reference" type="31" value="self.__emFluid_Heat"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-849</prop>
+					<prop name="posy">-326</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="95">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1586</prop>
+					<prop name="posy">-1091</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-109" offsety="0" sizex="61" sizey="19"><![CDATA[heat start]]></comment>
+			</node>
+			<node type="PassThroughNode" index="96">
+				<param name="in" type="4" value="400.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1586</prop>
+					<prop name="posy">-1022</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-109" offsety="0" sizex="103" sizey="19"><![CDATA[heat end]]></comment>
+			</node>
+			<node type="GetDataNode" index="97">
+				<param name="reference" type="31" value="this.Init_Size"></param>
+				<param_ext name="reference" type="31" value="this.Init_Size"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1978</prop>
+					<prop name="posy">-1899</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Size" version="1.0" index="98">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Size" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1634</prop>
+					<prop name="posy">1039</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="99">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1596</prop>
+					<prop name="posy">1017</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="0" sizex="67" sizey="19"><![CDATA[Heat Scale]]></comment>
+			</node>
+			<node type="PassThroughNode" index="100">
+				<param name="in" type="4" value="0.200000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1580</prop>
+					<prop name="posy">1096</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="101">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1439</prop>
+					<prop name="posy">1081</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="102">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1448</prop>
+					<prop name="posy">-714</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="103">
+				<param name="in" type="4" value="0.250000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1574</prop>
+					<prop name="posy">193</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="104">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1446</prop>
+					<prop name="posy">190</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="105">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1578</prop>
+					<prop name="posy">-653</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Size" version="1.0" index="106">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Size" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1643</prop>
+					<prop name="posy">-756</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="65337" background_alpha="0.244000" title="40502" title_text="9764863" offsetx="157" offsety="-805" sizex="152" sizey="217"><![CDATA[Heat Interval]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="65337" background_alpha="0.244000" title="40502" title_text="9764863" offsetx="166" offsety="112" sizex="155" sizey="207"><![CDATA[Heat Interval]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1125" offsety="767" sizex="3190" sizey="853"><![CDATA[
+type 0x01:  "WASTE"]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="65337" background_alpha="0.244000" title="40502" title_text="9764863" offsetx="424" offsety="1138" sizex="251" sizey="172"><![CDATA[Fade in/out PROFILE]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="65337" background_alpha="0.244000" title="40502" title_text="9764863" offsetx="153" offsety="1011" sizex="155" sizey="212"><![CDATA[Heat Interval]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1063" offsety="343" sizex="858" sizey="318"><![CDATA[calculate local damping (=cooling)
+(for the formula see function damp3D())]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="65337" background_alpha="0.244000" title="40502" title_text="9764863" offsetx="431" offsety="237" sizex="251" sizey="172"><![CDATA[Fade in/out PROFILE]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1070" offsety="1244" sizex="858" sizey="318"><![CDATA[calculate local damping (=cooling)
+(for the formula see function damp3D())]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1118" offsety="-134" sizex="3185" sizey="853"><![CDATA[
+type 0x02:  "FLAME"]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1116" offsety="-1039" sizex="3196" sizey="853"><![CDATA[
+type 0x04:  "SMOKE"]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="65337" background_alpha="0.244000" title="40502" title_text="9764863" offsetx="433" offsety="-668" sizex="251" sizey="172"><![CDATA[Fade in/out PROFILE]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1061" offsety="-562" sizex="858" sizey="318"><![CDATA[calculate local damping (=cooling)
+(for the formula see function damp3D())]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="3" portname="in" username="Scale_Heat_" basename="Scale Heat " portlabel="Scale Heat " exposetype="single"> </port>
+			<port index="20" portname="in" username="Cooling_" basename="Cooling " portlabel="Cooling " exposetype="single"> </port>
+			<port index="22" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="24" portname="in" username="Fade_Alpha_by_Particle_Age_Percentage" basename="Fade Alpha by Particle Age Percentage" portlabel="Fade Alpha by Particle Age Percentage" exposetype="single"> </port>
+			<port index="28" portname="in" username="Cooling" basename="Cooling" portlabel="Cooling" exposetype="single"> </port>
+			<port index="30" portname="in" username="Scale_Alpha" basename="Scale Alpha" portlabel="Scale Alpha" exposetype="single"> </port>
+			<port index="32" portname="out" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="35" portname="in" username="Scale_Heat__" basename="Scale Heat  " portlabel="Scale Heat  " exposetype="single"> </port>
+			<port index="48" portname="in" username="Heat_from_Fluid_Solver" basename="Heat from Fluid Solver" portlabel="Heat from Fluid Solver" exposetype="single"> </port>
+			<port index="55" portname="in" username="Fade_Alpha_by_Particle_Age_Percentage_" basename="Fade Alpha by Particle Age Percentage " portlabel="Fade Alpha by Particle Age Percentage " exposetype="single"> </port>
+			<port index="56" portname="in" username="Scale_Alpha_" basename="Scale Alpha " portlabel="Scale Alpha " exposetype="single"> </port>
+			<port index="72" portname="in" username="Fade_Alpha_by_Particle_Age_Percentage__" basename="Fade Alpha by Particle Age Percentage  " portlabel="Fade Alpha by Particle Age Percentage  " exposetype="single"> </port>
+			<port index="74" portname="in" username="Cooling__" basename="Cooling  " portlabel="Cooling  " exposetype="single"> </port>
+			<port index="75" portname="in" username="Scale_Alpha__" basename="Scale Alpha  " portlabel="Scale Alpha  " exposetype="single"> </port>
+			<port index="81" portname="gradient" username="Gradient_" basename="Gradient " portlabel="Gradient " exposetype="single"> </port>
+			<port index="82" portname="gradient" username="Gradient" basename="Gradient" portlabel="Gradient" exposetype="single"> </port>
+			<port index="86" portname="gradient" username="Gradient__" basename="Gradient  " portlabel="Gradient  " exposetype="single"> </port>
+			<port index="95" portname="in" username="Start__" basename="Start  " portlabel="Start  " exposetype="single"> </port>
+			<port index="96" portname="in" username="End__" basename="End  " portlabel="End  " exposetype="single"> </port>
+			<port index="99" portname="in" username="Scale_Heat" basename="Scale Heat" portlabel="Scale Heat" exposetype="single"> </port>
+			<port index="100" portname="in" username="Scale_Size" basename="Scale Size" portlabel="Scale Size" exposetype="single"> </port>
+			<port index="103" portname="in" username="Scale_Size_" basename="Scale Size " portlabel="Scale Size " exposetype="single"> </port>
+			<port index="105" portname="in" username="Scale_Size__" basename="Scale Size  " portlabel="Scale Size  " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="result" to_node="90" to_port="value"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="1" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="33" to_port="iftrue"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="45" to_port="second"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="47" to_port="value2"> </cnx>
+			<cnx from_node="14" from_port="execute" to_node="21" to_port="case1"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="41" to_port="value"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="47" to_port="value1"> </cnx>
+			<cnx from_node="17" from_port="result" to_node="18" to_port="first"> </cnx>
+			<cnx from_node="18" from_port="result" to_node="16" to_port="value"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="34" to_port="in2"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="51" to_port="value"> </cnx>
+			<cnx from_node="24" from_port="out" to_node="88" to_port="condition"> </cnx>
+			<cnx from_node="26" from_port="result" to_node="25" to_port="in2"> </cnx>
+			<cnx from_node="101" from_port="result" to_node="98" to_port="Size"> </cnx>
+			<cnx from_node="102" from_port="result" to_node="106" to_port="Size"> </cnx>
+			<cnx from_node="103" from_port="out" to_node="104" to_port="factor"> </cnx>
+			<cnx from_node="104" from_port="result" to_node="0" to_port="Size"> </cnx>
+			<cnx from_node="105" from_port="out" to_node="102" to_port="factor"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="34" to_port="in1"> </cnx>
+			<cnx from_node="4" from_port="time" to_node="51" to_port="factor"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="54" to_port="second"> </cnx>
+			<cnx from_node="6" from_port="color" to_node="83" to_port="Color"> </cnx>
+			<cnx from_node="8" from_port="red" to_node="6" to_port="red"> </cnx>
+			<cnx from_node="8" from_port="green" to_node="6" to_port="green"> </cnx>
+			<cnx from_node="8" from_port="blue" to_node="6" to_port="blue"> </cnx>
+			<cnx from_node="8" from_port="alpha" to_node="7" to_port="value"> </cnx>
+			<cnx from_node="8" from_port="alpha" to_node="33" to_port="iffalse"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="52" to_port="factor"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="39" to_port="value2"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="22" to_port="iftrue"> </cnx>
+			<cnx from_node="25" from_port="out" to_node="43" to_port="factor"> </cnx>
+			<cnx from_node="39" from_port="max" to_node="1" to_port="factor"> </cnx>
+			<cnx from_node="39" from_port="max" to_node="85" to_port="Value"> </cnx>
+			<cnx from_node="81" from_port="out" to_node="8" to_port="color"> </cnx>
+			<cnx from_node="90" from_port="result" to_node="81" to_port="in"> </cnx>
+			<cnx from_node="0" from_port="Execute" to_node="50" to_port="port2"> </cnx>
+			<cnx from_node="23" from_port="Execute" to_node="67" to_port="port1"> </cnx>
+			<cnx from_node="77" from_port="Result" to_node="36" to_port="in"> </cnx>
+			<cnx from_node="78" from_port="Execute" to_node="14" to_port="port1"> </cnx>
+			<cnx from_node="79" from_port="Result" to_node="10" to_port="in"> </cnx>
+			<cnx from_node="10" from_port="out" to_node="25" to_port="in1"> </cnx>
+			<cnx from_node="12" from_port="value" to_node="45" to_port="first"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="32" to_port="in"> </cnx>
+			<cnx from_node="27" from_port="result" to_node="76" to_port="factor"> </cnx>
+			<cnx from_node="28" from_port="out" to_node="15" to_port="value"> </cnx>
+			<cnx from_node="30" from_port="out" to_node="31" to_port="value"> </cnx>
+			<cnx from_node="31" from_port="result" to_node="42" to_port="alpha"> </cnx>
+			<cnx from_node="35" from_port="out" to_node="89" to_port="value"> </cnx>
+			<cnx from_node="40" from_port="time" to_node="15" to_port="factor"> </cnx>
+			<cnx from_node="41" from_port="result" to_node="18" to_port="second"> </cnx>
+			<cnx from_node="42" from_port="color" to_node="78" to_port="Color"> </cnx>
+			<cnx from_node="43" from_port="result" to_node="88" to_port="iftrue"> </cnx>
+			<cnx from_node="45" from_port="result" to_node="16" to_port="factor"> </cnx>
+			<cnx from_node="46" from_port="max" to_node="92" to_port="factor"> </cnx>
+			<cnx from_node="46" from_port="max" to_node="80" to_port="Value"> </cnx>
+			<cnx from_node="47" from_port="result" to_node="46" to_port="value2"> </cnx>
+			<cnx from_node="48" from_port="out" to_node="39" to_port="value1"> </cnx>
+			<cnx from_node="48" from_port="out" to_node="46" to_port="value1"> </cnx>
+			<cnx from_node="48" from_port="out" to_node="64" to_port="value1"> </cnx>
+			<cnx from_node="49" from_port="result" to_node="9" to_port="second"> </cnx>
+			<cnx from_node="49" from_port="result" to_node="11" to_port="value2"> </cnx>
+			<cnx from_node="50" from_port="execute" to_node="21" to_port="case2"> </cnx>
+			<cnx from_node="51" from_port="result" to_node="5" to_port="value"> </cnx>
+			<cnx from_node="52" from_port="result" to_node="11" to_port="value1"> </cnx>
+			<cnx from_node="53" from_port="result" to_node="54" to_port="first"> </cnx>
+			<cnx from_node="54" from_port="result" to_node="52" to_port="value"> </cnx>
+			<cnx from_node="55" from_port="out" to_node="33" to_port="condition"> </cnx>
+			<cnx from_node="56" from_port="out" to_node="57" to_port="value"> </cnx>
+			<cnx from_node="57" from_port="result" to_node="6" to_port="alpha"> </cnx>
+			<cnx from_node="58" from_port="time" to_node="68" to_port="factor"> </cnx>
+			<cnx from_node="59" from_port="result" to_node="71" to_port="second"> </cnx>
+			<cnx from_node="29" from_port="value" to_node="21" to_port="condition"> </cnx>
+			<cnx from_node="33" from_port="result" to_node="57" to_port="factor"> </cnx>
+			<cnx from_node="34" from_port="out" to_node="7" to_port="factor"> </cnx>
+			<cnx from_node="36" from_port="out" to_node="37" to_port="in1"> </cnx>
+			<cnx from_node="37" from_port="out" to_node="61" to_port="factor"> </cnx>
+			<cnx from_node="38" from_port="value" to_node="9" to_port="first"> </cnx>
+			<cnx from_node="44" from_port="red" to_node="42" to_port="red"> </cnx>
+			<cnx from_node="44" from_port="green" to_node="42" to_port="green"> </cnx>
+			<cnx from_node="44" from_port="blue" to_node="42" to_port="blue"> </cnx>
+			<cnx from_node="44" from_port="alpha" to_node="43" to_port="value"> </cnx>
+			<cnx from_node="44" from_port="alpha" to_node="88" to_port="iffalse"> </cnx>
+			<cnx from_node="60" from_port="color" to_node="23" to_port="Color"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="27" to_port="iftrue"> </cnx>
+			<cnx from_node="63" from_port="result" to_node="69" to_port="factor"> </cnx>
+			<cnx from_node="64" from_port="max" to_node="89" to_port="factor"> </cnx>
+			<cnx from_node="64" from_port="max" to_node="87" to_port="Value"> </cnx>
+			<cnx from_node="65" from_port="result" to_node="64" to_port="value2"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="63" to_port="second"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="65" to_port="value2"> </cnx>
+			<cnx from_node="67" from_port="execute" to_node="21" to_port="case4"> </cnx>
+			<cnx from_node="68" from_port="result" to_node="59" to_port="value"> </cnx>
+			<cnx from_node="69" from_port="result" to_node="65" to_port="value1"> </cnx>
+			<cnx from_node="70" from_port="result" to_node="71" to_port="first"> </cnx>
+			<cnx from_node="71" from_port="result" to_node="69" to_port="value"> </cnx>
+			<cnx from_node="72" from_port="out" to_node="27" to_port="condition"> </cnx>
+			<cnx from_node="73" from_port="result" to_node="37" to_port="in2"> </cnx>
+			<cnx from_node="74" from_port="out" to_node="68" to_port="value"> </cnx>
+			<cnx from_node="75" from_port="out" to_node="76" to_port="value"> </cnx>
+			<cnx from_node="76" from_port="result" to_node="60" to_port="alpha"> </cnx>
+			<cnx from_node="89" from_port="result" to_node="93" to_port="value"> </cnx>
+			<cnx from_node="91" from_port="result" to_node="82" to_port="in"> </cnx>
+			<cnx from_node="92" from_port="result" to_node="91" to_port="value"> </cnx>
+			<cnx from_node="93" from_port="result" to_node="86" to_port="in"> </cnx>
+			<cnx from_node="95" from_port="out" to_node="93" to_port="sourcestart"> </cnx>
+			<cnx from_node="96" from_port="out" to_node="93" to_port="sourceend"> </cnx>
+			<cnx from_node="99" from_port="out" to_node="92" to_port="value"> </cnx>
+			<cnx from_node="100" from_port="out" to_node="101" to_port="factor"> </cnx>
+			<cnx from_node="62" from_port="red" to_node="60" to_port="red"> </cnx>
+			<cnx from_node="62" from_port="green" to_node="60" to_port="green"> </cnx>
+			<cnx from_node="62" from_port="blue" to_node="60" to_port="blue"> </cnx>
+			<cnx from_node="62" from_port="alpha" to_node="61" to_port="value"> </cnx>
+			<cnx from_node="62" from_port="alpha" to_node="27" to_port="iffalse"> </cnx>
+			<cnx from_node="80" from_port="Execute" to_node="14" to_port="port3"> </cnx>
+			<cnx from_node="83" from_port="Execute" to_node="50" to_port="port1"> </cnx>
+			<cnx from_node="84" from_port="Result" to_node="2" to_port="in"> </cnx>
+			<cnx from_node="85" from_port="Execute" to_node="50" to_port="port3"> </cnx>
+			<cnx from_node="87" from_port="Execute" to_node="67" to_port="port3"> </cnx>
+			<cnx from_node="98" from_port="Execute" to_node="14" to_port="port2"> </cnx>
+			<cnx from_node="106" from_port="Execute" to_node="67" to_port="port2"> </cnx>
+			<cnx from_node="82" from_port="out" to_node="44" to_port="color"> </cnx>
+			<cnx from_node="86" from_port="out" to_node="62" to_port="color"> </cnx>
+			<cnx from_node="88" from_port="result" to_node="31" to_port="factor"> </cnx>
+			<cnx from_node="94" from_port="value" to_node="63" to_port="first"> </cnx>
+			<cnx from_node="97" from_port="value" to_node="101" to_port="value"> </cnx>
+			<cnx from_node="97" from_port="value" to_node="102" to_port="value"> </cnx>
+			<cnx from_node="97" from_port="value" to_node="104" to_port="value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Heat_from_Fluid_Solver"> </item>
+			<group type="input" name="Smoke">
+				<item type="input" name="Gradient__"> </item>
+				<item type="input" name="Scale_Size__" min="0" max="1"> </item>
+				<group type="input" name="Heat Gradient Rescale">
+					<item type="input" name="Start__" min="0" max="300"> </item>
+					<item type="input" name="End__" min="0" max="300"> </item>
+				</group>
+				<item type="input" name="Scale_Alpha__" min="0" max="1"> </item>
+				<item type="input" name="Scale_Heat__" min="0" max="2"> </item>
+				<item type="input" name="Cooling__" min="0.1" max="5"> </item>
+				<item type="input" name="Fade_Alpha_by_Particle_Age_Percentage__"> </item>
+			</group>
+			<group type="input" name="Flame">
+				<item type="input" name="Gradient_"> </item>
+				<item type="input" name="Scale_Size_" min="0" max="1"> </item>
+				<item type="input" name="Scale_Alpha_" min="0" max="1"> </item>
+				<item type="input" name="Scale_Heat_" min="0" max="2"> </item>
+				<item type="input" name="Cooling_" min="0.1" max="5"> </item>
+				<item type="input" name="Fade_Alpha_by_Particle_Age_Percentage_"> </item>
+			</group>
+			<group type="input" name="Waste">
+				<item type="input" name="Gradient"> </item>
+				<item type="input" name="Scale_Size" min="0" max="1"> </item>
+				<item type="input" name="Scale_Alpha" min="0" max="1"> </item>
+				<item type="input" name="Scale_Heat" min="0" max="2"> </item>
+				<item type="input" name="Cooling" min="0.1" max="5"> </item>
+				<item type="input" name="Fade_Alpha_by_Particle_Age_Percentage"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

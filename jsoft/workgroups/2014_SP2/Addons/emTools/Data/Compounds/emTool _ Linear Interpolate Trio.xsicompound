@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Linear Interpolate Trio" tasks="Mootzoid - emTools/Tools - All Sorts of Things" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="10728855">
+	<definition>
+		<nodes>
+			<node type="LinearInterpolateNode" index="0">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">455</prop>
+					<prop name="posy">331</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-20</prop>
+					<prop name="posy">-172</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-20</prop>
+					<prop name="posy">-111</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LinearInterpolateNode" index="3">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">455</prop>
+					<prop name="posy">67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LinearInterpolateNode" index="4">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">455</prop>
+					<prop name="posy">198</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="result" username="Result_C" basename="Result C" portlabel="Result C" exposetype="single"> </port>
+			<port index="0" portname="first" username="First__" basename="First  " portlabel="First  " exposetype="single"> </port>
+			<port index="0" portname="second" username="Second__" basename="Second  " portlabel="Second  " exposetype="single"> </port>
+			<port index="1" portname="in" username="Blend" basename="Blend" portlabel="Blend" exposetype="single"> </port>
+			<port index="2" portname="in" username="Clamp" basename="Clamp" portlabel="Clamp" exposetype="single"> </port>
+			<port index="3" portname="result" username="Result_A" basename="Result A" portlabel="Result A" exposetype="single"> </port>
+			<port index="3" portname="first" username="First" basename="First" portlabel="First" exposetype="single"> </port>
+			<port index="3" portname="second" username="Second" basename="Second" portlabel="Second" exposetype="single"> </port>
+			<port index="4" portname="result" username="Result_B" basename="Result B" portlabel="Result B" exposetype="single"> </port>
+			<port index="4" portname="first" username="First_" basename="First " portlabel="First " exposetype="single"> </port>
+			<port index="4" portname="second" username="Second_" basename="Second " portlabel="Second " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="out" to_node="4" to_port="clamp"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="3" to_port="clamp"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="0" to_port="clamp"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="4" to_port="blend"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="3" to_port="blend"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="blend"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Blend" min="0" max="1"> </item>
+			<item type="input" name="Clamp"> </item>
+			<group type="input" name="A">
+				<item type="input" name="First"> </item>
+				<item type="input" name="Second"> </item>
+			</group>
+			<group type="input" name="B">
+				<item type="input" name="First_"> </item>
+				<item type="input" name="Second_"> </item>
+			</group>
+			<group type="input" name="C">
+				<item type="input" name="First__"> </item>
+				<item type="input" name="Second__"> </item>
+			</group>
+			<item type="output" name="Result_A"> </item>
+			<item type="output" name="Result_B"> </item>
+			<item type="output" name="Result_C"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

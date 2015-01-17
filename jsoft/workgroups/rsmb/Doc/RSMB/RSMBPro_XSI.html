@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title> using RSMBPro in XSI - &copy; Revision FX </title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <link rel="stylesheet" href="lmstyle.css">
+</head>
+
+<body>
+
+<div class="greybox">
+	<div class="disclaim">
+		<a href="RSMBtutorial_XSI.html">[.previous]</a>
+		<a href="RSMBXSIdoc.htm">[.home.]</a>
+		&nbsp;&nbsp;Copyright 1999-2005
+		<a href="http://www.revisionfx.com"> RE:Vision Effects</a>, Inc
+
+	</div>
+	<div class="maintitle">
+		<font color="#800000">
+			RSMB
+		</font>
+		  -
+		<font size="-1">
+			Guiding RSMB's tracking through the use of Track Points
+		</font>
+    </div>
+</div>
+
+
+<div class="content">
+
+<h1>Introduction</h1>
+<p>
+It is often useful to guide RSMB's motion estimation.
+This section describes how to guide RSMB motion estimation using
+RSMB's Track Point settings.
+<br>
+<b>IMPORTANT</b>: RSMB's Track Point settings tell RSMB which pixels correspond
+from frame-to-frame in the source image sequence.
+</p>
+<p>
+Note that a particular Track Point is used to guide the motion estimation
+when:
+	<ul>
+ 	 	<li>The Track Point's Use menu is set (you can animate that).
+   		As such, when you don't
+   		need a tracking point any longer, set the Use menu for the point to
+   		None.
+ 	 	</li>
+  		<li>The Track Point is within the image boundary for the frame being
+  			 blurred. If a given Track Point is off the image, then that Track
+  			 Point is not used.
+  		</li>
+	</ul>
+<p>
+	An example: Let's say that we want to motion blur based on the
+	motion between the two frames in the following figure:
+</p>
+<div class="lmimages">
+	<div class="lmimage">
+		<img src="Images/TrackPointsSrc1.gif" width="322" height="242"/><br />
+		<p>Source Image 1</p>
+	</div>
+	<div class="lmimage">
+		<img src="Images/TrackPointsSrc2.gif" width="322" height="242"/><br />
+		<p>Source Image 2.<br> Note that the camera has moved forward<br> toward the
+			rocks and has slightly rotated.</p>
+	</div>
+	<div class="spacer">
+	</div>
+</div>
+
+<p>
+	To create a motion blurred frame from tracking the two frames above
+	we get the following result:
+</p>
+<div class="lmimages">
+	<div class="lmimage">
+		<img src="Images/TrackPointsBadBlur.gif" width="322" height="242"/><br />
+		<p>Unsatisfactory motion blur because:<br>
+	1) the top of the frame barely moves at all<br>while the lower part
+	of the frame moves a lot;<br>
+	2) each rock looks very similar to other rocks and<br>
+	3) much of the scene towards the bottom <br>moves offscreen which can
+	confuse the tracker.</p>
+	</div>
+	<div class="spacer">
+	</div>
+</div>
+<p>
+	We set 3 tracking points and keyframe corresponding positions
+	at the two source times.(see below how to do that).
+</p>
+<div class="lmimages">
+	<div class="lmimage">
+		<img src="Images/TrackPointsWithPoints1.jpg" width="322" height="242"/><br />
+		<p>3 Tracking Points used<br>and positioned for the first source frame.</p>
+	</div>
+	<div class="lmimage">
+		<img src="Images/TrackPointsWithPoints2.jpg" width="322" height="242"/><br />
+		<p>
+		Same 3 Tracking Points animated<br>
+		at the second frame to correspond<br>
+		to the same features in the first<br>
+		frame, at the first source time.<br>
+		Note that the red and magenta tracking<br>
+		points remain close to where they were<br>
+		in the first frame, while the green point<br>
+		moves significantly to the left and down.</p>
+	</div>
+
+	<div class="lmimage">
+		<img src="Images/TrackPointsGoodBlur.gif" width="322" height="242"/><br />
+		<p>Motion blurred sequence <br>when using the 3 Track Points as shown above.</p>
+	</div>
+	<div class="spacer">
+	</div>
+</div>
+
+<h1>Using points in RSMB for Softimage|XSI</h1>
+	<p>
+	these points can be given to RSMB via several methods :
+	</p>
+	<p>
+			<img alt="" src="Images/RSMBpro_params.jpg">
+	</p>
+	<ul>
+ 	 	<li><b>From User</b> : inside the ufo , user has access to 12 user points that can be keyframed
+ 	 	</li>
+  		<li><b>From Tracker</b> : import trackers from the fxtree tracking nodes
+  		</li>
+  		<li><b>From Scene</b> : import points from the 3d scene
+  		</li>
+	</ul>
+
+<h1>user tracking points</h1>
+	<p>
+		the user has access to 12 points which can be keyframed to help
+		RSMBpro defining the motion
+	</p>
+
+	<p>
+		<img alt="" src="Images/points_from_user.jpg">
+	</p>
+	<p>
+	you can assign a different color to each point.<br>
+	each point coordinates can be keyframed over time.
+	</p>
+
+<h1>using tracking nodes</h1>
+	<p>
+		points can be imported from xsi tracking nodes .<br>
+		you can use 4 tracking node simultaneously .<br>
+		Each tracking node has 4 points : 4*4 = 16 points can be sent
+		to RSMBpro to help defining the motion
+	</p>
+
+	<p>
+		<img alt="" src="Images/points_from_trackingnode.jpg">
+	</p>
+	<p>
+	bottom view : RSMBpro display of the transmetted points<br>
+	top view : fxtree tracking node<br>
+	you can assign a different color to each point.
+	</p>
+
+<h1>getting 3D points from the scene</h1>
+	<p>
+		you can use nulls to define points
+		to help RSMBpro estimating the motion.<br>
+		the 3d positions are projected in 2D using a
+		<a href="http://www.alamaison.fr/3d/lmProjectionPlane/lmProjectionPlane.html">
+		ProjectionPlane</a> attached to any
+		3D camera in the scene.<br>
+		once projected in 2d , the points are transmitted to RSMBpro
+	</p>
+
+	<p>
+		<img alt="" src="Images/points_from_scene.jpg">
+	</p>
+
+	<p>
+	top view : RSMB display of the transmetted points<br>
+	bottom view : 3d camera view<br>
+	right bottom : the projection plane<br>
+	you can assign a different color to each point group
+	</p>
+</div>
+
+<div class="greybox">
+	<div class="disclaim">
+		<a href="RSMBtutorial_XSI.html">[.previous]</a>
+		<a href="RSMBXSIdoc.htm">[.home.]</a>
+	</div>
+	<div class="disclaim">
+		Twixtor, ReelSmart, FieldsKit and SmoothKit are trademarks of RE:Vision Effects, Inc.
+		<br>
+		Softimage and XSI are registered trademarks of Avid Technology , Inc.
+		<br>
+		Copyright 1999-2005 RE:Vision Effects, Inc
+	</div>
+</div>
+
+</body>
+
+</html>

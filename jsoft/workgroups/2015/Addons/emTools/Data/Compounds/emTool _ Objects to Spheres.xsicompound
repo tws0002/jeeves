@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Objects to Spheres" tasks="Mootzoid - emTools/Tools - Conversion" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="8437150">
+	<definition>
+		<nodes>
+			<node type="PassThroughNode" index="0">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-272</prop>
+					<prop name="posy">3</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="kine.global"></param>
+				<param_ext name="reference" type="31" value="kine.global"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-271</prop>
+					<prop name="posy">-241</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="2">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">711</prop>
+					<prop name="posy">-102</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="3">
+				<param name="value1.value1_string" type="8" value=""></param>
+				<param name="value1.value1_uimode" type="8" value=""></param>
+				<param name="value1.value1_filepathseq" type="8" value=""></param>
+				<param name="value1.value1_filename" type="8" value=""></param>
+				<portdef name="value1" type="131072" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-97</prop>
+					<prop name="posy">-357</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="4">
+				<param name="value1.value1_00" type="4" value="1.000000"></param>
+				<param name="value1.value1_01" type="4" value="0.000000"></param>
+				<param name="value1.value1_02" type="4" value="0.000000"></param>
+				<param name="value1.value1_03" type="4" value="0.000000"></param>
+				<param name="value1.value1_10" type="4" value="0.000000"></param>
+				<param name="value1.value1_11" type="4" value="1.000000"></param>
+				<param name="value1.value1_12" type="4" value="0.000000"></param>
+				<param name="value1.value1_13" type="4" value="0.000000"></param>
+				<param name="value1.value1_20" type="4" value="0.000000"></param>
+				<param name="value1.value1_21" type="4" value="0.000000"></param>
+				<param name="value1.value1_22" type="4" value="1.000000"></param>
+				<param name="value1.value1_23" type="4" value="0.000000"></param>
+				<param name="value1.value1_30" type="4" value="0.000000"></param>
+				<param name="value1.value1_31" type="4" value="0.000000"></param>
+				<param name="value1.value1_32" type="4" value="0.000000"></param>
+				<param name="value1.value1_33" type="4" value="1.000000"></param>
+				<portdef name="value1" type="256" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-97</prop>
+					<prop name="posy">-257</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-271</prop>
+					<prop name="posy">-69</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<portdef name="in" type="8192" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-492</prop>
+					<prop name="posy">-308</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="4DVectorTo3DVectorNode" index="7">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<param name="in.in_w" type="4" value="0.000000"></param>
+				<portdef name="in" type="32" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">458</prop>
+					<prop name="posy">-248</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ReferenceToStringNode" index="8">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-296</prop>
+					<prop name="posy">-341</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emTools_otos" index="9">
+				<param name="Names.Names_string" type="8" value=""></param>
+				<param name="Names.Names_uimode" type="8" value=""></param>
+				<param name="Names.Names_filepathseq" type="8" value=""></param>
+				<param name="Names.Names_filename" type="8" value=""></param>
+				<param name="GlobalTransform.GlobalTransform_00" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_01" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_02" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_03" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_10" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_11" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_12" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_13" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_20" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_21" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_22" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_23" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_30" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_31" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_32" type="4" value="0.000000"></param>
+				<param name="GlobalTransform.GlobalTransform_33" type="4" value="0.000000"></param>
+				<param name="Scale" type="4" value="1.000000"></param>
+				<param name="ScaleBone" type="4" value="1.000000"></param>
+				<portdef name="Names" type="131072" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="GlobalTransform" type="256" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="Scale" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="ScaleBone" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">155</prop>
+					<prop name="posy">-216</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-272</prop>
+					<prop name="posy">69</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Bones" basename="Bones" portlabel="Bones" exposetype="single"> </port>
+			<port index="2" portname="result" username="Radiuses" basename="Radiuses" portlabel="Radiuses" exposetype="single"> </port>
+			<port index="5" portname="in" username="Main_Scale" basename="Main Scale" portlabel="Main Scale" exposetype="single"> </port>
+			<port index="6" portname="in" username="In_Names" basename="In Names" portlabel="In Names" exposetype="single"> </port>
+			<port index="7" portname="vector" username="Positions" basename="Positions" portlabel="Positions" exposetype="single"> </port>
+			<port index="20" portname="in" username="Other" basename="Other" portlabel="Other" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="out" to_node="2" to_port="factor"> </cnx>
+			<cnx from_node="7" from_port="w" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="8" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="1" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="9" to_port="ScaleBone"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="9" to_port="Scale"> </cnx>
+			<cnx from_node="9" from_port="Spheres" to_node="7" to_port="in"> </cnx>
+			<cnx from_node="8" from_port="outstringname" to_node="3" to_port="value1"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="4" to_port="value1"> </cnx>
+			<cnx from_node="4" from_port="array" to_node="9" to_port="GlobalTransform"> </cnx>
+			<cnx from_node="3" from_port="array" to_node="9" to_port="Names"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Names"> </item>
+			<item type="input" name="Main_Scale" min="0" max="2"> </item>
+			<group type="input" name="Scale">
+				<item type="input" name="Bones" min="0" max="2"> </item>
+				<item type="input" name="Other" min="0" max="2"> </item>
+			</group>
+			<item type="output" name="Positions"> </item>
+			<item type="output" name="Radiuses"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

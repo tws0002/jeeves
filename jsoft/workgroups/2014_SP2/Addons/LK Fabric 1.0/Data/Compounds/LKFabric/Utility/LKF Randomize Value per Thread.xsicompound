@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="LKF Randomize Value per Thread" tasks="LK Fabric/Utility" author="Softimage" formatversion="1.4" compoundversion="1.0" constructionmode="Simulation" backgroundcolor="5724092">
+	<description><![CDATA[This compound adds randomness to any parameter using a mean value around which the random values are generated according to the variance. Plug its Value output into different ports of any compound, such as the Speed, Mass, and Size ports of the Emit compounds, but there are many others that work.]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.LKFThreadID"></param>
+				<param_ext name="reference" type="31" value="self.LKFThreadID"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1577</prop>
+					<prop name="posy">2280</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="4" value="2.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1604</prop>
+					<prop name="posy">2393</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1605</prop>
+					<prop name="posy">2466</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RandomValueNode" index="3">
+				<param name="distributiontype" type="3" value="0"></param>
+				<param name="seed" type="3" value="54321"></param>
+				<param name="timevarying" type="11" value="false"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="meanvalue" type="4" value="0.000000"></param>
+				<param name="variance" type="4" value="0.000000"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="meanvalue" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="variance" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1839</prop>
+					<prop name="posy">2355</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="in" username="Base_Value" basename="Base Value" portlabel="Base Value" exposetype="single">
+				<description><![CDATA[The mean value around which the random Variance value is calculated in any XYZ direction. For example, if this value is 2 in Y and the Variance value is 1, the random value possibilities would be any value between 1 and 3 in Y.]]></description>
+			</port>
+			<port index="2" portname="in" username="Variance" basename="Variance" portlabel="Variance" exposetype="single">
+				<description><![CDATA[The amount of variation of the randomness on either side of the Base Value.]]></description>
+			</port>
+			<port index="3" portname="value" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="3" portname="timevarying" username="Animated" basename="Animated" portlabel="Animated" exposetype="single">
+				<description><![CDATA[Toggles the animation of the randomness; that is, whether it varies over time or not.]]></description>
+			</port>
+			<port index="3" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single">
+				<description><![CDATA[This number is used as the basis for the randomization. Changing the seed value creates different random generations of values without having to change the base value or variance.]]></description>
+			</port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="out" to_node="3" to_port="variance"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="3" to_port="meanvalue"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="3" to_port="id"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Base_Value"> </item>
+			<item type="input" name="Variance"> </item>
+			<item type="input" name="Seed"> </item>
+			<item type="input" name="Animated"> </item>
+			<item type="output" name="Value"> </item>
+		</layout>
+	</definition>
+</xsi_file>

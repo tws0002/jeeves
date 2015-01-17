@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4i    ICE Data Generator" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="11187071">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="Self"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-320</prop>
+					<prop name="posy">132</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ReferenceToStringNode" index="1">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-201</prop>
+					<prop name="posy">116</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emPoly4ICEDataGen" index="2">
+				<param name="Name.Name_string" type="8" value="hello"></param>
+				<param name="Name.Name_uimode" type="8" value=""></param>
+				<param name="Name.Name_filepathseq" type="8" value=""></param>
+				<param name="Name.Name_filename" type="8" value=""></param>
+				<portdef name="Name" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">5</prop>
+					<prop name="posy">52</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="Motions" username="Motions_per_Vertex" basename="Motions per Vertex" portlabel="Motions per Vertex" exposetype="single"> </port>
+			<port index="2" portname="Normals" username="Normals_per_Node" basename="Normals per Node" portlabel="Normals per Node" exposetype="single"> </port>
+			<port index="2" portname="UVWs" username="UVWs_per_Node" basename="UVWs per Node" portlabel="UVWs per Node" exposetype="single"> </port>
+			<port index="2" portname="Colors" username="Colors_per_Node" basename="Colors per Node" portlabel="Colors per Node" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="outstringname" to_node="2" to_port="Name"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="1" to_port="inname"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Motions_per_Vertex"> </item>
+			<item type="output" name="Normals_per_Node"> </item>
+			<item type="output" name="UVWs_per_Node"> </item>
+			<item type="output" name="Colors_per_Node"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

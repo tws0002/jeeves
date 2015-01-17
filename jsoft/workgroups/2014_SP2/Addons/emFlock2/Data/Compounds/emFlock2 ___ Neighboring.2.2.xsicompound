@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFlock2 ___ Neighboring" tasks="Mootzoid - emFlock2/Main" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.2" constructionmode="Current" backgroundcolor="12300204">
+	<definition>
+		<nodes>
+			<node type="Get Point Position" version="1.0" index="11">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">3455</prop>
+					<prop name="posy">-1202</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 _ Neighboring" version="2.2" index="15">
+				<param name="In_Point_Positions.In_Point_Positions_x" type="4" value="0.000000"></param>
+				<param name="In_Point_Positions.In_Point_Positions_y" type="4" value="0.000000"></param>
+				<param name="In_Point_Positions.In_Point_Positions_z" type="4" value="0.000000"></param>
+				<param name="In_Point_IDs" type="3" value="0"></param>
+				<param name="Cutoff_Distance" type="4" value="7.000000"></param>
+				<param name="Maximum_Number_of_Neighbors" type="3" value="-1"></param>
+				<param name="Multi_Processing__Octree_Creation______" type="11" value="true"></param>
+				<param name="Multi_Processing__Neighboring_" type="11" value="true"></param>
+				<param name="Sort_Neighbors_by_Distance" type="11" value="true"></param>
+				<param name="Keep_in_Memory" type="3" value="2"></param>
+				<portdef name="In_Point_IDs" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Point_Positions" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Keep_in_Memory" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cutoff_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multi_Processing__Neighboring_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multi_Processing__Octree_Creation______" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Number_of_Neighbors" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Sort_Neighbors_by_Distance" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3673</prop>
+					<prop name="posy">-1230</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Point ID" version="1.0" index="38">
+				<param name="In_Name_Reference" type="31" value="Self"></param>
+				<param_ext name="In_Name_Reference" type="31" value="Self"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">3484</prop>
+					<prop name="posy">-1170</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="15" portname="Number_of_Neighbors" username="Number_of_Neighbors" basename="Number of Neighbors" portlabel="Number of Neighbors" exposetype="single"> </port>
+			<port index="15" portname="Neighbor_IDs" username="Neighbor_IDs" basename="Neighbor IDs" portlabel="Neighbor IDs" exposetype="single"> </port>
+			<port index="15" portname="Neighbor_Positions" username="Neighbor_Positions" basename="Neighbor Positions" portlabel="Neighbor Positions" exposetype="single"> </port>
+			<port index="15" portname="Point__Neighbor_Vectors" username="Point__Neighbor_Vectors" basename="Point->Neighbor Vectors" portlabel="Point->Neighbor Vectors" exposetype="single"> </port>
+			<port index="15" portname="Neighbor_Distances" username="Neighbor_Distances" basename="Neighbor Distances" portlabel="Neighbor Distances" exposetype="single"> </port>
+			<port index="15" portname="Cutoff_Distance" username="Cutoff_Distance" basename="Cutoff Distance" portlabel="Cutoff Distance" exposetype="single"> </port>
+			<port index="15" portname="Maximum_Number_of_Neighbors" username="Maximum_Number_of_Neighbors" basename="Maximum Number of Neighbors" portlabel="Maximum Number of Neighbors" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="11" from_port="Value" to_node="15" to_port="In_Point_Positions"> </cnx>
+			<cnx from_node="38" from_port="Point_ID" to_node="15" to_port="In_Point_IDs"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Cutoff_Distance"> </item>
+			<item type="input" name="Maximum_Number_of_Neighbors"> </item>
+			<item type="output" name="Number_of_Neighbors"> </item>
+			<item type="output" name="Neighbor_IDs"> </item>
+			<item type="output" name="Neighbor_Positions"> </item>
+			<item type="output" name="Point__Neighbor_Vectors"> </item>
+			<item type="output" name="Neighbor_Distances"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

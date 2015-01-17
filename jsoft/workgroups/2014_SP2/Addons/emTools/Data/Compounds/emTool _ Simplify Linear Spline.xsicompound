@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Simplify Linear Spline" tasks="Mootzoid - emTools/Tools - Splines" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_slins" index="0">
+				<param name="controlPoints.controlPoints_x" type="4" value="1.000000"></param>
+				<param name="controlPoints.controlPoints_y" type="4" value="0.000000"></param>
+				<param name="controlPoints.controlPoints_z" type="4" value="0.000000"></param>
+				<param name="epsilon" type="4" value="1.000000"></param>
+				<param name="closed" type="11" value="false"></param>
+				<param name="minThree" type="11" value="false"></param>
+				<portdef name="controlPoints" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="closed" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="minThree" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2719</prop>
+					<prop name="posy">1295</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="1">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2860</prop>
+					<prop name="posy">1330</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="0" portname="epsilon" username="Threshold" basename="Threshold" portlabel="Threshold" exposetype="single"> </port>
+			<port index="0" portname="closed" username="Treat_Spline_as_closed" basename="Treat Spline as closed" portlabel="Treat Spline as closed" exposetype="single"> </port>
+			<port index="0" portname="minThree" username="Result_must_have_at_least_three_Points___" basename="Result must have at least three Points   " portlabel="Result must have at least three Points   " exposetype="single"> </port>
+			<port index="1" portname="value1" username="In_Array_of_Control_Points" basename="In Array of Control Points" portlabel="In Array of Control Points" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="array" to_node="0" to_port="controlPoints"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Array_of_Control_Points"> </item>
+			<group type="input" name="Parameters">
+				<item type="input" name="Threshold" min="0" max="2"> </item>
+				<item type="input" name="Treat_Spline_as_closed" min="0" max="0"> </item>
+				<item type="input" name="Result_must_have_at_least_three_Points___" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

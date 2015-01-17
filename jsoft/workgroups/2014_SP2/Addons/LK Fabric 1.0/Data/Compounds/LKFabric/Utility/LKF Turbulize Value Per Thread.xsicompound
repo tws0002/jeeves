@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="LKF Turbulize Value Per Thread" tasks="LK Fabric/Utility" author="Softimage" formatversion="1.4" compoundversion="1.0" constructionmode="Simulation" backgroundcolor="5724092">
+	<description><![CDATA[This compound applies Perlin or Simplex noise (4D) to add turbulence to any parameter using a mean value around which the turbulence values are calculated. Plug its Value output into different ports of any compound, such as the Speed, Mass, and Size ports of the Emit compound, but there are many others that work.]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.FabricPosition"></param>
+				<param_ext name="reference" type="31" value="self.FabricPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-120</prop>
+					<prop name="posy">26</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="TurbulenceNode" index="1">
+				<param name="noisetype" type="3" value="1"></param>
+				<param name="seed" type="3" value="12345"></param>
+				<param name="timevarying" type="11" value="false"></param>
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="timefrequency" type="4" value="0.500000"></param>
+				<param name="spacefrequency.spacefrequency_x" type="4" value="1.000000"></param>
+				<param name="spacefrequency.spacefrequency_y" type="4" value="1.000000"></param>
+				<param name="spacefrequency.spacefrequency_z" type="4" value="1.000000"></param>
+				<param name="complexity" type="3" value="3"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="timefrequency" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="spacefrequency" type="16" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="complexity" type="2" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">299</prop>
+					<prop name="posy">115</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="2">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-76</prop>
+					<prop name="posy">332</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="3">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<param name="value2.value2_x" type="4" value="0.000000"></param>
+				<param name="value2.value2_y" type="4" value="0.000000"></param>
+				<param name="value2.value2_z" type="4" value="0.000000"></param>
+				<param name="value3.value3_x" type="4" value="0.000000"></param>
+				<param name="value3.value3_y" type="4" value="0.000000"></param>
+				<param name="value3.value3_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="16" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">152</prop>
+					<prop name="posy">98</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="4">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-66</prop>
+					<prop name="posy">197</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CurrentTimeNode" index="5">
+				<param name="globaltime" type="11" value="false"></param>
+				<portdef name="globaltime" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-303</prop>
+					<prop name="posy">201</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="NegateNode" index="6">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-165</prop>
+					<prop name="posy">206</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="7">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.250000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">649</prop>
+					<prop name="posy">15</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="false" autoresize="false" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Offset]]></comment>
+			</node>
+			<node type="MultiplyNode" index="8">
+				<param name="value1" type="4" value="1.000000"></param>
+				<param name="value2" type="4" value="0.100000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">513</prop>
+					<prop name="posy">28</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="InvertNode" index="9">
+				<param name="value" type="4" value="5.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-268</prop>
+					<prop name="posy">336</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="10">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="1000.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-163</prop>
+					<prop name="posy">342</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-315" offsety="160" sizex="412" sizey="124"><![CDATA[We can move the Center over Time]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-311" offsety="291" sizex="405" sizey="159"><![CDATA[Expose uniform spatial frequency. I Inverted the number so that bigger numbers = bigger spaces between peaks and troughs]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="timevarying" username="Animated" basename="Animated" portlabel="Animated" exposetype="single">
+				<description><![CDATA[Toggles the activiteness of the Animation Speed parameter.]]></description>
+			</port>
+			<port index="1" portname="timefrequency" username="Animation_Speed" basename="Animation Speed" portlabel="Animation Speed" exposetype="single">
+				<description><![CDATA[If you selected Animated, you can change the noise frequency of the turbulence over time. This value is the speed at which the noise evolves.]]></description>
+			</port>
+			<port index="1" portname="complexity" username="Complexity" basename="Complexity" portlabel="Complexity" exposetype="single">
+				<description><![CDATA[Adds a fractal-like complexity to the noise which increases the level of detail of the noise pattern.]]></description>
+			</port>
+			<port index="1" portname="noisetype" username="NoiseType" basename="NoiseType" portlabel="NoiseType" exposetype="single">
+				<description><![CDATA[Uses either the Simplex or Perlin type of noise calculations. Perlin noise has spatial coherence, meaning that several different points in roughly the same location in space tend to have similar noise added to them. It interpolates between the random values. Perlin noise can help make objects more natural-looking by imitating the controlled random appearance of elements found in nature; that is, there is structure to the noise while still appearing fairly random. Simplex noise is similar to Perlin noise, but is less computationally complex. This is because it divides the space into equilateral triangles to interpolate between, which reduces the number of data points. This makes Simplex noise useful for producing noise over large spatial areas. Simplex noise has a well-defined and continuous gradient everywhere that can be computed fairly quickly, and has no noticeable directional artifacts.']]></description>
+			</port>
+			<port index="1" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="3" portname="value2" username="Turbulence_Center" basename="Turbulence Center" portlabel="Turbulence Center" exposetype="single">
+				<description><![CDATA[The center of the turbulence effect in global XYZ coordinates.]]></description>
+			</port>
+			<port index="4" portname="value" username="Turbulence_Center_Movement" basename="Turbulence Center Movement" portlabel="Turbulence Center Movement" exposetype="single">
+				<description><![CDATA[The amount of movement of the turbulence center in Softimage units along the global XYZ axes.]]></description>
+			</port>
+			<port index="7" portname="value2" username="Base_Value" basename="Base Value" portlabel="Base Value" exposetype="single">
+				<description><![CDATA[The mean value around which the random Variance value is calculated in any XYZ direction. For example, if this value is 2 in Y and the Variance value is 1, the turbulence value possibilities would be any value between 1 and 3 in Y.]]></description>
+			</port>
+			<port index="7" portname="result" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="8" portname="value2" username="Variance" basename="Variance" portlabel="Variance" exposetype="single">
+				<description><![CDATA[The amount of variance of the turbulence in any XYZ direction around either side of the Base Value.]]></description>
+			</port>
+			<port index="9" portname="value" username="Turbulence_Scale" basename="Turbulence Scale" portlabel="Turbulence Scale" exposetype="single">
+				<description><![CDATA[The amount of turbulence applied to the parameter value.]]></description>
+			</port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="10" from_port="result" to_node="2" to_port="x"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="2" to_port="y"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="2" to_port="z"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="7" to_port="value1"> </cnx>
+			<cnx from_node="5" from_port="time" to_node="6" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="4" to_port="factor"> </cnx>
+			<cnx from_node="9" from_port="valid" to_node="10" to_port="condition"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="10" to_port="iftrue"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="1" to_port="position"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="3" to_port="value3"> </cnx>
+			<cnx from_node="2" from_port="vector" to_node="1" to_port="spacefrequency"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="3" to_port="value1"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="8" to_port="value1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Base_Value"> </item>
+			<item type="input" name="Variance"> </item>
+			<item type="input" name="Turbulence_Scale"> </item>
+			<item type="input" name="Animated"> </item>
+			<item type="input" name="Animation_Speed"> </item>
+			<item type="input" name="Seed"> </item>
+			<item type="input" name="Complexity"> </item>
+			<item type="input" name="NoiseType"> </item>
+			<item type="input" name="Turbulence_Center"> </item>
+			<item type="input" name="Turbulence_Center_Movement"> </item>
+			<item type="output" name="Value"> </item>
+		</layout>
+	</definition>
+</xsi_file>

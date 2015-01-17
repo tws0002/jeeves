@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Resample Linear Spline Once" tasks="Mootzoid - emTools/Tools - Splines" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="BuildArrayNode" index="0">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2616</prop>
+					<prop name="posy">851</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Resample Array Once" version="1.0" index="1">
+				<param name="In_Array.In_Array_x" type="4" value="0.000000"></param>
+				<param name="In_Array.In_Array_y" type="4" value="0.000000"></param>
+				<param name="In_Array.In_Array_z" type="4" value="0.000000"></param>
+				<param name="Edginess" type="4" value="0.800000"></param>
+				<portdef name="In_Array" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edginess" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2466</prop>
+					<prop name="posy">816</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value1" username="In_Array_of_Control_Points" basename="In Array of Control Points" portlabel="In Array of Control Points" exposetype="single"> </port>
+			<port index="1" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="1" portname="Edginess" username="Edginess" basename="Edginess" portlabel="Edginess" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="array" to_node="1" to_port="In_Array"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Array_of_Control_Points"> </item>
+			<item type="input" name="Edginess" min="0" max="1"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

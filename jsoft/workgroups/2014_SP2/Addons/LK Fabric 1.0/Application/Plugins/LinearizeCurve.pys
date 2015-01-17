@@ -1,0 +1,55 @@
+import win32com.client
+from win32com.client import constants
+
+null = None
+false = 0
+true = 1
+
+def XSILoadPlugin( in_reg ):
+	in_reg.Author = "Leonard Koch"
+	in_reg.Name = "LKF_Linearize_Curve_Plugin"
+	in_reg.Major = 2
+	in_reg.Minor = 0
+
+	in_reg.RegisterMenu(constants.siMenuTbGetPrimitiveID,"LKF_Linearize_Curve_Menu",false,false)
+	#RegistrationInsertionPoint - do not remove this line
+
+	return true
+
+def XSIUnloadPlugin( in_reg ):
+	strPluginName = in_reg.Name
+	Application.LogMessage(str(strPluginName) + str(" has been unloaded."),constants.siVerbose)
+	return true
+
+def LKF_Linearize_Curve_DefineLayout( in_ctxt ):
+	oLayout = in_ctxt.Source
+	oLayout.Clear()
+	return true
+
+def LKF_Linearize_Curve_OnInit( ):
+	Application.LogMessage("LKF_Linearize_Curve_OnInit called",constants.siVerbose)
+
+def LKF_Linearize_Curve_OnClosed( ):
+	Application.LogMessage("LKF_Linearize_Curve_OnClosed called",constants.siVerbose)
+
+def LKF_Linearize_Curve_Menu_Init( in_ctxt ):
+	oMenu = in_ctxt.Source
+	oMenu.AddCallbackItem("LKF Linearize Curve","OnLKF_Linearize_CurveMenuClicked")
+	return true
+
+def OnLKF_Linearize_CurveMenuClicked( in_ctxt ):
+	sel = Application.Selection
+		
+	for obj in sel:
+		linearCurve = Application.SICreateCurve(obj.name + "_linearized", 1, 1)
+		createdCurveName = linearCurve.name
+		for i in range(100):
+			Application.SIAddPointOnCurveAtEnd(createdCurveName, i+1, 0, 0, False, 0, "")
+			
+		Application.SIAddPointOnCurveAtEnd(createdCurveName, i, 0, 0, False, 0, "")
+		Application.ApplyOp("ICETree", createdCurveName, "siNode", "", "", 0)
+		Application.AddICENode("GetDataNode", createdCurveName + ".crvlist.ICETree")
+		Application.SetValue(createdCurveName + ".crvlist.ICETree.SceneReferenceNode.reference", obj.name, "")
+		Application.AddICECompoundNode("LKF Linearize Curve", createdCurveName + ".crvlist.ICETree")
+		Application.ConnectICENodes(createdCurveName + ".crvlist.ICETree.LKF_Linearize_Curve.Curve_name", createdCurveName + ".crvlist.ICETree.SceneReferenceNode.outname")
+		Application.ConnectICENodes(createdCurveName + ".crvlist.ICETree.port1", createdCurveName + ".crvlist.ICETree.LKF_Linearize_Curve.Set_Curve_Positions")

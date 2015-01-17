@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Intersection of two moving Boxes" tasks="Mootzoid - emTools/Tools - Intersection" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6004121">
+	<definition>
+		<nodes>
+			<node type="VectorTo4x4MatrixNode" index="0">
+				<param name="roworcolumn" type="3" value="1"></param>
+				<param name="vector1.vector1_x" type="4" value="1.000000"></param>
+				<param name="vector1.vector1_y" type="4" value="0.000000"></param>
+				<param name="vector1.vector1_z" type="4" value="0.000000"></param>
+				<param name="vector1.vector1_w" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_x" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_y" type="4" value="1.000000"></param>
+				<param name="vector2.vector2_z" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_w" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_x" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_y" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_z" type="4" value="1.000000"></param>
+				<param name="vector3.vector3_w" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_x" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_y" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_z" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_w" type="4" value="1.000000"></param>
+				<portdef name="vector1" type="32" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="vector2" type="32" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="vector3" type="32" structure="2" group="0" instance="0" port="2"></portdef>
+				<portdef name="vector4" type="32" structure="2" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6427</prop>
+					<prop name="posy">-220</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="1">
+				<param name="type" type="3" value="4"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-5829</prop>
+					<prop name="posy">-542</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorTo4DVectorNode" index="2">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<param name="w" type="4" value="1.000000"></param>
+				<portdef name="in" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="w" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6674</prop>
+					<prop name="posy">-78</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="3">
+				<param name="integer" type="3" value="5"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-7030</prop>
+					<prop name="posy">-47</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emTools_iotmb" index="4">
+				<param name="mode" type="3" value="1"></param>
+				<param name="tmA.tmA_00" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_01" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_02" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_03" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_10" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_11" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_12" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_13" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_20" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_21" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_22" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_23" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_30" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_31" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_32" type="4" value="0.000000"></param>
+				<param name="tmA.tmA_33" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_00" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_01" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_02" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_03" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_10" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_11" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_12" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_13" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_20" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_21" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_22" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_23" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_30" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_31" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_32" type="4" value="0.000000"></param>
+				<param name="tmB.tmB_33" type="4" value="0.000000"></param>
+				<portdef name="mode" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="tmA" type="256" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="tmB" type="256" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6100</prop>
+					<prop name="posy">-589</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="5">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6037</prop>
+					<prop name="posy">-491</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MaximumNode" index="6">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-5872</prop>
+					<prop name="posy">-463</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="VectorTo4x4MatrixNode" index="7">
+				<param name="roworcolumn" type="3" value="1"></param>
+				<param name="vector1.vector1_x" type="4" value="1.000000"></param>
+				<param name="vector1.vector1_y" type="4" value="0.000000"></param>
+				<param name="vector1.vector1_z" type="4" value="0.000000"></param>
+				<param name="vector1.vector1_w" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_x" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_y" type="4" value="1.000000"></param>
+				<param name="vector2.vector2_z" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_w" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_x" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_y" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_z" type="4" value="1.000000"></param>
+				<param name="vector3.vector3_w" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_x" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_y" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_z" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_w" type="4" value="1.000000"></param>
+				<portdef name="vector1" type="32" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="vector2" type="32" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="vector3" type="32" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="vector4" type="32" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6427</prop>
+					<prop name="posy">-472</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="4x4MatrixToVectorNode" index="8">
+				<param name="roworcolumn" type="3" value="1"></param>
+				<param name="matrix.matrix_00" type="4" value="1.000000"></param>
+				<param name="matrix.matrix_01" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_02" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_03" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_10" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_11" type="4" value="1.000000"></param>
+				<param name="matrix.matrix_12" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_13" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_20" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_21" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_22" type="4" value="1.000000"></param>
+				<param name="matrix.matrix_23" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_30" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_31" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_32" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_33" type="4" value="1.000000"></param>
+				<portdef name="matrix" type="256" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6678</prop>
+					<prop name="posy">-456</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorTo4DVectorNode" index="9">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<param name="w" type="4" value="1.000000"></param>
+				<portdef name="in" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="w" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6674</prop>
+					<prop name="posy">-330</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="10">
+				<param name="type" type="3" value="0"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-5829</prop>
+					<prop name="posy">-570</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="4x4MatrixToVectorNode" index="11">
+				<param name="roworcolumn" type="3" value="1"></param>
+				<param name="matrix.matrix_00" type="4" value="1.000000"></param>
+				<param name="matrix.matrix_01" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_02" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_03" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_10" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_11" type="4" value="1.000000"></param>
+				<param name="matrix.matrix_12" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_13" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_20" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_21" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_22" type="4" value="1.000000"></param>
+				<param name="matrix.matrix_23" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_30" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_31" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_32" type="4" value="0.000000"></param>
+				<param name="matrix.matrix_33" type="4" value="1.000000"></param>
+				<portdef name="matrix" type="256" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-6678</prop>
+					<prop name="posy">-204</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-6854" offsety="-514" sizex="636" sizey="529"><![CDATA[the C++ node expects the velocities and the substeps in the four "free" values of the 4x4 matrices.]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="result" username="A_and_B_will_intersect_in_at_least_T_Seconds" basename="A and B will intersect in at least T Seconds" portlabel="A and B will intersect in at least T Seconds" exposetype="single"> </port>
+			<port index="2" portname="in" username="Velocity_" basename="Velocity " portlabel="Velocity " exposetype="single"> </port>
+			<port index="3" portname="integer" username="Substeps" basename="Substeps" portlabel="Substeps" exposetype="single"> </port>
+			<port index="4" portname="mode" username="Method" basename="Method" portlabel="Method" exposetype="single"> </port>
+			<port index="6" portname="max" username="T" basename="T" portlabel="T" exposetype="single"> </port>
+			<port index="8" portname="matrix" username="Transformation" basename="Transformation" portlabel="Transformation" exposetype="single"> </port>
+			<port index="9" portname="in" username="Velocity" basename="Velocity" portlabel="Velocity" exposetype="single"> </port>
+			<port index="10" portname="result" username="A_and_B_are_intersecting" basename="A and B are intersecting" portlabel="A and B are intersecting" exposetype="single"> </port>
+			<port index="11" portname="matrix" username="Transformation_" basename="Transformation " portlabel="Transformation " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="4" from_port="result" to_node="10" to_port="first"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="1" to_port="first"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="6" to_port="value1"> </cnx>
+			<cnx from_node="8" from_port="vector1" to_node="7" to_port="vector1"> </cnx>
+			<cnx from_node="8" from_port="vector2" to_node="7" to_port="vector2"> </cnx>
+			<cnx from_node="8" from_port="vector3" to_node="7" to_port="vector3"> </cnx>
+			<cnx from_node="11" from_port="vector1" to_node="0" to_port="vector1"> </cnx>
+			<cnx from_node="11" from_port="vector2" to_node="0" to_port="vector2"> </cnx>
+			<cnx from_node="11" from_port="vector3" to_node="0" to_port="vector3"> </cnx>
+			<cnx from_node="7" from_port="matrix" to_node="4" to_port="tmA"> </cnx>
+			<cnx from_node="3" from_port="scalar" to_node="9" to_port="w"> </cnx>
+			<cnx from_node="3" from_port="scalar" to_node="2" to_port="w"> </cnx>
+			<cnx from_node="2" from_port="vector" to_node="0" to_port="vector4"> </cnx>
+			<cnx from_node="9" from_port="vector" to_node="7" to_port="vector4"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="6" to_port="value2"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="10" to_port="second"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="1" to_port="second"> </cnx>
+			<cnx from_node="0" from_port="matrix" to_node="4" to_port="tmB"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Method" min="0" max="0">
+				<enum value="-1"><![CDATA[Rough Approximation]]></enum>
+				<enum value="0"><![CDATA[Moderate Approximation]]></enum>
+				<enum value="1"><![CDATA[Fine Approximation]]></enum>
+			</item>
+			<item type="input" name="Substeps"> </item>
+			<group type="input" name="Box A">
+				<item type="input" name="Transformation" min="0" max="0"> </item>
+				<item type="input" name="Velocity" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="Box B">
+				<item type="input" name="Transformation_" min="0" max="0"> </item>
+				<item type="input" name="Velocity_" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="A_and_B_are_intersecting"> </item>
+			<item type="output" name="A_and_B_will_intersect_in_at_least_T_Seconds"> </item>
+			<item type="output" name="T"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

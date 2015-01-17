@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFly _ Set Data End Values" author="Eric Mootz" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="11482229">
+	<definition>
+		<nodes>
+			<node type="Set Data" version="1.0" index="0">
+				<param name="Reference3" type="31" value="self.__emFly_Landing_EndColor"></param>
+				<param name="Reference2" type="31" value="self.__emFly_Landing_EndScale"></param>
+				<param name="Reference1" type="31" value="self.__emFly_Landing_EndSize"></param>
+				<param name="Reference" type="31" value="self.__emFly_Landing_EndOrientation"></param>
+				<param name="Value.Value_w" type="4" value="1.000000"></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param name="Value1" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_x" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_y" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_z" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_red" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_green" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_blue" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference3" type="31" value="self.__emFly_Landing_EndColor"></param_ext>
+				<param_ext name="Reference2" type="31" value="self.__emFly_Landing_EndScale"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.__emFly_Landing_EndSize"></param_ext>
+				<param_ext name="Reference" type="31" value="self.__emFly_Landing_EndOrientation"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value3" type="512" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="16" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="4" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value" type="64" structure="1" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4461</prop>
+					<prop name="posy">-778</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="QuaternionNode" index="1">
+				<param name="value.value_w" type="4" value="1.000000"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="64" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4670</prop>
+					<prop name="posy">-830</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="2">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4657</prop>
+					<prop name="posy">-747</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="3">
+				<param name="value.value_x" type="4" value="1.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4659</prop>
+					<prop name="posy">-659</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ColorNode" index="4">
+				<param name="value.value_red" type="4" value="1.000000"></param>
+				<param name="value.value_green" type="4" value="0.628000"></param>
+				<param name="value.value_blue" type="4" value="0.000000"></param>
+				<param name="value.value_alpha" type="4" value="1.000000"></param>
+				<portdef name="value" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4722</prop>
+					<prop name="posy">-578</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="26">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-4172</prop>
+					<prop name="posy">-843</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[set end orientation / size / scale]]></comment>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="value" username="In_End_Quaternion" basename="In End Quaternion" portlabel="In End Quaternion" exposetype="single"> </port>
+			<port index="2" portname="value" username="In_End_Size" basename="In End Size" portlabel="In End Size" exposetype="single"> </port>
+			<port index="3" portname="value" username="In_End_Scale" basename="In End Scale" portlabel="In End Scale" exposetype="single"> </port>
+			<port index="4" portname="value" username="In_End_Color" basename="In End Color" portlabel="In End Color" exposetype="single"> </port>
+			<port index="26" portname="result" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="26" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Execute" to_node="26" to_port="iftrue"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="0" to_port="Value2"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="0" to_port="Value1"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="0" to_port="Value3"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="0" to_port="Value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="In_End_Quaternion"> </item>
+			<item type="input" name="In_End_Size"> </item>
+			<item type="input" name="In_End_Scale"> </item>
+			<item type="input" name="In_End_Color"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

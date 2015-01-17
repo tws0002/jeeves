@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emVT _ Get Tagged" tasks="Mootzoid - emTools/Tools - Vertex Tagger" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.1" constructionmode="Modeling" backgroundcolor="6667443">
+	<definition>
+		<nodes>
+			<node type="3DVectorNode" index="0">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1162</prop>
+					<prop name="posy">-752</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="1">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1363</prop>
+					<prop name="posy">-1172</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="NotNode" index="2">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1025</prop>
+					<prop name="posy">-1464</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="3">
+				<param name="in1" type="4" value="0.000000"></param>
+				<param name="in2" type="4" value="0.000000"></param>
+				<portdef name="in1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1266</prop>
+					<prop name="posy">-1392</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="4">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1223</prop>
+					<prop name="posy">-1449</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value="__vtTag"></param>
+				<param_ext name="reference" type="31" value="__vtTag"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1416</prop>
+					<prop name="posy">-1399</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="6">
+				<param name="reference" type="31" value="Self"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1604</prop>
+					<prop name="posy">-1354</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="__vtTagFresh"></param>
+				<param_ext name="reference" type="31" value="__vtTagFresh"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1446</prop>
+					<prop name="posy">-1250</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="8">
+				<param name="in1" type="11" value="false"></param>
+				<param name="in2" type="11" value="false"></param>
+				<portdef name="in1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1264</prop>
+					<prop name="posy">-1252</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="9">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1372</prop>
+					<prop name="posy">-1322</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="10">
+				<param name="type" type="3" value="5"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1098</prop>
+					<prop name="posy">-1500</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="11">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1364</prop>
+					<prop name="posy">-1022</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="12">
+				<param name="reference" type="31" value="__vtTagBorder"></param>
+				<param_ext name="reference" type="31" value="__vtTagBorder"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1454</prop>
+					<prop name="posy">-1100</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="13">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1391</prop>
+					<prop name="posy">-848</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="14">
+				<param name="in1" type="11" value="false"></param>
+				<param name="in2" type="11" value="false"></param>
+				<portdef name="in1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1265</prop>
+					<prop name="posy">-1102</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="15">
+				<param name="in1.in1_x" type="4" value="0.000000"></param>
+				<param name="in1.in1_y" type="4" value="0.000000"></param>
+				<param name="in1.in1_z" type="4" value="0.000000"></param>
+				<param name="in2.in2_x" type="4" value="0.000000"></param>
+				<param name="in2.in2_y" type="4" value="0.000000"></param>
+				<param name="in2.in2_z" type="4" value="0.000000"></param>
+				<portdef name="in1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1264</prop>
+					<prop name="posy">-930</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="16">
+				<param name="reference" type="31" value="kine.global.ori"></param>
+				<param_ext name="reference" type="31" value="kine.global.ori"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1451</prop>
+					<prop name="posy">-811</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RotateVectorNode" index="17">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_x" type="4" value="1.000000"></param>
+				<param name="rotation.rotation_y" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1190</prop>
+					<prop name="posy">-844</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value="__vtTagDir"></param>
+				<param_ext name="reference" type="31" value="__vtTagDir"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1432</prop>
+					<prop name="posy">-929</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="19">
+				<param name="in1.in1_x" type="4" value="0.000000"></param>
+				<param name="in1.in1_y" type="4" value="0.000000"></param>
+				<param name="in1.in1_z" type="4" value="0.000000"></param>
+				<param name="in2.in2_x" type="4" value="0.000000"></param>
+				<param name="in2.in2_y" type="4" value="0.000000"></param>
+				<param name="in2.in2_z" type="4" value="0.000000"></param>
+				<portdef name="in1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1031</prop>
+					<prop name="posy">-831</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="result" username="Not_Tagged" basename="Not Tagged" portlabel="Not Tagged" exposetype="single"> </port>
+			<port index="3" portname="out" username="_Tagged" basename=" Tagged" portlabel=" Tagged" exposetype="single"> </port>
+			<port index="6" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="8" portname="out" username="Freshly_Tagged" basename="Freshly Tagged" portlabel="Freshly Tagged" exposetype="single"> </port>
+			<port index="10" portname="result" username="Tagged" basename="Tagged" portlabel="Tagged" exposetype="single"> </port>
+			<port index="14" portname="out" username="Is_Outline" basename="Is Outline" portlabel="Is Outline" exposetype="single"> </port>
+			<port index="15" portname="out" username="Local_Tag_Direction" basename="Local Tag Direction" portlabel="Local Tag Direction" exposetype="single"> </port>
+			<port index="19" portname="out" username="Global_Tag_Direction" basename="Global Tag Direction" portlabel="Global Tag Direction" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="18" from_port="value" to_node="17" to_port="vector"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="15" to_port="in1"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="3" to_port="in2"> </cnx>
+			<cnx from_node="17" from_port="result" to_node="19" to_port="in1"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="14" to_port="in2"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="10" to_port="second"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="19" to_port="in2"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="15" to_port="in2"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="8" to_port="in2"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="8" to_port="in1"> </cnx>
+			<cnx from_node="12" from_port="value" to_node="14" to_port="in1"> </cnx>
+			<cnx from_node="16" from_port="value" to_node="17" to_port="rotation"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="3" to_port="in1"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="18" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="16" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="5" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="7" to_port="inname"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="12" to_port="inname"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="10" to_port="first"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Tagged"> </item>
+			<item type="output" name="_Tagged"> </item>
+			<item type="output" name="Not_Tagged"> </item>
+			<item type="output" name="Freshly_Tagged"> </item>
+			<item type="output" name="Is_Outline"> </item>
+			<item type="output" name="Local_Tag_Direction"> </item>
+			<item type="output" name="Global_Tag_Direction"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

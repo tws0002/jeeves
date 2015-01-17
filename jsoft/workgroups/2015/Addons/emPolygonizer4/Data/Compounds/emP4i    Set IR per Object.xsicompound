@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4i    Set IR per Object" author="Eric Mootz" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="11187071">
+	<definition>
+		<nodes>
+			<node type="IfNode" index="3">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1192</prop>
+					<prop name="posy">-284</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="8">
+				<param name="Reference" type="31" value="Self.emP4_IR_Array_Positions"></param>
+				<param name="Reference1" type="31" value="Self.emP4_IR_Array_Velocities"></param>
+				<param name="Reference2" type="31" value="Self.emP4_IR_Array_Colors"></param>
+				<param name="Reference3" type="31" value="Self.emP4_IR_Array_Radiuses"></param>
+				<param name="Reference4" type="31" value="Self.emP4_IR_Array_Falloffs"></param>
+				<param name="Reference6" type="31" value="Self.emP4_IR_Array_Isovalues"></param>
+				<param name="Reference5" type="31" value="Self.emP4_IR_Array_FalloffTypes"></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param name="Value1.Value1_x" type="4" value="0.000000"></param>
+				<param name="Value1.Value1_y" type="4" value="0.000000"></param>
+				<param name="Value1.Value1_z" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_red" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_green" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_blue" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_alpha" type="4" value="1.000000"></param>
+				<param name="Value3" type="4" value="0.000000"></param>
+				<param name="Value4" type="4" value="0.000000"></param>
+				<param name="Value5" type="3" value="0"></param>
+				<param name="Value6" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.emP4_IR_Array_Positions"></param_ext>
+				<param_ext name="Reference1" type="31" value="Self.emP4_IR_Array_Velocities"></param_ext>
+				<param_ext name="Reference2" type="31" value="Self.emP4_IR_Array_Colors"></param_ext>
+				<param_ext name="Reference3" type="31" value="Self.emP4_IR_Array_Radiuses"></param_ext>
+				<param_ext name="Reference4" type="31" value="Self.emP4_IR_Array_Falloffs"></param_ext>
+				<param_ext name="Reference6" type="31" value="Self.emP4_IR_Array_Isovalues"></param_ext>
+				<param_ext name="Reference5" type="31" value="Self.emP4_IR_Array_FalloffTypes"></param_ext>
+				<portdef name="Value" type="16" structure="2" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="16" structure="2" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="512" structure="2" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value3" type="4" structure="2" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<portdef name="Value4" type="4" structure="2" group="2" instance="4" port="0" groupname="Value"></portdef>
+				<portdef name="Value6" type="4" structure="2" group="2" instance="5" port="0" groupname="Value"></portdef>
+				<portdef name="Value5" type="2" structure="2" group="2" instance="6" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">909</prop>
+					<prop name="posy">-206</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="3" portname="result" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="3" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="8" portname="Reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="8" portname="Value" username="In_IR_Position_Array" basename="In IR Position Array" portlabel="In IR Position Array" exposetype="single"> </port>
+			<port index="8" portname="Value1" username="In_IR_Velocity_Array" basename="In IR Velocity Array" portlabel="In IR Velocity Array" exposetype="single"> </port>
+			<port index="8" portname="Value2" username="In_IR_Color_Array" basename="In IR Color Array" portlabel="In IR Color Array" exposetype="single"> </port>
+			<port index="8" portname="Value3" username="In_IR_Radius_Array" basename="In IR Radius Array" portlabel="In IR Radius Array" exposetype="single"> </port>
+			<port index="8" portname="Value4" username="In_IR_Falloff_Array" basename="In IR Falloff Array" portlabel="In IR Falloff Array" exposetype="single"> </port>
+			<port index="8" portname="Value6" username="In_IR_Isovalue_Array" basename="In IR Isovalue Array" portlabel="In IR Isovalue Array" exposetype="single"> </port>
+			<port index="8" portname="Reference6" username="Reference5" basename="Reference5" portlabel="Reference5" exposetype="single"> </port>
+			<port index="8" portname="Reference4" username="Reference4" basename="Reference4" portlabel="Reference4" exposetype="single"> </port>
+			<port index="8" portname="Reference3" username="Reference3" basename="Reference3" portlabel="Reference3" exposetype="single"> </port>
+			<port index="8" portname="Reference2" username="Reference2" basename="Reference2" portlabel="Reference2" exposetype="single"> </port>
+			<port index="8" portname="Reference1" username="Reference1" basename="Reference1" portlabel="Reference1" exposetype="single"> </port>
+			<port index="8" portname="Reference5" username="Reference6" basename="Reference6" portlabel="Reference6" exposetype="single"> </port>
+			<port index="8" portname="Value5" username="In_IR_Falloff_Type_Array" basename="In IR Falloff Type Array" portlabel="In IR Falloff Type Array" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="8" from_port="Execute" to_node="3" to_port="iftrue"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="input" name="In_IR_Position_Array"> </item>
+			<item type="input" name="In_IR_Velocity_Array"> </item>
+			<item type="input" name="In_IR_Color_Array"> </item>
+			<item type="input" name="In_IR_Radius_Array"> </item>
+			<item type="input" name="In_IR_Falloff_Array"> </item>
+			<item type="input" name="In_IR_Falloff_Type_Array"> </item>
+			<item type="input" name="In_IR_Isovalue_Array"> </item>
+			<item type="input" name="Reference5"> </item>
+			<item type="input" name="Reference4"> </item>
+			<item type="input" name="Reference3"> </item>
+			<item type="input" name="Reference2"> </item>
+			<item type="input" name="Reference1"> </item>
+			<item type="input" name="Reference6"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFly _ Get Flags" tasks="Mootzoid - emFlock2/Fly" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="12348474">
+	<definition>
+		<nodes>
+			<node type="emFly _ Get Values" version="2.1" index="0">
+				<datablob category="ui_infos">
+					<prop name="posx">-2618</prop>
+					<prop name="posy">-1557</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Active" username="Active" basename="Active" portlabel="Active" exposetype="single"> </port>
+			<port index="0" portname="Flying" username="Flying" basename="Flying" portlabel="Flying" exposetype="single"> </port>
+			<port index="0" portname="Landing" username="Landing" basename="Landing" portlabel="Landing" exposetype="single"> </port>
+			<port index="0" portname="Done_Landing" username="Done_Landing" basename="Done Landing" portlabel="Done Landing" exposetype="single"> </port>
+			<port index="0" portname="Taking_Off" username="Taking_Off" basename="Taking Off" portlabel="Taking Off" exposetype="single"> </port>
+			<port index="0" portname="Done_Taking_Off" username="Done_Taking_Off" basename="Done Taking Off" portlabel="Done Taking Off" exposetype="single"> </port>
+			<port index="0" portname="Finished_with_Everything" username="Finished_with_Everything" basename="Finished with Everything" portlabel="Finished with Everything" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="output" name="Active"> </item>
+			<item type="output" name="Flying"> </item>
+			<item type="output" name="Landing"> </item>
+			<item type="output" name="Done_Landing"> </item>
+			<item type="output" name="Taking_Off"> </item>
+			<item type="output" name="Done_Taking_Off"> </item>
+			<item type="output" name="Finished_with_Everything"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

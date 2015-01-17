@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Get Fracture Info" category="" tasks="Momentum/Fracture" author="" url="" formatversion="1.4" compoundversion="1.4" versiontag="" constructionmode="Current" backgroundcolor="12320937">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="MOM_FractureInfo" index="0">
+				<param name="base" type="3" value="0"></param>
+				<param name="index" type="3" value="-1"></param>
+				<portdef name="base" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">241</prop>
+					<prop name="posy">-68</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-110</prop>
+					<prop name="posy">153</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetElementIndicesNode" index="2">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">105</prop>
+					<prop name="posy">157</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="base" username="base" basename="base" portlabel="base" exposetype="single"> </port>
+			<port index="0" portname="island" username="island" basename="island" portlabel="island" exposetype="single"> </port>
+			<port index="0" portname="subindex" username="subindex" basename="subindex" portlabel="subindex" exposetype="single"> </port>
+			<port index="0" portname="position" username="position" basename="position" portlabel="position" exposetype="single"> </port>
+			<port index="0" portname="orientation" username="orientation" basename="orientation" portlabel="orientation" exposetype="single"> </port>
+			<port index="0" portname="scale" username="scale" basename="scale" portlabel="scale" exposetype="single"> </port>
+			<port index="0" portname="linvelocity" username="linvelocity" basename="linvelocity" portlabel="linvelocity" exposetype="single"> </port>
+			<port index="0" portname="angvelocity" username="angvelocity" basename="angvelocity" portlabel="angvelocity" exposetype="single"> </port>
+			<port index="0" portname="surface" username="surface" basename="surface" portlabel="surface" exposetype="single"> </port>
+			<port index="0" portname="depth" username="depth" basename="depth" portlabel="depth" exposetype="single"> </port>
+			<port index="0" portname="pntoutside" username="pntoutside" basename="pntoutside" portlabel="pntoutside" exposetype="single"> </port>
+			<port index="0" portname="pntframe" username="pntframe" basename="pntframe" portlabel="pntframe" exposetype="single"> </port>
+			<port index="0" portname="pntboundary" username="pntboundary" basename="pntboundary" portlabel="pntboundary" exposetype="single"> </port>
+			<port index="0" portname="trioutside" username="trioutside" basename="trioutside" portlabel="trioutside" exposetype="single"> </port>
+			<port index="0" portname="triframe" username="triframe" basename="triframe" portlabel="triframe" exposetype="single"> </port>
+			<port index="0" portname="triwall" username="triwall" basename="triwall" portlabel="triwall" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="value" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="indices" to_node="0" to_port="index"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="base"> </item>
+			<item type="output" name="island"> </item>
+			<item type="output" name="subindex"> </item>
+			<item type="output" name="position"> </item>
+			<item type="output" name="orientation"> </item>
+			<item type="output" name="scale"> </item>
+			<item type="output" name="linvelocity"> </item>
+			<item type="output" name="angvelocity"> </item>
+			<item type="output" name="surface"> </item>
+			<item type="output" name="depth"> </item>
+			<item type="output" name="pntoutside"> </item>
+			<item type="output" name="pntboundary"> </item>
+			<item type="output" name="trioutside"> </item>
+			<item type="output" name="pntframe"> </item>
+			<item type="output" name="triframe"> </item>
+			<item type="output" name="triwall"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

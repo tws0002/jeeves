@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Distribute Spheres along Linear Spline" tasks="Mootzoid - emTools/Tools - Splines" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTool _ Distribute Spheres along Linear Spline Adv" version="2.0" index="0">
+				<param name="In_Array_of_Control_Positions.In_Array_of_Control_Positions_x" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Control_Positions.In_Array_of_Control_Positions_y" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Control_Positions.In_Array_of_Control_Positions_z" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Control_Up_Vectors.In_Array_of_Control_Up_Vectors_x" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Control_Up_Vectors.In_Array_of_Control_Up_Vectors_y" type="4" value="1.000000"></param>
+				<param name="In_Array_of_Control_Up_Vectors.In_Array_of_Control_Up_Vectors_z" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Control_Interval_Indices___" type="3" value="-1"></param>
+				<param name="In_Array_of_Sphere_Radiuses" type="4" value="0.500000"></param>
+				<param name="Corner_Threshold" type="4" value="1.000000"></param>
+				<param name="Corner_Scale" type="4" value="1.000000"></param>
+				<param name="Treat_Spline_as_closed" type="11" value="false"></param>
+				<param name="Alignement" type="3" value="1"></param>
+				<param name="Distribution_of_Spheres" type="3" value="1"></param>
+				<param name="Seed" type="3" value="314159"></param>
+				<param name="Positions" type="3" value="20"></param>
+				<param name="Tangents" type="3" value="20"></param>
+				<param name="Up_Vectors" type="3" value="20"></param>
+				<portdef name="Treat_Spline_as_closed" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Corner_Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Up_Vectors" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Corner_Threshold" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Distribution_of_Spheres" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Tangents" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Positions" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Seed" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Alignement" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Array_of_Control_Interval_Indices___" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Array_of_Sphere_Radiuses" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Array_of_Control_Up_Vectors" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Array_of_Control_Positions" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2578</prop>
+					<prop name="posy">-433</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="In_Array_of_Control_Positions" username="In_Array_of_Control_Positions" basename="In Array of Control Positions" portlabel="In Array of Control Positions" exposetype="single"> </port>
+			<port index="0" portname="In_Array_of_Control_Up_Vectors" username="In_Array_of_Control_Up_Vectors" basename="In Array of Control Up Vectors" portlabel="In Array of Control Up Vectors" exposetype="single"> </port>
+			<port index="0" portname="In_Array_of_Sphere_Radiuses" username="In_Array_of_Sphere_Radiuses" basename="In Array of Sphere Radiuses" portlabel="In Array of Sphere Radiuses" exposetype="single"> </port>
+			<port index="0" portname="Corner_Threshold" username="Corner_Threshold" basename="Corner Threshold" portlabel="Corner Threshold" exposetype="single"> </port>
+			<port index="0" portname="Corner_Scale" username="Corner_Scale" basename="Corner Scale" portlabel="Corner Scale" exposetype="single"> </port>
+			<port index="0" portname="Alignement" username="Alignement" basename="Alignement" portlabel="Alignement" exposetype="single"> </port>
+			<port index="0" portname="Distribution_of_Spheres" username="Distribution_of_Spheres" basename="Distribution of Spheres" portlabel="Distribution of Spheres" exposetype="single"> </port>
+			<port index="0" portname="Seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="0" portname="Treat_Spline_as_closed" username="Treat_Spline_as_closed" basename="Treat Spline as closed" portlabel="Treat Spline as closed" exposetype="single"> </port>
+			<port index="0" portname="Tangents" username="Tangents" basename="Tangents" portlabel="Tangents" exposetype="single"> </port>
+			<port index="0" portname="Up_Vectors" username="Up_Vectors" basename="Up Vectors" portlabel="Up Vectors" exposetype="single"> </port>
+			<port index="0" portname="Position" username="Position" basename="Position" portlabel="Position" exposetype="single"> </port>
+			<port index="0" portname="Orientation" username="Orientation" basename="Orientation" portlabel="Orientation" exposetype="single"> </port>
+			<port index="0" portname="Radius" username="Radius" basename="Radius" portlabel="Radius" exposetype="single"> </port>
+			<port index="0" portname="Scale" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+			<port index="0" portname="Sphere_Index" username="Sphere_Index" basename="Sphere Index" portlabel="Sphere Index" exposetype="single"> </port>
+			<port index="0" portname="Sphere_is_on_Corner" username="Sphere_is_on_Corner" basename="Sphere is on Corner" portlabel="Sphere is on Corner" exposetype="single"> </port>
+			<port index="0" portname="Positions" username="Positions" basename="Positions" portlabel="Positions" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="In_Array_of_Control_Positions"> </item>
+			<item type="input" name="In_Array_of_Control_Up_Vectors"> </item>
+			<item type="input" name="In_Array_of_Sphere_Radiuses" min="0" max="1"> </item>
+			<group type="input" name="Parameters (Spline)">
+				<item type="input" name="Corner_Threshold" min="0" max="2"> </item>
+				<item type="input" name="Corner_Scale" min="0" max="2"> </item>
+				<item type="input" name="Treat_Spline_as_closed"> </item>
+			</group>
+			<group type="input" name="Parameters (Spheres)">
+				<item type="input" name="Alignement">
+					<enum value="0"><![CDATA[None]]></enum>
+					<enum value="1"><![CDATA[First to Tangent then to Up Vector]]></enum>
+					<enum value="2"><![CDATA[First to Up Vector then to Tangent]]></enum>
+				</item>
+				<item type="input" name="Distribution_of_Spheres">
+					<enum value="0"><![CDATA[Consecutive]]></enum>
+					<enum value="1"><![CDATA[Random]]></enum>
+				</item>
+				<item type="input" name="Seed" min="0" max="666666"> </item>
+				<group type="input" name="Interpolation">
+					<item type="input" name="Positions">
+						<enum value="0"><![CDATA[None]]></enum>
+						<enum value="20"><![CDATA[Linear]]></enum>
+						<enum value="40"><![CDATA[Cubic]]></enum>
+						<enum value="50"><![CDATA[Catmull-Rom]]></enum>
+					</item>
+					<item type="input" name="Tangents">
+						<enum value="0"><![CDATA[None]]></enum>
+						<enum value="20"><![CDATA[Linear]]></enum>
+						<enum value="40"><![CDATA[Cubic]]></enum>
+						<enum value="50"><![CDATA[Catmull-Rom]]></enum>
+					</item>
+					<item type="input" name="Up_Vectors">
+						<enum value="0"><![CDATA[None]]></enum>
+						<enum value="20"><![CDATA[Linear]]></enum>
+						<enum value="40"><![CDATA[Cubic]]></enum>
+						<enum value="50"><![CDATA[Catmull-Rom]]></enum>
+					</item>
+				</group>
+			</group>
+			<item type="output" name="Position"> </item>
+			<item type="output" name="Orientation"> </item>
+			<item type="output" name="Radius"> </item>
+			<item type="output" name="Scale"> </item>
+			<item type="output" name="Sphere_Index"> </item>
+			<item type="output" name="Sphere_is_on_Corner"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,222 @@
+
+/********************************************************
+*		General containers			*
+********************************************************/
+body {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: #F9FAF4;
+}
+
+div.container{
+	font-family : Verdana,Helvetica,Arial;
+	font-weight : normal;
+	line-height : 11pt;
+	color: black;
+	background-color: #F9FAF4;
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+/********************************************************
+*		Header/footer				*
+********************************************************/
+div.greybox{
+	margin: 15px 15px 15px 15px;
+	letter-spacing:   0px ;
+	color:            #000000 ;
+	background-color: #BAB7B5 ;
+	border-top:       #000000 1px solid ;
+	border-bottom:    #000000 1px solid ;
+	border-left:      #000000 1px solid ;
+	border-right:     #000000 1px solid ;
+}
+
+div.disclaim {
+	font-family   :   Verdana;
+	font-weight:      normal ;
+	font-style:       regular;
+	font-size:        8pt ;
+
+	padding-left:   15px;
+	padding-right:  2px;
+	padding-top:    2px;
+    	padding-bottom: 5px;
+    	
+	border-top:     #FFFFFF 1px solid ;
+	border-bottom:  #000000 1px solid ;
+}
+
+div.maintitle {
+	font-family: Verdana ,Arial, Helvetica;
+	font-weight: bold ;
+	font-style:  regular;
+	font-size  : 18px;
+
+	padding-left:   15px;
+	padding-right:  2px;
+	padding-top:    2px;
+    	padding-bottom: 5px;
+    	
+	border-top:     #FFFFFF 1px solid ;
+	border-bottom:  #000000 1px solid ;
+}
+
+.header div.logo{
+	float: right;
+}
+
+/********************************************************
+*		Content					*
+********************************************************/
+div.content{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+div.floating-right{
+	margin: 5px 5px 5px 5px;
+	float:right;
+	vertical-align: middle;
+}
+
+div.floating-left{
+	margin: 5px 5px 5px 5px;
+	float:left;
+	vertical-align: middle;
+}
+
+span.red{
+	color : #800000;
+}
+
+A {
+	color           : #000000 ;
+
+	font-weight     : bold;
+	letter-spacing  : 1px;
+	text-decoration : none;
+}
+
+A:hover {
+	color          : #800000;
+	letter-spacing : 1px;
+	text-decoration: underline;
+}
+
+ul { 
+	padding: 0px;
+	margin: 0px;
+}
+
+li {
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica;
+	font-size : 11px;
+	font-weight : normal;
+	padding: 0px 5px 5px 20px;
+	margin: 5px 0px 5px 20px;
+	text-align : justify;
+ 	
+	list-style-position: inside;
+}
+
+img{
+	border:0;
+	margin:0;
+	background-color: transparent;
+}
+
+H1 {
+	color       : #000000;
+	font-family : Verdana,Arial,Helvetica;
+	font-size   : 12px;
+	font-weight : bold;
+
+	padding: 5px 5px 5px 5px;
+	margin: 15px 0px 5px 0px;
+
+	background-color : #FFFFFF;
+	border      : #B58461 1px solid ;
+}
+
+H2 {
+	color       : #000000;
+	font-family : Verdana,Arial,Helvetica;
+	font-size   : 12px;
+	font-weight : bold;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 0px 5px 10px;
+	border      : #B58461 1px solid ;
+}
+
+P {
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica;
+	font-size : 11px;
+	font-weight : normal;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 0px 5px 20px;
+	text-align : justify;
+ 	border      : #F2E4DA 1px solid ;
+}
+
+p.disclaimer {
+	color : #800000;
+}
+
+table {
+	width: 100%;
+	padding: 0;
+	margin: 5px 0px 5px 20px;
+	border : #F2E4DA 1px solid ;
+	border-collapse: collapse;
+}
+
+td {
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica;
+	font-size : 11px;
+	font-weight : normal;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	border : #F2E4DA 1px solid ;
+	margin: 0;
+}
+
+td.name{
+	white-space: nowrap;
+}
+
+div.spacer {
+	clear: both;
+}
+
+div.lmimages{
+	background-color: #F9FAF4;
+	padding: 0px;
+	margin: 5px 0px 5px 20px;
+
+}
+
+div.lmimage{
+	float: left;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	border: #F2E4DA 1px solid;
+}
+
+.lmimages p{
+	padding: 0px;
+	margin: 0px;
+	border : none;
+	text-align: center;
+}
+
+.lmimages p:first-line{
+	font-weight: bold;
+}

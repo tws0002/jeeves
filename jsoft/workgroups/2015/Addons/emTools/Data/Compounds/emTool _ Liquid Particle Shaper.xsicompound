@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Liquid Particle Shaper" tasks="Mootzoid - emTools/Tools - All Sorts of Things" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12307913">
+	<definition>
+		<nodes>
+			<node type="emTool _ Get absolute Particle Radius" version="1.0" index="0">
+				<datablob category="ui_infos">
+					<prop name="posx">-902</prop>
+					<prop name="posy">170</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Denoise Point Cloud" version="1.0" index="1">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Weight_Gamma" type="4" value="2.200000"></param>
+				<param name="Relative_Cutoff_Distance" type="4" value="4.000000"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Weight_Gamma" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Relative_Cutoff_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-549</prop>
+					<prop name="posy">-76</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="2">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">242</prop>
+					<prop name="posy">44</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Scale" version="1.0" index="3">
+				<param name="Reference" type="31" value="Self.Scale"></param>
+				<param name="Scale.Scale_x" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_y" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_z" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Scale"></param_ext>
+				<portdef name="Scale" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-608</prop>
+					<prop name="posy">222</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetClosestPointsNode" index="4">
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="enablecutoffdistance" type="11" value="true"></param>
+				<param name="cutoffdistance" type="4" value="1.500000"></param>
+				<param name="enablemaxnumberpoints" type="11" value="false"></param>
+				<param name="maxnumberpoints" type="3" value="5"></param>
+				<portdef name="geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="enablecutoffdistance" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="cutoffdistance" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="enablemaxnumberpoints" type="1" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="maxnumberpoints" type="2" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1039</prop>
+					<prop name="posy">517</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorNode" index="5">
+				<param name="value.value_x" type="4" value="1.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-729</prop>
+					<prop name="posy">238</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="6">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-418</prop>
+					<prop name="posy">161</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Principal Component Analysis" version="1.0" index="7">
+				<param name="In_Array_of_Position.In_Array_of_Position_x" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Position.In_Array_of_Position_y" type="4" value="0.000000"></param>
+				<param name="In_Array_of_Position.In_Array_of_Position_z" type="4" value="0.000000"></param>
+				<param name="Weight_Gamma" type="4" value="2.200000"></param>
+				<param name="Relative_Cutoff_Distance" type="4" value="4.000000"></param>
+				<param name="Threshold" type="4" value="1.000000"></param>
+				<param name="Mean_Mode" type="3" value="0"></param>
+				<param name="Custom_Mean.Custom_Mean_x" type="4" value="0.000000"></param>
+				<param name="Custom_Mean.Custom_Mean_y" type="4" value="0.000000"></param>
+				<param name="Custom_Mean.Custom_Mean_z" type="4" value="0.000000"></param>
+				<param name="Use_preferred_Vectors" type="11" value="true"></param>
+				<param name="Preferred_Direction.Preferred_Direction_x" type="4" value="1.000000"></param>
+				<param name="Preferred_Direction.Preferred_Direction_y" type="4" value="0.000000"></param>
+				<param name="Preferred_Direction.Preferred_Direction_z" type="4" value="0.000000"></param>
+				<param name="Preferred_Up_Vector.Preferred_Up_Vector_x" type="4" value="0.000000"></param>
+				<param name="Preferred_Up_Vector.Preferred_Up_Vector_y" type="4" value="1.000000"></param>
+				<param name="Preferred_Up_Vector.Preferred_Up_Vector_z" type="4" value="0.000000"></param>
+				<param name="Active_" type="11" value="true"></param>
+				<param name="Minimum" type="4" value="0.200000"></param>
+				<param name="Maximum" type="4" value="1.500000"></param>
+				<param name="Enable_Left___Right_CTRL_to_Cancel___" type="11" value="true"></param>
+				<portdef name="In_Array_of_Position" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_Left___Right_CTRL_to_Cancel___" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Relative_Cutoff_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Preferred_Up_Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mean_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Weight_Gamma" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Minimum" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Mean" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_preferred_Vectors" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Threshold" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Preferred_Direction" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-605</prop>
+					<prop name="posy">405</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="8">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">65</prop>
+					<prop name="posy">156</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="9">
+				<param name="reference" type="31" value="Self"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1199</prop>
+					<prop name="posy">512</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="10">
+				<param name="reference" type="31" value="PointPosition"></param>
+				<param_ext name="reference" type="31" value="PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-834</prop>
+					<prop name="posy">485</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-808</prop>
+					<prop name="posy">636</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="12">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-185</prop>
+					<prop name="posy">269</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="13">
+				<param name="value" type="4" value="4.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1260</prop>
+					<prop name="posy">617</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Set Particle Size" version="1.0" index="15">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param name="Size" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-600</prop>
+					<prop name="posy">154</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Get Point Position" version="1.0" index="16">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1266</prop>
+					<prop name="posy">549</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Size" version="1.0" index="17">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1419</prop>
+					<prop name="posy">668</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1447" offsety="345" sizex="1142" sizey="522"><![CDATA[perform the "Principal Component Analysis" and set the particle scale and orientation]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-568" offsety="-119" sizex="261" sizey="167"><![CDATA[denoise the point positions]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-927" offsety="119" sizex="618" sizey="178"><![CDATA["bake" the particle scale in order to avoid bizarre results when using "Principal Component Analysis"]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="Enable" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="1" portname="Relative_Cutoff_Distance" username="Relative_Cutoff_Distance" basename="Relative Cutoff Distance" portlabel="Relative Cutoff Distance" exposetype="single"> </port>
+			<port index="2" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="7" portname="Mean_Mode" username="Mean_Mode" basename="Mean Mode" portlabel="Mean Mode" exposetype="single"> </port>
+			<port index="8" portname="condition" username="Enable_" basename="Enable " portlabel="Enable " exposetype="single"> </port>
+			<port index="13" portname="value" username="Relative_Cutoff_Distance_" basename="Relative Cutoff Distance " portlabel="Relative Cutoff Distance " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="Execute" to_node="2" to_port="port1"> </cnx>
+			<cnx from_node="3" from_port="Execute" to_node="6" to_port="port2"> </cnx>
+			<cnx from_node="0" from_port="Radius" to_node="15" to_port="Size"> </cnx>
+			<cnx from_node="4" from_port="points" to_node="10" to_port="source"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="2" to_port="port2"> </cnx>
+			<cnx from_node="10" from_port="value" to_node="7" to_port="In_Array_of_Position"> </cnx>
+			<cnx from_node="9" from_port="value" to_node="4" to_port="geometry"> </cnx>
+			<cnx from_node="15" from_port="Execute" to_node="6" to_port="port1"> </cnx>
+			<cnx from_node="16" from_port="Value" to_node="4" to_port="position"> </cnx>
+			<cnx from_node="17" from_port="Value" to_node="13" to_port="factor"> </cnx>
+			<cnx from_node="7" from_port="Set_Particle_Orientation" to_node="12" to_port="port2"> </cnx>
+			<cnx from_node="7" from_port="Set_Particle_Scale" to_node="12" to_port="port3"> </cnx>
+			<cnx from_node="6" from_port="execute" to_node="12" to_port="port1"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="4" to_port="cutoffdistance"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="11" to_port="in"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="3" to_port="Scale"> </cnx>
+			<cnx from_node="12" from_port="execute" to_node="8" to_port="iftrue"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="7" to_port="Relative_Cutoff_Distance"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Denoise (Positions)">
+				<item type="input" name="Enable"> </item>
+				<item type="input" name="Relative_Cutoff_Distance" min="1" max="7"> </item>
+			</group>
+			<group type="input" name="Shape (Scale and Orientation)">
+				<item type="input" name="Enable_"> </item>
+				<item type="input" name="Relative_Cutoff_Distance_" min="1" max="7"> </item>
+				<item type="input" name="Mean_Mode">
+					<enum value="0"><![CDATA[Automatic Mean]]></enum>
+					<enum value="2"><![CDATA[Use Point Position as Mean]]></enum>
+				</item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

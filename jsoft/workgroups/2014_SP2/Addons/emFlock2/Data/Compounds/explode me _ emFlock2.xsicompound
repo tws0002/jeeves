@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="explode me _ emFlock2" tasks="Mootzoid - emFlock2/Misc" formatversion="1.4" compoundversion="1.0">
+	<definition>
+		<nodes>
+			<node type="emFlock2 __ Asteroids" version="2.1" index="0">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Mode" type="3" value="1"></param>
+				<param name="Border_Thickness" type="4" value="3.000000"></param>
+				<param name="Playfield_s_Corner_1.Playfield_s_Corner_1_x" type="4" value="-50.000000"></param>
+				<param name="Playfield_s_Corner_1.Playfield_s_Corner_1_y" type="4" value="-25.000000"></param>
+				<param name="Playfield_s_Corner_1.Playfield_s_Corner_1_z" type="4" value="-50.000000"></param>
+				<param name="Playfield_s_Corner_2.Playfield_s_Corner_2_x" type="4" value="50.000000"></param>
+				<param name="Playfield_s_Corner_2.Playfield_s_Corner_2_y" type="4" value="25.000000"></param>
+				<param name="Playfield_s_Corner_2.Playfield_s_Corner_2_z" type="4" value="50.000000"></param>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Playfield_s_Corner_1" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Border_Thickness" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Playfield_s_Corner_2" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1462</prop>
+					<prop name="posy">438</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 _ Root" version="2.1" index="1">
+				<portdef name="Execute___Asteroids" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute__" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute___Speed_Control" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute___Align_Velocity_on_Plane_____" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute___Align_Orientation_____" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute___Fly_towards_Area_1" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute _ Fly towards Area 1"></portdef>
+				<portdef name="Execute_1" type="4096" structure="1" group="3" instance="0" port="0" groupname="Execute 1"></portdef>
+				<portdef name="Execute__1" type="4096" structure="1" group="4" instance="0" port="0" groupname="Execute  1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1076</prop>
+					<prop name="posy">798</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 __ Speed Control" version="3.0" index="2">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Use" type="11" value="true"></param>
+				<param name="Speed" type="4" value="15.000000"></param>
+				<param name="Strength" type="4" value="0.025000"></param>
+				<param name="Use_" type="11" value="true"></param>
+				<param name="Minimum" type="4" value="0.000000"></param>
+				<param name="Maximum" type="4" value="33.000000"></param>
+				<param name="Use__" type="11" value="false"></param>
+				<param name="Amount" type="4" value="0.005000"></param>
+				<param name="Give_slow_Particles_a_Kick_in_the_Butt____" type="11" value="true"></param>
+				<param name="Kick_Strength_" type="4" value="0.125000"></param>
+				<param name="Kick_Direction" type="3" value="0"></param>
+				<param name="Custom_Direction.Custom_Direction_x" type="4" value="1.000000"></param>
+				<param name="Custom_Direction.Custom_Direction_y" type="4" value="0.000000"></param>
+				<param name="Custom_Direction.Custom_Direction_z" type="4" value="0.000000"></param>
+				<portdef name="Speed" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Give_slow_Particles_a_Kick_in_the_Butt____" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Kick_Strength_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Direction" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Kick_Direction" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use__" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Minimum" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1493</prop>
+					<prop name="posy">1049</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 __ Align Velocity on Plane" version="3.0" index="3">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Strength" type="4" value="0.250000"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Plane_Normal_Vector.Plane_Normal_Vector_x" type="4" value="0.000000"></param>
+				<param name="Plane_Normal_Vector.Plane_Normal_Vector_y" type="4" value="1.000000"></param>
+				<param name="Plane_Normal_Vector.Plane_Normal_Vector_z" type="4" value="0.000000"></param>
+				<portdef name="Plane_Normal_Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1546</prop>
+					<prop name="posy">1231</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 __ Align Orientation" version="3.0" index="4">
+				<param name="Active" type="11" value="true"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Direction" type="3" value="0"></param>
+				<param name="Constraint" type="3" value="0"></param>
+				<param name="Custom_Position.Custom_Position_x" type="4" value="0.000000"></param>
+				<param name="Custom_Position.Custom_Position_y" type="4" value="0.000000"></param>
+				<param name="Custom_Position.Custom_Position_z" type="4" value="0.000000"></param>
+				<param name="Limit_Rotational_Velocity" type="11" value="true"></param>
+				<param name="Maximum_Rotational_Velocity" type="4" value="1.500000"></param>
+				<param name="Use_Up_Vector" type="11" value="true"></param>
+				<param name="Up_Vector" type="3" value="1"></param>
+				<param name="Point_at.Point_at_x" type="4" value="0.000000"></param>
+				<param name="Point_at.Point_at_y" type="4" value="1.000000"></param>
+				<param name="Point_at.Point_at_z" type="4" value="0.000000"></param>
+				<param name="Reduce_Flipping" type="11" value="true"></param>
+				<param name="Limit_Rotational_Velocity_" type="11" value="true"></param>
+				<param name="Maximum_Rotational_Velocity_" type="4" value="1.000000"></param>
+				<portdef name="Up_Vector" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_Up_Vector" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Direction" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Active" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Point_at" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Rotational_Velocity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Limit_Rotational_Velocity" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Rotational_Velocity_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Limit_Rotational_Velocity_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Reduce_Flipping" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Constraint" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Position" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1511</prop>
+					<prop name="posy">1346</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 __ Flocking" version="2.2" index="5">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Distance" type="4" value="6.000000"></param>
+				<param name="Angle" type="4" value="315.000000"></param>
+				<param name="Angle_Falloff" type="4" value="120.000000"></param>
+				<param name="Multithreading" type="11" value="true"></param>
+				<param name="Maximum_Number_of_Neighbors_____" type="3" value="10"></param>
+				<param name="Size_Mode" type="3" value="1"></param>
+				<param name="Ignore_smaller_Neighbors" type="4" value="0.250000"></param>
+				<param name="Desired_Distances_to_Neighbors_____" type="4" value="2.500000"></param>
+				<param name="Privacy_Distance" type="4" value="0.500000"></param>
+				<param name="Privacy_Strength" type="4" value="3.000000"></param>
+				<param name="Velocity_Alignment" type="4" value="0.500000"></param>
+				<param name="Cohesion_Strength" type="4" value="0.750000"></param>
+				<param name="Strength_" type="4" value="5.000000"></param>
+				<param name="Radius_Mul_" type="4" value="1.250000"></param>
+				<portdef name="Multithreading" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Number_of_Neighbors_____" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Size_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cohesion_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity_Alignment" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Privacy_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Privacy_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Desired_Distances_to_Neighbors_____" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ignore_smaller_Neighbors" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Angle_Falloff" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Angle" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Radius_Mul_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1477</prop>
+					<prop name="posy">603</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Execute" to_node="1" to_port="Execute___Asteroids"> </cnx>
+			<cnx from_node="2" from_port="Set_Velocity" to_node="1" to_port="Execute___Speed_Control"> </cnx>
+			<cnx from_node="3" from_port="Set_Velocity" to_node="1" to_port="Execute___Align_Velocity_on_Plane_____"> </cnx>
+			<cnx from_node="4" from_port="Set_Orientation" to_node="1" to_port="Execute___Align_Orientation_____"> </cnx>
+			<cnx from_node="5" from_port="Set_Flocking_Velocities" to_node="1" to_port="Execute_"> </cnx>
+		</connections>
+		<layout>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

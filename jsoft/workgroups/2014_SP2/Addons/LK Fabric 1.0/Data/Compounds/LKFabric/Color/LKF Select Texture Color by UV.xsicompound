@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="LKF Select Texture Color by UV" tasks="LK Fabric/Color" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="14136103">
+	<definition>
+		<nodes>
+			<node type="StringFilePathNode" index="0">
+				<param name="value.value_string" type="8" value=""></param>
+				<param name="value.value_uimode" type="8" value="1"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1092</prop>
+					<prop name="posy">1420</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="1">
+				<param name="value1" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1096</prop>
+					<prop name="posy">807</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="2">
+				<param name="value1" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1073</prop>
+					<prop name="posy">942</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetTextureColorByUV" index="3">
+				<param name="U" type="4" value="0.000000"></param>
+				<param name="V" type="4" value="0.000000"></param>
+				<param name="ImagePath.ImagePath_string" type="8" value="default string"></param>
+				<param name="ImagePath.ImagePath_uimode" type="8" value=""></param>
+				<param name="ImagePath.ImagePath_filepathseq" type="8" value=""></param>
+				<param name="ImagePath.ImagePath_filename" type="8" value=""></param>
+				<portdef name="U" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="V" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="ImagePath" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-466</prop>
+					<prop name="posy">1050</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="PNG_File_Path" basename="PNG File Path" portlabel="PNG File Path" exposetype="single"> </port>
+			<port index="1" portname="value1" username="U" basename="U" portlabel="U" exposetype="single"> </port>
+			<port index="2" portname="value1" username="V" basename="V" portlabel="V" exposetype="single"> </port>
+			<port index="3" portname="Color" username="Color" basename="Color" portlabel="Color" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="result" to_node="3" to_port="ImagePath"> </cnx>
+			<cnx from_node="1" from_port="array" to_node="3" to_port="U"> </cnx>
+			<cnx from_node="2" from_port="array" to_node="3" to_port="V"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="U"> </item>
+			<item type="input" name="V"> </item>
+			<item type="input" name="PNG_File_Path"> </item>
+			<item type="output" name="Color"> </item>
+		</layout>
+	</definition>
+</xsi_file>

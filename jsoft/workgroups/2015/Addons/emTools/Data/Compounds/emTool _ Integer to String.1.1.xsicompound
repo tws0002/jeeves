@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Integer to String" tasks="Mootzoid - emTools/Tools - Conversion" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.1" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_ntoa" index="0">
+				<param name="Input" type="4" value="0.000000"></param>
+				<param name="Precision" type="3" value="0"></param>
+				<param name="TreatAsInt" type="11" value="true"></param>
+				<param name="IntLead0" type="3" value="0"></param>
+				<portdef name="Input" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Precision" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="TreatAsInt" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="IntLead0" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-438</prop>
+					<prop name="posy">1979</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="1">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-539</prop>
+					<prop name="posy">2074</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="2">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-618</prop>
+					<prop name="posy">2014</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="3">
+				<param name="value" type="3" value="7"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-614</prop>
+					<prop name="posy">2121</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="4">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-614</prop>
+					<prop name="posy">2145</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="5">
+				<param name="value" type="11" value="true"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-540</prop>
+					<prop name="posy">2046</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="1" portname="condition" username="Leading_Zeros" basename="Leading Zeros" portlabel="Leading Zeros" exposetype="single"> </port>
+			<port index="2" portname="integer" username="Integer" basename="Integer" portlabel="Integer" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="result" to_node="0" to_port="TreatAsInt"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="1" to_port="iffalse"> </cnx>
+			<cnx from_node="2" from_port="scalar" to_node="0" to_port="Input"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="1" to_port="iftrue"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="0" to_port="IntLead0"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Integer" min="-10" max="10"> </item>
+			<item type="input" name="Leading_Zeros"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

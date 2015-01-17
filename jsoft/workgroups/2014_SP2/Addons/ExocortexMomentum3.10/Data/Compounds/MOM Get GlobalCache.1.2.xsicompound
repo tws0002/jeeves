@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Get GlobalCache" category="" tasks="Momentum/Utilities" author="" url="" formatversion="1.4" compoundversion="1.2" versiontag="" constructionmode="Current" backgroundcolor="12339580">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="MOM_GetGlobalCache" index="0">
+				<param name="frame" type="3" value="0"></param>
+				<param name="allsubframes" type="11" value="true"></param>
+				<param name="subframe" type="3" value="0"></param>
+				<portdef name="frame" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="allsubframes" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="subframe" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">606</prop>
+					<prop name="posy">-30</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyNode" index="1">
+				<param name="value1" type="4" value="1.000000"></param>
+				<param name="value2" type="fcurve">1 20 1 1 -1.79769E+308 1.79769E+308 3 0
+0 0.033367 1.000000 0.000000 0.000000 0.000000 0.000000 8196 3
+</param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-188</prop>
+					<prop name="posy">291</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="2">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-23</prop>
+					<prop name="posy">238</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CurrentFrameNode" index="3">
+				<param name="globaltime" type="11" value="true"></param>
+				<portdef name="globaltime" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-348</prop>
+					<prop name="posy">288</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RoundNode" index="4">
+				<param name="function" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">115</prop>
+					<prop name="posy">255</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="nbRigidBodies" username="RigidBody_Count" basename="RigidBody Count" portlabel="RigidBody Count" exposetype="single"> </port>
+			<port index="0" portname="rbPrimary" username="RigidBody_Primary_ID" basename="RigidBody Primary ID" portlabel="RigidBody Primary ID" exposetype="single"> </port>
+			<port index="0" portname="rbSecondary" username="RigidBodySecondary_ID" basename="RigidBodySecondary ID" portlabel="RigidBodySecondary ID" exposetype="single"> </port>
+			<port index="0" portname="rbScaling" username="RigidBody_Scaling" basename="RigidBody Scaling" portlabel="RigidBody Scaling" exposetype="single"> </port>
+			<port index="0" portname="rbRotation" username="RigidBody_Rotation" basename="RigidBody Rotation" portlabel="RigidBody Rotation" exposetype="single"> </port>
+			<port index="0" portname="rbPosition" username="RigidBody_Position" basename="RigidBody Position" portlabel="RigidBody Position" exposetype="single"> </port>
+			<port index="0" portname="rbLinearVel" username="RigidBody_LinearVel" basename="RigidBody LinearVel" portlabel="RigidBody LinearVel" exposetype="single"> </port>
+			<port index="0" portname="rbAngularVel" username="RigidBody_AngularVel" basename="RigidBody AngularVel" portlabel="RigidBody AngularVel" exposetype="single"> </port>
+			<port index="0" portname="rbMass" username="RigidBody_Mass" basename="RigidBody Mass" portlabel="RigidBody Mass" exposetype="single"> </port>
+			<port index="0" portname="rbShape" username="RigidBody_Shape" basename="RigidBody Shape" portlabel="RigidBody Shape" exposetype="single"> </port>
+			<port index="0" portname="nbContacts" username="Contact_Count" basename="Contact Count" portlabel="Contact Count" exposetype="single"> </port>
+			<port index="0" portname="ctPrimaryA" username="Contact_Primary_ID_A" basename="Contact Primary ID A" portlabel="Contact Primary ID A" exposetype="single"> </port>
+			<port index="0" portname="ctSecondaryA" username="Contact_Secondary_ID_A" basename="Contact Secondary ID A" portlabel="Contact Secondary ID A" exposetype="single"> </port>
+			<port index="0" portname="ctPrimaryB" username="Contact_Primary_ID_B" basename="Contact Primary ID B" portlabel="Contact Primary ID B" exposetype="single"> </port>
+			<port index="0" portname="ctSecondaryB" username="Contact_Secondary_ID_B" basename="Contact Secondary ID B" portlabel="Contact Secondary ID B" exposetype="single"> </port>
+			<port index="0" portname="ctPositionA" username="Contact_Position_A" basename="Contact Position A" portlabel="Contact Position A" exposetype="single"> </port>
+			<port index="0" portname="ctPositionB" username="Contact_Position_B" basename="Contact Position B" portlabel="Contact Position B" exposetype="single"> </port>
+			<port index="0" portname="ctVelocityA" username="Contact_Velocity_A" basename="Contact Velocity A" portlabel="Contact Velocity A" exposetype="single"> </port>
+			<port index="0" portname="ctVelocityB" username="Contact_Velocity_B" basename="Contact Velocity B" portlabel="Contact Velocity B" exposetype="single"> </port>
+			<port index="0" portname="ctImpulse" username="Contact_Impulse" basename="Contact Impulse" portlabel="Contact Impulse" exposetype="single"> </port>
+			<port index="0" portname="ctDistance" username="Contact_Distance" basename="Contact Distance" portlabel="Contact Distance" exposetype="single"> </port>
+			<port index="0" portname="allsubframes" username="All_Sub_Frames" basename="All Sub Frames" portlabel="All Sub Frames" exposetype="single"> </port>
+			<port index="0" portname="subframe" username="In_SubFrame" basename="In_SubFrame" portlabel="In_SubFrame" exposetype="single"> </port>
+			<port index="0" portname="ctTypeA" username="Contact_Type_A" basename="Contact Type A" portlabel="Contact Type A" exposetype="single"> </port>
+			<port index="0" portname="ctTypeB" username="Contact_Type_B" basename="Contact Type B" portlabel="Contact Type B" exposetype="single"> </port>
+			<port index="2" portname="condition" username="Use_Global_Frame" basename="Use Global Frame" portlabel="Use Global Frame" exposetype="single"> </port>
+			<port index="2" portname="iffalse" username="In_Frame" basename="In_Frame" portlabel="In_Frame" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="4" from_port="integer" to_node="0" to_port="frame"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="2" to_port="iftrue"> </cnx>
+			<cnx from_node="3" from_port="frame" to_node="1" to_port="value1"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="4" to_port="value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Use_Global_Frame"> </item>
+			<item type="input" name="In_Frame"> </item>
+			<item type="input" name="All_Sub_Frames"> </item>
+			<item type="input" name="In_SubFrame" min="0" max="5"> </item>
+			<item type="output" name="RigidBody_Count"> </item>
+			<item type="output" name="RigidBody_Primary_ID"> </item>
+			<item type="output" name="RigidBodySecondary_ID"> </item>
+			<item type="output" name="RigidBody_Scaling"> </item>
+			<item type="output" name="RigidBody_Rotation"> </item>
+			<item type="output" name="RigidBody_Position"> </item>
+			<item type="output" name="RigidBody_LinearVel"> </item>
+			<item type="output" name="RigidBody_AngularVel"> </item>
+			<item type="output" name="RigidBody_Mass"> </item>
+			<item type="output" name="RigidBody_Shape"> </item>
+			<item type="output" name="Contact_Count"> </item>
+			<item type="output" name="Contact_Primary_ID_A"> </item>
+			<item type="output" name="Contact_Secondary_ID_A"> </item>
+			<item type="output" name="Contact_Primary_ID_B"> </item>
+			<item type="output" name="Contact_Secondary_ID_B"> </item>
+			<item type="output" name="Contact_Position_A"> </item>
+			<item type="output" name="Contact_Position_B"> </item>
+			<item type="output" name="Contact_Velocity_A"> </item>
+			<item type="output" name="Contact_Velocity_B"> </item>
+			<item type="output" name="Contact_Impulse"> </item>
+			<item type="output" name="Contact_Distance"> </item>
+			<item type="output" name="Contact_Type_A"> </item>
+			<item type="output" name="Contact_Type_B"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

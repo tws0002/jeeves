@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFluid4 _ Solver" tasks="Mootzoid - emFluid4/Main" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="6.0" constructionmode="Current" backgroundcolor="6140605">
+	<definition>
+		<nodes>
+			<node type="Get Particle Velocity" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self.PointVelocity"></param>
+				<param_ext name="Reference" type="31" value="Self.PointVelocity"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1036</prop>
+					<prop name="posy">-1341</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 _ Solver Advanced" version="5.0" index="1">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Weight" type="4" value="1.000000"></param>
+				<param name="Threading" type="3" value="8"></param>
+				<param name="In_Point_Velocities.In_Point_Velocities_x" type="4" value="0.000000"></param>
+				<param name="In_Point_Velocities.In_Point_Velocities_y" type="4" value="0.000000"></param>
+				<param name="In_Point_Velocities.In_Point_Velocities_z" type="4" value="0.000000"></param>
+				<param name="Fluid_Box_Mode" type="3" value="3"></param>
+				<param name="Fluid_Box_Value_Mode" type="3" value="1"></param>
+				<param name="Fluid_Box_Velocity_Mode" type="3" value="3"></param>
+				<param name="Fluid_Box_Primary_Index" type="3" value="0"></param>
+				<param name="Epsilon_Fuel" type="4" value="0.010000"></param>
+				<param name="Epsilon_Heat" type="4" value="75.000000"></param>
+				<param name="Epsilon_Oxygen" type="4" value="1000000.000000"></param>
+				<param name="Epsilon_Density" type="4" value="0.100000"></param>
+				<param name="Epsilon_Velocity" type="4" value="0.250000"></param>
+				<param name="Epsilon_Waste" type="4" value="0.001000"></param>
+				<param name="Epsilon_Gas" type="4" value="0.010000"></param>
+				<param name="Consider_Point_Cloud_Bounding_Box" type="11" value="false"></param>
+				<param name="Start_Frame__global_" type="3" value="3"></param>
+				<param name="Memory_Limit__MByte_" type="3" value="2048"></param>
+				<param name="Detail_Amplification.Detail_Amplification_string" type="8" value="use the Detail_Amplification compound"></param>
+				<param name="Detail_Amplification.Detail_Amplification_uimode" type="8" value=""></param>
+				<param name="Detail_Amplification.Detail_Amplification_filepathseq" type="8" value=""></param>
+				<param name="Detail_Amplification.Detail_Amplification_filename" type="8" value=""></param>
+				<param name="Cache_Grids.Cache_Grids_string" type="8" value="use the Cache_Grids_on_file compound"></param>
+				<param name="Cache_Grids.Cache_Grids_uimode" type="8" value=""></param>
+				<param name="Cache_Grids.Cache_Grids_filepathseq" type="8" value=""></param>
+				<param name="Cache_Grids.Cache_Grids_filename" type="8" value=""></param>
+				<param name="Compensate_Fluid_Box_Translations" type="11" value="true"></param>
+				<param name="Cell_Size_" type="4" value="1.000000"></param>
+				<param name="Viscosity" type="4" value="0.010000"></param>
+				<param name="Vorticity" type="4" value="5.000000"></param>
+				<param name="Gravity" type="4" value="0.015000"></param>
+				<param name="Gravity_Direction.Gravity_Direction_x" type="4" value="0.000000"></param>
+				<param name="Gravity_Direction.Gravity_Direction_y" type="4" value="-1.000000"></param>
+				<param name="Gravity_Direction.Gravity_Direction_z" type="4" value="0.000000"></param>
+				<param name="In_Behavior" type="4" value="0.000000"></param>
+				<param name="In_Debug" type="4" value="0.000000"></param>
+				<param name="Multiplier" type="4" value="1.000000"></param>
+				<param name="Anti_Stratification" type="4" value="0.050000"></param>
+				<param name="Use_Obstacles" type="11" value="false"></param>
+				<param name="Static_Obstacles__recommended____" type="11" value="true"></param>
+				<param name="Move_out" type="4" value="0.500000"></param>
+				<param name="Expand_Contract" type="3" value="0"></param>
+				<param name="Falloff" type="4" value="0.000000"></param>
+				<param name="Avoidance_Strength" type="4" value="1.500000"></param>
+				<param name="Avoidance_Thickness" type="4" value="2.500000"></param>
+				<param name="Close_Top" type="11" value="true"></param>
+				<param name="Close_Bottom" type="11" value="true"></param>
+				<param name="Close_Left" type="11" value="true"></param>
+				<param name="Close_Right" type="11" value="true"></param>
+				<param name="Close_Front" type="11" value="true"></param>
+				<param name="Close_Back" type="11" value="true"></param>
+				<param name="In_Data_1.In_Data_1_x" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_y" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_z" type="4" value="0.000000"></param>
+				<param name="In_Data_1.In_Data_1_w" type="4" value="0.000000"></param>
+				<param name="In_Data_2.In_Data_2_x" type="4" value="0.000000"></param>
+				<param name="In_Data_2.In_Data_2_y" type="4" value="0.000000"></param>
+				<param name="In_Data_2.In_Data_2_z" type="4" value="0.000000"></param>
+				<param name="Clear_Grids_at_each_Frame" type="11" value="false"></param>
+				<param name="Mute_Expansion_and_Buoyancy" type="11" value="false"></param>
+				<param name="Mute_Vorticity" type="11" value="false"></param>
+				<param name="Mute_Gravity" type="11" value="false"></param>
+				<param name="Mute_Combustion" type="11" value="false"></param>
+				<param name="Mute_Velocity_Solver" type="11" value="false"></param>
+				<param name="Mute_Diffusion_and_Damping" type="11" value="false"></param>
+				<portdef name="In_Behavior" type="4" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Vorticity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Move_out" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Compensate_Fluid_Box_Translations" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fluid_Box_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fluid_Box_Value_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fluid_Box_Velocity_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Fuel" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Heat" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Oxygen" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Density" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Velocity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Waste" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Epsilon_Gas" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Consider_Point_Cloud_Bounding_Box" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Threading" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Detail_Amplification" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mute_Expansion_and_Buoyancy" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mute_Vorticity" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mute_Gravity" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mute_Combustion" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Clear_Grids_at_each_Frame" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mute_Velocity_Solver" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mute_Diffusion_and_Damping" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cache_Grids" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Fluid_Box_SRT_0" type="8192" structure="1" group="2" instance="0" port="0" groupname="In Fluid Box SRT 0"></portdef>
+				<portdef name="Anti_Stratification" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Gravity_Direction" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Front" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Bottom" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Right" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Data_2" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Left" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Top" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cell_Size_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Weight" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Close_Back" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Geometry__closed_Volume_" type="1024" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Point_Velocities" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_Obstacles" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Falloff" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Avoidance_Thickness" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Avoidance_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Viscosity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Gravity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multiplier" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Expand_Contract" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Static_Obstacles__recommended____" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start_Frame__global_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Data_1" type="32" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Memory_Limit__MByte_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fluid_Box_Primary_Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Debug" type="4" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-152</prop>
+					<prop name="posy">-820</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 __ Debug" version="4.0" index="2">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Fuel" type="4" value="0.000000"></param>
+				<param name="Heat" type="4" value="0.000000"></param>
+				<param name="Oxygen" type="4" value="0.000000"></param>
+				<param name="Density" type="4" value="0.000000"></param>
+				<param name="Waste" type="4" value="1.000000"></param>
+				<param name="Velocity" type="4" value="1.000000"></param>
+				<param name="Obstacle" type="4" value="0.000000"></param>
+				<param name="Position_X" type="4" value="0.000000"></param>
+				<param name="Position_Y" type="4" value="0.000000"></param>
+				<param name="Position_Z" type="4" value="0.000000"></param>
+				<param name="Delete_Particle_at_Age_Limit" type="11" value="true"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Position_Y" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Oxygen" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Delete_Particle_at_Age_Limit" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fuel" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Obstacle" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Position_X" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Heat" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Position_Z" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1054</prop>
+					<prop name="posy">990</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 __ Detail Amplification" version="4.0" index="3">
+				<param name="Enable" type="11" value="false"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Amplification_Steps" type="3" value="4"></param>
+				<param name="Waste" type="11" value="true"></param>
+				<param name="Heat" type="11" value="true"></param>
+				<param name="Density" type="11" value="false"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Waste" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Heat" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amplification_Steps" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1059</prop>
+					<prop name="posy">264</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFluid4 __ Cache Grids on File" version="4.0" index="4">
+				<param name="Enable" type="11" value="false"></param>
+				<param name="Box_Mode" type="3" value="2"></param>
+				<param name="Path_.Path__string" type="8" value="[Project Path]\Simulation\emFluid\[Scene]"></param>
+				<param name="Path_.Path__uimode" type="8" value=""></param>
+				<param name="Path_.Path__filepathseq" type="8" value=""></param>
+				<param name="Path_.Path__filename" type="8" value=""></param>
+				<param name="Filename_.Filename__string" type="8" value="grid"></param>
+				<param name="Filename_.Filename__uimode" type="8" value=""></param>
+				<param name="Filename_.Filename__filepathseq" type="8" value=""></param>
+				<param name="Filename_.Filename__filename" type="8" value=""></param>
+				<param name="Box_Indices" type="3" value="2"></param>
+				<param name="Padding" type="3" value="4"></param>
+				<param name="File_Format" type="3" value="0"></param>
+				<param name="Save_Half_Float_Values" type="11" value="true"></param>
+				<param name="Enable_Compression_and_Filtering" type="11" value="true"></param>
+				<param name="Waste" type="11" value="true"></param>
+				<param name="Heat" type="11" value="true"></param>
+				<param name="Density" type="11" value="false"></param>
+				<param name="Velocity" type="11" value="false"></param>
+				<portdef name="Waste" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Save_Half_Float_Values" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_Compression_and_Filtering" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Heat" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Padding" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="File_Format" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Box_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Box_Indices" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Path_" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Filename_" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1059</prop>
+					<prop name="posy">439</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="5">
+				<param name="condition" type="11" value="true"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-948</prop>
+					<prop name="posy">-1173</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="6">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1021</prop>
+					<prop name="posy">-1126</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="7">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1021</prop>
+					<prop name="posy">-1102</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1088" offsety="-1418" sizex="271" sizey="169"><![CDATA[Current Particle Velocity.
+This is used by emFluid for particles that are outside the fluid box or when the weight of the fluid box is less than 1.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.000000" title="13103871" title_text="0" offsetx="-1173" offsety="-1503" sizex="450" sizey="2858"><![CDATA[.]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1088" offsety="-1237" sizex="271" sizey="181"><![CDATA[Multithreading on (0=auto threads) / off (1 thread).
+Turning multithreading off can be useful when working with small setups.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1104" offsety="930" sizex="328" sizey="365"><![CDATA[Debug Mode ("Grid Visualization") Parameters]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-1105" offsety="49" sizex="328" sizey="714"><![CDATA[- (BETA) Detail Amplification
+(a.k.a. "Wavelet Turbulence for Fluids") 
+
+- (BETA) Cache Grids on File.
+
+These two unsupported and undocumented features were developed during the R&D phase for the next fluid solver for Softimage ("emFluid5", which will be released around Fall 2013).
+
+Both features are only useable if the latest shader collection of Binary Alchemy is installed. Latter contains, amongst other things, the baFluid shaders that are necessary to render the internal fluid grids directly.
+]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="Set_Particle_Velocity" username="Set_Particle_Velocity" basename="Set Particle Velocity" portlabel="Set Particle Velocity" exposetype="single"> </port>
+			<port index="1" portname="Heat" username="Heat" basename="Heat" portlabel="Heat" exposetype="single"> </port>
+			<port index="1" portname="Enable" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="1" portname="Weight" username="Weight" basename="Weight" portlabel="Weight" exposetype="single"> </port>
+			<port index="1" portname="Start_Frame__global_" username="Global_Simulation_Start_Frame" basename="Global-Simulation-Start-Frame" portlabel="Global-Simulation-Start-Frame" exposetype="single"> </port>
+			<port index="1" portname="Cell_Size_" username="Cell_Size_" basename="Cell Size " portlabel="Cell Size " exposetype="single"> </port>
+			<port index="1" portname="Viscosity" username="Viscosity" basename="Viscosity" portlabel="Viscosity" exposetype="single"> </port>
+			<port index="1" portname="Vorticity" username="Vorticity" basename="Vorticity" portlabel="Vorticity" exposetype="single"> </port>
+			<port index="1" portname="Gravity" username="Gravity" basename="Gravity" portlabel="Gravity" exposetype="single"> </port>
+			<port index="1" portname="In_Behavior" username="In_Behavior" basename="In Behavior" portlabel="In Behavior" exposetype="single"> </port>
+			<port index="1" portname="Multiplier" username="Multiplier" basename="Multiplier" portlabel="Multiplier" exposetype="single"> </port>
+			<port index="1" portname="Anti_Stratification" username="Anti_Stratification" basename="Anti-Stratification" portlabel="Anti-Stratification" exposetype="single"> </port>
+			<port index="1" portname="In_Data_1" username="In_Data_1" basename="In Data 1" portlabel="In Data 1" exposetype="single"> </port>
+			<port index="1" portname="In_Data_2" username="In_Data_2" basename="In Data 2" portlabel="In Data 2" exposetype="single"> </port>
+			<port index="1" portname="Close_Top" username="Close_Top" basename="Close Top" portlabel="Close Top" exposetype="single"> </port>
+			<port index="1" portname="Close_Bottom" username="Close_Bottom" basename="Close Bottom" portlabel="Close Bottom" exposetype="single"> </port>
+			<port index="1" portname="Close_Left" username="Close_Left" basename="Close Left" portlabel="Close Left" exposetype="single"> </port>
+			<port index="1" portname="Close_Right" username="Close_Right" basename="Close Right" portlabel="Close Right" exposetype="single"> </port>
+			<port index="1" portname="Close_Front" username="Close_Front" basename="Close Front" portlabel="Close Front" exposetype="single"> </port>
+			<port index="1" portname="Close_Back" username="Close_Back" basename="Close Back" portlabel="Close Back" exposetype="single"> </port>
+			<port index="1" portname="Waste_Positions__Array_" username="Waste_Positions__Array_" basename="Waste Positions (Array)" portlabel="Waste Positions (Array)" exposetype="single"> </port>
+			<port index="1" portname="Flame_Positions__Array_" username="Flame_Positions__Array_" basename="Flame Positions (Array)" portlabel="Flame Positions (Array)" exposetype="single"> </port>
+			<port index="1" portname="Smoke_Positions__Array_" username="Smoke_Positions__Array_" basename="Smoke Positions (Array)" portlabel="Smoke Positions (Array)" exposetype="single"> </port>
+			<port index="1" portname="Visualize_Grid_Cells" username="Visualize_Grid_Cells" basename="Visualize Grid Cells" portlabel="Visualize Grid Cells" exposetype="single"> </port>
+			<port index="1" portname="Velocity" username="Velocity" basename="Velocity" portlabel="Velocity" exposetype="single"> </port>
+			<port index="1" portname="In_Fluid_Box_SRT_0" username="In_Fluid_Box_SRT_0" basename="In Fluid Box SRT 0" portlabel="In Fluid Box SRT 0" exposetype="all_instances"> </port>
+			<port index="1" portname="Fluid_Box_Primary_Index" username="Primary_Index" basename="Primary Index" portlabel="Primary Index" exposetype="single"> </port>
+			<port index="1" portname="Fluid_Box_Mode" username="Box_Mode" basename="Box Mode" portlabel="Box Mode" exposetype="single"> </port>
+			<port index="1" portname="Falloff" username="Falloff" basename="Falloff" portlabel="Falloff" exposetype="single"> </port>
+			<port index="1" portname="Avoidance_Strength" username="Avoidance_Strength" basename="Avoidance-Strength" portlabel="Avoidance-Strength" exposetype="single"> </port>
+			<port index="1" portname="Avoidance_Thickness" username="Avoidance_Thickness" basename="Avoidance-Thickness" portlabel="Avoidance-Thickness" exposetype="single"> </port>
+			<port index="1" portname="SRT" username="SRT" basename="SRT" portlabel="SRT" exposetype="single"> </port>
+			<port index="1" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="1" portname="Consider_Point_Cloud_Bounding_Box" username="Consider_Point_Cloud_Bounding_Box" basename="Consider Point Cloud Bounding Box" portlabel="Consider Point Cloud Bounding Box" exposetype="single"> </port>
+			<port index="1" portname="Epsilon_Velocity" username="Velocity_" basename="Velocity " portlabel="Velocity " exposetype="single"> </port>
+			<port index="1" portname="Epsilon_Waste" username="Waste" basename="Waste" portlabel="Waste" exposetype="single"> </port>
+			<port index="1" portname="Memory_Limit__MByte_" username="Memory_Limit__MByte_" basename="Memory-Limit-(MByte)" portlabel="Memory-Limit-(MByte)" exposetype="single"> </port>
+			<port index="5" portname="condition" username="Multithreading" basename="Multithreading" portlabel="Multithreading" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="Detail_Amplification" to_node="1" to_port="Detail_Amplification"> </cnx>
+			<cnx from_node="4" from_port="Cache_Grids" to_node="1" to_port="Cache_Grids"> </cnx>
+			<cnx from_node="0" from_port="Velocity" to_node="1" to_port="In_Point_Velocities"> </cnx>
+			<cnx from_node="2" from_port="Debug" to_node="1" to_port="In_Debug"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="1" to_port="Threading"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="5" to_port="iftrue"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="5" to_port="iffalse"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Weight" min="0" max="1"> </item>
+			<group type="input" name="Simulation">
+				<item type="input" name="Multithreading" min="0" max="0"> </item>
+				<item type="input" name="Global_Simulation_Start_Frame"> </item>
+				<item type="input" name="Memory_Limit__MByte_" min="64" max="4096"> </item>
+			</group>
+			<group type="input" name="Fluid Boxes">
+				<item type="input" name="Box_Mode">
+					<enum value="0"><![CDATA[Manual,  all Boxes]]></enum>
+					<enum value="1"><![CDATA[Manual,  only Primary Box]]></enum>
+					<enum value="2"><![CDATA[Automatic,  no Limit]]></enum>
+					<enum value="3"><![CDATA[Automatic,  Primary Box as Limit]]></enum>
+				</item>
+				<item type="input" name="Primary_Index" min="0" max="7"> </item>
+				<item type="input" name="In_Fluid_Box_SRT_0" min="0" max="0"> </item>
+				<group type="input" name="Epsilon Cut-Offs (Auto. Box Modes)   ">
+					<item type="input" name="Velocity_" min="0.01" max="1"> </item>
+					<item type="input" name="Waste" min="0.001" max="0.05"> </item>
+					<item type="input" name="Consider_Point_Cloud_Bounding_Box"> </item>
+				</group>
+			</group>
+			<group type="input" name="Fluid Solver">
+				<item type="input" name="Cell_Size_" min="0.25" max="2"> </item>
+				<item type="input" name="Viscosity" min="0" max="0.1"> </item>
+				<item type="input" name="Vorticity" min="0" max="1"> </item>
+				<item type="input" name="Gravity" min="0" max="0.25"> </item>
+				<item type="input" name="In_Behavior"> </item>
+			</group>
+			<group type="input" name="Velocity Mapping">
+				<item type="input" name="Multiplier" min="-2" max="2"> </item>
+				<item type="input" name="Anti_Stratification" min="0" max="1"> </item>
+			</group>
+			<group type="input" name="Border Behavior (Manual Box Modes)   ">
+				<item type="input" name="Falloff" min="0" max="3"> </item>
+				<item type="input" name="Avoidance_Strength" min="0" max="5"> </item>
+				<item type="input" name="Avoidance_Thickness" min="0" max="5"> </item>
+				<item type="input" name="Close_Top"> </item>
+				<item type="input" name="Close_Bottom"> </item>
+				<item type="input" name="Close_Left"> </item>
+				<item type="input" name="Close_Right"> </item>
+				<item type="input" name="Close_Front"> </item>
+				<item type="input" name="Close_Back"> </item>
+			</group>
+			<group type="input" name="Data from Emitters">
+				<item type="input" name="In_Data_1"> </item>
+				<item type="input" name="In_Data_2"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+			<item type="output" name="Set_Particle_Velocity"> </item>
+			<item type="output" name="Visualize_Grid_Cells"> </item>
+			<item type="output" name="Smoke_Positions__Array_"> </item>
+			<item type="output" name="Flame_Positions__Array_"> </item>
+			<item type="output" name="Waste_Positions__Array_"> </item>
+			<item type="output" name="SRT"> </item>
+			<item type="output" name="Heat"> </item>
+			<item type="output" name="Velocity"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

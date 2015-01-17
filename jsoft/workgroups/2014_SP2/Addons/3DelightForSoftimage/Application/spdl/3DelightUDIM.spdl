@@ -1,0 +1,132 @@
+SPDL
+Version = "2.0.0.0";
+Reference = "{0009f8c4-e7a5-40ca-9fcb-123d85f8571f}";
+PropertySet "3DelightUDIM_pset"
+{
+	# Output parameters
+	Parameter "out" output
+	{
+		GUID = "{21d20458-503f-4abb-9246-208e56e3e584}";
+		Type = struct
+		{
+			Parameter "out" output
+			{
+				GUID = "{247e8b29-4ac0-4c28-9524-1ba39039b69d}";
+				Type = color;
+			}
+		};
+	}
+
+	Parameter "udimclip" input
+	{
+		GUID = "{49981f68-deb2-42fc-996b-084e547f63ba}";
+		Type = texture;
+	}
+
+	Parameter "filename" input
+	{
+		GUID = "{ab9a1676-7de8-439e-9716-3d3490d44f2e}";
+		Type = string;
+	}
+
+	Parameter "space" input
+	{
+		GUID = "{ed2c7ab7-a1fb-4b4f-aab3-681ad0cf26a3}";
+		Type = texturespace;
+		Texturable = on;
+	}
+}
+
+MetaShader "3DelightUDIM_meta"
+{
+	Name = "Mari Texture";
+	Type = texture;
+	Category = "3Delight/Utilities";
+	Renderer "3Delight"
+	{
+		Name = "_3DFS_3DelightUDIM";
+		FileName = "3DelightUDIM.h";
+		Options
+		{
+			"3Delight type" = "shader";
+		}
+		BeginText
+		EndText
+	}
+}
+
+Defaults
+{
+	udimclip
+	{
+		Name = "Clip";
+	}
+	filename
+	{
+		Name = "Texture";
+		UIType = "FilePath"
+		{
+			ImageFile = 1;
+			OpenFile = 1;
+		}
+	}
+	space
+	{
+		Name = "Space";
+	}
+}
+
+Layout "Default"
+{
+	filename;
+	space;
+}
+
+Logic
+{
+	' Returns True if the input string contains only numbers
+	Function IsOnlyDigits( i_str )
+		For i=1 To Len( i_str )
+			If Not IsNumeric(Mid(i_str,i,1)) Then
+				IsOnlyDigits = False
+				Exit Function
+			End If
+		Next
+		IsOnlyDigits = True
+	End Function
+
+	' Search for four numbers in a raw and replace it to UDIM
+	Function GetUDIMName( i_filename )
+		filename_len = Len(i_filename)
+		For i=0 To filename_len-4
+			If IsOnlyDigits( Mid(i_filename, filename_len-i-3, 4) ) Then
+				GetUDIMName = Left(i_filename, filename_len-i-4) & "UDIM" & Right(i_filename, i)
+				Exit Function
+			End If
+		Next
+		GetUDIMName = i_filename
+	End Function
+
+	Sub filename_OnChanged()
+		' Create an empty ImageClip
+		Set imageclip_ret = SICreateImageClip("udim.pic")
+		Set imageclip_name = imageclip_ret.value("Clip")
+
+		' Convert filenmae to UDIM name
+		udim_filename = GetUDIMName( filename.value )
+
+		' Set filename of the ImageClip
+		SetValue imageclip_name.source & ".FileName", udim_filename
+
+		' Change filename field to UDIM name
+		filename.value = udim_filename
+
+		' Connect crated ImageClip to current shader node
+		cnsarray = Split(pset.InspectedObjects,",")
+		For Each item In cnsarray
+			SIConnectShaderToCnxPoint imageclip_name, item & ".udimclip", True
+		Next
+	End Sub
+}
+
+END

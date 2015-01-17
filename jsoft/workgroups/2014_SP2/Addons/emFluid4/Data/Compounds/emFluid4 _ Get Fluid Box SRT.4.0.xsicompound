@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFluid4 _ Get Fluid Box SRT" category="" tasks="Mootzoid - emFluid4/Tools" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" versiontag="" constructionmode="Modeling" backgroundcolor="12228200">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="Self.__emFluid_SRT"></param>
+				<param_ext name="reference" type="31" value="Self.__emFluid_SRT"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-719</prop>
+					<prop name="posy">490</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="1">
+				<param name="in1.in1_00" type="4" value="1.000000"></param>
+				<param name="in1.in1_01" type="4" value="0.000000"></param>
+				<param name="in1.in1_02" type="4" value="0.000000"></param>
+				<param name="in1.in1_03" type="4" value="0.000000"></param>
+				<param name="in1.in1_10" type="4" value="0.000000"></param>
+				<param name="in1.in1_11" type="4" value="1.000000"></param>
+				<param name="in1.in1_12" type="4" value="0.000000"></param>
+				<param name="in1.in1_13" type="4" value="0.000000"></param>
+				<param name="in1.in1_20" type="4" value="0.000000"></param>
+				<param name="in1.in1_21" type="4" value="0.000000"></param>
+				<param name="in1.in1_22" type="4" value="1.000000"></param>
+				<param name="in1.in1_23" type="4" value="0.000000"></param>
+				<param name="in1.in1_30" type="4" value="0.000000"></param>
+				<param name="in1.in1_31" type="4" value="0.000000"></param>
+				<param name="in1.in1_32" type="4" value="0.000000"></param>
+				<param name="in1.in1_33" type="4" value="1.000000"></param>
+				<param name="in2.in2_00" type="4" value="1.000000"></param>
+				<param name="in2.in2_01" type="4" value="0.000000"></param>
+				<param name="in2.in2_02" type="4" value="0.000000"></param>
+				<param name="in2.in2_03" type="4" value="0.000000"></param>
+				<param name="in2.in2_10" type="4" value="0.000000"></param>
+				<param name="in2.in2_11" type="4" value="1.000000"></param>
+				<param name="in2.in2_12" type="4" value="0.000000"></param>
+				<param name="in2.in2_13" type="4" value="0.000000"></param>
+				<param name="in2.in2_20" type="4" value="0.000000"></param>
+				<param name="in2.in2_21" type="4" value="0.000000"></param>
+				<param name="in2.in2_22" type="4" value="1.000000"></param>
+				<param name="in2.in2_23" type="4" value="0.000000"></param>
+				<param name="in2.in2_30" type="4" value="0.000000"></param>
+				<param name="in2.in2_31" type="4" value="0.000000"></param>
+				<param name="in2.in2_32" type="4" value="0.000000"></param>
+				<param name="in2.in2_33" type="4" value="1.000000"></param>
+				<portdef name="in1" type="256" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="256" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-476</prop>
+					<prop name="posy">413</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="__emFluid_SRT"></param>
+				<param_ext name="reference" type="31" value="__emFluid_SRT"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-717</prop>
+					<prop name="posy">372</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="out" username="Alpha_Fluid_Box_SRT" basename="Alpha Fluid Box SRT" portlabel="Alpha Fluid Box SRT" exposetype="single"> </port>
+			<port index="2" portname="inname" username="In_Point_Cloud_Name" basename="In Point Cloud Name" portlabel="In Point Cloud Name" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="value" to_node="1" to_port="in1"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="in2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Point_Cloud_Name"> </item>
+			<item type="output" name="Alpha_Fluid_Box_SRT"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

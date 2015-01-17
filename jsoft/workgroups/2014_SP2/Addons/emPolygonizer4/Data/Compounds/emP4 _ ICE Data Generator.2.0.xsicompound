@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emP4 _ ICE Data Generator" tasks="Mootzoid - emPolygonizer4/Tools (Topology)" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="12553073">
+	<definition>
+		<nodes>
+			<node type="emP4i    Set UVWs per Node" version="1.0" index="0">
+				<param name="Reference3" type="31" value="Self.emP4_NodeUVW_v_wrap"></param>
+				<param name="Reference1" type="31" value="Self.emP4_NodeUVW"></param>
+				<param name="Reference2" type="31" value="Self.emP4_NodeUVW_u_wrap"></param>
+				<param name="Reference4" type="31" value="Self.emP4_NodeUVW_w_wrap"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_UVW_Array.In_UVW_Array_x" type="4" value="0.000000"></param>
+				<param name="In_UVW_Array.In_UVW_Array_y" type="4" value="0.000000"></param>
+				<param name="In_UVW_Array.In_UVW_Array_z" type="4" value="0.000000"></param>
+				<param name="U" type="11" value="true"></param>
+				<param name="V" type="11" value="true"></param>
+				<param name="W" type="11" value="true"></param>
+				<param_ext name="Reference3" type="31" value="Self.emP4_NodeUVW_v_wrap"></param_ext>
+				<param_ext name="Reference1" type="31" value="Self.emP4_NodeUVW"></param_ext>
+				<param_ext name="Reference2" type="31" value="Self.emP4_NodeUVW_u_wrap"></param_ext>
+				<param_ext name="Reference4" type="31" value="Self.emP4_NodeUVW_w_wrap"></param_ext>
+				<portdef name="V" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="W" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="U" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_UVW_Array" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">262</prop>
+					<prop name="posy">320</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="1">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="port6" type="4096" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">916</prop>
+					<prop name="posy">171</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4i    Set Normals per Node" version="1.0" index="2">
+				<param name="Reference" type="31" value="Self.NodeUserNormal"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_Normal_Array.In_Normal_Array_x" type="4" value="0.000000"></param>
+				<param name="In_Normal_Array.In_Normal_Array_y" type="4" value="1.000000"></param>
+				<param name="In_Normal_Array.In_Normal_Array_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.NodeUserNormal"></param_ext>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Normal_Array" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">260</prop>
+					<prop name="posy">-35</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4i    Set Colors per Vertex" version="1.0" index="3">
+				<param name="Reference" type="31" value="Self.emP4_PointColor"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_Color_Array.In_Color_Array_red" type="4" value="1.000000"></param>
+				<param name="In_Color_Array.In_Color_Array_green" type="4" value="0.000000"></param>
+				<param name="In_Color_Array.In_Color_Array_blue" type="4" value="1.000000"></param>
+				<param name="In_Color_Array.In_Color_Array_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.emP4_PointColor"></param_ext>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Color_Array" type="512" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">262</prop>
+					<prop name="posy">548</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4i    ICE Data Generator" version="2.0" index="4">
+				<datablob category="ui_infos">
+					<prop name="posx">-529</prop>
+					<prop name="posy">88</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emP4i    Set Motions per Vertex" version="1.0" index="5">
+				<param name="Reference" type="31" value="Self.PointUserMotions"></param>
+				<param name="Enable" type="11" value="false"></param>
+				<param name="In_Motion_Array.In_Motion_Array_x" type="4" value="0.000000"></param>
+				<param name="In_Motion_Array.In_Motion_Array_y" type="4" value="0.000000"></param>
+				<param name="In_Motion_Array.In_Motion_Array_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.PointUserMotions"></param_ext>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Motion_Array" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">258</prop>
+					<prop name="posy">-148</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">104</prop>
+					<prop name="posy">187</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emP4i    Set UVWs per Vertex" version="1.0" index="7">
+				<param name="Reference3" type="31" value="Self.emP4_PointUVW_v_wrap"></param>
+				<param name="Reference1" type="31" value="Self.emP4_PointUVW"></param>
+				<param name="Reference2" type="31" value="Self.emP4_PointUVW_u_wrap"></param>
+				<param name="Reference4" type="31" value="Self.emP4_PointUVW_w_wrap"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_UVW_Array.In_UVW_Array_x" type="4" value="0.000000"></param>
+				<param name="In_UVW_Array.In_UVW_Array_y" type="4" value="0.000000"></param>
+				<param name="In_UVW_Array.In_UVW_Array_z" type="4" value="0.000000"></param>
+				<param name="U" type="11" value="true"></param>
+				<param name="V" type="11" value="true"></param>
+				<param name="W" type="11" value="true"></param>
+				<param_ext name="Reference3" type="31" value="Self.emP4_PointUVW_v_wrap"></param_ext>
+				<param_ext name="Reference1" type="31" value="Self.emP4_PointUVW"></param_ext>
+				<param_ext name="Reference2" type="31" value="Self.emP4_PointUVW_u_wrap"></param_ext>
+				<param_ext name="Reference4" type="31" value="Self.emP4_PointUVW_w_wrap"></param_ext>
+				<portdef name="V" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="W" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="U" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_UVW_Array" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">262</prop>
+					<prop name="posy">88</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="8">
+				<param name="in.in_red" type="4" value="0.000000"></param>
+				<param name="in.in_green" type="4" value="0.000000"></param>
+				<param name="in.in_blue" type="4" value="0.000000"></param>
+				<param name="in.in_alpha" type="4" value="1.000000"></param>
+				<portdef name="in" type="512" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-130</prop>
+					<prop name="posy">599</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="9">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-127</prop>
+					<prop name="posy">139</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emP4i    Set Colors per Node" version="1.0" index="10">
+				<param name="Reference" type="31" value="Self.emP4_NodeColor"></param>
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_Color_Array.In_Color_Array_red" type="4" value="1.000000"></param>
+				<param name="In_Color_Array.In_Color_Array_green" type="4" value="0.000000"></param>
+				<param name="In_Color_Array.In_Color_Array_blue" type="4" value="1.000000"></param>
+				<param name="In_Color_Array.In_Color_Array_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.emP4_NodeColor"></param_ext>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Color_Array" type="512" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">262</prop>
+					<prop name="posy">662</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">104</prop>
+					<prop name="posy">419</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Enable" username="Set_UVWs_per_Node" basename="Set UVWs per Node" portlabel="Set UVWs per Node" exposetype="single"> </port>
+			<port index="0" portname="Reference1" username="Reference_UVWs_" basename="Reference UVWs " portlabel="Reference UVWs " exposetype="single"> </port>
+			<port index="0" portname="Reference2" username="Reference_Wrap_U_" basename="Reference Wrap U " portlabel="Reference Wrap U " exposetype="single"> </port>
+			<port index="0" portname="Reference3" username="Reference_Wrap_V_" basename="Reference Wrap V " portlabel="Reference Wrap V " exposetype="single"> </port>
+			<port index="0" portname="Reference4" username="Reference_Wrap_W_" basename="Reference Wrap W " portlabel="Reference Wrap W " exposetype="single"> </port>
+			<port index="1" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="2" portname="Enable" username="Set_Normals" basename="Set Normals" portlabel="Set Normals" exposetype="single"> </port>
+			<port index="2" portname="Reference" username="Reference_Normals" basename="Reference Normals" portlabel="Reference Normals" exposetype="single"> </port>
+			<port index="3" portname="Reference" username="Reference_Colors" basename="Reference Colors" portlabel="Reference Colors" exposetype="single"> </port>
+			<port index="3" portname="Enable" username="Set_Colors_per_Point" basename="Set Colors per Point" portlabel="Set Colors per Point" exposetype="single"> </port>
+			<port index="5" portname="Reference" username="Reference_Motions" basename="Reference Motions" portlabel="Reference Motions" exposetype="single"> </port>
+			<port index="5" portname="Enable" username="Set_Motions__OFF_is_default____" basename="Set Motions (OFF is default)   " portlabel="Set Motions (OFF is default)   " exposetype="single"> </port>
+			<port index="6" portname="in" username="Wrap_UVWs" basename="Wrap UVWs" portlabel="Wrap UVWs" exposetype="single"> </port>
+			<port index="7" portname="Reference1" username="Reference_UVWs" basename="Reference UVWs" portlabel="Reference UVWs" exposetype="single"> </port>
+			<port index="7" portname="Reference2" username="Reference_Wrap_U" basename="Reference Wrap U" portlabel="Reference Wrap U" exposetype="single"> </port>
+			<port index="7" portname="Reference4" username="Reference_Wrap_W" basename="Reference Wrap W" portlabel="Reference Wrap W" exposetype="single"> </port>
+			<port index="7" portname="Reference3" username="Reference_Wrap_V" basename="Reference Wrap V" portlabel="Reference Wrap V" exposetype="single"> </port>
+			<port index="7" portname="Enable" username="Set_UVWs_per_Point" basename="Set UVWs per Point" portlabel="Set UVWs per Point" exposetype="single"> </port>
+			<port index="10" portname="Enable" username="Set_Colors_per_Node" basename="Set Colors per Node" portlabel="Set Colors per Node" exposetype="single"> </port>
+			<port index="10" portname="Reference" username="Reference_Colors_" basename="Reference Colors " portlabel="Reference Colors " exposetype="single"> </port>
+			<port index="11" portname="in" username="Wrap_UVWs_" basename="Wrap UVWs " portlabel="Wrap UVWs " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="7" from_port="Execute" to_node="1" to_port="port3"> </cnx>
+			<cnx from_node="0" from_port="Execute" to_node="1" to_port="port4"> </cnx>
+			<cnx from_node="10" from_port="Execute" to_node="1" to_port="port6"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="7" to_port="V"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="7" to_port="W"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="7" to_port="U"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="1" to_port="port2"> </cnx>
+			<cnx from_node="3" from_port="Execute" to_node="1" to_port="port5"> </cnx>
+			<cnx from_node="4" from_port="UVWs_per_Node" to_node="9" to_port="in"> </cnx>
+			<cnx from_node="4" from_port="Colors_per_Node" to_node="8" to_port="in"> </cnx>
+			<cnx from_node="4" from_port="Motions_per_Vertex" to_node="5" to_port="In_Motion_Array"> </cnx>
+			<cnx from_node="4" from_port="Normals_per_Node" to_node="2" to_port="In_Normal_Array"> </cnx>
+			<cnx from_node="5" from_port="Execute" to_node="1" to_port="port1"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="10" to_port="In_Color_Array"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="3" to_port="In_Color_Array"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="7" to_port="In_UVW_Array"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="0" to_port="In_UVW_Array"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="0" to_port="V"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="0" to_port="W"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="0" to_port="U"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Motions (per Point)">
+				<item type="input" name="Set_Motions__OFF_is_default____"> </item>
+				<item type="input" name="Reference_Motions"> </item>
+			</group>
+			<group type="input" name="Normals (per Node)">
+				<item type="input" name="Set_Normals"> </item>
+				<item type="input" name="Reference_Normals"> </item>
+			</group>
+			<group type="input" name="UVWs (per Point)">
+				<item type="input" name="Set_UVWs_per_Point"> </item>
+				<item type="input" name="Wrap_UVWs"> </item>
+				<item type="input" name="Reference_UVWs"> </item>
+				<item type="input" name="Reference_Wrap_U"> </item>
+				<item type="input" name="Reference_Wrap_V"> </item>
+				<item type="input" name="Reference_Wrap_W"> </item>
+			</group>
+			<group type="input" name="UVWs (per Node)">
+				<item type="input" name="Set_UVWs_per_Node"> </item>
+				<item type="input" name="Wrap_UVWs_"> </item>
+				<item type="input" name="Reference_UVWs_"> </item>
+				<item type="input" name="Reference_Wrap_U_"> </item>
+				<item type="input" name="Reference_Wrap_V_"> </item>
+				<item type="input" name="Reference_Wrap_W_"> </item>
+			</group>
+			<group type="input" name="Colors (per Point)">
+				<item type="input" name="Set_Colors_per_Point"> </item>
+				<item type="input" name="Reference_Colors"> </item>
+			</group>
+			<group type="input" name="Colors (per Node)">
+				<item type="input" name="Set_Colors_per_Node"> </item>
+				<item type="input" name="Reference_Colors_"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

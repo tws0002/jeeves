@@ -1,0 +1,888 @@
+macAddresses: /00-25-90-48-C2-63/00-25-90-48-C2-62
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-41-95/00-25-90-49-41-94
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-95/00-25-90-4B-14-94
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-44-29/00-25-90-49-44-28
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-48-FA-8D/00-25-90-48-FA-8C
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-67/00-25-90-4B-14-66
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-0F-E9/00-25-90-4B-0F-E8
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-13-37/00-25-90-4B-13-36
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /68-B5-99-C0-7B-2A/68-B5-99-C0-7B-28/68-B5-99-C0-7B-2C/68-B5-99-C0-7B-2E
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-41-97/00-25-90-49-41-96
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-0F-EB/00-25-90-4B-0F-EA
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-48-C2-63/00-25-90-48-C2-62
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-6B/00-25-90-4B-14-6A
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-44-29/00-25-90-49-44-28
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-41-95/00-25-90-49-41-94
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-95/00-25-90-4B-14-94
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-48-FA-8D/00-25-90-48-FA-8C
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /68-B5-99-C0-48-C2/68-B5-99-C0-48-C0/68-B5-99-C0-48-C6/68-B5-99-C0-48-C4
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-67/00-25-90-4B-14-66
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-0F-E9/00-25-90-4B-0F-E8
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-73/00-25-90-4B-14-72
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-6D/00-25-90-4B-14-6C
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-13-37/00-25-90-4B-13-36
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-1A-C1-45/00-25-90-1A-C1-44
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-0F-EB/00-25-90-4B-0F-EA
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-48-C2-63/00-25-90-48-C2-62
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-13-9F/00-25-90-49-13-9E
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-6B/00-25-90-4B-14-6A
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-41-95/00-25-90-49-41-94
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-49-41-97/00-25-90-49-41-96
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-48-FA-8D/00-25-90-48-FA-8C
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-67/00-25-90-4B-14-66
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-0F-E9/00-25-90-4B-0F-E8
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-73/00-25-90-4B-14-72
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-14-6D/00-25-90-4B-14-6C
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /00-25-90-4B-13-37/00-25-90-4B-13-36
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}
+macAddresses: /68-B5-99-C0-7B-2A/68-B5-99-C0-7B-28/68-B5-99-C0-7B-2C/68-B5-99-C0-7B-2E
+activationUrl: http://www.exocortex.com/simulation/implosiafx
+purchaseUrl: http://www.exocortex.com/simulation/implosiafx
+productName: ExocortexImplosiaFX1.6
+licenseMessage: Could not find a license file for $PRODUCTNAME$.
+licensingMode: 0
+daysRemaining: 0
+Unhandled exception occured:
+
+Type: InvalidOperationException
+Message: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+
+Diagnostic log is located here:
+\\resources\resources\vfx\jeeves\softimage\workgroups\2014_SP2\Addons\ExocortexImplosiaFX1.6\Application\Plugins\bin\nt-x86-64\eah-2014Apr11_16h36.log
+
+Please report this issue to support@exocortex.com with your details.
+InvalidOperationException
+   Msg: Showing a modal dialog box or form when the application is not running in UserInteractive mode is not a valid operation. Specify the ServiceNotification or DefaultDesktopOnly style to display a notification from a service application.
+   Stack: 
+      at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHApp.ShowLicensingDialog()
+   at Exocortex.Apps.ExocortexActivationHelper.EAHMain.Main(String[] args)
+}

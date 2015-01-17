@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Get Softbody Attributes" tasks="Momentum/Simulation,Momentum/Softbodies" formatversion="1.4" compoundversion="1.4" constructionmode="Modeling" backgroundcolor="6732954">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="MomentumBase"></param>
+				<param_ext name="reference" type="31" value="MomentumBase"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-484</prop>
+					<prop name="posy">-67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FirstValidNode" index="1">
+				<param name="in1" type="3" value="0"></param>
+				<param name="in2" type="3" value="0"></param>
+				<portdef name="in1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="in2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-179</prop>
+					<prop name="posy">-19</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MOM_GetSBAttributes" index="3">
+				<param name="base" type="3" value="0"></param>
+				<portdef name="base" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">13</prop>
+					<prop name="posy">-215</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="self.MomentumBase"></param>
+				<param_ext name="reference" type="31" value="self.MomentumBase"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-463</prop>
+					<prop name="posy">55</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="inname" username="optional_softbody" basename="optional_softbody" portlabel="optional_softbody" exposetype="single"> </port>
+			<port index="3" portname="position" username="position" basename="position" portlabel="position" exposetype="single"> </port>
+			<port index="3" portname="velocity" username="velocity" basename="velocity" portlabel="velocity" exposetype="single"> </port>
+			<port index="3" portname="mass" username="mass" basename="mass" portlabel="mass" exposetype="single"> </port>
+			<port index="3" portname="matrix" username="matrix" basename="matrix" portlabel="matrix" exposetype="single"> </port>
+			<port index="3" portname="damping" username="damping" basename="damping" portlabel="damping" exposetype="single"> </port>
+			<port index="3" portname="drag" username="drag" basename="drag" portlabel="drag" exposetype="single"> </port>
+			<port index="3" portname="friction" username="friction" basename="friction" portlabel="friction" exposetype="single"> </port>
+			<port index="3" portname="recover_shape" username="recover_shape" basename="recover_shape" portlabel="recover_shape" exposetype="single"> </port>
+			<port index="3" portname="link_ids" username="link_ids" basename="link_ids" portlabel="link_ids" exposetype="single"> </port>
+			<port index="3" portname="link_tags" username="link_tags" basename="link_tags" portlabel="link_tags" exposetype="single"> </port>
+			<port index="3" portname="link_pos" username="link_pos" basename="link_pos" portlabel="link_pos" exposetype="single"> </port>
+			<port index="3" portname="stiffness" username="stiffness" basename="stiffness" portlabel="stiffness" exposetype="single"> </port>
+			<port index="3" portname="volume_cons" username="volume_cons" basename="volume_cons" portlabel="volume_cons" exposetype="single"> </port>
+			<port index="3" portname="pressure" username="pressure" basename="pressure" portlabel="pressure" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="4" from_port="value" to_node="1" to_port="in2"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="in1"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="3" to_port="base"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="optional_softbody"> </item>
+			<item type="output" name="position"> </item>
+			<item type="output" name="velocity"> </item>
+			<item type="output" name="mass"> </item>
+			<item type="output" name="matrix"> </item>
+			<item type="output" name="stiffness"> </item>
+			<item type="output" name="damping"> </item>
+			<item type="output" name="drag"> </item>
+			<item type="output" name="friction"> </item>
+			<item type="output" name="recover_shape"> </item>
+			<item type="output" name="volume_cons"> </item>
+			<item type="output" name="pressure"> </item>
+			<item type="output" name="link_ids"> </item>
+			<item type="output" name="link_tags"> </item>
+			<item type="output" name="link_pos"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

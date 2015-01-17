@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emRPC4 __ Settings _ Particles" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="4.0" constructionmode="Current" backgroundcolor="5419427">
+	<definition>
+		<nodes>
+			<node type="ScalarNode" index="0">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">890</prop>
+					<prop name="posy">-370</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[-unused-]]></comment>
+			</node>
+			<node type="IntegerNode" index="1">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">902</prop>
+					<prop name="posy">-3733</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="2">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">962</prop>
+					<prop name="posy">-3413</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-72" offsety="0" sizex="64" sizey="19"><![CDATA[strand subdivision]]></comment>
+			</node>
+			<node type="ScalarNode" index="3">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">459</prop>
+					<prop name="posy">-2474</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="4">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.000000"></param>
+				<param name="case1" type="4" value="0.000000"></param>
+				<param name="case2" type="4" value="0.000000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="4" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">554</prop>
+					<prop name="posy">-2522</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-80" offsety="-22" sizex="206" sizey="19"><![CDATA[for the node's parameter "multiplier Size"]]></comment>
+			</node>
+			<node type="AddNode" index="5">
+				<param name="value1" type="3" value="0"></param>
+				<param name="value2" type="3" value="0"></param>
+				<param name="value3" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="2" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">827</prop>
+					<prop name="posy">-3206</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">129</prop>
+					<prop name="posy">-3172</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="57" sizey="19"><![CDATA[Drawing]]></comment>
+			</node>
+			<node type="PassThroughNode" index="7">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">130</prop>
+					<prop name="posy">-3142</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="42" sizey="19"><![CDATA[Shape]]></comment>
+			</node>
+			<node type="PassThroughNode" index="8">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">129</prop>
+					<prop name="posy">-3038</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="94" sizey="32"><![CDATA[scale shading]]></comment>
+			</node>
+			<node type="IntegerToScalarNode" index="9">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">974</prop>
+					<prop name="posy">-3187</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="10">
+				<param name="in" type="4" value="0.200000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">129</prop>
+					<prop name="posy">-3071</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-2" sizex="76" sizey="19"><![CDATA[boost]]></comment>
+			</node>
+			<node type="ScalarTo4DVectorNode" index="11">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<param name="w" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="w" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2473</prop>
+					<prop name="posy">-2187</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo4DVectorNode" index="12">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<param name="w" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="w" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2473</prop>
+					<prop name="posy">-2586</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ColorToRGBANode" index="13">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">872</prop>
+					<prop name="posy">-1752</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="14">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">112</prop>
+					<prop name="posy">-1246</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="113" sizey="32"><![CDATA[Cast Shadows]]></comment>
+			</node>
+			<node type="PassThroughNode" index="15">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">110</prop>
+					<prop name="posy">-1211</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="127" sizey="32"><![CDATA[Receive Shadows]]></comment>
+			</node>
+			<node type="PassThroughNode" index="16">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">118</prop>
+					<prop name="posy">-2476</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-145" offsety="-17" sizex="86" sizey="45"><![CDATA[Custom Size / Size Multiplier / Pixels]]></comment>
+			</node>
+			<node type="ScalarTo4DVectorNode" index="17">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<param name="w" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="w" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2473</prop>
+					<prop name="posy">-2386</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="18">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">130</prop>
+					<prop name="posy">-3110</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="50" sizey="19"><![CDATA[Shader]]></comment>
+			</node>
+			<node type="ColorNode" index="19">
+				<param name="value.value_red" type="4" value="1.000000"></param>
+				<param name="value.value_green" type="4" value="1.000000"></param>
+				<param name="value.value_blue" type="4" value="1.000000"></param>
+				<param name="value.value_alpha" type="4" value="1.000000"></param>
+				<portdef name="value" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">286</prop>
+					<prop name="posy">-1696</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">112</prop>
+					<prop name="posy">-1843</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-102" offsety="-1" sizex="76" sizey="32"><![CDATA[Use (Color)]]></comment>
+			</node>
+			<node type="IntegerNode" index="21">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">555</prop>
+					<prop name="posy">-2600</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="22">
+				<param name="value" type="3" value="4"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">554</prop>
+					<prop name="posy">-2627</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="23">
+				<param name="value" type="3" value="8"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">786</prop>
+					<prop name="posy">-1843</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="24">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">116</prop>
+					<prop name="posy">-2628</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-107" offsety="0" sizex="31" sizey="19"><![CDATA[Size]]></comment>
+			</node>
+			<node type="PassThroughNode" index="25">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">122</prop>
+					<prop name="posy">-3397</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-126" offsety="-1" sizex="60" sizey="19"><![CDATA[strand lod]]></comment>
+			</node>
+			<node type="SelectCaseNode" index="26">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_red" type="4" value="0.000000"></param>
+				<param name="case0.case0_green" type="4" value="0.000000"></param>
+				<param name="case0.case0_blue" type="4" value="0.000000"></param>
+				<param name="case0.case0_alpha" type="4" value="1.000000"></param>
+				<param name="default.default_red" type="4" value="0.000000"></param>
+				<param name="default.default_green" type="4" value="0.000000"></param>
+				<param name="default.default_blue" type="4" value="0.000000"></param>
+				<param name="default.default_alpha" type="4" value="1.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="512" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="default" type="512" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">543</prop>
+					<prop name="posy">-1747</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="27">
+				<param name="in.in_red" type="4" value="1.000000"></param>
+				<param name="in.in_green" type="4" value="1.000000"></param>
+				<param name="in.in_blue" type="4" value="1.000000"></param>
+				<param name="in.in_alpha" type="4" value="1.000000"></param>
+				<portdef name="in" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">111</prop>
+					<prop name="posy">-1698</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-117" offsety="1" sizex="86" sizey="32"><![CDATA[Custom Color / Color Multiplier]]></comment>
+			</node>
+			<node type="ColorToRGBANode" index="28">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">639</prop>
+					<prop name="posy">-515</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="9" offsety="-23" sizex="132" sizey="19"><![CDATA[final emission color (RGB)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="29">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">107</prop>
+					<prop name="posy">-1569</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="30">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">114</prop>
+					<prop name="posy">-672</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="122" sizey="32"><![CDATA[Receive GI]]></comment>
+			</node>
+			<node type="MultiplyColorByScalarNode" index="31">
+				<param name="clampmode" type="3" value="2"></param>
+				<param name="alpha" type="11" value="false"></param>
+				<param name="value.value_red" type="4" value="0.000000"></param>
+				<param name="value.value_green" type="4" value="0.000000"></param>
+				<param name="value.value_blue" type="4" value="0.000000"></param>
+				<param name="value.value_alpha" type="4" value="1.000000"></param>
+				<param name="factor" type="4" value="0.000000"></param>
+				<portdef name="alpha" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="512" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">413</prop>
+					<prop name="posy">-514</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AbsoluteValueNode" index="32">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">531</prop>
+					<prop name="posy">-3350</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="NegateNode" index="33">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">697</prop>
+					<prop name="posy">-3346</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="34">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">814</prop>
+					<prop name="posy">-3397</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="35">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">111</prop>
+					<prop name="posy">-1026</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="96" sizey="19"><![CDATA[Receive AO]]></comment>
+			</node>
+			<node type="PassThroughNode" index="36">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">116</prop>
+					<prop name="posy">-706</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="130" sizey="32"><![CDATA[Cast GI]]></comment>
+			</node>
+			<node type="PassThroughNode" index="37">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">118</prop>
+					<prop name="posy">-3768</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="38">
+				<param name="Range_High" type="3" value="50"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">746</prop>
+					<prop name="posy">-2897</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="39">
+				<param name="in" type="4" value="0.500000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">115</prop>
+					<prop name="posy">-354</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-103" offsety="0" sizex="73" sizey="19"><![CDATA[add emission]]></comment>
+			</node>
+			<node type="CompareNode" index="40">
+				<param name="type" type="3" value="0"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">480</prop>
+					<prop name="posy">-2662</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="41">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">636</prop>
+					<prop name="posy">-2675</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-29" offsety="-18" sizex="98" sizey="19"><![CDATA["absolute Size" bit 2]]></comment>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="42">
+				<param name="Range_High" type="3" value="100"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">419</prop>
+					<prop name="posy">-1137</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="43">
+				<param name="Range_High" type="3" value="100"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">419</prop>
+					<prop name="posy">-1181</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="44">
+				<param name="Range_High" type="3" value="100"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">429</prop>
+					<prop name="posy">-688</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="45">
+				<param name="Range_High" type="3" value="100"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">995</prop>
+					<prop name="posy">-551</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="46">
+				<param name="Range_High" type="3" value="100"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">997</prop>
+					<prop name="posy">-517</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="47">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">124</prop>
+					<prop name="posy">-2226</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-131" offsety="1" sizex="83" sizey="19"><![CDATA[scale alpha]]></comment>
+			</node>
+			<node type="IntegerNode" index="48">
+				<param name="value" type="3" value="2"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">640</prop>
+					<prop name="posy">-1823</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="49">
+				<param name="value1" type="3" value="0"></param>
+				<param name="value2" type="3" value="0"></param>
+				<param name="value3" type="3" value="0"></param>
+				<param name="value4" type="3" value="0"></param>
+				<param name="value5" type="3" value="0"></param>
+				<param name="value6" type="3" value="0"></param>
+				<param name="value7" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="2" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="value4" type="2" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="value5" type="2" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="value6" type="2" structure="1" group="0" instance="5" port="0"></portdef>
+				<portdef name="value7" type="2" structure="1" group="0" instance="6" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1782</prop>
+					<prop name="posy">-2558</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="50">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">868</prop>
+					<prop name="posy">-1891</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-29" offsety="-18" sizex="104" sizey="19"><![CDATA["absolute Color" bit 3]]></comment>
+			</node>
+			<node type="CompareNode" index="51">
+				<param name="type" type="3" value="5"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">712</prop>
+					<prop name="posy">-1878</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="52">
+				<param name="value" type="3" value="2"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">408</prop>
+					<prop name="posy">-2607</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo4DVectorNode" index="53">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<param name="w" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="w" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2474</prop>
+					<prop name="posy">-1985</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="VectorTo4x4MatrixNode" index="54">
+				<param name="roworcolumn" type="3" value="0"></param>
+				<param name="vector1.vector1_x" type="4" value="1.000000"></param>
+				<param name="vector1.vector1_y" type="4" value="0.000000"></param>
+				<param name="vector1.vector1_z" type="4" value="0.000000"></param>
+				<param name="vector1.vector1_w" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_x" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_y" type="4" value="1.000000"></param>
+				<param name="vector2.vector2_z" type="4" value="0.000000"></param>
+				<param name="vector2.vector2_w" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_x" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_y" type="4" value="0.000000"></param>
+				<param name="vector3.vector3_z" type="4" value="1.000000"></param>
+				<param name="vector3.vector3_w" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_x" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_y" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_z" type="4" value="0.000000"></param>
+				<param name="vector4.vector4_w" type="4" value="1.000000"></param>
+				<portdef name="vector1" type="32" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="vector2" type="32" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="vector3" type="32" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="vector4" type="32" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2932</prop>
+					<prop name="posy">-2300</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="55">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1920</prop>
+					<prop name="posy">-2539</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyNode" index="56">
+				<param name="value1" type="3" value="1"></param>
+				<param name="value2" type="3" value="1"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">681</prop>
+					<prop name="posy">-3103</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-67" offsety="-1" sizex="61" sizey="19"><![CDATA[shift << 8]]></comment>
+			</node>
+			<node type="IntegerNode" index="57">
+				<param name="value" type="3" value="256"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">609</prop>
+					<prop name="posy">-3083</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="58">
+				<param name="value" type="3" value="16"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">614</prop>
+					<prop name="posy">-3131</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyNode" index="59">
+				<param name="value1" type="3" value="1"></param>
+				<param name="value2" type="3" value="1"></param>
+				<portdef name="value1" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">680</prop>
+					<prop name="posy">-3151</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-67" offsety="-1" sizex="61" sizey="19"><![CDATA[shift << 4]]></comment>
+			</node>
+			<node type="PassThroughNode" index="60">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">-2308</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-103" offsety="0" sizex="63" sizey="19"><![CDATA[draw scale]]></comment>
+			</node>
+			<node type="IntegerNode" index="61">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">903</prop>
+					<prop name="posy">-3706</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="62">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">770</prop>
+					<prop name="posy">-1511</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="63">
+				<param name="value" type="3" value="2"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">769</prop>
+					<prop name="posy">-1538</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="64">
+				<param name="Range_High" type="3" value="200"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1540</prop>
+					<prop name="posy">-2120</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="65">
+				<param name="Range_High" type="3" value="200"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1000</prop>
+					<prop name="posy">-480</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="66">
+				<param name="value" type="3" value="100"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1676</prop>
+					<prop name="posy">-1988</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-54" offsety="-38" sizex="184" sizey="32"><![CDATA[base of the combined scalar values.
+DO NOT CHANGE THIS VALUE!]]></comment>
+			</node>
+			<node type="ScalarNode" index="67">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2308</prop>
+					<prop name="posy">-1873</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[unused]]></comment>
+			</node>
+			<node type="PassThroughNode" index="68">
+				<param name="in.in_red" type="4" value="1.000000"></param>
+				<param name="in.in_green" type="4" value="1.000000"></param>
+				<param name="in.in_blue" type="4" value="1.000000"></param>
+				<param name="in.in_alpha" type="4" value="1.000000"></param>
+				<portdef name="in" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">118</prop>
+					<prop name="posy">-433</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-117" offsety="1" sizex="86" sizey="32"><![CDATA[Emission Color]]></comment>
+			</node>
+			<node type="PassThroughNode" index="69">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">113</prop>
+					<prop name="posy">-1061</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-123" offsety="-1" sizex="80" sizey="19"><![CDATA[Cast AO]]></comment>
+			</node>
+			<node type="IntegerNode" index="70">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">787</prop>
+					<prop name="posy">-1816</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="71">
+				<param name="Range_High" type="3" value="200"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1540</prop>
+					<prop name="posy">-2180</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="72">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">128</prop>
+					<prop name="posy">-3001</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-157" offsety="1" sizex="138" sizey="71"><![CDATA[Illumigain  ( = the amount of lighting that will be added without being filtered by the particles color)]]></comment>
+			</node>
+			<node type="IfNode" index="73">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">984</prop>
+					<prop name="posy">-3781</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-29" offsety="-18" sizex="110" sizey="19"><![CDATA["use this particle" bit 0]]></comment>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="74">
+				<param name="Range_High" type="3" value="200"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1211</prop>
+					<prop name="posy">-1723</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="75">
+				<param name="Range_High" type="3" value="200"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1212</prop>
+					<prop name="posy">-1689</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="emTool _ Combine Scalars _ Two to One to Two" version="1.0" index="76">
+				<param name="Range_High" type="3" value="200"></param>
+				<param name="In_Scalar_A" type="4" value="0.000000"></param>
+				<param name="In_Scalar_B" type="4" value="0.000000"></param>
+				<param name="In_AB_together" type="4" value="0.000000"></param>
+				<portdef name="In_Scalar_B" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Scalar_A" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_AB_together" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Range_High" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1540</prop>
+					<prop name="posy">-2150</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="77">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">851</prop>
+					<prop name="posy">-1586</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-29" offsety="-18" sizex="119" sizey="19"><![CDATA["primary rays" bit 1]]></comment>
+			</node>
+			<node type="IfNode" index="78">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">641</prop>
+					<prop name="posy">-975</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-42" offsety="-24" sizex="111" sizey="19"><![CDATA["AO/GI Lookup" bit 5]]></comment>
+			</node>
+			<node type="PassThroughNode" index="79">
+				<param name="in" type="3" value="1"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">125</prop>
+					<prop name="posy">-932</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-139" offsety="-1" sizex="67" sizey="32"><![CDATA[AO/GI calculation-method]]></comment>
+			</node>
+			<node type="IntegerNode" index="80">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1672</prop>
+					<prop name="posy">-2458</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="9" offsety="-19" sizex="47" sizey="19"><![CDATA[unused]]></comment>
+			</node>
+			<node type="IntegerNode" index="81">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">560</prop>
+					<prop name="posy">-900</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="82">
+				<param name="value" type="3" value="32"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">559</prop>
+					<prop name="posy">-927</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="83">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">109</prop>
+					<prop name="posy">-1451</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="84">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">772</prop>
+					<prop name="posy">-1393</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="85">
+				<param name="type" type="3" value="0"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">437</prop>
+					<prop name="posy">-946</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="86">
+				<param name="value" type="3" value="64"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">771</prop>
+					<prop name="posy">-1420</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="87">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">345</prop>
+					<prop name="posy">-892</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="88">
+				<param name="in" type="4" value="1.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">110</prop>
+					<prop name="posy">-1620</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-131" offsety="0" sizex="105" sizey="19"><![CDATA[Motion Blur Amount]]></comment>
+			</node>
+			<node type="IntegerToScalarNode" index="89">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">290</prop>
+					<prop name="posy">-3205</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="90">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">-509</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-99" offsety="-3" sizex="52" sizey="19"><![CDATA[Emission]]></comment>
+			</node>
+			<node type="ScalarNode" index="91">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">305</prop>
+					<prop name="posy">-513</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="92">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">120</prop>
+					<prop name="posy">-3363</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-156" offsety="0" sizex="137" sizey="32"><![CDATA[Strand LOD x2 for Particle to first Strand Point]]></comment>
+			</node>
+			<node type="PassThroughNode" index="93">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">118</prop>
+					<prop name="posy">-643</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-164" offsety="0" sizex="151" sizey="58"><![CDATA[Illumigain ( = the amount of lighting that will be added without being filtered by the particles color)]]></comment>
+			</node>
+			<node type="PassThroughNode" index="94">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">133</prop>
+					<prop name="posy">-3205</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-189" offsety="-1" sizex="130" sizey="19"><![CDATA[Number-of-virtual-Points]]></comment>
+			</node>
+			<node type="IfNode" index="97">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">853</prop>
+					<prop name="posy">-1468</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-47" offsety="-18" sizex="130" sizey="32"><![CDATA["secondary rays" bit 6]]></comment>
+			</node>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="32768" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-56" offsety="-1970" sizex="1651" sizey="618"><![CDATA[Color]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="32768" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-48" offsety="-3461" sizex="1200" sizey="632"><![CDATA[Rendering]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="32768" background_alpha="0.100000" title="14876671" title_text="0" offsetx="-49" offsety="-2746" sizex="800" sizey="358"><![CDATA[Size (calculations)]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="13103871" title_text="0" offsetx="2930" offsety="-2180" sizex="419" sizey="628"><![CDATA[4x4 MATRIX:
+
+		*** Vector 1: ***
+		***
+
+x = "(Shader<<8) | (Shape<<4) | Drawing"
+y = "bit flags"
+z = combined (base 100) "Boost"+"Scale Lighting"
+w = "Strand LOD"
+
+bit flags:
+0: use this particle
+1: primary rays
+2: absolute size
+3: absolute color
+4: unused
+5: ao/gi calc.method
+
+		*** Vector 2: ***
+		***
+
+x = combined (base 100) "custom size and drawing scale"
+y = combined (base 100) "Cast/Receive Shadows"
+z = combined (base 100) "Cast/Receive AO"
+w = combined (base 100) "Cast/Receive GI"
+
+
+		*** Vector 3: ***
+		***
+
+x = combined (base 100) "Custom Color Red and Custom Color Green"
+y = combined (base 100) "Custom Color Blue and Custom Color Alpha"
+z = combined (base 100) "Illumigain params"
+w = combined (base 100) "Scale Alpha (draw)  and Number-of-virtual-Points"
+
+
+		*** Vector 4: ***
+		***
+
+x = combined (base 100) "Emission Color Red and Emission Color Green"
+y = combined (base 100) "Emission Color Blue and Add Emission"
+z = combined (base 100) "Amount Motion Blur and -unused-"
+w = unused]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-60" offsety="-1297" sizex="1430" sizey="1034"><![CDATA[shadow / AO / GI]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="0" background_alpha="0.100000" title="13103871" title_text="0" offsetx="-50" offsety="-2354" sizex="458" sizey="205"><![CDATA[size (drawing)]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="16711680" background_alpha="0.100000" title="14876671" title_text="0" offsetx="332" offsety="-2721" sizex="398" sizey="320"><![CDATA[Set the emRPC node's parameters "absolute Size" and "multiplier Size"]]></comment>
+			<comment type="group" state="maximized" wordwrap="true" autoresize="false" background="16711680" background_alpha="0.100000" title="14876671" title_text="0" offsetx="613" offsety="-1945" sizex="357" sizey="186"><![CDATA[Set the emRPC node's parameters "absolute Color"]]></comment>
+		</nodes>
+		<exposed_ports>
+			<port index="6" portname="in" username="Drawing_Mode" basename="Drawing-Mode" portlabel="Drawing-Mode" exposetype="single"> </port>
+			<port index="7" portname="in" username="Shape" basename="Shape" portlabel="Shape" exposetype="single"> </port>
+			<port index="8" portname="in" username="Lighting_Scale" basename="Lighting-Scale" portlabel="Lighting-Scale" exposetype="single"> </port>
+			<port index="10" portname="in" username="Boost" basename="Boost" portlabel="Boost" exposetype="single"> </port>
+			<port index="14" portname="in" username="Cast" basename="Cast" portlabel="Cast" exposetype="single"> </port>
+			<port index="15" portname="in" username="Receive" basename="Receive" portlabel="Receive" exposetype="single"> </port>
+			<port index="16" portname="in" username="Custom_Size" basename="Custom Size" portlabel="Custom Size" exposetype="single"> </port>
+			<port index="18" portname="in" username="Shader" basename="Shader" portlabel="Shader" exposetype="single"> </port>
+			<port index="20" portname="in" username="Use" basename="Use" portlabel="Use" exposetype="single"> </port>
+			<port index="24" portname="in" username="Use_" basename="Use " portlabel="Use " exposetype="single"> </port>
+			<port index="25" portname="in" username="Strand_LOD" basename="Strand LOD" portlabel="Strand LOD" exposetype="single"> </port>
+			<port index="27" portname="in" username="Custom_RGBA_Color" basename="Custom RGBA Color" portlabel="Custom RGBA Color" exposetype="single"> </port>
+			<port index="29" portname="in" username="Primary" basename="Primary" portlabel="Primary" exposetype="single"> </port>
+			<port index="30" portname="in" username="Receive__" basename="Receive  " portlabel="Receive  " exposetype="single"> </port>
+			<port index="35" portname="in" username="Receive_" basename="Receive " portlabel="Receive " exposetype="single"> </port>
+			<port index="36" portname="in" username="Cast__" basename="Cast  " portlabel="Cast  " exposetype="single"> </port>
+			<port index="37" portname="in" username="Use_this_Particle_or_Strand" basename="Use this Particle or Strand" portlabel="Use this Particle or Strand" exposetype="single"> </port>
+			<port index="39" portname="in" username="Add_Emission_to_final_Lighting" basename="Add Emission to final Lighting" portlabel="Add Emission to final Lighting" exposetype="single"> </port>
+			<port index="47" portname="in" username="Opacity" basename="Opacity" portlabel="Opacity" exposetype="single"> </port>
+			<port index="54" portname="matrix" username="Particle___Strand_Settings" basename="Particle / Strand Settings" portlabel="Particle / Strand Settings" exposetype="single"> </port>
+			<port index="60" portname="in" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+			<port index="68" portname="in" username="Emission_RGB_Color" basename="Emission RGB Color" portlabel="Emission RGB Color" exposetype="single"> </port>
+			<port index="69" portname="in" username="Cast_" basename="Cast " portlabel="Cast " exposetype="single"> </port>
+			<port index="72" portname="in" username="Illumigain" basename="Illumigain" portlabel="Illumigain" exposetype="single"> </port>
+			<port index="79" portname="in" username="Calculation_Method" basename="Calculation-Method" portlabel="Calculation-Method" exposetype="single"> </port>
+			<port index="83" portname="in" username="Secondary" basename="Secondary" portlabel="Secondary" exposetype="single"> </port>
+			<port index="88" portname="in" username="Amount" basename="Amount" portlabel="Amount" exposetype="single"> </port>
+			<port index="90" portname="in" username="Emission" basename="Emission" portlabel="Emission" exposetype="single"> </port>
+			<port index="92" portname="in" username="Strand_LOD_x2_for_Particle_to_first_Strand_Point" basename="Strand LOD x2 for Particle to first Strand Point" portlabel="Strand LOD x2 for Particle to first Strand Point" exposetype="single"> </port>
+			<port index="93" portname="in" username="Illumigain_" basename="Illumigain " portlabel="Illumigain " exposetype="single"> </port>
+			<port index="94" portname="in" username="Number_of_virtual_Points" basename="Number-of-virtual-Points" portlabel="Number-of-virtual-Points" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="38" from_port="AB_together" to_node="12" to_port="z"> </cnx>
+			<cnx from_node="31" from_port="result" to_node="28" to_port="color"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="65" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="73" to_port="iftrue"> </cnx>
+			<cnx from_node="2" from_port="scalar" to_node="12" to_port="w"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="4" to_port="case0"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="9" to_port="integer"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="5" to_port="value1"> </cnx>
+			<cnx from_node="7" from_port="out" to_node="59" to_port="value2"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="38" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="9" from_port="scalar" to_node="12" to_port="x"> </cnx>
+			<cnx from_node="10" from_port="out" to_node="38" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="11" from_port="vector" to_node="54" to_port="vector3"> </cnx>
+			<cnx from_node="12" from_port="vector" to_node="54" to_port="vector1"> </cnx>
+			<cnx from_node="13" from_port="green" to_node="74" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="13" from_port="red" to_node="74" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="13" from_port="alpha" to_node="75" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="13" from_port="blue" to_node="75" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="14" from_port="out" to_node="43" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="15" from_port="out" to_node="43" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="16" from_port="out" to_node="4" to_port="case1"> </cnx>
+			<cnx from_node="16" from_port="out" to_node="4" to_port="case2"> </cnx>
+			<cnx from_node="17" from_port="vector" to_node="54" to_port="vector2"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="56" to_port="value2"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="26" to_port="case0"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="26" to_port="condition"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="51" to_port="first"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="41" to_port="iffalse"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="41" to_port="iftrue"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="50" to_port="iftrue"> </cnx>
+			<cnx from_node="24" from_port="out" to_node="40" to_port="first"> </cnx>
+			<cnx from_node="24" from_port="out" to_node="4" to_port="condition"> </cnx>
+			<cnx from_node="25" from_port="out" to_node="32" to_port="value"> </cnx>
+			<cnx from_node="27" from_port="out" to_node="26" to_port="default"> </cnx>
+			<cnx from_node="28" from_port="red" to_node="45" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="28" from_port="green" to_node="45" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="28" from_port="blue" to_node="46" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="29" from_port="out" to_node="77" to_port="condition"> </cnx>
+			<cnx from_node="30" from_port="out" to_node="44" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="32" from_port="result" to_node="33" to_port="value"> </cnx>
+			<cnx from_node="32" from_port="result" to_node="34" to_port="iffalse"> </cnx>
+			<cnx from_node="33" from_port="result" to_node="34" to_port="iftrue"> </cnx>
+			<cnx from_node="35" from_port="out" to_node="42" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="36" from_port="out" to_node="44" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="37" from_port="out" to_node="73" to_port="condition"> </cnx>
+			<cnx from_node="39" from_port="out" to_node="46" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="40" from_port="result" to_node="41" to_port="condition"> </cnx>
+			<cnx from_node="47" from_port="out" to_node="64" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="48" from_port="result" to_node="51" to_port="second"> </cnx>
+			<cnx from_node="49" from_port="result" to_node="55" to_port="integer"> </cnx>
+			<cnx from_node="51" from_port="result" to_node="50" to_port="condition"> </cnx>
+			<cnx from_node="52" from_port="result" to_node="40" to_port="second"> </cnx>
+			<cnx from_node="53" from_port="vector" to_node="54" to_port="vector4"> </cnx>
+			<cnx from_node="55" from_port="scalar" to_node="12" to_port="y"> </cnx>
+			<cnx from_node="56" from_port="result" to_node="5" to_port="value3"> </cnx>
+			<cnx from_node="57" from_port="result" to_node="56" to_port="value1"> </cnx>
+			<cnx from_node="58" from_port="result" to_node="59" to_port="value1"> </cnx>
+			<cnx from_node="59" from_port="result" to_node="5" to_port="value2"> </cnx>
+			<cnx from_node="60" from_port="out" to_node="71" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="61" from_port="result" to_node="73" to_port="iffalse"> </cnx>
+			<cnx from_node="62" from_port="result" to_node="77" to_port="iffalse"> </cnx>
+			<cnx from_node="63" from_port="result" to_node="77" to_port="iftrue"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="38" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="74" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="75" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="64" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="71" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="43" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="42" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="44" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="45" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="46" to_port="Range_High"> </cnx>
+			<cnx from_node="66" from_port="result" to_node="65" to_port="Range_High"> </cnx>
+			<cnx from_node="67" from_port="result" to_node="53" to_port="w"> </cnx>
+			<cnx from_node="68" from_port="out" to_node="31" to_port="value"> </cnx>
+			<cnx from_node="69" from_port="out" to_node="42" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="70" from_port="result" to_node="50" to_port="iffalse"> </cnx>
+			<cnx from_node="72" from_port="out" to_node="76" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="79" from_port="out" to_node="85" to_port="first"> </cnx>
+			<cnx from_node="80" from_port="result" to_node="49" to_port="value5"> </cnx>
+			<cnx from_node="81" from_port="result" to_node="78" to_port="iffalse"> </cnx>
+			<cnx from_node="82" from_port="result" to_node="78" to_port="iftrue"> </cnx>
+			<cnx from_node="83" from_port="out" to_node="97" to_port="condition"> </cnx>
+			<cnx from_node="84" from_port="result" to_node="97" to_port="iffalse"> </cnx>
+			<cnx from_node="85" from_port="result" to_node="78" to_port="condition"> </cnx>
+			<cnx from_node="86" from_port="result" to_node="97" to_port="iftrue"> </cnx>
+			<cnx from_node="87" from_port="result" to_node="85" to_port="second"> </cnx>
+			<cnx from_node="88" from_port="out" to_node="65" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="89" from_port="scalar" to_node="64" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="90" from_port="out" to_node="91" to_port="value"> </cnx>
+			<cnx from_node="91" from_port="result" to_node="31" to_port="factor"> </cnx>
+			<cnx from_node="92" from_port="out" to_node="34" to_port="condition"> </cnx>
+			<cnx from_node="93" from_port="out" to_node="76" to_port="In_Scalar_B"> </cnx>
+			<cnx from_node="94" from_port="out" to_node="89" to_port="integer"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="71" to_port="In_Scalar_A"> </cnx>
+			<cnx from_node="26" from_port="result" to_node="13" to_port="color"> </cnx>
+			<cnx from_node="34" from_port="result" to_node="2" to_port="integer"> </cnx>
+			<cnx from_node="41" from_port="result" to_node="49" to_port="value3"> </cnx>
+			<cnx from_node="50" from_port="result" to_node="49" to_port="value4"> </cnx>
+			<cnx from_node="73" from_port="result" to_node="49" to_port="value1"> </cnx>
+			<cnx from_node="77" from_port="result" to_node="49" to_port="value2"> </cnx>
+			<cnx from_node="78" from_port="result" to_node="49" to_port="value6"> </cnx>
+			<cnx from_node="97" from_port="result" to_node="49" to_port="value7"> </cnx>
+			<cnx from_node="42" from_port="AB_together" to_node="17" to_port="z"> </cnx>
+			<cnx from_node="43" from_port="AB_together" to_node="17" to_port="y"> </cnx>
+			<cnx from_node="44" from_port="AB_together" to_node="17" to_port="w"> </cnx>
+			<cnx from_node="45" from_port="AB_together" to_node="53" to_port="x"> </cnx>
+			<cnx from_node="46" from_port="AB_together" to_node="53" to_port="y"> </cnx>
+			<cnx from_node="64" from_port="AB_together" to_node="11" to_port="w"> </cnx>
+			<cnx from_node="65" from_port="AB_together" to_node="53" to_port="z"> </cnx>
+			<cnx from_node="71" from_port="AB_together" to_node="17" to_port="x"> </cnx>
+			<cnx from_node="74" from_port="AB_together" to_node="11" to_port="x"> </cnx>
+			<cnx from_node="75" from_port="AB_together" to_node="11" to_port="y"> </cnx>
+			<cnx from_node="76" from_port="AB_together" to_node="11" to_port="z"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Main">
+				<item type="input" name="Use_this_Particle_or_Strand"> </item>
+				<item type="input" name="Strand_LOD" min="0" max="7"> </item>
+				<item type="input" name="Strand_LOD_x2_for_Particle_to_first_Strand_Point"> </item>
+			</group>
+			<group type="input" name=" ">
+				<group type="input" name="Drawing">
+					<item type="input" name="Shape">
+						<enum value="6"><![CDATA[Box (No Falloff)]]></enum>
+						<enum value="0"><![CDATA[Sphere (No Falloff)]]></enum>
+						<enum value="1"><![CDATA[Sphere (Linear Falloff)]]></enum>
+						<enum value="2"><![CDATA[Sphere (Square Root Falloff)]]></enum>
+						<enum value="3"><![CDATA[Sphere (Square Falloff)]]></enum>
+						<enum value="4"><![CDATA[Sphere (Cubic Falloff)]]></enum>
+						<enum value="5"><![CDATA[Sphere (Sine Falloff)]]></enum>
+					</item>
+					<item type="input" name="Drawing_Mode">
+						<enum value="0"><![CDATA[Overlay]]></enum>
+						<enum value="1"><![CDATA[Additive]]></enum>
+						<enum value="2"><![CDATA[Screen]]></enum>
+					</item>
+					<item type="input" name="Opacity" min="0" max="2"> </item>
+					<item type="input" name="Scale" min="0" max="2"> </item>
+					<item type="input" name="Number_of_virtual_Points" min="0" max="0"> </item>
+				</group>
+				<group type="input" name="Shading">
+					<item type="input" name="Shader">
+						<enum value="0"><![CDATA[Constant]]></enum>
+						<enum value="1"><![CDATA[Shaded (Simple, 1 Vector)]]></enum>
+						<enum value="2"><![CDATA[Shaded (Simple, 5 Vectors)]]></enum>
+						<enum value="3"><![CDATA[Shaded (Simple, 6 Vectors)]]></enum>
+						<enum value="4"><![CDATA[Shaded (Boost, 6 Vectors)]]></enum>
+					</item>
+					<item type="input" name="Lighting_Scale" min="0" max="2"> </item>
+					<item type="input" name="Illumigain" min="0" max="1"> </item>
+					<item type="input" name="Boost" min="0" max="1"> </item>
+				</group>
+				<group type="input" name="Particle Size">
+					<item type="input" name="Use_">
+						<enum value="0"><![CDATA[Current Size]]></enum>
+						<enum value="1"><![CDATA[Current Size * Custom Size]]></enum>
+						<enum value="2"><![CDATA[Pixels (Custom Size)]]></enum>
+					</item>
+					<item type="input" name="Custom_Size" min="0" max="2"> </item>
+				</group>
+				<group type="input" name="Particle Color">
+					<item type="input" name="Use">
+						<enum value="0"><![CDATA[Current Color]]></enum>
+						<enum value="1"><![CDATA[Current Color * Custom Color]]></enum>
+						<enum value="2"><![CDATA[Custom Color]]></enum>
+					</item>
+					<item type="input" name="Custom_RGBA_Color"> </item>
+				</group>
+				<group type="input" name="Motion Blur">
+					<item type="input" name="Amount" min="0" max="2"> </item>
+				</group>
+			</group>
+			<group type="input" name="Ray Visibility">
+				<item type="input" name="Primary"> </item>
+				<item type="input" name="Secondary"> </item>
+			</group>
+			<group type="input" name="Shadows">
+				<item type="input" name="Cast" min="0" max="2"> </item>
+				<item type="input" name="Receive" min="0" max="2"> </item>
+			</group>
+			<group type="input" name="Ambient Occlusion / Global Illumination  ">
+				<item type="input" name="Calculation_Method">
+					<enum value="0"><![CDATA[AO/GI per Particle]]></enum>
+					<enum value="1"><![CDATA[AO/GI Octree Lookup]]></enum>
+				</item>
+				<group type="input" name="AO">
+					<item type="input" name="Cast_" min="0" max="2"> </item>
+					<item type="input" name="Receive_" min="0" max="2"> </item>
+				</group>
+				<group type="input" name="GI">
+					<item type="input" name="Cast__" min="0" max="2"> </item>
+					<item type="input" name="Receive__" min="0" max="2"> </item>
+					<item type="input" name="Illumigain_" min="0" max="1"> </item>
+					<item type="input" name="Emission" min="0" max="1"> </item>
+					<item type="input" name="Emission_RGB_Color"> </item>
+					<item type="input" name="Add_Emission_to_final_Lighting" min="0" max="1"> </item>
+				</group>
+			</group>
+			<item type="output" name="Particle___Strand_Settings"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

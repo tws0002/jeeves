@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title> installing the RSMB plugins in XSI - &copy; Revision FX </title>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <link rel="stylesheet" href="lmstyle.css">
+</head>
+
+<body>
+		<div class="greybox">
+	<div class="disclaim">
+		<a href="RSMBXSIdoc.htm">[.previous]</a>
+		<a href="RSMBXSIdoc.htm">[.home.]</a>
+		<a href="License.htm">[next.]</a>
+		&nbsp;&nbsp;Copyright 1999-2005
+		<a href="http://www.revisionfx.com"> RE:Vision Effects</a>, Inc
+
+	</div>
+	<div class="maintitle">
+		<font color="#800000">
+			RSMB
+		</font>
+		  -
+		<font size="-1">
+			installing RSMB in Softimage|XSI manually
+		</font>
+    </div>
+</div>
+		<div class="content">
+			<h1>Important notice</h1>
+			<p>RSMB for XSI should be automatically installed with the RSMB installer. The installer retrieves the following:</p>
+			<ul>
+				<li>Application\Plugins\RSMBPlugin.dll
+				<li>Doc\RSMB\RMSBXSIdoc.htm				<li>Application\fx\ufos\RSMBVectors.dll				<li>Application\fx\ufos\RSMB.dll	
+				<li>Addons\RSMB.xsiaddon
+			</ul>
+			<p>The RSMB xsiaddon can be used as alternative to the Factory Install. Once you have extracted the files somewhere simply drag and drop the xsiaddon on an xsi viewport and restart XSI. For example if one has both XSI 4.0 and XSI 4.2, once the plugin has been properly installed into one version, one can just grab the xsiaddon to install it in the other version. If you want to install over an older version of the plugin then you will have to do File|Addon|Uninstall -- select RSMB and proceed with drag and drop install. If for any reason you prefer to install it yourself , here's the procedure.</p>
+			<h1>installing RSMB as user plugins :</h1>
+			<p>Let %XSI_USERROOT% the XSI user root directory (usually C:\Softimage\%USER%).<br>
+				&nbsp;<br>
+				copy <b>RSMB.dll</b> and <b>RSMBVectors.dll</b> in %XSI_USERROOT%\XSI_x.x\Application\fx\ufos (you will have to create the folders if it's the first ufo that you install)<br>
+				copy <b>RSMBPlugin.dll</b> in %XSI_USERROOT%\XSI_x.x\Application\Plugins<br>
+				&nbsp;<br>
+				Restart XSI.<br>
+				&nbsp;<br>
+				the RSMB ufos will appear under the Plugins[U] Tab in the FX Operator Selector Window</p>
+			<p><img alt="install" src="Images/install.jpg"></p>
+			<h1>installing RSMB as workgroup plugins :</h1>
+			<p>Let %XSI_WKG% the XSI workgroup root directory.<br>
+				&nbsp;<br>
+				copy <b>RSMB.dll</b> and <b>RSMBVectors.dll</b> in %XSI_WKG%\Application\fx\ufos<br>
+				copy <b>RSMBPlugin.dll</b> in %XSI_WKG%\Application\Plugins<br>
+				&nbsp;<br>
+				Restart XSI.<br>
+				&nbsp;<br>
+				the RSMB ufos will appear under the WorkGroup[... Tab in the FX Operator Selector Window</p>
+			<p><img alt="install" src="Images/install_wrkgr.jpg"></p>
+		</div>
+		<div class="greybox">
+	<div class="disclaim">
+		<a href="RSMBXSIdoc.htm">[.previous]</a>
+		<a href="RSMBXSIdoc.htm">[.home.]</a>
+		<a href="License.htm">[next.]</a>
+	</div>
+	<div class="disclaim">
+		Twixtor, ReelSmart, FieldsKit and SmoothKit are trademarks of RE:Vision Effects, Inc.
+		<br>
+		Softimage and XSI are registered trademarks of Avid Technology , Inc.
+		<br>
+		Copyright 1999-2005 RE:Vision Effects, Inc
+	</div>
+</div>
+	</body>
+
+</html>

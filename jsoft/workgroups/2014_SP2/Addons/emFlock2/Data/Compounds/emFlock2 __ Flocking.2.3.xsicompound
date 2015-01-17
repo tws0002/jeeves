@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emFlock2 __ Flocking" tasks="Mootzoid - emFlock2/Main" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.3" constructionmode="Current" backgroundcolor="14390936">
+	<definition>
+		<nodes>
+			<node type="PassThroughNode" index="0">
+				<param name="in" type="11" value="true"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2811</prop>
+					<prop name="posy">-3317</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="emFlock2 _ Flocking" version="2.3" index="7">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="Verbose" type="11" value="false"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Mind_emFly" type="4" value="1.000000"></param>
+				<param name="Distance" type="4" value="6.000000"></param>
+				<param name="Angle" type="4" value="315.000000"></param>
+				<param name="Angle_Falloff" type="4" value="120.000000"></param>
+				<param name="Maximum_Number_of_Neighbors" type="3" value="10"></param>
+				<param name="Size_Mode" type="3" value="1"></param>
+				<param name="Ignore_smaller_Neighbors" type="4" value="0.250000"></param>
+				<param name="Desired_Distances_to_Neighbors_____" type="4" value="2.500000"></param>
+				<param name="Privacy_Distance" type="4" value="0.500000"></param>
+				<param name="Privacy_Strength" type="4" value="3.000000"></param>
+				<param name="Velocity_Alignment" type="4" value="0.500000"></param>
+				<param name="Cohesion_Strength" type="4" value="0.750000"></param>
+				<param name="Strength_" type="4" value="5.000000"></param>
+				<param name="Radius_Mul_" type="4" value="1.250000"></param>
+				<param name="Multi_Processing__Octree_Creation______" type="11" value="true"></param>
+				<param name="Multi_Processing__Neighboring_" type="11" value="true"></param>
+				<param name="Sort_Neighbors_by_Distance" type="11" value="true"></param>
+				<param name="Keep_in_Memory" type="3" value="2"></param>
+				<portdef name="Cohesion_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Verbose" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Keep_in_Memory" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Desired_Distances_to_Neighbors_____" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Privacy_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Angle_Falloff" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Privacy_Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multi_Processing__Neighboring_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Multi_Processing__Octree_Creation______" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Angle" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Number_of_Neighbors" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Size_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ignore_smaller_Neighbors" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Velocity_Alignment" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Sort_Neighbors_by_Distance" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mind_emFly" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Radius_Mul_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2659</prop>
+					<prop name="posy">-3821</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Multithreading" basename="Multithreading" portlabel="Multithreading" exposetype="single"> </port>
+			<port index="7" portname="Flocking_Velocities" username="Flocking_Velocities" basename="Flocking Velocities" portlabel="Flocking Velocities" exposetype="single"> </port>
+			<port index="7" portname="Set_Flocking_Velocities" username="Set_Flocking_Velocities" basename="Set Flocking Velocities" portlabel="Set Flocking Velocities" exposetype="single"> </port>
+			<port index="7" portname="Enable" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="7" portname="Strength" username="Strength" basename="Strength" portlabel="Strength" exposetype="single"> </port>
+			<port index="7" portname="Mind_emFly" username="Mind_emFly" basename="Mind emFly" portlabel="Mind emFly" exposetype="single"> </port>
+			<port index="7" portname="Maximum_Number_of_Neighbors" username="Maximum_Number_of_Neighbors_____" basename="Maximum_Number_of_Neighbors     " portlabel="Maximum_Number_of_Neighbors     " exposetype="single"> </port>
+			<port index="7" portname="Size_Mode" username="Size_Mode" basename="Size Mode" portlabel="Size Mode" exposetype="single"> </port>
+			<port index="7" portname="Cohesion_Strength" username="Cohesion_Strength" basename="Cohesion_Strength" portlabel="Cohesion_Strength" exposetype="single"> </port>
+			<port index="7" portname="Velocity_Alignment" username="Velocity_Alignment" basename="Velocity_Alignment" portlabel="Velocity_Alignment" exposetype="single"> </port>
+			<port index="7" portname="Privacy_Strength" username="Privacy_Strength" basename="Privacy_Strength" portlabel="Privacy_Strength" exposetype="single"> </port>
+			<port index="7" portname="Privacy_Distance" username="Privacy_Distance" basename="Privacy_Distance" portlabel="Privacy_Distance" exposetype="single"> </port>
+			<port index="7" portname="Desired_Distances_to_Neighbors_____" username="Desired_Distances_to_Neighbors_____" basename="Desired Distances to Neighbors     " portlabel="Desired Distances to Neighbors     " exposetype="single"> </port>
+			<port index="7" portname="Ignore_smaller_Neighbors" username="Ignore_smaller_Neighbors" basename="Ignore_smaller_Neighbors" portlabel="Ignore_smaller_Neighbors" exposetype="single"> </port>
+			<port index="7" portname="Angle_Falloff" username="Angle_Falloff" basename="Angle Falloff" portlabel="Angle Falloff" exposetype="single"> </port>
+			<port index="7" portname="Angle" username="Angle" basename="Angle" portlabel="Angle" exposetype="single"> </port>
+			<port index="7" portname="Distance" username="Distance" basename="Distance" portlabel="Distance" exposetype="single"> </port>
+			<port index="7" portname="Radius_Mul_" username="Radius_Mul_" basename="Radius(Mul)" portlabel="Radius(Mul)" exposetype="single"> </port>
+			<port index="7" portname="Strength_" username="Strength_" basename="Strength " portlabel="Strength " exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="out" to_node="7" to_port="Multi_Processing__Neighboring_"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="7" to_port="Multi_Processing__Octree_Creation______"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="input" name="Strength" min="0" max="1"> </item>
+			<item type="input" name="Mind_emFly" min="0" max="1"> </item>
+			<group type="input" name="View Cone">
+				<item type="input" name="Distance" min="0" max="15"> </item>
+				<item type="input" name="Angle" min="0" max="360"> </item>
+				<item type="input" name="Angle_Falloff" min="0" max="180"> </item>
+			</group>
+			<group type="input" name="Behavior">
+				<item type="input" name="Multithreading" min="0" max="0"> </item>
+				<group type="input" name=" ">
+					<item type="input" name="Maximum_Number_of_Neighbors_____" min="0" max="50"> </item>
+					<item type="input" name="Size_Mode">
+						<enum value="-1"><![CDATA[Ignore Size]]></enum>
+						<enum value="0"><![CDATA[Consider Size (Coarse)]]></enum>
+						<enum value="1"><![CDATA[Consider Size (Medium)]]></enum>
+						<enum value="2"><![CDATA[Consider Size (Fine)]]></enum>
+						<enum value="3"><![CDATA[Consider Size (Best)]]></enum>
+					</item>
+					<item type="input" name="Ignore_smaller_Neighbors" min="0" max="1"> </item>
+				</group>
+				<group type="input" name=" ">
+					<item type="input" name="Desired_Distances_to_Neighbors_____" min="0" max="0"> </item>
+					<item type="input" name="Privacy_Distance" min="0" max="5"> </item>
+					<item type="input" name="Privacy_Strength" min="0" max="5"> </item>
+					<item type="input" name="Velocity_Alignment" min="0" max="1"> </item>
+					<item type="input" name="Cohesion_Strength" min="0" max="1"> </item>
+					<group type="input" name="Collision">
+						<item type="input" name="Strength_"> </item>
+						<item type="input" name="Radius_Mul_" min="1.0" max="2.0"> </item>
+					</group>
+				</group>
+			</group>
+			<item type="output" name="Flocking_Velocities"> </item>
+			<item type="output" name="Set_Flocking_Velocities"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

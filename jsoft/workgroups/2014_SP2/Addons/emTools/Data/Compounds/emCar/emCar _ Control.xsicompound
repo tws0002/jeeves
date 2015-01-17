@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emCar _ Control" tasks="Mootzoid - emTools/Tools - Cars" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="15721957">
+	<definition>
+		<nodes>
+			<node type="Set Data" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self.Car_SteeringWheelAngle"></param>
+				<param name="Reference1" type="31" value="Self.Car_AcceleratorPedal"></param>
+				<param name="Reference2" type="31" value="Self.Car_BrakePedal"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param name="Value1" type="4" value="0.000000"></param>
+				<param name="Value2" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.Car_SteeringWheelAngle"></param_ext>
+				<param_ext name="Reference1" type="31" value="Self.Car_AcceleratorPedal"></param_ext>
+				<param_ext name="Reference2" type="31" value="Self.Car_BrakePedal"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="4" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="4" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-200</prop>
+					<prop name="posy">1661</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="1">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">72</prop>
+					<prop name="posy">1645</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Value" username="Angle" basename="Angle" portlabel="Angle" exposetype="single"> </port>
+			<port index="0" portname="Value1" username="Accelerator" basename="Accelerator" portlabel="Accelerator" exposetype="single"> </port>
+			<port index="0" portname="Value2" username="Brake" basename="Brake" portlabel="Brake" exposetype="single"> </port>
+			<port index="1" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Execute" to_node="1" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Steering Wheel">
+				<item type="input" name="Angle" min="-42" max="42"> </item>
+			</group>
+			<group type="input" name="Pedals">
+				<item type="input" name="Accelerator" min="0" max="1"> </item>
+				<item type="input" name="Brake" min="0" max="1"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Number to Bytes" tasks="Mootzoid - emTools/Tools - Bits and Bytes" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_ntob" index="0">
+				<param name="Input" type="3" value="0"></param>
+				<portdef name="Input" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1017</prop>
+					<prop name="posy">1318</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Input" username="Input" basename="Input" portlabel="Input" exposetype="single"> </port>
+			<port index="0" portname="Byte0" username="Byte_0" basename="Byte 0" portlabel="Byte 0" exposetype="single"> </port>
+			<port index="0" portname="Byte1" username="Byte_1" basename="Byte 1" portlabel="Byte 1" exposetype="single"> </port>
+			<port index="0" portname="Byte2" username="Byte_2" basename="Byte 2" portlabel="Byte 2" exposetype="single"> </port>
+			<port index="0" portname="Byte3" username="Byte_3" basename="Byte 3" portlabel="Byte 3" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Input" min="0" max="0"> </item>
+			<item type="output" name="Byte_0"> </item>
+			<item type="output" name="Byte_1"> </item>
+			<item type="output" name="Byte_2"> </item>
+			<item type="output" name="Byte_3"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

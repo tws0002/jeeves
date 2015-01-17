@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM HitTypeIndex" category="" tasks="Momentum/Utilities" author="" url="" formatversion="1.4" compoundversion="1.1" versiontag="" constructionmode="Current" backgroundcolor="12339580">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="IntegerNode" index="0">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-229</prop>
+					<prop name="posy">-149</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="0" portname="value" username="HitType" basename="HitType" portlabel="HitType" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="HitType" min="0" max="0">
+				<enum value="0"><![CDATA[Box Shape]]></enum>
+				<enum value="4"><![CDATA[Convex Shape]]></enum>
+				<enum value="13"><![CDATA[Cylinder Shape]]></enum>
+				<enum value="25"><![CDATA[GImpact Shape]]></enum>
+				<enum value="28"><![CDATA[Plane Shape]]></enum>
+				<enum value="8"><![CDATA[Sphere Shape]]></enum>
+			</item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

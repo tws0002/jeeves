@@ -1,0 +1,552 @@
+# -----
+# ---
+# - emToolsVolume
+# ---
+# -----
+SPDL
+Version = "2.0.0.0";
+Reference = "{C99506C4-FF23-457C-8A6D-F4319E908B8F}";
+
+MetaShader "emToolsVolume_meta"
+{
+	Name = "emTool_Volume";
+	Type = volume;
+	Renderer "mental ray"
+	{
+		Name		= "emToolsVolume";
+		FileName	= "emToolsVolume";
+		Options
+		{
+			"version"		= 1;
+			"autovolume"	= on;
+		}
+	}
+}
+
+PropertySet "pset"
+{
+	# -----
+	# ---
+	# - input port(s)
+	# ---
+	# -----
+	
+	Parameter "out" output
+	{
+		GUID = "{294CAA0B-2105-4C42-A09A-353BC1660679}";
+		Type = color;
+	}
+	
+	# -----
+	# ---
+	# - input port(s)
+	# ---
+	# -----
+
+	# user_data_internally_modified
+	# note: this parameter is not exposed and may only be
+	#       modified internally by the shader code !
+	Parameter "user_data_internally_modified" input
+	{
+		GUID = "{A6226815-08B4-4B55-9402-09CB69AF7437}";
+		Type = integer;
+		Value = 0;
+	}
+	# active
+	# note: this parameter is not exposed.
+	Parameter "active" input
+	{
+		GUID = "{2DEE8860-030E-4C5F-96E5-6AFB5C300F57}";
+		Type = boolean;
+		Value = true;
+	}
+	# algorithm ID
+	Parameter "algorithmID" input
+	{
+		GUID = "{CB3D32E4-0B37-4844-BB64-F37C59F91DCD}";
+		Type = integer;
+		Value = 10;
+		Animatable = off;
+	}
+	# opacity
+	Parameter "opacity" input
+	{
+		GUID = "{8ED8D73A-75C2-41C2-B492-1F81FD447DB3}";
+		Type = scalar;
+		Value = 1;
+		Value Minimum = 0.0;
+	}
+	
+	# // ----------------------------
+	# // ALG_CONSTANT_DENSITY (start)
+	# // ----------------------------
+	
+	# diffuse color
+	Parameter "algCD_colorDiffuse" input
+	{
+		GUID = "{836DC6A4-62D5-4BBD-A678-5C67D9A5DFB7}";
+		Type = color;
+		Value = 1.0 0.85 0.2;
+	}
+	# ambient (constant) color
+	Parameter "algCD_colorAmbient" input
+	{
+		GUID = "{2311A820-1652-48C3-847A-AFBCE8315943}";
+		Type = color;
+		Value = 0.8 0.3 0.1;
+	}
+	# shadow color
+	Parameter "algCD_colorShadow" input
+	{
+		GUID = "{39E32721-4C55-4D66-9D31-939900AB1585}";
+		Type = color;
+		Value = 0.25 0.65 1.0;
+	}
+	# self-shadow color
+	Parameter "algCD_colorSelfShadow" input
+	{
+		GUID = "{14DF9C26-BDA5-425E-8874-EFCC3D826FC8}";
+		Type = color;
+		Value = 0.5 0.1 0.1;
+	}
+	# set the ambient color from the difuse color
+	Parameter "algCD_setAmbientColorFromDiffuse" input
+	{
+		GUID = "{38B4EB1C-8ED6-44F3-9215-2F34EB665797}";
+		Type = boolean;
+		Value = true;
+	}
+	# set the shadow color from the difuse color
+	Parameter "algCD_setShadowColorFromDiffuse" input
+	{
+		GUID = "{DD128FE9-19BC-4CD4-AA08-CAAC7F11C67F}";
+		Type = boolean;
+		Value = true;
+	}
+	# set the self-shadow color from the difuse color
+	Parameter "algCD_setSelfShadowColorFromDiffuse" input
+	{
+		GUID = "{DBF48060-3D87-42B7-A4E5-A87DCA58C2FD}";
+		Type = boolean;
+		Value = true;
+	}
+	# amount of diffuse color.
+	Parameter "algCD_scaleDiffuse" input
+	{
+		GUID = "{946A082C-2450-4A68-9BE7-C06622F29ACF}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0.0;
+	}
+	# amount of ambient (constant) color.
+	Parameter "algCD_scaleAmbient" input
+	{
+		GUID = "{E09C6B51-F9D9-4EE6-A106-F83A740AC636}";
+		Type = scalar;
+		Value = 0.2;
+		Value Minimum = 0.0;
+	}
+	# density unit scale
+	Parameter "algCD_densityUnitScale" input
+	{
+		GUID = "{C8812077-B454-4FEE-B387-9795658C7115}";
+		Type = integer;
+		Animatable = off;
+	}
+	# density of the medium when calculating color.
+	Parameter "algCD_densityVolume" input
+	{
+		GUID = "{B021CC97-F399-428F-B1B8-5344C8D8CDB3}";
+		Type = scalar;
+		Value = 0.3;
+		Value Minimum = 0.0;
+	}
+	# density of the medium when calculating shadow.
+	Parameter "algCD_densityShadow" input
+	{
+		GUID = "{BDA43279-CC88-4C8D-A3C4-7A9A1931B09E}";
+		Type = scalar;
+		Value = 0.15;
+		Value Minimum = 0.0;
+	}
+	# density of the medium when calculating self-shadow.
+	Parameter "algCD_densitySelfShadow" input
+	{
+		GUID = "{3677C88E-3A69-4C47-BFBB-732A6D167DF4}";
+		Type = scalar;
+		Value = 0.15;
+		Value Minimum = 0.0;
+	}
+	# amount of diffuse samples per SI Unit.
+	Parameter "algCD_samplesDiffusePerUnit" input
+	{
+		GUID = "{9117298F-F491-446C-820F-0DDE41B77204}";
+		Type = scalar;
+		Value = 5.0;
+		Value Minimum = 0.0;
+	}
+	# minimum amount of diffuse samples.
+	Parameter "algCD_samplesDiffuseMinimum" input
+	{
+		GUID = "{1E4C4AB2-A615-40DA-8433-3D693B71ECA7}";
+		Type = integer;
+		Value = 8;
+		Value Minimum = 1;
+	}
+	# maximum amount of diffuse samples.
+	Parameter "algCD_samplesDiffuseMaximum" input
+	{
+		GUID = "{ECB364F4-AB0C-4FCC-8F08-C8762239A97C}";
+		Type = integer;
+		Value = 128;
+		Value Minimum = 1;
+	}
+	# use ease-in density
+	Parameter "algCD_easeInDensityUse" input
+	{
+		GUID = "{37DAF878-D710-4051-9765-9CC82DDDE79F}";
+		Type = boolean;
+		Value = false;
+	}
+	# ease-in density in SI Units when calculating the color.
+	Parameter "algCD_easeInDensityVolume" input
+	{
+		GUID = "{85F92ED2-0577-42FD-BAE8-72931CE9FCC6}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0.0;
+	}
+	# ease-in density in SI Units when calculating the shadow.
+	Parameter "algCD_easeInDensityShadow" input
+	{
+		GUID = "{5C0CEFBE-A610-4CF0-BE4D-50899435CC5A}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0.0;
+	}
+	# ease-in density in SI Units when calculating the self-shadow.
+	Parameter "algCD_easeInDensitySelfShadow" input
+	{
+		GUID = "{A756B7E7-E3AF-41CB-8161-3904AE4DC468}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0.0;
+	}
+	# Arnold: cast GI.
+	Parameter "algCD_aiGICast" input
+	{
+		GUID = "{A756B7E7-E3AF-41CB-8161-3904AE4DC468}";
+		Type = boolean;
+		Value = false;
+	}
+	
+	# // --------------------------
+	# // ALG_CONSTANT_DENSITY (end)
+	# // --------------------------
+
+
+	# for debugging.
+	Parameter "debug_boolean" input
+	{
+		GUID = "{1C2C8FAB-FF69-451A-A7E9-4C9180D08466}";
+		Type = boolean;
+	}
+	Parameter "debug_integer" input
+	{
+		GUID = "{83A20EEB-F99A-4C7B-A3CE-9F343AFC764D}";
+		Type = integer;
+	}
+	Parameter "debug_scalar" input
+	{
+		GUID = "{B7791B01-6AEE-4EA1-98E1-1E51FF681120}";
+		Type = scalar;
+	}
+
+}
+
+Defaults
+{
+	algorithmID
+	{
+		Name = "Algorithm";
+		UIType = "Combo";
+		Items
+		{
+			"Do Nothing"		=  0,
+			"Constant Density"	= 10,
+		}
+	}
+	opacity
+	{
+		Name = "Opacity";
+		UIRange = 0.0 to 1.0;
+	}
+	algCD_colorDiffuse
+	{
+		Name = "Diffuse";
+		UIType = "rgb";
+	}
+	algCD_colorAmbient
+	{
+		Name = "Ambient";
+		UIType = "rgb";
+	}
+	algCD_colorShadow
+	{
+		Name = "Shadow";
+		UIType = "rgb";
+	}
+	algCD_colorSelfShadow
+	{
+		Name = "Self-Shadow";
+		UIType = "rgb";
+	}
+	algCD_setAmbientColorFromDiffuse
+	{
+		Name = "Set Ambient Color from Diffuse";
+	}
+	algCD_setShadowColorFromDiffuse
+	{
+		Name = "Set Shadow Color from Diffuse";
+	}
+	algCD_setSelfShadowColorFromDiffuse
+	{
+		Name = "Set Self-Shadow Color from Diffuse";
+	}
+	algCD_scaleDiffuse
+	{
+		Name = "Diffuse.Scale";
+		UIRange = 0.0 to 1.0;
+	}
+	algCD_scaleAmbient
+	{
+		Name = "Ambient.Scale";
+		UIRange = 0.0 to 1.0;
+	}
+	algCD_densityUnitScale
+	{
+		Name = "Unit Scale";
+		UIType = "Combo";
+		Items
+		{
+			"1 SI Unit  =  1 Volume Unit"		= 0,
+			"1 SI Unit  =  0.1 Volume Units"	= 1,
+			"1 SI Unit  =  0.01 Volume Units"	= 2,
+			"1 SI Unit  =  0.001 Volume Units"	= 3,
+		}
+	}
+	algCD_densityVolume
+	{
+		Name = "Volume";
+		UIRange = 0.0 to 0.5;
+	}
+	algCD_densityShadow
+	{
+		Name = "Shadow";
+		UIRange = 0.0 to 0.5;
+	}
+	algCD_densitySelfShadow
+	{
+		Name = "Self-Shadow";
+		UIRange = 0.0 to 0.5;
+	}
+	algCD_samplesDiffusePerUnit
+	{
+		Name = "Samples-per-SI-Unit";
+		UIRange = 0.0 to 16.0;
+	}
+	algCD_samplesDiffuseMinimum
+	{
+		Name = "Minimum";
+		UIRange = 1 to 32;
+	}
+	algCD_samplesDiffuseMaximum
+	{
+		Name = "Maximum";
+		UIRange = 1 to 256;
+	}
+	algCD_easeInDensityUse
+	{
+		Name = "Use Ease-Ins";
+	}
+	algCD_easeInDensityVolume
+	{
+		Name = "Volume";
+		UIRange = 0.0 to 2.0;
+	}
+	algCD_easeInDensityShadow
+	{
+		Name = "Shadow";
+		UIRange = 0.0 to 2.0;
+	}
+	algCD_easeInDensitySelfShadow
+	{
+		Name = "SelfShadow";
+		UIRange = 0.0 to 2.0;
+	}
+	algCD_aiGICast
+	{
+		Name = "Cast GI";
+	}
+}
+
+Layout "Default"
+{
+	Tab "Main"
+	{
+		Group "Main"
+		{
+			algorithmID;
+			opacity;
+		}
+		
+		Group " "
+		{
+			Group "Density (per Volume Unit)"
+			{
+				algCD_densityUnitScale;
+				algCD_densityVolume;
+				algCD_densityShadow;
+				algCD_densitySelfShadow;
+			}
+			Group "Illumination"
+			{
+				algCD_colorDiffuse;
+				algCD_setAmbientColorFromDiffuse;
+				algCD_colorAmbient;
+				algCD_ScaleDiffuse;
+				algCD_ScaleAmbient;
+				algCD_setShadowColorFromDiffuse;
+				algCD_colorShadow;
+				algCD_setSelfShadowColorFromDiffuse;
+				algCD_colorSelfShadow;
+			}
+		}
+	}
+	Tab "Advanced"
+	{
+		Group "Sampling (Illumination)"
+		{
+			algCD_samplesDiffusePerUnit;
+			algCD_samplesDiffuseMinimum;
+			algCD_samplesDiffuseMaximum;
+		}
+		Group "Ease-In Densities (in SI Units)"
+		{
+			algCD_easeInDensityUse;
+			algCD_easeInDensityVolume;
+			algCD_easeInDensityShadow;
+			algCD_easeInDensitySelfShadow;
+		}
+#		Group "Arnold specific Parameters"
+#		{
+#			algCD_aiGICast;
+#		}
+	}
+#	Tab "Debug"
+#	{
+#		debug_boolean;
+#		debug_integer;
+#		debug_scalar;
+#	}
+}
+
+Logic
+{
+	sub algorithmID_OnChanged()
+		'
+		' set flags
+		algIsDN = (pset.algorithmID.Value =  0)
+		algIsCD = (pset.algorithmID.Value = 10)
+		' set visibility of global parameters
+		pset.opacity.show	(algIsCD)
+		' set visibility of "Constant Density" parameters
+		pset.algCD_colorDiffuse.show					(algIsCD)
+		pset.algCD_colorAmbient.show					(algIsCD and pset.algCD_setAmbientColorFromDiffuse.Value=0)
+		pset.algCD_colorShadow.show						(algIsCD and pset.algCD_setShadowColorFromDiffuse.Value=0)
+		pset.algCD_colorSelfShadow.show					(algIsCD and pset.algCD_setSelfShadowColorFromDiffuse.Value=0)
+		pset.algCD_setAmbientColorFromDiffuse.show		(algIsCD)
+		pset.algCD_setShadowColorFromDiffuse.show		(algIsCD)
+		pset.algCD_setSelfShadowColorFromDiffuse.show	(algIsCD)
+		pset.algCD_scaleDiffuse.show					(algIsCD)
+		pset.algCD_scaleAmbient.show					(algIsCD)
+		pset.algCD_densityUnitScale.show				(algIsCD)
+		pset.algCD_densityVolume.show					(algIsCD)
+		pset.algCD_densityShadow.show					(algIsCD)
+		pset.algCD_densitySelfShadow.show				(algIsCD)
+		pset.algCD_samplesDiffusePerUnit.show			(algIsCD)
+		pset.algCD_samplesDiffuseMinimum.show			(algIsCD)
+		pset.algCD_samplesDiffuseMaximum.show			(algIsCD)
+		pset.algCD_easeInDensityUse.show				(algIsCD)
+		pset.algCD_easeInDensityVolume.show				(algIsCD and pset.algCD_easeInDensityUse.Value)
+		pset.algCD_easeInDensityShadow.show				(algIsCD and pset.algCD_easeInDensityUse.Value)
+		pset.algCD_easeInDensitySelfShadow.show			(algIsCD and pset.algCD_easeInDensityUse.Value)
+		pset.algCD_aiGICast.show						(algIsCD)
+		' refresh the bloody PPG
+		PPG.Refresh
+		'
+	end sub
+
+	sub algCD_setAmbientColorFromDiffuse_OnChanged()
+		'
+		' set flags
+		algIsDN = (pset.algorithmID.Value =  0)
+		algIsCD = (pset.algorithmID.Value = 10)
+		'
+		pset.algCD_colorAmbient.show					(algIsCD and pset.algCD_setAmbientColorFromDiffuse.Value=0)
+		'
+		PPG.Refresh
+		'
+	end sub
+
+	sub algCD_setShadowColorFromDiffuse_OnChanged()
+		'
+		' set flags
+		algIsDN = (pset.algorithmID.Value =  0)
+		algIsCD = (pset.algorithmID.Value = 10)
+		'
+		pset.algCD_colorShadow.show						(algIsCD and pset.algCD_setShadowColorFromDiffuse.Value=0)
+		'
+		PPG.Refresh
+		'
+	end sub
+
+	sub algCD_setSelfShadowColorFromDiffuse_OnChanged()
+		'
+		' set flags
+		algIsDN = (pset.algorithmID.Value =  0)
+		algIsCD = (pset.algorithmID.Value = 10)
+		'
+		pset.algCD_colorSelfShadow.show					(algIsCD and pset.algCD_setSelfShadowColorFromDiffuse.Value=0)
+		'
+		PPG.Refresh
+		'
+	end sub
+
+	sub algCD_easeInDensityUse_OnChanged()
+		'
+		' set flags
+		algIsDN = (pset.algorithmID.Value =  0)
+		algIsCD = (pset.algorithmID.Value = 10)
+		'
+		pset.algCD_easeInDensityVolume.show				(algIsCD and pset.algCD_easeInDensityUse.Value)
+		pset.algCD_easeInDensityShadow.show				(algIsCD and pset.algCD_easeInDensityUse.Value)
+		pset.algCD_easeInDensitySelfShadow.show			(algIsCD and pset.algCD_easeInDensityUse.Value)
+		'
+		PPG.Refresh
+		'
+	end sub
+
+	Sub OnInit()
+		'
+		algorithmID_OnChanged()
+		'
+		PPG.Refresh
+		'
+	End Sub
+}
+
+Plugin = Shader
+{
+	FileName = "emToolsVolume";
+}

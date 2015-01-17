@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="explode me _ emRPC4" category="" tasks="Mootzoid - emRPC4/Misc" author="" url="" formatversion="1.4" compoundversion="1.0" versiontag="">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="emRPC4 __ Settings4 _ Shadows" version="4.0" index="0">
+				<param name="Enable_Self_Shadowing" type="11" value="false"></param>
+				<param name="Amount" type="4" value="1.000000"></param>
+				<param name="Density" type="4" value="0.125000"></param>
+				<param name="Maximum_Darkness" type="4" value="0.770000"></param>
+				<param name="In_Start" type="4" value="0.000000"></param>
+				<param name="In_End" type="4" value="5.000000"></param>
+				<param name="Fade_out" type="11" value="false"></param>
+				<param name="Out_Start" type="4" value="50.000000"></param>
+				<param name="Out_End" type="4" value="100.000000"></param>
+				<param name="Use" type="11" value="false"></param>
+				<param name="Level_In" type="4" value="0.000000"></param>
+				<param name="Gamma" type="4" value="1.000000"></param>
+				<param name="Level_Out" type="4" value="1.000000"></param>
+				<param name="Level_of_Detail" type="4" value="1.000000"></param>
+				<param name="Caster_Size_Multiplier" type="4" value="1.000000"></param>
+				<param name="Percentage_of_Particles_to_use_in_the_Octree" type="4" value="100.000000"></param>
+				<param name="Density_Limit" type="4" value="1.000000"></param>
+				<param name="Memory_Limit__MBytes_" type="3" value="1024"></param>
+				<param name="Strength" type="4" value="0.150000"></param>
+				<param name="Iterations" type="3" value="2"></param>
+				<portdef name="Gamma" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Out_End" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Caster_Size_Multiplier" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Out_Start" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Start" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_Self_Shadowing" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_Out" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_In" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_of_Detail" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Memory_Limit__MBytes_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density_Limit" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Percentage_of_Particles_to_use_in_the_Octree" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Darkness" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fade_out" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Iterations" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">Fallin/Falloff Distance,Luma,Octree</prop>
+					<prop name="posx">110</prop>
+					<prop name="posy">530</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emRPC4 __ Settings5 _ AO GI" version="4.0" index="1">
+				<param name="Enable_AO" type="11" value="false"></param>
+				<param name="Enable_GI" type="11" value="false"></param>
+				<param name="Number_of_Samples" type="3" value="16"></param>
+				<param name="Order" type="3" value="0"></param>
+				<param name="Amount_" type="4" value="1.000000"></param>
+				<param name="Density_" type="4" value="0.500000"></param>
+				<param name="Maximum_Darkness_" type="4" value="0.770000"></param>
+				<param name="In_Start_" type="4" value="0.000000"></param>
+				<param name="In_End_" type="4" value="1.000000"></param>
+				<param name="Out_End_" type="4" value="10.000000"></param>
+				<param name="Use_" type="11" value="true"></param>
+				<param name="Level_In_" type="4" value="0.125000"></param>
+				<param name="Gamma_" type="4" value="0.750000"></param>
+				<param name="Level_Out_" type="4" value="0.850000"></param>
+				<param name="Amount" type="4" value="1.000000"></param>
+				<param name="Ray_Depth" type="3" value="1"></param>
+				<param name="Density_Max" type="4" value="3.000000"></param>
+				<param name="In_Start" type="4" value="0.000000"></param>
+				<param name="In_End" type="4" value="1.000000"></param>
+				<param name="Out_End" type="4" value="15.000000"></param>
+				<param name="Use" type="11" value="false"></param>
+				<param name="Level_In" type="4" value="0.000000"></param>
+				<param name="Gamma" type="4" value="1.000000"></param>
+				<param name="Level_Out" type="4" value="1.000000"></param>
+				<param name="Level_of_Detail" type="4" value="1.000000"></param>
+				<param name="Memory_Limit__MBytes_" type="3" value="1024"></param>
+				<param name="Strength" type="4" value="0.150000"></param>
+				<param name="Iterations" type="3" value="2"></param>
+				<portdef name="Gamma_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Order" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_In" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_of_Detail" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Memory_Limit__MBytes_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_AO" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Out_End_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Darkness_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Number_of_Samples" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_Out" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_In_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Iterations" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_Out_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ray_Depth" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Out_End" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_GI" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Amount" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Start" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density_Max" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Start_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Gamma" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">AO (Ambient Occlusion),GI (Global Illumination),Octree</prop>
+					<prop name="posx">110</prop>
+					<prop name="posy">760</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emRPC4 __ Settings2 _ Image" version="4.0" index="2">
+				<param name="Width" type="3" value="1024"></param>
+				<param name="Height" type="3" value="576"></param>
+				<param name="Pixel_Ratio" type="4" value="1.000000"></param>
+				<param name="Premultiply_with_Alpha" type="11" value="true"></param>
+				<param name="Background_Color.Background_Color_red" type="4" value="0.000000"></param>
+				<param name="Background_Color.Background_Color_green" type="4" value="0.000000"></param>
+				<param name="Background_Color.Background_Color_blue" type="4" value="0.000000"></param>
+				<param name="Background_Color.Background_Color_alpha" type="4" value="0.000000"></param>
+				<portdef name="Width" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Background_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Premultiply_with_Alpha" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Height" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Pixel_Ratio" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">110</prop>
+					<prop name="posy">-130</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emRPC4 _ Main" version="4.0" index="3">
+				<param name="Enable" type="11" value="false"></param>
+				<param name="Display_Progress_Bar" type="11" value="false"></param>
+				<param name="Enable_Left___Right_CTRL_to_cancel" type="11" value="true"></param>
+				<param name="Verbose_in_History_Log" type="11" value="false"></param>
+				<param name="Set_Particle_Colors_from_Rendering" type="11" value="true"></param>
+				<param name="Set_Alpha_1" type="11" value="true"></param>
+				<param name="Write_Images_to_Disk" type="11" value="false"></param>
+				<param name="Skip_rendered_Frames" type="11" value="false"></param>
+				<param name="File_Path_Sequence.File_Path_Sequence_string" type="8" value="A:\FolderName\FileName###"></param>
+				<param name="File_Path_Sequence.File_Path_Sequence_uimode" type="8" value=""></param>
+				<param name="File_Path_Sequence.File_Path_Sequence_filepathseq" type="8" value=""></param>
+				<param name="File_Path_Sequence.File_Path_Sequence_filename" type="8" value=""></param>
+				<param name="File_Format" type="3" value="1"></param>
+				<param name="Enable_Strands" type="11" value="true"></param>
+				<param name="Calculate_Lighting_only_for_visible_Points___" type="11" value="false"></param>
+				<param name="Anti_Alias__only_needed_when_using_Masks___" type="11" value="false"></param>
+				<param name="Use_Particles_with_an_Age_equal_Zero" type="11" value="true"></param>
+				<param name="Use_Strands_with_an_Age_equal_Zero" type="11" value="true"></param>
+				<param name="Use_visible_Meshes_as_Masks" type="11" value="false"></param>
+				<param name="Shrink" type="11" value="true"></param>
+				<param name="Cast_Shadows_on_Masks" type="3" value="1"></param>
+				<param name="Density" type="4" value="0.125000"></param>
+				<param name="Maximum_Darkness" type="4" value="0.770000"></param>
+				<param name="Fade_Active__Recommended_" type="11" value="true"></param>
+				<param name="Fade_Start" type="4" value="5.000000"></param>
+				<param name="Fade_End" type="4" value="10.000000"></param>
+				<param name="Settings__Camera_.Settings__Camera__x" type="4" value="0.000000"></param>
+				<param name="Settings__Camera_.Settings__Camera__y" type="4" value="0.000000"></param>
+				<param name="Settings__Camera_.Settings__Camera__z" type="4" value="0.000000"></param>
+				<param name="Settings__Camera_.Settings__Camera__w" type="4" value="0.000000"></param>
+				<param name="Settings__Camera__.Settings__Camera___string" type="8" value=""></param>
+				<param name="Settings__Camera__.Settings__Camera___uimode" type="8" value=""></param>
+				<param name="Settings__Camera__.Settings__Camera___filepathseq" type="8" value=""></param>
+				<param name="Settings__Camera__.Settings__Camera___filename" type="8" value=""></param>
+				<param name="Settings__Image_.Settings__Image__x" type="4" value="0.000000"></param>
+				<param name="Settings__Image_.Settings__Image__y" type="4" value="0.000000"></param>
+				<param name="Settings__Image_.Settings__Image__z" type="4" value="0.000000"></param>
+				<param name="Settings__Image_.Settings__Image__w" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__00" type="4" value="1.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__01" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__02" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__03" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__10" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__11" type="4" value="1.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__12" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__13" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__20" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__21" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__22" type="4" value="1.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__23" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__30" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__31" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__32" type="4" value="0.000000"></param>
+				<param name="Settings__Particles_.Settings__Particles__33" type="4" value="1.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__00" type="4" value="1.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__01" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__02" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__03" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__10" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__11" type="4" value="1.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__12" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__13" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__20" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__21" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__22" type="4" value="1.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__23" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__30" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__31" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__32" type="4" value="0.000000"></param>
+				<param name="Settings__Strands_.Settings__Strands__33" type="4" value="1.000000"></param>
+				<param name="Settings__Shadows_" type="4" value="0.000000"></param>
+				<param name="Settings__GI_AO_" type="4" value="0.000000"></param>
+				<portdef name="Enable_Left___Right_CTRL_to_cancel" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Write_Images_to_Disk" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Particle_Colors_from_Rendering" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__Shadows_" type="4" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__Particles_" type="256" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Skip_rendered_Frames" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__Strands_" type="256" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Alpha_1" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Calculate_Lighting_only_for_visible_Points___" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Maximum_Darkness" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Density" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_Particles_with_an_Age_equal_Zero" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__Camera_" type="32" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_Strands_with_an_Age_equal_Zero" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__Image_" type="32" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="File_Path_Sequence" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__GI_AO_" type="4" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_Progress_Bar" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="File_Format" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shrink" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Anti_Alias__only_needed_when_using_Masks___" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast_Shadows_on_Masks" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_visible_Meshes_as_Masks" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fade_Active__Recommended_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fade_End" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Fade_Start" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_Strands" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Verbose_in_History_Log" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Settings__Camera__" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">Auto Fade-out giant Particles,Freshly Born,Masks,Options (File Settings),Options (OGL Preview)</prop>
+					<prop name="posx">656</prop>
+					<prop name="posy">33</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emRPC4 __ Settings1 _ Camera" version="4.0" index="4">
+				<param name="Use_" type="3" value="0"></param>
+				<param name="Camera_C.Camera_C_string" type="8" value="StereoCamera"></param>
+				<param name="Camera_C.Camera_C_uimode" type="8" value="0"></param>
+				<param name="Camera_C.Camera_C_filepathseq" type="8" value=""></param>
+				<param name="Camera_C.Camera_C_filename" type="8" value=""></param>
+				<param name="Camera_L.Camera_L_string" type="8" value="StereoCamera_Left"></param>
+				<param name="Camera_L.Camera_L_uimode" type="8" value="0"></param>
+				<param name="Camera_L.Camera_L_filepathseq" type="8" value=""></param>
+				<param name="Camera_L.Camera_L_filename" type="8" value=""></param>
+				<param name="Camera_R.Camera_R_string" type="8" value="StereoCamera_Right"></param>
+				<param name="Camera_R.Camera_R_uimode" type="8" value="0"></param>
+				<param name="Camera_R.Camera_R_filepathseq" type="8" value=""></param>
+				<param name="Camera_R.Camera_R_filename" type="8" value=""></param>
+				<param name="Enable" type="11" value="false"></param>
+				<param name="Strength" type="4" value="1.000000"></param>
+				<param name="Use" type="3" value="0"></param>
+				<param name="Custom_Distance" type="4" value="50.000000"></param>
+				<param name="Focus_Range" type="4" value="2.500000"></param>
+				<param name="Max_Blur" type="4" value="10.000000"></param>
+				<param name="Compensate_Alpha" type="4" value="1.000000"></param>
+				<param name="Enable_" type="11" value="false"></param>
+				<param name="Speed" type="4" value="1.000000"></param>
+				<param name="Offset" type="4" value="0.000000"></param>
+				<param name="Position" type="3" value="0"></param>
+				<param name="Shape" type="3" value="0"></param>
+				<param name="Level_of_Detail" type="4" value="15.000000"></param>
+				<param name="Space" type="3" value="0"></param>
+				<portdef name="Camera_C" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Camera_R" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Camera_L" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Distance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Strength" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Focus_Range" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Speed" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Max_Blur" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Compensate_Alpha" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Offset" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Position" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shape" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Level_of_Detail" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Space" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Enable_" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">Depth of Field,Motion Blur</prop>
+					<prop name="posx">110</prop>
+					<prop name="posy">-330</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emRPC4 __ Build File Path" version="4.0" index="5">
+				<param name="Path_.Path__string" type="8" value="[Project Path]\Render_Pictures\"></param>
+				<param name="Path_.Path__uimode" type="8" value=""></param>
+				<param name="Path_.Path__filepathseq" type="8" value=""></param>
+				<param name="Path_.Path__filename" type="8" value=""></param>
+				<param name="Name_.Name__string" type="8" value="rpcImage"></param>
+				<param name="Name_.Name__uimode" type="8" value=""></param>
+				<param name="Name_.Name__filepathseq" type="8" value=""></param>
+				<param name="Name_.Name__filename" type="8" value=""></param>
+				<param name="Padding" type="3" value="4"></param>
+				<param name="Left_Eye.Left_Eye_string" type="8" value="_L_"></param>
+				<param name="Left_Eye.Left_Eye_uimode" type="8" value=""></param>
+				<param name="Left_Eye.Left_Eye_filepathseq" type="8" value=""></param>
+				<param name="Left_Eye.Left_Eye_filename" type="8" value=""></param>
+				<param name="Right_Eye.Right_Eye_string" type="8" value="_R_"></param>
+				<param name="Right_Eye.Right_Eye_uimode" type="8" value=""></param>
+				<param name="Right_Eye.Right_Eye_filepathseq" type="8" value=""></param>
+				<param name="Right_Eye.Right_Eye_filename" type="8" value=""></param>
+				<portdef name="Padding" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Left_Eye" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Name_" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Path_" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Right_Eye" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="collapsed_groups">Name's Appendices for Stereo</prop>
+					<prop name="posx">110</prop>
+					<prop name="posy">-470</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emRPC4 __ Settings3 _ Particles" version="4.0" index="6">
+				<param name="Use_this_Particle_or_Strand" type="11" value="true"></param>
+				<param name="Shape" type="3" value="1"></param>
+				<param name="Drawing_Mode" type="3" value="0"></param>
+				<param name="Opacity" type="4" value="1.000000"></param>
+				<param name="Scale" type="4" value="1.000000"></param>
+				<param name="Number_of_virtual_Points" type="3" value="0"></param>
+				<param name="Shader" type="3" value="0"></param>
+				<param name="Lighting_Scale" type="4" value="1.000000"></param>
+				<param name="Use_" type="3" value="1"></param>
+				<param name="Custom_Size" type="4" value="1.000000"></param>
+				<param name="Use" type="3" value="1"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_red" type="4" value="1.000000"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_green" type="4" value="1.000000"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_blue" type="4" value="1.000000"></param>
+				<param name="Custom_RGBA_Color.Custom_RGBA_Color_alpha" type="4" value="1.000000"></param>
+				<param name="Cast" type="4" value="1.000000"></param>
+				<param name="Receive" type="4" value="1.000000"></param>
+				<param name="Cast_" type="4" value="1.000000"></param>
+				<param name="Receive_" type="4" value="1.000000"></param>
+				<param name="Cast__" type="4" value="1.000000"></param>
+				<param name="Receive__" type="4" value="1.000000"></param>
+				<portdef name="Use_this_Particle_or_Strand" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Drawing_Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Opacity" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Number_of_virtual_Points" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shape" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Shader" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Lighting_Scale" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use_" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Use" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Custom_RGBA_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Receive" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Receive_" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cast__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Receive__" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">110</prop>
+					<prop name="posy">30</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14737632" title_text="0" offsetx="-210" offsety="530" sizex="298" sizey="197"><![CDATA[Shadow Settings                  (context: "per Object")
+------------------------------------------------------------------------------
+
+The overall behavior for shadowing is specified here.
+
+Changing parameters in here will affect the shadowing of all particles.
+
+The parameters also influence the shadowing when casting shadows on masks (see main compound).
+
+Tips:
+1.) blurring the octree produces smoother shadows.
+2.) avoid modifying the caster size multiplier.]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14737632" title_text="0" offsetx="-210" offsety="-470" sizex="303" sizey="93"><![CDATA[File Path Builder          (context: "per Object")
+------------------------------------------------------------------------------
+
+Set the output path, file name and frame padding here.]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14737632" title_text="0" offsetx="-210" offsety="760" sizex="298" sizey="162"><![CDATA[AO and GI Settings                  (context: "per Object")
+------------------------------------------------------------------------------
+
+The overall behavior for Ambient Occlusion (AO) and Global Illumination (GI) is specified here.
+
+Changing parameters in here will affect the AO and GI of all particles.
+
+Tip:
+1.) blurring the octree produces smoother AO/GI.
+]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14737632" title_text="0" offsetx="-210" offsety="30" sizex="299" sizey="218"><![CDATA[Particle/Strand Settings         (context: "per Point")
+------------------------------------------------------------------------------
+
+The "per point" settings for the particles:
+  - size, shape, color, shading
+  - drawing mode
+  - visibility
+  - self-shadowing
+  - global illumination (GI)
+  - ambient occlusion (AO)
+  - etc.
+
+Note:
+  - enter or explode this compound to access all available parameters.]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14737632" title_text="0" offsetx="-210" offsety="-130" sizex="300" sizey="98"><![CDATA[Image Settings                  (context: "per Object")
+------------------------------------------------------------------------------
+
+Specify the image settings (resolution, pixel ratio, background color, etc.) here.]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14737632" title_text="0" offsetx="-210" offsety="-330" sizex="301" sizey="117"><![CDATA[Camera Settings               (context: "per Object")
+------------------------------------------------------------------------------
+
+Specify the camera, the depth of field and the motion blur here.
+You can use the camera of the current pass or a custom camera.]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14474460" title_text="73" offsetx="642" offsety="-330" sizex="252" sizey="347"><![CDATA[
+      ..--==  Information  ==--..
+
+
+- plug this compound after the "Simulate Particles" node (if using a simulated ICE Tree). Or even better: create an ICE Tree in the Post-Simulation stack and place the emRPC4 setup there.
+
+- this compound is disabled per default.
+
+- the settings of the current pass have *no influence* on the emRPC4 rendering with one exception:
+the camera of the current pass is used if not specified otherwise.
+
+- all render settings are specified in the emRPC4 compounds.
+
+- please do NOT use a "String File Path Sequence" node (it is buggy).
+Use the compound "emRPC4 __ Build File Path" instead.]]></comment>
+			<comment type="group" state="maximized" wordwrap="false" autoresize="false" background="10079422" background_alpha="0.100000" title="10079423" title_text="0" offsetx="-285" offsety="-570" sizex="1270" sizey="1608"><![CDATA[--------------------------------
+			emRPC4
+--------------------------------]]></comment>
+			<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="15395562" title_text="18688" offsetx="530" offsety="-500" sizex="425" sizey="127"><![CDATA[
+              ..--==  Tip for viewing the rendered images ==--..
+
+Use the "emRPC4 Viewer" (Windows only), here's how to get it:
+
+1.) "View -> General -> Custom Display Host" opens an empty  custom display host.
+
+2.) now right-click in the custom display host and choose "emRPC Viewer".]]></comment>
+		</nodes>
+		<exposed_ports>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Settings" to_node="3" to_port="Settings__Shadows_"> </cnx>
+			<cnx from_node="1" from_port="Settings" to_node="3" to_port="Settings__GI_AO_"> </cnx>
+			<cnx from_node="2" from_port="Settings" to_node="3" to_port="Settings__Image_"> </cnx>
+			<cnx from_node="5" from_port="Path__Name__Padding" to_node="3" to_port="File_Path_Sequence"> </cnx>
+			<cnx from_node="4" from_port="Settings" to_node="3" to_port="Settings__Camera_"> </cnx>
+			<cnx from_node="4" from_port="_Settings" to_node="3" to_port="Settings__Camera__"> </cnx>
+			<cnx from_node="6" from_port="Particle___Strand_Settings" to_node="3" to_port="Settings__Particles_"> </cnx>
+			<cnx from_node="6" from_port="Particle___Strand_Settings" to_node="3" to_port="Settings__Strands_"> </cnx>
+		</connections>
+		<layout>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

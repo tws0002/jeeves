@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFly _ Set Data Reset Flags and Variables" author="Eric Mootz" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="12138364">
+	<definition>
+		<nodes>
+			<node type="ScalarNode" index="0">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">471</prop>
+					<prop name="posy">1312</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-202" offsety="-23" sizex="268" sizey="19"><![CDATA[The frame at which the particle landed]]></comment>
+			</node>
+			<node type="ScalarNode" index="1">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">468</prop>
+					<prop name="posy">1218</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-202" offsety="-23" sizex="196" sizey="19"><![CDATA[The percentage [0-1] of the landing.]]></comment>
+			</node>
+			<node type="ScalarNode" index="2">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">472</prop>
+					<prop name="posy">413</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-179" offsety="-37" sizex="248" sizey="32"><![CDATA[The Frame at which "flying" started
+( = the frame at which bActive was set to TRUE )]]></comment>
+			</node>
+			<node type="3DVectorNode" index="3">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">419</prop>
+					<prop name="posy">714</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-173" offsety="-25" sizex="287" sizey="19"><![CDATA[The velocity at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="Set Data" version="1.0" index="4">
+				<param name="Reference17" type="31" value="self.__emFly_bTookOff"></param>
+				<param name="Reference10" type="31" value="self.__emFly_Landed_StartFrame"></param>
+				<param name="Reference11" type="31" value="self.__emFly_TakeOff_StartFrame"></param>
+				<param name="Reference12" type="31" value="self.__emFly_TakeOff_Percentage"></param>
+				<param name="Reference13" type="31" value="self.__emFly_bActive"></param>
+				<param name="Reference14" type="31" value="self.__emFly_bLanding"></param>
+				<param name="Reference15" type="31" value="self.__emFly_bLanded"></param>
+				<param name="Reference16" type="31" value="self.__emFly_bTakingOff"></param>
+				<param name="Reference1" type="31" value="self.__emFly_Flying_StartFrame"></param>
+				<param name="Reference4" type="31" value="self.__emFly_Landing_StartVelocity"></param>
+				<param name="Reference3" type="31" value="self.__emFly_Landing_StartPosition"></param>
+				<param name="Reference9" type="31" value="self.__emFly_Landing_Percentage"></param>
+				<param name="Reference2" type="31" value="self.__emFly_Landing_StartFrame"></param>
+				<param name="Reference6" type="31" value="self.__emFly_Landing_StartSize"></param>
+				<param name="Reference8" type="31" value="self.__emFly_Landing_StartColor"></param>
+				<param name="Reference7" type="31" value="self.__emFly_Landing_StartScale"></param>
+				<param name="Reference" type="31" value="self.__emFly_PosArrayIndex"></param>
+				<param name="Reference5" type="31" value="self.__emFly_Landing_StartOrientation"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param name="Value1" type="4" value="0.000000"></param>
+				<param name="Value2" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_x" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_y" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_z" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_x" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_y" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_z" type="4" value="0.000000"></param>
+				<param name="Value5.Value5_w" type="4" value="1.000000"></param>
+				<param name="Value5.Value5_x" type="4" value="0.000000"></param>
+				<param name="Value5.Value5_y" type="4" value="0.000000"></param>
+				<param name="Value5.Value5_z" type="4" value="0.000000"></param>
+				<param name="Value6" type="4" value="0.000000"></param>
+				<param name="Value7.Value7_x" type="4" value="0.000000"></param>
+				<param name="Value7.Value7_y" type="4" value="0.000000"></param>
+				<param name="Value7.Value7_z" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_red" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_green" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_blue" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_alpha" type="4" value="1.000000"></param>
+				<param name="Value9" type="4" value="0.000000"></param>
+				<param name="Value10" type="4" value="0.000000"></param>
+				<param name="Value11" type="4" value="0.000000"></param>
+				<param name="Value12" type="4" value="0.000000"></param>
+				<param name="Value13" type="11" value="false"></param>
+				<param name="Value14" type="11" value="false"></param>
+				<param name="Value15" type="11" value="false"></param>
+				<param name="Value16" type="11" value="false"></param>
+				<param name="Value17" type="11" value="false"></param>
+				<param_ext name="Reference17" type="31" value="self.__emFly_bTookOff"></param_ext>
+				<param_ext name="Reference10" type="31" value="self.__emFly_Landed_StartFrame"></param_ext>
+				<param_ext name="Reference11" type="31" value="self.__emFly_TakeOff_StartFrame"></param_ext>
+				<param_ext name="Reference12" type="31" value="self.__emFly_TakeOff_Percentage"></param_ext>
+				<param_ext name="Reference13" type="31" value="self.__emFly_bActive"></param_ext>
+				<param_ext name="Reference14" type="31" value="self.__emFly_bLanding"></param_ext>
+				<param_ext name="Reference15" type="31" value="self.__emFly_bLanded"></param_ext>
+				<param_ext name="Reference16" type="31" value="self.__emFly_bTakingOff"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.__emFly_Flying_StartFrame"></param_ext>
+				<param_ext name="Reference4" type="31" value="self.__emFly_Landing_StartVelocity"></param_ext>
+				<param_ext name="Reference3" type="31" value="self.__emFly_Landing_StartPosition"></param_ext>
+				<param_ext name="Reference9" type="31" value="self.__emFly_Landing_Percentage"></param_ext>
+				<param_ext name="Reference2" type="31" value="self.__emFly_Landing_StartFrame"></param_ext>
+				<param_ext name="Reference6" type="31" value="self.__emFly_Landing_StartSize"></param_ext>
+				<param_ext name="Reference8" type="31" value="self.__emFly_Landing_StartColor"></param_ext>
+				<param_ext name="Reference7" type="31" value="self.__emFly_Landing_StartScale"></param_ext>
+				<param_ext name="Reference" type="31" value="self.__emFly_PosArrayIndex"></param_ext>
+				<param_ext name="Reference5" type="31" value="self.__emFly_Landing_StartOrientation"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value17" type="1" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value10" type="4" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value11" type="4" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value12" type="4" structure="1" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<portdef name="Value13" type="1" structure="1" group="2" instance="4" port="0" groupname="Value"></portdef>
+				<portdef name="Value14" type="1" structure="1" group="2" instance="5" port="0" groupname="Value"></portdef>
+				<portdef name="Value15" type="1" structure="1" group="2" instance="6" port="0" groupname="Value"></portdef>
+				<portdef name="Value16" type="1" structure="1" group="2" instance="7" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="4" structure="1" group="2" instance="8" port="0" groupname="Value"></portdef>
+				<portdef name="Value4" type="16" structure="1" group="2" instance="9" port="0" groupname="Value"></portdef>
+				<portdef name="Value3" type="16" structure="1" group="2" instance="10" port="0" groupname="Value"></portdef>
+				<portdef name="Value9" type="4" structure="1" group="2" instance="11" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="4" structure="1" group="2" instance="12" port="0" groupname="Value"></portdef>
+				<portdef name="Value6" type="4" structure="1" group="2" instance="13" port="0" groupname="Value"></portdef>
+				<portdef name="Value8" type="512" structure="1" group="2" instance="14" port="0" groupname="Value"></portdef>
+				<portdef name="Value7" type="16" structure="1" group="2" instance="15" port="0" groupname="Value"></portdef>
+				<portdef name="Value" type="4" structure="1" group="2" instance="16" port="0" groupname="Value"></portdef>
+				<portdef name="Value5" type="64" structure="1" group="2" instance="17" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">969</prop>
+					<prop name="posy">393</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="5">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">471</prop>
+					<prop name="posy">294</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-245" offsety="-23" sizex="315" sizey="19"><![CDATA[the index of the current position in PosArray (the "Pathleader")]]></comment>
+			</node>
+			<node type="ScalarNode" index="6">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">470</prop>
+					<prop name="posy">508</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-210" offsety="-25" sizex="280" sizey="19"><![CDATA[The Frame at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="3DVectorNode" index="7">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">422</prop>
+					<prop name="posy">615</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-173" offsety="-25" sizex="287" sizey="19"><![CDATA[The position at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="RotationToQuaternionNode" index="8">
+				<param name="rotation.rotation_x" type="4" value="1.000000"></param>
+				<param name="rotation.rotation_y" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">345</prop>
+					<prop name="posy">797</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ColorNode" index="9">
+				<param name="value.value_red" type="4" value="0.000000"></param>
+				<param name="value.value_green" type="4" value="0.000000"></param>
+				<param name="value.value_blue" type="4" value="0.000000"></param>
+				<param name="value.value_alpha" type="4" value="1.000000"></param>
+				<portdef name="value" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">352</prop>
+					<prop name="posy">1108</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-83" offsety="-23" sizex="273" sizey="19"><![CDATA[The color at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="BooleanNode" index="11">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">460</prop>
+					<prop name="posy">1733</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-263" offsety="-36" sizex="351" sizey="32"><![CDATA[if the PosArrayIndex is greater or equal the last point this is equal true
+=> the particle is approaching the last point in PosArray (=it is landing)]]></comment>
+			</node>
+			<node type="ScalarNode" index="15">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">471</prop>
+					<prop name="posy">908</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-202" offsety="-23" sizex="268" sizey="19"><![CDATA[The size at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="3DVectorNode" index="16">
+				<param name="value.value_x" type="4" value="1.000000"></param>
+				<param name="value.value_y" type="4" value="1.000000"></param>
+				<param name="value.value_z" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">419</prop>
+					<prop name="posy">1002</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-152" offsety="-23" sizex="274" sizey="19"><![CDATA[The scale at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="BooleanNode" index="17">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">459</prop>
+					<prop name="posy">1840</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-254" offsety="-37" sizex="344" sizey="32"><![CDATA[if true then the particle landed at position self._emFlock_Fly_ApproachingLastPos_EndPosition (= it has landed)]]></comment>
+			</node>
+			<node type="BooleanNode" index="19">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">460</prop>
+					<prop name="posy">1947</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-258" offsety="-37" sizex="348" sizey="32"><![CDATA[if true then the particle is leaving from position self._emFlock_Fly_ApproachingLastPos_EndPosition (= it is taking off)]]></comment>
+			</node>
+			<node type="BooleanNode" index="20">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">461</prop>
+					<prop name="posy">2096</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="65535" title_text="0" offsetx="-307" offsety="-62" sizex="399" sizey="58"><![CDATA[if true then the particle has completed the taking off procedurte (= it took off)
+
+IMPORTANT: if this is 'true' then that also means that all phases (flying, landing, taking off) have been completed.]]></comment>
+			</node>
+			<node type="ScalarNode" index="21">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">474</prop>
+					<prop name="posy">1414</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-202" offsety="-23" sizex="268" sizey="19"><![CDATA[The frame at which "take off" started]]></comment>
+			</node>
+			<node type="ScalarNode" index="23">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">474</prop>
+					<prop name="posy">1502</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-202" offsety="-23" sizex="192" sizey="19"><![CDATA[The percentage [0-1] of the take off.]]></comment>
+			</node>
+			<node type="RotationNode" index="24">
+				<param name="value.value_x" type="4" value="1.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="value.value_angle" type="4" value="0.000000"></param>
+				<portdef name="value" type="16384" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">143</prop>
+					<prop name="posy">804</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-140" offsety="-22" sizex="302" sizey="19"><![CDATA[The orientation at which "approaching the last point" started]]></comment>
+			</node>
+			<node type="BooleanNode" index="25">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">459</prop>
+					<prop name="posy">1624</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-223" offsety="-29" sizex="308" sizey="19"><![CDATA[if true then flying (fly through, landing and take off) is active.]]></comment>
+			</node>
+			<node type="IfNode" index="28">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1270</prop>
+					<prop name="posy">282</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[set flags / variables]]></comment>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="28" portname="condition" username="Enable" basename="Enable" portlabel="Enable" exposetype="single"> </port>
+			<port index="28" portname="result" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="4" from_port="Execute" to_node="28" to_port="iftrue"> </cnx>
+			<cnx from_node="24" from_port="result" to_node="8" to_port="rotation"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="4" to_port="Value3"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="4" to_port="Value4"> </cnx>
+			<cnx from_node="17" from_port="result" to_node="4" to_port="Value15"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="4" to_port="Value1"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="4" to_port="Value11"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="4" to_port="Value17"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="4" to_port="Value2"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="4" to_port="Value7"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="4" to_port="Value9"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="4" to_port="Value14"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="4" to_port="Value6"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="4" to_port="Value"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="4" to_port="Value16"> </cnx>
+			<cnx from_node="25" from_port="result" to_node="4" to_port="Value13"> </cnx>
+			<cnx from_node="8" from_port="quaternion" to_node="4" to_port="Value5"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="4" to_port="Value8"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="4" to_port="Value12"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="4" to_port="Value10"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Enable"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

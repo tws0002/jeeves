@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Add Softbody Links" category="" tasks="Momentum/Softbodies" author="" url="" formatversion="1.4" compoundversion="1.1" versiontag="" constructionmode="Current" backgroundcolor="14140773">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="MOM Modify Softbody Links" version="1.2" index="0">
+				<param name="links" type="3" value="0"></param>
+				<param name="tags" type="3" value="1"></param>
+				<param name="connect" type="11" value="true"></param>
+				<param name="remove" type="11" value="false"></param>
+				<portdef name="remove" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="connect" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="links" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="tags" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-59</prop>
+					<prop name="posy">110</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="0" portname="tags" username="tags" basename="tags" portlabel="tags" exposetype="single"> </port>
+			<port index="0" portname="links" username="links" basename="links" portlabel="links" exposetype="single"> </port>
+			<port index="0" portname="connect" username="connect" basename="connect" portlabel="connect" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="connect"> </item>
+			<item type="input" name="links"> </item>
+			<item type="input" name="tags"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Get Position on Curve" tasks="Mootzoid - emTools/Tools - Curves" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="8437150">
+	<definition>
+		<nodes>
+			<node type="emTools_gpoc" index="0">
+				<param name="Name.Name_string" type="8" value=""></param>
+				<param name="Name.Name_uimode" type="8" value=""></param>
+				<param name="Name.Name_filepathseq" type="8" value=""></param>
+				<param name="Name.Name_filename" type="8" value=""></param>
+				<param name="Mode" type="3" value="2"></param>
+				<param name="U" type="4" value="0.000000"></param>
+				<param name="SubC" type="3" value="0"></param>
+				<portdef name="Name" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Mode" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="U" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="SubC" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-944</prop>
+					<prop name="posy">283</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ReferenceToStringNode" index="1">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1441</prop>
+					<prop name="posy">346</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="22">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1581</prop>
+					<prop name="posy">362</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Position" username="Position" basename="Position" portlabel="Position" exposetype="single"> </port>
+			<port index="0" portname="Tangent" username="Tangent" basename="Tangent" portlabel="Tangent" exposetype="single"> </port>
+			<port index="0" portname="Normal" username="Normal" basename="Normal" portlabel="Normal" exposetype="single"> </port>
+			<port index="0" portname="BiNormal" username="Bi_Normal" basename="Bi Normal" portlabel="Bi Normal" exposetype="single"> </port>
+			<port index="0" portname="Mode" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+			<port index="0" portname="U" username="U" basename="U" portlabel="U" exposetype="single"> </port>
+			<port index="0" portname="SubC" username="SubCurve" basename="SubCurve" portlabel="SubCurve" exposetype="single"> </port>
+			<port index="22" portname="inname" username="In_Name_Curve" basename="In Name Curve" portlabel="In Name Curve" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="outstringname" to_node="0" to_port="Name"> </cnx>
+			<cnx from_node="22" from_port="outname" to_node="1" to_port="inname"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name_Curve"> </item>
+			<item type="input" name="Mode" min="0" max="0">
+				<enum value="0"><![CDATA[Position]]></enum>
+				<enum value="1"><![CDATA[Normalized Position]]></enum>
+				<enum value="2"><![CDATA[Position from Percentage]]></enum>
+			</item>
+			<item type="input" name="U" min="0" max="1"> </item>
+			<item type="input" name="SubCurve"> </item>
+			<item type="output" name="Position"> </item>
+			<item type="output" name="Tangent"> </item>
+			<item type="output" name="Normal"> </item>
+			<item type="output" name="Bi_Normal"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="emFly __ Set Data" tasks="Mootzoid/Flocking (b) Fly" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="13402009">
+	<definition>
+		<nodes>
+			<node type="emFly _ Set Data End Values" version="2.0" index="0">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_End_Quaternion.In_End_Quaternion_w" type="4" value="1.000000"></param>
+				<param name="In_End_Quaternion.In_End_Quaternion_x" type="4" value="0.000000"></param>
+				<param name="In_End_Quaternion.In_End_Quaternion_y" type="4" value="0.000000"></param>
+				<param name="In_End_Quaternion.In_End_Quaternion_z" type="4" value="0.000000"></param>
+				<param name="In_End_Size" type="4" value="1.000000"></param>
+				<param name="In_End_Scale.In_End_Scale_x" type="4" value="1.000000"></param>
+				<param name="In_End_Scale.In_End_Scale_y" type="4" value="1.000000"></param>
+				<param name="In_End_Scale.In_End_Scale_z" type="4" value="1.000000"></param>
+				<param name="In_End_Color.In_End_Color_red" type="4" value="1.000000"></param>
+				<param name="In_End_Color.In_End_Color_green" type="4" value="0.628000"></param>
+				<param name="In_End_Color.In_End_Color_blue" type="4" value="0.000000"></param>
+				<param name="In_End_Color.In_End_Color_alpha" type="4" value="1.000000"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Scale" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_End_Quaternion" type="64" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1522</prop>
+					<prop name="posy">-496</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFly _ Set Data Reset Flags and Variables" version="2.0" index="1">
+				<param name="Enable" type="11" value="false"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1495</prop>
+					<prop name="posy">-340</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="emFly _ Set Data Path Positions" version="2.0" index="2">
+				<param name="Enable" type="11" value="true"></param>
+				<param name="In_Path_Positions.In_Path_Positions_x" type="4" value="0.000000"></param>
+				<param name="In_Path_Positions.In_Path_Positions_y" type="4" value="0.000000"></param>
+				<param name="In_Path_Positions.In_Path_Positions_z" type="4" value="0.000000"></param>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Path_Positions" type="16" structure="2" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1498</prop>
+					<prop name="posy">-594</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RotationToQuaternionNode" index="3">
+				<param name="rotation.rotation_x" type="4" value="1.000000"></param>
+				<param name="rotation.rotation_y" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1288</prop>
+					<prop name="posy">-445</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="29">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1968</prop>
+					<prop name="posy">-552</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="30">
+				<portdef name="in" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2136</prop>
+					<prop name="posy">-568</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Enable" username="Set_End_Values" basename="Set End Values" portlabel="Set End Values" exposetype="single"> </port>
+			<port index="0" portname="In_End_Size" username="In_End_Size" basename="In End Size" portlabel="In End Size" exposetype="single"> </port>
+			<port index="0" portname="In_End_Scale" username="In_End_Scale" basename="In End Scale" portlabel="In End Scale" exposetype="single"> </port>
+			<port index="0" portname="In_End_Color" username="In_End_Color" basename="In End Color" portlabel="In End Color" exposetype="single"> </port>
+			<port index="1" portname="Enable" username="Reset_Flags_and_Variables" basename="Reset Flags and Variables" portlabel="Reset Flags and Variables" exposetype="single"> </port>
+			<port index="2" portname="In_Path_Positions" username="In_Path_Positions" basename="In Path Positions" portlabel="In Path Positions" exposetype="single"> </port>
+			<port index="2" portname="Enable" username="Set_Path_Positions" basename="Set Path Positions" portlabel="Set Path Positions" exposetype="single"> </port>
+			<port index="3" portname="rotation" username="In_End_Orientation" basename="In End Orientation" portlabel="In End Orientation" exposetype="single"> </port>
+			<port index="30" portname="out" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="quaternion" to_node="0" to_port="In_End_Quaternion"> </cnx>
+			<cnx from_node="0" from_port="Execute" to_node="29" to_port="port2"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="29" to_port="port3"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="29" to_port="port1"> </cnx>
+			<cnx from_node="29" from_port="execute" to_node="30" to_port="in"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Do What">
+				<item type="input" name="Set_Path_Positions"> </item>
+				<item type="input" name="Set_End_Values"> </item>
+				<item type="input" name="Reset_Flags_and_Variables"> </item>
+			</group>
+			<group type="input" name="Inputs / Values">
+				<item type="input" name="In_Path_Positions"> </item>
+				<item type="input" name="In_End_Orientation"> </item>
+				<item type="input" name="In_End_Size"> </item>
+				<item type="input" name="In_End_Scale"> </item>
+				<item type="input" name="In_End_Color"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

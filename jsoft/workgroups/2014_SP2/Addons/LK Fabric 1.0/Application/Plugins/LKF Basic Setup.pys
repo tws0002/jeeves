@@ -1,0 +1,157 @@
+import win32com.client
+from win32com.client import constants
+
+null = None
+false = 0
+true = 1
+
+def XSILoadPlugin( in_reg ):
+	in_reg.Author = "Leonard Koch"
+	in_reg.Name = "LKF_Basic_Setup_Plugin"
+	in_reg.Major = 2
+	in_reg.Minor = 0
+
+	in_reg.RegisterMenu(constants.siMenuTbGetPrimitiveID,"LKF_Basic_Setup_Menu",false,false)
+	#RegistrationInsertionPoint - do not remove this line
+
+	return true
+
+def XSIUnloadPlugin( in_reg ):
+	strPluginName = in_reg.Name
+	Application.LogMessage(str(strPluginName) + str(" has been unloaded."),constants.siVerbose)
+	return true
+
+def LKF_Basic_Setup_DefineLayout( in_ctxt ):
+	oLayout = in_ctxt.Source
+	oLayout.Clear()
+	return true
+
+def LKF_Basic_Setup_OnInit( ):
+	Application.LogMessage("LKF_Basic_Setup_OnInit called",constants.siVerbose)
+
+def LKF_Basic_Setup_OnClosed( ):
+	Application.LogMessage("LKF_Basic_Setup_OnClosed called",constants.siVerbose)
+
+def LKF_Basic_Setup_Menu_Init( in_ctxt ):
+	oMenu = in_ctxt.Source
+	oMenu.AddCallbackItem("LKF Basic Setup","OnLKF_Basic_SetupMenuClicked")
+	return true
+
+def OnLKF_Basic_SetupMenuClicked( in_ctxt ):
+	numberOfThreadCurves = 12
+	sel = Application.Selection
+	surfaceFound = False
+	if(len(sel) >= 1):
+		if(sel[0].type == "surfmsh"):
+			surfaceFound = True
+			surfaceName = sel[0].name
+		else:
+			surfaceFound = False
+	#ThreadCurves
+	for curveIndexThread in range(numberOfThreadCurves):
+		aControlVertex = 400*[0]
+		for i in range(400):
+			if(i%4==0):
+				aControlVertex[i] = i;
+			if(i%4==1):
+				aControlVertex[i] = 0;
+			if(i%4==2):
+				aControlVertex[i] = 0;
+			if(i%4==3):
+				aControlVertex[i] = 1.0;
+				
+		oRoot = Application.ActiveProject.ActiveScene.Root
+		linearCurve = oRoot.AddNurbsCurve(aControlVertex, None, False, 1, 1, 0, "LKFStandardThreadCurve_1")
+		createdCurveName = linearCurve.name
+			
+		Application.SIAddPointOnCurveAtEnd(createdCurveName, i, 0, 0, False, 0, "")
+		Application.ApplyOp("ICETree", createdCurveName, "siNode", "", "", 0)
+		Application.AddICECompoundNode("LKF Create Standard Thread Curve", createdCurveName + ".crvlist.ICETree")
+		Application.SetValue(createdCurveName + ".crvlist.ICETree.LKF_Create_Standard_Thread_Curve.Rotation_Angle", 360/numberOfThreadCurves*curveIndexThread, "")
+		Application.ConnectICENodes(createdCurveName + ".crvlist.ICETree.port1", createdCurveName + ".crvlist.ICETree.LKF_Create_Standard_Thread_Curve.Execute")
+	#PatternCurves
+	for curveIndexPattern in range(2):
+		aControlVertex = 400*[0]
+		for i in range(400):
+			if(i%4==0):
+				aControlVertex[i] = i;
+			if(i%4==1):
+				aControlVertex[i] = 0;
+			if(i%4==2):
+				aControlVertex[i] = 0;
+			if(i%4==3):
+				aControlVertex[i] = 1.0;
+				
+		oRoot = Application.ActiveProject.ActiveScene.Root
+		linearCurve = oRoot.AddNurbsCurve(aControlVertex, None, False, 1, 1, 0, "LKFStandardPatternCurve_1")
+		createdCurveName = linearCurve.name
+			
+		Application.SIAddPointOnCurveAtEnd(createdCurveName, i, 0, 0, False, 0, "")
+		Application.ApplyOp("ICETree", createdCurveName, "siNode", "", "", 0)
+		Application.AddICECompoundNode("LKF Create Standard Pattern Curve", createdCurveName + ".crvlist.ICETree")
+		Application.SetValue(createdCurveName + ".crvlist.ICETree.LKF_Create_Standard_Pattern_Curve.Rotation_Angle", 180*curveIndexPattern, "")
+		Application.ConnectICENodes(createdCurveName + ".crvlist.ICETree.port1", createdCurveName + ".crvlist.ICETree.LKF_Create_Standard_Pattern_Curve.Execute")
+		
+	numScnRef = 0
+	#Creation of main cloud
+	mainPointcloud = Application.GetPrim("PointCloud", "", "", "")
+	mainCloudName = mainPointcloud.name
+	#Create ICETree
+	Application.ApplyOp("ICETree", mainCloudName, "siNode", "", "", 0)
+	#Add Core
+	Application.AddICECompoundNode("LKF Core", mainCloudName + ".pointcloud.ICETree")
+	#Add & connect Surface Creator
+	Application.AddICECompoundNode("LKF Surface Creator", mainCloudName + ".pointcloud.ICETree")
+	Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Core.Creator_1", mainCloudName + ".pointcloud.ICETree.LKF_Surface_Creator.Creator")
+	#Create & connect Surface reference
+	if(surfaceFound):
+		Application.AddICENode("GetDataNode", "pointcloud.pointcloud.ICETree")
+		Application.SetValue("pointcloud.pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].reference", surfaceName, "")
+		Application.ConnectICENodes("pointcloud.pointcloud.ICETree.LKF_Surface_Creator.Surface", "pointcloud.pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].outname")
+		numScnRef += 1
+	#Add & connect Thread
+	Application.AddICECompoundNode("LKF Thread", mainCloudName + ".pointcloud.ICETree")
+	Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Core.Thread", mainCloudName + ".pointcloud.ICETree.LKF_Thread.Thread")
+	#Add & connect Thread Components and Curves
+	for k in range(numberOfThreadCurves):
+		Application.AddICECompoundNode("LKF Thread Curve Component", mainCloudName + ".pointcloud.ICETree")
+		Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Thread.Thread_Curve_" + str(k+1), mainCloudName + ".pointcloud.ICETree.LKF_Thread_Curve_Component[" + str(k) + "].ThreadCurve")
+		Application.AddPortToICENode(mainCloudName + ".pointcloud.ICETree.LKF_Thread.Thread_Curve_" + str(k+1), "siNodePortDataInsertionLocationAfter")
+		Application.AddICENode("GetDataNode", mainCloudName + ".pointcloud.ICETree")
+		Application.SetValue(mainCloudName + ".pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].reference", "LKFStandardThreadCurve_" + str(k+1), "")
+		Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Thread_Curve_Component[" + str(k) + "].CurveName", mainCloudName + ".pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].outname")
+		numScnRef += 1
+		
+	Application.AddICECompoundNode("LKF Pattern", mainCloudName + ".pointcloud.ICETree")
+	Application.AddICECompoundNode("LKF Pattern Curve Component", mainCloudName + ".pointcloud.ICETree")
+	Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Pattern.U_Pattern_Curve_1", mainCloudName + ".pointcloud.ICETree.LKF_Pattern_Curve_Component.PatternCurve")
+	Application.AddICECompoundNode("LKF Pattern Curve Component", mainCloudName + ".pointcloud.ICETree")
+	Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Pattern.V_Pattern_Curve_1", mainCloudName + ".pointcloud.ICETree.LKF_Pattern_Curve_Component[1].PatternCurve")
+	Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Core.Pattern", mainCloudName + ".pointcloud.ICETree.LKF_Pattern.Pattern")
+	#Add and connect U-Curve
+	Application.AddICENode("GetDataNode", mainCloudName + ".pointcloud.ICETree")
+	Application.SetValue(mainCloudName + ".pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].reference", "LKFStandardPatternCurve_1", "")
+	Application.ConnectICENodes("pointcloud.pointcloud.ICETree.LKF_Pattern_Curve_Component.CurveName[0]", mainCloudName + ".pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].outname")
+	numScnRef += 1
+	#Add and connect V-Curve
+	Application.AddICENode("GetDataNode", mainCloudName + ".pointcloud.ICETree")
+	Application.SetValue(mainCloudName + ".pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].reference", "LKFStandardPatternCurve_2", "")
+	Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.LKF_Pattern_Curve_Component[1].CurveName", mainCloudName + ".pointcloud.ICETree.SceneReferenceNode[" + str(numScnRef) + "].outname")
+	#Connect Core to ICETree
+	if(surfaceFound):
+		Application.ConnectICENodes(mainCloudName + ".pointcloud.ICETree.port1", mainCloudName + ".pointcloud.ICETree.LKF_Core.Execute")
+	else:
+		Application.LogMessage("No Surface selected. Creating LKF basic setup without Surface. Create a surface and connect it to the Surface-port on the LKF Surface Creator-node")
+
+
+
+
+
+
+
+
+
+
+
+
+

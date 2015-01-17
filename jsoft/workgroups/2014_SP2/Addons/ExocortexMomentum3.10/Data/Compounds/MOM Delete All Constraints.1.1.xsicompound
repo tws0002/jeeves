@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="CompoundNode" name="MOM Delete All Constraints" category="" tasks="Momentum/RigidBody" author="" url="" formatversion="1.4" compoundversion="1.1" versiontag="" backgroundcolor="899090">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="MOM Modify Constraint" version="1.1" index="0">
+				<param name="rbd_id" type="3" value="-1"></param>
+				<param name="createmode" type="3" value="3"></param>
+				<param name="constype" type="3" value="0"></param>
+				<param name="pivotpos.pivotpos_x" type="4" value="0.000000"></param>
+				<param name="pivotpos.pivotpos_y" type="4" value="0.000000"></param>
+				<param name="pivotpos.pivotpos_z" type="4" value="0.000000"></param>
+				<param name="pivotrot.pivotrot_w" type="4" value="1.000000"></param>
+				<param name="pivotrot.pivotrot_x" type="4" value="0.000000"></param>
+				<param name="pivotrot.pivotrot_y" type="4" value="0.000000"></param>
+				<param name="pivotrot.pivotrot_z" type="4" value="0.000000"></param>
+				<param name="settings" type="4" value="0.000000"></param>
+				<portdef name="rbd_id" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="createmode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="constype" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="pivotpos" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="pivotrot" type="64" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="settings" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-269</prop>
+					<prop name="posy">-67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="1">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="3"></param>
+				<param name="iffalse" type="3" value="0"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-415</prop>
+					<prop name="posy">-38</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="1" portname="condition" username="Delete" basename="Delete" portlabel="Delete" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="result" to_node="0" to_port="createmode"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Delete"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

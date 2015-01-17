@@ -1,0 +1,12 @@
+
+# Put the name or IP address of the machine running the license
+# server here.
+# If the license server runs on the local machine, you can
+# simply leave the IP address as it is.
+
+/3dfs/licserver 127.0.0.1
+
+# Put '1' instead of '0' if you want 3Delight for Softimage to
+# wait for licenses when none are available.
+
+/3dfs/waitforlicense 0

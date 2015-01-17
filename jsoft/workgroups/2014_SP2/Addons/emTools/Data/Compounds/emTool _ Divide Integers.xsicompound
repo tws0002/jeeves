@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="emTool _ Divide Integers" tasks="Mootzoid - emTools/Tools - Bits and Bytes" author="Eric Mootz" url="http://www.mootzoid.com/" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12361335">
+	<definition>
+		<nodes>
+			<node type="emTools_divi" index="0">
+				<param name="Value" type="3" value="0"></param>
+				<param name="DivideBy" type="3" value="1"></param>
+				<portdef name="Value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="DivideBy" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1008</prop>
+					<prop name="posy">1154</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-18" offsety="-38" sizex="161" sizey="32"><![CDATA[note: this node outputs zero if the divisor is equal zero.]]></comment>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Value" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="0" portname="DivideBy" username="Divide_By" basename="Divide By" portlabel="Divide By" exposetype="single"> </port>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="0" portname="Remainder" username="Remainder" basename="Remainder" portlabel="Remainder" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Value"> </item>
+			<item type="input" name="Divide_By" min="1" max="10"> </item>
+			<item type="output" name="Result"> </item>
+			<item type="output" name="Remainder"> </item>
+		</layout>
+		<blob_dictionary>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

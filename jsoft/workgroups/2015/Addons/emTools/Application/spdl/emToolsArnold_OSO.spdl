@@ -1,0 +1,447 @@
+# -----
+# ---
+# - emToolsArnold_OSO by Eric Mootz
+# ---
+# -----
+SPDL
+Version = "2.0.0.0";
+Reference = "{1056B439-F800-403B-B620-8EBA071A9F69}";
+
+MetaShader "emTool_oso_meta"
+{
+	Name = "emToolsArnold_OSO";
+	Type = material;
+	Renderer "arnold"
+	{
+		Name = "emToolsArnold_OSO";
+	}
+}
+
+PropertySet "pset"
+{
+	# -----
+	# ---
+	# - output port(s)
+	# ---
+	# -----
+	
+	Parameter "out" output
+	{
+		GUID = "{51736ECA-7411-475B-8BCB-932829E93D2F}";
+		Type = color;
+	}
+	
+	# -----
+	# ---
+	# - input port(s)
+	# ---
+	# -----
+
+	Parameter "Srf_Color" input
+	{
+		GUID = "{AA918BE4-1604-4D6E-A078-3EBE0C34BCAB}";
+		Type = color;
+		Value = 1.0 0.8 0.3;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+	
+	Parameter "Srf_Scale" input
+	{
+		GUID = "{FDD87825-0F5F-4A4A-8B1B-4513AFB79838}";
+		Type = scalar;
+		Value = 0.333;
+		Value Minimum = 0;
+		Value Maximum = 1;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "Rfr_Color" input
+	{
+		GUID = "{5B9CE6E7-6BF2-4755-A6EE-42A1273D2616}";
+		Type = color;
+		Value = 1.0 1.0 1.0;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "Rfr_Scale" input
+	{
+		GUID = "{D0AE0C06-C0BF-4416-852D-2ACCF567F1F5}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0;
+		Value Maximum = 1;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "Rfr_IOR_in" input
+	{
+		GUID = "{A38DB3C6-D4F4-4845-B80C-70B7BF6AF787}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "Rfr_IOR_out" input
+	{
+		GUID = "{0FD2F035-3A22-44B2-9934-527B25A98EB5}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+	
+	Parameter "Rfr_Transmittance" input
+	{
+		GUID = "{3E735778-93C5-4FF6-BF33-CD448FAF5317}";
+		Type = color;
+		Value = 1.0 1.0 1.0;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "Shd_Color" input
+	{
+		GUID = "{76D2E001-8231-4076-BE0D-F811A48C49AE}";
+		Type = color;
+		Value = 0.0 0.0 0.0;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "Shd_Amount" input
+	{
+		GUID = "{3F28A8AA-6EC7-4728-98D0-CBC9B86CB361}";
+		Type = scalar;
+		Value = 1.0;
+		Value Minimum = 0;
+		flags = 1;
+		texturable = on;
+		writable = on;
+		animatable = on;
+		persistable = on;
+		readable = on;
+		inspectable = on;
+	}
+
+	Parameter "ModeID" input
+	{
+		GUID = "{3B04D853-223B-4447-851E-024BDF315E8C}";
+		Type = integer;
+		Value = 0;
+	}
+
+	Parameter "Ray_NoTtl" input
+	{
+		GUID = "{0E5074D6-2B59-45D4-9B27-B377B4CD7E38}";
+		Type = boolean;
+		Value = true;
+	}
+
+	Parameter "Ray_NoRfr" input
+	{
+		GUID = "{AF27DDCB-9B22-4E9B-9E77-E9D5972F7840}";
+		Type = boolean;
+		Value = true;
+	}
+
+	Parameter "Ray_DiffNoRfr" input
+	{
+		GUID = "{36B1156C-7A88-4AA0-A73E-BF16418711A0}";
+		Type = boolean;
+		Value = true;
+	}
+
+	Parameter "Ray_GlssNoRfr" input
+	{
+		GUID = "{DA1E688E-F4BE-461A-AC66-74607D46C1FB}";
+		Type = boolean;
+		Value = true;
+	}
+
+	Parameter "Ray_ReflNoRfr" input
+	{
+		GUID = "{E1C70745-9B07-4919-8F45-7331539DD653}";
+		Type = boolean;
+		Value = true;
+	}
+
+	Parameter "AOVs" input
+	{
+		GUID = "{E1A622C2-4795-4F97-BC4E-91D998C81D08}";
+		Type = boolean;
+		Value = false;
+	}
+
+	Parameter "debug1" input
+	{
+		GUID = "{CEDAD179-E484-4C9C-B020-1ED9C0A99E59}";
+		Type = boolean;
+		Value = false;
+	}
+
+	Parameter "debug2" input
+	{
+		GUID = "{EB31CD7C-6C33-4E81-A62D-01ACC2EAEA4C}";
+		Type = boolean;
+		Value = false;
+	}
+
+	Parameter "debug3" input
+	{
+		GUID = "{CA16DF72-01AB-435F-9D17-118F3D2CFFAB}";
+		Type = boolean;
+		Value = false;
+	}
+}
+
+Defaults
+{
+	Srf_Color
+	{
+		Name = "Color";
+		UIType = "rgb";
+	}
+	Srf_Scale
+	{
+		Name = "Scale";
+		UIRange = 0.0 to 1.0;
+	}
+	Rfr_Color
+	{
+		Name = "Color";
+		UIType = "rgb";
+	}
+	Rfr_Scale
+	{
+		Name = "Scale";
+		UIRange = 0.0 to 1.0;
+	}
+	Rfr_IOR_in
+	{
+		Name = "IOR (In)";
+		UIRange = 0.0 to 3.0;
+	}
+	Rfr_IOR_out
+	{
+		Name = "IOR (Out)";
+		UIRange = 0.0 to 3.0;
+	}
+	Rfr_Transmittance
+	{
+		Name = "Transmittance";
+		UIType = "rgb";
+	}
+	Shd_Color
+	{
+		Name = "Color";
+		UIType = "rgb";
+	}
+	Shd_Amount
+	{
+		Name = "Amount";
+		UIRange = 0.0 to 1.0;
+	}
+	ModeID
+	{
+		Name = "Mode";
+		UIType = "combo";
+		Items {
+			"OSO (Outer Shell Only)"	= 0,
+			"PLND (Additive)"			= 1,
+		}
+	}
+	Ray_NoTtl
+	{
+		Name = "Do not affect  'Total Ray Depth'";
+	}
+	Ray_NoRfr
+	{
+		Name = "Do not affect  'Refraction Ray Depth'";
+	}
+	Ray_DiffNoRfr
+	{
+		Name = "No Transparency for Diffuse Rays";
+	}
+	Ray_GlssNoRfr
+	{
+		Name = "No Transparency for Glossy Rays";
+	}
+	Ray_ReflNoRfr
+	{
+		Name = "No Transparency for Reflection Rays";
+	}
+	AOVs
+	{
+		Name = "Write AOVs";
+	}
+}
+
+Layout "Default"
+{
+	Tab "Surface"
+	{
+		Srf_Color;
+		Srf_Scale;
+	}
+	Tab "Refraction"
+	{
+		Rfr_Color;
+		Rfr_Scale;
+		Rfr_IOR_in;
+		Rfr_IOR_out;
+		Rfr_Transmittance;
+	}
+	Tab "Shadow"
+	{
+		Shd_Color;
+		Shd_Amount;
+	}
+	Tab "Options"
+	{
+		Group "Shader Mode"
+		{
+			ModeID;
+		}
+		Group "AOVs"
+		{
+			AOVs;
+		}
+		Group "Rays"
+		{
+			Ray_NoTtl;
+			Ray_NoRfr;
+			Ray_DiffNoRfr;
+			Ray_GlssNoRfr;
+			Ray_ReflNoRfr;
+		}
+	}
+#	Tab "Debug"
+#	{
+#		debug1;
+#		debug2;
+#		debug3;
+#	}
+}
+
+Layout "RenderTree"
+{
+	Group "Surface"
+	{
+		Srf_Color;
+		Srf_Scale;
+	}
+	Group "Refraction"
+	{
+		Rfr_Color;
+		Rfr_Scale;
+		Rfr_IOR_in;
+		Rfr_IOR_out;
+		Rfr_Transmittance;
+	}
+	Group "Shadow"
+	{
+		Shd_Color;
+		Shd_Amount;
+	}
+}
+
+Logic
+{
+	Sub ModeID_OnChanged()
+		'
+		' set flags.
+		isOSO = (pset.ModeID.Value =  0)
+		isADD = (pset.ModeID.Value =  1)
+		'
+		' set visibility of parameters.
+		pset.Rfr_IOR_in.show			(isOSO)
+		pset.Rfr_IOR_out.show			(isOSO)
+		pset.Rfr_Transmittance.show		(isOSO)
+		'
+		' refresh the bloody PPG
+		PPG.Refresh
+		'
+	end sub
+
+	Sub OnInit()
+		'
+		ModeID_OnChanged()
+		'
+		' create the Oso render channels if necessary
+		Dim oRenderChannels
+		Set oRenderChannels = ActiveProject.ActiveScene.PassContainer.Properties( "Scene Render Options" ).RenderChannels
+		If TypeName(oRenderChannels) <> "Nothing" Then
+			Dim oChannel, create_Oso_Surface_Raw, create_Oso_Refraction_Raw
+			create_Oso_Surface_Raw		= true
+			create_Oso_Refraction_Raw	= true
+			for each oChannel in oRenderChannels
+				if oChannel.Name = "Oso_Surface_Raw" then
+					create_Oso_Surface_Raw = false
+				end if
+				if oChannel.Name = "Oso_Refraction_Raw" then
+					create_Oso_Refraction_Raw = false
+				end if
+			next
+			if create_Oso_Surface_Raw then
+				CreateRenderChannel "Oso_Surface_Raw", siRenderChannelColorType
+			end if
+			if create_Oso_Refraction_Raw then
+				CreateRenderChannel "Oso_Refraction_Raw", siRenderChannelColorType
+			end if
+		End If
+		'
+		PPG.Refresh
+	End Sub
+}
+
+Plugin = Shader
+{
+	FileName = "emToolsArnold.64";
+}

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<xsi_file type="Shelf" xsi_version="10.1.62.0" syntax_version="1.0">
+   <shelf_view name="Implosia FX" clsid="{A923CECF-9604-4E22-BFE4-D7454BB02B46}">
+      <properties>
+         <showtabs>false</showtabs>
+      </properties>
+      <definition maxinstances="10000" acceptfocus="true" private="false" defaultsize="0,100,162,568" cmdmap="{00000000-0000-0000-0000-000000000000}" supportedtypes="6" category=""></definition>
+      <tabs layout="top" active="DS Toolbar">
+         <tab label="DS Toolbar" type="toolbar">
+            <properties id="{95193760-B75E-11DF-9DF2-A4BADB0323CA}" name="" display_preset_as_small="False" display_as_text_only="False"></properties>
+            <item type="separator" mode="group_header" group_name="Mesh Pre-Processing"></item>
+            <item type="scriptbutton" label="Cap Holes" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total objects count to capping: &quot;+slctGlob.count );
+for (var c1=0;c1&lt;slctGlob.count;c1++)
+{
+var slct = slctGlob(c1);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+{
+  Application.ApplyOp(&quot;ICETree&quot;, slct , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0)
+  var lastTree = slct.ActivePrimitive.ICETrees(0);
+  Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;CapAllHoles_tree&quot;, &quot;&quot;);
+  Application.AddICECompoundNode(&quot;IFX Cap All Holes&quot;, String(lastTree)+&quot;.Name&quot;)
+  Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Cap_All_Holes.Perform&quot;)
+  Application.InspectObj(String(lastTree)+&quot;.IFX_Cap_All_Holes&quot;)
+} 
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+};]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Triangulate" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total objects count to triangulation: &quot;+slctGlob.count );
+for (var c1=0;c1&lt;slctGlob.count;c1++)
+{
+var slct = slctGlob(c1);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+  Application.ApplyTopoOp(&quot;TriangulatePolygons&quot;, slct, &quot;siUnspecified&quot;, &quot;siPersistentOperation&quot;, &quot;&quot;);
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+};]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Freeze" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[Application.FreezeObj(&quot;&quot;, &quot;&quot;, &quot;&quot;)]]&gt;</scripttext>
+            </item>
+            <item type="separator" mode="group_header" group_name="Shatter"></item>
+            <item type="scriptbutton" label="Iterative" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total objects count to fracture: &quot;+slctGlob.count );
+for (var c1=0;c1&lt;slctGlob.count;c1++)
+{
+var slct = slctGlob(c1);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+{
+  Application.ApplyOp(&quot;ICETree&quot;, slct , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0)
+  var lastTree = slct.ActivePrimitive.ICETrees(0);
+  Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;IterativeFRACTURE_tree&quot;, &quot;&quot;);
+  Application.AddICECompoundNode(&quot;IFX Iterative Fracture&quot;, String(lastTree)+&quot;.Name&quot;)
+  Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Iterative_Fracture.Perform&quot;)
+  Application.InspectObj(String(lastTree)+&quot;.IFX_Iterative_Fracture&quot;)
+} 
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+};]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Continuous" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total objects count to fracture: &quot;+slctGlob.count );
+for (var c1=0;c1&lt;slctGlob.count;c1++)
+{
+var slct = slctGlob(c1);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+{
+  Application.ApplyOp(&quot;ICETree&quot;, slct , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0)
+  var lastTree = slct.ActivePrimitive.ICETrees(0);
+  Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;ContinuousFRACTURE_tree&quot;, &quot;&quot;);
+  Application.AddICECompoundNode(&quot;IFX Continuous Fracture&quot;, String(lastTree)+&quot;.Name&quot;)
+  Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Continuous_Fracture.Perform&quot;)
+  Application.InspectObj(String(lastTree)+&quot;.IFX_Continuous_Fracture&quot;)
+} 
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+};]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Voronoi" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total objects count to fracture: &quot;+slctGlob.count );
+for (var c1=0;c1&lt;slctGlob.count;c1++)
+{
+var slct = slctGlob(c1);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+{
+  Application.ApplyOp(&quot;ICETree&quot;, slct , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0)
+  var lastTree = slct.ActivePrimitive.ICETrees(0);
+  Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;VoronoiFRACTURE_tree&quot;, &quot;&quot;);
+  Application.AddICECompoundNode(&quot;IFX Voronoi Fracture&quot;, String(lastTree)+&quot;.Name&quot;)
+  Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Voronoi_Fracture.Perform&quot;)
+  Application.InspectObj(String(lastTree)+&quot;.IFX_Voronoi_Fracture&quot;)
+} 
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+};]]&gt;</scripttext>
+            </item>
+            <item type="separator" mode="group_header" group_name="Boolean"></item>
+            <item type="scriptbutton" label="Boolean" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[
+slctGlobal = Application.Selection;
+
+slct_A = slctGlobal(0);
+slct_B = slctGlobal(1);
+slct_R = slctGlobal(2);
+
+if ((slct_A != null) &amp;&amp; ( slct_A.Type.toString() == &quot;polymsh&quot;) &amp;&amp; (slct_B != null) &amp;&amp; ( slct_B.Type.toString() == &quot;polymsh&quot;) &amp;&amp; (slctGlobal.count == 2 || (slctGlobal.count == 3 &amp;&amp;((slct_R != null) &amp;&amp; ( slct_R.Type.toString() == &quot;polymsh&quot;) ))))
+{
+   var mode = slctGlobal.count == 3 ? true : false;
+   Application.Logmessage ( mode );
+   if ( mode )
+   {
+   // use third selection item as result
+       Application.ApplyOp(&quot;ICETree&quot;, slct_R , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0);
+	   var lastTree = slct_R.ActivePrimitive.ICETrees(0);
+	   Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;BooleanCSG_tree&quot;, &quot;&quot;);
+	   Application.AddICECompoundNode(&quot;IFX Gigaboolean&quot;, String(lastTree)+&quot;.Name&quot;);
+	   Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Gigaboolean.Perform&quot;);
+	   //
+	   AddICENode(&quot;GetDataNode&quot;, String(lastTree));
+	   AddICENode(&quot;GetDataNode&quot;, String(lastTree));
+       SetValue( String(lastTree) + &quot;.SceneReferenceNode.reference&quot; , String(slct_A), null);    
+       SetValue( String(lastTree) + &quot;.SceneReferenceNode[1].reference&quot; , String(slct_B), null);    
+	   ConnectICENodes(String(lastTree) + &quot;.IFX_GigaBoolean.A_Geo&quot;,String(lastTree) +&quot;.SceneReferenceNode.outname&quot; );
+	   ConnectICENodes(String(lastTree) + &quot;.IFX_GigaBoolean.B_Geo&quot;,String(lastTree) +&quot;.SceneReferenceNode[1].outname&quot; );
+	   Application.InspectObj(String(lastTree)+&quot;.IFX_Gigaboolean&quot;);	   	   
+   }
+   else
+   { // use A selection item as result
+       Application.ApplyOp(&quot;ICETree&quot;, slct_A , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0);
+	   var lastTree = slct_A.ActivePrimitive.ICETrees(0);
+	   Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;BooleanCSG_tree&quot;, &quot;&quot;);
+	   Application.AddICECompoundNode(&quot;IFX Gigaboolean&quot;, String(lastTree)+&quot;.Name&quot;);
+	   Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Gigaboolean.Perform&quot;);
+	   //
+	   AddICENode(&quot;GetDataNode&quot;, String(lastTree));
+	   AddICENode(&quot;GetDataNode&quot;, String(lastTree));
+       SetValue( String(lastTree) + &quot;.SceneReferenceNode.reference&quot; , String(slct_A), null);    
+       SetValue( String(lastTree) + &quot;.SceneReferenceNode[1].reference&quot; , String(slct_B), null);    
+	   ConnectICENodes(String(lastTree) + &quot;.IFX_GigaBoolean.A_Geo&quot;,String(lastTree) +&quot;.SceneReferenceNode.outname&quot; );
+	   ConnectICENodes(String(lastTree) + &quot;.IFX_GigaBoolean.B_Geo&quot;,String(lastTree) +&quot;.SceneReferenceNode[1].outname&quot; );
+	   Application.InspectObj(String(lastTree)+&quot;.IFX_Gigaboolean&quot;);	   	   
+   }
+} 
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );]]&gt;</scripttext>
+            </item>
+            <item type="separator" mode="group_header" group_name="Mesh Post-Processing"></item>
+            <item type="scriptbutton" label="Apply Cached Data" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total fractured objects count: &quot;+slctGlob.count );
+for (var c1=0;c1&lt;slctGlob.count;c1++)
+{
+var slct = slctGlob(c1);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+{
+  Application.ApplyOp(&quot;ICETree&quot;, slct , &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0);
+  var lastTree = slct.ActivePrimitive.ICETrees(0);
+  Application.SetValue(String(lastTree)+&quot;.Name&quot;, &quot;applyMatData_tree&quot;, &quot;&quot;);
+  Application.AddICECompoundNode(&quot;IFX Apply Passed Data&quot;, String(lastTree)+&quot;.Name&quot;);
+  Application.ConnectICENodes(String(lastTree)+&quot;.port1&quot;, String(lastTree)+&quot;.IFX_Apply_Passed_Data.Perform&quot;);
+  Application.InspectObj(String(lastTree)+&quot;.IFX_Apply_Passed_Data&quot;);
+}
+else
+  Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot; , siWarningMsg );
+};]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Assign Mat to Interior" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[// interior
+slct_poly = Application.Selection(0)
+slct_mat = Application.Selection(1)
+
+if ((slct_poly != null) &amp;&amp; ( slct_poly.Type.toString() == &quot;polymsh&quot;) &amp;&amp; (slct_mat != null) &amp;&amp; ( slct_mat.Type.toString() == &quot;material&quot;))
+{
+var attr = slct_poly.ActivePrimitive.Geometry.GetICEAttributeFromName(&quot;MaterialID&quot;);
+var mat_id = new VBArray( attr.DataArray ).toArray();
+if ( mat_id.length != 0 )
+{
+
+var f_a =[];
+var s_a =[];
+var f_m = mat_id[0];
+var s_m = mat_id[0];
+var c1 = 0;
+while ( f_m == s_m )
+{
+   s_m = mat_id[c1];
+   c1++;
+}
+if ( f_m &lt; s_m ) { s_m -= f_m; f_m += s_m; s_m = f_m - s_m; } else f_m = f_m;
+ 
+for(var i=0; i &lt; mat_id.length; i++)
+   mat_id[i] == f_m ?  f_a.push (i) : s_a.push(i);
+
+SetPolygonSelectionFilter();
+CopyPaste(slct_mat, null, slct_poly+&quot;.poly[&quot;+f_a+&quot;]&quot;, 1);
+ActivateObjectSelTool(null);
+}
+else
+Application.LogMessage ( &quot;Material ID data not founded!Check for 'Apply Cached Data' compound applied!&quot;,siErrorMsg );
+}
+else
+Application.LogMessage ( &quot;Please, select a polymesh first and after that a material!&quot; , siWarningMsg);]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Assign Mat to Exterior" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[// exterior
+slct_poly = Application.Selection(0)
+slct_mat = Application.Selection(1)
+
+if ((slct_poly != null) &amp;&amp; ( slct_poly.Type.toString() == &quot;polymsh&quot;) &amp;&amp; (slct_mat != null) &amp;&amp; ( slct_mat.Type.toString() == &quot;material&quot;))
+{
+var attr = slct_poly.ActivePrimitive.Geometry.GetICEAttributeFromName(&quot;MaterialID&quot;);
+var mat_id = new VBArray( attr.DataArray ).toArray();
+if ( mat_id.length != 0 )
+{
+
+var f_a =[];
+var s_a =[];
+var f_m = mat_id[0];
+var s_m = mat_id[0];
+var c1 = 0;
+while ( f_m == s_m )
+{
+   s_m = mat_id[c1];
+   c1++;
+}
+if ( f_m &lt; s_m ) { s_m -= f_m; f_m += s_m; s_m = f_m - s_m; } else f_m = f_m;
+ 
+for(var i=0; i &lt; mat_id.length; i++)
+   mat_id[i] == f_m ?  f_a.push (i) : s_a.push(i);
+
+SetPolygonSelectionFilter();
+CopyPaste(slct_mat, null, slct_poly+&quot;.poly[&quot;+s_a+&quot;]&quot;, 1);
+ActivateObjectSelTool(null);
+}
+else
+Application.LogMessage ( &quot;Material ID data not founded!Check for 'Apply Cached Data' compound applied!&quot; ,siErrorMsg );
+}
+else
+Application.LogMessage ( &quot;Please, select a polymesh first and after that a material!&quot;, siWarningMsg);]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Correct Normals" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[function GetName ( _index, _slct )
+{
+var allNames = _slct.GetAsText();
+var actualChar = allNames.charAt(0) + &quot;,&quot;;
+var chcnt = 0;
+var seekBegin = 0;
+var seekEnd = 0;
+var actIndx = 0;
+var result = &quot;empty&quot;;
+while ( actualChar != &quot;,&quot; &amp;&amp; chcnt &lt; allNames.length )
+  {
+    chcnt++;
+    actualChar = allNames.charAt(chcnt);
+    if ( actualChar == &quot;,&quot; || chcnt == allNames.length ) { if(actIndx == _index ) { seekEnd = chcnt ; break;}; else { actIndx++; actualChar = &quot;a&quot;;  seekBegin = chcnt + 1; }; };
+  };
+
+      result = &quot;&quot;;
+      while ( seekBegin &lt; seekEnd ) 
+	  {
+	     result += allNames.charAt(seekBegin);
+	     seekBegin++;
+      };
+	  return result;
+	  
+  Application.LogMessage ( &quot;Error During parsing name udner model&quot; , siErrorMsg);
+  return &quot;&quot;;
+};
+
+
+
+
+var slctGlob = Application.Selection;
+Application.LogMessage ( &quot;Total objects count: &quot;+slctGlob.count );
+for (var cg=0;cg&lt;slctGlob.count;cg++)
+{
+
+
+
+Application.LogMessage (&quot;obj index=&quot;+cg);
+Application.LogMessage ( GetName(cg, slctGlob));
+
+
+var slct = slctGlob(cg);
+if ((slct != null) &amp;&amp; ( slct.Type.toString() == &quot;polymsh&quot;))
+{
+
+  SetUserNormalValues ( GetName(cg, slctGlob) ,[0], [0,0,0] );
+  var attrs = slct.ActivePrimitive.Geometry.ICEAttributes;
+  var IsFound = false;
+  var c1 =0;
+  while ( c1&lt;attrs.count )
+  {
+     if ( attrs(c1).Name == &quot;IFX_NORMALS_CONTAINER&quot; ) { IsFound = true; c1 = attrs.count; } else {c1++; continue}  ;
+  };
+    if ( IsFound )
+    {
+	  
+    var attr = slct.ActivePrimitive.Geometry.GetICEAttributeFromName(&quot;IFX_NORMALS_CONTAINER&quot;);
+	if ( attr.StructureType != 2 ) { Application.LogMessage (&quot;Normals attribute is invalid, canceled&quot; ,siErrorMsg ); continue; };
+    var accessorGlob = new VBArray( attr.DataArray2D ).toArray();
+	  var accessorSub = new VBArray( accessorGlob[0] ).toArray();
+      if ( accessorSub.length != 0)
+        {
+           var normIndices = [];
+		   var normValues = [];
+           for(var i=0; i &lt; accessorSub.length; i++)
+            {
+			 normIndices.push(i) ;
+			 normValues.push ( accessorSub[i].x );
+			 normValues.push ( accessorSub[i].y );
+			 normValues.push ( accessorSub[i].z );	     
+            };
+			SetUserNormalValues ( GetName(cg, slctGlob) ,normIndices, normValues );
+         } 
+      else
+         {
+            Application.LogMessage ( &quot;Normals data not found!&quot; , siErrorMsg );
+         };
+     };
+  else
+  {
+  Application.LogMessage ( &quot;Normals data not found!Check for 'Apply Cached Data' compound applied!&quot; , siErrorMsg );
+  };
+}
+else
+   Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+
+};
+  
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Extract chunks" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[var slct_poly = Application.Selection(0);
+var validExe = true;
+  if ((slct_poly != null) &amp;&amp; ( slct_poly.Type.toString() == &quot;polymsh&quot;))
+  {
+
+  try { var attr = slct_poly.ActivePrimitive.Geometry.GetICEAttributeFromName(&quot;IFX_PolyIslandID&quot;); }
+  catch (e) {  Application.LogMessage (&quot;Islands ID attribute is invalid, canceled&quot; ,siErrorMsg ); validExe = false; }
+  if( validExe )
+  {
+  if ( attr.StructureType != 2 ) { Application.LogMessage (&quot;Islands ID attribute is invalid, canceled&quot; ,siErrorMsg ); };
+  var temp = new VBArray( attr.DataArray2D ).toArray();
+  var isl_id = new VBArray( temp[0] ).toArray();
+
+  var actualChunkName = &quot;GIGACHUNK&quot;;
+  var counter = 0, a = 0, a_prev =0 , c2=0;
+  var filler = [];
+  var list2add = [];
+  a_prev = isl_id[0].y; 
+  a = isl_id[1].y; 
+
+  //
+  var progress = XSIUIToolkit.ProgressBar;
+  progress.Maximum = isl_id[0].y;
+  progress.Step = 1
+  progress.Caption = &quot;Extraction Progress&quot;
+  progress.CancelEnabled = true;
+  progress.Visible = true;
+  //
+  
+  for (var counter = 0 ; counter &lt; isl_id.length-1 ; )
+  {
+   if ( a == a_prev ) 
+   { 
+      filler.push (isl_id[counter].x); 
+   } 
+   else
+   {
+      actualChunkName = slct_poly+&quot;_IFX_chunk_&quot;+c2;
+      Application.ExtractFromComponents(&quot;ExtractPolygonsOp&quot;, slct_poly+&quot;.poly&quot; + &quot;[&quot;+filler+&quot;]&quot;, actualChunkName); 
+	  FreezeObj( actualChunkName , &quot;&quot;,&quot;&quot; );
+	  list2add.push (actualChunkName );
+      filler.length = 0; 
+	  c2++;
+	  progress.Increment();
+	  filler.push (isl_id[counter].x); 
+   }; 
+   a_prev = a;
+   counter++; 
+   a = isl_id[counter].y; 
+   if ( progress.CancelPressed == true ) break;
+  }
+  //
+  a = 0; a_prev =1;  filler.length = 0;
+  a = isl_id[isl_id.length-a_prev].y;
+  while ( a == 0 )
+  {
+     filler.push(isl_id[isl_id.length-a_prev].x);
+     a_prev++;
+     a = isl_id[isl_id.length-a_prev].y;
+  }
+  
+  actualChunkName = slct_poly+&quot;_IFX_chunk_&quot;+c2;
+  Application.ExtractFromComponents(&quot;ExtractPolygonsOp&quot;, slct_poly+&quot;.poly&quot; + &quot;[&quot;+filler+&quot;]&quot;, actualChunkName);
+  FreezeObj( actualChunkName , &quot;&quot;,&quot;&quot; );
+  list2add.push (actualChunkName );
+  CreateGroup( slct_poly+&quot;_CHUNKS_GRP&quot;, list2add, null );
+  Application.Logmessage ( &quot;Chunks: &quot; + c2 );
+  Application.Logmessage ( &quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;); 
+ progress.Visible = false;
+ }
+ else
+ {
+  Application.LogMessage ( &quot;Could not find IslandID attribute! Check for 'Apply Cached Data' compound applied!&quot;, siErrorMsg );
+}
+  }
+  else
+  {
+    Application.LogMessage ( &quot;Non-poly object encountered, bypassed!&quot;, siWarningMsg );
+  };
+
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Select Inner Faces" userwidth="150" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[// interior
+slct_poly = Application.Selection(0)
+
+if ((slct_poly != null) &amp;&amp; ( slct_poly.Type.toString() == &quot;polymsh&quot;) )
+{
+var attr = slct_poly.ActivePrimitive.Geometry.GetICEAttributeFromName(&quot;MaterialID&quot;);
+var mat_id = new VBArray( attr.DataArray ).toArray();
+if ( mat_id.length != 0 )
+{
+
+var f_a =[];
+var s_a =[];
+var f_m = mat_id[0];
+var s_m = mat_id[0];
+var c1 = 0;
+while ( f_m == s_m )
+{
+   s_m = mat_id[c1];
+   c1++;
+}
+if ( f_m &lt; s_m ) { s_m -= f_m; f_m += s_m; s_m = f_m - s_m; } else f_m = f_m;
+ 
+for(var i=0; i &lt; mat_id.length; i++)
+   mat_id[i] == f_m ?  f_a.push (i) : s_a.push(i);
+
+SetPolygonSelectionFilter();
+SelectGeometryComponents(slct_poly+&quot;.poly[&quot;+f_a+&quot;]&quot;); 
+}
+else
+Application.LogMessage ( &quot;Material ID data not founded!Check for 'Apply Cached Data' compound applied!&quot;,siErrorMsg );
+}
+else
+Application.LogMessage ( &quot;Please, select a polymesh!&quot; , siWarningMsg);]]&gt;</scripttext>
+            </item>
+         </tab>
+      </tabs>
+   </shelf_view>
+</xsi_file>
