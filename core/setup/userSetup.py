@@ -14,10 +14,11 @@ script editor
 
 '''
 
-print 'userSetup.py -sv'
+print 'userSetup.py'
 import sys
 import maya.utils as utils
 import maya.cmds as cmds
+import maya.mel as mel
 
 cmds.loadPlugin( 'AbcExport' )
 
@@ -38,12 +39,18 @@ if dev:
 else:
     if sys.platform == 'win32':
         sys.path.append('//resources/resources/vfx/pipeline/jeeves')
+        src = 'source "//resources/resources/vfx/pipeline/jeeves/jmaya/scripts/DeadlineMayaClient.mel"'
+        cmd = "mel.eval('%s')" % src
 
     elif sys.platform == 'linux2':
         sys.path.append('/mnt/resources/vfx/pipeline/jeeves')
+        src = 'source "/mnt/resources/vfx/pipeline/jeeves/jmaya/scripts/DeadlineMayaClient.mel"'
+        cmd = "mel.eval('%s')" % src
 
     elif sys.platform == 'darwin':
         sys.path.append('/Volumes/resources/vfx/pipeline/jeeves')
+        src = 'source "/Volumes/resources/vfx/pipeline/jeeves/jmaya/scripts/DeadlineMayaClient.mel"'
+        cmd = "mel.eval('%s')" % src
 
 def createScriptsMenu():
     if cmds.menu('Jeeves', exists=1):
@@ -51,6 +58,7 @@ def createScriptsMenu():
 
     scriptsMenu = cmds.menu('Jeeves', p='MayaWindow', to=1, aob=1, l='Jeeves')
     cmds.menuItem(p=scriptsMenu, l="Launch Jeeves", c='import core.ui.jeeves_ui;reload(core.ui.jeeves_ui)')
+    cmds.menuItem(p=scriptsMenu, l="Deadline", c=cmd)
 
 utils.executeDeferred('createScriptsMenu()')
 print 'finished userSetup.py'
