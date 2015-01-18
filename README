@@ -2,6 +2,10 @@ jeeves.core.setup
 
 The initial requirements to set up jeeves are as follows:
 
+PYTHONPATH:
+
+set the pythonpath to /mnt/resources/vfx/pipeline/jeeves or equivalent
+
 Maya:
 
 take the files in jeeves/core/setup (userSetup.py, userSetup.mel and Maya.env) and read the instructions in them. Essentially,
@@ -63,3 +67,11 @@ dynamically for maya / nuke when the jeeves_ui.py module is called. pysideuic is
 
 pysideuic is included with maya as standard. the lib/site_packages folder within maya needs to be appended to the sys path for
 nuke so that nuke can convert these ui files on the fly. this means that maya needs to be on the nuke linux machines. hey ho.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+TO DO
+
+1) jmaya.pipeline.importer - importing of maya files - tab currently disabled
+2) jnuke.pipeline.save_as - currently disbaled - see line 1194 of jeeves_ui
+3) jmaya.pipeline.tools.shader_ui / jmaya.pipeline.tools 

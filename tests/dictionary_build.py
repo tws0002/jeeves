@@ -64,10 +64,10 @@ jobdict = job.lookup(searchtext = 'jeeves').jobdict
 #jobdict = wrappers.get_renders(jobdict = jobdict, dept = '3d', shot = 'sh_001').jobdict
 #jobdict = wrappers.get_renders(jobdict = jobdict, dept = 'nuke').jobdict
 
-jobdict = wrappers.get_scenes(jobdict = jobdict).jobdict # this gets everything
-#jobdict = wrappers.get_scenes(jobdict = jobdict, dept = 'nuke').jobdict # this gets all 3d
+# jobdict = wrappers.get_scenes(jobdict = jobdict).jobdict # this gets everything
+# jobdict = wrappers.get_scenes(jobdict = jobdict, dept = 'nuke').jobdict # this gets all nuke
 #jobdict = wrappers.get_scenes(jobdict = jobdict, shot = 'sh_001').jobdict # this gets all of sh_001
-#jobdict = wrappers.get_scenes(jobdict = jobdict, dept = '3d', shot = 'sh_001').jobdict # this gets shot 1 for nuke
+jobdict = wrappers.get_scenes(jobdict = jobdict, dept = '3d', shot = 'sh_001').jobdict # this gets shot 1 for 3d
 #jobdict = wrappers.get_scenes(jobdict = jobdict, dept = 'nuke', shot = 'sh_001', task = 'elliott').jobdict
 #jobdict = wrappers.get_scenes(jobdict = jobdict, dept = '3d', shot = 'sh_001', task = 'lighting').jobdict
 

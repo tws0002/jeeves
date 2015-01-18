@@ -195,10 +195,15 @@ class Importer(form, base):
             self.import_label.setText('Alembic file : %s' % self.found_file)
             
         elif self.ext == 'mb':
+            '''
+            this scenario isnt supported yet - there are just too many options and i havent had time to test it yet
+            '''
+            print 'No support for the importing of maya files yet, this is limited to alembic files currently'
             self.alembic.setEnabled(False)
-            self.maya.setEnabled(True)
+            self.maya.setEnabled(False)
             self.index = 0
-            self.import_label.setText('Maya file : %s' % self.found_file)
+            self.import_label.setText("Maya file : %s\nApologies, this isn't written yet. You can only import alembic files here" % self.found_file)
+            # self.import_label.setText('Maya file : %s' % self.found_file)
             #because we need to give namespace options to import under, we call the self.scene_namespaces to
             #get a list of namespaces in the current scene
             self.maya_namespaces_list.addItems(self.scene_namespaces())
@@ -298,8 +303,7 @@ class Importer(form, base):
         self.cmd = '%s, %s' % (self.cmd, 'options="v=0;p=17;f=0"')
         
         cmd = 'cmds.file(%s)' % self.cmd
-        
-        print cmd
+        print '\t> jmaya.pipeline.importer.maya_import_cmd > %s' % cmd
         
 #########################################################################################################
 #ALEMBIC
@@ -405,7 +409,7 @@ class Importer(form, base):
             self.cmd = '%s, %s' % (self.cmd, 'debug=True')
         
         abc = ("pmc.AbcImport(%s)" % self.cmd)
-        print abc
+        print '\t> jmaya.pipeline.importer.alembic_cmd > %s' % abc
         eval(abc)
         self.reject()
                             

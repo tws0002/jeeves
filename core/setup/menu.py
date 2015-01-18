@@ -41,7 +41,11 @@ jeevesMenu = nukeMenu.addMenu('Jeeves')
 jeevesMenu.addCommand('Launch Jeeves', "import core.ui.jeeves_ui", "+R" )
 jeevesMenu.addSeparator()
 jeevesMenu.addCommand("Deadline", jnuke.pipeline.tools.deadline.run, "")
-jeevesMenu.addCommand( 'Output_Write', jnuke.pipeline.tools.write.run)
+jeevesMenu.addSeparator()
+jeevesMenu.addCommand( 'Linear_Write', jnuke.pipeline.tools.lin_write.run)
+jeevesMenu.addCommand( 'sRGB_Write', jnuke.pipeline.tools.srgb_write.run)
+jeevesMenu.addCommand( 'RAW_Write', jnuke.pipeline.tools.raw_write.run)
+jeevesMenu.addSeparator()
 pluginsMenu = jeevesMenu.addMenu('Gizmos')
 
 #Add menus and scripts from nukeDict
