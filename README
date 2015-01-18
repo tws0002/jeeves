@@ -73,6 +73,5 @@ nuke so that nuke can convert these ui files on the fly. this means that maya ne
 TO DO
 
 1) jmaya.pipeline.importer - importing of maya files - tab currently disabled
-2) jnuke.pipeline.save_as
+2) jnuke.pipeline.save_as - currently disbaled - see line 1194 of jeeves_ui
 3) jmaya.pipeline.tools.shader_ui / jmaya.pipeline.tools 
-4) add deadline to jeeves maya menu

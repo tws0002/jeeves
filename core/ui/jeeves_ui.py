@@ -1192,8 +1192,9 @@ class Jeeves(form, base):
             saveas = jmaya.pipeline.save_as.run(self.jobdict, self.job, self.asset_categories, assetlist, shotlist, cur_index)
             
         elif self.mode == 'nuke':
-            import jnuke.pipeline.save_as
-            saveas = jnuke.pipeline.save_as.run(self.jobdict, self.job, shotlist)
+            pass
+            # import jnuke.pipeline.save_as
+            # saveas = jnuke.pipeline.save_as.run(self.jobdict, self.job, shotlist)
             
         self.refresh()
         
