@@ -11,6 +11,9 @@ the uiFile var is simply the location of the jeeves.ui file
 there are a few other bits, which are fairly self explanatory, but the most important one, for nuke anyway, is the
 appending to the sys path of the maya site-packages folder, as this contains the pysideuic module, required for nuke to
 convert and load the ui file from designer.
+
+note: sometimes in maya, the ui gets stuck and you can select both a publish and a version, when this happends, jeeves doesnt know 
+what to dowhen you click a button, like save or publish, when only one version or publish is selected all is fine.
 '''
 
 print '> importing core.ui.jeeves_ui'
