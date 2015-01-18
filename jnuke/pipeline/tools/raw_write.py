@@ -1,7 +1,9 @@
 '''
 weird, version _v10, the zero gets chopped off, all other version numbers are fine, need to exmine the fileName tcl expression
+
+changed the default output write colourspace to raw instead of linear - shoudlnt be affecting colourspace here, unless delivering
 '''
-print '> importing jnuke.pipeline.tools.write'
+print '> importing jnuke.pipeline.tools.raw_write'
 import nuke, os
 import core
 import core.locate
@@ -17,11 +19,11 @@ def run():
     
     w = nuke.createNode('Write', inpanel=True)
     count = 1
-    while nuke.exists('Jeeves_Write' + str(count)):
+    while nuke.exists('RAW_Write_' + str(count)):
         count += 1
-    w.knob('name').setValue('Jeeves_Write' + str(count))
+    w.knob('name').setValue('RAW_Write_' + str(count))
     
-    t = nuke.Tab_Knob("Output Write")
+    t = nuke.Tab_Knob("RAW Write")
     w.addKnob(t)
     feedback = """
     [value dirName]
@@ -31,6 +33,7 @@ def run():
     w.addKnob(nuke.Enumeration_Knob('renderType', 'render_dir', ['slapcomp', 'cleanup', 'prerender', 'matte', 'final']))
     output_path = "[value dirName]/[value renderType]/[value fileName]/[value fileName].%04d.dpx"
     w.knob('file').fromScript(output_path)
-    w.knob('colorspace').setValue('linear')
+    # w.knob('colorspace').setValue('linear')
+    w.knob('raw').setValue(1)
     w.knob('file_type').setValue('dpx')
     w.knob('datatype').setValue('10')
